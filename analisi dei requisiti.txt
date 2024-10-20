@@ -1,0 +1,83 @@
+utente:
+* vedere le ricette
+* ads (?)
+
+login:
+* bio (?)
+* commentare + stelle
+* salvataggio ricette
+* toglie ads (?)
+
+cancellazione account:
+* cancella dati utente
+* cancella recensioni
+* cancella reazioni/risposte
+
+server:
+* immagini ricette + preparazione
+
+sezioni ricette:
+* disperati - fuorisede (orribili, economico)
+* semplici e veloci - pendolare (tristi ma andabili, teo)
+* alta classe - in sede (buona qualità, non troppo laboriosi)
+* lusso - DAD (lunghe preparazioni)
+* take away - stagisti (street food a Padova, altre città?)
+
+ricetta:
+* nome
+* foto 1+
+* mini descrizione
+* frasetta di consiglio, corta e simpatica (?)
+* stelle
+* ingredienti (sempre per una persona)
+* preparazione (con foto ?)
+* tempo
+* stima del costo
+* macro (?)
+* commenti
+
+* espansione immagini (?)
+* ricette della stessa sezione (?)
+
+ricerca:
+* senza filtri cerca in tutte le sezioni
+* cerca in nome, descrizione e preparazione (ranking system ?)
+* filtri:
+	* stelle
+	* sezione
+	* stima del costo
+* visualizzazione:
+	* lista di default
+	* lista divisa in sezioni (?)
+	* item:
+		* foto
+		* nome
+		* stelle
+		* tempo
+		* descrizione/frasetta
+		* stima costo
+
+header:
+* Uni cooked, don't let Uni cook you!
+
+footer:
+* circa noi:
+	* chi siamo
+	* foto github (?)
+* HTML/CSS validation
+* copyright
+
+features:
+* tema bianco/nero
+* eastereggs
+
+
+
+
+
+
+
+
+
+
+
