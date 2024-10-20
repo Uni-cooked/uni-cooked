@@ -18,6 +18,7 @@ server:
 
 sezioni ricette:
 * disperati - fuorisede (orribili, economico)
+	-> pasta cruda in confezione sopra il piatto
 * semplici e veloci - pendolare (tristi ma andabili, teo)
 * alta classe - in sede (buona qualità, non troppo laboriosi)
 * lusso - DAD (lunghe preparazioni)
