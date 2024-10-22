@@ -1,0 +1,7 @@
+nome
+
+descrizione
+
+link del sito del luogo
+
+link del luogo su maps

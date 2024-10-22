@@ -1,0 +1,10 @@
+nome
+
+descrizione
+
+tempo
+costo
+
+ingredienti
+
+preparazione
