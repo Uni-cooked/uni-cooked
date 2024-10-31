@@ -47,6 +47,7 @@ ricerca:
 	* stelle
 	* sezione
 	* stima del costo
+	* primo/secondo (bisogna aggiungere un attributo nascosto per ogni piatto)
 * visualizzazione:
 	* lista di default
 	* lista divisa in sezioni (?)
