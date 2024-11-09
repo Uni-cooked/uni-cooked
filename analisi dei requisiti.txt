@@ -9,6 +9,8 @@ login:
 * salvataggio ricette
 * toglie ads (?)
 
+(valutaer possibilità admin che elimina commenti. Motivare nella relazione perché aggiunta ricette va fatta solo ed esclusivamente tramite creazione html)
+
 cancellazione account:
 * cancella dati utente
 * cancella recensioni
