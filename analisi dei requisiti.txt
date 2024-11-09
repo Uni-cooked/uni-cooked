@@ -1,6 +1,7 @@
 utente:
 * vedere le ricette
 * ads (?)
+* dare suggerimenti (? -> potrebbe over-complicare)
 
 login:
 * bio (?)
