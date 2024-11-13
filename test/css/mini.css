@@ -1,0 +1,59 @@
+* {
+    /* margin: 0;
+    padding: 0; */
+}
+
+:root {
+    /* --bg-color: rgb(66, 192, 66);
+    --content-bg-color: rgb(255, 255, 255);
+    --color: rgb(0, 0, 0); */
+}
+
+html, body {
+    /* background-color: var(--bg-color);
+    color: var(--color); */
+}
+
+body {
+    /* NOTE: set the text size at 1.5 (see header h1) */
+    /* line-height: 1.5em;
+    font-size: 100%; */
+}
+
+.hide {
+    /* text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden; */
+}
+
+/*
+=====================================
+HEADER
+=====================================
+*/
+
+header h1.hide {
+    /* background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 8em; */
+}
+
+header h2 {
+    /* text-align: center; */
+}
+
+/*
+=====================================
+MENU
+=====================================
+*/
+
+#breadcrumb {
+
+}
+
+#menu {
+    /* TODO: hamburger menu */
+}

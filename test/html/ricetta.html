@@ -1,0 +1,76 @@
+<!-- NOTE: every key between '{}' will be replaced via php -->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- TODO: add the name of the plate in the title via php -->
+        <title>Uni cooked - Ricetta</title>
+        <!-- TODO: add the name of the plate in the description via php -->
+        <meta name="description" content="{Nome ricetta}, una ricetta completa e gustosa adatta per gli universitari di tutto il mondo.">
+        <!-- TODO: add some ingredients of the recipe in the keywords via php -->
+        <meta name="keyword" content="ricetta,{...}">
+        <meta name="author" content="Uni cooked">
+        <!-- NOTE: I suppose we should change this stinky ass -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- TODO: add media query for mobile -->
+        <link rel="stylesheet" href="../css/mini.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
+            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Stai studiano in: <a href=""><span lang="en">Home</span></a> > Ricetta</p>
+        </nav>
+
+        <nav id="menu">
+            <ul>
+                <li><a href=""><span lang="en">Home</span></a></li>
+                <li><a href="">Fuori sede</a></li>
+                <li><a href="">Pendolari</a></li>
+                <li><a href="">In sede</a></li>
+                <li><a href="">DAD</a></li>
+                <li><a href="">Tirocinanti</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>{Titolo della ricetta}</h1>
+            <p class="hide">Voto: {X} / 30</p>
+            <p>{Descrizione}</p>
+            <p>{00} minuti</p>
+            <p>{0} €</p>
+            <img src="" alt="">
+
+            <h2>Ingredienti</h2>
+            <ul>
+                <li>{Ingrediente 1}</li>
+            </ul>
+
+            <h2>Preparazione</h2>
+            <ol>
+                <li>{Passo 1}</li>
+            </ol>
+        </main>
+
+        <!-- NOTE: I am not sure about this shitty tag -->
+        <article>
+            <h3>Valutazioni della prova</h3>
+            <dl>
+                <!-- NOTE: dt and dd should be used as rating template -->
+                <dt>
+                    {Username} <time datetime="{yyyy-mm-dd}">{date}</time>
+                    <p>Voto: {X} / 30</p>
+                </dt>
+                <dd>{Motivation}</dd>
+            </dl>
+        </article>
+
+        <script src="" async defer></script>
+    </body>
+</html>
