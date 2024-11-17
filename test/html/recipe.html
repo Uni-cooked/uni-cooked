@@ -55,21 +55,26 @@
             <ol>
                 <li>{Passo 1}</li>
             </ol>
+
+            <!-- NOTE: I am not sure about this shitty tag -->
+            <article>
+                <h3>Valutazioni</h3>
+                <dl>
+                    <!-- NOTE: dt and dd should be used as rating template -->
+                    <dt>
+                        <!-- TODO: add href to the user page -->
+                        <a href=""><img src="" alt=""> {Username} <time datetime="{yyyy-mm-dd}">{date}</time></a>
+                        <p>Voto: {X} / 30</p>
+                    </dt>
+                    <dd>{Motivazione}</dd>
+                </dl>
+            </article>
         </main>
 
-        <!-- NOTE: I am not sure about this shitty tag -->
-        <article>
-            <h3>Valutazioni</h3>
-            <dl>
-                <!-- NOTE: dt and dd should be used as rating template -->
-                <dt>
-                    <!-- TODO: add href to the user page -->
-                    <a href=""><img src="" alt=""> {Username} <time datetime="{yyyy-mm-dd}">{date}</time></a>
-                    <p>Voto: {X} / 30</p>
-                </dt>
-                <dd>{Motivazione}</dd>
-            </dl>
-        </article>
+        <footer>
+            <img src="../img/valid-xhtml10.png" alt="HTML valido">
+            <img src="../img/vcss-blue.gif" alt="CSS valido">
+        </footer>
 
         <script src="" async defer></script>
     </body>

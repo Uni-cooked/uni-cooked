@@ -1,0 +1,95 @@
+<!-- NOTE: every key between '{}' will be replaced via php -->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Nuova ricetta - Uni cooked</title>
+        <meta name="description" content="Aggiungi una nuova riccetta piena di sapori per i tuoi compagni universitari nel portale Uni cooked, se sarà all'altezza te la approveremo.">
+        <meta name="keyword" content="nuova,riccetta,Uni cooked,universitari">
+        <meta name="author" content="Uni cooked">
+        <!-- NOTE: I suppose we should change this stinky ass -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- TODO: add media query for mobile -->
+        <link rel="stylesheet" href="../css/mini.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
+            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Stai studiano in: <a href=""><span lang="en">Home</span></a> > Nuova ricetta</p>
+        </nav>
+
+        <nav id="menu">
+            <ul>
+                <!-- TODO: add href to the respective pages -->
+                <li><a href=""><span lang="en">Home</span></a></li>
+                <li><a href="">Fuori sede</a></li>
+                <li><a href="">Pendolari</a></li>
+                <li><a href="">In sede</a></li>
+                <li><a href="">DAD</a></li>
+                <li><a href="">Tirocinanti</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Consigliaci una nuova ricetta</h1>
+
+            <p>Preghiamo di inserire termini stranieri nel seguente modo così da rendere il testo accessibile ad ogni tipo di utenza:</p>
+            <p>[x]termine[/x] dove x indica la sigla della lingua, ad esempio en per l'inglese.</p>
+            <form action="">
+                <fieldset>
+                    <label for="name">Nome della ricetta</label>
+                    <input type="text" id="name">
+                    <label for="desc">Descrizione</label>
+                    <input type="text" id="desc">
+                    <label for="duration">Minuti totali di preparazione e cottura</label>
+                    <input type="number" id="duration">
+                    <label for="price">Prezzo stimato</label>
+                    <input type="number" id="price">
+                    <p>Ingredienti</p>
+                    <ul>
+                        <li>
+                            <label for="iname">Nome</label>
+                            <input type="text" id="iname">
+                            <label for="qb">Q.b.</label>
+                            <input type="checkbox" id="qb">
+                            <label for="amount">Quantità</label>
+                            <input type="number" id="amount">
+                            <label for="uom">Unità di misura</label>
+                            <select id="uom">
+                                <option value="g">g</option>
+                                <option value="ml">ml</option>
+                                <option value="n">elementi</option>
+                            </select>
+                            <label for="idesc">Descrizione</label>
+                            <input type="text" id="idesc">
+                        </li>
+                    </ul>
+                    <button>Aggiungi ingrediente</button>
+                    <p>Preparazione</p>
+                    <ol>
+                        <li>
+                            <label for="step">Passaggio</label>
+                            <input type="text" id="step">
+                        </li>
+                    </ol>
+                    <button>Aggiungi passaggio</button>
+                    <input type="submit">
+                </fieldset>
+            </form>
+        </main>
+
+        <footer>
+            <img src="../img/valid-xhtml10.png" alt="HTML valido">
+            <img src="../img/vcss-blue.gif" alt="CSS valido">
+        </footer>
+
+        <script src="" async defer></script>
+    </body>
+</html>
