@@ -76,6 +76,7 @@ footer:
 features:
 * tema bianco/nero
 * eastereggs
+* segnalare le ricette
 
 
 
