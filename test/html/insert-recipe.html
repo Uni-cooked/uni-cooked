@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Nuova ricetta - Uni cooked</title>
+        <!-- NOTE: "Aggiungi" to make Google happy -->
         <meta name="description" content="Aggiungi una nuova riccetta piena di sapori per i tuoi compagni universitari nel portale Uni cooked, se sarà all'altezza te la approveremo.">
         <meta name="keyword" content="nuova,riccetta,Uni cooked,universitari">
         <meta name="author" content="Uni cooked">
@@ -46,6 +47,11 @@
                 <fieldset>
                     <label for="name">Nome della ricetta</label>
                     <input type="text" id="name">
+                    <label for="dishtype">Tipologia</label>
+                    <select id="dishtype">
+                        <option value="fd">Primo piatto</option>
+                        <option value="sd">Secondo piatto</option>
+                    </select>
                     <label for="desc">Descrizione</label>
                     <input type="text" id="desc">
                     <label for="duration">Minuti totali di preparazione e cottura</label>

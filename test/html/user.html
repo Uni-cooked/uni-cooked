@@ -1,0 +1,75 @@
+<!-- NOTE: every key between '{}' will be replaced via php -->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Profilo utente - Uni cooked</title>
+        <meta name="description" content="Il tuo profilo Uni cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
+        <meta name="keyword" content="Uni cooked,utente,profilo,ricette,preferite">
+        <meta name="author" content="Uni cooked">
+        <!-- NOTE: I suppose we should change this stinky ass -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- TODO: add media query for mobile -->
+        <link rel="stylesheet" href="../css/mini.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
+            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Stai studiano in: <a href=""><span lang="en">Home</span></a> > Profilo utente</p>
+        </nav>
+
+        <nav id="menu">
+            <ul>
+                <!-- TODO: add href to the respective pages -->
+                <li><a href=""><span lang="en">Home</span></a></li>
+                <li><a href="">Fuori sede</a></li>
+                <li><a href="">Pendolari</a></li>
+                <li><a href="">In sede</a></li>
+                <li><a href="">DAD</a></li>
+                <li><a href="">Tirocinanti</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>{Nickname}</h2>
+            <img src="" alt="Immagine del profilo di {Nickname}">
+            <p>Studente: {Tipo studente}</p>
+            <p>{Bio}</p>
+            <form action="">
+                <fieldset>
+                    <label for="profile">Profilo pubblico</label>
+                    <input type="checkbox" id="profile">
+                </fieldset>
+            </form>
+
+            <h3>Ricette preferite</h3>
+            <dl>
+                <!-- NOTE: dt and dd should be used as favourite recipe template -->
+                <dt>{Nome ricetta}</dt>
+                <dd>
+                    <img src="" alt="" tabindex="-1">
+                    <p>{Descrizione}</p>
+                    <p>Voto: {X} / 30</p>
+                    <p>{00} minuti</p>
+                    <p>{0} €</p>
+                    <button>Vai alla ricetta</button>
+                    <button>Rimuovi la ricetta dai preferiti</button>
+                </dd>
+            </dl>
+        </main>
+
+        <footer>
+            <img src="../img/valid-xhtml10.png" alt="HTML valido">
+            <img src="../img/vcss-blue.gif" alt="CSS valido">
+        </footer>
+
+        <script src="" async defer></script>
+    </body>
+</html>

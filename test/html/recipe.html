@@ -5,6 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- NOTE: lang="en" even in the title? -->
         <title>{Nome ricetta} - Uni cooked</title>
         <meta name="description" content="{Nome ricetta}, una ricetta adatta per gli universitari di tutto il mondo a base di {Ingredienti principali}.">
         <meta name="keyword" content="{Nome ricetta},{Ingredienti principali}">
@@ -39,12 +40,12 @@
 
         <main>
             <h1>{Titolo della ricetta}</h1>
-            <p class="hide">Voto: {X} / 30</p>
+            <!-- TODO: add src via php and keep alt empty, the description makes its job -->
+            <img src="" alt="" tabindex="-1">
             <p>{Descrizione}</p>
+            <p>Voto: {X} / 30</p>
             <p>{00} minuti</p>
             <p>{0} €</p>
-            <!-- TODO: add src via php and keep alt empty, the description makes its job -->
-            <img src="" alt="">
 
             <h2>Ingredienti</h2>
             <ul>
@@ -58,12 +59,25 @@
 
             <!-- NOTE: I am not sure about this shitty tag -->
             <article>
+                <!-- TODO: it should be displayed only whether the user did not rate yet -->
+                <h3>Valuta la ricetta</h3>
+                <!-- TODO: replace with something fancy, like alarm clock or slider -->
+                <form action="">
+                    <fieldset>
+                        <label for="rating">Valutazione</label>
+                        <input type="number" id="rating">
+                        <label for="motif">Motivazione</label>
+                        <textarea id="motif" cols="30" rows="10"></textarea>
+                        <input type="submit">
+                    </fieldset>
+                </form>
+                
                 <h3>Valutazioni</h3>
                 <dl>
                     <!-- NOTE: dt and dd should be used as rating template -->
                     <dt>
                         <!-- TODO: add href to the user page -->
-                        <a href=""><img src="" alt=""> {Username} <time datetime="{yyyy-mm-dd}">{date}</time></a>
+                        <a href=""><img src="" alt="Immagine del profilo di {Nickname}"> {Nickname} <time datetime="{yyyy-mm-dd}">{date}</time></a>
                         <p>Voto: {X} / 30</p>
                     </dt>
                     <dd>{Motivazione}</dd>
