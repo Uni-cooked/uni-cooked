@@ -1,0 +1,64 @@
+<!-- NOTE: every key between '{}' will be replaced via php -->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign up - Uni cooked</title>
+        <!-- NOTE: I have no idea what to write as description and keyword -->
+        <meta name="description" content="Il tuo profilo Uni cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
+        <meta name="keyword" content="Uni cooked,utente,profilo,ricette,preferite">
+        <meta name="author" content="Uni cooked">
+        <!-- NOTE: I suppose we should change this stinky ass -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- TODO: add media query for mobile -->
+        <link rel="stylesheet" href="../css/mini.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
+            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Stai studiano in: <a href=""><span lang="en">Home</span></a> > Sign up</p>
+        </nav>
+
+        <main>
+            <h1>Sign up</h1>
+            <form action="">
+                <fieldset>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd">
+                    <label for="name">Nickname</label>
+                    <input type="text" id="name">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio"></textarea>
+                    <label for="studtype">Tipo di studente</label>
+                    <select id="studtype">
+                        <option value="" hidden>Scegli</option>
+                        <option value="fuorisede">Fuori sede</option>
+                        <option value="pendolare">Pendolare</option>
+                        <option value="insede">In sede</option>
+                        <option value="dad">In DAD</option>
+                        <option value="tirocinante">Tirocinante</option>
+                    </select>
+                    <label for="profile">Profilo pubblico</label>
+                    <input type="checkbox" id="profile" checked>
+                    <input type="submit">
+                </fieldset>
+            </form>
+        </main>
+
+        <footer>
+            <img src="../img/valid-xhtml10.png" alt="HTML valido">
+            <img src="../img/vcss-blue.gif" alt="CSS valido">
+        </footer>
+
+        <script src="" async defer></script>
+    </body>
+</html>
