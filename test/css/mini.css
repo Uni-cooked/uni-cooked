@@ -28,6 +28,26 @@ body {
 
 /*
 =====================================
+NAVIGATION HELPS
+=====================================
+*/
+
+.list-help ul {
+    /* list-style-type: none; */
+}
+
+.nav-help {
+    /* position: absolute;
+    text-indent: -999em; */
+}
+
+.nav-help:focus {
+    /* position: static;
+    text-indent: 0; */
+}
+
+/*
+=====================================
 HEADER
 =====================================
 */

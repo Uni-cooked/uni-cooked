@@ -23,7 +23,7 @@
         </header>
 
         <nav id="breadcrumb">
-            <p>Stai studiano in: <a href=""><span lang="en">Home</span></a> > Nuova ricetta</p>
+            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Nuova ricetta</p>
         </nav>
 
         <nav id="menu">
@@ -47,11 +47,20 @@
                 <fieldset>
                     <label for="name">Nome della ricetta</label>
                     <input type="text" id="name">
-                    <label for="dishtype">Tipologia</label>
+                    <label for="studtype">Tipo di studente</label>
+                    <select id="studtype">
+                        <option value="" hidden>Scegli</option>
+                        <option value="fuorisede">Fuori sede</option>
+                        <option value="pendolare">Pendolare</option>
+                        <option value="insede">In sede</option>
+                        <option value="dad">In DAD</option>
+                        <option value="tirocinante">Tirocinante</option>
+                    </select>
+                    <label for="dishtype">Tipologia piatto</label>
                     <select id="dishtype">
                         <option value="" hidden>Scegli</option>
-                        <option value="fd">Primo piatto</option>
-                        <option value="sd">Secondo piatto</option>
+                        <option value="pp">Primo piatto</option>
+                        <option value="sp">Secondo piatto</option>
                     </select>
                     <label for="desc">Descrizione</label>
                     <input type="text" id="desc">
@@ -73,7 +82,7 @@
                                 <option value="" hidden>Scegli</option>
                                 <option value="g">g</option>
                                 <option value="ml">ml</option>
-                                <option value="n">elementi</option>
+                                <option value="el">elementi</option>
                             </select>
                             <label for="idesc">Descrizione</label>
                             <input type="text" id="idesc">
