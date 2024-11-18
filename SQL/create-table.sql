@@ -43,10 +43,10 @@ CREATE TABLE Ricetta(
     Admin VARCHAR(100) NOT NULL,
     Data DATE NOT NULL,
     Immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    FOREIGN KEY Admin REFERENCES Admin(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY Admin REFERENCES Admin(Utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
 );
 
-CREATE TABLE Preferenza(
+CREATE TABLE Preferenza_Ricetta(
     Ricetta VARCHAR(50) NOT NULL,
     Visitatore VARCHAR(100) NOT NULL,
     PRIMARY KEY (Ricetta, Visitatore),
@@ -88,5 +88,24 @@ CREATE TABLE Valutazione(
     CHECK(Voto < 30 OR Voto=30),
     PRIMARY KEY (Ricetta, Visitatore),
     FOREIGN KEY Ricetta REFERENCES Ricetta(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY Visitatore REFERENCES Visitatore(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
+);
+
+CREATE TABLE Takeaway(
+    Nome_locale VARCHAR(100) PRIMARY KEY,
+    Admin VARCHAR(100) NOT NULL,
+    Maps VARCHAR(500) NOT NULL, --Collegamento web per Maps
+    Sito VARCHAR(500),
+    Immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    Descrizione VARCHAR(500) NOT NULL,
+    Data DATE NOT NULL,
+    FOREIGN KEY Admin REFERENCES Admin(Utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
+);
+
+CREATE TABLE Preferenza_takeaway(
+    Visitatore VARCHAR(100) NOT NULL,
+    Takeaway VARCHAR(100) NOT NULL,
+    PRIMARY KEY (Visitatore, Takeaway),
+    FOREIGN KEY Takeaway REFERENCES Takeaway(Nome_locale) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY Visitatore REFERENCES Visitatore(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
 );
