@@ -1,111 +1,108 @@
-CREATE DOMAIN POSITIVE_INT AS INT CHECK (VALUE >=0);
+CREATE DOMAIN POSITIVE_SMALLINT AS SMALLINT CHECK (VALUE>=0);
+CREATE DOMAIN POSITIVE_TINYINT AS TINYINT CHECK (VALUE>=0);
+
+CREATE TYPE VISIBILITA AS enum ('privata', 'pubblica');
+CREATE TYPE CATEGORIA AS enum ('fuorisede', 'in_sede', 'pendolare', 'dad', 'take_away');
+CREATE TYPE TIPO_PIATTO AS enum ('primo', 'secondo');
+CREATE TYPE UNITA_MISURA AS enum ('g', 'ml', 'num_elementi');
 
 CREATE TABLE Utente(
-    Email VARCHAR(100) PRIMARY KEY,
-    Nome VARCHAR(50) UNIQUE NOT NULL,
-    Password VARCHAR(64) NOT NULL, --SHA256 restituisce sempre una stringa di 64 caratteri
-    Data_iscrizione DATE NOT NULL,
+    email VARCHAR(100) PRIMARY KEY,
+    nome VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(64) NOT NULL,  -- SHA256 restituisce sempre una stringa di 64 caratteri
+    data_iscrizione DATE NOT NULL,
 );
 
 CREATE TABLE Admin(
-    Utente VARCHAR(100) PRIMARY KEY,
-    Data_termine DATE, --NULL se ancora admin
-    FOREIGN KEY Utente REFERENCES Utente(Email) ON DELETE CASCADE ON UPDATE CASCADE,
+    utente VARCHAR(100) PRIMARY KEY,
+    data_termine DATE, --NULL se ancora admin
+    FOREIGN KEY utente REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Visitatore(
-    Utente VARCHAR(100) PRIMARY KEY,
-    Visibilità VARCHAR(8) NOT NULL,
-    --Controllo che la visibilità sia pubblica o privata
-    CHECK(Visibilità="Pubblica" OR Visibilità="Privata"),
-    Biografia VARCHAR(500) NOT NULL,
-    Tipo_studente VARCHAR(9) NOT NULL,
-    --Controllo che Tipo_studente sia DAD, Fuorisede, In sede, Pendolare
-    CHECK(Tipo_studente="DAD" OR Tipo_studente="Fuorisede" OR Tipo_studente="In sede" OR Tipo_studente="Pendolare")
-    Immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    FOREIGN KEY Utente REFERENCES Utente(Email) ON DELETE CASCADE ON UPDATE CASCADE,
+    utente VARCHAR(100) PRIMARY KEY,
+    visibilita VISIBILITA NOT NULL,
+    biografia VARCHAR(500) NOT NULL,
+    tipo_studente CATEGORIA NOT NULL,
+    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    FOREIGN KEY utente REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Ingrediente(
-    Nome VARCHAR(20) PRIMARY KEY NOT NULL,
-    Marca VARCHAR(50),
+    nome VARCHAR(20) PRIMARY KEY,
+    marca VARCHAR(50),
 );
 
 CREATE TABLE Ricetta(
-    Nome VARCHAR(50) PRIMARY KEY,
-    Categoria VARCHAR(9) NOT NULL,
-    --Controllo che Categoria sia DAD, Fuorisede, In sede, Pendolare
-    CHECK(Categoria="DAD" OR Categoria="Fuorisede" OR Categoria="In sede" OR Categoria="Pendolare")
-    Tipo VARCHAR(7) NOT NULL,
-    --Controllo che Tipo sia Primo o Secondo
-    CHECK(Tipo="Primo" OR Tipo="Secondo")
-    Descrizione VARCHAR(500) NOT NULL,
-    Admin VARCHAR(100) NOT NULL,
-    Data DATE NOT NULL,
-    Immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    FOREIGN KEY Admin REFERENCES Admin(Utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
+    nome VARCHAR(50) PRIMARY KEY,
+    categoria CATEGORIA NOT NULL,
+    tipo TIPO_PIATTO NOT NULL,
+    descrizione VARCHAR(500) NOT NULL,
+    admin VARCHAR(100) NOT NULL,
+    data DATE NOT NULL,
+    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    -- NOTA: IO METTEREI ON DELETE NO ACTION
+    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
 );
 
 CREATE TABLE Preferenza_Ricetta(
-    Ricetta VARCHAR(50) NOT NULL,
-    Visitatore VARCHAR(100) NOT NULL,
-    PRIMARY KEY (Ricetta, Visitatore),
-    FOREIGN KEY Ricetta REFERENCES Ricetta(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY Visitatore REFERENCES Visitatore(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
+    ricetta VARCHAR(50) NOT NULL,
+    visitatore VARCHAR(100) NOT NULL,
+    PRIMARY KEY (ricetta, visitatore),
+    FOREIGN KEY ricetta REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY visitatore REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Utilizzo(
-    Quantità POSITIVE_INT,
-    Quanto_basta BOOLEAN,
-    Unità_misura VARCHAR(2), --Da decidere le unità di misura
-    --Controllo che se Quantità è diverso da NULL allora Unità_misura sia popolata e Quanto_basta sia NULL
-    CHECK(Quantità IS NOT NULL AND Unità_misura IS NOT NULL AND Quanto_basta IS NULL),
-    --Controllo che se Quantità è NULL allora Unità_misura sia NULL e Quanto_basta sia NOT NULL
-    CHECK(Quantità IS NULL AND Unità_misura IS NULL and Quanto_basta IS NOT NULL),
-    DESCRIZIONE VARCHAR(500),
-    Ingrediente VARCHAR(20) NOT NULL,
-    Ricetta VARCHAR(50) NOT NULL,
-    FOREIGN KEY Ingrediente REFERENCES Ingrediente(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY Ricetta REFERENCES Ricetta(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    PRIMARY KEY(Ingrediente, Ricetta)
+    ingrediente VARCHAR(20) NOT NULL,
+    ricetta VARCHAR(50) NOT NULL,
+    quanto_basta BOOLEAN NOT NULL,
+    quantita POSITIVE_SMALLINT,
+    unita_misura UNITA_MISURA,
+    CHECK(quanto_basta=TRUE AND quantita IS NULL AND unita_misura IS NULL)
+    CHECK(quanto_basta=FALSE AND quantita IS NOT NULL AND unita_misura IS NOT NULL)
+    descrizione VARCHAR(50),
+    PRIMARY KEY(ingrediente, ricetta)
+    FOREIGN KEY ingrediente REFERENCES Ingrediente(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY ricetta REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Preparazione(
-    Numero POSITIVE_INT NOT NULL,
-    Ricetta VARCHAR(50) NOT NULL,
-    Descrizione VARCHAR(500) NOT NULL,
-    PRIMARY KEY (Numero, Ricetta),
-    FOREIGN KEY Ricetta REFERENCES Ricetta(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    numero POSITIVE_TINYINT,
+    ricetta VARCHAR(50),
+    descrizione VARCHAR(500) NOT NULL,
+    PRIMARY KEY (numero, ricetta),
+    FOREIGN KEY ricetta REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
 CREATE TABLE Valutazione(
-    Ricetta VARCHAR(50) NOT NULL,
-    Visitatore VARCHAR(100) NOT NULL,
-    Commento VARCHAR(500) NOT NULL,
-    Data DATE NOT NULL,
-    Voto POSITIVE_INT NOT NULL,
-    --Controllo che voto sia <= 30
-    CHECK(Voto < 30 OR Voto=30),
-    PRIMARY KEY (Ricetta, Visitatore),
-    FOREIGN KEY Ricetta REFERENCES Ricetta(Nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY Visitatore REFERENCES Visitatore(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
+    ricetta VARCHAR(50),
+    visitatore VARCHAR(100),
+    commento VARCHAR(500) NOT NULL,
+    data DATE NOT NULL,
+    voto POSITIVE_TINYINT NOT NULL,
+    CHECK(voto<=30),
+    PRIMARY KEY (ricetta, visitatore),
+    FOREIGN KEY ricetta REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY visitatore REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
-CREATE TABLE Takeaway(
-    Nome_locale VARCHAR(100) PRIMARY KEY,
-    Admin VARCHAR(100) NOT NULL,
-    Maps VARCHAR(500) NOT NULL, --Collegamento web per Maps
-    Sito VARCHAR(500),
-    Immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    Descrizione VARCHAR(500) NOT NULL,
-    Data DATE NOT NULL,
-    FOREIGN KEY Admin REFERENCES Admin(Utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
+CREATE TABLE Take_away(
+    nome_locale VARCHAR(100) PRIMARY KEY,
+    admin VARCHAR(100) NOT NULL,
+    maps VARCHAR(500) NOT NULL,  --Collegamento web per Maps
+    sito VARCHAR(500),
+    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    descrizione VARCHAR(500) NOT NULL,
+    data DATE NOT NULL,
+    -- NOTA: IO METTEREI ON DELETE NO ACTION
+    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
 );
 
-CREATE TABLE Preferenza_takeaway(
-    Visitatore VARCHAR(100) NOT NULL,
-    Takeaway VARCHAR(100) NOT NULL,
-    PRIMARY KEY (Visitatore, Takeaway),
-    FOREIGN KEY Takeaway REFERENCES Takeaway(Nome_locale) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY Visitatore REFERENCES Visitatore(Utente) ON DELETE CASCADE ON UPDATE CASCADE,
+CREATE TABLE Preferenza_take_away(
+    visitatore VARCHAR(100) NOT NULL,
+    take_away VARCHAR(100) NOT NULL,
+    PRIMARY KEY (visitatore, takeaway),
+    FOREIGN KEY takeaway REFERENCES Takeaway(nome_locale) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY visitatore REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE,
 );
