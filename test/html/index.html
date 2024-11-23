@@ -57,9 +57,8 @@
             <nav>
                 <form action="">
                     <fieldset>
-                        <!-- NOTE: does it need a label? -->
-                        <input type="text" id="search-bar" aria-label="barra di ricerca" placeholder="Cerca...">
-                        <input type="submit">
+                        <label for="search-bar" class="hide">Barra di ricerca</label>
+                        <input type="text" id="search-bar" placeholder="Cerca...">
                         
                         <p>Filtra per</p>
                         <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
@@ -92,6 +91,8 @@
                             <option value="pp">Primo piatto</option>
                             <option value="sp">Secondo piatto</option>
                         </select>
+
+                        <button type="submit">Cerca</button>
                     </fieldset>
                 </form>
             </nav>

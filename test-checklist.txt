@@ -1,0 +1,21 @@
+Test importanti da eseguire
+
+Accessibilità:
+- Elementi interattivi:
+    - Link circolari
+    - Tutti raggiungibili col tab
+    - Tutti gli input con label (errore sotto l'input)
+- Colori:
+    - Contrasti AA:
+        - Testo piccolo (< 1.5em) / bg: 4.5
+        - Testo grande (> 1.5em) / bg: 3
+    - Contrasti AAA:
+        - Testo piccolo (< 1.5em) / bg: 7
+        - Testo grande (> 1.5em) / bg: 4.5
+    - Contrasti link attivi / testo
+    - Contrasti link visitati / test
+- Non avere buchi tra gli h (non h1 e h3)
+- Tutte le pagine raggiungibili
+- Gestione errori (es 404 -> Ops! Sembra tu sia stato bocciato.)
+- Attenzione all'ordine dei tag, gli sr seguono quelli
+- Velocità sito
