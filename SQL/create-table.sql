@@ -18,8 +18,8 @@ DROP TYPE IF EXISTS CATEGORIA;
 DROP TYPE IF EXISTS TIPO_PIATTO;
 DROP TYPE IF EXISTS UNITA_MISURA;
 
-CREATE DOMAIN POSITIVE_SMALLINT AS SMALLINT CHECK (VALUE>=0);
-CREATE DOMAIN POSITIVE_TINYINT AS TINYINT CHECK (VALUE>=0);
+CREATE DOMAIN POSITIVE_SMALLINT AS SMALLINT CHECK (VALUE>=0);   -- 2 Byte
+CREATE DOMAIN POSITIVE_TINYINT AS TINYINT CHECK (VALUE>=0);   -- 1 Byte
 
 CREATE TYPE VISIBILITA AS enum ('privata', 'pubblica');
 CREATE TYPE CATEGORIA AS enum ('fuorisede', 'in_sede', 'pendolare', 'dad', 'take_away');
@@ -35,7 +35,7 @@ CREATE TABLE Utente(
 
 CREATE TABLE Admin(
     utente VARCHAR(100) PRIMARY KEY,
-    data_termine DATE, --NULL se ancora admin
+    data_termine DATE, -- NULL se ancora admin
     FOREIGN KEY utente REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE Visitatore(
     visibilita VISIBILITA NOT NULL,
     biografia VARCHAR(500) NOT NULL,
     tipo_studente CATEGORIA NOT NULL,
-    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
     FOREIGN KEY utente REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 
@@ -60,9 +60,9 @@ CREATE TABLE Ricetta(
     descrizione VARCHAR(500) NOT NULL,
     admin VARCHAR(100) NOT NULL,
     data DATE NOT NULL,
-    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    -- NOTA: IO METTEREI ON DELETE NO ACTION
-    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
+    immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    --NOTA: UN ADMIN RIMANE NEL DB ANCHE QUANDO LO LICENZIAMO COSÌ RIMANGONO LE SUE RICETTE
+    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE NO ACTION ON UPDATE CASCADE,
 );
 
 CREATE TABLE Preferenza_Ricetta(
@@ -110,13 +110,15 @@ CREATE TABLE Valutazione(
 CREATE TABLE Take_away(
     nome_locale VARCHAR(100) PRIMARY KEY,
     admin VARCHAR(100) NOT NULL,
-    maps VARCHAR(500) NOT NULL,  --Collegamento web per Maps
+    indirizzo VARCHAR(30) NOT NULL,
+    civico TINYINT NOT NULL,
+    maps VARCHAR(500) NOT NULL,  -- Collegamento web per Maps
     sito VARCHAR(500),
-    immagine VARCHAR(500) NOT NULL, --Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
     descrizione VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
-    -- NOTA: IO METTEREI ON DELETE NO ACTION
-    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE CASCADE ON UPDATE CASCADE, --NOTA: SE UN ADMIN VIENE CANCELLATO TUTTE LE SUE RICETTE E TAKE AWAY VERRANNO ELIMINATI
+    --NOTA: UN ADMIN RIMANE NEL DB ANCHE QUANDO LO LICENZIAMO COSÌ RIMANGONO I SUOI TAKE AWAY
+    FOREIGN KEY admin REFERENCES Admin(utente) ON DELETE NO ACTION ON UPDATE CASCADE,
 );
 
 CREATE TABLE Preferenza_take_away(
