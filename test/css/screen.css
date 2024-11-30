@@ -1,0 +1,161 @@
+/*
+*   GLOBALI
+*/
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+:root
+{
+    --bgcolor: #080808;
+    --pbgcolor: #212422;
+    --pcolor: #FFF;
+    --ribboncolor: #c97f0e;
+    --titlecolor: #c97f0e;
+    --navulcolor: #c97f0e;
+    --menulinkcolor: #000;
+    --menuvisitedlinkcolor: #580801;
+    --breadcrumbbgcolor: #212422;
+}
+
+body
+{
+    background-color: var(--bgcolor);
+}
+
+p
+{
+    background-color: var(--pbgcolor);
+    color: var(--pcolor);
+    line-height: 1.5em;
+}
+
+/*
+*   HEADER
+*/
+
+header
+{
+    background-image: url("../assets/img/header-bg.jpg");
+    background-color: var(--bgcolor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 22%;
+}
+
+header h1, header h2
+{
+    color: var(--titlecolor);
+}
+
+/*
+*   ZONA SICURA HOME PAGE
+*/
+
+div#safe-zone-content
+{
+    position: absolute;
+    top: 0;
+    left: 30%;
+    max-width: 139px; /*Valutare*/
+    clip-path: polygon(100% 0, 100% 100%, 50% 92%, 0 100%, 0 25%, 0% 0%);
+    background-color: var(--ribboncolor);
+}
+
+div#safe-zone-content p
+{
+    padding-bottom: 1.5em;
+    padding-left: 3%;
+    padding-right: 2%;
+    background-color: transparent;
+}
+
+/*
+*   LINK AIUTO ACCESSIBILITA'
+*/
+
+nav#list-help a
+{
+    position: absolute;
+    text-indent: -999em;
+}
+
+nav#list-help a:focus
+{
+    position: absolute;
+    text-indent: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+/*
+*   MENU' DI NAVIGAZIONE
+*/
+
+nav#menu
+{
+    text-align: center;
+    margin: 2%;
+}
+
+nav#menu li
+{
+    display: inline;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: var(--navulcolor);
+}
+
+nav#menu a:link
+{
+    text-decoration: none;
+    color: var(--menulinkcolor);
+}
+
+nav#menu a:visited
+{
+    color: var(--menuvisitedlinkcolor);
+}
+
+nav#menu li#current-page
+{
+    background-image: url("../assets/img/ph--chef-hat-thin.svg");
+    background-size: 37%;
+    background-repeat: no-repeat;
+    padding-left: 4%;
+}
+
+/*
+* BREADCRUMB
+*/
+
+nav#breadcrumb
+{
+    display: inline;
+    background-color: var(--breadcrumbbgcolor);
+    border-radius: 10px;
+}
+
+nav#breadcrumb p
+{
+    display: inline;
+    background-color: transparent;
+    padding: 1%;
+}
+
+/*
+*   HOME PAGE
+*/
+
+p#presentation-text
+{
+    margin-top: 2em;
+    text-align: center;
+    padding: 2%;
+}
+
+

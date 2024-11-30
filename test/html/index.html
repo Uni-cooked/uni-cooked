@@ -9,11 +9,11 @@
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
         <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
         <meta name="author" content="Uni cooked">
-        <!-- NOTE: I suppose we should change this stinky ass -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
-        <!-- TODO: add media query for mobile -->
-        <link rel="stylesheet" href="../css/mini.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Importo fogli di stile-->
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
@@ -23,78 +23,34 @@
                     <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
                     <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                 </ul>
-
             </nav>
 
-            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
-            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
-
-            <aside>
-                <!-- TODO: show either nickname or links -->
-                <p>{Nickname}</p>
-                <a href="./signin.html">Entra</a>
-                <a href="./signup.html">Registrati</a>
-            </aside>
+            <h1 class="hide">UNI <span lang="en">COOKED</span></h1>
+            <h2 lang="en">DON'T LET UNI COOK YOU</h2>
         </header>
-
-        <nav id="breadcrumb">
-            <p>Stai studiano in: <span lang="en">Home</span></p>
-        </nav>
 
         <nav id="menu">
             <ul>
                 <!-- TODO: add href to the respective pages -->
-                <li><span lang="en">Home</span></li>
+                <li id="current-page"><span lang="en">Home</span></li>
                 <li><a href="">Ricette</a></li>
-                <li><a href="">Tirocinante</a></li>
+                <li><a href="">Contatti</a></li>
+                <li><a href="">Area Personale</a></li>
             </ul>
         </nav>
 
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+
         <main id="#content">
-            <nav>
-                <form action="">
-                    <fieldset>
-                        <label for="search-bar" class="hide">Barra di ricerca</label>
-                        <input type="text" id="search-bar" placeholder="Cerca una ricetta...">
-                        
-                        <p>Filtra per</p>
-                        <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
-                        <div class="values">
-                            <span id="range1">1</span>
-                            <span> &dash; </span>
-                            <span id="range2">30</span>
-                        </div>
-                        <div class="container">
-                            <div class="slider-track"></div>
-                            <label for="slider-1">Valutazione minima</label>
-                            <input type="range" min="1" max="30" value="18" id="slider-1" oninput="slideOne()">
-                            <label for="slider-2">Valutazione massima</label>
-                            <input type="range" min="1" max="30" value="30" id="slider-2" oninput="slideTwo()">
-                        </div>
-                        <label for="studtype">Tipo di studente</label>
-                        <select id="studtype">
-                            <option value="" hidden>Scegli</option>
-                            <option value="fuorisede">Fuori sede</option>
-                            <option value="pendolare">Pendolare</option>
-                            <option value="insede">In sede</option>
-                            <option value="dad">In DAD</option>
-                            <option value="tirocinante">Tirocinante</option>
-                        </select>
-                        <label for="price">Costo</label>
-                        <input type="range" min="1" max="20">
-                        <label for="dishtype">Tipologia piatto</label>
-                        <select id="dishtype">
-                            <option value="" hidden>Scegli</option>
-                            <option value="pp">Primo piatto</option>
-                            <option value="sp">Secondo piatto</option>
-                        </select>
-
-                        <button type="submit">Cerca</button>
-                    </fieldset>
-                </form>
-            </nav>
-
-            <p>
+            <div id="safe-zone-content">
+                <p>
+                    Sei studente e cerchi ricette facili per un pranzo veloce? Oppure una cena per festeggiare?
+                    Qui su Uni <span lang="en">cooked</span> questo e altro potrai trovare!
+                </p>
+            </div>
+            <p id="presentation-text">
                 Se sei stanco di trovarti all'ultimo a preparare di fretta qualcosa da mettere sotto i denti, o se ogni tanto vuoi mangiare qualcosa di diverso ma
                 non sai mai cosa fare, o al contrario avresti tempo per cucinarti un <strong>piatto</strong> degno di nota ma diciamocelo, non siamo mica la nonna,
                 eccoti nel posto giusto! <strong>Uni cooked</strong> offre un assortimento variegato di <strong>ricette</strong> adatte ad ogni esigenza. Naviga
