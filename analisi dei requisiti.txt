@@ -26,6 +26,7 @@ sezioni ricette:
 * alta classe - in sede (buona qualità, non troppo laboriosi)
 * lusso - DAD (lunghe preparazioni)
 * take away - stagisti (street food a Padova, altre città?)
+* numero pagina (più pagine se ci sono molte ricette)
 
 ricetta:
 * nome
