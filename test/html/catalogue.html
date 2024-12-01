@@ -1,0 +1,118 @@
+<!-- NOTE: every key between '{}' will be replaced via php -->
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Uni cooked</title>
+        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
+        <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
+        <meta name="author" content="Uni cooked">
+        <!-- NOTE: I suppose we should change this stinky ass -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+        <!-- TODO: add media query for mobile -->
+        <link rel="stylesheet" href="../css/mini.css">
+    </head>
+    <body>
+        <header>
+            <nav id="list-help" aria-label="aiuti alla navigazione">
+                <ul>
+                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                </ul>
+
+            </nav>
+
+            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
+            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+
+            <aside>
+                <!-- TODO: show either nickname or links -->
+                <p>{Nickname}</p>
+                <a href="./signin.html">Entra</a>
+                <a href="./signup.html">Registrati</a>
+            </aside>
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Catalogo</p>
+        </nav>
+
+        <nav id="menu">
+            <ul>
+                <!-- TODO: add href to the respective pages -->
+                <li><span lang="en">Home</span></li>
+                <li><a href="">Ricette</a></li>
+            </ul>
+        </nav>
+
+        <main id="#content">
+            <nav>
+                <form action="">
+                    <fieldset>
+                        <label for="search-bar" class="hide">Barra di ricerca</label>
+                        <input type="text" id="search-bar" placeholder="Cerca una ricetta...">
+                        
+                        <p>Filtra per</p>
+                        <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
+                        <div class="values">
+                            <span id="range1">1</span>
+                            <span> &dash; </span>
+                            <span id="range2">30</span>
+                        </div>
+                        <div class="container">
+                            <div class="slider-track"></div>
+                            <label for="slider-1">Valutazione minima</label>
+                            <input type="range" min="1" max="30" value="18" id="slider-1" oninput="slideOne()">
+                            <label for="slider-2">Valutazione massima</label>
+                            <input type="range" min="1" max="30" value="30" id="slider-2" oninput="slideTwo()">
+                        </div>
+                        <label for="studtype">Tipo di studente</label>
+                        <select id="studtype">
+                            <option value="" hidden>Scegli</option>
+                            <option value="fuorisede">Fuori sede</option>
+                            <option value="pendolare">Pendolare</option>
+                            <option value="insede">In sede</option>
+                            <option value="dad">In DAD</option>
+                            <option value="tirocinante">Tirocinante</option>
+                        </select>
+                        <label for="price">Costo</label>
+                        <input type="range" min="1" max="20">
+                        <label for="dishtype">Tipologia piatto</label>
+                        <select id="dishtype">
+                            <option value="" hidden>Scegli</option>
+                            <option value="pp">Primo piatto</option>
+                            <option value="sp">Secondo piatto</option>
+                        </select>
+
+                        <button type="submit">Cerca</button>
+                    </fieldset>
+                </form>
+            </nav>
+z
+            <dl>
+                <dt>{Nome ricetta}</dt>
+                <dd>
+                    <img src="" alt="">
+                    <img src="" alt="valutato con"><p>{Voto} / 30</p>
+                    <img src="" alt="adatto per"><p>{Categoria}</p>
+                    <img src="" alt="piatto"><p>{Tipo piatto}</p>
+                    <img src="" alt="duarata di"><p>{Durata} <abbr title="minuti">Min</abbr></p>
+                </dd>
+            </dl>
+        </main>
+
+        <footer>
+            <p>Aiutaci a espandere il nostro bagaglio culinario</p>
+            <a href="./insert-recipe.html">Aggiungi una nuova ricetta</a>
+
+            <img src="../img/valid-xhtml10.png" alt="HTML valido">
+            <img src="../img/vcss-blue.gif" alt="CSS valido">
+        </footer>
+
+        <script src="" async defer></script>
+    </body>
+</html>
