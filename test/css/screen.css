@@ -6,6 +6,7 @@
 {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 :root
@@ -13,12 +14,15 @@
     --bgcolor: #080808;
     --pbgcolor: #212422;
     --pcolor: #FFF;
-    --ribboncolor: #c97f0e;
-    --titlecolor: #c97f0e;
-    --navulcolor: #c97f0e;
-    --menulinkcolor: #000;
-    --menuvisitedlinkcolor: #580801;
-    --breadcrumbbgcolor: #212422;
+    --ribboncolor: #d88913;
+    --ribbontextcolor: #000;
+    --titlecolor: #FFF;
+    --navulcolor: #52250e;
+    --menubgcolor: #d88913ad;
+    --menulinkcolor: #FFF;
+    --menuvisitedlinkcolor: #eca240;
+    --currentpagelinkcolor: #FFF;
+    --breadcrumbbgcolor: #5c2b13;
 }
 
 body
@@ -43,12 +47,24 @@ header
     background-color: var(--bgcolor);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 22%;
+    padding-top: 25%;
+    margin-bottom: 2%;
 }
 
 header h1, header h2
 {
     color: var(--titlecolor);
+}
+
+h1#header-title
+{
+    font-size: 5em;
+}
+
+h2#header-subtitle
+{
+    font-style: italic;
+    font-weight: lighter;
 }
 
 /*
@@ -59,18 +75,18 @@ div#safe-zone-content
 {
     position: absolute;
     top: 0;
-    left: 30%;
-    max-width: 139px; /*Valutare*/
-    clip-path: polygon(100% 0, 100% 100%, 50% 92%, 0 100%, 0 25%, 0% 0%);
+    left: 70%;
+    padding: 2%;
+    max-width: 170px; /*Valutare*/
+    clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 25%, 0% 0%);
     background-color: var(--ribboncolor);
 }
 
 div#safe-zone-content p
 {
     padding-bottom: 1.5em;
-    padding-left: 3%;
-    padding-right: 2%;
     background-color: transparent;
+    color: var(--ribbontextcolor);
 }
 
 /*
@@ -97,17 +113,32 @@ nav#list-help a:focus
 
 nav#menu
 {
+    background-color: var(--menubgcolor);
+    padding: 2%;
+}
+
+nav#menu ul
+{
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin: 2%;
+    list-style-type: none;
 }
 
 nav#menu li
 {
-    display: inline;
-    margin: 2%;
+    width: 10%;
     padding: 1%;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin-left: 2%;
     background-color: var(--navulcolor);
+}
+
+img#profile-picture
+{
+    vertical-align: text-bottom;
+    padding-left: 3%;
+    width: 1.5em;
 }
 
 nav#menu a:link
@@ -123,10 +154,7 @@ nav#menu a:visited
 
 nav#menu li#current-page
 {
-    background-image: url("../assets/img/ph--chef-hat-thin.svg");
-    background-size: 37%;
-    background-repeat: no-repeat;
-    padding-left: 4%;
+    color: var(--currentpagelinkcolor)
 }
 
 /*
@@ -135,16 +163,20 @@ nav#menu li#current-page
 
 nav#breadcrumb
 {
-    display: inline;
-    background-color: var(--breadcrumbbgcolor);
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav#breadcrumb p
 {
     display: inline;
-    background-color: transparent;
-    padding: 1%;
+    background-color: var(--breadcrumbbgcolor);
+    border-radius: 100px;
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 /*
