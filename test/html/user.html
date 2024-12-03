@@ -9,58 +9,139 @@
         <meta name="description" content="Il tuo profilo Uni cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
         <meta name="keyword" content="Uni cooked,utente,profilo,ricette,preferite">
         <meta name="author" content="Uni cooked">
-        <!-- NOTE: I suppose we should change this stinky ass -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
-        <!-- TODO: add media query for mobile -->
-        <link rel="stylesheet" href="../css/mini.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
-            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+            <nav class="list-help" aria-label="aiuti alla navigazione">
+                <ul>
+                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                </ul>
+            </nav>
+
+            <h1 class="hide">UNI <span lang="en">COOKED</span></h1>
+            <h2>NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+
+            <nav id="menu">
+                <ul>
+                    <!-- TODO: add href to the respective pages -->
+                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                    <li><a href="./catalogue.html">RICETTE</a></li>
+                    <li><a href="">CONTATTI</a></li>
+                </ul>
+            </nav>
         </header>
 
         <nav id="breadcrumb">
             <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Profilo utente</p>
         </nav>
 
-        <nav id="menu">
-            <ul>
-                <!-- TODO: add href to the respective pages -->
-                <li><a href=""><span lang="en">Home</span></a></li>
-                <li><a href="">Fuori sede</a></li>
-                <li><a href="">Pendolari</a></li>
-                <li><a href="">In sede</a></li>
-                <li><a href="">DAD</a></li>
-                <li><a href="">Tirocinanti</a></li>
-            </ul>
-        </nav>
-
         <main>
-            <h2>{Nickname}</h2>
-            <img src="" alt="Immagine del profilo di {Nickname}">
-            <p>Studente: {Tipo studente}</p>
-            <p>{Bio}</p>
-            <form action="">
-                <label for="profile">Profilo pubblico</label>
-                <input type="checkbox" id="profile">
-            </form>
+            <h2 id="title-nick">CIAO, {Nickname}</h2>
+            <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
+            <p id="stud-cat">{TIPO STUDENTE}</p>
+            <p id="login-date">{Data iscrizione}</p>
 
-            <h3>Ricette preferite</h3>
-            <dl>
-                <!-- NOTE: dt and dd should be used as favourite recipe template -->
-                <dt>{Nome ricetta}</dt>
-                <dd>
-                    <img src="" alt="">
-                    <p>{Descrizione}</p>
-                    <p>Voto: {X} / 30</p>
-                    <p>{00} minuti</p>
-                    <p>{0} €</p>
-                    <button>Vai alla ricetta</button>
-                    <button>Rimuovi la ricetta dai preferiti</button>
-                </dd>
-            </dl>
+            <h3 class="par-title">BIOGRAFIA</h3>
+            <p>{Bio}</p>
+
+            <h3 class="par-title">RICETTE PREFERITE</h3>
+            <ul id="fav-recipe-list">
+                <li>
+                    <img src="../assets/img/header-bg.jpg" alt="">
+                    <aside>
+                        <h4>{NOME RICETTA}</h4>
+                        <div class="fav-recipe-info">
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></p>
+                        </div>
+                        <section>
+                            <button>Vai alla ricetta</button>
+                            <button>Rimuovi la ricetta dai preferiti</button>
+                        </section>
+                    </aside>
+                </li>
+
+                <li>
+                    <img src="../assets/img/header-bg.jpg" alt="">
+                    <aside>
+                        <h4>{NOME RICETTA}</h4>
+                        <div class="fav-recipe-info">
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></p>
+                        </div>
+                        <section>
+                            <button>Vai alla ricetta</button>
+                            <button>Rimuovi la ricetta dai preferiti</button>
+                        </section>
+                    </aside>
+                </li>
+
+                <li>
+                    <img src="../assets/img/header-bg.jpg" alt="">
+                    <aside>
+                        <h4>{NOME RICETTA}</h4>
+                        <div class="fav-recipe-info">
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></p>
+                        </div>
+                        <section>
+                            <button>Vai alla ricetta</button>
+                            <button>Rimuovi la ricetta dai preferiti</button>
+                        </section>
+                    </aside>
+                </li>
+
+                <li>
+                    <img src="../assets/img/header-bg.jpg" alt="">
+                    <aside>
+                        <h4>{NOME RICETTA}</h4>
+                        <div class="fav-recipe-info">
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></p>
+                        </div>
+                        <section>
+                            <button>Vai alla ricetta</button>
+                            <button>Rimuovi la ricetta dai preferiti</button>
+                        </section>
+                    </aside>
+                </li>
+
+                <li>
+                    <img src="../assets/img/header-bg.jpg" alt="">
+                    <aside>
+                        <h4>{NOME RICETTA}</h4>
+                        <div class="fav-recipe-info">
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</p>
+                            <p><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></p>
+                        </div>
+                        <section>
+                            <button>Vai alla ricetta</button>
+                            <button>Rimuovi la ricetta dai preferiti</button>
+                        </section>
+                    </aside>
+                </li>
+            </ul>
+
+            <h3 class="par-title">ZONA PERICOLOSA</h3>
+            <button class="danger-btn">CANCELLA RICETTE</button>
+            <button class="danger-btn">CANCELLA ACCOUNT</button>
         </main>
 
         <footer>

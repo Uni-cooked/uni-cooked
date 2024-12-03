@@ -85,7 +85,7 @@ CREATE TABLE Utilizzo(
 );
 
 CREATE TABLE Preparazione(
-    numero POSITIVE_SMALLINT,
+    numero TINYINT,
     ricetta VARCHAR(50),
     descrizione VARCHAR(500) NOT NULL,
     PRIMARY KEY (numero, ricetta),
@@ -97,8 +97,8 @@ CREATE TABLE Valutazione(
     visitatore VARCHAR(100),
     commento VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
-    voto POSITIVE_SMALLINT NOT NULL,
-    CHECK(voto<=30),
+    voto TINYINT NOT NULL,
+    CHECK(voto>0 AND voto<=30),
     PRIMARY KEY (ricetta, visitatore),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (visitatore) REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE

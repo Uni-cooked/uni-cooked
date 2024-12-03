@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bg-color: #080808;
+    --p-bg-color: #212422;
+    --p-color: #FFF;
+    --title-color: #dd982f;
+    --nav-bg-color: #c97f0e;
+    --menu-link-color: #000;
+    --menu-visited-link-color: #580801;
+    --breadcrumb-bg-color: #212422;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-size: 100%;
+    /* TODO: font family */
+    line-height: 1.5;   /* NOTE: weird behaviour with em */
+}
+
+/*
+==================================================
+HEADER
+==================================================
+*/
+
+header {
+    background-image: url("../assets/img/header-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--bg-color);   /* in case the bg image is not loaded */
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+header h1, header h2 {
+    color: var(--title-color);
+    padding-left: 3vw;
+}
+
+header h1 {
+    font-size: 4.5em;
+    line-height: 1;
+}
+
+header h2 {
+    padding-bottom: 0.5em;
+}
+
+.list-help ul {
+    list-style-type: none;
+}
+
+.nav-help {
+    position: absolute;
+    text-indent: -999em;
+}
+
+.nav-help:focus {
+    position: static;
+    text-indent: 0;
+    background-color: white;
+}
+
+/*
+==================================================
+MENU
+==================================================
+*/
+
+#menu {
+    list-style-type: none;
+    background-color: var(--nav-bg-color);   /* opacity is stoned */
+    text-align: center;
+}
+
+#menu li {
+    display: inline;
+}
+
+/*
+==================================================
+CONTENT
+==================================================
+*/
+
+main {
+    padding: 0 2vw;
+}
+
+main h1, main h2, main h3, main h4 {
+    color: var(--title-color);
+}
+
+p {
+    background-color: var(--p-bg-color);
+    color: var(--p-color);
+    padding: 1vh 1vw;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+#title-nick {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#profile-img {
+    display: block;
+    margin: 1.5vh auto;
+    width: 8vw;
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+#stud-cat, #login-date {
+    background-color: unset;
+    text-align: center;
+    margin: 0;
+    padding: 0.3vh 0;
+}
+
+#login-date {
+    color: var(--title-color);
+}
+
+.par-title {
+    padding-top: 4vh;
+    padding-bottom: 0.8vh;
+    font-size: 1.5em;
+}
+
+#fav-recipe-list {
+    background-color: rgb(66, 38, 22);
+    list-style-type: none;
+    padding: 1px 6vw;
+    /* NOTE: create a class for the border */
+    border: 4px solid rgb(34, 19, 9);
+    border-radius: 5px;
+}
+
+#fav-recipe-list > li {
+    background-color: var(--p-bg-color);
+    height: 10em;
+    display: flex;
+    margin: 3vh;
+    padding: 3px;
+}
+
+#fav-recipe-list > li > img {
+    height: 100%;
+}
+
+#fav-recipe-list aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5em 1em;
+}
+
+#fav-recipe-list aside h4 {
+    font-size: 1.5em;
+}
+
+#fav-recipe-list .fav-recipe-info {
+    display: flex;
+    justify-content: center;
+}
+
+#fav-recipe-list .fav-recipe-info p img {
+    height: 1.5em;
+    vertical-align: middle;
+    padding: 0.3em;
+}
+
+#fav-recipe-list aside section {
+    text-align: right;
+}
+
+.danger-btn {
+    display: block;
+    width: 100%;
+    height: 3em;
+    background-color: red;
+    color: var(--p-color);
+    font-weight: bold;
+    margin-bottom: 1vh;
+    /* NOTE: create a class for the border */
+    border: 4px solid rgb(177, 0, 0);
+    border-radius: 5px;
+}
+
+/*
+==================================================
+FOOTER
+==================================================
+*/
+
+footer {
+    margin-top: 3vh;
+    padding: 1vh 0;
+    text-align: center;
+    background-color: var(--p-bg-color);
+}
+
+footer img {
+    padding: 0 1vw;
+    vertical-align: middle;
+}
