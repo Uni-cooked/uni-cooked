@@ -49,6 +49,8 @@ header
     background-repeat: no-repeat;
     padding-top: 25%;
     margin-bottom: 2%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 header h1, header h2
@@ -123,13 +125,18 @@ nav#menu ul
 {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
     list-style-type: none;
 }
 
 nav#menu li
 {
-    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10em;
     padding: 1%;
     border-radius: 5px;
     margin-left: 2%;
@@ -140,7 +147,7 @@ img#profile-picture
 {
     vertical-align: text-bottom;
     padding-left: 3%;
-    width: 1.5em;
+    width: 1em;
 }
 
 nav#menu a:link
@@ -195,35 +202,23 @@ p#presentation-text
 
 dl
 {
-    /*display: flex;*/
-    position: relative;
+    margin:auto;
     max-width: 1200px;
 }
 
 dt#fuorisede
 {
     position: absolute;
-    top: 0;
-    left: 2em;
-    clip-path: polygon(0 0, 65% 0%, 45% 100%, 0% 100%);
     background-color: blue;
-    display: inline-block;
-    width: 70%;
+    width: 39.5%;
     height: 15em;
     z-index: 1;
 }
 
 dd#fuorisede-text
 {
-    position: relative;
-    top: 2em;
-    right: 2em;
-    text-align: right;
-    padding-right: 1%;
-    padding-left: 20%;
-    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
     background-color: green;
-    margin-left: 30%;
+    margin-left: 45%;
     width: 50%;
     height: 15em;
 }
