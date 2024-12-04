@@ -21,6 +21,11 @@ body {
     line-height: 1.5;   /* NOTE: weird behaviour with em */
 }
 
+.hide {
+    position: absolute;
+    text-indent: -999em;
+}
+
 /*
 ==================================================
 HEADER
@@ -108,6 +113,39 @@ abbr {
     text-decoration: none;
 }
 
+fieldset {
+    border: 0;
+}
+
+.search-el {
+    background-color: var(--bg-color);
+    color: var(--p-color);
+    border: 4px solid var(--title-color);
+    border-radius: 999px;
+    padding: 0.5em 0.9em;
+}
+
+.search-el option {
+    background-color: var(--bg-color);
+}
+
+/* NOTE: a cross pops up when typing */
+#search-bar {
+    margin: 2vh 0;
+    /* padding: 0.5em 0.9em; */
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--p-color);
+    font-weight: bold;
+    background: url("../assets/img/def-profile.png") no-repeat;
+    background-size: contain;
+    background-position: right 0.9em center;
+}
+
+#max-price-filter {
+    color: var(--title-color);
+}
+
 #title-nick {
     text-align: center;
     font-size: 2.5em;
@@ -141,10 +179,20 @@ abbr {
 #fav-recipe-list {
     background-color: rgb(66, 38, 22);
     list-style-type: none;
-    padding: 1px 6vw;
+    padding: 0 6vw;
     /* NOTE: create a class for the border */
     border: 4px solid rgb(34, 19, 9);
     border-radius: 5px;
+    min-height: 12em;
+    /* NOTE: not so buty but at least the section for the empty list is centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#empty-fav-recipe-list {
+    color: var(--p-color);
+    text-align: center;
 }
 
 #fav-recipe-list > li {
@@ -159,7 +207,7 @@ abbr {
     height: 100%;
 }
 
-#fav-recipe-list aside {
+#fav-recipe-list > li > section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -167,22 +215,26 @@ abbr {
     padding: 0.5em 1em;
 }
 
-#fav-recipe-list aside h4 {
+#fav-recipe-list section h4 {
     font-size: 1.5em;
 }
 
 #fav-recipe-list .fav-recipe-info {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
-#fav-recipe-list .fav-recipe-info p img {
+#fav-recipe-list .fav-recipe-info ul li {
+    display: inline;
+    padding: 0 1%;
+}
+
+#fav-recipe-list .fav-recipe-info li img {
     height: 1.5em;
     vertical-align: middle;
     padding: 0.3em;
 }
 
-#fav-recipe-list aside section {
+#fav-recipe-list section a {
     text-align: right;
 }
 
