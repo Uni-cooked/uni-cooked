@@ -12,17 +12,25 @@
 :root
 {
     --bgcolor: #080808;
-    --pbgcolor: #212422;
-    --pcolor: #FFF;
+    --textbgcolor: #646464;
+    --textcolor: #FFF;
     --ribboncolor: #d88913;
     --ribbontextcolor: #000;
     --titlecolor: #FFF;
-    --navulcolor: #52250e;
+    --navulcolor: #5c2b13;
     --menubgcolor: #d88913ad;
     --menulinkcolor: #FFF;
-    --menuvisitedlinkcolor: #eca240;
+    --menuvisitedlinkcolor: #d88913;
     --currentpagelinkcolor: #FFF;
     --breadcrumbbgcolor: #5c2b13;
+    --rolelisttitlebgcolor: #FFF;
+    --rolelisttitlecolor: #000;
+    --rolelisttextbgcolor: #080808;
+    --rolelisttextcolor: #FFF;
+    --shadowcolor: #d88913;
+    --ahelpbgcolor: #080808;
+    --acolor: #5F9950;
+    --avisitedcolor: #B06F0C;
 }
 
 body
@@ -32,9 +40,19 @@ body
 
 p
 {
-    background-color: var(--pbgcolor);
-    color: var(--pcolor);
+    background-color: var(--textbgcolor);
+    color: var(--textcolor);
     line-height: 1.5em;
+}
+
+a
+{
+    color: var(--acolor);
+}
+
+a:visited
+{
+    color: var(--avisitedcolor);
 }
 
 /*
@@ -106,7 +124,7 @@ nav#list-help a:focus
     position: absolute;
     text-indent: 0;
     z-index: 1;
-    background-color: white;
+    background-color: var(--ahelpbgcolor);
 }
 
 /*
@@ -115,6 +133,7 @@ nav#list-help a:focus
 
 nav#menu
 {
+    color: white;
     background-color: var(--menubgcolor);
     padding: 2%;
     border-bottom-left-radius: 30px;
@@ -202,24 +221,99 @@ p#presentation-text
 
 dl
 {
-    margin:auto;
-    max-width: 1200px;
+    margin: 5% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+a.recipe-link
+{
+    display: block;
+}
+
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad
+{
+    display: flex;
+    flex-basis: 42%;
+
+    align-items: flex-end;
+    justify-content:end;
+    background-color: var(--rolelisttitlebgcolor);
+    color: var(--rolelisttitlecolor);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-size: 2em;
+    font-weight: bolder;
+
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px 5px var(--shadowcolor);
+}
+
+dt#fuorisede, dt#sede
+{
+    margin-right: 5%
+}
+
+dt#pendolare, dt#dad
+{
+    margin-left: 5%;
+}
+
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
+{
+    margin-top: 5%;
+    margin-bottom: 15%;
+    margin-left: 3%;
+    margin-top: 10%;
+    /*background-color: var(--rolelisttextbgcolor);*/
+    color: var(--rolelisttextcolor);
+    flex: 50%;
+    text-align: center;
 }
 
 dt#fuorisede
 {
-    position: absolute;
-    background-color: blue;
-    width: 39.5%;
-    height: 15em;
-    z-index: 1;
+    order: 1;
+    background-image: url("../assets/img/fuorisede-image.jpg");
 }
 
 dd#fuorisede-text
 {
-    background-color: green;
-    margin-left: 45%;
-    width: 50%;
-    height: 15em;
+    order: 2;
 }
 
+dt#pendolare
+{
+    order: 4;
+    background-image: url("../assets/img/pendolare-image.jpg");
+}
+
+dd#pendolare-text
+{
+    order: 3;
+}
+
+dt#sede
+{
+    order: 5;
+    background-image: url("../assets/img/sede-image.jpg");
+}
+
+dd#sede-text
+{
+    order: 6;
+}
+
+dt#dad
+{
+    order: 8;
+    background-image: url("../assets/img/dad-image.jpg");
+}
+
+dd#dad-text
+{
+    order: 7;
+}
