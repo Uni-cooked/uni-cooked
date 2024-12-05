@@ -1,0 +1,309 @@
+/*
+*   GLOBALI
+*/
+
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root
+{
+    --bgcolor: #080808;
+    --pbgcolor: #212422;
+    --pcolor: #FFF;
+    --ribboncolor: #d88913;
+    --ribbontextcolor: #000;
+    --titlecolor: #FFF;
+    --navulcolor: #52250e;
+    --menubgcolor: #d88913ad;
+    --menulinkcolor: #FFF;
+    --menuvisitedlinkcolor: #eca240;
+    --currentpagelinkcolor: #FFF;
+    --breadcrumbbgcolor: #5c2b13;
+}
+
+body
+{
+    background-color: var(--bgcolor);
+}
+
+p
+{
+    background-color: var(--pbgcolor);
+    color: var(--pcolor);
+    line-height: 1.5em;
+}
+
+/*
+*   HEADER
+*/
+
+header
+{
+    background-image: url("../assets/img/header-bg.jpg");
+    background-color: var(--bgcolor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 25%;
+    margin-bottom: 2%;
+}
+
+header h1, header h2
+{
+    color: var(--titlecolor);
+}
+
+h1#header-title
+{
+    font-size: 5em;
+}
+
+h2#header-subtitle
+{
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/*
+*   ZONA SICURA HOME PAGE
+*/
+
+div#safe-zone-content
+{
+    position: absolute;
+    top: 0;
+    left: 70%;
+    padding: 2%;
+    max-width: 170px; /*Valutare*/
+    clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 25%, 0% 0%);
+    background-color: var(--ribboncolor);
+}
+
+div#safe-zone-content p
+{
+    padding-bottom: 1.5em;
+    background-color: transparent;
+    color: var(--ribbontextcolor);
+}
+
+/*
+*   LINK AIUTO ACCESSIBILITA'
+*/
+
+nav#list-help a
+{
+    position: absolute;
+    text-indent: -999em;
+}
+
+nav#list-help a:focus
+{
+    position: absolute;
+    text-indent: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+/*
+*   MENU' DI NAVIGAZIONE
+*/
+
+nav#menu
+{
+    background-color: var(--menubgcolor);
+    padding: 2%;
+}
+
+nav#menu ul
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    list-style-type: none;
+}
+
+nav#menu li
+{
+    width: 10%;
+    padding: 1%;
+    border-radius: 5px;
+    margin-left: 2%;
+    background-color: var(--navulcolor);
+}
+
+img#profile-picture
+{
+    vertical-align: text-bottom;
+    padding-left: 3%;
+    width: 1.5em;
+}
+
+nav#menu a:link
+{
+    text-decoration: none;
+    color: var(--menulinkcolor);
+}
+
+nav#menu a:visited
+{
+    color: var(--menuvisitedlinkcolor);
+}
+
+nav#menu li#current-page
+{
+    color: var(--currentpagelinkcolor)
+}
+
+/*
+* BREADCRUMB
+*/
+
+nav#breadcrumb
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav#breadcrumb p
+{
+    display: inline;
+    background-color: var(--breadcrumbbgcolor);
+    border-radius: 100px;
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/*
+*   HOME PAGE
+*/
+
+p#presentation-text
+{
+    margin-top: 2em;
+    text-align: center;
+    padding: 2%;
+}
+
+/*
+*  INFO RICETTA TEMPLATE
+*/
+main#mainInfoRicetta{
+    text-align: center;
+    color: var(--menubgcolor);
+    margin-top: 1em;
+    line-height: 1.5em;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+h2
+{
+    padding-bottom: 2%;
+}
+
+img
+{
+    text-indent: -9999px; 
+}
+
+div#ImgAndInfo
+{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: inherit;
+}
+
+div#ImgRicetta
+{
+  align-content: flex-end;
+  padding-left: 33%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#InfoRicetta
+{
+    margin-top: 1em;
+    align-items: center;
+    color: var(--pcolor);
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 33%;
+}
+
+div#InfoRicetta ul
+{
+    justify-content: center;
+    text-align: center;
+    list-style-type: none;
+}
+
+div#InfoRicetta li
+{
+    width: 10%;
+    padding: 1%;
+}
+
+div#Ingredienti 
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    background-color: rgb(25, 24, 24);   
+}
+
+div#Ingredienti ul
+{
+    list-style-type: disc;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10%;
+    list-style-position: inside;
+    color:white;
+}
+
+
+div#Preparazione 
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(25, 24, 24);   
+}
+
+div#Preparazione li
+{
+    text-align: left;
+    color:rgb(137, 138, 139);
+}
+
+div#SezioneCommenti 
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: rgb(25, 24, 24);
+}  
