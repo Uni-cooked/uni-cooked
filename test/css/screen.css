@@ -225,26 +225,26 @@ dl
     margin: 5% 10%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 a.recipe-link
 {
     display: block;
+    padding-top: 2%;
 }
 
 dt#fuorisede, dt#sede, dt#pendolare, dt#dad
 {
-    display: flex;
-    flex-basis: 42%;
+    display: inline;
+    width: 30%;
+    height: 40vh;
 
-    align-items: flex-end;
-    justify-content:end;
     background-color: var(--rolelisttitlebgcolor);
     color: var(--rolelisttitlecolor);
 
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 
     font-size: 2em;
     font-weight: bolder;
@@ -253,25 +253,23 @@ dt#fuorisede, dt#sede, dt#pendolare, dt#dad
     box-shadow: 0 0 25px 5px var(--shadowcolor);
 }
 
-dt#fuorisede, dt#sede
+dd#fuorisede-text, dd#sede-text
 {
-    margin-right: 5%
+    padding-left: 5%;
 }
 
-dt#pendolare, dt#dad
+dd#pendolare-text, dd#dad-text
 {
-    margin-left: 5%;
+    padding-right: 5%;
 }
 
 dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
 {
-    margin-top: 5%;
-    margin-bottom: 15%;
-    margin-left: 3%;
-    margin-top: 10%;
     /*background-color: var(--rolelisttextbgcolor);*/
     color: var(--rolelisttextcolor);
-    flex: 50%;
+    width: 65%;
+    height: 40vh;
+    padding-top: 5%;
     text-align: center;
 }
 
@@ -290,6 +288,7 @@ dt#pendolare
 {
     order: 4;
     background-image: url("../assets/img/pendolare-image.jpg");
+    background-position: 0%;
 }
 
 dd#pendolare-text
