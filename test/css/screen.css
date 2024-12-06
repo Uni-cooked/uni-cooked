@@ -31,6 +31,7 @@
     --ahelpbgcolor: #080808;
     --acolor: #5F9950;
     --avisitedcolor: #B06F0C;
+    --presentationdiv: #5c2b13;
 }
 
 body
@@ -249,7 +250,7 @@ dt#fuorisede, dt#sede, dt#pendolare, dt#dad
     font-weight: bolder;
 
     border-radius: 20px;
-    box-shadow: 20px 20px 20px 5px var(--shadowcolor);
+    box-shadow: 0 0 25px 5px var(--shadowcolor);
 }
 
 dt#fuorisede, dt#sede
@@ -316,4 +317,33 @@ dt#dad
 dd#dad-text
 {
     order: 7;
+}
+
+div#presentation-div
+{
+   display: inline-block;
+   margin: 5% 10%;
+   background-color: red;
+   padding: 5%;
+}
+
+div#presentation-div img
+{
+    float: left;
+    width: 50%;
+}
+
+div#presentation-div h2, div#presentation-div p
+{
+    float:right;
+    width: 40%;
+}
+
+/*
+*   FOOTER
+*/
+
+footer
+{
+    clear:both;
 }
