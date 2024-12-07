@@ -15,6 +15,7 @@ html, body {
 }
 
 body {
+    background-color: red;
     /* NOTE: set the text size at 1.5 (see header h1) */
     /* line-height: 1.5em;
     font-size: 100%; */
