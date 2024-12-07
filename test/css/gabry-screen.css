@@ -286,7 +286,7 @@ div#Preparazione
     padding-bottom: 1%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: rgb(25, 24, 24);   
+    background-color: rgb(25, 24, 24);
 }
 
 div#Preparazione li
@@ -295,7 +295,7 @@ div#Preparazione li
     color:rgb(137, 138, 139);
 }
 
-div#SezioneCommenti 
+div#CommentoUtente 
 {
     padding-left: 10%;
     padding-right: 10%;
@@ -304,6 +304,86 @@ div#SezioneCommenti
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     background-color: rgb(25, 24, 24);
 }  
+
+textarea#Commento
+{
+    width: 75%;
+    background-color: rgb(25, 24, 24);
+    color:white;
+    resize: none;
+
+}
+
+div#SezioneValutazione
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+div#SezioneValutazione p
+{
+    background-color: rgb(25, 24, 24);
+}
+
+p#VotoUtente
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 0%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+p#VotoMax
+{
+    margin-right: 5%;
+    margin-left: 0%;
+    margin-top: 2%;
+}
+
+div#SezioneValutazione input
+{
+    background-color: var(--menubgcolor);
+    padding: 2%;
+}
+
+div#SceltaUtenteCommento
+{
+    background-color: var(--bgcolor);
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    padding-right: 9.5%;
+}
+
+input#Commenta
+{
+    background-color: var(--menubgcolor);
+    color: black;
+    border: 0.5%;
+    margin: 0.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 0.5em;
+}
+
+input#Cancella
+{
+    background-color: rgb(25, 24, 24);
+    color: white;
+    border: 0.5%;
+    margin: 0.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 0.5em;
+}
