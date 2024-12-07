@@ -78,8 +78,26 @@
                 <li>Passaggio3</li>
             </ol>
         </div>
-        <div id="SezioneCommenti">
-            <h3>COMMENTI</h3>
+        <h3>COMMENTI</h3>
+        <div id="CommentoUtente">
+            <img alt="ImmagineUtente" id="ImgUtente" src="" />
+            <label for="commento"></label>
+            <textarea name="commento" id="Commento" maxlength="1000" placeholder="Lascia un commento"></textarea>
+            <div id="SezioneValutazione">
+                <input type="button" id="AlzaVoto" value="+"/>
+                <p id="VotoUtente">18</p><p id="VotoMax">/30</p>
+                <input type="button" id="AlzaVoto" value="-"/>
+            </div>
         </div>
-</body>
+        <div id="SceltaUtenteCommento">
+            <input type="submit" id="Cancella" name="Cancella" value="Cancella" />
+            <input type="submit" id="Commenta" name="Commenta" value="Commenta" />
+        </div>
+        <div id="CommentiAltriUtenti">
+            <ul>
+                <li>Commento1</li>
+                <li>Commento2</li>
+            </ul>
+        </div>
+    </body>
 </html>
