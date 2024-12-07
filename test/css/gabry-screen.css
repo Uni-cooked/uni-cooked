@@ -241,17 +241,17 @@ div#InfoRicetta
     padding-right: 33%;
 }
 
-div#InfoRicetta ul
+div#InfoRicetta dl
 {
     justify-content: center;
     text-align: center;
     list-style-type: none;
 }
 
-div#InfoRicetta li
+div#InfoRicetta dt
 {
-    width: 10%;
-    padding: 1%;
+    position: relative;
+    padding-bottom: 10%
 }
 
 div#Ingredienti 
