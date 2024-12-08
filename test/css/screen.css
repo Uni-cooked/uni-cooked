@@ -11,6 +11,9 @@
 
 :root
 {
+    /*CAMBIARE COLORE LINK NON VISITATI NEL MENU (ALTRIMENTI NO DIFFERENZA 
+    TRA ATTUALE E NON VISITATO
+    */
     /*
     *   DEFAULT COLORS
     */
@@ -206,7 +209,17 @@ nav#menu a:visited
 
 nav#menu li#current-page
 {
+    position: relative;
     color: var(--currentpagelinkcolor)
+}
+
+nav#menu li#current-page::before
+{
+    content: url("../assets/img/ph--chef-hat-fill.svg");
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -55%;
 }
 
 /*
@@ -278,6 +291,11 @@ dt#fuorisede, dt#sede, dt#pendolare, dt#dad
     box-shadow: 0 0 25px 5px var(--shadowcolor);
 }
 
+dt#fuorisede, dt#sede
+{
+    text-align: right;
+}
+
 dd#fuorisede-text, dd#sede-text
 {
     padding-left: 5%;
@@ -294,8 +312,13 @@ dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
     color: var(--rolelisttextcolor);
     width: 65%;
     height: 40vh;
-    padding-top: 5%;
+
     text-align: center;
+}
+
+dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad
+{
+    margin-top: 15%;
 }
 
 dt#fuorisede
