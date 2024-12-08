@@ -11,27 +11,50 @@
 
 :root
 {
+    /*
+    *   DEFAULT COLORS
+    */
     --bgcolor: #080808;
-    --textbgcolor: #646464;
-    --textcolor: #FFF;
+    --textbgcolor: #d88913;
+    --textcolor: #000;
+    --acolor: #5F9950;
+    --avisitedcolor: #B06F0C;
+    /*
+    *   HEADER ZONE
+    */
     --ribboncolor: #d88913;
     --ribbontextcolor: #000;
     --titlecolor: #FFF;
+    --ahelpbgcolor: #080808;
+    /*
+    *   NAV ZONE
+    */
     --navulcolor: #5c2b13;
     --menubgcolor: #d88913ad;
     --menulinkcolor: #FFF;
     --menuvisitedlinkcolor: #d88913;
     --currentpagelinkcolor: #FFF;
+    /*
+    * BREADCRUMB
+    */
     --breadcrumbbgcolor: #5c2b13;
+    --breadcrumbtxtcolor: #FFF;
+    /*
+    * MAIN PAGE WEBSITE PRESENTATION SECTION
+    */
     --rolelisttitlebgcolor: #FFF;
     --rolelisttitlecolor: #000;
     --rolelisttextbgcolor: #080808;
     --rolelisttextcolor: #FFF;
     --shadowcolor: #d88913;
-    --ahelpbgcolor: #080808;
-    --acolor: #5F9950;
-    --avisitedcolor: #B06F0C;
-    --presentationdiv: #5c2b13;
+    /*
+    *   MAIN PAGE TEAM PRESENTATION SECTION
+    */
+    --presentationdivbgcolor: #5c2b13;
+    /*
+    *   FOOTER
+    */
+    --footerbgcolor: #d88913;
 }
 
 body
@@ -201,6 +224,7 @@ nav#breadcrumb p
 {
     display: inline;
     background-color: var(--breadcrumbbgcolor);
+    color: var(--breadcrumbtxtcolor);
     border-radius: 100px;
     padding-top: 0.3%;
     padding-bottom: 0.3%;
@@ -214,6 +238,7 @@ nav#breadcrumb p
 
 p#presentation-text
 {
+    color: var(--presentationtextcolor);
     margin-top: 2em;
     margin-bottom: 2em;
     text-align: center;
@@ -320,22 +345,42 @@ dd#dad-text
 
 div#presentation-div
 {
-   display: inline-block;
+   /*color:white; FALSO POSITIVO*/
+   display: grid;
+   grid-template-areas: 'b h2'
+                        'b a';
    margin: 5% 10%;
-   background-color: red;
-   padding: 5%;
+   background-color: var(--presentationdivbgcolor);
+   padding: 1%;
+   border-radius: 5px;
 }
 
 div#presentation-div img
 {
-    float: left;
-    width: 50%;
+    grid-area: b;
+    width: 95%;
+    border-radius: 5px;
 }
 
 div#presentation-div h2, div#presentation-div p
 {
-    float:right;
-    width: 40%;
+    /*color: black; FALSO POSITIVO*/
+    text-align: center;
+}
+
+div#presentation-div h2
+{
+    grid-area: h2;
+    background-color: var(--textbgcolor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#presentation-div p
+{
+    grid-area: a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /*
@@ -344,5 +389,31 @@ div#presentation-div h2, div#presentation-div p
 
 footer
 {
+    background-color: var(--footerbgcolor);
     clear:both;
+    text-align: center;
+}
+
+footer p
+{
+    display: inline;
+}
+
+footer.valid
+{
+    vertical-align: middle;
+}
+
+footer a
+{
+    background-color: var(--ahelpbgcolor);
+    position: absolute;
+    text-indent: -999em;
+}
+
+footer a:focus
+{
+    background-color: var(--ahelpbgcolor);
+    position: absolute;
+    text-indent: 0;
 }
