@@ -1,48 +1,76 @@
-<!-- NOTE: every key between '{}' will be replaced via php -->
-
 <!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Accesso - Uni cooked</title>
-        <meta name="description" content="Pagina di accesso al sito Uni cooked.">
-        <meta name="keyword" content="Uni cooked,accesso">
+        <title>Uni cooked</title>
+        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
+        <meta name="keyword" content="Uni-cooked,ricette,cucina,piatti,universitari,fuorisede,pendolare,in sede,dad">
         <meta name="author" content="Uni cooked">
-        <!-- NOTE: I suppose we should change this stinky ass -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/jay-in-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/jay-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/jay-big.css" media="screen and (min-width: 1200px)">
+</head>
+<body>
+    <header>
+        <div class="bg"></div>
+        <div class="content">
+            <nav id="list-help" aria-label="aiuti alla navigazione">
+                <ul>
+                    <li><a href="#content">Salta al contenuto</a></li>
+                    <li><a href="#menu">Salta al menu di navigazione</a></li>
+                    <li><a href="#breadcrumb">Salta a dove ti trovi</a></li>
+                </ul>
+            </nav>
+            <h1 lang="en">UNI-COOKED</h1>
+            <h2>NON LASCIARE CHE SIA L`UNI A CUCINARE TE</h2>
+            <nav id="menu">
+                <ul>
+                    <li id="current-page"><span lang="en">HOME</span></li>
+                    <li><a href="">I PIATTI</a></li>
+                    <li><a href="">CONTATTI</a></li>
+                    <li id="account-btn"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                </ul>
+            </nav>
+        </div>
 
-        <!-- TODO: add media query for mobile -->
-        <link rel="stylesheet" href="../css/mini.css">
-    </head>
-    <body>
-        <header>
-            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
-            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
-        </header>
+    </header>
+    
+    <nav id="breadcrumb">
+        <p>Ti trovi in: <span lang="en">Home</span></p>
+    </nav>
 
-        <nav id="breadcrumb">
-            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Sign in</p>
-        </nav>
-
-        <main>
-            <h1>Sign in</h1>
-            <form action="">
+    <main id="content">
+        <aside id="sign-box">
+            <h2>ACCEDI</h2>
+            <form action="" method="post">
                 <fieldset>
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email">
-                    <label for="pwd">Password</label>
-                    <input type="password" id="pwd">
-                    <button type="submit">Accedi</button>
+                    <label id="name-in" class="form-label">
+                        Inserisci il nome utente
+                        <input type="text" name="nome" id="student-name">
+                    </label>
+                    <label id="psw-in" class="form-label">
+                        Inserisci la password
+                        <input type="password" name="psw" id="student-psw">
+                    </label>
+                    <div id="buttons">
+                        <button id="confirm" type="submit">CONFIRM</button>
+                    </div>
                 </fieldset>
             </form>
-        </main>
+            <div id="">
+            </div>
+        </aside>
+    </main>
 
-        <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido">
-            <img src="../img/vcss-blue.gif" alt="CSS valido">
-        </footer>
-
-        <script src="" async defer></script>
-    </body>
+    <footer>
+        <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+        <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+        <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
+        <a href="#top">Torna su</a>
+    </footer>
+    
+</body>
 </html>
