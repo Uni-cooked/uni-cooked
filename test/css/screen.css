@@ -32,8 +32,7 @@
     /*
     *   NAV ZONE
     */
-    --navulcolor: #5c2b13;
-    --menubgcolor: #d88913ad;
+    --menubgcolor: #5c2b13;
     --menulinkcolor: #FFF;
     --menuvisitedlinkcolor: #d88913;
     --currentpagelinkcolor: #FFF;
@@ -87,20 +86,22 @@ a:visited
 */
 
 header
-{
+{   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url("../assets/img/header-bg.jpg");
     background-color: var(--bgcolor);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 25%;
+    height: 100vh;
     margin-bottom: 2%;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
 }
 
 header h1, header h2
 {
     color: var(--titlecolor);
+    align-self: center;
 }
 
 h1#header-title
@@ -118,22 +119,14 @@ h2#header-subtitle
 *   ZONA SICURA HOME PAGE
 */
 
-div#safe-zone-content
-{
-    position: absolute;
-    top: 0;
-    left: 70%;
-    padding: 2%;
-    max-width: 170px; /*Valutare*/
-    clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 25%, 0% 0%);
-    background-color: var(--ribboncolor);
-}
 
-div#safe-zone-content p
+p#safe-zone-content
 {
-    padding-bottom: 1.5em;
-    background-color: transparent;
-    color: var(--ribbontextcolor);
+    width: 100vw;
+    padding: 1em;
+    position: absolute;
+    top: 90%;
+    text-align: center;
 }
 
 /*
@@ -160,33 +153,31 @@ nav#list-help a:focus
 
 nav#menu
 {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
     color: white;
     background-color: var(--menubgcolor);
-    padding: 2%;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 40px;
+    margin-top: 2%;
 }
 
 nav#menu ul
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     list-style-type: none;
+    align-items: center;
+    height: 3em;
 }
 
 nav#menu li
 {
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
     width: 10em;
-    padding: 1%;
     border-radius: 5px;
-    margin-left: 2%;
-    background-color: var(--navulcolor);
 }
 
 img#profile-picture
@@ -207,10 +198,9 @@ nav#menu a:visited
     color: var(--menuvisitedlinkcolor);
 }
 
-nav#menu li#current-page
+/*nav#menu li#current-page
 {
     position: relative;
-    color: var(--currentpagelinkcolor)
 }
 
 nav#menu li#current-page::before
@@ -220,7 +210,7 @@ nav#menu li#current-page::before
     position: absolute;
     left: 0;
     top: -55%;
-}
+}*/
 
 /*
 * BREADCRUMB

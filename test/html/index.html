@@ -16,6 +16,15 @@
         <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
+        <nav id="menu">
+            <ul>
+                <!-- TODO: add href to the respective pages -->
+                <li id="current-page"><span lang="en">HOME</span></li>
+                <li><a href="">I PIATTI</a></li>
+                <li><a href="">CONTATTI</a></li>
+                <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+            </ul>
+        </nav>
         <header>
             <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
@@ -27,15 +36,6 @@
 
             <h1 id="header-title">UNI-<span lang="en">COOKED</span></h1>
             <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
-            <nav id="menu">
-                <ul>
-                    <!-- TODO: add href to the respective pages -->
-                    <li id="current-page"><span lang="en">HOME</span></li>
-                    <li><a href="">I PIATTI</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-                </ul>
-            </nav>
         </header>
 
         <nav id="breadcrumb">
@@ -43,12 +43,10 @@
         </nav>
 
         <main id="content">
-            <div id="safe-zone-content">
-                <p>
-                    Sei studente e cerchi ricette facili per un pranzo veloce? Oppure una cena per festeggiare?
-                    Qui su Uni <span lang="en">cooked</span> questo e altro potrai trovare!
-                </p>
-            </div>
+            <p id="safe-zone-content">
+                Sei studente e cerchi ricette facili per un pranzo veloce? Oppure una cena per festeggiare?
+                Qui su Uni <span lang="en">cooked</span> questo e altro potrai trovare!
+            </p>
             <p id="presentation-text">
                 Se sei stanco di trovarti all'ultimo a preparare di fretta qualcosa da mettere sotto i denti, o se ogni tanto vuoi mangiare qualcosa di diverso ma
                 non sai mai cosa fare, o al contrario avresti tempo per cucinarti un <strong>piatto</strong> degno di nota ma diciamocelo, non siamo mica la nonna,
