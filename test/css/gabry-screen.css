@@ -11,18 +11,52 @@
 
 :root
 {
+    /*CAMBIARE COLORE LINK NON VISITATI NEL MENU (ALTRIMENTI NO DIFFERENZA 
+    TRA ATTUALE E NON VISITATO
+    */
+    /*
+    *   DEFAULT COLORS
+    */
     --bgcolor: #080808;
-    --pbgcolor: #212422;
-    --pcolor: #FFF;
+    --textbgcolor: #d88913;
+    --textcolor: #000;
+    --acolor: #5F9950;
+    --avisitedcolor: #B06F0C;
+    /*
+    *   HEADER ZONE
+    */
     --ribboncolor: #d88913;
     --ribbontextcolor: #000;
     --titlecolor: #FFF;
-    --navulcolor: #52250e;
-    --menubgcolor: #d88913ad;
+    --ahelpbgcolor: #080808;
+    /*
+    *   NAV ZONE
+    */
+    --menubgcolor: #5c2b13;
     --menulinkcolor: #FFF;
-    --menuvisitedlinkcolor: #eca240;
+    --menuvisitedlinkcolor: #d88913;
     --currentpagelinkcolor: #FFF;
+    /*
+    * BREADCRUMB
+    */
     --breadcrumbbgcolor: #5c2b13;
+    --breadcrumbtxtcolor: #FFF;
+    /*
+    * MAIN PAGE WEBSITE PRESENTATION SECTION
+    */
+    --rolelisttitlebgcolor: #FFF;
+    --rolelisttitlecolor: #000;
+    --rolelisttextbgcolor: #080808;
+    --rolelisttextcolor: #FFF;
+    --shadowcolor: #d88913;
+    /*
+    *   MAIN PAGE TEAM PRESENTATION SECTION
+    */
+    --presentationdivbgcolor: #5c2b13;
+    /*
+    *   FOOTER
+    */
+    --footerbgcolor: #d88913;
 }
 
 body
@@ -32,9 +66,19 @@ body
 
 p
 {
-    background-color: var(--pbgcolor);
-    color: var(--pcolor);
+    background-color: var(--textbgcolor);
+    color: var(--textcolor);
     line-height: 1.5em;
+}
+
+a
+{
+    color: var(--acolor);
+}
+
+a:visited
+{
+    color: var(--avisitedcolor);
 }
 
 /*
@@ -42,18 +86,22 @@ p
 */
 
 header
-{
+{   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url("../assets/img/header-bg.jpg");
     background-color: var(--bgcolor);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 25%;
+    height: 100vh;
     margin-bottom: 2%;
 }
 
 header h1, header h2
 {
     color: var(--titlecolor);
+    align-self: center;
 }
 
 h1#header-title
@@ -71,22 +119,14 @@ h2#header-subtitle
 *   ZONA SICURA HOME PAGE
 */
 
-div#safe-zone-content
-{
-    position: absolute;
-    top: 0;
-    left: 70%;
-    padding: 2%;
-    max-width: 170px; /*Valutare*/
-    clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 25%, 0% 0%);
-    background-color: var(--ribboncolor);
-}
 
-div#safe-zone-content p
+p#safe-zone-content
 {
-    padding-bottom: 1.5em;
-    background-color: transparent;
-    color: var(--ribbontextcolor);
+    width: 100vw;
+    padding: 1em;
+    position: absolute;
+    top: 90%;
+    text-align: center;
 }
 
 /*
@@ -104,7 +144,7 @@ nav#list-help a:focus
     position: absolute;
     text-indent: 0;
     z-index: 1;
-    background-color: white;
+    background-color: var(--ahelpbgcolor);
 }
 
 /*
@@ -113,32 +153,38 @@ nav#list-help a:focus
 
 nav#menu
 {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
     background-color: var(--menubgcolor);
-    padding: 2%;
+    border-radius: 40px;
+    margin-top: 2%;
 }
 
 nav#menu ul
 {
     display: flex;
-    justify-content: center;
-    text-align: center;
     list-style-type: none;
+    align-items: center;
+    height: 3em;
 }
 
 nav#menu li
 {
-    width: 10%;
-    padding: 1%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 10em;
     border-radius: 5px;
-    margin-left: 2%;
-    background-color: var(--navulcolor);
 }
 
 img#profile-picture
 {
     vertical-align: text-bottom;
     padding-left: 3%;
-    width: 1.5em;
+    width: 1em;
 }
 
 nav#menu a:link
@@ -152,10 +198,19 @@ nav#menu a:visited
     color: var(--menuvisitedlinkcolor);
 }
 
-nav#menu li#current-page
+/*nav#menu li#current-page
 {
-    color: var(--currentpagelinkcolor)
+    position: relative;
 }
+
+nav#menu li#current-page::before
+{
+    content: url("../assets/img/ph--chef-hat-fill.svg");
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -55%;
+}*/
 
 /*
 * BREADCRUMB
@@ -172,6 +227,7 @@ nav#breadcrumb p
 {
     display: inline;
     background-color: var(--breadcrumbbgcolor);
+    color: var(--breadcrumbtxtcolor);
     border-radius: 100px;
     padding-top: 0.3%;
     padding-bottom: 0.3%;
@@ -185,18 +241,202 @@ nav#breadcrumb p
 
 p#presentation-text
 {
+    color: var(--presentationtextcolor);
     margin-top: 2em;
+    margin-bottom: 2em;
     text-align: center;
     padding: 2%;
+}
+
+dl
+{
+    margin: 5% 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a.recipe-link
+{
+    display: block;
+    padding-top: 2%;
+}
+
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad
+{
+    display: inline;
+    width: 30%;
+    height: 40vh;
+
+    background-color: var(--rolelisttitlebgcolor);
+    color: var(--rolelisttitlecolor);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-size: 2em;
+    font-weight: bolder;
+
+    border-radius: 20px;
+    box-shadow: 0 0 25px 5px var(--shadowcolor);
+}
+
+dt#fuorisede, dt#sede
+{
+    text-align: right;
+}
+
+dd#fuorisede-text, dd#sede-text
+{
+    padding-left: 5%;
+}
+
+dd#pendolare-text, dd#dad-text
+{
+    padding-right: 5%;
+}
+
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
+{
+    /*background-color: var(--rolelisttextbgcolor);*/
+    color: var(--rolelisttextcolor);
+    width: 65%;
+    height: 40vh;
+
+    text-align: center;
+}
+
+dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad
+{
+    margin-top: 15%;
+}
+
+dt#fuorisede
+{
+    order: 1;
+    background-image: url("../assets/img/fuorisede-image.jpg");
+}
+
+dd#fuorisede-text
+{
+    order: 2;
+}
+
+dt#pendolare
+{
+    order: 4;
+    background-image: url("../assets/img/pendolare-image.jpg");
+    background-position: 0%;
+}
+
+dd#pendolare-text
+{
+    order: 3;
+}
+
+dt#sede
+{
+    order: 5;
+    background-image: url("../assets/img/sede-image.jpg");
+}
+
+dd#sede-text
+{
+    order: 6;
+}
+
+dt#dad
+{
+    order: 8;
+    background-image: url("../assets/img/dad-image.jpg");
+}
+
+dd#dad-text
+{
+    order: 7;
+}
+
+div#presentation-div
+{
+   /*color:white; FALSO POSITIVO*/
+   display: grid;
+   grid-template-areas: 'b h2'
+                        'b a';
+   margin: 5% 10%;
+   background-color: var(--presentationdivbgcolor);
+   padding: 1%;
+   border-radius: 5px;
+}
+
+div#presentation-div img
+{
+    grid-area: b;
+    width: 95%;
+    border-radius: 5px;
+}
+
+div#presentation-div h2, div#presentation-div p
+{
+    /*color: black; FALSO POSITIVO*/
+    text-align: center;
+}
+
+div#presentation-div h2
+{
+    grid-area: h2;
+    background-color: var(--textbgcolor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#presentation-div p
+{
+    grid-area: a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*
+*   FOOTER
+*/
+
+footer
+{
+    background-color: var(--footerbgcolor);
+    clear:both;
+    text-align: center;
+}
+
+footer p
+{
+    display: inline;
+}
+
+footer.valid
+{
+    vertical-align: middle;
+}
+
+footer a
+{
+    background-color: var(--ahelpbgcolor);
+    position: absolute;
+    text-indent: -999em;
+}
+
+footer a:focus
+{
+    background-color: var(--ahelpbgcolor);
+    position: absolute;
+    text-indent: 0;
 }
 
 /*
 *  INFO RICETTA TEMPLATE
 */
-main#mainInfoRicetta{
+main{
     text-align: center;
-    color: var(--menubgcolor);
-    margin-top: 1em;
+    color: var(--textbgcolor);
     line-height: 1.5em;
     padding-bottom: 2%;
     padding-top: 2%;
@@ -212,49 +452,51 @@ img
     text-indent: -9999px; 
 }
 
-div#ImgAndInfo
-{
-    display: flex;
-    list-style-type: none;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: inherit;
+p{
+    color: white;
 }
 
-div#ImgRicetta
+div#ImgInfoRicetta
 {
-  align-content: flex-end;
-  padding-left: 33%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div#InfoRicetta
-{
-    margin-top: 1em;
-    align-items: center;
-    color: var(--pcolor);
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 33%;
-}
-
-div#InfoRicetta dl
-{
+    display: grid;
+    grid-template-columns: 2;
+    grid-row: 1;
     justify-content: center;
+}
+
+img#LocandinaRicetta
+{
+  grid-column-end: 1;
+  justify-content: center;
+}
+
+dl#InfoRicetta
+{
+    margin-top: 0;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     list-style-type: none;
+    color: white;
 }
 
-div#InfoRicetta dt
+dl#InfoRicetta dt
 {
-    position: relative;
     padding-bottom: 10%
 }
 
-div#Ingredienti 
+.Sezione{
+    margin-top: 0%;
+}
+
+.Sottotitolo
+{
+    margin-top: 2%;
+    margin-bottom: 0%;
+}
+
+.Sezione,.Sottotitolo
 {
     padding-left: 10%;
     padding-right: 10%;
@@ -262,12 +504,11 @@ div#Ingredienti
     padding-bottom: 1%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 2%;
-    margin-top: 2%;
     background-color: rgb(25, 24, 24);   
 }
 
-div#Ingredienti ul
+
+ul#IngredientiRicetta
 {
     list-style-type: disc;
     display: grid;
@@ -277,86 +518,126 @@ div#Ingredienti ul
     color:white;
 }
 
-
-div#Preparazione 
+ol#PreparazioneRicetta li
 {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: rgb(25, 24, 24);
+    text-align: left;
+    color:rgb(137, 138, 139);
+    
 }
 
-div#Preparazione li
+ol#PreparazioneRicetta
+{
+    display: flex;
+    flex-direction: column;
+}
+
+ol#PreparazioneRicetta li
 {
     text-align: left;
     color:rgb(137, 138, 139);
 }
 
-div#CommentoUtente 
+h3#Commento
 {
+    background-color: var(--bgcolor);
+}
+
+section#CommentoUtente 
+{
+    display: grid;
+    grid-column: 7;
+    grid-row: 5;
+    column-gap: 2%;
+    row-gap: 10%;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 2%;
+    margin-top: 0%;
     margin-bottom: 1%;
     background-color: rgb(25, 24, 24);
 }  
 
+img#ImgUtente
+{
+    background-color: var(--bgcolor);
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 6;
+    justify-content: center;
+    border-radius: 50%;
+}
+
 textarea#Commento
 {
-    width: 75%;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 5;
     background-color: rgb(25, 24, 24);
     color:white;
     resize: none;
-
 }
 
-div#SezioneValutazione
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.VotoUtente
+{  
     justify-content: center;
     margin-top: 2%;
 }
 
-div#SezioneValutazione p
+.VotoUtente p
 {
     background-color: rgb(25, 24, 24);
 }
 
-p#VotoUtente
+input#AbbassaVoto
 {
+    grid-column-start: 3;
+    background-color: var(--menuvisitedlinkcolor);
+}
+
+input#AlzaVoto
+{
+    grid-column-start: 6;
+    background-color: var(--menuvisitedlinkcolor);
+    row-gap-left: 0%;
+}
+
+p#ValutazioneUtente
+{
+    grid-column-start: 4;
     font-weight: bold;
     font-size: 1.5em;
     margin-right: 0%;
     margin-left: 5%;
     margin-top: 1%;
+    background-color: rgb(25, 24, 24);
+    text-align: right;
 }
 
 p#VotoMax
 {
+    grid-column-start: 5;
     margin-right: 5%;
     margin-left: 0%;
     margin-top: 2%;
+    background-color: rgb(25, 24, 24);
+    text-align: left;
 }
 
-div#SezioneValutazione input
+.VotoUtente input
 {
     background-color: var(--menubgcolor);
     padding: 2%;
 }
 
-div#SceltaUtenteCommento
+.SceltaUtente
 {
     background-color: var(--bgcolor);
     display: flex;
+    flex-direction: row;
     align-items: right;
     justify-content: right;
     padding-right: 9.5%;
@@ -364,10 +645,13 @@ div#SceltaUtenteCommento
 
 input#Commenta
 {
-    background-color: var(--menubgcolor);
-    color: black;
+    color: black;    
+    background-color: var(--textbgcolor);
+    grid-row-start: 5;
+    grid-column-start: 7;
     border: 0.5%;
     margin: 0.5%;
+    margin-bottom: 2%;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 1%;
@@ -379,8 +663,11 @@ input#Cancella
 {
     background-color: rgb(25, 24, 24);
     color: white;
+    grid-row-start: 5;
+    grid-column-start: 6;
     border: 0.5%;
     margin: 0.5%;
+    margin-bottom: 2%;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 1%;
