@@ -17,8 +17,8 @@
 body {
     background-color: var(--bg-color);
     font-size: 100%;
-    /* TODO: font family */
-    line-height: 1.5;   /* NOTE: weird behaviour with em */
+    font-family: "Inter", sans-serif;
+    line-height: 1.5em;
 }
 
 .hide {
@@ -170,49 +170,71 @@ CATALOGUE PAGE
     background-position: right 0.9em center;
 }
 
-#recipe-grid {
+ul#recipe-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 3em 0;
-}
-
-/* NOTE: it may be better with float: left */
-#recipe-grid .recipe {
-    height: 14em;
-    width: 25em;
-    background-color: var(--p-bg-color);
-    border-radius: 5px;
-    margin: 1em 0.5em;
-    padding: 1em;
-    color: var(--title-color);
-}
-
-#recipe-grid .recipe dt {
-    text-align: center;
-    font-size: 1.6em;
-    padding-bottom: 0.3em;
-}
-
-#recipe-grid .recipe dd {
-    margin: auto 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-#recipe-grid .recipe dd > img {
-    width: 14em;
-}
-
-#recipe-grid .recipe dd > ul {
     list-style-type: none;
 }
 
-#recipe-grid .recipe dd > ul img {
-    width: 2em;
+ul#recipe-grid > li {
+    margin-bottom: 4em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+/* NOTE: it may be better with float: left */
+ul#recipe-grid .recipe {
+    width: 25em;
+    background-color: var(--p-bg-color);
+    border-radius: 5px;
+    padding: 0.5em;
+    color: var(--title-color);
+}
+
+ul#recipe-grid .recipe .crop-img-recipe {
+    width: 100%;
+    height: 10em;
+    overflow: hidden;
+}
+
+ul#recipe-grid .recipe .crop-img-recipe > img {
+    width: 100%;
+    margin-top: -25%;
+}
+
+ul#recipe-grid .recipe h3 {
+    font-size: 1.6em;
+    padding: 0.6em 0;
+}
+
+ul#recipe-grid .recipe ul.recipe-info {
+    list-style-type: none;
+    padding: 0.5em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+ul#recipe-grid .recipe ul.recipe-info li {
+    width: 10em;
+    padding: 0.4em 0;
+}
+
+ul#recipe-grid .recipe ul.recipe-info img {
+    height: 2em;
     vertical-align: middle;
-    padding: 0.4em 0.7em;
+    padding-right: 1em;
+}
+
+ul#recipe-grid .recipe a {
+    display: block;
+    text-align: right;
+    padding-top: 0.3em;
+    padding-right: 1em;
+    font-weight: bold;
+    
 }
 
 /*
