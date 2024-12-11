@@ -22,7 +22,6 @@
                     <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                 </ul>
             </nav>
-
             <h1 id="header-title">UNI-<span lang="en">COOKED</span></h1>
             <h2 id="header-subtitle" lang="en">DON'T LET UNI COOK YOU</h2>
             <nav id="menu">
@@ -39,65 +38,64 @@
         <nav id="breadcrumb">
             <p>Ti trovi in: I Piatti</p>
         </nav>
+
     <main id="mainInfoRicetta">
-            <h2 id="NomeRicetta">NOME_RICETTA</h2>
-            <div id="ImgAndInfo">
-                <div id="ImgRicetta">
-                    <img id="locandinaRicetta" alt="altLocandinaRicetta" src="../img/RicettaProva.jpg"/>
-                </div>
-                <div id="InfoRicetta">             
-                    <dl id="boxInformazioni">
-                        <dt><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="ValutazioneRicetta.jpg">18/30</dt>
-                        <dt><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="Studente.jpg">DAD</dt>
-                        <dt><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="TipoPiatto.jpg">Primo piatto</dt>
-                        <dt><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="TempoRicetta.jpg">5-10 minuti</dt>
-                        <dt><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="CostoRicetta.jpg">50</dt>
-                    </dl>
-                </div>
-                
-        </div>
-        <div id="Descrizione">
-            <p></p>
-        </div>
-        <div id="Ingredienti">
-            <h3>INGREDIENTI</h3>
-            <ul>
-                <li>Ingrediente1</li>
-                <li>Ingrediente2</li>
-                <li>Ingrediente3</li>
-                <li>Ingrediente4</li>
-                <li>Ingrediente5</li>
-                <li>Ingrediente6</li>
-            </ul>
-        </div>
-        <div id="Preparazione">
-            <h3>PREPARAZIONE</h3>
-            <ol>
-                <li>Passaggio1</li>
-                <li>Passaggio2</li>
-                <li>Passaggio3</li>
-            </ol>
-        </div>
-        <h3>COMMENTI</h3>
-        <div id="CommentoUtente">
-            <img alt="ImmagineUtente" id="ImgUtente" src="" />
+        <h2 id="NomeRicetta">NOME_RICETTA</h2>
+        <div id="ImgInfoRicetta">
+            <img id="LocandinaRicetta" alt="altLocandinaRicetta" src="../img/RicettaProva.jpg"/> 
+            <dl id="InfoRicetta">          
+                <dt><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/ph--exam-fill.svg" />18/30</dt>
+                <dt><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/tdesign--education-filled.svg" />DAD</dt>
+                <dt><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/ic--round-restaurant.svg" />Primo piatto</dt>
+                <dt><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/mingcute--time-fill.svg" />5-10 minuti</dt>
+                <dt><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/mingcute--pig-money-fill.svg" />50</dt>
+            </dl>  
+        </div> 
+
+        <p class="Sezione">Descrizione</p>
+
+        <h3 class="Sottotitolo">INGREDIENTI</h3>
+        <ul class ="Sezione" id="IngredientiRicetta">
+            <li>Ingrediente1</li>
+            <li>Ingrediente2</li>
+            <li>Ingrediente3</li>
+            <li>Ingrediente4</li>
+            <li>Ingrediente5</li>
+            <li>Ingrediente6</li>
+        </ul>
+
+        <h3 class="Sottotitolo">PREPARAZIONE</h3>
+        <ol class="Sezione" id="PreparazioneRicetta">
+            <li>Passaggio1</li>
+            <li>Passaggio2</li>
+            <li>Passaggio3</li>
+        </ol>
+
+        <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
+        <section id="CommentoUtente">
+            <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
+            <input type="button" class="VotoUtente" id="AbbassaVoto" value="-"/>
+            <p class="VotoUtente" id="ValutazioneUtente">18</p><p id="VotoMax">/30</p>
+            <input type="button" class="VotoUtente" id="AlzaVoto" value="+"/>
             <label for="commento"></label>
             <textarea name="commento" id="Commento" maxlength="1000" placeholder="Lascia un commento"></textarea>
-            <div id="SezioneValutazione">
-                <input type="button" id="AlzaVoto" value="+"/>
-                <p id="VotoUtente">18</p><p id="VotoMax">/30</p>
-                <input type="button" id="AlzaVoto" value="-"/>
-            </div>
-        </div>
-        <div id="SceltaUtenteCommento">
-            <input type="submit" id="Cancella" name="Cancella" value="Cancella" />
-            <input type="submit" id="Commenta" name="Commenta" value="Commenta" />
-        </div>
-        <div id="CommentiAltriUtenti">
+            <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
+            <input type="submit" class="SceltaUtente" id="Commenta" name="Commenta" value="Commenta" />
+        </section>
+
+        <section id="CommentiAltriUtenti">
             <ul>
                 <li>Commento1</li>
                 <li>Commento2</li>
             </ul>
-        </div>
+        </section>
+
+        <footer>
+            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
+            <a href="#top">Torna su</a>
+        </footer>
+
     </body>
 </html>
