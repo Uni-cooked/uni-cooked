@@ -28,7 +28,7 @@
                 <ul>
                     <!-- TODO: add href to the respective pages -->
                     <li><a href="index.html"><span lang="en">HOME</span></a></li>
-                    <li><a href="catalogue.html">I PIATTI</a></li>
+                    <li><a href="insert-recipe.html">I PIATTI</a></li>
                     <li><a href="">CONTATTI</a></li>
                     <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/qlementine-icons--user-16.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
                 </ul>
@@ -73,14 +73,20 @@
 
         <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
         <section id="CommentoUtente">
-            <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
-            <input type="button" class="VotoUtente" id="AbbassaVoto" value="-"/>
-            <p class="VotoUtente" id="ValutazioneUtente">18</p><p id="VotoMax">/30</p>
-            <input type="button" class="VotoUtente" id="AlzaVoto" value="+"/>
-            <label for="commento"></label>
-            <textarea name="commento" id="Commento" maxlength="1000" placeholder="Lascia un commento"></textarea>
-            <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
-            <input type="submit" class="SceltaUtente" id="Commenta" name="Commenta" value="Commenta" />
+            <form action="">
+                <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
+                <fieldset>
+                    <button class="voto" value="-"></button>
+                    <textarea name="Voto-utente" class="voto" placeholder="18" maxlength="2"></textarea>
+                    <label for="VotoMax" class="voto">/30</label> 
+                    <button class="voto" value="+"></button>
+                    <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000"></textarea>
+                    <div id="buttons">
+                        <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
+                        <input type="submit" class="SceltaUtente" id="Commenta" name="Commenta" value="Commenta" />
+                    </div>
+                </fieldset>
+            </form>
         </section>
 
         <section id="CommentiAltriUtenti">
