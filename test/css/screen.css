@@ -35,7 +35,8 @@
     --menubgcolor: #5c2b13;
     --menulinkcolor: #FFF;
     --menuvisitedlinkcolor: #d88913;
-    --currentpagelinkcolor: #FFF;
+    --currentpagelinkcolor: #5c2b13;
+    --currentpagebgcolor: #d88913;
     /*
     * BREADCRUMB
     */
@@ -166,6 +167,8 @@ nav#menu
 nav#menu ul
 {
     display: flex;
+    gap: 2em;
+    padding: 0 3em;
     list-style-type: none;
     align-items: center;
     height: 3em;
@@ -176,8 +179,8 @@ nav#menu li
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 10em;
     border-radius: 5px;
+    padding: 0 2em;
 }
 
 img#profile-picture
@@ -198,11 +201,13 @@ nav#menu a:visited
     color: var(--menuvisitedlinkcolor);
 }
 
-/*nav#menu li#current-page
+nav#menu li#current-page
 {
-    position: relative;
+    background-color: var(--currentpagebgcolor);
+    color: var(--currentpagelinkcolor);
+    border-radius: 10px;
 }
-
+/*
 nav#menu li#current-page::before
 {
     content: url("../assets/img/ph--chef-hat-fill.svg");
