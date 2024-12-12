@@ -382,7 +382,7 @@ div#presentation-div h2
 {
     grid-area: h2;
     background-color: var(--bg-secondary);
-    color: var(--text-color);
+    color: var(--accent);
 
     font-style: italic;
     border-top-left-radius: 5px;
