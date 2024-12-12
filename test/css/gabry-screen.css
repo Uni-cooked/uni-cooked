@@ -560,7 +560,6 @@ fieldset
 .voto
 {
     flex-direction: row;
-    float: inline-start;
     color:white;
     justify-content: center;
 }
