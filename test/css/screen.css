@@ -25,11 +25,12 @@
     *   SPECIAL CASES
     */
     --header-content-text-color: black;
+    --header-content-a-bg-color: #d6cccc;
     --menu-visited-color: #EFAE50; /*CAMBIARE*/
     --dt-bg-color: white;
     --shadowcolor: #d88913;
-    --accent-a-color: #112A46;
-    --accent-a-visited-color: #470303;
+    --accent-a-color: #4D5EFF;
+    --accent-a-visited-color: #B92222;
 }
 
 body
@@ -101,6 +102,16 @@ div#safe-zone-content
     top: 70vh;
     text-align: center;
     padding: 1.5% 0em;
+}
+
+div#safe-zone-content a
+{
+    display: block;
+    margin-top: 1em;;
+    background-color: var(--header-content-a-bg-color);
+    border-radius: 10px;
+    width: 10em;
+    padding: 0.8em;;
 }
 
 div#safe-zone-content a:link
