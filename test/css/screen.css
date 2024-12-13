@@ -6,7 +6,7 @@
 {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 :root
@@ -33,6 +33,16 @@
     --accent-a-color: #000A5F;
     --accent-a-visited-color: #4E0000;
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/Fonts/Inter-VariableFont_opsz\,wght.ttf");
+    font-weight: 300 900;
+    font-stretch: 35% 100%;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 body
 {
@@ -143,11 +153,13 @@ nav#list-help
 {
     position: absolute;
     top: 30vh;
+    left: 0;
 }
 
 nav#list-help ul
 {
-    display: inline-block;
+    display: block;
+    list-style-type: none;
     width: 100vh;
 }
 
@@ -183,7 +195,7 @@ nav#menu ul
 {
     display: flex;
     gap: 2em;
-    padding: 1% 3.3em;
+    padding: 1% 2.3em;
     list-style-type: none;
     align-items: center;
 }
