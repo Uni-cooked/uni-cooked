@@ -454,8 +454,11 @@ img
     text-indent: -999em; 
 }
 
-p, dl,li, input#Cancella, button{
+p, dl,li, input#Cancella, button, article{
     color: white;
+}
+.Sezione,.Sottotitolo, article, fieldset, textarea.voto, p{
+    background-color: rgb(25, 24, 24);   
 }
 
 div#ImgInfoRicetta
@@ -489,12 +492,11 @@ dl#InfoRicetta dt
     margin-bottom: 0%;
 }
 
-.Sezione,.Sottotitolo
+.Sezione,.Sottotitolo,article
 {
     padding: 1% 10% 1% 10%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: rgb(25, 24, 24);   
 }
 
 
@@ -530,7 +532,7 @@ section#CommentoUtente
 {
     width:100%;
     padding: 0;
-    margin: 0% 10% 1% 10%;
+    margin: 0% 10% 2% 10%;
     background-color: var(--bgcolor);
 }  
 
@@ -541,30 +543,20 @@ form
     flex-direction: row;
 }
 
-img#ImgUtente
+img#ImgUtente, img.InfoUtente
 {
-    background-color: var(--bgcolor);
     border-radius: 50%;
 }
 
 fieldset
 {
     border: none;
-    display: flex;
     flex-direction: column;
-    min-width: 70%;
-    background-color: rgb(25, 24, 24);  
+    min-width: 65%;
     justify-content: center;
 }
 
-.voto
-{
-    flex-direction: row;
-    color:white;
-    justify-content: center;
-}
-
-textarea,textarea.voto
+textarea
 {
     color: #000;
 }
@@ -574,19 +566,24 @@ textarea.voto
     max-width: 2%;
     max-height: 12%;
     resize: none;
+    color: white;
+    border: 0;
 }
 
 button.voto
 {
-    width: 10%;
+    width: 3%;
     height: 10%;
     background-color: var(--textbgcolor);
     color:#000
 }
 textarea#Commento-utente
 {
-    resize:none;
-    min-width:100%;
+    resize: none;
+    min-width: 90%;
+    min-height: 50%;
+    background-color: rgb(25, 24, 24);
+    color: white;
 }
 
 div#buttons
@@ -615,4 +612,35 @@ input#Commenta
     color: black;    
     background-color: var(--textbgcolor);
     margin-bottom: 0.55%;
+}
+
+article{
+    margin: 1% 10% 1% 10%;
+    padding: 0%;
+}
+
+article.Commento li
+{
+    list-style-type: none;
+    justify-content: start;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+li .InfoUtente
+{
+    display: inline;
+    vertical-align: middle;
+    margin-bottom: 1%;
+}
+
+li img.InfoUtente{ 
+    max-width: 5%;
+    max-height: 5%;
+}
+
+p#DataCommento
+{
+    float: right;
+    vertical-align: middle;
 }
