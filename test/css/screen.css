@@ -86,7 +86,6 @@ header
 header h1, header h2
 {
     color: var(--text-color);
-    align-self: center;
 }
 
 h1#header-title
@@ -107,7 +106,6 @@ h2#header-subtitle
 div#safe-zone-content
 {
     background-color: var(--accent);
-    width: 100%;
     padding: 1em 0;
     position: absolute;
     top: 70vh;
@@ -119,7 +117,6 @@ div#safe-zone-content a
 {
     display: block;
     margin-top: 1em;;
-    border-radius: 10px;
     width: 10em;
     padding: 0.8em;;
 }
