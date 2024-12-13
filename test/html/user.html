@@ -5,10 +5,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Profilo utente - Uni cooked</title>
-        <meta name="description" content="Il tuo profilo Uni cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
-        <meta name="keyword" content="Uni cooked,utente,profilo,ricette,preferite">
-        <meta name="author" content="Uni cooked">
+        <title>Profilo utente - Uni Cooked</title>
+        <meta name="description" content="Il tuo profilo Uni Cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
+        <meta name="keyword" content="Uni Cooked,utente,profilo,ricette,preferite">
+        <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
@@ -16,8 +16,18 @@
         <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
+        <nav id="menu">
+            <ul>
+                <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                <li><a href="yahoo.com">RICCETTE</a></li>
+                <li><a href="">CONTATTI</a></li>
+                <li id="profile-item">CIAO<img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+            </ul>
+        </nav>
+
         <header>
-            <nav class="list-help" aria-label="aiuti alla navigazione">
+            <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
                     <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
                     <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
@@ -25,79 +35,71 @@
                 </ul>
             </nav>
 
-            <h1>UNI <span lang="en">COOKED</span></h1>
-            <h2>NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
-
-            <nav id="menu">
-                <ul>
-                    <!-- TODO: add href to the respective pages -->
-                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li><a href="./catalogue.html">RICETTE</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                </ul>
-            </nav>
+            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
         </header>
 
         <nav id="breadcrumb">
-            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Profilo utente</p>
+            <p>Stai studiando in: Profilo utente</p>
         </nav>
 
         <main>
-            <h2 id="title-nick">CIAO, {Nickname}</h2>
+            <h2 id="title-nick"><span>CIAO</span> GGGaggi</h2>
             <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
-            <p id="stud-cat">{TIPO STUDENTE}</p>
-            <p id="login-date">{Data iscrizione}</p>
+            <p id="stud-cat">FUORISEDE</p>
+            <p id="login-date">30 / 1 / 1933</p>
 
-            <h3 class="par-title">BIOGRAFIA</h3>
-            <p>{Bio}</p>
+            <h3 class="user-p-title">BIOGRAFIA</h3>
+            <p class="content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium error atque, ipsa consectetur culpa consequatur ea quidem perspiciatis eligendi voluptatibus molestias, amet ad ipsum quo vero, nulla quos earum!</p>
 
-            <h3 class="par-title">RICETTE PREFERITE</h3>
+            <h3 class="user-p-title">RICETTE PREFERITE</h3>
             <ul id="fav-recipe-list">
-                <!-- <section id="empty-fav-recipe-list">
-                    Salva le ricette migliori, le potrai vedere qui
-                </section> -->
+                <!-- <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p> -->
 
                 <li>
                     <img src="../assets/img/header-bg.jpg" alt="">
-                    <section>
-                        <h4>{NOME RICETTA}</h4>
+                    <article class="fav-recipe">
+                        <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
                         <div class="fav-recipe-info">
                             <ul>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                             </ul>
                         </div>
                         <a href="">Vai alla ricetta</a>
-                    </section>
+                    </article>
                 </li>
 
                 <li>
                     <img src="../assets/img/header-bg.jpg" alt="">
-                    <section>
-                        <h4>{NOME RICETTA}</h4>
+                    <article class="fav-recipe">
+                        <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
                         <div class="fav-recipe-info">
                             <ul>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                                <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                             </ul>
                         </div>
                         <a href="">Vai alla ricetta</a>
-                    </section>
+                    </article>
                 </li>
             </ul>
 
-            <h3 class="par-title">ZONA PERICOLOSA</h3>
+            <h3 class="user-p-title">ZONA PERICOLOSA</h3>
+            <!-- TODO: work in progress -->
             <button class="danger-btn">CANCELLA RICETTE</button>
             <button class="danger-btn">CANCELLA ACCOUNT</button>
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido">
-            <img src="../img/vcss-blue.gif" alt="CSS valido">
+            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
+            <a href="#top">Torna su</a>
         </footer>
 
         <script src="" async defer></script>
