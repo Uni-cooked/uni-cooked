@@ -625,6 +625,7 @@ article.Commento li
     justify-content: start;
     text-align: left;
     line-height: 1.5em;
+    margin-left: 2%;
 }
 
 li .InfoUtente
@@ -643,4 +644,7 @@ p#DataCommento
 {
     float: right;
     vertical-align: middle;
+}
+p#VotoUtente{
+    font-weight: bold;
 }
