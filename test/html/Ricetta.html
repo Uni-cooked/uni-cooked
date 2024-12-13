@@ -76,10 +76,16 @@
             <form action="">
                 <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
                 <fieldset>
-                    <button class="voto" value="-"></button>
-                    <textarea name="Voto-utente" class="voto" placeholder="18" maxlength="2"></textarea>
-                    <label for="VotoMax" class="voto">/30</label> 
-                    <button class="voto" value="+"></button>
+                    <label for="DiminuireVoto">
+                        <button class="voto" value="-"></button>
+                    </label>
+                    <label for="Voto-utente">
+                        <textarea name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" maxlength="2"></textarea>
+                    </label>
+                    <label class="voto">/30</label> 
+                    <label for="AumentareVoto">
+                        <button class="voto" id="AumentareVoto" value="+"></button>
+                    </label>
                     <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000"></textarea>
                     <div id="buttons">
                         <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
@@ -91,8 +97,28 @@
 
         <section id="CommentiAltriUtenti">
             <ul>
-                <li>Commento1</li>
-                <li>Commento2</li>
+                <article class="Commento">
+                    <li class="CommentoUtenti">
+                        <li class="CommentoUtenti">
+                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                            <a href="" class="InfoUtente">Nome Utente</a>
+                            <p class="InfoUtente" id="DataCommento">Data</p>
+                            <p class="ValutazioneUtente">Voto</p>
+                            <p class="ValutazioneUtente">Commento</p>
+                        </li>
+                    </li>
+                </article>
+                <article class="Commento">
+                    <li class="CommentoUtenti">
+                        <li class="CommentoUtenti">
+                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                            <a href="" class="InfoUtente">Nome Utente</a>
+                            <p class="InfoUtente" id="DataCommento">Data</p>
+                            <p class="ValutazioneUtente">Voto</p>
+                            <p class="ValutazioneUtente">Commento</p>
+                        </li>
+                    </li>
+                </article>
             </ul>
         </section>
 
