@@ -28,6 +28,8 @@
     --menu-visited-color: #EFAE50; /*CAMBIARE*/
     --dt-bg-color: white;
     --shadowcolor: #d88913;
+    --accent-a-color: #112A46;
+    --accent-a-visited-color: #470303;
 }
 
 body
@@ -90,7 +92,6 @@ h2#header-subtitle
 *   ZONA SICURA HOME PAGE
 */
 
-
 div#safe-zone-content
 {
     background-color: var(--accent);
@@ -100,6 +101,16 @@ div#safe-zone-content
     top: 70vh;
     text-align: center;
     padding: 1.5% 0em;
+}
+
+div#safe-zone-content a:link
+{
+    color: var(--accent-a-color)
+}
+
+div#safe-zone-content a:visited
+{
+    color: var(--accent-a-visited-color)
 }
 
 div#safe-zone-content p
@@ -117,9 +128,16 @@ div#safe-zone-content li
 *   LINK AIUTO ACCESSIBILITA'
 */
 
-nav#list-help li
+nav#list-help
+{
+    position: absolute;
+    top: 30vh;
+}
+
+nav#list-help ul
 {
     display: inline-block;
+    width: 100vh;
 }
 
 nav#list-help a
