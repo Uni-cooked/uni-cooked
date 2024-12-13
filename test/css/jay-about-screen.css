@@ -220,7 +220,6 @@ nav#breadcrumb p
 }
 
 #recipie-request #buttons {
-    height: 20%;
     text-align: end;
     padding: .8em 0 .8em 0;
 }
@@ -294,15 +293,58 @@ footer a {
     color: var(--accent);
 }
 
-/*-------------------- SIGNUP ----------------------------*/
+@media screen and (max-width: 768px) {
+    /* body {
+        background-color: aqua;
+    } */
+
+    #recipie-request img {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 60px;
+    }
+
+    #recipie-request #buttons {
+        text-align: center;
+        padding-left: .2em;
+        padding-right: .2em;
+    }
+    #recipie-request #buttons button {
+        width:49%;
+        margin-left: 0;
+    }
+    #recipie-request #buttons #cancel {
+        float: left;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    /* body {
+        background-color: red;
+    } */
+
+    #recipie-request #buttons button {
+        width:100%;
+    }
+
+    #recipie-request #buttons #cancel {
+        float: none;
+        margin-bottom: 40px;
+    }
+    
+    #recipie-request #buttons #confirm {
+        float: none;
+    }
+
+    #admin-grid {
+        display: block;
+    }
+
+    #admin {
+        margin-bottom:80px;
+    }
+    
 
 
-
-
-
-
-
-
-
-
-/*-------------------- SIGNIN ----------------------------*/
+}

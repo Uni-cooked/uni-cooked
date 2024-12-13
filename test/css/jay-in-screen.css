@@ -170,7 +170,7 @@ nav#breadcrumb p
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--bg-secondary);
-    padding: 0 5em 0 5em;
+    padding: 1em 1em 1em 1em;
 }
 
 #student-name,#student-psw{
@@ -248,15 +248,28 @@ footer a {
     color: var(--accent);
 }
 
-/*-------------------- SIGNUP ----------------------------*/
+@media screen and (max-width: 768px) {
+    /* body {
+        background-color: aqua;
+    } */
+
+    #sign-box #confirm {
+        width:100%;
+        /* margin-top: 20px; */
+    }
 
 
+}
 
+@media screen and (max-width: 480px) {
+    /* body {
+        background-color: red;
+    } */
 
+    #student-name,#student-psw{
 
+        width: 100%;
 
+    }
 
-
-
-
-/*-------------------- SIGNIN ----------------------------*/
+}
