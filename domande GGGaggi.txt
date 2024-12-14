@@ -1,0 +1,4 @@
+- breakpoint
+- va bene il logo al posto di HOME?
+- input per voto carino? <input type=number> è bruttino
+- line-height senza unità di misura (più da farglielo notare)

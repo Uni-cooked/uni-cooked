@@ -1,303 +1,197 @@
-<!-- NOTE: every key between '{}' will be replaced via php -->
-
 <!DOCTYPE html>
 <html lang="it">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Uni cooked</title>
+        <title>Ricette - Uni cooked</title>
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
         <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <nav class="list-help" aria-label="aiuti alla navigazione">
+            <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
                     <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
                     <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
                     <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                 </ul>
             </nav>
-
-            <h1>UNI <span lang="en">COOKED</span></h1>
-            <h2>NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
-
+            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
             <nav id="menu">
                 <ul>
-                    <!-- TODO: add href to the respective pages -->
+                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
                     <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li><a href="./catalogue.html">RICETTE</a></li>
+                    <li id="current-page">RICETTE</li>
                     <li><a href="">CONTATTI</a></li>
+                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
                 </ul>
             </nav>
         </header>
 
         <nav id="breadcrumb">
-            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Ricette</p>
+            <p>Stai studiando in: Ricette</p>
         </nav>
 
         <main>
             <form action="">
-                <fieldset>
-                    <label for="search-bar" class="hide">Barra di ricerca</label>
-                    <input type="search" id="search-bar" class="search-el" placeholder="Cerca una ricetta">
-                </fieldset>
+                <label for="search-bar" class="hide">Barra di ricerca</label>
+                <input type="search" id="search-bar" class="search-el" placeholder="Cerca una ricetta">
+
                 <fieldset id="filter">
                     <legend class="hide">Filtra per</legend>
-                    <div class="filter-param">
+                    <article class="filter-param">
                         <label for="stud-cat-filter">CATEGORIA STUDENTE</label>
-                        <select id="stud-cat-filter" class="search-el">
+                        <select id="stud-cat-filter" class="search-el filter-input">
                             <option value="tutti">Tutti</option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
                             <option value="in-sede">In sede</option>
                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                         </select>
-                    </div>
-                    <div class="filter-param">
-                        <label for="max-price-filter">COSTO MASSIMO</label>
-                        <input type="range" id="max-price-filter" class="search" min="1" max="20">
-                    </div>
-                    <div class="filter-param">
-                        <label for="dish-type">PIATTO</label>
-                        <select id="dish-type" class="search-el">
+                    </article>
+                    <article class="filter-param">
+                        <label for="dish-type-filter">PIATTO</label>
+                        <select id="dish-type-filter" class="search-el filter-input">
                             <option value="tutti">Tutti</option>
-                            <option value="pp">Primo piatto</option>
-                            <option value="sp">Secondo piatto</option>
+                            <option value="pp">Primi</option>
+                            <option value="sp">Secondi</option>
                         </select>
-                    </div>
+                    </article>
                     <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
-                    <div class="filter-param">
-                        <label for="max-rate">VALUTAZIONE MASSIMA</label>
-                        <input type="range" id="max-rate" class="search" min="1" max="30">
-                    </div>
+                    <article class="filter-param">
+                        <label for="min-rate-filter">VALUTAZIONE MINIMA</label>
+                        <input type="range" id="min-rate-filter" class="filter-input" min="1" max="30" value="0">
+                    </article>
+                    <article class="filter-param">
+                        <label for="max-price-filter">COSTO MASSIMO</label>
+                        <input type="range" id="max-price-filter" class="filter-input" min="1" max="20" value="20">
+                    </article>
                 </fieldset>
+
+                <button type="submit" id="search-btn">CERCA</button>
             </form>
 
-            <ul id="recipe-grid">
+            <ul id="recipe-list">
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
-                        <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
+                        <h3>PASTA ASCIUTTA</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
                         <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
-                        <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
-                        <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
-                        <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
                 <li>
                     <article class="recipe">
-                        <div class="crop-img-recipe">
+                        <div class="recipe-img-crop">
                             <img src="../assets/img/header-bg.jpg" alt="">
                         </div>
-                        <h3>PASTA ZUCCHINE E GAMBERETTI</h3>
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                         <ul class="recipe-info">
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                            <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                            <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                            <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                            <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                         </ul>    
                         <a href="">Vai alla ricetta</a>
                     </article>
                 </li>
             </ul>
-
-            <!-- <dl id="recipe-grid">
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-                
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-
-                <div class="recipe">
-                    <dt>{NOME RICETTA}</dt>
-                    <dd>
-                        <img src="../assets/img/dish-cropped.jpg" alt="">
-                        <ul>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="valutato con">{Voto} / 30</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="categoria">{CATEGORIA}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="piatto">{TIPO PIATTO}</li>
-                            <li><img src="../assets/img/ph--chef-hat-thin.svg" alt="darata">{Durata} <abbr title="minuti">Min</abbr></li>
-                        </ul>
-                    </dd>
-                </div>
-            </dl> -->
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido">
-            <img src="../img/vcss-blue.gif" alt="CSS valido">
+            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
+            <a href="#top">Torna su</a>
         </footer>
 
         <script src="" async defer></script>

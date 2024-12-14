@@ -12,20 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
-        <nav id="menu">
-            <ul>
-                <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                <li><a href="yahoo.com">RICCETTE</a></li>
-                <li><a href="">CONTATTI</a></li>
-                <li id="profile-item">CIAO<img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-            </ul>
-        </nav>
-
         <header>
             <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
@@ -34,9 +24,18 @@
                     <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                 </ul>
             </nav>
-
             <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
             <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+            <nav id="menu">
+                <ul>
+                    <!-- TODO: add href to the respective pages -->
+                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                    <li>RICETTE</li>
+                    <li><a href="">CONTATTI</a></li>
+                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                </ul>
+            </nav>
         </header>
 
         <nav id="breadcrumb">
@@ -47,6 +46,7 @@
             <h2 id="title-nick"><span>CIAO</span> GGGaggi</h2>
             <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
             <p id="stud-cat">FUORISEDE</p>
+            <!-- NOTE: time tag is not relevant -->
             <p id="login-date">30 / 1 / 1933</p>
 
             <h3 class="user-p-title">BIOGRAFIA</h3>
@@ -57,35 +57,39 @@
                 <!-- <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p> -->
 
                 <li>
-                    <img src="../assets/img/header-bg.jpg" alt="">
-                    <article class="fav-recipe">
+                    <div class="fav-recipe-img-crop">
+                        <img src="../assets/img/header-bg.jpg" alt="">
+                    </div>
+                    <div class="fav-recipe">
                         <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
                         <div class="fav-recipe-info">
                             <ul>
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                                <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                                <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                                <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                                <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                             </ul>
                         </div>
                         <a href="">Vai alla ricetta</a>
-                    </article>
+                    </div>
                 </li>
 
                 <li>
-                    <img src="../assets/img/header-bg.jpg" alt="">
-                    <article class="fav-recipe">
+                    <div class="fav-recipe-img-crop">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
+                    </div>
+                    <div class="fav-recipe">
                         <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
                         <div class="fav-recipe-info">
                             <ul>
-                            <li><img src="../../Assets/Icons/ph--exam-fill.svg" alt="valutato con">18 / 30</li>
-                            <li><img src="../../Assets/Icons/tdesign--education-filled.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../../Assets/Icons/ic--round-restaurant.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../../Assets/Icons/mingcute--time-fill.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                                <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                                <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                                <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                                <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
                             </ul>
                         </div>
                         <a href="">Vai alla ricetta</a>
-                    </article>
+                    </div>
                 </li>
             </ul>
 
