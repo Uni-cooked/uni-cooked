@@ -1,4 +1,22 @@
+- come mettere la fascia gialla home
+- come fare categorie home
+- home e accedi si distinguono?
+- title a link letti?
+
 - breakpoint
 - va bene il logo al posto di HOME?
 - input per voto carino? <input type=number> è bruttino
 - line-height senza unità di misura (più da farglielo notare)
+
+
+
+
+MIE
+catalogo
+search bar
+menu
+link "vai alla ricetta"
+menu del profilo
+placeholder search bar chiaro
+centrare le img croppate/header (flex)
+font
