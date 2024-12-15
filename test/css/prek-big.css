@@ -1,3 +1,18 @@
-body {
-    background-color: green;
+body
+{
+    max-width: 1200px;
+    border: 3px solid black;
+    margin: auto;
+}
+
+div#safe-zone-content
+{
+    position: relative;
+    top: -20vh;
+    margin: 0;
+}
+
+main
+{
+    margin-top: -20vh;
 }

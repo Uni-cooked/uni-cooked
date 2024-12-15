@@ -181,8 +181,7 @@ nav#menu
 {
     position: absolute;
     top: 1%;
-    left: 50%;
-    transform: translate(-50%, 0);
+   
     background-color: var(--accent-secondary);
     border-radius: 40px;
     margin-top: 2%;

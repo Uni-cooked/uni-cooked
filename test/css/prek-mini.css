@@ -1,3 +1,148 @@
-body {
-    background-color: red;
+:root
+{
+    --accent-transparent: #d58a20dc;
+}
+
+/*
+*   NAV
+*/
+
+nav#menu
+{
+    display: none;
+}
+
+/*
+*   HEADER
+*/
+
+header
+{
+    align-items: normal;
+    justify-content: left;
+    margin-bottom: 10%;
+}
+
+h1#header-title, h2#header-subtitle
+{
+    position: relative;
+    top: 25vh;
+    font-weight: bolder;
+}
+
+h1#header-title
+{
+    font-size: 2.5em;
+}
+
+h2#header-subtitle
+{
+    font-size: 1em;
+}
+
+/*
+*   ZONA SICURA HOME PAGE
+*/
+
+div#safe-zone-content
+{
+    top: 50vh;
+
+    padding: 0;
+    margin: 0;
+}
+
+div#safe-zone-content p
+{
+    background-color: transparent;
+}
+
+div#safe-zone-content a
+{
+    padding: 0.3em 0;
+    border-radius: 0;
+}
+
+/*
+*   MAIN
+*/
+
+dl
+{
+    margin: 1em;
+}
+
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad
+{
+    display: block;
+    width: 100vw;
+    height: 40vh;
+    text-align: center;
+}
+
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
+{
+    padding: 0;
+    width: 100vw;
+    height: auto;
+    margin-top: 15%;
+}
+
+dt#fuorisede
+{
+    order: 1;
+}
+
+dd#fuorisede-text
+{
+    order: 2;
+}
+
+dt#pendolare
+{
+    order: 3;
+}
+
+dd#pendolare-text
+{
+    order: 4;
+}
+
+dt#sede
+{
+    order: 5;
+}
+
+dd#sede-text
+{
+    order: 6;
+}
+
+dt#dad
+{
+    order: 7;
+}
+
+dd#dad-text
+{
+    order: 8;
+}
+
+div#presentation-div
+{
+    display: block;
+    text-align: center;
+    padding: 3%;
+    margin: 1em;
+}
+
+div#presentation-div p
+{
+    padding: 1em;
+    text-align: left;
+}
+
+div#presentation-div img
+{
+    margin-bottom: 5%;
 }

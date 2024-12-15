@@ -5,7 +5,7 @@
 - il parallax e` accessibile?
 - il filter di css e` supportato? ma il div vuoto?
 - le fasce? se sono a >1200px
-- va bene il logo al posto di HOME? Se si bisogna e` di contenuto?
+- va bene il logo al posto di HOME? Se si bisogna e` di contenuto? Come fare a distinguerlo quando è visitato e quando non lo è?
 - come faccio a riordinare i bottoni con css senza cambiare html?
 
 - breakpoint (screen>mid>small?)
@@ -14,6 +14,9 @@
 - line-height senza unità di misura (più da farglielo notare)
 
 - margini negativi (vedi safe zone content su prek-big.css)
+- dimensione minima telefoni da testare
+- safe zone content: in teoria è contenuto spostato nell'header per discorso orientamento: va bene così?
+    Va bene comunque se lo metto nell'header per evitare sovrapposizioni?
 
 
 

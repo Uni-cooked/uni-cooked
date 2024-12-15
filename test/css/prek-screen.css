@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -21,6 +22,7 @@
     --shadowcolor: #d88913;
     --accent-a-color: #000A5F;
     --accent-a-visited-color: #4E0000;
+    --safe-zone-a-bg-color: #E1BA84;
 }
 
 @font-face {
@@ -57,6 +59,20 @@ NAVIGATION HELP
 ==================================================
 */
 
+nav#list-help
+{
+    position: absolute;
+    top: 30vh;
+    left: 0;
+}
+
+nav#list-help ul
+{
+    display: block;
+    list-style-type: none;
+    width: 100vw;
+}
+
 nav#list-help li
 {
     display: inline-block;
@@ -90,6 +106,7 @@ header {
     background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin-bottom: 2%;
     height: 40vh;
 }
@@ -120,9 +137,7 @@ MENU
 
 nav#menu {
     position: absolute;
-    top: 1%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    top: 1em;
     background-color: var(--accent-secondary);
     border-radius: 40px;
     margin-top: 2%;
@@ -194,12 +209,32 @@ HOME PAGE SAFE ZONE CONTENT
 div#safe-zone-content
 {
     background-color: var(--accent);
-    width: 100%;
-    padding: 1em 0;
     position: absolute;
     top: 70vh;
+    left: 0;
+
+    margin: 0 3em;
+    padding: 0.5em 1em;
+    border-radius: 20px;
     text-align: center;
-    padding: 1.5% 0em;
+}
+
+div#safe-zone-content a
+{
+    display: block;
+    padding: 0.5em 1em;
+    background-color: var(--safe-zone-a-bg-color);
+    border-radius: 20px;
+}
+
+div#safe-zone-content a:link
+{
+    color: var(--accent-a-color)
+}
+
+div#safe-zone-content a:visited
+{
+    color: var(--accent-a-visited-color)
 }
 
 div#safe-zone-content p
@@ -223,6 +258,7 @@ nav#breadcrumb {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 5% 0;
 }
 
 nav#breadcrumb p {
@@ -230,10 +266,7 @@ nav#breadcrumb p {
     background-color: var(--accent-secondary);
     color: var(--text-color);
     border-radius: 100px;
-    padding-top: 0.3%;
-    padding-bottom: 0.3%;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding: 0.3% 2em;
 }
 
 /*
@@ -266,6 +299,166 @@ abbr {
 
 fieldset {
     border: 0;
+}
+
+/*******
+HOME PAGE SPECIFIC
+********/
+
+p#presentation-text
+{
+    margin: 2em 0;
+    text-align: center;
+    padding: 2%;
+}
+
+dl
+{
+    margin: 5% 7em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a.recipe-link
+{
+    display: block;
+    padding-top: 2%;
+}
+
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad
+{
+    display: inline;
+    width: 30%;
+    height: 40vh;
+
+    background-color: var(--dt-bg-color);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-size: 2em;
+    font-weight: bolder;
+
+    border-radius: 20px;
+    box-shadow: 0 0 25px 5px var(--shadowcolor);
+}
+
+dt#fuorisede, dt#sede
+{
+    text-align: right;
+}
+
+dd#fuorisede-text, dd#sede-text
+{
+    padding-left: 5%;
+}
+
+dd#pendolare-text, dd#dad-text
+{
+    padding-right: 5%;
+}
+
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
+{
+    color: var(--text-color);
+    width: 65%;
+    height: 40vh;
+
+    text-align: center;
+}
+
+dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad
+{
+    margin-top: 15%;
+}
+
+dt#fuorisede
+{
+    order: 1;
+    background-image: url("../assets/img/fuorisede-image.jpg");
+}
+
+dd#fuorisede-text
+{
+    order: 2;
+}
+
+dt#pendolare
+{
+    order: 4;
+    background-image: url("../assets/img/pendolare-image.jpg");
+    background-position: 0%;
+}
+
+dd#pendolare-text
+{
+    order: 3;
+}
+
+dt#sede
+{
+    order: 5;
+    background-image: url("../assets/img/sede-image.jpg");
+}
+
+dd#sede-text
+{
+    order: 6;
+}
+
+dt#dad
+{
+    order: 8;
+    background-image: url("../assets/img/dad-image.jpg");
+}
+
+dd#dad-text
+{
+    order: 7;
+}
+
+div#presentation-div
+{
+  /*color: white; FALSE POSITIVE*/
+   display: grid;
+   grid-template-areas: 'b h2'
+                        'b a';
+   margin: 10% 7em;
+   background-color: var(--accent-secondary);
+   padding: 1%;
+   border-radius: 5px;
+}
+
+div#presentation-div img
+{
+    grid-area: b;
+    width: 95%;
+    border-radius: 5px;
+}
+
+div#presentation-div h2, div#presentation-div p
+{
+    text-align: center;
+}
+
+div#presentation-div h2
+{
+    grid-area: h2;
+    background-color: var(--bg-secondary);
+    color: var(--accent);
+
+    font-style: italic;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#presentation-div p
+{
+    grid-area: a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3%;
 }
 
 /*
