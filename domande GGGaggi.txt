@@ -6,6 +6,7 @@
 - il filter di css e` supportato? ma il div vuoto?
 - le fasce? se sono a >1200px
 - va bene il logo al posto di HOME? Se si bisogna e` di contenuto?
+- come faccio a riordinare i bottoni con css senza cambiare html?
 
 - breakpoint (screen>mid>small?)
 - >789 in teoria e` ancora un tablet pero`
