@@ -13,6 +13,8 @@
 - input per voto carino? <input type=number> è bruttino
 - line-height senza unità di misura (più da farglielo notare)
 
+- margini negativi (vedi safe zone content su prek-big.css)
+
 
 
 
