@@ -2,11 +2,17 @@
 - come fare categorie home
 - home e accedi si distinguono?
 - title a link letti?
+- il parallax e` accessibile?
+- il filter di css e` supportato? ma il div vuoto?
+- le fasce? se sono a >1200px
+- va bene il logo al posto di HOME? Se si bisogna e` di contenuto?
 
-- breakpoint
-- va bene il logo al posto di HOME?
+- breakpoint (screen>mid>small?)
+- >789 in teoria e` ancora un tablet pero`
 - input per voto carino? <input type=number> è bruttino
 - line-height senza unità di misura (più da farglielo notare)
+
+
 
 
 
