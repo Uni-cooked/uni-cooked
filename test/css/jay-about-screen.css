@@ -199,36 +199,33 @@ nav#breadcrumb p {
     border: 3px solid var(--accent);
     overflow: auto;
     border-radius: var(--border-radius);
+    margin-bottom: .5em;
 }
 
 #recipie-request fieldset {
-    /* padding: 2em; */
-    /* border: 1px solid var(--accent); */
     border: none;
     border-radius: var(--border-radius);
 }
 
-#recipie-request #buttons {
-    text-align: end;
-    padding: .8em 0 .8em 0;
-}
 
-#recipie-request #buttons button {
+#recipie-request button {
     width: 180px;
     height: 50px;
     border-style: none;
     font-weight: 700;
     font-size: 1.2em;
     border-radius: var(--border-radius);
-    margin-left: 1em;
+    margin: 0em 0 .8em 1em;
 }
 
-#recipie-request #buttons #cancel {
+#recipie-request #cancel {
+    float: right;
     background-color: var(--bg-secondary);
     color: var(--text-color);
 }
 
-#recipie-request #buttons #confirm {
+#recipie-request #confirm {
+    float: right;
     background-color: var(--accent);
     color: var(--bg-primary);
 }
@@ -278,10 +275,6 @@ footer a {
     font-size: 1.1em;
 }
 
-footer #badges {
-    margin-top: 1em;
-}
-
 
 @media screen and (max-width: 768px) {
 
@@ -291,18 +284,19 @@ footer #badges {
         margin-bottom: 60px;
     }
 
-    #recipie-request #buttons {
+    /* #recipie-request #buttons {
         text-align: center;
         padding-left: .2em;
         padding-right: .2em;
-    }
+    } */
 
-    #recipie-request #buttons button {
+    #recipie-request button {
         width: 49%;
         margin-left: 0;
+        margin-top: 1.5em;
     }
 
-    #recipie-request #buttons #cancel {
+    #recipie-request #cancel {
         float: left;
     }
 
@@ -310,17 +304,17 @@ footer #badges {
 
 @media screen and (max-width: 480px) {
 
-    #recipie-request #buttons button {
+    #recipie-request button {
         width: 100%;
     }
 
-    #recipie-request #buttons #cancel {
+    #recipie-request #cancel {
         float: none;
-        margin-bottom: 40px;
     }
 
-    #recipie-request #buttons #confirm {
+    #recipie-request #confirm {
         float: none;
+        margin-bottom: .1em;
     }
 
     #admin-grid {

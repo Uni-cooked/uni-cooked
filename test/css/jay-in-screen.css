@@ -150,9 +150,7 @@ nav#breadcrumb p {
 
 
 #sign-box fieldset {
-    /* padding: 2em; */
-    /* border: 1px solid var(--accent); */
-    border: none;
+    border: 2px solid var(--accent);
     border-radius: var(--border-radius);
     background-color: var(--bg-secondary);
     padding: 1em 5em 1em 5em;
@@ -191,11 +189,6 @@ nav#breadcrumb p {
     margin-bottom: 1em;
 }
 
-#sign-box #buttons {
-    text-align: end;
-    padding: .8em 0 .8em 0;
-}
-
 
 #sign-box #confirm {
     background-color: var(--accent);
@@ -229,9 +222,6 @@ footer a {
     font-size: 1.1em;
 }
 
-footer #badges {
-    margin-top: 1em;
-}
 
 
 @media screen and (max-width: 768px) {
@@ -243,12 +233,7 @@ footer #badges {
     #sign-box #confirm {
         width: 100%;
     }
-
-
-}
-
-@media screen and (max-width: 480px) {
-
+    
     #sign-box fieldset {
         padding: 1em;
     }
