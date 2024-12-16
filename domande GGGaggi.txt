@@ -1,24 +1,24 @@
-- come mettere la fascia gialla home (margini negativi?)
-- come fare categorie home
-- home e accedi si distinguono?
-- title a link letti?
-- il parallax e` accessibile?
-- il filter di css e` supportato? ma il div vuoto?
-- le fasce? se sono a >1200px
-- va bene il logo al posto di HOME? Se si bisogna e` di contenuto? Come fare a distinguerlo quando è visitato e quando non lo è?
-- come faccio a riordinare i bottoni con css senza cambiare html?
-- i badge di certificazione sono obbligatori?
-- il fieldset devono avere un border?
+- come mettere la fascia gialla home (margini negativi?) -> metti in header
+- come fare categorie home 
+- home e accedi si distinguono? -> separare il bottone del link
+- title a link letti? -> basta title
+- il parallax e` accessibile? -> disabilitabili e vanno bene se poco contenute
+- il filter di css e` supportato? ma il div vuoto? -> ok ma se é solo una fallo su PS
+- le fasce? se sono a >1200px -> va ben
+- va bene il logo al posto di HOME? Se si bisogna e` di contenuto? Come fare a distinguerlo quando è visitato e quando non lo è? -> sr non lo legge
+- come faccio a riordinare i bottoni con css senza cambiare html? -> position absolute 
+- i badge di certificazione sono obbligatori? -> no
+- il fieldset devono avere un border? -> no ma far vedere che sto raggruppando
 
-- breakpoint (screen>mid>small?)
+- breakpoint (screen>mid>small?) -> va bene aggiungere breakpoint
 - >789 in teoria e` ancora un tablet pero`
 - input per voto carino? <input type=number> è bruttino
 - line-height senza unità di misura (più da farglielo notare)
 
-- margini negativi (vedi safe zone content su prek-big.css)
+- margini negativi (vedi safe zone content su prek-big.css)-> guarda sopra 
 - dimensione minima telefoni da testare
 - safe zone content: in teoria è contenuto spostato nell'header per discorso orientamento: va bene così?
-    Va bene comunque se lo metto nell'header per evitare sovrapposizioni?
+    Va bene comunque se lo metto nell'header per evitare sovrapposizioni? - > guarda sopra 
 
 
 
@@ -36,4 +36,4 @@ centrare le img croppate/header (flex)
 font
 - come fare edit in user
 - img croppate
-- centrare le img croppate/header (flex)
+- centrare le img croppate/header (flex) -> non esiste altro modo
