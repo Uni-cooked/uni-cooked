@@ -132,6 +132,10 @@ p#safe-zone-content
 /*
 *   LINK AIUTO ACCESSIBILITA'
 */
+nav#list-help ul
+{
+    list-style-type: none;
+}
 
 nav#list-help a
 {
@@ -454,7 +458,7 @@ img
     text-indent: -999em; 
 }
 
-p, dl,li, input#Cancella, button, article{
+p, p#MaxVoto, dl,li, input#Cancella, button, article{
     color: white;
 }
 .Sezione,.Sottotitolo, article, fieldset, textarea.voto, p{
@@ -469,15 +473,15 @@ div#ImgInfoRicetta
     align-items: center;
 }
 
-dl#InfoRicetta
+ul#InfoRicetta
 {
-    margin-top: 5%;
+    margin-top: 2%;
     flex-direction: column;
     text-align: center;
     list-style-type: none;
 }
 
-dl#InfoRicetta dt
+ul#InfoRicetta li
 {
     padding-bottom: 10%
 }
@@ -492,7 +496,7 @@ dl#InfoRicetta dt
     margin-bottom: 0%;
 }
 
-.Sezione,.Sottotitolo,article
+.Sezione,.Sottotitolo
 {
     padding: 1% 10% 1% 10%;
     margin-left: 10%;
@@ -530,22 +534,32 @@ h3#Commento
 
 section#CommentoUtente 
 {
-    width:100%;
-    padding: 0;
-    margin: 0% 10% 2% 10%;
+    display: block;
+    flex-direction: row;
+    padding: 1 1% 1% 0%;
+    margin: 0% 10% 2% 9%;
     background-color: var(--bgcolor);
 }  
 
 form
 {
-    display: flex;
+    width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
+}
+
+img#ImgUtente{
+    max-width:10%;
+    max-height: 10%;
 }
 
 img#ImgUtente, img.InfoUtente
 {
     border-radius: 50%;
+    width: 15%;
+    height: 15%;
+    float: left;
+    margin-right: 2%;;
 }
 
 fieldset
@@ -556,6 +570,11 @@ fieldset
     justify-content: center;
 }
 
+.voto{
+    display: inline;
+    margin: 1%;
+}
+
 textarea
 {
     color: #000;
@@ -563,27 +582,28 @@ textarea
 
 textarea.voto
 {
-    max-width: 2%;
-    max-height: 12%;
+    max-width: 1.5%;
     resize: none;
     color: white;
     border: 0;
 }
 
-button.voto
+fieldset button.voto
 {
-    width: 3%;
-    height: 10%;
+    color:#000;
+    width: 50px;
+    height: 50px;
     background-color: var(--textbgcolor);
-    color:#000
+    height: 1%; 
+    font-size: 1em;
 }
+
 textarea#Commento-utente
 {
     resize: none;
-    min-width: 90%;
-    min-height: 50%;
-    background-color: rgb(25, 24, 24);
-    color: white;
+    min-width: 95%;
+    background-color: white;
+    color: black;
 }
 
 div#buttons
@@ -614,37 +634,64 @@ input#Commenta
     margin-bottom: 0.55%;
 }
 
-article{
+section#CommentiAltriUtenti
+{
     margin: 1% 10% 1% 10%;
-    padding: 0%;
 }
 
-article.Commento li
-{
+li.CommentoUtenti{
+    margin-bottom: 2%;
     list-style-type: none;
     justify-content: start;
-    text-align: left;
+    text-align: start;
     line-height: 1.5em;
-    margin-left: 2%;
 }
 
-li .InfoUtente
+li article{
+    padding: 2%
+}
+
+.InfoUtente
 {
     display: inline;
-    vertical-align: middle;
+    vertical-align: baseline;
     margin-bottom: 1%;
 }
 
-li img.InfoUtente{ 
+img.InfoUtente{ 
     max-width: 5%;
     max-height: 5%;
 }
 
 p#DataCommento
 {
-    float: right;
-    vertical-align: middle;
+    float: inline-end;
 }
+
 p#VotoUtente{
     font-weight: bold;
+    margin-top: 4%;
+}
+
+div#last-buttons
+{
+    display: flex;
+    flex-direction: column;
+    margin: 1% 10% 1% 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+button#Torna,button#Carica
+{
+    background-color: var(--textbgcolor);
+    color:#000;
+    width: 200px;
+    height: 25px;
+    border-radius: 0.5em;
+}
+
+#Torna
+{
+    margin-top: 3%;
 }
