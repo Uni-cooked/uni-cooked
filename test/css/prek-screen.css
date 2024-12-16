@@ -26,7 +26,7 @@
 }
 
 @font-face {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter";
     font-size: 100%;
     src: url("../assets/Fonts/Inter-VariableFont_opsz\,wght.ttf");
     font-weight: 300 900;
@@ -202,12 +202,11 @@ nav#menu li#profile-item img {
 
 /*
 =============================
-HOME PAGE SAFE ZONE CONTENT
+HOME PAGE SAFE ZONE
 =============================
 */
 
-div#safe-zone-content
-{
+div#safe-zone-content {
     background-color: var(--accent);
     position: absolute;
     top: 70vh;
@@ -219,32 +218,27 @@ div#safe-zone-content
     text-align: center;
 }
 
-div#safe-zone-content a
-{
+div#safe-zone-content a {
     display: block;
     padding: 0.5em 1em;
     background-color: var(--safe-zone-a-bg-color);
     border-radius: 20px;
 }
 
-div#safe-zone-content a:link
-{
+div#safe-zone-content a:link {
     color: var(--accent-a-color)
 }
 
-div#safe-zone-content a:visited
-{
+div#safe-zone-content a:visited {
     color: var(--accent-a-visited-color)
 }
 
-div#safe-zone-content p
-{
+div#safe-zone-content p {
     background-color: var(--accent);
     color: var(--header-content-text-color)
 }
 
-div#safe-zone-content li
-{
+div#safe-zone-content li {
     display: inline-block;
 }
 
@@ -276,6 +270,7 @@ CONTENT
 */
 
 main {
+    margin: 5vh 0;
     padding: 0 2vw;
 }
 
@@ -301,32 +296,30 @@ fieldset {
     border: 0;
 }
 
-/*******
-HOME PAGE SPECIFIC
-********/
+/*
+================================
+CATALOGUE PAGE
+================================
+*/
 
-p#presentation-text
-{
+p#presentation-text {
     margin: 2em 0;
     text-align: center;
     padding: 2%;
 }
 
-dl
-{
+dl {
     margin: 5% 7em;
     display: flex;
     flex-wrap: wrap;
 }
 
-a.recipe-link
-{
+a.recipe-link {
     display: block;
     padding-top: 2%;
 }
 
-dt#fuorisede, dt#sede, dt#pendolare, dt#dad
-{
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad {
     display: inline;
     width: 30%;
     height: 40vh;
@@ -344,23 +337,19 @@ dt#fuorisede, dt#sede, dt#pendolare, dt#dad
     box-shadow: 0 0 25px 5px var(--shadowcolor);
 }
 
-dt#fuorisede, dt#sede
-{
+dt#fuorisede, dt#sede {
     text-align: right;
 }
 
-dd#fuorisede-text, dd#sede-text
-{
+dd#fuorisede-text, dd#sede-text {
     padding-left: 5%;
 }
 
-dd#pendolare-text, dd#dad-text
-{
+dd#pendolare-text, dd#dad-text {
     padding-right: 5%;
 }
 
-dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
-{
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text {
     color: var(--text-color);
     width: 65%;
     height: 40vh;
@@ -368,59 +357,48 @@ dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
     text-align: center;
 }
 
-dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad
-{
+dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad {
     margin-top: 15%;
 }
 
-dt#fuorisede
-{
+dt#fuorisede {
     order: 1;
     background-image: url("../assets/img/fuorisede-image.jpg");
 }
 
-dd#fuorisede-text
-{
+dd#fuorisede-text {
     order: 2;
 }
 
-dt#pendolare
-{
+dt#pendolare {
     order: 4;
     background-image: url("../assets/img/pendolare-image.jpg");
     background-position: 0%;
 }
 
-dd#pendolare-text
-{
+dd#pendolare-text {
     order: 3;
 }
 
-dt#sede
-{
+dt#sede {
     order: 5;
     background-image: url("../assets/img/sede-image.jpg");
 }
 
-dd#sede-text
-{
+dd#sede-text {
     order: 6;
 }
 
-dt#dad
-{
+dt#dad {
     order: 8;
     background-image: url("../assets/img/dad-image.jpg");
 }
 
-dd#dad-text
-{
+dd#dad-text {
     order: 7;
 }
 
-div#presentation-div
-{
-  /*color: white; FALSE POSITIVE*/
+div#presentation-div {
    display: grid;
    grid-template-areas: 'b h2'
                         'b a';
@@ -430,20 +408,17 @@ div#presentation-div
    border-radius: 5px;
 }
 
-div#presentation-div img
-{
+div#presentation-div img {
     grid-area: b;
     width: 95%;
     border-radius: 5px;
 }
 
-div#presentation-div h2, div#presentation-div p
-{
+div#presentation-div h2, div#presentation-div p {
     text-align: center;
 }
 
-div#presentation-div h2
-{
+div#presentation-div h2 {
     grid-area: h2;
     background-color: var(--bg-secondary);
     color: var(--accent);
@@ -453,8 +428,7 @@ div#presentation-div h2
     border-top-right-radius: 5px;
 }
 
-div#presentation-div p
-{
+div#presentation-div p {
     grid-area: a;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -492,12 +466,13 @@ CATALOGUE PAGE
 #filter {
     display: flex;
     justify-content: space-between;
-    margin: 0 5%;
+    margin: 0 2vw;
+    color: var(--accent);
 }
 
 #filter label {
-    color: var(--accent);
     padding: 0.5em 0;
+    font-weight: bold;
 }
 
 #filter .filter-param {
@@ -506,16 +481,22 @@ CATALOGUE PAGE
     align-items: center;
 }
 
-#filter .filter-input {
-    width: 11em;
+#filter .filter-param span {
+    font-size: 1.2em;
 }
 
-#filter .filter-input option {
+#filter .filter-param .filter-input {
+    width: 15vw;
+    max-width: 14em;
+}
+
+#filter .filter-param .filter-input option {
     background-color: var(--bg-primary);
 }
 
 #filter input[type="range"].filter-input {
     margin: auto;
+    accent-color: var(--accent);
 }
 
 #search-btn {
@@ -527,25 +508,22 @@ CATALOGUE PAGE
     background-color: var(--accent);
     border: none;
     border-radius: 999px;
+    font-weight: bold;
 }
 
 ul#recipe-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 3em 0;
+    margin-top: 5vh;
     list-style-type: none;
 }
 
-ul#recipe-list > li {
-    margin-bottom: 4em;
-    margin-left: 3em;
-    margin-right: 3em;
-}
-
-/* NOTE: it may be better with float: left */
 ul#recipe-list .recipe {
-    width: 25em;
+    margin: 0 3em 4em;
+    width: 34%;   /* corresponds to 25em with main at 1200px */
+    min-width: 20em;
+    height: 26em;
     background-color: var(--bg-secondary);
     border-radius: 5px;
     padding: 0.5em;
@@ -554,7 +532,7 @@ ul#recipe-list .recipe {
 
 ul#recipe-list .recipe .recipe-img-crop {
     width: 100%;
-    height: 10em;
+    height: 40%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -565,17 +543,24 @@ ul#recipe-list .recipe .recipe-img-crop img {
     width: 100%;
 }
 
-ul#recipe-list .recipe h3 {
+ul#recipe-list .recipe .recipe-title {
+    padding-top: 0.6em;
+    height: 20%;
+    /* NOTE: is there a better way? */
+    display: flex;
+    align-items: center;
+}
+
+ul#recipe-list .recipe .recipe-title h3 {
     font-size: 1.6em;
-    padding: 0.6em 0;
 }
 
 ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
-    padding: 0.5em 2em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    height: calc(30% - 0.6em);
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
@@ -595,7 +580,6 @@ ul#recipe-list .recipe a {
     padding-top: 0.3em;
     padding-right: 1em;
     font-weight: bold;
-    
 }
 
 /*
@@ -604,10 +588,23 @@ USER PAGE
 ================================
 */
 
+.editable-user {
+    position: relative;
+}
+
+.editable-user a {
+    width: 2em;
+    height: 2em;
+    background-image: url("../../Assets/Icons/edit.svg");
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #title-nick {
     text-align: center;
     font-size: 2.5em;
-    padding-top: 1em;
 }
 
 #title-nick span {
@@ -646,7 +643,6 @@ USER PAGE
     background-color: rgb(66, 38, 22);
     list-style-type: none;
     padding: 0 6vw;
-    /* NOTE: create a class for the border */
     border: 4px solid rgb(34, 19, 9);
     border-radius: 5px;
     min-height: 12em;
@@ -661,51 +657,58 @@ USER PAGE
     text-align: center;
 }
 
-#fav-recipe-list > li {
+#fav-recipe-list .fav-recipe {
     background-color: var(--bg-secondary);
-    height: 10em;
-    display: flex;
-    margin: 2em;
+    height: 13em;
+    margin: 1em 2em;
     padding: 5px;
     border-radius: 5px;
 }
 
-#fav-recipe-list .fav-recipe-img-crop {
+#fav-recipe-list .fav-recipe .fav-recipe-img-crop {
+    float: left;
     height: 100%;
-    width: 20em;
+    width: 45%;
+    max-width: 18em;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#fav-recipe-list .fav-recipe-img-crop img {
+#fav-recipe-list .fav-recipe .fav-recipe-img-crop img {
     width: 100%;
 }
 
-#fav-recipe-list .fav-recipe {
+#fav-recipe-list .fav-recipe .fav-recipe-title {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.5em 1.5em;
+    align-items: center;
+    height: 35%;
+    padding: 0 1em;
 }
 
-#fav-recipe-list .fav-recipe h4 {
+#fav-recipe-list .fav-recipe .fav-recipe-title h4 {
     font-size: 1.5em;
 }
 
-#fav-recipe-list .fav-recipe-info {
-    text-align: center;
+#fav-recipe-list .fav-recipe .fav-recipe-info {
+    list-style-type: none;
     color: var(--text-color);
+    height: 52%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
-#fav-recipe-list .fav-recipe-info ul li {
-    display: inline;
-    padding: 0 3%;
+#fav-recipe-list .fav-recipe .fav-recipe-info li {
+    width: 8em;
+    padding: 0.4em 0;
+    /* TODO: only when info are inline */
+    /* text-align: center; */
 }
 
-#fav-recipe-list .fav-recipe-info li img {
+#fav-recipe-list .fav-recipe .fav-recipe-info li img {
     height: 1.5em;
     vertical-align: middle;
     padding-right: 0.5em;
@@ -737,7 +740,6 @@ FOOTER
 */
 
 footer {
-    /*color: white; FALSE POSITIVE*/
     background-color: var(--bg-secondary);
     text-align: center;
     padding: 1em 0 1em 0;

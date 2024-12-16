@@ -1,5 +1,3 @@
-<!-- NOTE: every key between '{}' will be replaced via php -->
-
 <!DOCTYPE html>
 <html lang="it">
     <head>
@@ -28,10 +26,9 @@
             <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
             <nav id="menu">
                 <ul>
-                    <!-- TODO: add href to the respective pages -->
                     <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
                     <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li>RICETTE</li>
+                    <li><a href="./catalogue.html">RICETTE</a></li>
                     <li><a href="">CONTATTI</a></li>
                     <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
                 </ul>
@@ -44,59 +41,67 @@
 
         <main>
             <h2 id="title-nick"><span>CIAO</span> GGGaggi</h2>
-            <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
-            <p id="stud-cat">FUORISEDE</p>
+            <article class="editable-user">
+                <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
+                <a href="" title="modifica immagine profilo"></a>
+            </article>
+            <article class="editable-user">
+                <p id="stud-cat">FUORISEDE</p>
+                <a href="" title="modifica categoria studente"></a>
+            </article>
             <!-- NOTE: time tag is not relevant -->
             <p id="login-date">30 / 1 / 1933</p>
-
+            
             <h3 class="user-p-title">BIOGRAFIA</h3>
-            <p class="content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium error atque, ipsa consectetur culpa consequatur ea quidem perspiciatis eligendi voluptatibus molestias, amet ad ipsum quo vero, nulla quos earum!</p>
+            <article class="editable-user">
+                <p class="content-p">Scrivi qualcosa di te!</p>
+                <!-- <p class="content-p">GGGaggi non ha ancora aggiunto la sua <abbr title="biografia">bio</abbr>.</p> -->
+                <!-- <p class="content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium error atque, ipsa consectetur culpa consequatur ea quidem perspiciatis eligendi voluptatibus molestias, amet ad ipsum quo vero, nulla quos earum!</p> -->
+                <a href="" title="modifica biografia"></a>
+            </article>
 
             <h3 class="user-p-title">RICETTE PREFERITE</h3>
             <ul id="fav-recipe-list">
                 <!-- <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p> -->
 
-                <li>
-                    <div class="fav-recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
-                    </div>
-                    <div class="fav-recipe">
-                        <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
-                        <div class="fav-recipe-info">
-                            <ul>
-                                <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
-                                <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
-                                <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
-                                <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
-                            </ul>
-                        </div>
-                        <a href="">Vai alla ricetta</a>
-                    </div>
-                </li>
-
-                <li>
+                <li class="fav-recipe">
                     <div class="fav-recipe-img-crop">
                         <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
-                    <div class="fav-recipe">
+                    <div class="fav-recipe-title">
                         <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
-                        <div class="fav-recipe-info">
-                            <ul>
-                                <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
-                                <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
-                                <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
-                                <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
-                            </ul>
-                        </div>
-                        <a href="">Vai alla ricetta</a>
                     </div>
+                    <ul class="fav-recipe-info">
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                        <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                        <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                    </ul>
+                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                </li>
+
+                <li class="fav-recipe">
+                    <div class="fav-recipe-img-crop">
+                        <img src="../assets/img/dish-cropped2.jpg" alt="">
+                    </div>
+                    <div class="fav-recipe-title">
+                        <h4>PASTA ASCIUTTA</h4>
+                    </div>
+                    <ul class="fav-recipe-info">
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                        <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                        <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">Min</abbr></li>
+                    </ul>
+                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
             </ul>
 
             <h3 class="user-p-title">ZONA PERICOLOSA</h3>
-            <!-- TODO: work in progress -->
-            <button class="danger-btn">CANCELLA RICETTE</button>
-            <button class="danger-btn">CANCELLA ACCOUNT</button>
+            <fieldset>
+                <button class="danger-btn">CANCELLA RICETTE</button>
+                <button class="danger-btn">CANCELLA ACCOUNT</button>
+            </fieldset>
         </main>
 
         <footer>

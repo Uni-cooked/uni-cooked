@@ -1,18 +1,12 @@
-body
-{
+main {
     max-width: 1200px;
-    border: 3px solid black;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: -20vh; */
 }
 
-div#safe-zone-content
-{
+div#safe-zone-content {
     position: relative;
     top: -20vh;
     margin: 0;
-}
-
-main
-{
-    margin-top: -20vh;
 }
