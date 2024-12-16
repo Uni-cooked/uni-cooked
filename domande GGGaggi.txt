@@ -34,3 +34,6 @@ menu del profilo
 placeholder search bar chiaro
 centrare le img croppate/header (flex)
 font
+- come fare edit in user
+- img croppate
+- centrare le img croppate/header (flex)
