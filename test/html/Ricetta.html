@@ -43,13 +43,13 @@
         <h2 id="NomeRicetta">NOME_RICETTA</h2>
         <div id="ImgInfoRicetta">
             <img id="LocandinaRicetta" alt="altLocandinaRicetta" src="../img/RicettaProva.jpg"/> 
-            <dl id="InfoRicetta">          
-                <dt><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/ph--exam-fill.svg" />18/30</dt>
-                <dt><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/tdesign--education-filled.svg" />DAD</dt>
-                <dt><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/ic--round-restaurant.svg" />Primo piatto</dt>
-                <dt><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/mingcute--time-fill.svg" />5-10 minuti</dt>
-                <dt><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/mingcute--pig-money-fill.svg" />50</dt>
-            </dl>  
+            <ul id="InfoRicetta">          
+                <li><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/ph--exam-fill.svg" />18/30</li>
+                <li><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/tdesign--education-filled.svg" />DAD</li>
+                <li><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/ic--round-restaurant.svg" />Primo piatto</li>
+                <li><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/mingcute--time-fill.svg" />5-10 minuti</li>
+                <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/mingcute--pig-money-fill.svg" />50</li>
+            </ul>  
         </div> 
 
         <p class="Sezione">Descrizione</p>
@@ -73,20 +73,22 @@
 
         <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
         <section id="CommentoUtente">
+            <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
             <form action="">
-                <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
                 <fieldset>
-                    <label for="DiminuireVoto">
-                        <button class="voto" value="-"></button>
+                    
+                    <button class="voto" placeholder="-">-</button>
+                    
+                    
+                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30"></input>
+                    
+                    <p class="voto" id="MaxVoto">/30</p>
+
+                    <button class="voto" id="AumentareVoto" placeholder="+" >+</button>
+                    
+                    <label>
+                        <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000"></textarea>
                     </label>
-                    <label for="Voto-utente">
-                        <textarea name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" maxlength="2"></textarea>
-                    </label>
-                    <label class="voto">/30</label> 
-                    <label for="AumentareVoto">
-                        <button class="voto" id="AumentareVoto" value="+"></button>
-                    </label>
-                    <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000"></textarea>
                     <div id="buttons">
                         <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
                         <input type="submit" class="SceltaUtente" id="Commenta" name="Commenta" value="Commenta" />
@@ -97,30 +99,31 @@
 
         <section id="CommentiAltriUtenti">
             <ul>
-                <article class="Commento">
-                    <li class="CommentoUtenti">
-                        <li class="CommentoUtenti">
-                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
-                            <a href="" class="InfoUtente">Nome Utente</a>
-                            <p class="InfoUtente" id="DataCommento">Data</p>
-                            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
-                            <p class="ValutazioneUtente">Commento</p>
-                        </li>
-                    </li>
-                </article>
-                <article class="Commento">
-                    <li class="CommentoUtenti">
-                        <li class="CommentoUtenti">
-                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
-                            <a href="" class="InfoUtente">Nome Utente</a>
-                            <p class="InfoUtente" id="DataCommento">Data</p>
-                            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
-                            <p class="ValutazioneUtente">Commento</p>
-                        </li>
-                    </li>
-                </article>
+                <li class="CommentoUtenti">
+                    <article class="Commento">
+                        <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                        <a href="" class="InfoUtente">Nome Utente</a>
+                        <p class="InfoUtente" id="DataCommento">Data</p>
+                        <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+                        <p class="ValutazioneUtente">Commento</p>
+                    </article>
+                </li>
+                <li class="CommentoUtenti">
+                    <article class="Commento">
+                        <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                        <a href="" class="InfoUtente">Nome Utente</a>
+                        <p class="InfoUtente" id="DataCommento">Data</p>
+                        <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+                        <p class="ValutazioneUtente">Commento</p>
+                    </article>
+                </li>
             </ul>
         </section>
+
+        <div id="last-buttons">
+            <button id="Carica">Carica altri commenti</button>
+            <button id="Torna">Torna Su</button>
+        </div>
 
         <footer>
             <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
