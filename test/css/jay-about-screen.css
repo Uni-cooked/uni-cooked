@@ -9,10 +9,10 @@
 :root {
     --bg-primary: #171717;
     --bg-secondary: #242424;
-    --accent:#EFAE50;
-    --accent-semi-transaparent:#efad50b5;
-    --accent-secondary:#392A24;
-    --text-color:white;
+    --accent: #EFAE50;
+    --accent-semi-transaparent: #efad50b5;
+    --accent-secondary: #392A24;
+    --text-color: white;
 
     --border-radius: 6px;
 }
@@ -27,14 +27,12 @@
 }
 
 
-#list-help a
-{
+#list-help a {
     position: absolute;
     text-indent: -999em;
 }
 
-#list-help a:focus
-{
+#list-help a:focus {
     position: absolute;
     text-indent: 0;
     z-index: 1;
@@ -51,7 +49,7 @@ html {
 header {
     margin-bottom: 50px;
     border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px; 
+    border-bottom-right-radius: 30px;
     position: relative;
     height: 40vh;
     border-bottom-left-radius: 30px;
@@ -66,7 +64,7 @@ header .bg {
     background-repeat: no-repeat;
     filter: blur(3px) brightness(50%);
     -webkit-filter: blur(3px) brightness(50%);
-    height: 100%; 
+    height: 100%;
 }
 
 header .h-content {
@@ -81,6 +79,7 @@ header .h-content h1 {
     margin-left: .5em;
     font-weight: 900;
 }
+
 header .h-content h2 {
     font-size: 2.5em;
     margin-left: 2em;
@@ -131,13 +130,11 @@ header .h-content h2 {
     content: "@";
 }
 
-nav#breadcrumb
-{
+nav#breadcrumb {
     margin-bottom: 4em;
 }
 
-nav#breadcrumb p
-{
+nav#breadcrumb p {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -160,11 +157,15 @@ nav#breadcrumb p
     padding: 2em;
 }
 
-#who,#recipie-request , #admins{
+#who,
+#recipie-request,
+#admins {
     margin-bottom: 5em;
 }
 
-#recipie-request h2 ,  #admins h2,#who h2{
+#recipie-request h2,
+#admins h2,
+#who h2 {
     font-size: 2.5em;
     font-weight: 750;
     color: var(--accent);
@@ -195,8 +196,7 @@ nav#breadcrumb p
     width: 100%;
     background-color: var(--bg-secondary);
     color: var(--text-color);
-    border-style: none; 
-    border-color: Transparent; 
+    border: 3px solid var(--accent);
     overflow: auto;
     border-radius: var(--border-radius);
 }
@@ -240,11 +240,11 @@ nav#breadcrumb p
 
 #admin-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 50px;
 }
 
-#admin strong{
+#admin strong {
     display: block;
     font-size: 1.2em;
     color: var(--accent);
@@ -260,7 +260,7 @@ nav#breadcrumb p
     font-weight: 300;
 }
 
-footer{
+footer {
     background-color: var(--bg-secondary);
     text-align: center;
     padding: 1em 0 1em 0;
@@ -296,27 +296,29 @@ footer #badges {
         padding-left: .2em;
         padding-right: .2em;
     }
+
     #recipie-request #buttons button {
-        width:49%;
+        width: 49%;
         margin-left: 0;
     }
+
     #recipie-request #buttons #cancel {
         float: left;
     }
-    
+
 }
 
 @media screen and (max-width: 480px) {
 
     #recipie-request #buttons button {
-        width:100%;
+        width: 100%;
     }
 
     #recipie-request #buttons #cancel {
         float: none;
         margin-bottom: 40px;
     }
-    
+
     #recipie-request #buttons #confirm {
         float: none;
     }
@@ -326,9 +328,9 @@ footer #badges {
     }
 
     #admin {
-        margin-bottom:80px;
+        margin-bottom: 80px;
     }
-    
+
 
 
 }

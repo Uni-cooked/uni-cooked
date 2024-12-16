@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+
+    <head>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Uni cooked</title>
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
@@ -13,98 +14,103 @@
         <link rel="stylesheet" href="../css/jay-mini.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/jay-about-screen.css" media="screen">
     </head>
-<body>
-    <header>
-        <div class="bg"></div>
-        <div class="h-content">
-            <nav id="list-help" aria-label="aiuti alla navigazione">
-                <ul>
-                    <li><a href="#content">Salta al contenuto</a></li>
-                    <li><a href="#menu">Salta al menu di navigazione</a></li>
-                    <li><a href="#breadcrumb">Salta a dove ti trovi</a></li>
-                </ul>
-            </nav>
-            <h1 lang="en">UNI-COOKED</h1>
-            <h2>NON LASCIARE CHE SIA L`UNI A CUCINARE TE</h2>
-            <nav id="menu">
-                <ul>
-                    <li id="current-page"><span lang="en">HOME</span></li>
-                    <li><a href="">I PIATTI</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="account-btn"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-                </ul>
-            </nav>
-        </div>
 
-    </header>
-    
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Home</span></p>
-    </nav>
-
-    <main>
-        <article id="who">
-            <h2>CHI SIAMO</h2>
-            <div class="content-container">
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum nisl ac massa tempor iaculis. Donec luctus nisi et ex convallis venenatis. Pellentesque iaculis, ex vel iaculis sagittis, mauris urna euismod ante, quis finibus nisi nibh at elit. Fusce sodales semper orci, nec elementum nibh volutpat vel. Ut convallis nisi ut est blandit bibendum. Etiam nec blandit ante. Curabitur elit enim, eleifend id sodales quis, consectetur vitae sapien. Sed at magna at dolor fermentum mattis. Aenean eu quam varius, fringilla arcu et, lacinia turpis. Nam non sem id neque scelerisque cursus. Ut consequat nunc eu magna lobortis, egestas semper urna lacinia.</p>
+    <body>
+        <header>
+            <div class="bg"></div>
+            <div class="h-content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#content">Salta al contenuto</a></li>
+                        <li><a href="#menu">Salta al menu di navigazione</a></li>
+                        <li><a href="#breadcrumb">Salta a dove ti trovi</a></li>
+                    </ul>
+                </nav>
+                <h1 lang="en">UNI-COOKED</h1>
+                <h2>NON LASCIARE CHE SIA L`UNI A CUCINARE TE</h2>
+                <nav id="menu">
+                    <ul>
+                        <li id="current-page"><span lang="en">HOME</span></li>
+                        <li><a href="">I PIATTI</a></li>
+                        <li><a href="">CONTATTI</a></li>
+                        <li id="account-btn"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                    </ul>
+                </nav>
             </div>
-        </article>
 
-        <aside id="recipie-request" class="content">
-            <h2>PROPONI UNA TUA RICETTA</h2>
-            <img id="pp" src="../assets/img/placeholder.png" alt="la tua immagine profilo">
-            <form action="" method="post">
-                <fieldset>
-                    <label id="form-label">
-                        Scrivi qua la tua richiesta
-                        <textarea name="proposta" id="recipie-request-input"></textarea>
-                    </label>
-                    <div id="buttons">
-                        <button id="cancel" type="reset" disabled>CANCEL</button>
-                        <button id="confirm" type="submit">CONFIRM</button>
-                    </div>
-                </fieldset>
-            </form>
-            <div id="">
+        </header>
+
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <span lang="en">Home</span></p>
+        </nav>
+
+        <main>
+            <article id="who">
+                <h2>CHI SIAMO</h2>
+                <div class="content-container">
+                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum nisl ac massa tempor iaculis. Donec luctus nisi et ex convallis venenatis. Pellentesque iaculis, ex vel iaculis sagittis, mauris urna
+                        euismod ante, quis finibus nisi nibh at elit. Fusce sodales semper orci, nec elementum nibh volutpat vel. Ut convallis nisi ut est blandit bibendum. Etiam nec blandit ante. Curabitur elit enim, eleifend id sodales quis,
+                        consectetur vitae sapien. Sed at magna at dolor fermentum mattis. Aenean eu quam varius, fringilla arcu et, lacinia turpis. Nam non sem id neque scelerisque cursus. Ut consequat nunc eu magna lobortis, egestas semper urna
+                        lacinia.</p>
+                </div>
+            </article>
+
+            <aside id="recipie-request" class="content">
+                <h2>PROPONI UNA TUA RICETTA</h2>
+                <img id="pp" src="../assets/img/placeholder.png" alt="la tua immagine profilo">
+                <form action="" method="post">
+                    <fieldset>
+                        <label id="form-label">
+                            Scrivi qua la tua richiesta
+                            <textarea name="proposta" placeholder="Scrivi qua" id="recipie-request-input"></textarea>
+                        </label>
+                        <div id="buttons">
+                            <button id="cancel" type="reset" disabled>CANCEL</button>
+                            <button id="confirm" type="submit">CONFIRM</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <div id="">
+                </div>
+            </aside>
+
+            <article id="admins" class="content">
+                <h2>ADMIN DEL SITO</h2>
+                <div id="admin-grid">
+                    <section id="admin">
+                        <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
+                        <strong class="admin-margin">NOME ADMIN</strong>
+                        <p>email@gmail.com</p>
+                    </section>
+                    <section id="admin">
+                        <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
+                        <strong class="admin-margin">NOME ADMIN</strong>
+                        <p>email@gmail.com</p>
+                    </section>
+                    <section id="admin">
+                        <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
+                        <strong class="admin-margin">NOME ADMIN</strong>
+                        <p>email@gmail.com</p>
+                    </section>
+                    <section id="admin">
+                        <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
+                        <strong class="admin-margin">NOME ADMIN</strong>
+                        <p>email@gmail.com</p>
+                    </section>
+
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <a href="#top">Torna su</a>
+            <div id="badges">
+                <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+                <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
             </div>
-        </aside>
+        </footer>
 
-        <article id="admins" class="content">
-            <h2>ADMIN DEL SITO</h2>
-            <div id="admin-grid">
-                <section id="admin">
-                    <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
-                    <strong class="admin-margin">NOME ADMIN</strong>
-                    <p>email@gmail.com</p>
-                </section>
-                <section id="admin">
-                    <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
-                    <strong class="admin-margin">NOME ADMIN</strong>
-                    <p>email@gmail.com</p>
-                </section>
-                <section id="admin">
-                    <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
-                    <strong class="admin-margin">NOME ADMIN</strong>
-                    <p>email@gmail.com</p>
-                </section>
-                <section id="admin">
-                    <img id="pp" class="admin-pp admin-margin" src="../assets/img/placeholder.png" alt="Immagine profilo del admin">
-                    <strong class="admin-margin">NOME ADMIN</strong>
-                    <p>email@gmail.com</p>
-                </section>
+    </body>
 
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-        <a href="#top">Torna su</a>
-        <div id="badges">
-            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
-            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
-        </div>
-    </footer>
-    
-</body>
 </html>

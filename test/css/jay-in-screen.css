@@ -9,10 +9,10 @@
 :root {
     --bg-primary: #171717;
     --bg-secondary: #242424;
-    --accent:#EFAE50;
-    --accent-semi-transaparent:#efad50b5;
-    --accent-secondary:#392A24;
-    --text-color:white;
+    --accent: #EFAE50;
+    --accent-semi-transaparent: #efad50b5;
+    --accent-secondary: #392A24;
+    --text-color: white;
 
     --border-radius: 6px;
 }
@@ -27,14 +27,12 @@
 }
 
 
-#list-help a
-{
+#list-help a {
     position: absolute;
     text-indent: -999em;
 }
 
-#list-help a:focus
-{
+#list-help a:focus {
     position: absolute;
     text-indent: 0;
     z-index: 1;
@@ -50,7 +48,7 @@ html {
 header {
     margin-bottom: 50px;
     border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px; 
+    border-bottom-right-radius: 30px;
     position: relative;
     height: 40vh;
     border-bottom-left-radius: 30px;
@@ -65,7 +63,7 @@ header .bg {
     background-repeat: no-repeat;
     filter: blur(3px) brightness(50%);
     -webkit-filter: blur(3px) brightness(50%);
-    height: 100%; 
+    height: 100%;
 }
 
 header .content {
@@ -80,6 +78,7 @@ header .content h1 {
     margin-left: .5em;
     font-weight: 900;
 }
+
 header .content h2 {
     font-size: 2.5em;
     margin-left: 2em;
@@ -130,13 +129,11 @@ header .content h2 {
     content: "@";
 }
 
-nav#breadcrumb
-{
+nav#breadcrumb {
     margin-bottom: 4em;
 }
 
-nav#breadcrumb p
-{
+nav#breadcrumb p {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -158,22 +155,23 @@ nav#breadcrumb p
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--bg-secondary);
-    padding: 1em 1em 1em 1em;
+    padding: 1em 5em 1em 5em;
 }
 
-#student-name,#student-psw{
+#student-name,
+#student-psw {
     display: block;
-    width: 80%;
+    width: 100%;
     height: 40px;
     text-indent: 1em;
-    font-size: 1em;
-    background-color: rgb(235, 235, 235);
+    font-size: .9em;
+    background-color: rgb(48, 48, 48);
     border-radius: 100px;
-    border-style: none; 
-    border-color: Transparent; 
+    border: 3px solid var(--accent);
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
+    color: white;
 }
 
 .form-label {
@@ -209,11 +207,11 @@ nav#breadcrumb p
     font-weight: 700;
     font-size: 1.2em;
     border-radius: var(--border-radius);
-    margin-left: 1em;
+    margin: .8em 0 .8em 0;
 }
 
 
-footer{
+footer {
     background-color: var(--bg-secondary);
     text-align: center;
     padding: 1em 0 1em 0;
@@ -237,18 +235,22 @@ footer #badges {
 
 
 @media screen and (max-width: 768px) {
+
+    .form-label {
+        margin-bottom: .5em;
+    }
+
     #sign-box #confirm {
-        width:100%;
+        width: 100%;
     }
 
 
 }
 
 @media screen and (max-width: 480px) {
-    #student-name,#student-psw{
 
-        width: 100%;
-
+    #sign-box fieldset {
+        padding: 1em;
     }
 
 }

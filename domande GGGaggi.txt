@@ -1,4 +1,4 @@
-- come mettere la fascia gialla home
+- come mettere la fascia gialla home (margini negativi?)
 - come fare categorie home
 - home e accedi si distinguono?
 - title a link letti?
@@ -7,6 +7,8 @@
 - le fasce? se sono a >1200px
 - va bene il logo al posto di HOME? Se si bisogna e` di contenuto? Come fare a distinguerlo quando è visitato e quando non lo è?
 - come faccio a riordinare i bottoni con css senza cambiare html?
+- i badge di certificazione sono obbligatori?
+- il fieldset devono avere un border?
 
 - breakpoint (screen>mid>small?)
 - >789 in teoria e` ancora un tablet pero`
