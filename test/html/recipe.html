@@ -1,93 +1,67 @@
-<!-- NOTE: every key between '{}' will be replaced via php -->
-
 <!DOCTYPE html>
 <html lang="it">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- NOTE: lang="en" even in the title? -->
         <title>{Nome ricetta} - Uni cooked</title>
-        <meta name="description" content="{Nome ricetta}, una ricetta adatta per gli universitari di tutto il mondo a base di {Ingredienti principali}.">
-        <meta name="keyword" content="{Nome ricetta},{Ingredienti principali}">
+        <meta name="description" content="{Nome ricetta}, un {Tipo-piatto} adatta per gli universitari {Categoria} a base di {Ingredienti principali}.">
+        <meta name="keyword" content="{Nome ricetta},{Ingredienti principali},{Categoria},{Tipo-piatto}">
         <meta name="author" content="Uni cooked">
-        <!-- NOTE: I suppose we should change this stinky ass -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
         <!-- TODO: add media query for mobile -->
-        <link rel="stylesheet" href="../css/mini.css">
+        <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
-        <header>
-            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
-            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+        <header id="home-header">
+            <nav id="list-help" aria-label="aiuti alla navigazione">
+                <ul>
+                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                </ul>
+            </nav>
+            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+            <nav id="menu">
+                <ul>
+                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                    <li id="current-page"><span lang="en">HOME</span></li>
+                    <li><a href="./catalogue.html">RICETTE</a></li>
+                    <li><a href="">CONTATTI</a></li>
+                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                </ul>
+            </nav>
         </header>
 
         <nav id="breadcrumb">
-            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Ricetta</p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <!-- TODO: add href to the respective pages -->
-                <li><a href=""><span lang="en">Home</span></a></li>
-                <li><a href="">Fuori sede</a></li>
-                <li><a href="">Pendolari</a></li>
-                <li><a href="">In sede</a></li>
-                <li><a href="">DAD</a></li>
-                <li><a href="">Tirocinanti</a></li>
-            </ul>
+            <p>Stai studiando in: <a href="./index.html" lang="en">Home</a> > Ricetta</p>
         </nav>
 
         <main>
-            <h1>{Titolo della ricetta}</h1>
-            <!-- TODO: add src via php and keep alt empty, the description makes its job -->
-            <img src="" alt="">
-            <p>{Descrizione}</p>
-            <p>Voto: {X} / 30</p>
-            <p>{00} minuti</p>
-            <p>{0} €</p>
-
-            <h2>Ingredienti</h2>
-            <ul>
-                <li>{Ingrediente 1}</li>
-            </ul>
-
-            <h2>Preparazione</h2>
-            <ol>
-                <li>{Passo 1}</li>
-            </ol>
-
-            <!-- NOTE: I am not sure about this shitty tag -->
-            <article>
-                <!-- TODO: it should be displayed only whether the user did not rate yet -->
-                <h3>Valuta la ricetta</h3>
-                <!-- TODO: replace with something fancy, like alarm clock or slider -->
-                <form action="">
-                    <fieldset>
-                        <label for="rating">Valutazione</label>
-                        <input type="number" id="rating">
-                        <label for="motif">Motivazione</label>
-                        <textarea id="motif"></textarea>
-                        <button type="submit">Aggiungi</button>
-                    </fieldset>
-                </form>
-                
-                <h3>Valutazioni</h3>
-                <dl>
-                    <!-- NOTE: dt and dd should be used as rating template -->
-                    <dt>
-                        <!-- TODO: add href to the user page -->
-                        <a href=""><img src="" alt="Immagine del profilo di {Nickname}"> {Nickname} <time datetime="{yyyy-mm-dd}">{date}</time></a>
-                        <p>Voto: {X} / 30</p>
-                    </dt>
-                    <dd>{Motivazione}</dd>
-                </dl>
-            </article>
+            <h2 id="recipe-title">{Nome ricetta}</h2>
+            <div id="recipe-details">
+                <img src="../img/RicettaProva.jpg" alt="Foto del piatto {Nome ricetta}"/>
+                <ul>
+                    <!--Mettere img del list item come bg-->
+                    <li id="Valutazione"><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/student.svg" />{Valutazione}</li>
+                    <li id="Categoria"><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/tdesign--education-filled.svg" />{Categoria}</li>
+                    <li id="Tipo-piatto"><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/ic--round-restaurant.svg" />{Tipo-piatto}</li>
+                    <li id="Tempo"><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/mingcute--time-fill.svg" />{Tempo}</li>
+                    <li id="Costo"><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/mingcute--pig-money-fill.svg" />{Costo}</li>
+                </ul>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ipsum ut nulla! Consequatur rerum illo, dicta laboriosam voluptas corrupti obcaecati veritatis a. Quis dignissimos error odio ex. Quibusdam, exercitationem amet!</p>
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido">
-            <img src="../img/vcss-blue.gif" alt="CSS valido">
+            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
+            <a href="#top">Torna su</a>
         </footer>
 
         <script src="" async defer></script>

@@ -243,6 +243,14 @@ BREADCRUMB
 ==================================================
 */
 
+nav#breadcrumb a:link {
+    color: var(--menu-a-color);
+}
+
+nav#breadcrumb a:visited {
+    color: var(--accent);
+}
+
 nav#breadcrumb {
     display: flex;
     justify-content: center;
@@ -808,6 +816,32 @@ label[for="bio-edit"], #bio-edit {
 label[for="nickname-edit"], label[for="stud-cat-edit"], label[for="bio-edit"] {
     /* padding-top: 1.7em;
     padding-bottom: 0.8em; */
+}
+
+/*
+==================================================
+RECIPE PAGE
+==================================================
+*/
+
+h2#recipe-title
+{
+    text-align: center;
+}
+
+div#recipe-details
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    margin: auto;
+    background-color: green;
+}
+
+div#recipe-details img
+{
+
 }
 
 /*
