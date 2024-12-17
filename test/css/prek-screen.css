@@ -59,33 +59,28 @@ NAVIGATION HELP
 ==================================================
 */
 
-nav#list-help
-{
+nav#list-help {
     position: absolute;
     top: 30vh;
     left: 0;
 }
 
-nav#list-help ul
-{
+nav#list-help ul {
     display: block;
     list-style-type: none;
-    width: 100vw;
+    width: 50vw;
 }
 
-nav#list-help li
-{
+nav#list-help li {
     display: inline-block;
 }
 
-nav#list-help a
-{
+nav#list-help a {
     position: absolute;
     text-indent: -999em;
 }
 
-nav#list-help a:focus
-{
+nav#list-help a:focus {
     position: absolute;
     text-indent: 0em;
     background-color: var(--bg-primary);
@@ -187,23 +182,23 @@ nav#menu li#website-name-in-nav {
     color: var(--text-color)
 }
 
-nav#menu li#profile-item {
+nav#menu li#menu-profile-item {
     margin-left: 3em;
     background-color: var(--accent);
 }
 
-nav#menu li#profile-item a {
+nav#menu li#menu-profile-item a {
     color: var(--bg-primary);
 }
 
-nav#menu li#profile-item img {
+nav#menu li#menu-profile-item img {
     padding-left: 0.3em;
 }
 
 /*
-=============================
+==================================================
 HOME PAGE SAFE ZONE
-=============================
+==================================================
 */
 
 div#safe-zone-content {
@@ -292,8 +287,20 @@ abbr {
     text-decoration: none;
 }
 
+form label {
+    color: var(--accent);
+    font-weight: bold;
+}
+
 fieldset {
     border: 0;
+}
+
+.input-round {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    border: 4px solid var(--accent);
+    border-radius: 999px;
 }
 
 /*
@@ -442,10 +449,6 @@ CATALOGUE PAGE
 */
 
 .search-el {
-    background-color: var(--bg-primary);
-    color: var(--text-color);
-    border: 4px solid var(--accent);
-    border-radius: 999px;
     padding: 0.5em 0.9em;
 }
 
@@ -467,7 +470,6 @@ CATALOGUE PAGE
     display: flex;
     justify-content: space-between;
     margin: 0 2vw;
-    color: var(--accent);
 }
 
 #filter label {
@@ -588,7 +590,7 @@ USER PAGE
 ================================
 */
 
-.editable-user {
+/* .editable-user {
     position: relative;
 }
 
@@ -600,7 +602,7 @@ USER PAGE
     position: absolute;
     top: 0;
     right: 0;
-}
+} */
 
 #title-nick {
     text-align: center;
@@ -637,6 +639,18 @@ USER PAGE
     padding-top: 2em;
     padding-bottom: 0.5em;
     font-size: 1.5em;
+}
+
+a#profile-edit-link {
+    display: block;
+    text-align: center;
+    margin: 3em auto 0;
+    padding: 0.5em 0;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    font-weight: bold;
+    width: 20em;
+    border-radius: 999px;
 }
 
 #fav-recipe-list {
@@ -731,6 +745,69 @@ USER PAGE
     /* NOTE: create a class for the border */
     border: 4px solid rgb(177, 0, 0);
     border-radius: 5px;
+}
+
+/*
+================================
+USER EDIT PAGE
+================================
+*/
+
+#edit-div {
+    height: 12em;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#profile-img-preview {
+    position: relative;
+    width: 12em;
+    height: 12em;
+    border: 3px solid var(--accent);
+    border-radius: 999px;
+    float: left;
+}
+
+input[type="file"]#profile-img-edit {
+    color: rgba(0, 0, 0, 0);
+}
+
+input[type="file"]#profile-img-edit::file-selector-button {
+    color: rgba(0, 0, 0, 0);
+    background-image: url("../../Assets/Icons/edit.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--bg-primary);
+    border: 3px solid var(--accent);
+    border-radius: 999px;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+}
+
+.edit-input {
+    padding: 0.5em 0.9em;
+    width: 20em;
+}
+
+label[for="nickname-edit"], #nickname-edit,
+label[for="stud-cat-edit"], #stud-cat-edit,
+label[for="bio-edit"], #bio-edit {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#stud-cat-edit.edit-input {
+    text-align: left;
+}
+
+label[for="nickname-edit"], label[for="stud-cat-edit"], label[for="bio-edit"] {
+    /* padding-top: 1.7em;
+    padding-bottom: 0.8em; */
 }
 
 /*
