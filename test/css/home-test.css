@@ -1,0 +1,782 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+:root {
+    /* DEFAULT */
+    --bg-primary: #171717;
+    --bg-secondary: #242424;
+    --bg-trinary: #454545;
+    --accent:#EFAE50;
+    --accent-secondary:#392A24;
+    --accent-trinary:#0C6F59;
+    --text-color:white;
+    --a-color: #5F9950;
+    --a-visited-color: #C76F0A;
+    /* SPECIAL CASES */
+    --header-content-text-color: black;
+    --header-content-a-bg-color: #d6cccc;
+    --menu-a-color: white;
+    --menu-login-a-color: #4E0000;
+    --dt-bg-color: white;
+    --shadowcolor: #d88913;
+    --accent-a-color: #000A5F;
+    --accent-a-visited-color: #4E0000;
+    --safe-zone-a-bg-color: #E1BA84;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-size: 100%;
+    src: url("../assets/Fonts/Inter-VariableFont_opsz\,wght.ttf");
+    font-weight: 300 900;
+    font-stretch: 35% 100%;
+    font-style: normal;
+    font-display: swap;
+}
+html body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-primary);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:visited {
+    color: var(--accent-trinary);
+}
+
+p{
+    color: var(--text-color);
+}
+
+.content {
+    max-width: 70rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1rem 0 1rem;
+}
+
+.content-container {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 2rem;
+}
+/*
+==================================================
+NAVIGATION HELP
+==================================================
+*/
+
+nav#list-help
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav#list-help ul
+{
+    display: block;
+    list-style-type: none;
+    width: 100vw;
+}
+
+nav#list-help li
+{
+    display: inline-block;
+}
+
+nav#list-help a
+{
+    position: absolute;
+    text-indent: -999rem;
+}
+
+nav#list-help a:focus
+{
+    position: absolute;
+    text-indent: 0rem;
+    background-color: var(--bg-primary);
+}
+
+/*
+==================================================
+HEADER
+==================================================
+*/
+
+
+#header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60vh;
+}
+
+header .bg {
+    background-image: url("../assets/img/1.jpg");
+    background-color: var(--bgcolor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px) brightness(50%);
+    -webkit-filter: blur(3px) brightness(50%);
+    height: 100%;
+}
+
+
+header {
+    background-image: url("../assets/img/1.jpg");
+    background-color: var(--bg-primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 1.5rem;
+}
+
+header h1, header h2 {
+    color: var(--text-color);
+    text-align: center;
+    line-height: normal;
+}
+
+h1#header-title {
+    font-weight: 900;
+    font-size: 6rem;
+}
+
+h2#header-subtitle {
+    font-style: italic;
+    font-weight: 600;
+    font-size:1.8rem;
+}
+
+/*
+=============================
+MENU
+=============================
+*/
+
+nav#menu {
+    top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 100%;
+}
+
+nav#menu ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+
+nav#menu ul{
+    background-color: var(--accent-secondary);
+    border-radius: 100px;
+    padding: .6rem 2rem .6rem 2rem;
+}
+
+nav#menu li {
+    display: inline;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+nav#menu li:not(:first-child):not(:last-child){
+    border-radius: 100px;
+    margin: 0 1rem 0 1rem;
+    padding: .2rem 1.3rem .2rem 1.3rem;
+}
+nav#menu li#website-name-in-nav{
+    color: white;
+    padding-right: 3rem;
+    margin-right: 2rem;
+    border-right: 3px solid var(--accent);
+}
+nav#menu li#profile-item{
+    margin-left: auto;
+}
+nav#menu li#current-page {
+    background-color: var(--accent);
+    color: var(--accent-secondary);
+}
+
+nav#menu a:link {
+    color: var(--menu-a-color);
+}
+
+nav#menu a:visited {
+    color: var(--accent);
+}
+
+
+nav#menu li#profile-item {
+    background-color: var(--accent-trinary);
+    border-radius: 10px;
+    padding: .5rem 1.3rem .5rem 1.3rem;
+}
+
+nav#menu li#profile-item a {
+    color: white;
+}
+
+nav#menu li#profile-item img {
+    vertical-align: middle;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+/*
+=============================
+HOME PAGE SAFE ZONE
+=============================
+*/
+
+nav#quick-role{
+    margin-bottom: 2rem;
+}
+
+nav#quick-role ul {
+    text-align: center;
+    background-color: var(--bg-secondary);
+    padding: 1.1rem 0 1.1rem 0;
+}
+nav#quick-role li {
+    text-align: center;
+    display: inline;
+    margin: 0 2rem 0 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+nav#quick-role a:link {
+    color: var(--accent)
+}
+
+nav#quick-role a:visited {
+    color: var(--accent-trinary)
+}
+
+/*
+==================================================
+BREADCRUMB
+==================================================
+*/
+
+nav#breadcrumb {
+    bottom: 1.5rem;
+}
+
+nav#breadcrumb p {
+    font-size: 1.15rem;
+    width: fit-content;
+    font-style: italic;
+    background-color: var(--accent-secondary);
+    color: var(--text-color);
+    border-radius: 100px;
+    padding: .2rem 1rem .2rem 1rem;
+}
+
+/*
+==================================================
+CONTENT
+==================================================
+*/
+
+main {
+    /* margin: 5vh 0; */
+    /* padding: 0 2vw; */
+}
+
+main h1, main h2, main h3, main h4, main h5, main h6 {
+    color: var(--accent);
+}
+
+
+/* p {
+    color: var(--text-color);
+    line-height: 1.5rem;
+} */
+
+/* .content-p {
+    padding: 0.7rem 1rem;
+} */
+
+abbr {
+    text-decoration: none;
+}
+
+fieldset {
+    border: 0;
+}
+
+dl {
+    margin: 5% 7rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a.recipe-link {
+    display: block;
+    padding-top: 2%;
+}
+
+dt#fuorisede, dt#sede, dt#pendolare, dt#dad {
+    display: inline;
+    width: 30%;
+    height: 40vh;
+
+    background-color: var(--dt-bg-color);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-size: 2rem;
+    font-weight: bolder;
+
+    border-radius: 20px;
+    box-shadow: 0 0 25px 5px var(--shadowcolor);
+}
+
+dt#fuorisede, dt#sede {
+    text-align: right;
+}
+
+dd#fuorisede-text, dd#sede-text {
+    padding-left: 5%;
+}
+
+dd#pendolare-text, dd#dad-text {
+    padding-right: 5%;
+}
+
+dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text {
+    color: var(--text-color);
+    width: 65%;
+    height: 40vh;
+
+    text-align: center;
+}
+
+dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad {
+    margin-top: 15%;
+}
+
+dt#fuorisede {
+    order: 1;
+    background-image: url("../assets/img/fuorisede-image.jpg");
+}
+
+dd#fuorisede-text {
+    order: 2;
+}
+
+dt#pendolare {
+    order: 4;
+    background-image: url("../assets/img/pendolare-image.jpg");
+    background-position: 0%;
+}
+
+dd#pendolare-text {
+    order: 3;
+}
+
+dt#sede {
+    order: 5;
+    background-image: url("../assets/img/sede-image.jpg");
+}
+
+dd#sede-text {
+    order: 6;
+}
+
+dt#dad {
+    order: 8;
+    background-image: url("../assets/img/dad-image.jpg");
+}
+
+dd#dad-text {
+    order: 7;
+}
+
+div#presentation-div {
+   display: grid;
+   grid-template-areas: 'b h2'
+                        'b a';
+   margin: 10% 7em;
+   background-color: var(--accent-secondary);
+   padding: 1%;
+   border-radius: 5px;
+}
+
+div#presentation-div img {
+    grid-area: b;
+    width: 95%;
+    border-radius: 5px;
+}
+
+div#presentation-div h2, div#presentation-div p {
+    text-align: center;
+}
+
+div#presentation-div h2 {
+    grid-area: h2;
+    background-color: var(--bg-secondary);
+    color: var(--accent);
+
+    font-style: italic;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#presentation-div p {
+    grid-area: a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 3%;
+}
+
+/*
+================================
+CATALOGUE PAGE
+================================
+*/
+
+.search-el {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    border: 4px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.5em 0.9em;
+}
+
+#search-bar {
+    margin: 1.5% 0;
+    width: 100%;
+    color: var(--text-color);
+    text-align: center;
+    /* background: url("../assets/img/def-profile.png") no-repeat;
+    background-size: contain;
+    background-position: right 0.9em center; */
+}
+
+#search-bar::-webkit-search-cancel-button {
+    display: none;
+}
+
+#filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2vw;
+    color: var(--accent);
+}
+
+#filter label {
+    padding: 0.5em 0;
+    font-weight: bold;
+}
+
+#filter .filter-param {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#filter .filter-param span {
+    font-size: 1.2em;
+}
+
+#filter .filter-param .filter-input {
+    width: 15vw;
+    max-width: 14em;
+}
+
+#filter .filter-param .filter-input option {
+    background-color: var(--bg-primary);
+}
+
+#filter input[type="range"].filter-input {
+    margin: auto;
+    accent-color: var(--accent);
+}
+
+#search-btn {
+    display: block;
+    margin: 1.5em auto 0;
+    width: 30%;
+    padding: 0.4em;
+    font-size: 1.2em;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+ul#recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+    list-style-type: none;
+}
+
+ul#recipe-list .recipe {
+    margin: 0 3em 4em;
+    width: 34%;   /* corresponds to 25em with main at 1200px */
+    min-width: 20em;
+    height: 26em;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    padding: 0.5em;
+    color: var(--accent);
+}
+
+ul#recipe-list .recipe .recipe-img-crop {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul#recipe-list .recipe .recipe-img-crop img {
+    width: 100%;
+}
+
+ul#recipe-list .recipe .recipe-title {
+    padding-top: 0.6em;
+    height: 20%;
+    /* NOTE: is there a better way? */
+    display: flex;
+    align-items: center;
+}
+
+ul#recipe-list .recipe .recipe-title h3 {
+    font-size: 1.6em;
+}
+
+ul#recipe-list .recipe ul.recipe-info {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: calc(30% - 0.6em);
+}
+
+ul#recipe-list .recipe ul.recipe-info li {
+    width: 10em;
+    padding: 0.4em 0;
+}
+
+ul#recipe-list .recipe ul.recipe-info img {
+    height: 2em;
+    vertical-align: middle;
+    padding-right: 1em;
+}
+
+ul#recipe-list .recipe a {
+    display: block;
+    text-align: right;
+    padding-top: 0.3em;
+    padding-right: 1em;
+    font-weight: bold;
+}
+
+/*
+================================
+USER PAGE
+================================
+*/
+
+.editable-user {
+    position: relative;
+}
+
+.editable-user a {
+    width: 2em;
+    height: 2em;
+    background-image: url("../../Assets/Icons/edit.svg");
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#title-nick {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#title-nick span {
+    font-size: 65%;
+}
+
+#profile-img {
+    display: block;
+    margin: 1.5em auto;
+    width: 8em;
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+#stud-cat, #login-date {
+    background-color: unset;
+    text-align: center;
+    padding: 0.3em 0;
+}
+
+#stud-cat {
+    font-size: 1.2em;
+}
+
+#login-date {
+    color: var(--accent);
+}
+
+.user-p-title {
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+#fav-recipe-list {
+    background-color: rgb(66, 38, 22);
+    list-style-type: none;
+    padding: 0 6vw;
+    border: 4px solid rgb(34, 19, 9);
+    border-radius: 5px;
+    min-height: 12em;
+    /* NOTE: not so buty but at least the section for the empty list is centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#empty-fav-recipe-list {
+    background-color: unset;
+    text-align: center;
+}
+
+#fav-recipe-list .fav-recipe {
+    background-color: var(--bg-secondary);
+    height: 13em;
+    margin: 1em 2em;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-img-crop {
+    float: left;
+    height: 100%;
+    width: 45%;
+    max-width: 18em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-img-crop img {
+    width: 100%;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-title {
+    display: flex;
+    align-items: center;
+    height: 35%;
+    padding: 0 1em;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-title h4 {
+    font-size: 1.5em;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-info {
+    list-style-type: none;
+    color: var(--text-color);
+    height: 52%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-info li {
+    width: 8em;
+    padding: 0.4em 0;
+    /* TODO: only when info are inline */
+    /* text-align: center; */
+}
+
+#fav-recipe-list .fav-recipe .fav-recipe-info li img {
+    height: 1.5em;
+    vertical-align: middle;
+    padding-right: 0.5em;
+}
+
+#fav-recipe-list .fav-recipe a {
+    display: block;
+    text-align: right;
+    padding-right: 1em;
+}
+
+.danger-btn {
+    display: block;
+    width: 100%;
+    height: 3em;
+    background-color: red;
+    color: var(--p-color);
+    font-weight: bold;
+    margin-bottom: 1vh;
+    /* NOTE: create a class for the border */
+    border: 4px solid rgb(177, 0, 0);
+    border-radius: 5px;
+}
+
+/*
+==================================================
+FOOTER
+==================================================
+*/
+
+footer {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 1em 0 1em 0;
+}
+
+footer p {
+    display: inline;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 2em 0 2em;
+}
+
+footer img {
+    vertical-align: middle;
+}
+
+footer a {
+    display: block;
+}
+
+
+
+
