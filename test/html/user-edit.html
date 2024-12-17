@@ -30,7 +30,7 @@
                     <li><a href="./index.html"><span lang="en">HOME</span></a></li>
                     <li><a href="./catalogue.html">RICETTE</a></li>
                     <li><a href="">CONTATTI</a></li>
-                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                    <li id="menu-profile-item"><a href="./user.html">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
                 </ul>
             </nav>
         </header>
@@ -42,23 +42,26 @@
         <main>
             <form action="">
                 <fieldset>
-                    <label for="nickname-edit">Nickname</label>
-                    <input type="text" id="nickname-edit">
-                    <!-- TODO: image preview -->
-                    <label for="profile-img-edit">Foto profilo</label>
-                    <input type="file" id="profile-img-edit" accept="image/*">
-                    <label for="stud-cat-edit">Categoria studente</label>
-                    <select id="stud-cat-edit">
-                            <option value="fuorisede" selected>Fuorisede</option>
-                            <option value="pendolare">Pendolare</option>
-                            <option value="in-sede">In sede</option>
-                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
-                    </select>
+                    <div id="edit-div">
+                        <label for="profile-img-edit" class="hide">Foto profilo</label>
+                        <div id="profile-img-preview">
+                            <input type="file" id="profile-img-edit" accept="image/*">
+                        </div>
+                        <label for="nickname-edit">Nome utente</label>
+                        <input type="text" id="nickname-edit" class="input-round edit-input">
+                        <label for="stud-cat-edit">Categoria studente</label>
+                        <select id="stud-cat-edit" class="input-round edit-input">
+                                <option value="fuorisede" selected>Fuorisede</option>
+                                <option value="pendolare">Pendolare</option>
+                                <option value="in-sede">In sede</option>
+                                <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
+                        </select>
+                    </div>
                     <label for="bio-edit">Biografia</label>
                     <textarea id="bio-edit"></textarea>
 
                     <button type="submit">CONFERMA</button>
-                    <!-- <button>ANNULLA</button> -->
+                    <button type="reset">ANNULLA</button>
                 </fieldset>
             </form>
         </main>
