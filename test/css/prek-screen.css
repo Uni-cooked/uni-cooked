@@ -470,6 +470,7 @@ CATALOGUE PAGE
     background-position: right 0.9em center; */
 }
 
+/* NOTE: hide the X to clear the input */
 #search-bar::-webkit-search-cancel-button {
     display: none;
 }
@@ -589,6 +590,36 @@ ul#recipe-list .recipe a {
     text-align: right;
     padding-top: 0.3em;
     padding-right: 1em;
+    font-weight: bold;
+}
+
+#page-changer {
+    text-align: center;
+}
+
+#prev-page-btn, #next-page-btn {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 1em;
+    background-size: contain;
+    background-color: var(--accent);
+    border: 0;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#prev-page-btn {
+    background-image: url("../../Assets/Icons/arrow.svg");
+}
+
+#next-page-btn {
+    background-image: url("../../Assets/Icons/arrow.svg");
+}
+
+#page-changer span {
+    padding: 0 0.4em;
+    color: var(--accent);
+    font-size: 1.2em;
     font-weight: bold;
 }
 

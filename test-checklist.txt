@@ -14,7 +14,7 @@ Accessibilità:
     - Accessibilità tabelle (se presenti)
     - Numero cambiamenti per secondo (max 3/secondo)
     - abbr con title o comunque con spiegazione
-    - Link per accessibilità (torna su, vai al contenuto)
+    - Link per accessibilità (torna su, vai al contenuto, vai alla fine ecc)
 
 - Colori:
     - Contrasti AA:

@@ -1,2 +1,8 @@
-article in user
-breadcrumb user-edit
+- per chiedere una nuova pagina/blocco-commenti devo incrementare la var index, dove sta? se è nel php è condivisa?
+- accessibile burger menu con checkbox?
+- col burger menu come faccio a nascondere i tab nelle sue voci quando è chiuso e viceversa?
+- article in user per dividere le sezioni?
+- breadcrumb user-edit?
+- molti siti che hanno anche vinto non hanno il blocco a 1200px, è richiesto per accessibilità?
+- se 8em e aumento il testo questo esplode, come faccio?
+- / -> su
