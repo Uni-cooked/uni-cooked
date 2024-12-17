@@ -461,8 +461,30 @@ img
 p, p#MaxVoto, dl,li, input#Cancella, button, article{
     color: white;
 }
+
 .Sezione,.Sottotitolo, article, fieldset, textarea.voto, p{
     background-color: rgb(25, 24, 24);   
+}
+
+.Star
+{
+    margin-top: 0%;
+    margin-bottom: 2%;;
+    visibility: hidden;
+    cursor: pointer;
+    align-content: top;
+}
+
+.Star:before
+{
+    content: url(../img/Preferito.png);
+    visibility: visible;
+    position: absolute;
+}
+
+.Star:checked:before
+{
+    content: url(../img/Preferenza.png);
 }
 
 div#ImgInfoRicetta
@@ -619,6 +641,7 @@ input
     margin: 5% 0,5% 5% 0.5%;
     padding: 1% 3% 1% 3%;
     border-radius: 0.5em;
+    cursor: pointer;
 }
 
 input#Cancella
@@ -689,9 +712,11 @@ button#Torna,button#Carica
     width: 200px;
     height: 25px;
     border-radius: 0.5em;
+    cursor: pointer;
 }
 
 #Torna
 {
     margin-top: 3%;
+    cursor: pointer;
 }
