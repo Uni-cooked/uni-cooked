@@ -827,6 +827,7 @@ RECIPE PAGE
 h2#recipe-title
 {
     text-align: center;
+    margin-bottom: 5%;
 }
 
 div#recipe-details
@@ -834,14 +835,74 @@ div#recipe-details
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4em;
-    margin: auto;
-    background-color: green;
+    margin-bottom: 5%;
 }
 
 div#recipe-details img
 {
+    padding-right: 3em;
+}
 
+div#recipe-details ul
+{
+    list-style-type: none;
+}
+
+div#recipe-details ul li
+{
+    padding: 5% 0;
+    color: var(--text-color)
+}
+
+div#recipe-details ul li img
+{
+    vertical-align: text-bottom;
+    padding-right: 1.5em;
+}
+
+p#recipe-details-presentation
+{
+    text-align: center;
+    padding: 1em;
+}
+
+ul#recipe-ingredients-list
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-position: inside;
+
+    color: var(--text-color);
+    background-color: var(--bg-secondary);
+}
+
+ul#recipe-ingredients-list li
+{
+    flex-basis: 33%;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+h3.recipe-details-h3
+{
+    background-color: var(--bg-secondary);
+    text-align: center;
+    margin-top: 3%;
+    padding-bottom: 1em;
+}
+
+ol#recipe-ingredients-list
+{
+    background-color: var(--bg-secondary);
+}
+
+ol#recipe-ingredients-list li
+{
+    color: var(--text-color);
+    text-align: left;
+    margin: 0 5em;
+    padding: 1em 0;
 }
 
 /*
