@@ -465,12 +465,18 @@ dd input{
     pointer-events: none;
 }
 
+dd:has(input:focus-visible) label {
+    border: 2px solid white;
+}
+
 dd #role-info-label {
     color: var(--accent);
     font-weight: 700;
     margin-bottom: 2rem;
     text-decoration: underline;
     display: inline-block;
+    cursor: pointer;
+    padding: .5rem;
 }
 
 #role-desc a{
