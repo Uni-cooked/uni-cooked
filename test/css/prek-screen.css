@@ -835,7 +835,7 @@ div#recipe-details
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5%;
+    margin-bottom: 3em;
 }
 
 div#recipe-details img
@@ -858,6 +858,15 @@ div#recipe-details ul li img
 {
     vertical-align: text-bottom;
     padding-right: 1.5em;
+}
+
+button#add-to-favourite
+{
+    display: block;
+    margin: 3em auto;
+    padding: 0.5em;
+    border-radius: 10px;
+    background-color: var(--accent);
 }
 
 p#recipe-details-presentation
@@ -903,6 +912,131 @@ ol#recipe-ingredients-list li
     text-align: left;
     margin: 0 5em;
     padding: 1em 0;
+}
+
+h3#comment-section-h3
+{
+    text-align: center;
+    padding: 3em;
+}
+
+h4#comment-section-h4
+{
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+section#personal-comment-section img
+{
+    width: 4em;
+    float: left;
+    background-color: var(--bg-primary);
+}
+
+
+section#personal-comment-section form
+{
+    background-color: var(--bg-secondary);
+    margin-left: 5em;
+}
+
+section#personal-comment-section label
+{
+    display: block;
+    padding: 1em 0;
+    padding-left: 1em;
+}
+
+section#personal-comment-section textarea
+{
+    margin-left: 1em;
+    width: 95%;
+    height: 10vh;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+section#personal-comment-section input
+{
+    margin: 0 1em;
+    float: left;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+section#personal-comment-section legend
+{
+   color: var(--accent);
+   text-align: left;
+   font-weight: bold;
+   margin-left: 1em;
+}
+
+section#personal-comment-section button
+{
+    float: right;
+    width: 10em;
+    height: 3em;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+section#personal-comment-section button[type="reset"]
+{
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+section#personal-comment-section button[type="submit"]
+{
+    background-color: var(--accent);
+    color: black;
+}
+
+h4#comment-section-published-h4
+{
+    clear: both;
+    text-align: center;
+    padding: 1em;
+}
+
+article.comment-published
+{
+    background-color: var(--bg-secondary);
+
+    padding: 2em;
+    margin: 2em;
+}
+
+article.comment-published img
+{
+    width: 3em;
+    float: left
+}
+
+article.comment-published h4
+{
+    float: left;
+    margin-left: 1em;
+}
+
+article.comment-published p.publish-date
+{
+    float: right;
+    color: var(--accent)
+}
+
+article.comment-published p.comment-published-mark, article.comment-published p.comment-published-text
+{
+    clear: both;
+    padding-top: 1em;
+}
+
+a#load-more-comments
+{
+    display: block;
+    text-align: center;
 }
 
 /*

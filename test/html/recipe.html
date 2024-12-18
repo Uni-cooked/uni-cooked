@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{Nome ricetta} - Uni cooked</title>
         <meta name="description" content="{Nome ricetta}, un {Tipo-piatto} adatta per gli universitari {Categoria} a base di {Ingredienti principali}.">
-        <meta name="keyword" content="{Nome ricetta},{Ingredienti principali},{Categoria},{Tipo-piatto}">
+        <meta name="keyword" content="{Nome-ricetta},{Ingredienti-principali},{Categoria},{Tipo-piatto}">
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -38,7 +38,7 @@
         </header>
 
         <nav id="breadcrumb">
-            <p>Stai studiando in: <a href="./index.html" lang="en">Home</a> > Ricetta</p>
+            <p>Stai studiando in: <a href="./index.html" lang="en">Home</a> > <a href="./catalogue.html"> Ricette </a> > {Nome-ricetta}</p>
         </nav>
 
         <main>
@@ -54,6 +54,8 @@
                     <li><img class="recipe-info-img" alt="Costo indicativo della ricetta" src="../../Assets/Icons/cost.svg" />{Costo}</li>
                 </ul>
             </div>
+
+            <button id="add-to-favourite">Aggiungi ai preferiti</button>
 
             <p id="recipe-details-presentation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ipsum ut nulla! Consequatur rerum illo, dicta laboriosam voluptas corrupti obcaecati veritatis a. Quis dignissimos error odio ex. Quibusdam, exercitationem amet!</p>
             
@@ -80,6 +82,52 @@
                 <li>test</li>
                 <li>test</li>
             </ol>
+
+            <h3 id="comment-section-h3">COMMENTI</h3>
+            <h4 id="comment-section-h4">PUBBLICA UN COMMENTO</h4>
+            <section id="personal-comment-section">
+                <img alt="Immagine profilo personale"  src="../assets/img/def-profile.png">
+                <form action="" method="post">
+                    <formset>
+                        <legend>Dettagli del commento</legend>
+                        <label for="comment-text">Commento</label>
+                        <textarea name="comment-text" id="comment-text" required></textarea>
+                        <label for="mark-comment-to-publish">Valutazione (tra 0 e 30)</label>
+                        <input type="number" name="mark-comment-to-publish" id="mark-comment-to-publish" min="0" max="30" value="18" required>
+                        <p>su 30</p>
+                    </formset>
+                    <button type="submit">PUBBLICA</button>
+                    <button type="reset">CANCELLA</button>     
+                </form>
+            </section>
+
+            <h4 id="comment-section-published-h4">GLI ALTRI UTENTI DICONO...</h4>
+
+            <section>
+                <article class="comment-published">
+                    <img alt="Immagine profilo personale"  src="../assets/img/def-profile.png">
+                    <h4>{nome-utente}</h4>
+                    <p class="publish-date"><time datetime="2024-12-18">18/12/2024</time></p>
+                    <p class="comment-published-mark">{Voto-commento} su 30</p>
+                    <p class="comment-published-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, error facere laboriosam porro praesentium velit consequatur voluptates odit, perferendis culpa magni at! Fuga tempore aliquam officia doloribus ut iste.</p>
+                </article>
+                <article class="comment-published">
+                    <img alt="Immagine profilo personale"  src="../assets/img/def-profile.png">
+                    <h4>APoorGuyWhoDoesNotKnowHtml</h4>
+                    <p class="publish-date"><time datetime="2024-12-18">18/12/2024</time></p>
+                    <p class="comment-published-mark">30 su 30</p>
+                    <p class="comment-published-text">La ricetta è fantastica, particolarmente apprezzata la chiarezza espositiva e la varietà degli ingredienti (da notare la facilità di reperimento del pregiato test). Mi ha con successo consolato dal fatto di non saper fare html.</p>
+                </article>
+                <article class="comment-published">
+                    <img alt="Immagine profilo personale"  src="../assets/img/def-profile.png">
+                    <h4>{nome-utente}</h4>
+                    <p class="publish-date"><time datetime="2024-12-18">18/12/2024</time></p>
+                    <p class="comment-published-mark">{Voto-commento} su 30</p>
+                    <p class="comment-published-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, error facere laboriosam porro praesentium velit consequatur voluptates odit, perferendis culpa magni at! Fuga tempore aliquam officia doloribus ut iste.</p>
+                </article>
+                <a id="load-more-comments" href="">Carica altri commenti</a>
+            </section>
+
         </main>
 
         <footer>
