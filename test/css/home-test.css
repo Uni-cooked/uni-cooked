@@ -60,7 +60,7 @@ p{
 }
 
 .content {
-    max-width: 70rem;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     padding: 0 1rem 0 1rem;
@@ -307,7 +307,7 @@ abbr {
 }
 
 #presentation-text {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 /*
@@ -317,7 +317,7 @@ ROLES
 */
 
 dl.roles {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 dl.roles dt {
@@ -487,64 +487,32 @@ WHY
 
 div#why{
     background-color: var(--accent-secondary);
-    margin-bottom: 2rem;
-    /* text-align: left; */
+    margin-bottom: 4rem;
 }
-
-/* div#why {
-   display: grid;
-   grid-template-areas: 'b h2'
-                        'b a';
-   margin: 10% 7em;
-   background-color: var(--accent-secondary);
-   padding: 1%;
-   border-radius: 5px;
-} */
 
 div#why > div {
     display: flex;
+    gap: 2rem;
 }
 
 div#why #why-desc {
-    /* float: right; */
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 1rem;
 }
 
-div#why #why-desc p {}
+div#why #why-desc p {
+    margin: auto;
+}
 
 div#why img {
-    /* grid-area: b; */
-    width: 100%;
+    width:60%;
     height: 40%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
-
-
-
-/* div#why h2, div#why p {
-    text-align: center;
-} */
-
-/* div#why h2 {
-    grid-area: h2;
-    background-color: var(--bg-secondary);
-    color: var(--accent);
-
-    font-style: italic;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-} */
-
-/* div#why p {
-    grid-area: a;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 3%;
-} */
-
-
 
 /*
 ==================================================
@@ -553,27 +521,22 @@ FOOTER
 */
 
 footer {
-    clear: both;
     background-color: var(--bg-secondary);
     text-align: center;
     padding: 1em 0 1em 0;
 }
 
 footer p {
-    display: inline;
+    font-size: .9em;
     font-style: italic;
     font-weight: 300;
-    margin: 0 2em 0 2em;
-}
-
-footer img {
-    vertical-align: middle;
+    margin: 1em 0 1em 0;
 }
 
 footer a {
-    display: block;
+    color: var(--accent);
+    font-size: 1.1em;
 }
-
 
 
 
