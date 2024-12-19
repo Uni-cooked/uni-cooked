@@ -22,6 +22,8 @@
     --textcolor: #000;
     --acolor: #5F9950;
     --avisitedcolor: #B06F0C;
+    --bg-primary: #171717;
+    --bg-secondary: #242424;
     /*
     *   HEADER ZONE
     */
@@ -61,7 +63,7 @@
 
 body
 {
-    background-color: var(--bgcolor);
+    background-color: var(--bg-primary);
 }
 
 p
@@ -91,7 +93,7 @@ header
     align-items: center;
     justify-content: center;
     background-image: url("../assets/img/header-bg.jpg");
-    background-color: var(--bgcolor);
+    background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -401,41 +403,6 @@ div#presentation-div p
 }
 
 /*
-*   FOOTER
-*/
-
-footer
-{
-    background-color: var(--footerbgcolor);
-    clear:both;
-    text-align: center;
-}
-
-footer p
-{
-    display: inline;
-}
-
-footer.valid
-{
-    vertical-align: middle;
-}
-
-footer a
-{
-    background-color: var(--ahelpbgcolor);
-    position: absolute;
-    text-indent: -999em;
-}
-
-footer a:focus
-{
-    background-color: var(--ahelpbgcolor);
-    position: absolute;
-    text-indent: 0;
-}
-
-/*
 *  INFO RICETTA TEMPLATE
 */
 main{
@@ -446,6 +413,7 @@ main{
     padding-top: 2%;
     max-width: 100%;
     overflow-x: hidden;
+    background-color: var(--bg-primary);
 }
 
 h2
@@ -463,29 +431,32 @@ p, p#MaxVoto, dl,li, input#Cancella, button, article{
 }
 
 .Sezione,.Sottotitolo, article, fieldset, textarea.voto, p{
-    background-color: rgb(25, 24, 24);   
+    background-color: var(--bg-secondary) 
 }
 
-.Star
+.Intro
+{
+    display: inline;
+}
+
+button.Star
 {
     margin-top: 0%;
     margin-bottom: 2%;;
-    visibility: hidden;
+    text-indent: -999em;
     cursor: pointer;
-    align-content: top;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Preferito.png);
+    background-color: var(--bg-primary);
+    border:0;
 }
 
-.Star:before
+button.Star:hover
 {
-    content: url(../img/Preferito.png);
-    visibility: visible;
-    position: absolute;
+    background-image: url(../img/Preferenza.png);
 }
 
-.Star:checked:before
-{
-    content: url(../img/Preferenza.png);
-}
 
 div#ImgInfoRicetta
 {
@@ -497,7 +468,7 @@ div#ImgInfoRicetta
 
 ul#InfoRicetta
 {
-    margin-top: 2%;
+    margin: 2% 2%;
     flex-direction: column;
     text-align: center;
     list-style-type: none;
@@ -551,7 +522,7 @@ ol#PreparazioneRicetta
 
 h3#Commento
 {
-    background-color: var(--bgcolor);
+    background-color: var(--bg-primary);
 }
 
 section#CommentoUtente 
@@ -560,14 +531,11 @@ section#CommentoUtente
     flex-direction: row;
     padding: 1 1% 1% 0%;
     margin: 0% 10% 2% 9%;
-    background-color: var(--bgcolor);
 }  
 
 form
 {
     width: 100%;
-    flex-wrap: wrap;
-    flex-direction: row;
 }
 
 img#ImgUtente{
@@ -581,20 +549,21 @@ img#ImgUtente, img.InfoUtente
     width: 15%;
     height: 15%;
     float: left;
-    margin-right: 2%;;
+    margin-right: 2%;
+    background-color: var(--bg-primary);
 }
 
 fieldset
 {
     border: none;
-    flex-direction: column;
     min-width: 65%;
-    justify-content: center;
+    margin-bottom: 2%;;
 }
 
 .voto{
     display: inline;
-    margin: 1%;
+    margin: 1.5%;
+    float:left;
 }
 
 textarea
@@ -610,7 +579,7 @@ textarea.voto
     border: 0;
 }
 
-fieldset button.voto
+button.voto
 {
     color:#000;
     width: 50px;
@@ -620,46 +589,59 @@ fieldset button.voto
     font-size: 1em;
 }
 
+section#CommentoUtente label
+{
+    display: block;
+    padding: 1em;
+    padding-left: 1em;
+    text-align: left;
+    clear: both;
+}
+
 textarea#Commento-utente
 {
     resize: none;
-    min-width: 95%;
+    width: 97%;
+    height: 10vh;
     background-color: white;
     color: black;
+    margin-bottom: 2%;
 }
 
-div#buttons
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-input
+button.SceltaUtente
 {
     border: 0.5%;
-    margin: 5% 0,5% 5% 0.5%;
     padding: 1% 3% 1% 3%;
     border-radius: 0.5em;
     cursor: pointer;
 }
 
-input#Cancella
+button#Cancella
 {
-    background-color: black;
-    margin-right: 1%; 
+    background-color: var(--bg-primary); 
+    color: var(--textbgcolor);
+    color:white;
+    float: right;
 }
 
-input#Commenta
+button#Commenta
 {
     color: black;    
     background-color: var(--textbgcolor);
     margin-bottom: 0.55%;
+    float: right;
+}
+
+h4
+{
+    clear: both;
+    text-align: center;
 }
 
 section#CommentiAltriUtenti
 {
-    margin: 1% 10% 1% 10%;
+    margin: 2% 10% 1% 10%;
+    clear: both;
 }
 
 li.CommentoUtenti{
@@ -696,16 +678,8 @@ p#VotoUtente{
     margin-top: 4%;
 }
 
-div#last-buttons
-{
-    display: flex;
-    flex-direction: column;
-    margin: 1% 10% 1% 10%;
-    justify-content: center;
-    align-items: center;
-}
 
-button#Torna,button#Carica
+button#Carica
 {
     background-color: var(--textbgcolor);
     color:#000;
@@ -713,10 +687,34 @@ button#Torna,button#Carica
     height: 25px;
     border-radius: 0.5em;
     cursor: pointer;
+    margin: 1% 10% 1% 10%;
+    justify-content: center;
+    align-items: center;
 }
 
-#Torna
-{
-    margin-top: 3%;
-    cursor: pointer;
+/*
+==================================================
+FOOTER
+==================================================
+*/
+
+footer {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 1em 0 1em 0;
+}
+
+footer p {
+    display: inline;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 2em 0 2em;
+}
+
+footer img {
+    vertical-align: middle;
+}
+
+footer a {
+    display: block;
 }
