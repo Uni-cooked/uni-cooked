@@ -9,7 +9,8 @@
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/home-test.css" media="screen">
+        <link rel="stylesheet" href="../css/home-test-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/home-test-mini.css" media="screen and (max-width: 768px)">
     </head>
     <body>
         <header>
@@ -22,28 +23,37 @@
                         <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                     </ul>
                 </nav>
-                <div id="titles">
+
+                <div id="header-titles">
                     <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
                 </div>
                 <nav id="menu">
                     <ul>
                         <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
                         <li id="current-page"><span lang="en">HOME</span></li>
                         <li><a href="./catalogue.html">RICETTE</a></li>
-                        <li><a href="">CONTATTI</a></li>
+                        <li><a href="./aboutus.html">CONTATTI</a></li>
                         <li id="profile-item">
-                            <a href="">ACCEDI</a>
+                            <a href="./user.html">ACCEDI</a>
                             <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
                         </li>
                     </ul>
                 </nav>
+                
                 <nav id="breadcrumb">
                     <p>Stai studiando in: <span lang="en">Home</span></p>
                 </nav>
             </div>
         </header>
-
+        
         <nav id="quick-role">
             <ul>
                 <li><a href="#fuorisede">Fuorisede</a></li>
@@ -58,7 +68,7 @@
                 <p class="content">
                     Se sei stanco di trovarti all'ultimo a preparare di fretta qualcosa da mettere sotto i denti, o se ogni tanto vuoi mangiare qualcosa di diverso ma
                     non sai mai cosa fare, o al contrario avresti tempo per cucinarti un <strong>piatto</strong> degno di nota ma diciamocelo, non siamo mica la nonna,
-                    eccoti nel posto giusto! <strong>Uni-<span lang="en">cooked</span></strong> offre un assortimento variegato di <strong>ricette</strong> adatte ad ogni esigenza. Naviga
+                    eccoti nel posto giusto! <strong>Uni <span lang="en">cooked</span></strong> offre un assortimento variegato di <strong>ricette</strong> adatte ad ogni esigenza. Naviga
                     nel nostro catalogo oppure consulta le sezioni dedicate ad ogni tipologia di studente per trovare i <strong>piatti</strong> che più fanno per te.
                 </p>
             </div>
@@ -187,14 +197,14 @@
 
             <div id="why" class="content-container">
                 <div class="content">
-                    <img src="../assets/img/team-image.jpg" width="50%" alt="Immagine del team impegnato nella progettazione di questo sito web">
+                    <img src="../assets/img/team-image.jpg" alt="Immagine del team impegnato nella progettazione di questo sito web">
                     <div id="why-desc">
                         <h2>IL NOSTRO OBIETTIVO</h2>
                         <p>Ci sono tanti siti di ricette sul <span lang="en">web</span>, perché esplorare proprio questo?
                         Sin dal nostro primo anno di università abbiamo continuato a cercare un portale che ci consentisse
                         di cucinare qualcosa di adatto a noi: non cercavamo delle semplici ricette, ma un vero e proprio strumento che ci fornisse idee
                         adatte ai nostri stili di vita.
-                        Non trovando nulla che si adattasse perfettamente alle nostre esigenze, abbiamo deciso di prendere le nostre conoscenze e realizzare <strong>Uni-<span lang="en">Cooked</span></strong>,
+                        Non trovando nulla che si adattasse perfettamente alle nostre esigenze, abbiamo deciso di prendere le nostre conoscenze e realizzare <strong>Uni <span lang="en">Cooked</span></strong>,
                         il punto di riferimento per gli universitari affamati ma con esigenze temporali e di costo differenti!
                         </p>
                     </div>
@@ -206,6 +216,5 @@
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
             <a href="#top">Torna su</a>
         </footer>
-
     </body>
 </html>

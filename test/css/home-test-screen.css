@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
     padding: 0;
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -38,6 +38,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 html body {
     height: 100%;
 }
@@ -55,7 +56,7 @@ a:visited {
     color: var(--accent-trinary);
 }
 
-p{
+p {
     color: var(--text-color);
 }
 
@@ -71,39 +72,40 @@ p{
     text-align: center;
     padding: 2rem;
 }
+
+.hide {
+    position: absolute;
+    text-indent: -999em;
+}
+
 /*
 ==================================================
 NAVIGATION HELP
 ==================================================
 */
 
-nav#list-help
-{
+nav#list-help {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-nav#list-help ul
-{
+nav#list-help ul {
     display: block;
     list-style-type: none;
     width: 100vw;
 }
 
-nav#list-help li
-{
+nav#list-help li {
     display: inline-block;
 }
 
-nav#list-help a
-{
+nav#list-help a {
     position: absolute;
     text-indent: -999rem;
 }
 
-nav#list-help a:focus
-{
+nav#list-help a:focus {
     position: absolute;
     text-indent: 0rem;
     background-color: var(--bg-primary);
@@ -115,6 +117,25 @@ HEADER
 ==================================================
 */
 
+/* header .bg {
+    background-image: url("../assets/img/1.jpg");
+    background-color: var(--bgcolor);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px) brightness(50%);
+    -webkit-filter: blur(3px) brightness(50%);
+    height: 100%;
+} */
+
+header {
+    background-image: url("../assets/img/1.jpg");
+    background-color: var(--bg-primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
 
 #header-content {
     width: 100%;
@@ -125,25 +146,8 @@ HEADER
     min-height: 60vh;
 }
 
-header .bg {
-    background-image: url("../assets/img/1.jpg");
-    background-color: var(--bgcolor);
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(3px) brightness(50%);
-    -webkit-filter: blur(3px) brightness(50%);
-    height: 100%;
-}
-
-
-header {
-    background-image: url("../assets/img/1.jpg");
-    background-color: var(--bg-primary);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 1.5rem;
+#header-titles {
+    order: 3;
 }
 
 header h1, header h2 {
@@ -154,7 +158,7 @@ header h1, header h2 {
 
 h1#header-title {
     font-weight: 900;
-    font-size: 6rem;
+    font-size: 5rem;
 }
 
 h2#header-subtitle {
@@ -163,65 +167,53 @@ h2#header-subtitle {
     font-size:1.8rem;
 }
 
-#menu {
-    order: 1;
-}
-
-#titles {
-    order: 2;
-}
-
-#breadcrumb {
-    order: 3;
-}
-
 /*
 =============================
 MENU
 =============================
 */
 
+#hamburger, #hamburger-label {
+    display: none;
+}
+
 nav#menu {
-    top: 2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 1.5rem 3rem 0;
     width: 100%;
+    order: 2;
 }
 
 nav#menu ul {
     display: flex;
     list-style-type: none;
     align-items: center;
-}
-
-
-nav#menu ul{
     background-color: var(--accent-secondary);
     border-radius: 100px;
     padding: .6rem 2rem .6rem 2rem;
 }
 
 nav#menu li {
-    display: inline;
     font-weight: 700;
     font-size: 1.1rem;
 }
 
-
-nav#menu li:not(:first-child):not(:last-child){
+nav#menu li:not(:first-child):not(:last-child) {
     border-radius: 100px;
     margin: 0 1rem 0 1rem;
     padding: .2rem 1.3rem .2rem 1.3rem;
 }
-nav#menu li#website-name-in-nav{
+
+nav#menu li#website-name-in-nav {
     color: white;
     padding-right: 3rem;
     margin-right: 2rem;
     border-right: 3px solid var(--accent);
 }
-nav#menu li#profile-item{
+
+nav#menu li#profile-item {
     margin-left: auto;
 }
+
 nav#menu li#current-page {
     background-color: var(--accent);
     color: var(--accent-secondary);
@@ -234,7 +226,6 @@ nav#menu a:link {
 nav#menu a:visited {
     color: var(--accent);
 }
-
 
 nav#menu li#profile-item {
     background-color: var(--accent-trinary);
@@ -253,12 +244,57 @@ nav#menu li#profile-item img {
 }
 
 /*
+==================================================
+BREADCRUMB
+==================================================
+*/
+
+nav#breadcrumb {
+    bottom: 1.5rem;
+    order: 4;
+}
+
+nav#breadcrumb p {
+    font-size: 1.15rem;
+    width: fit-content;
+    font-style: italic;
+    background-color: var(--accent-secondary);
+    color: var(--text-color);
+    border-radius: 100px;
+    padding: .2rem 1rem .2rem 1rem;
+}
+
+/*
+==================================================
+CONTENT
+==================================================
+*/
+
+main h1, main h2, main h3, main h4, main h5, main h6 {
+    color: var(--accent);
+}
+
+abbr {
+    text-decoration: none;
+}
+
+/*
 =============================
-HOME PAGE SAFE ZONE
+MENU
 =============================
 */
 
-nav#quick-role{
+#presentation-text {
+    margin-bottom: 5rem;
+}
+
+/*
+=============================
+HOME PAGE ROLES MENU
+=============================
+*/
+
+nav#quick-role {
     margin-bottom: 2rem;
 }
 
@@ -267,6 +303,7 @@ nav#quick-role ul {
     background-color: var(--bg-secondary);
     padding: 1.1rem 0 1.1rem 0;
 }
+
 nav#quick-role li {
     text-align: center;
     display: inline;
@@ -285,47 +322,9 @@ nav#quick-role a:visited {
 }
 
 /*
-==================================================
-BREADCRUMB
-==================================================
-*/
-
-nav#breadcrumb {
-    bottom: 1.5rem;
-}
-
-nav#breadcrumb p {
-    font-size: 1.15rem;
-    width: fit-content;
-    font-style: italic;
-    background-color: var(--accent-secondary);
-    color: var(--text-color);
-    border-radius: 100px;
-    padding: .2rem 1rem .2rem 1rem;
-}
-
-/*
-==================================================
-MAIN
-==================================================
-*/
-
-main h1, main h2, main h3, main h4, main h5, main h6 {
-    color: var(--accent);
-}
-
-abbr {
-    text-decoration: none;
-}
-
-#presentation-text {
-    margin-bottom: 5rem;
-}
-
-/*
-==================================================
-ROLES
-==================================================
+=============================
+HOME PAGE ROLES
+=============================
 */
 
 dl.roles {
@@ -354,11 +353,10 @@ dl.roles dt {
 dl.roles dt div {
     margin: auto;
     width: fit-content;
-    background-image: url(../assets/img/brush.svg);
+    background-image: url("../assets/img/brush.svg");
     background-repeat: no-repeat;
     background-position: center;
     padding: 1rem 5rem 1rem 5rem;
-
 }
 
 dl.roles dt#fuorisede {
@@ -402,18 +400,16 @@ dl.roles dd:not(:last-child) {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-
 input:checked ~ .flip-card .flip-card-inner {
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
 }
 
 input:checked ~ .flip-card .flip-card-back {
     visibility: visible;
 }
-input:checked ~ .flip-card .flip-card-front p{
+input:checked ~ .flip-card .flip-card-front p {
     visibility: hidden;
 }
-
 
 .flip-card-back, .flip-card-front {
     border-radius: 20px;
@@ -440,7 +436,7 @@ input:checked ~ .flip-card .flip-card-front p{
     background-color: var(--accent-trinary);
     color: white;
     transition: visibility 1s;
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-back h3 {
@@ -460,7 +456,6 @@ input:checked ~ .flip-card .flip-card-front p{
     margin: 1rem;
     font-style: italic;
 }
-  
 
 dl p {
     color: var(--bg-primary);
@@ -496,14 +491,13 @@ dd #role-info-label {
     margin-top: 1rem;
 }
 
-
 /*
-==================================================
-WHY
-==================================================
+=============================
+HOME PAGE WHY
+=============================
 */
 
-div#why{
+div#why {
     background-color: var(--accent-secondary);
     margin-bottom: 4rem;
 }
@@ -511,28 +505,24 @@ div#why{
 div#why > div {
     display: flex;
     gap: 2rem;
-    /* flex-direction: column; */
 }
 
 div#why #why-desc {
-    flex: 1;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-secondary);
     border-radius: 10px;
     padding: 1rem;
 }
 
-div#why #why-desc h2 {
-    margin-bottom: 3rem;
-}
-
 div#why #why-desc p {
     margin: auto;
-    padding-bottom: 3rem;
 }
 
 div#why img {
-    flex: 2;
-    object-fit: cover;
+    width:60%;
+    height: 40%;
     border-radius: 10px;
 }
 
@@ -559,30 +549,3 @@ footer a {
     color: var(--accent);
     font-size: 1.1em;
 }
-
-/*
-==================================================
-MEDIA QUERY
-==================================================
-*/
-
-
-@media (max-width: 480px) {
-    input:checked ~ .flip-card .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    .flip-card-back{
-        transform: rotateY(180deg);
-    }
-  }
-
-@media (max-width: 768px) {
-    div#why > div {
-      flex-direction: column;
-    }
-    div#why img {
-        width: 100%;
-    }
-  }
-
-

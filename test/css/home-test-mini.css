@@ -1,0 +1,140 @@
+:root {
+    --bar-width: 4rem;
+    --bar-height: 0.9rem;
+    --hamburger-gap: .6rem;
+    --hamburger-padding: 1.5rem 2.5rem;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+/*
+=============================
+NAVIGATION HELP
+=============================
+*/
+
+nav#list-help {
+    z-index: 2;
+}
+
+/*
+=============================
+MENU
+=============================
+*/
+
+#hamburger {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--accent-secondary);
+    width: 100vw;
+}
+
+#hamburger-label {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--hamburger-gap);
+    padding: var(--hamburger-padding);
+    z-index: 1;
+}
+
+#hamburger-label::before,
+#hamburger-label::after,
+#hamburger-label input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    transform-origin: right center;
+    transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+#hamburger-label:has(input:focus-visible)::before,
+#hamburger-label:has(input:focus-visible)::after,
+#hamburger-label input:focus-visible {
+    border: 1px solid white;
+    box-shadow: 0 0 0 1px white;
+}
+
+#hamburger-label::before {
+    background-image: url("../assets/img/burger/burger-top.png");
+    background-size: 100% 100%;
+}
+
+#hamburger-label input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+    background-image: url("../assets/img/burger/burger-middle.png");
+    background-size: 100% 100%;
+}
+
+#hamburger-label::after {
+    background-image: url("../assets/img/burger/burger-bottom.png");
+    background-size: 100% 100%;
+}
+
+#hamburger-label:has(input:checked)::before {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+    background-image: url("../assets/img/burger/fork-w.png");
+    background-size: 100% 100%;
+}
+
+#hamburger-label:has(input:checked)::after {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+    background-image: url("../assets/img/burger/knife-w.png");
+    background-size: 100% 100%;
+}
+  
+#hamburger-label input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+nav#menu {
+    position: fixed;
+    transition: translate var(--animation-timing);
+    translate: 0 -100%;
+    padding: 0 1rem;
+    /* TODO: replace with correct gaps */
+    /* padding-top: calc(var(--hamburger-height) + var(--hamburger-padding) + 1rem); */
+    background-color: var(--accent-secondary);
+    height: 100vh;
+    width: 100vw;
+}
+
+#hamburger:has(input:checked) + #menu {
+    translate: 0;
+}
+
+html:has(#hamburger-label input:checked) body {
+    overflow-y: hidden;
+}
+
+header:has(#hamburger-label input:not(:checked)) nav#menu a {
+    visibility: hidden;
+}
+
+nav#menu ul {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+nav#menu li#website-name-in-nav {
+    display: none;
+}
+
+nav#menu li#profile-item {
+    display: none;
+}
