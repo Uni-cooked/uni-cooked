@@ -30,26 +30,26 @@
                     <li><a href="index.html"><span lang="en">HOME</span></a></li>
                     <li><a href="insert-recipe.html">I PIATTI</a></li>
                     <li><a href="">CONTATTI</a></li>
-                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/qlementine-icons--user-16.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                    <li id="profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
                 </ul>
             </nav>
         </header>
 
         <nav id="breadcrumb">
-            <p>Ti trovi in: I Piatti</p>
+            <p>Sei in: <a href="./index.html" lang="en">Home</a> &#x2192 <a href="./catalogue.html"> Ricette </a> &#x2192 Nome-ricetta</p>
         </nav>
 
     <main id="mainInfoRicetta">
-        <input type="checkbox"  id="Preferito" class="Intro Star"/>
         <h2 id="NomeRicetta" class="Intro">NOME_RICETTA</h2>
+        <button  id="Preferito" class="Intro Star">Aggiungi ai preferiti</button>
         <div id="ImgInfoRicetta">
             <img id="LocandinaRicetta" alt="Locandina ricetta" src="../img/RicettaProva.jpg"/> 
             <ul id="InfoRicetta">          
-                <li><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/ph--exam-fill.svg" />18/30</li>
-                <li><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/tdesign--education-filled.svg" />DAD</li>
-                <li><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/ic--round-restaurant.svg" />Primo piatto</li>
-                <li><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/mingcute--time-fill.svg" />5-10 minuti</li>
-                <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/mingcute--pig-money-fill.svg" />50</li>
+                <li><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/grade.svg" />18/30</li>
+                <li><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/student.svg" />Fuorisede</li>
+                <li><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/course.svg" />Primo piatto</li>
+                <li><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/time.svg" />5-10 minuti</li>
+                <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/cost.svg" />50</li>
             </ul>  
         </div> 
 
@@ -75,29 +75,22 @@
         <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
         <section id="CommentoUtente">
             <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
-            <form action="">
+            <form action="" method="post">
                 <fieldset>
-                    
-                    <button class="voto" placeholder="-">-</button>
-                    
-                    
-                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30"></input>
-                    
+                    <label for="Voto-utente">Aggiungi una valutazione</label>
+                    <button class="voto">-</button>
+                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" required></input>
                     <p class="voto" id="MaxVoto">/30</p>
-
-                    <button class="voto" id="AumentareVoto" placeholder="+" >+</button>
-                    
-                    <label>
-                        <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000"></textarea>
-                    </label>
-                    <div id="buttons">
-                        <input type="submit" class="SceltaUtente" id="Cancella" name="Cancella" value="Cancella" />
-                        <input type="submit" class="SceltaUtente" id="Commenta" name="Commenta" value="Commenta" />
-                    </div>
+                    <button class="voto" id="AumentareVoto">+</button>
+                    <label for="Commento-utente">Commenta</label>
+                    <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
                 </fieldset>
+                <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
+                <button type="submit" class="SceltaUtente" id="Commenta" name="Commenta">Commenta</button>
             </form>
         </section>
 
+        <h4>Cosa pensano gli altri utenti:</h4>
         <section id="CommentiAltriUtenti">
             <ul>
                 <li class="CommentoUtenti">
@@ -121,16 +114,14 @@
             </ul>
         </section>
 
-        <div id="last-buttons">
-            <button id="Carica">Carica altri commenti</button>
-            <button id="Torna">Torna Su &#8657;</button>
-        </div>
+        <button id="Carica">Carica altri commenti</button>
+
 
         <footer>
             <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
-            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
             <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
-            <a href="#top">Torna su </a>
+            <a href="#top">Torna su</a>
         </footer>
 
     </body>
