@@ -151,6 +151,30 @@ nav#menu li#profile-item {
 
 /*
 =============================
+HOME PAGE
+=============================
+*/
+
+@media (max-width: 480px) {
+    input:checked ~ .flip-card .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-back{
+        transform: rotateY(180deg);
+    }
+}
+
+div#why > div {
+    flex-direction: column;
+}
+
+div#why img {
+    width: 100%;
+}
+
+/*
+=============================
 CATALOGUE PAGE
 =============================
 */
