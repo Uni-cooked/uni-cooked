@@ -5,40 +5,59 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Nuova ricetta - Uni cooked</title>
-        <!-- NOTE: "Aggiungi" to make Google happy -->
+        <title>Nuova ricetta - Uni Cooked</title>
         <meta name="description" content="Aggiungi una nuova riccetta piena di sapori per i tuoi compagni universitari nel portale Uni cooked, se sarà all'altezza te la approveremo.">
         <meta name="keyword" content="nuova,riccetta,Uni cooked,universitari">
         <meta name="author" content="Uni cooked">
-        <!-- NOTE: I suppose we should change this stinky ass -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
-        <!-- TODO: add media query for mobile -->
-        <link rel="stylesheet" href="../css/mini.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <h1 class="hide">Uni <span lang="en">cooked</span></h1>
-            <h2>Non lasciare che sia l'Uni a cucinare te!</h2>
+            <!-- <div class="bg"></div> -->
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    </ul>
+                </nav>
+
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                        <li id="current-page"><span lang="en">HOME</span></li>
+                        <li><a href="./catalogue.html">RICETTE</a></li>
+                        <li><a href="./aboutus.html">CONTATTI</a></li>
+                        <li id="profile-item">
+                            <a href="./user.html">ACCEDI</a>
+                            <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                        </li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: Inserisci ricetta</p>
+                </nav>
+            </div>
         </header>
 
-        <nav id="breadcrumb">
-            <p>Stai studiano in: <a href="./index.html"><span lang="en">Home</span></a> > Nuova ricetta</p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <!-- TODO: add href to the respective pages -->
-                <li><a href=""><span lang="en">Home</span></a></li>
-                <li><a href="">Fuori sede</a></li>
-                <li><a href="">Pendolari</a></li>
-                <li><a href="">In sede</a></li>
-                <li><a href="">DAD</a></li>
-                <li><a href="">Tirocinanti</a></li>
-            </ul>
-        </nav>
-
-        <main>
+        <main id="content">
             <h1>Consigliaci una nuova ricetta</h1>
 
             <p>Preghiamo di inserire termini stranieri nel seguente modo così da rendere il testo accessibile ad ogni tipo di utenza:</p>

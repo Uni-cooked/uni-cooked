@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ricette - Uni cooked</title>
+        <title>Ricette - Uni Cooked</title>
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
         <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/home-test-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/home-test-mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/home-test-big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
@@ -19,9 +19,10 @@
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
                         <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
                         <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                        <li><a href="#page-changer">Salta all'indicatore di pagina</a></li>
                     </ul>
                 </nav>
 
@@ -39,9 +40,9 @@
                 <nav id="menu">
                     <ul>
                         <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                        <li><a href="./home-test.html"><span lang="en">HOME</span></a></li>
+                        <li><a href="./home.html"><span lang="en">HOME</span></a></li>
                         <li id="current-page">RICETTE</li>
-                        <li><a href="./aboutus.html">CONTATTI</a></li>
+                        <li><a href="./about-us.html">CONTATTI</a></li>
                         <li id="profile-item">
                             <a href="./user.html">ACCEDI</a>
                             <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
@@ -55,7 +56,7 @@
             </div>
         </header>
 
-        <main>
+        <main id="content">
             <form action="">
                 <label for="search-bar" class="hide">Barra di ricerca</label>
                 <input type="search" id="search-bar" class="input-round search-el" placeholder="Cerca una ricetta">
