@@ -1,0 +1,16 @@
+nella home se clicco col tab su pendolare mi porta il focus ma il tab rimane sul link
+
+TODO:
+- mobile user
+- about us
+sign in/up
+rename file
+link nelle pagine
+burger che si chiude se esco dall'ultimo link
+info più centrate in catalogue mobile
+classi comuni per liste mobile catalogue e user
+
+main h3 { color: orange; }
+ul#recipe-list .recipe { color: white; }
+?
+mettere margin al posto di padding al .content, vedi titoli e contenuto in user

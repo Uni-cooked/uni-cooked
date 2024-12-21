@@ -9,35 +9,51 @@
         <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/home-test-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/home-test-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/home-test-big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <nav id="list-help" aria-label="aiuti alla navigazione">
-                <ul>
-                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
-                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
-                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
-                </ul>
-            </nav>
-            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
-            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
-            <nav id="menu">
-                <ul>
-                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li><a href="./catalogue.html">RICETTE</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="menu-profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-                </ul>
-            </nav>
-        </header>
+            <!-- <div class="bg"></div> -->
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                        <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                    </ul>
+                </nav>
 
-        <nav id="breadcrumb">
-            <p>Stai studiando in: Profilo utente</p>
-        </nav>
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                        <li><a href="./home-test.html"><span lang="en">HOME</span></a></li>
+                        <li><a href="./catalogue.html">RICETTE</a></li>
+                        <li><a href="./aboutus.html">CONTATTI</a></li>
+                        <li id="profile-item" id="current-page">
+                            <a href="./user.html">ACCEDI</a>
+                            <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                        </li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: <span lang="en">Home</span></p>
+                </nav>
+            </div>
+        </header>
 
         <main>
             <h2 id="title-nick"><span>CIAO</span> GGGaggi</h2>
@@ -54,9 +70,12 @@
             <!-- NOTE: time tag is not relevant -->
             <p id="login-date">30 / 1 / 1933</p>
             
-            <h3 class="user-p-title">BIOGRAFIA</h3>
+            <h3 class="content-subtitle content">BIOGRAFIA</h3>
             <!-- <article class="editable-user"> -->
-            <p class="content-p">Scrivi qualcosa di te!</p>
+            <div class="content-container-left">
+                <p class="content">Scrivi qualcosa di te!</p>
+            </div>
+            <!-- <p class="content-p">Scrivi qualcosa di te!</p> -->
             <!-- <p class="content-p">GGGaggi non ha ancora aggiunto la sua <abbr title="biografia">bio</abbr>.</p> -->
             <!-- <p class="content-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium error atque, ipsa consectetur culpa consequatur ea quidem perspiciatis eligendi voluptatibus molestias, amet ad ipsum quo vero, nulla quos earum!</p> -->
             <!-- <a href="" title="modifica biografia"></a> -->
@@ -64,11 +83,12 @@
 
             <a href="./user-edit.html" id="profile-edit-link">MODIFICA PROFILO</a>
 
-            <h3 class="user-p-title">RICETTE PREFERITE</h3>
+            <h3 class="content-subtitle content">RICETTE PREFERITE</h3>
             <ul id="fav-recipe-list">
-                <!-- <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p> -->
-
-                <li class="fav-recipe">
+                <!-- <li>
+                    <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p>
+                </li> -->
+                <li class="fav-recipe content">
                     <div class="fav-recipe-img-crop">
                         <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
@@ -84,7 +104,7 @@
                     <a href="" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
 
-                <li class="fav-recipe">
+                <li class="fav-recipe content">
                     <div class="fav-recipe-img-crop">
                         <img src="../assets/img/dish-cropped2.jpg" alt="">
                     </div>
@@ -101,17 +121,13 @@
                 </li>
             </ul>
 
-            <h3 class="user-p-title">ZONA PERICOLOSA</h3>
-            <fieldset>
-                <button class="danger-btn">CANCELLA RICETTE</button>
-                <button class="danger-btn">CANCELLA ACCOUNT</button>
-            </fieldset>
+            <h3 class="content-subtitle content">ZONA PERICOLOSA</h3>
+            <button class="danger-btn content">CANCELLA RICETTE</button>
+            <button class="danger-btn content">CANCELLA ACCOUNT</button>
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
             <a href="#top">Torna su</a>
         </footer>
 

@@ -9,81 +9,86 @@
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/jay-up-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/jay-mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/jay-big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/home-test-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/home-test-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/home-test-big.css" media="screen and (min-width: 1200px)">
 </head>
 <body>
     <header>
-        <div class="bg"></div>
-        <div class="content">
+        <!-- <div class="bg"></div> -->
+        <div id="header-content" class="content">
             <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
-                    <li><a href="#content">Salta al contenuto</a></li>
-                    <li><a href="#menu">Salta al menu di navigazione</a></li>
-                    <li><a href="#breadcrumb">Salta a dove ti trovi</a></li>
+                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
                 </ul>
             </nav>
-            <h1 lang="en">UNI-COOKED</h1>
-            <h2>NON LASCIARE CHE SIA L`UNI A CUCINARE TE</h2>
+
+            <div id="header-titles">
+                <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+            </div>
+            
+            <div id="hamburger">
+                <label id="hamburger-label">
+                    <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                    <input type="checkbox">
+                </label>
+            </div>
             <nav id="menu">
                 <ul>
+                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
                     <li id="current-page"><span lang="en">HOME</span></li>
-                    <li><a href="">I PIATTI</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="account-btn"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
+                    <li><a href="./catalogue.html">RICETTE</a></li>
+                    <li><a href="./aboutus.html">CONTATTI</a></li>
+                    <li id="profile-item">
+                        <a href="./user.html">ACCEDI</a>
+                        <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                    </li>
                 </ul>
             </nav>
+            
+            <nav id="breadcrumb">
+                <p>Stai studiando in: Registrati</p>
+            </nav>
         </div>
-
     </header>
-    
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Home</span></p>
-    </nav>
 
-    <main id="content">
-        <aside id="sign-box">
-            <h2>ACCEDI</h2>
+    <main>
+        <div class="sign-box content">
+            <h2 class="content-subtitle content">REGISTRATI</h2>
             <form action="" method="post">
                 <fieldset>
-                    <label id="name-in" class="form-label">
-                        Inserisci il nome utente
-                        <input type="text" name="nome" id="student-name">
-                        <!-- ADD ESEMPIOS -->
-                    </label>
-                    <label id="type-in" class="form-label">
-                        Scegli la categoria
-                        <select name="categoria" id="student-types">
+                    <div id="name-up-container">
+                        <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
+                        <input type="text" name="nome" id="student-name-up">
+                    </div>
+                    <div id="cat-up-container">
+                        <label for="student-cat-up" class="form-label">Scegli la categoria</label>
+                        <select id="student-cat-up">
+                            <option value="tutti">Tutti</option>
                             <option value="fuorisede">Fuorisede</option>
-                            <option value="fuorisede">Fuorisede</option>
-                            <option value="fuorisede">Fuorisede</option>
-                            <option value="fuorisede">Fuorisede</option>
+                            <option value="pendolare">Pendolare</option>
+                            <option value="in-sede">In sede</option>
+                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                         </select>
-                    </label>
-                    <label id="mail-in" class="form-label">
-                        Inserisci la tua mail
-                        <input type="email" name="email" id="student-mail">
-                        
-                    </label>
-                    <label id="psw-in" class="form-label">
-                        Inserisci la password
-                        <input type="password" name="psw" id="student-psw">
-                    </label>
-                    <button id="confirm" type="submit">CONFIRM</button>
-                    <button id="cancel" type="reset" disabled>CANCEL</button>
+                    </div>
+                    <label for="student-mail-up" class="form-label">Inserisci la tua mail</label>
+                    <input type="email" name="email" id="student-mail-up">
+                    <label for="student-psw-up" class="form-label">Inserisci la password</label>
+                    <input type="password" name="psw" id="student-psw-up">
+
+                    <button class="confirm" type="submit">REGISTRATI</button>
+                    <button class="cancel" type="reset" disabled>ANNULLA</button>
                 </fieldset>
             </form>
-            <div id="">
-            </div>
-        </aside>
+        </div>
     </main>
 
     <footer>
-        <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni-<span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+        <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
         <a href="#top">Torna su</a>
-        
     </footer>
-    
 </body>
 </html>

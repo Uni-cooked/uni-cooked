@@ -9,45 +9,51 @@
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/home-test-screen.css" media="screen">
+        <link rel="stylesheet" href="../css/home-test-mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/home-test-big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <nav id="list-help" aria-label="aiuti alla navigazione">
-                <ul>
-                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
-                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
-                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
-                </ul>
-            </nav>
-            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
-            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+            <!-- <div class="bg"></div> -->
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                        <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                    </ul>
+                </nav>
 
-            <label class="hamburger-menu">
-                <input type="checkbox">
-            </label>
-            <nav id="menu-2">
-                <div>This</div>
-                <div>Is</div>
-                <div>The</div>
-                <div>Sidebar</div>
-            </nav>
-            <!-- <nav id="menu">
-                <ul>
-                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li id="current-page">RICETTE</li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="menu-profile-item"><a href="">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-                </ul>
-            </nav> -->
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                        <li><a href="./home-test.html"><span lang="en">HOME</span></a></li>
+                        <li id="current-page">RICETTE</li>
+                        <li><a href="./aboutus.html">CONTATTI</a></li>
+                        <li id="profile-item">
+                            <a href="./user.html">ACCEDI</a>
+                            <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                        </li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: Ricette</p>
+                </nav>
+            </div>
         </header>
-
-        <nav id="breadcrumb">
-            <p>Stai studiando in: Ricette</p>
-        </nav>
 
         <main>
             <form action="">
@@ -92,7 +98,7 @@
                 <button type="submit" id="search-btn">CERCA</button>
             </form>
 
-            <ul id="recipe-list">
+            <ul id="recipe-list" class="content">
                 <li class="recipe">
                     <div class="recipe-img-crop">
                         <img src="../assets/img/dish-cropped.jpg" alt="">
@@ -101,102 +107,147 @@
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/dish-cropped2.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>PASTA ASCIUTTA</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
                 <li class="recipe">
                     <div class="recipe-img-crop">
-                        <img src="../assets/img/header-bg.jpg" alt="">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
                     </div>
                     <div class="recipe-title">
                         <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
                     </div>
                     <ul class="recipe-info">
-                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 / 30</li>
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
                         <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
                         <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
                         <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
                     </ul>    
-                    <a href="" title="NOME RICETTA">Vai alla ricetta</a>
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
+                </li>
+                <li class="recipe">
+                    <div class="recipe-img-crop">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
+                    </div>
+                    <div class="recipe-title">
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
+                    </div>
+                    <ul class="recipe-info">
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
+                        <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                        <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                        <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
+                    </ul>    
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
+                </li>
+                <li class="recipe">
+                    <div class="recipe-img-crop">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
+                    </div>
+                    <div class="recipe-title">
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
+                    </div>
+                    <ul class="recipe-info">
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
+                        <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                        <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                        <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
+                    </ul>    
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
+                </li>
+                <li class="recipe">
+                    <div class="recipe-img-crop">
+                        <img src="../assets/img/dish-cropped.jpg" alt="">
+                    </div>
+                    <div class="recipe-title">
+                        <h3>POLLO AL CURRY CON RISO E PISELLI</h3>
+                    </div>
+                    <ul class="recipe-info">
+                        <li><img src="../../Assets/Icons/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
+                        <li><img src="../../Assets/Icons/student.svg" alt="categoria">FUORISEDE</li>
+                        <li><img src="../../Assets/Icons/course.svg" alt="piatto">SECONDO</li>
+                        <li><img src="../../Assets/Icons/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
+                    </ul>    
+                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
                 </li>
             </ul>
 
@@ -208,9 +259,7 @@
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
             <a href="#top">Torna su</a>
         </footer>
 
