@@ -1,0 +1,45 @@
+/*
+==================================================
+RICETTA
+==================================================
+*/
+
+div#ImgInfoRicetta
+{
+    flex-direction: column;
+}
+
+ul#IngredientiRicetta
+{
+    flex-direction: column;
+}
+
+button.voto
+{
+    width: 35px;
+    height: 1%; 
+}
+
+textarea#Commento-utente
+{
+    width: 90%;
+    display: block;
+}
+
+    button.SceltaUtente
+{
+    width: 8em;
+    height: 3em;
+}
+
+li article
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p#VotoUtente{
+    margin-top: 0;
+}
