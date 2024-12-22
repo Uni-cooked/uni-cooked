@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>NOME RICETTA - Uni Cooked</title>
+        <title>Uni cooked</title>
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
         <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Importo fogli di stile-->
         <link rel="stylesheet" href="../css/gabry-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/mini-gabry.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
@@ -41,7 +41,9 @@
 
     <main id="mainInfoRicetta">
         <h2 id="NomeRicetta" class="Intro">NOME_RICETTA</h2>
-        <button  id="Preferito" class="Intro Star">Aggiungi ai preferiti</button>
+        <form action="" method="post">
+            <input type="checkbox" class="Intro Star" id="Stella" onchange="this.form.submit()"/>
+        </form>
         <div id="ImgInfoRicetta">
             <img id="LocandinaRicetta" alt="Locandina ricetta" src="../img/RicettaProva.jpg"/> 
             <ul id="InfoRicetta">          
@@ -79,14 +81,14 @@
                 <fieldset>
                     <label for="Voto-utente">Aggiungi una valutazione</label>
                     <button class="voto">-</button>
-                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" required></input>
+                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" maxlength="2" required></input>
                     <p class="voto" id="MaxVoto">/30</p>
                     <button class="voto" id="AumentareVoto">+</button>
                     <label for="Commento-utente">Commenta</label>
                     <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
                 </fieldset>
-                <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
                 <button type="submit" class="SceltaUtente" id="Commenta" name="Commenta">Commenta</button>
+                <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
             </form>
         </section>
 
