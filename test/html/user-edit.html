@@ -9,35 +9,50 @@
         <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/prek-screen.css" media="screen">
-        <link rel="stylesheet" href="../css/prek-mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/prek-big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
     </head>
     <body>
         <header>
-            <nav id="list-help" aria-label="aiuti alla navigazione">
-                <ul>
-                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
-                    <li><a href="#menu" class="nav-help">Salta al menu di navigazione</a></li>
-                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
-                </ul>
-            </nav>
-            <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
-            <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
-            <nav id="menu">
-                <ul>
-                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
-                    <li><a href="./catalogue.html">RICETTE</a></li>
-                    <li><a href="">CONTATTI</a></li>
-                    <li id="menu-profile-item"><a href="./user.html">ACCEDI</a><img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato"></li>
-                </ul>
-            </nav>
-        </header>
+            <!-- <div class="bg"></div> -->
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    </ul>
+                </nav>
 
-        <nav id="breadcrumb">
-            <p>Stai studiando in: <a href="./user.html">Profilo utente</a> > Modifica profilo</p>
-        </nav>
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                        <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                        <li><a href="./catalogue.html">RICETTE</a></li>
+                        <li><a href="./about-us.html">CONTATTI</a></li>
+                        <li id="profile-item">
+                            ACCEDI
+                            <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                        </li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: <a href="./user.html">Profilo utente</a> > Modifica profilo</p>
+                </nav>
+            </div>
+        </header>
 
         <main>
             <form action="">
@@ -67,12 +82,8 @@
         </main>
 
         <footer>
-            <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-            <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
             <a href="#top">Torna su</a>
         </footer>
-
-        <script src="" async defer></script>
     </body>
 </html>

@@ -1,11 +1,7 @@
 nella home se clicco col tab su pendolare mi porta il focus ma il tab rimane sul link
 
 
-accedi nel menu? e poi nel burger?
-nav-help devono portare al burger in mobile non a menu (js), e se non funzia js?
-img home
-quando carico una nuova pagina di ricette dove va il focus?
-mettere margin al posto di padding al .content, vedi titoli e contenuto in user
+torna su dopo le carte?
 
 TODO:
 - mobile user
@@ -16,7 +12,3 @@ TODO:
 info più centrate in catalogue mobile
 burger che si chiude se esco dall'ultimo link
 classi comuni per liste mobile catalogue e user
-
-main h3 { color: orange; }
-ul#recipe-list .recipe { color: white; }
-che colore è il titolo?
