@@ -16,9 +16,9 @@
     --accent-trinary:#0C6F59;
     --text-color:white;
     --a-color: #5F9950;
-    --a-visited-color: #C76F0A;
     --menu-a-color: white;
     /* SPECIAL CASES */
+    /* --a-visited-color: #C76F0A; */
     /* --header-content-text-color: black; */
     /* --header-content-a-bg-color: #d6cccc; */
     /* --dt-bg-color: white; */
@@ -32,16 +32,15 @@
     --main-mt:2em;
     --section-mb:5rem;
 
-    /* PADDINGS */
-
     /*TRANSITIONS*/
     --animation-duration:1.1s;
 
     /* TEXT */
     --title: 4rem;
-    --subtitle: 1.3rem;
+    --subtitle: 1.5rem;
     --menu-text:1.1rem;
-    --section-title: 1.8em;
+    --section-title: 3em;
+    --letter-spacing:.2rem;
 
     /* BORDERS */
     --radius-max: 100px;
@@ -131,6 +130,7 @@ header {
 }
 
 #header-titles {
+    letter-spacing: var(--letter-spacing);
     padding: .5rem;
     order: 3;
 }
@@ -153,7 +153,7 @@ h2#header-subtitle {
 }
 /*#endregion HEADER */
 
-/*#region NAVIGATION HELP */
+/*#region NAV-HELP */
 
 
 nav#list-help {
@@ -185,14 +185,14 @@ nav#list-help a:focus {
 }
 /*#endregion  NAVIGATION HELP */
 
-/*#region MENU */
+/*#region NAV-MENU */
 
 #hamburger, #hamburger-label {
     display: none;
 }
 
 nav#menu {
-    padding: 1.5rem 3rem 0;
+    padding: 1.5rem 1rem 0;
     min-width: 100%;
     order: 2;
 }
@@ -226,8 +226,8 @@ nav#menu li#website-name-in-nav {
 }
 
 nav#menu li#website-name-in-nav img {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 nav#menu li#profile-item {
@@ -285,7 +285,7 @@ nav#breadcrumb p {
 
 /*#endregion BREADCRUMB */
 
-/*#region CONTENT */
+/*#region MAIN */
 
 
 main {
@@ -302,7 +302,7 @@ abbr {
 
 /*#endregion CONTENT */
 
-/*#region HOME PAGE MENU */
+/*#region HOME PAGE ROLES */
 
 nav#quick-role {
     background-color: var(--bg-secondary);
@@ -319,7 +319,7 @@ nav#quick-role li {
     text-align: center;
     display: inline-block;
     width: 15%;
-    margin: 0 2rem 0 2rem;
+    margin: .5rem 2rem .5rem 2rem;
     font-weight: 600;
     font-size: var(--menu-text);
     font-style: italic;
@@ -336,7 +336,7 @@ nav#quick-role a:visited {
 
 /*#endregion HOME PAGE MENU */
 
-/*#region HOME PAGE */
+/*#region HOME PAGE CONTENT*/
 
 #presentation-text {
     margin-bottom: var(--section-mb);
@@ -347,10 +347,11 @@ dl.roles {
 }
 
 dl.roles dt {
+    letter-spacing: var(--letter-spacing);
     text-align: center;
     color: var(--accent);
     font-weight: 800;
-    font-size: 3rem;
+    font-size: var(--section-title);
     padding: 6rem 0 6rem 0;
 
     background-color: var(--accent-secondary);
@@ -918,7 +919,7 @@ a#profile-edit-link {
 
 #recipie-request textarea {
     resize: none;
-    font-size: 1em;
+     
     padding: 1em;
     height: 300px;
     width: 100%;
@@ -1004,7 +1005,6 @@ footer p {
 
 footer a {
     color: var(--accent);
-    font-size: 1.1em;
 }
 
 /*#endregion FOOTER */
