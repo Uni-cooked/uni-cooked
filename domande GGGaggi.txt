@@ -1,15 +1,3 @@
-nella home se clicco col tab su pendolare mi porta il focus ma il tab rimane sul link
-
-
+tasto accedi in sign in/up e profilo?
 torna su dopo le carte?
-blur all'header? (div vuoto)
-
-TODO:
-- mobile user
-- about us
-- sign in/up
-- rename file
-- link nelle pagine
-burger che si chiude se esco dall'ultimo link
-classi comuni per liste mobile catalogue e user
-info più centrate in catalogue mobile
+breadcrumb mobile va a capo (user-edit)

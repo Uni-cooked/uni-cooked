@@ -67,8 +67,9 @@
     font-display: swap;
 }
 
-/*#region GENERAL CLASSES */
+/* ================================================== */
 
+/* #region GENERAL CLASSES */
 html body {
     height: 100%;
 }
@@ -117,34 +118,15 @@ p {
     font-size: var(--form-label);
 }
 
-
 .hide {
     position: absolute;
     text-indent: -999em;
 }
+/* #endregion GENERAL CLASSES */
 
-.hide-maintaining-space {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-}
+/* ================================================== */
 
-/*
-==================================================
-HEADER
-==================================================
-*/
-
-/* header .bg {
-    background-image: url("../assets/img/1.jpg");
-    background-color: var(--bgcolor);
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(3px) brightness(50%);
-    -webkit-filter: blur(3px) brightness(50%);
-    height: 100%;
-} */
-
+/* #region HEADER */
 header {
     background-image: url("../assets/img/1.jpg");
     background-color: var(--bg-primary);
@@ -186,17 +168,16 @@ h2#header-subtitle {
     font-weight: 600;
     font-size: var(--subtitle);
 }
-/*#endregion HEADER */
+/* #endregion HEADER */
 
-/*#region NAV-HELP */
+/* ================================================== */
 
-
+/* #region NAV-HELP */
 nav#list-help {
     position: absolute;
     top: 0;
     left: 0;
 }
-
 
 nav#list-help ul {
     display: block;
@@ -218,11 +199,12 @@ nav#list-help a:focus {
     text-indent: 0rem;
     background-color: var(--bg-primary);
 }
-/*#endregion  NAVIGATION HELP */
+/* #endregion NAVIGATION HELP */
 
-/*#region NAV-MENU */
+/* ================================================== */
 
-#hamburger, #hamburger .logo, #hamburger-label {
+/* #region MENU */
+#hamburger {
     display: none;
 }
 
@@ -245,7 +227,6 @@ nav#menu li {
     font-weight: 700;
     font-size: var(--menu-text);
 }
-
 
 nav#menu li:not(:first-child):not(:last-child) {
     border-radius: var(--radius-max);
@@ -287,13 +268,12 @@ nav#menu li#profile-item {
 nav#menu li#profile-item a {
     color: white;
 }
+/* #endregion MENU */
 
-/*#endregion MENU */
+/* ================================================== */
 
-/*#region BREADCRUMB */
-
+/* #region BREADCRUMB */
 nav#breadcrumb {
-    /* bottom: 1.5rem; */
     order: 4;
 }
 
@@ -306,12 +286,11 @@ nav#breadcrumb p {
     border-radius: var(--radius-mid);
     padding: .2rem 1rem .2rem 1rem;
 }
+/* #endregion BREADCRUMB */
 
-/*#endregion BREADCRUMB */
+/* ================================================== */
 
-/*#region MAIN */
-
-
+/* #region MAIN */
 main {
     margin-top: var(--main-mt);
     margin-bottom: var(--main-mb);
@@ -324,11 +303,11 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 abbr {
     text-decoration: none;
 }
+/* #endregion MAIN */
 
-/*#endregion CONTENT */
+/* ================================================== */
 
-/*#region HOME PAGE ROLES */
-
+/* #region HOME PAGE ROLES */
 nav#quick-role {
     background-color: var(--bg-secondary);
 }
@@ -357,12 +336,11 @@ nav#quick-role a:link {
 nav#quick-role a:visited {
     color: var(--accent-trinary)
 }
+/*#endregion HOME PAGE ROLES */
 
-/*#endregion HOME PAGE MENU */
+/* ================================================== */
 
-/*#region HOME PAGE CONTENT*/
-
-
+/* #region HOME PAGE CONTENT */
 dl#roles dt {
     letter-spacing: var(--letter-spacing);
     text-align: center;
@@ -410,6 +388,7 @@ dl#roles dd {
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 2rem;
+    overflow: hidden;
 }
 
 dl#roles dd:not(:last-child) {
@@ -523,20 +502,18 @@ dd #role-info-label {
     display: inline-block;
     cursor: pointer;
     user-select: none;
-    transition: color var(--animation-duration);
-    transition: background-color var(--animation-duration);
+    transition: background-color var(--animation-duration) , color var(--animation-duration);
 }
 
 #role-desc a{
     display: block;
     margin-top: 1rem;
 }
+/* #endregion HOME PAGE CONTENT*/
 
-/*#endregion HOME PAGE */
+/* ================================================== */
 
-/*#region HOME PAGE WHY */
-
-
+/* #region HOME PAGE WHY */
 div#why {
     background-color: var(--accent-secondary);
 }
@@ -569,11 +546,11 @@ div#why img {
     object-fit: cover;
     border-radius:  var(--radius-small);
 }
+/* #endregion HOME PAGE WHY */
 
-/*#endregion HOME PAGE WHY */
+/* ================================================== */
 
 /*#region CATALOGUE PAGE */
-
 ul#recipe-list {
     display: flex;
     flex-wrap: wrap;
@@ -584,7 +561,7 @@ ul#recipe-list {
 
 ul#recipe-list .recipe {
     margin-bottom: 4em;
-    width: 34%;   /* corresponds to 25em with main at 1200px */
+    width: 34%;
     min-width: 19em;
     height: 26em;
     background-color: var(--bg-secondary);
@@ -674,11 +651,11 @@ ul#recipe-list .recipe a {
     font-size: 1.2em;
     font-weight: bold;
 }
+/* #endregion CATALOGUE PAGE */
 
-/*#endregion CATALOGUE PAGE */
+/* ================================================== */
 
-/*#region SIGN IN/UP PAGE */
-
+/* #region SIGN IN/UP PAGE */
 .sign-box fieldset {
     border: 2px solid var(--accent);
     border-radius: var(--radius-small);
@@ -755,12 +732,11 @@ ul#recipe-list .recipe a {
     color: var(--text-color);
     background-color: var(--accent-trinary);
 }
+/* #endregion SIGN IN/UP PAGE */
 
-/*#endregion SIGN IN/UP PAGE */
+/* ================================================== */
 
-/*#region USER PAGE */
-
-
+/* #region USER PAGE */
 #title-nick {
     text-align: center;
     font-size: 2.5em;
@@ -794,9 +770,9 @@ ul#recipe-list .recipe a {
 #fav-recipe-list {
     background-color: rgb(66, 38, 22);
     list-style-type: none;
-    padding: 0 5vw;
-    margin: 0 1rem;
-    border: 4px solid rgb(34, 19, 9);
+    padding: 0 3vw;
+    border-top: 4px solid rgb(34, 19, 9);
+    border-bottom: 4px solid rgb(34, 19, 9);
     border-radius: 5px;
     min-height: 12em;
     /* NOTE: not so buty but at least the section for the empty list is centered */
@@ -887,18 +863,6 @@ ul#recipe-list .recipe a {
     font-weight: bold;
 }
 
-/* a#profile-edit-link {
-    display: block;
-    text-align: center;
-    margin: 3em auto 0;
-    padding: 0.5em 0;
-    background-color: var(--accent);
-    font-weight: bold;
-    width: 20em;
-    border-radius: 999px;
-} */
-
-/* TODO: generalize sign-box buttons */
 a#edit-profile-link {
     display: block;
     margin: 2em auto;
@@ -913,7 +877,6 @@ a#edit-profile-link {
     color: var(--bg-primary);
 }
 
-/* TODO: generalize sign-box buttons */
 button#log-out-btn {
     display: block;
     margin: 2em auto;
@@ -927,13 +890,11 @@ button#log-out-btn {
     background-color: var(--accent-secondary);
     color: var(--text-color);
 }
+/* #endregion USER PAGE */
 
-/*
-=============================
-USER EDIT PAGE
-=============================
-*/
+/* ================================================== */
 
+/* #region USER EDIT PAGE */
 .danger-btn {
     display: block;
     width: calc(100% - 2.5em);
@@ -945,11 +906,11 @@ USER EDIT PAGE
     border: 4px solid rgb(177, 0, 0);
     border-radius: 5px;
 }
+/* #endregion USER EDIT PAGE */
 
-/*#endregion USER PAGE */
+/* ================================================== */
 
-/*#region ABOUT US PAGE */
-
+/* #region ABOUT US PAGE */
 #pp {
     width: 150px;
     height: 150px;
@@ -965,7 +926,6 @@ USER EDIT PAGE
 #recipie-request form {
     text-align: start;
 }
-
 
 #recipie-request textarea {
     resize: none;
@@ -1034,11 +994,11 @@ USER EDIT PAGE
     font-style: italic;
     font-weight: 300;
 }
+/* #endregion ABOUT US PAGE */
 
-/*#endregion ABOUT US PAGE */
+/* ================================================== */
 
-/*#region FOOTER */
-
+/* #region FOOTER */
 footer {
     background-color: var(--bg-secondary);
     text-align: center;
@@ -1055,17 +1015,4 @@ footer p {
 footer a {
     color: var(--accent);
 }
-
-/*#endregion FOOTER */
-
-
-/*#region MEDIA QUERY*/
-@media (max-width: 480px) {
-    dd:has(input:checked) .flip-card .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    .flip-card-back{
-        transform: rotateY(180deg);
-    }
-}
-/*#endregion MEDIA QUERY*/
+/* #endregion FOOTER */
