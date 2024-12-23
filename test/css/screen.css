@@ -1008,6 +1008,47 @@ button#log-out-btn {
 
 /* ================================================== */
 
+/* #region ERROR PAGE */
+#header-content.err-page-header {
+    min-height: 35vh;
+}
+
+#content.err-page-content {
+    min-height: calc(65vh - var(--main-mt) - var(--main-mb));
+}
+
+#err-page-h1 {
+    text-align: center;
+    font-size: 5em;
+}
+
+#err-page-h2 {
+    text-align: center;
+    font-size: 2.5em;
+    padding: 0 3em;
+}
+
+#err-page-p {
+    text-align: center;
+    font-size: 1.3em;
+    padding: 2em;
+}
+
+#err-page-a {
+    display: block;
+    width: 14em;
+    font-size: 1.4em;
+    font-weight: bold;
+    background-color: var(--accent);
+    text-align: center;
+    padding: 1em 0;
+    margin: 2em auto;
+    border-radius: var(--radius-small);
+}
+/* #endregion ABOUT US PAGE */
+
+/* ================================================== */
+
 /* #region FOOTER */
 footer {
     background-color: var(--bg-secondary);
