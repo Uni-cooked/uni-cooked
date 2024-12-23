@@ -15,11 +15,11 @@
 </head>
 <body>
     <header>
-        <!-- <div class="bg"></div> -->
         <div id="header-content" class="content">
             <nav id="list-help" aria-label="aiuti alla navigazione">
                 <ul>
                     <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                    <li><a href="#quick-role" class="nav-help">Salta al menu del contenuto</a></li>
                     <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
                 </ul>
             </nav>
@@ -37,27 +37,27 @@
             </div>
             <nav id="menu">
                 <ul>
-                    <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
-                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                    <!-- <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li> -->
+                     <li id="website-name-in-nav"><img src="../assets/img/uni-cooked.svg" alt=""></img></li>
+                    <li id="current-page"><span lang="en">HOME</span></li>
                     <li><a href="./catalogue.html">RICETTE</a></li>
                     <li><a href="./about-us.html">CONTATTI</a></li>
                     <li id="profile-item">
-                        ACCEDI
-                        <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
+                        <a href="./user.html">ACCEDI</a>
                     </li>
                 </ul>
             </nav>
             
             <nav id="breadcrumb">
-                <p>Stai studiando in: Registrati</p>
+                <p>Stai studiando in: <span lang="en">ACCEDI</span></p>
             </nav>
         </div>
     </header>
 
     <main id="content">
-        <div class="sign-box content">
-            <h2 class="content-subtitle content">REGISTRATI</h2>
-            <form action="" method="post">
+        <div class="sign-box content end-paragraph">
+            <h2 class="content-subtitle">REGISTRATI</h2>
+            <form id="credentials" action="" method="post">
                 <fieldset>
                     <div id="name-up-container">
                         <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
@@ -66,7 +66,7 @@
                     <div id="cat-up-container">
                         <label for="student-cat-up" class="form-label">Scegli la categoria</label>
                         <select id="student-cat-up">
-                            <option value="tutti">Tutti</option>
+                            <option disabled selected value> seleziona una opzione </option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
                             <option value="in-sede">In sede</option>
