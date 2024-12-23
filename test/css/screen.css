@@ -399,6 +399,7 @@ dl#roles dt#dad {
 }
 
 dl#roles dd {
+    overflow: hidden;
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 2rem;
@@ -514,9 +515,8 @@ dd #role-info-label {
     margin-top: 2rem;
     display: inline-block;
     cursor: pointer;
-    user-select: none;
-    transition: color var(--animation-duration);
-    transition: background-color var(--animation-duration);
+    user-select: none; 
+    transition: background-color var(--animation-duration) , color var(--animation-duration);
 }
 
 #role-desc a{
@@ -951,7 +951,7 @@ a#profile-edit-link {
     font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
-    margin: 0em 0 .8em 1em;
+    margin-left: 1rem;
 }
 
 #recipie-request #cancel {
@@ -975,6 +975,10 @@ a#profile-edit-link {
 
 .admin-cell {
     text-align: center;
+}
+
+.admin-cell p{
+    overflow-wrap: break-word;
 }
 
 .admin-cell-margin {
@@ -1016,14 +1020,3 @@ footer a {
 
 /*#endregion FOOTER */
 
-
-/*#region MEDIA QUERY*/
-@media (max-width: 480px) {
-    dd:has(input:checked) .flip-card .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    .flip-card-back{
-        transform: rotateY(180deg);
-    }
-}
-/*#endregion MEDIA QUERY*/

@@ -156,13 +156,13 @@ HOME PAGE
 */
 
 @media (max-width: 480px) {
-    input:checked ~ .flip-card .flip-card-inner {
+    dd:has(input:checked) .flip-card .flip-card-inner {
         transform: rotateY(180deg);
     }
-    
     .flip-card-back{
         transform: rotateY(180deg);
     }
+
 }
 
 div#why > div {
@@ -285,3 +285,50 @@ USER PAGE
 #fav-recipe-list .fav-recipe a {
     padding-top: 0.3em;
 }
+
+/*#region ABOUT US*/
+
+
+
+#recipie-request img {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 60px;
+}
+
+#recipie-request button {
+    width: 49%;
+    margin-left: 0;
+    margin-top: 1.5em;
+}
+
+#recipie-request #cancel {
+    float: left;
+}
+
+#admin-grid {
+    display: block;
+}
+
+.admin-cell {
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 480px) {
+    #recipie-request button {
+        width: 100%;
+    }
+
+    #recipie-request #cancel {
+        float: none;
+    }
+
+    #recipie-request #confirm {
+        float: none;
+        margin-bottom: .1em;
+    }
+
+}
+
+/*#endregion ABOUT US*/
+
