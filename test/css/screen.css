@@ -101,6 +101,11 @@ p {
     padding: 2rem;
 }
 
+.content-container-left {
+    background-color: var(--bg-secondary);
+    padding: 2rem 0;
+}
+
 .content-subtitle {
     font-size: var(--section-title);
     padding-bottom: .4em;
@@ -385,6 +390,7 @@ dl#roles dt#dad {
 }
 
 dl#roles dd {
+    overflow: hidden;
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 2rem;
@@ -953,7 +959,7 @@ button#log-out-btn {
     font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
-    margin: 0em 0 .8em 1em;
+    margin-left: 1rem;
 }
 
 #recipie-request #cancel {
@@ -977,6 +983,10 @@ button#log-out-btn {
 
 .admin-cell {
     text-align: center;
+}
+
+.admin-cell p{
+    overflow-wrap: break-word;
 }
 
 .admin-cell-margin {
