@@ -7,7 +7,7 @@
 }
 
 :root {
-    /* DEFAULT */
+    /* COLORS */
     --bg-primary: #171717;
     --bg-secondary: #242424;
     --bg-trinary: #454545;
@@ -17,16 +17,36 @@
     --text-color:white;
     --a-color: #5F9950;
     --a-visited-color: #C76F0A;
-    /* SPECIAL CASES */
-    --header-content-text-color: black;
-    --header-content-a-bg-color: #d6cccc;
     --menu-a-color: white;
-    --menu-login-a-color: #4E0000;
-    --dt-bg-color: white;
-    --shadowcolor: #d88913;
-    --accent-a-color: #000A5F;
-    --accent-a-visited-color: #4E0000;
-    --safe-zone-a-bg-color: #E1BA84;
+    /* SPECIAL CASES */
+    /* --header-content-text-color: black; */
+    /* --header-content-a-bg-color: #d6cccc; */
+    /* --dt-bg-color: white; */
+    /* --menu-login-a-color: #4E0000; */
+    /* --shadowcolor: #d88913; */
+    /* --accent-a-color: #000A5F; */
+    /* --accent-a-visited-color: #4E0000; */
+    /* --safe-zone-a-bg-color: #E1BA84; */
+
+    /* MARGINS */
+    --main-mt:2em;
+    --section-mb:5rem;
+
+    /* PADDINGS */
+
+    /*TRANSITIONS*/
+    --animation-duration:1.1s;
+
+    /* TEXT */
+    --title: 4rem;
+    --subtitle: 1.3rem;
+    --menu-text:1.1rem;
+    --section-title: 1.8em;
+
+    /* BORDERS */
+    --radius-max: 100px;
+    --radius-mid: 32px;
+    --radius-small: 10px;
 }
 
 @font-face {
@@ -38,6 +58,8 @@
     font-style: normal;
     font-display: swap;
 }
+
+/*#region HTML */
 
 html body {
     height: 100%;
@@ -72,13 +94,13 @@ p {
 
 .content-container-left {
     background-color: var(--bg-secondary);
-    padding: 2rem 0;
+    /* padding: 2rem 0; ??????? */
 }
 
 .content-subtitle {
-    font-size: 1.8em;
-    padding-top: 2em;
-    padding-bottom: .4em;
+    font-size: var(--section-title);
+    padding-top: 2em; /*???????????*/
+    padding-bottom: .4em; /*???????????*/
 }
 
 .hide {
@@ -86,22 +108,9 @@ p {
     text-indent: -999em;
 }
 
-/*
-==================================================
-HEADER
-==================================================
-*/
+/*#endregion HTML */
 
-/* header .bg {
-    background-image: url("../assets/img/1.jpg");
-    background-color: var(--bgcolor);
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(3px) brightness(50%);
-    -webkit-filter: blur(3px) brightness(50%);
-    height: 100%;
-} */
-
+/*#region HEADER */
 header {
     background-image: url("../assets/img/1.jpg");
     background-color: var(--bg-primary);
@@ -122,7 +131,7 @@ header {
 }
 
 #header-titles {
-    padding: 0 2rem;
+    padding: .5rem;
     order: 3;
 }
 
@@ -134,26 +143,25 @@ header h1, header h2 {
 
 h1#header-title {
     font-weight: 900;
-    font-size: 5rem;
+    font-size: var(--title);
 }
 
 h2#header-subtitle {
     font-style: italic;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: var(--subtitle);
 }
+/*#endregion HEADER */
 
-/*
-=============================
-NAVIGATION HELP
-=============================
-*/
+/*#region NAVIGATION HELP */
+
 
 nav#list-help {
     position: absolute;
     top: 0;
     left: 0;
 }
+
 
 nav#list-help ul {
     display: block;
@@ -175,12 +183,9 @@ nav#list-help a:focus {
     text-indent: 0rem;
     background-color: var(--bg-primary);
 }
+/*#endregion  NAVIGATION HELP */
 
-/*
-=============================
-MENU
-=============================
-*/
+/*#region MENU */
 
 #hamburger, #hamburger-label {
     display: none;
@@ -188,7 +193,7 @@ MENU
 
 nav#menu {
     padding: 1.5rem 3rem 0;
-    width: 100%;
+    min-width: 100%;
     order: 2;
 }
 
@@ -197,26 +202,32 @@ nav#menu ul {
     list-style-type: none;
     align-items: center;
     background-color: var(--accent-secondary);
-    border-radius: 100px;
+    border-radius: var(--radius-max);
     padding: .6rem 2rem .6rem 2rem;
 }
 
 nav#menu li {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: var(--menu-text);
 }
 
+
 nav#menu li:not(:first-child):not(:last-child) {
-    border-radius: 100px;
-    margin: 0 1rem 0 1rem;
-    padding: .2rem 1.3rem .2rem 1.3rem;
+    border-radius: var(--radius-max);
+    margin: 0 1.5rem 0 1.5rem;
 }
+
 
 nav#menu li#website-name-in-nav {
     color: white;
-    padding-right: 3rem;
-    margin-right: 2rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
     border-right: 3px solid var(--accent);
+}
+
+nav#menu li#website-name-in-nav img {
+    width: 4rem;
+    height: 4rem;
 }
 
 nav#menu li#profile-item {
@@ -224,6 +235,7 @@ nav#menu li#profile-item {
 }
 
 nav#menu li#current-page {
+    padding: .2rem 1.3rem .2rem 1.3rem;
     background-color: var(--accent);
     color: var(--accent-secondary);
 }
@@ -252,35 +264,32 @@ nav#menu li#profile-item img {
     margin-left: 0.5rem;
 }
 
-/*
-=============================
-BREADCRUMB
-=============================
-*/
+/*#endregion MENU */
+
+/*#region BREADCRUMB */
 
 nav#breadcrumb {
-    bottom: 1.5rem;
+    /* bottom: 1.5rem; */
     order: 4;
 }
 
 nav#breadcrumb p {
-    font-size: 1.15rem;
+    font-size: 1rem;
     width: fit-content;
     font-style: italic;
     background-color: var(--accent-secondary);
     color: var(--text-color);
-    border-radius: 100px;
+    border-radius: var(--radius-mid);
     padding: .2rem 1rem .2rem 1rem;
 }
 
-/*
-==================================================
-CONTENT
-==================================================
-*/
+/*#endregion BREADCRUMB */
+
+/*#region CONTENT */
+
 
 main {
-    margin-top: 2em;
+    margin-top: var(--main-mt);
 }
 
 main h1, main h2, main h3, main h4, main h5, main h6 {
@@ -291,29 +300,30 @@ abbr {
     text-decoration: none;
 }
 
-/*
-=============================
-HOME PAGE MENU
-=============================
-*/
+/*#endregion CONTENT */
+
+/*#region HOME PAGE MENU */
 
 nav#quick-role {
-    margin-bottom: 2rem;
+    background-color: var(--bg-secondary);
 }
 
 nav#quick-role ul {
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 1.1rem 0 1.1rem 0;
+    margin-bottom:var(--main-mt);
 }
 
 nav#quick-role li {
     text-align: center;
-    display: inline;
+    display: inline-block;
+    width: 15%;
     margin: 0 2rem 0 2rem;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: var(--menu-text);
     font-style: italic;
+    white-space: nowrap;
 }
 
 nav#quick-role a:link {
@@ -324,18 +334,16 @@ nav#quick-role a:visited {
     color: var(--accent-trinary)
 }
 
-/*
-=============================
-HOME PAGE
-=============================
-*/
+/*#endregion HOME PAGE MENU */
+
+/*#region HOME PAGE */
 
 #presentation-text {
-    margin-bottom: 5rem;
+    margin-bottom: var(--section-mb);
 }
 
 dl.roles {
-    margin-bottom: 4rem;
+    margin-bottom: var(--section-mb);
 }
 
 dl.roles dt {
@@ -343,9 +351,9 @@ dl.roles dt {
     color: var(--accent);
     font-weight: 800;
     font-size: 3rem;
-    padding: 4rem;
+    padding: 6rem 0 6rem 0;
 
-    background-color: var(--dt-bg-color);
+    background-color: var(--accent-secondary);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -359,11 +367,9 @@ dl.roles dt {
 
 dl.roles dt div {
     margin: auto;
-    width: fit-content;
     background-image: url("../assets/img/brush.svg");
     background-repeat: no-repeat;
     background-position: center;
-    padding: 1rem 5rem 1rem 5rem;
 }
 
 dl.roles dt#fuorisede {
@@ -402,19 +408,19 @@ dl.roles dd:not(:last-child) {
 .flip-card-inner {
     position: relative;
     text-align: center;
-    transition: transform 1.1s cubic-bezier(.04,.43,.41,1.27);
+    transition: transform var(--animation-duration) cubic-bezier(.04,.43,.41,1.27);
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-input:checked ~ .flip-card .flip-card-inner {
+dd:has(input:checked) .flip-card .flip-card-inner {
     transform: rotateX(180deg);
 }
 
-input:checked ~ .flip-card .flip-card-back {
+dd:has(input:checked) .flip-card .flip-card-back {
     visibility: visible;
 }
-input:checked ~ .flip-card .flip-card-front p {
+dd:has(input:checked) .flip-card .flip-card-front p {
     visibility: hidden;
 }
 
@@ -442,13 +448,13 @@ input:checked ~ .flip-card .flip-card-front p {
     backface-visibility: hidden;
     background-color: var(--accent-trinary);
     color: white;
-    transition: visibility 1s;
+    transition: visibility var(--animation-duration);
     transform: rotateX(180deg);
 }
 
 .flip-card-back h3 {
     font-weight: 700;
-    font-size: 700;
+    font-size: 1.3rem;
 }
 
 .flip-card-back ul {
@@ -468,11 +474,7 @@ dl p {
     color: var(--bg-primary);
     text-align: center;
     font-weight: 500;
-    transition: visibility 1s;
-}
-
-dd label {
-    user-select: none;
+    transition: visibility var(--animation-duration);
 }
 
 dd input{
@@ -483,18 +485,28 @@ dd input{
     pointer-events: none;
 }
 
-dd:has(input:focus-visible) label {
+dd:has(input:focus-visible) #role-info-label {
     border: 2px solid white;
 }
 
+dd:has(input:checked) #role-info-label {
+    color: var(--bg-primary);
+    background-color: var(--accent);
+}
+
 dd #role-info-label {
-    color: var(--accent);
+    color: var(--text-color);
+    background-color: var(--accent-trinary);
+    border-radius: var(--radius-max);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 1rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-    text-decoration: underline;
+    margin-top: 2rem;
     display: inline-block;
     cursor: pointer;
-    padding: .5rem;
+    user-select: none;
+    transition: color var(--animation-duration);
+    transition: background-color var(--animation-duration);
 }
 
 #role-desc a{
@@ -502,15 +514,14 @@ dd #role-info-label {
     margin-top: 1rem;
 }
 
-/*
-=============================
-HOME PAGE WHY
-=============================
-*/
+/*#endregion HOME PAGE */
+
+/*#region HOME PAGE WHY */
+
 
 div#why {
     background-color: var(--accent-secondary);
-    margin-bottom: 4rem;
+    margin-bottom: var(--section-mb);
 }
 
 div#why > div {
@@ -523,7 +534,7 @@ div#why #why-desc {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-secondary);
-    border-radius: 10px;
+    border-radius: var(--radius-small);
     padding: 1rem;
 }
 
@@ -539,14 +550,12 @@ div#why #why-desc p {
 div#why img {
     flex: 2;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius:  var(--radius-small);
 }
 
-/*
-=============================
-CATALOGUE PAGE
-=============================
-*/
+/*#endregion HOME PAGE WHY */
+
+/*#region CATALOGUE PAGE */
 
 ul#recipe-list {
     display: flex;
@@ -649,11 +658,9 @@ ul#recipe-list .recipe a {
     font-weight: bold;
 }
 
-/*
-=============================
-SIGN IN/UP PAGE
-=============================
-*/
+/*#endregion CATALOGUE PAGE */
+
+/*#region SIGN IN/UP PAGE */
 
 /* TODO: NO px !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -727,11 +734,10 @@ SIGN IN/UP PAGE
     color: var(--text-color);
 }
 
-/*
-=============================
-USER PAGE
-=============================
-*/
+/*#endregion SIGN IN/UP PAGE */
+
+/*#region USER PAGE */
+
 
 #title-nick {
     text-align: center;
@@ -882,11 +888,9 @@ a#profile-edit-link {
     border-radius: 5px;
 }
 
-/*
-=============================
-ABOUT US PAGE
-=============================
-*/
+/*#endregion USER PAGE */
+
+/*#region ABOUT US PAGE */
 
 /* TODO: NO px !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -980,11 +984,9 @@ ABOUT US PAGE
     font-weight: 300;
 }
 
-/*
-==================================================
-FOOTER
-==================================================
-*/
+/*#endregion ABOUT US PAGE */
+
+/*#region FOOTER */
 
 footer {
     background-color: var(--bg-secondary);
@@ -1004,3 +1006,17 @@ footer a {
     color: var(--accent);
     font-size: 1.1em;
 }
+
+/*#endregion FOOTER */
+
+
+/*#region MEDIA QUERY*/
+@media (max-width: 480px) {
+    dd:has(input:checked) .flip-card .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    .flip-card-back{
+        transform: rotateY(180deg);
+    }
+}
+/*#endregion MEDIA QUERY*/

@@ -15,7 +15,6 @@
     </head>
     <body>
         <header>
-            <!-- <div class="bg"></div> -->
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
@@ -38,13 +37,13 @@
                 </div>
                 <nav id="menu">
                     <ul>
-                        <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li>
+                        <!-- <li id="website-name-in-nav">UNI <span lang="en">COOKED</span></li> -->
+                         <li id="website-name-in-nav"><img src="../assets/img/uni-cooked.svg" alt=""></img></li>
                         <li id="current-page"><span lang="en">HOME</span></li>
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
                         <li id="profile-item">
                             <a href="./user.html">ACCEDI</a>
-                            <img id="profile-picture" src="../assets/img/ix--user-profile-filled.svg" alt="Immagine generica rappresentate un utente non autenticato">
                         </li>
                     </ul>
                 </nav>
@@ -55,16 +54,17 @@
             </div>
         </header>
         
-        <nav id="quick-role">
-            <ul>
-                <li><a href="#fuorisede">Fuorisede</a></li>
-                <li><a href="#pendolare">Pendolare</a></li>
-                <li><a href="#sede">In sede</a></li>
-                <li><a href="#dad"><span lang="en"><abbr title="Didattica a Distanza">DAD</abbr></span></a></li>
-            </ul>
-        </nav>
-
+        
         <main id="content">
+            <nav id="quick-role">
+                <ul class="content">
+                    <li><a href="#fuorisede">Fuorisede</a></li>
+                    <li><a href="#pendolare">Pendolare</a></li>
+                    <li><a href="#sede">In sede</a></li>
+                    <li><a href="#dad"><span lang="en"><abbr title="Didattica a Distanza">DAD</abbr></span></a></li>
+                </ul>
+            </nav>
+
             <div id="presentation-text" class="content-container">
                 <p class="content">
                     Se sei stanco di trovarti all'ultimo a preparare di fretta qualcosa da mettere sotto i denti, o se ogni tanto vuoi mangiare qualcosa di diverso ma
@@ -81,10 +81,6 @@
                     </div>
                 </dt>
                 <dd>
-                    <label id="role-info-label" for="role-info-fs">
-                        Scopri se fa per te
-                    </label>
-                    <input type="checkbox" id="role-info-fs" ></input>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front">
@@ -102,26 +98,27 @@
                                 <li>Hai i soldi appena sufficienti per comprarti prodotti di sotto marche</li>
                             </ul>
                         </div>
-                      </div>
+                        </div>
+                    </div>
+                    <label id="role-info-label" for="role-info-fs">
+                        E` di tuo gradimento?
+                    </label>
+                    <input type="checkbox" id="role-info-fs" ></input>
                 </dd>
 
                 <dt id="pendolare">
                     <div>
-                        PENDOLARE
+                        FUORISEDE
                     </div>
                 </dt>
                 <dd>
-                    <label id="role-info-label" for="role-info-pn">
-                        Scopri se fa per te
-                    </label>
-                    <input type="checkbox" id="role-info-pn" ></input>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front">
-                            <p id="role-desc">Svegliarsi alle 6 di mattina e correre per prendere l'autobus o il treno per poi scoprire che era in ritardo, o ancora meglio che è stato 
-                                cancellato per sciopero. Già, la vita da pendolare è piuttosto frenetica. Consolati però, hai trovato un posto che ti offre numerosi
-                                <strong>piatti</strong> ottimi per chi ha gli orari stretti ma allo stesso tempo vuole concedersi il tempo di rifocillarsi come si deve.
-                                <a class="recipe-link" href="./catalogue.html" title="del pendolare">Vai alle ricette</a>
+                            <p id="role-desc">Devi pulire casa, farti la lavatrice, fare la spesa, andare a lezione, studiare, magari anche lavorare per coprire i costi, cercare di
+                                dormire più di 5 ore a notte, forse ritagliarti un po' di tempo libero e pensare pure a mangiare. E con quel che costa la roba! Non serve 
+                                chiedere aiuto, qui troverai <strong>piatti</strong> senza compromessi pieni di sapore, rapidi da fare ed economici.
+                                <a class="recipe-link" href="./catalogue.html" title="per il fuorisede">Vai alle ricette</a>
                             </p>
                           </div>
                           <div class="flip-card-back">
@@ -132,26 +129,27 @@
                                 <li>Hai i soldi appena sufficienti per comprarti prodotti di sotto marche</li>
                             </ul>
                         </div>
-                      </div>
+                        </div>
+                    </div>
+                    <label id="role-info-label" for="role-info-pn">
+                        E` di tuo gradimento?
+                    </label>
+                    <input type="checkbox" id="role-info-pn" ></input>
                 </dd>
 
                 <dt id="sede">
                     <div>
-                        IN SEDE
+                        FUORISEDE
                     </div>
                 </dt>
                 <dd>
-                    <label id="role-info-label" for="role-info-sd">
-                        Scopri se fa per te
-                    </label>
-                    <input type="checkbox" id="role-info-sd" ></input>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front">
-                            <p id="role-desc">Eh sì, siamo fortunati. Guarda caso siamo proprio nella stessa città dell'<strong>Uni</strong>, magari anche a pochi minuti di distanza.
-                                Non abbiamo scusanti, dobbiamo far fruttare i nostri sforzi per essere cresciuti nel posto giusto al momento giusto. <strong>Piatti</strong>
-                                elaborati e saporiti ma che lasciano spazio alle attività che ogni <strong>universitario</strong> ha.
-                                <a class="recipe-link" href="./catalogue.html" title="dello studente in sede">Vai alle ricette</a>
+                            <p id="role-desc">Devi pulire casa, farti la lavatrice, fare la spesa, andare a lezione, studiare, magari anche lavorare per coprire i costi, cercare di
+                                dormire più di 5 ore a notte, forse ritagliarti un po' di tempo libero e pensare pure a mangiare. E con quel che costa la roba! Non serve 
+                                chiedere aiuto, qui troverai <strong>piatti</strong> senza compromessi pieni di sapore, rapidi da fare ed economici.
+                                <a class="recipe-link" href="./catalogue.html" title="per il fuorisede">Vai alle ricette</a>
                             </p>
                           </div>
                           <div class="flip-card-back">
@@ -162,26 +160,27 @@
                                 <li>Hai i soldi appena sufficienti per comprarti prodotti di sotto marche</li>
                             </ul>
                         </div>
-                      </div>
+                        </div>
+                    </div>
+                    <label id="role-info-label" for="role-info-sd">
+                        E` di tuo gradimento?
+                    </label>
+                    <input type="checkbox" id="role-info-sd" ></input>
                 </dd>
 
                 <dt id="dad">
                     <div>
-                        <abbr title="didattica a distanza">DAD</abbr>
+                        FUORISEDE
                     </div>
                 </dt>
                 <dd>
-                    <label id="role-info-label" for="role-info-dd">
-                        Scopri se fa per te
-                    </label>
-                    <input type="checkbox" id="role-info-dd" ></input>
                     <div class="flip-card">
                         <div class="flip-card-inner">
                           <div class="flip-card-front">
-                            <p id="role-desc">Parliamoci chiaro, quanto è bello svegliarsi con calma e gestirsi il tempo come si vuole? Dal 2020 abbiamo imparato a convivere col pigiama e
-                                il nostro puzzo per giorni svegliandoci 5 minuti prima della lezione. Con tutto il tempo che abbiamo a disposizione quindi perché non
-                                concederci dei <strong>piatti</strong> raffinati che ci fanno dire "Eh sì, me lo posso permettere".
-                                <a class="recipe-link" href="./catalogue.html" title="dello studente da casa">Vai alle ricette</a>
+                            <p id="role-desc">Devi pulire casa, farti la lavatrice, fare la spesa, andare a lezione, studiare, magari anche lavorare per coprire i costi, cercare di
+                                dormire più di 5 ore a notte, forse ritagliarti un po' di tempo libero e pensare pure a mangiare. E con quel che costa la roba! Non serve 
+                                chiedere aiuto, qui troverai <strong>piatti</strong> senza compromessi pieni di sapore, rapidi da fare ed economici.
+                                <a class="recipe-link" href="./catalogue.html" title="per il fuorisede">Vai alle ricette</a>
                             </p>
                           </div>
                           <div class="flip-card-back">
@@ -192,7 +191,12 @@
                                 <li>Hai i soldi appena sufficienti per comprarti prodotti di sotto marche</li>
                             </ul>
                         </div>
-                      </div>
+                        </div>
+                    </div>
+                    <label id="role-info-label" for="role-info-dd">
+                        E` di tuo gradimento?
+                    </label>
+                    <input type="checkbox" id="role-info-dd" ></input>
                 </dd>
             </dl>
 
