@@ -237,14 +237,18 @@ nav#menu li:not(:first-child):not(:last-child) {
 }
 
 .logo {
-    color: white;
+    width: 3rem;
+    height: 3rem;
+}
+
+nav#menu li:has(.logo) {
+    border-right: 3px solid var(--accent);
     padding-right: 1rem;
     margin-right: 1rem;
-    border-right: 3px solid var(--accent);
 }
 
 nav#menu li#current-page {
-    padding: .2rem 1.3rem .2rem 1.3rem;
+    padding: .2rem 1.3rem;
     background-color: var(--accent);
     color: var(--accent-secondary);
 }
@@ -261,17 +265,11 @@ nav#menu li#profile-item {
     margin-left: auto;
     background-color: var(--accent-trinary);
     border-radius: 10px;
-    padding: .5rem 1.3rem .5rem 1.3rem;
+    padding: .5rem 1.3rem;
 }
 
 nav#menu li#profile-item a {
     color: white;
-}
-
-nav#menu li#profile-item img {
-    vertical-align: middle;
-    height: 1.5rem;
-    margin-left: 0.5rem;
 }
 
 /*#endregion MENU */
