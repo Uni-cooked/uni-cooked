@@ -1,8 +1,9 @@
 :root {
-    --bar-width: 4rem;
+    --bar-width: 3.7rem;
     --bar-height: 0.9rem;
-    --hamburger-gap: .5rem;
-    --hamburger-padding: .8rem 2.5rem;
+    --hamburger-gap: .4rem;
+    --hamburger-v-margin: .8rem;
+    --hamburger-h-margin: 2.5rem;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
@@ -35,8 +36,8 @@ MENU
 
 #hamburger {
     display: flex;
-    flex-direction: row-reverse;
-    background-color: var(--accent-secondary);
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.75);
     width: 100%;
 }
 
@@ -47,7 +48,7 @@ MENU
     flex-direction: column;
     align-items: flex-end;
     gap: var(--hamburger-gap);
-    padding: var(--hamburger-padding);
+    margin: var(--hamburger-v-margin) var(--hamburger-h-margin);
     z-index: 1;
 }
 
@@ -127,11 +128,18 @@ nav#menu {
     translate: 0;
 }
 
-html:has(#hamburger-label input:checked) body {
+header:has(#hamburger-label input:not(:checked)) nav#menu a {
+    visibility: hidden;
+}
+
+body:has(#hamburger-label input:checked){
     overflow-y: hidden;
 }
 
-header:has(#hamburger-label input:not(:checked)) nav#menu a {
+/* body:has(#hamburger-label input:checked) *:not(header *) { */
+body:has(#hamburger-label input:checked) main,
+body:has(#hamburger-label input:checked) footer,
+body:has(#hamburger-label input:checked) #quick-role {
     visibility: hidden;
 }
 
@@ -141,12 +149,19 @@ nav#menu ul {
     justify-content: space-evenly;
 }
 
-nav#menu li#website-name-in-nav {
+nav#menu .logo {
     display: none;
 }
 
+#hamburger .logo {
+    display: inline;
+    padding: 0;
+    margin: auto var(--hamburger-h-margin);
+    border: 0;
+}
+
 nav#menu li#profile-item {
-    display: none;
+    margin: 0;
 }
 
 /*
