@@ -48,13 +48,13 @@ CREATE TABLE Visitatore(
 
 CREATE TABLE Ingrediente(
     nome VARCHAR(20) PRIMARY KEY,
-    marca VARCHAR(50)
 );
 
 CREATE TABLE Ricetta(
     nome VARCHAR(50) PRIMARY KEY,
     categoria CATEGORIA NOT NULL,
     tipo TIPO_PIATTO NOT NULL,
+    tempo POSITIVE_SMALLINT NOT NULL,
     descrizione VARCHAR(500) NOT NULL,
     admin VARCHAR(100) NOT NULL,
     data DATE NOT NULL,
@@ -101,26 +101,5 @@ CREATE TABLE Valutazione(
     CHECK(voto>0 AND voto<=30),
     PRIMARY KEY (ricetta, visitatore),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (visitatore) REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE Take_away(
-    nome_locale VARCHAR(100) PRIMARY KEY,
-    admin VARCHAR(100) NOT NULL,
-    indirizzo VARCHAR(30) NOT NULL,
-    civico SMALLINT NOT NULL,
-    maps VARCHAR(500) NOT NULL,  -- Collegamento web per Maps
-    sito VARCHAR(500),
-    immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
-    descrizione VARCHAR(500) NOT NULL,
-    data DATE NOT NULL,
-    FOREIGN KEY (admin) REFERENCES Admin(utente) ON DELETE NO ACTION ON UPDATE CASCADE
-);
-
-CREATE TABLE Preferenza_take_away(
-    visitatore VARCHAR(100) NOT NULL,
-    take_away VARCHAR(100) NOT NULL,
-    PRIMARY KEY (visitatore, take_away),
-    FOREIGN KEY (take_away) REFERENCES Take_away(nome_locale) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (visitatore) REFERENCES Visitatore(utente) ON DELETE CASCADE ON UPDATE CASCADE
 );
