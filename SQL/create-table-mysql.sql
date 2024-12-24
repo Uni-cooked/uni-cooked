@@ -1,10 +1,12 @@
-DROP TABLE IF EXISTS Preferenza_Ricetta;
-DROP TABLE IF EXISTS Valutazione;
-DROP TABLE IF EXISTS Preparazione;
-DROP TABLE IF EXISTS Utilizzo_Ingrediente;
-DROP TABLE IF EXISTS Ricetta;
 DROP TABLE IF EXISTS Utente;
+-- DROP TABLE IF EXISTS Admin;
+-- DROP TABLE IF EXISTS Vistatore;
 DROP TABLE IF EXISTS Ingrediente;
+DROP TABLE IF EXISTS Ricetta;
+DROP TABLE IF EXISTS Preferenza_Ricetta;
+DROP TABLE IF EXISTS Utilizzo;
+DROP TABLE IF EXISTS Preparazione;
+DROP TABLE IF EXISTS Valutazione;
 
 CREATE TABLE Utente(
     email VARCHAR(100) PRIMARY KEY,
@@ -16,6 +18,20 @@ CREATE TABLE Utente(
     immagine VARCHAR(500) NOT NULL -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
 );
 
+-- CREATE TABLE Admin(
+--     utente VARCHAR(100) PRIMARY KEY,
+--     data_termine DATE, -- NULL se ancora admin
+--     FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+-- );
+
+-- CREATE TABLE Visitatore(
+--     utente VARCHAR(100) PRIMARY KEY,
+--     biografia VARCHAR(500) NOT NULL,
+--     tipo_studente enum ('fuorisede', 'pendolare', 'in_sede', 'dad') NOT NULL,
+--     immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+--     FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+-- );
+
 CREATE TABLE Ingrediente(
     nome VARCHAR(20) PRIMARY KEY
 );
@@ -23,11 +39,13 @@ CREATE TABLE Ingrediente(
 CREATE TABLE Ricetta(
     nome VARCHAR(50) PRIMARY KEY,
     categoria enum ('fuorisede', 'pendolare', 'in_sede', 'dad') NOT NULL,
-    tipo_piatto enum ('primo', 'secondo') NOT NULL,
-    tempo_sec INT NOT NULL,
+    tipo enum ('primo', 'secondo') NOT NULL,
+    tempo INT NOT NULL,   -- tempo in secondi
     descrizione VARCHAR(500) NOT NULL,
+    -- admin VARCHAR(100) NOT NULL,
     data DATE NOT NULL,
     immagine VARCHAR(500) NOT NULL -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    -- FOREIGN KEY (admin) REFERENCES Admin(utente) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
 CREATE TABLE Preferenza_Ricetta(
@@ -38,7 +56,7 @@ CREATE TABLE Preferenza_Ricetta(
     FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Utilizzo_Ingrediente(
+CREATE TABLE Utilizzo(
     ingrediente VARCHAR(20) NOT NULL,
     ricetta VARCHAR(50) NOT NULL,
     quanto_basta BOOLEAN NOT NULL,
