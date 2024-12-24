@@ -58,36 +58,36 @@
                     <div id="name-up-container" class="input-container">
                         <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
                         <input type="text" name="nome" id="student-name-up">
-                        <p>{{messaggio di errore}}</p>
+                        <p>{{messaggio di nome}}</p>
                     </div>
                     <div id="cat-up-container">
                         <label for="student-cat-up" class="form-label">Scegli la categoria</label>
-                        <select id="student-cat-up">
+                        <select id="student-cat-up" name="categoria">
                             <option disabled selected value> seleziona una opzione </option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
                             <option value="in-sede">In sede</option>
                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                         </select>
-                        <p>{{messaggio di errore}}</p>
+                        <p>{{messaggio di categoria}}</p>
                     </div>
                     <div id="mail-up-container" class="input-container">
                         <label for="student-mail-up" class="form-label">Inserisci la tua mail</label>
                         <input type="email" name="email" id="student-mail-up">
-                        <p>{{messaggio di errore}}</p>
+                        <p>{{messaggio di email}}</p>
                     </div>
                     <div id="psw-up-container" class="input-container">
                         <label for="student-psw-up" class="form-label">Inserisci la password</label>
                         <input type="password" name="psw" id="student-psw-up">
-                        <p>{{messaggio di errore}}</p>
+                        <p>{{messaggio di psw}}</p>
                     </div>
                     <div id="psw-up-container" class="input-container">
                         <label for="student-psw-up" class="form-label">Ripeti la password</label>
                         <input type="password" name="repeat-psw" id="student-repeat-psw-up">
-                        <p>{{messaggio di errore}}</p>
+                        <p>{{messaggio di psw-ripetuta}}</p>
                     </div>
 
-                    <button id="confirm" class="button-up" type="submit">REGISTRATI</button>
+                    <button name="submit" id="confirm" class="button-up" type="submit">REGISTRATI</button>
                     <button id="cancel" class="button-up" type="reset">ANNULLA</button>
                 </fieldset>
             </form>
