@@ -134,6 +134,7 @@ body:has(#hamburger-label input:checked) main,
 body:has(#hamburger-label input:checked) footer,
 body:has(#hamburger-label input:checked) #quick-role {
     visibility: hidden;
+    transition: visibility var(--animation-timing);
 }
 
 nav#menu ul {
