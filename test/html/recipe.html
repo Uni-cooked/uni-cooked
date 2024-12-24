@@ -41,9 +41,6 @@
 
     <main id="mainInfoRicetta">
         <h2 id="NomeRicetta" class="Intro">NOME_RICETTA</h2>
-        <form action="" method="post">
-            <input type="checkbox" class="Intro Star" id="Stella" onchange="this.form.submit()"/>
-        </form>
         <div id="ImgInfoRicetta">
             <img id="LocandinaRicetta" alt="Locandina ricetta" src="../img/RicettaProva.jpg"/> 
             <ul id="InfoRicetta">          
@@ -54,6 +51,10 @@
                 <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/cost.svg" />50</li>
             </ul>  
         </div> 
+
+        <form action="" method="post">
+            <button type="submit" id="Stella"></button>
+        </form>
 
         <p class="Sezione">Descrizione</p>
 
@@ -80,10 +81,8 @@
             <form action="" method="post">
                 <fieldset>
                     <label for="Voto-utente">Aggiungi una valutazione</label>
-                    <button class="voto">-</button>
                     <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" maxlength="2" required></input>
-                    <p class="voto" id="MaxVoto">/30</p>
-                    <button class="voto" id="AumentareVoto">+</button>
+                    <p class="voto" id="MaxVoto">/ 30</p>
                     <label for="Commento-utente">Commenta</label>
                     <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
                 </fieldset>
@@ -108,7 +107,7 @@
                     <article class="Commento">
                         <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
                         <a href="" class="InfoUtente">Nome Utente</a>
-                        <p class="InfoUtente" id="DataCommento">Data</p>
+                        <p class="InfoUtente" id="DataCommento"><time datetime="">Data</time></p>
                         <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
                         <p class="ValutazioneUtente">Commento</p>
                     </article>
@@ -117,7 +116,6 @@
         </section>
 
         <button id="Carica">Carica altri commenti</button>
-
 
         <footer>
             <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
