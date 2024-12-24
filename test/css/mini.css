@@ -131,10 +131,8 @@ body:has(#hamburger-label input:checked){
 
 /* body:has(#hamburger-label input:checked) *:not(header *) { */
 body:has(#hamburger-label input:checked) main,
-body:has(#hamburger-label input:checked) footer,
-body:has(#hamburger-label input:checked) #quick-role {
+body:has(#hamburger-label input:checked) footer {
     visibility: hidden;
-    transition: visibility var(--animation-timing);
 }
 
 nav#menu ul {
@@ -204,6 +202,8 @@ ul#recipe-list .recipe ul.recipe-info li {
 /* ================================================== */
 
 /* #region SIGN UP PAGE */
+
+
 .form-label {
     margin-bottom: .5em;
 }
@@ -220,13 +220,13 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding-left: 0;
 }
 
-.sign-box button {
+.sign-box #credentials .button-up {
     width: 49%;
     margin-left: 0;
     margin-top: 1.5em;
 }
 
-.sign-box  .cancel {
+.sign-box #credentials #cancel {
     float: left;
     margin-bottom: 0;
 }
@@ -235,17 +235,17 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding: 1em;
 }
 
-@media screen and (max-width: 480px) {
-    .sign-box button {
-        width: 100%;
-    }
 
-    .sign-box .confirm {
+@media screen and (max-width: 480px) {
+    .sign-box #credentials #confirm {
+        width: 100%;
         float: none;
         margin-bottom: .1em;
+        margin-left: 0;
     }
-
-    .sign-box .cancel {
+    
+    .sign-box #credentials #cancel {
+        width: 100%;
         float: none;
     }
 }
