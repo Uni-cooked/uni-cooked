@@ -11,9 +11,9 @@ CREATE TABLE Utente(
     nome VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(64) NOT NULL,  -- SHA256 restituisce sempre una stringa di 64 caratteri
     data_iscrizione DATE NOT NULL,
-    biografia VARCHAR(500) NOT NULL,
+    biografia VARCHAR(500), -- (in registrazione non c'è la possibilità di inserirla)
     tipo_studente enum ('fuorisede', 'pendolare', 'in_sede', 'dad') NOT NULL,
-    immagine VARCHAR(500) NOT NULL -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
+    immagine VARCHAR(500) -- (in registrazione non c'è la possibilità di inserirla) Ancora non sappiamo il tipo, per ora faccio finta sia una directory
 );
 
 CREATE TABLE Ingrediente(

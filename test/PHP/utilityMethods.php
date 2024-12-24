@@ -42,6 +42,33 @@ class DB {
         mysqli_close($this->connection);
     }
 
+    public function checkEmailPresence($email): bool | string {
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $checkUserStatement=$this->connection->prepare("SELECT email FROM Utente WHERE email = ?");
+            $checkUserStatement->bind_param("s",$email);
+            try {
+                $checkUserStatement->execute();
+            } catch(\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $checkUserStatement->close();
+                return "ExceptionThrow";
+            }
+
+            $result=$checkUserStatement->get_result();
+            $this->closeDBConnection();
+            $checkUserStatement->close();
+
+            if ($result->num_rows==1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
     public function checkUserPresence($username): bool | string {
         $connectionResult=$this->openDBConnection();
         if ($connectionResult) {
@@ -78,8 +105,8 @@ class DB {
         $date=date("Y-m-d h:m:s");
         $connectionResult=$this->openDBConnection();
         if ($connectionResult) {
-            $registerUserStatement=$this->connection->prepare("INSERT INTO Utente(email,nome,password,data_iscrizione) VALUES(?,?,?,?)");
-            $registerUserStatement->bind_param("ssss",$email,$username,$encPsw,$date);
+            $registerUserStatement=$this->connection->prepare("INSERT INTO Utente(email,nome,password,data_iscrizione,tipo_studente) VALUES(?,?,?,?,?)");
+            $registerUserStatement->bind_param("sssss",$email,$username,$encPsw,$date,$userCategory);
             try {
                 $registerUserStatement->execute();
             } catch(\mysqli_sql_exception $e) {
