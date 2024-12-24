@@ -49,9 +49,9 @@
     --letter-spacing:.2rem;
 
     /* BORDERS */
-    --radius-max: 100px;
-    --radius-mid: 32px;
-    --radius-small: 10px;
+    --radius-max: 100rem;
+    --radius-mid: 10rem;
+    --radius-small: .5rem;
 
     /* FORMS */
     --button-width:10rem;
@@ -94,6 +94,13 @@ p {
 
 button {
     border-style: none;
+    border-radius: var(--radius-small);
+}
+
+fieldset {
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-small);
+    padding: 2em 5em;
 }
 
 .content {
@@ -130,33 +137,6 @@ button {
     color: var(--accent);
     font-weight: 500;
     font-size: var(--form-label);
-}
-
-
-.text-input {
-    display: block;
-    width: 100%;
-    height: 2.8rem;
-    margin-bottom: .5rem;
-    text-indent: 1em;
-    font-size: .9em;
-    background-color: rgb(48, 48, 48);
-    border-radius: var(--radius-max);
-    border: 3px solid var(--accent);
-    color: white;
-}
-
-.textarea-input {
-    resize: none;
-    padding: 1em;
-    width: 100%;
-    font-size: 1.05rem;
-    background-color: var(--bg-secondary);
-    color: var(--text-color);
-    border: 3px solid var(--accent);
-    overflow: auto;
-    border-radius: var(--radius-small);
-    margin-bottom: .5em;
 }
 
 .button-input {
@@ -616,6 +596,37 @@ div#why img {
 /* ================================================== */
 
 /*#region CATALOGUE PAGE */
+
+#filtri {
+    padding: 2em 3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+#filtri label {
+    font-size: 1rem;
+}
+
+#search-btn {
+    width: 100%;
+    height: var(--button-height);
+    font-size: var(--button-text);
+    font-weight: 700;
+    background-color: var(--accent);
+}
+
+.filter-param {
+    flex: 1;
+}
+
+.filter-param p {
+    text-align: center;
+}
+
+
+
 ul#recipe-list {
     display: flex;
     flex-wrap: wrap;
@@ -722,10 +733,7 @@ ul#recipe-list .recipe a {
 
 /* #region SIGN IN/UP PAGE */
 .sign-box fieldset {
-    border: 2px solid var(--accent);
-    border-radius: var(--radius-small);
     background-color: var(--bg-secondary);
-    padding: 2em 5em;
 }
 
 .sign-box fieldset > p {
@@ -934,12 +942,6 @@ button#log-out-btn {
     margin-bottom: var(--section-mb);
 }
 
-#user-edit fieldset {
-    border: 2px solid var(--accent);
-    border-radius: var(--radius-small);
-    padding: 2em 5em;
-}
-
 #user-edit #profile-img-edit {
     display: none;
 }
@@ -998,26 +1000,6 @@ button#log-out-btn {
     margin:0 auto .5em;
     border-radius: var(--radius-small);
 }
-@media screen and (max-width: 768px) {
-    
-    #user-edit #primary-info{
-        flex-direction: column;
-        align-items: center;
-        gap: .5rem;
-    }
-    
-}
-
-@media screen and (max-width: 480px) {
-    .sign-box #credentials .button-input {
-        width: 100%;
-        float: none;
-        margin-bottom: .1em;
-        margin-left: 0;
-    }
-    
-}
-
 
 /* #endregion USER EDIT PAGE */
 
@@ -1047,6 +1029,7 @@ button#log-out-btn {
 #recipie-request fieldset {
     border: none;
     border-radius: var(--radius-small);
+    padding: 0;
 }
 
 #recipie-request button {
@@ -1165,3 +1148,99 @@ footer a {
     color: var(--accent);
 }
 /* #endregion FOOTER */
+
+/* ================================================== */
+
+/* #region CUSTOM INPUTS */
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+select {
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    margin-bottom: .5rem;
+    text-indent: 1em;
+    font-size: .9em;
+    background-color: rgb(48, 48, 48);
+    border-radius: var(--radius-max);
+    border: 3px solid var(--accent);
+    color: white;
+}
+
+textarea {
+    resize: none;
+    padding: 1em;
+    width: 100%;
+    font-size: 1.05rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border: 3px solid var(--accent);
+    overflow: auto;
+    border-radius: var(--radius-small);
+    margin-bottom: .5em;
+}
+
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+
+  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+  /* slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: var(--accent);
+    border-radius: 2rem;
+    height: .8rem;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -.6rem; /* Centers thumb on the track */
+    background-color: var(--accent-trinary);
+    border-radius: 1rem;
+    height: 2rem;
+    width: .8rem;
+  }
+  
+  input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid var(--accent-trinary);
+    outline-offset: 0.125rem;
+  }
+  
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    background-color:  var(--accent);
+    border-radius: 2rem;
+    height: 1rem;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--accent-trinary);
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 1rem;
+  }
+  
+  input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid var(--accent-trinary);
+    outline-offset: 0.125rem;
+  }
+
+/* #endregion CUSTOM INPUTS */
+
+
+
