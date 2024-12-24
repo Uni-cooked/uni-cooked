@@ -4,42 +4,40 @@ RICETTA
 ==================================================
 */
 
-div#ImgInfoRicetta
-{
+div#ImgInfoRicetta{
     flex-direction: column;
 }
 
-ul#IngredientiRicetta
-{
+div#ImgInfoRicetta ul{
+margin: 2em 1em 2em 1em;
+}
+
+button#Stella{
+    width:40%;
+}
+
+ul#IngredientiRicetta{
     flex-direction: column;
 }
 
-button.voto
-{
-    width: 35px;
-    height: 1%; 
+.voto{
+    float:none;
 }
 
-textarea#Commento-utente
-{
+textarea#Commento-utente{
     width: 90%;
-    display: block;
 }
 
-    button.SceltaUtente
-{
+button.SceltaUtente{
     width: 8em;
     height: 3em;
 }
 
-li article
-{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 p#VotoUtente{
     margin-top: 0;
+    text-align: center;
+}
+
+button#Carica{
+    width:40%;
 }
