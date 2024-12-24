@@ -62,7 +62,7 @@
 
                 <fieldset id="filtri">
                     <legend class="hide">Filtra per</legend>
-                    <article class="filter-param">
+                    <div class="filter-param">
                         <label for="stud-cat-filter" class="form-label">CATEGORIA STUDENTE</label>
                         <select id="stud-cat-filter">
                             <option value="tutti">Tutti</option>
@@ -71,28 +71,27 @@
                             <option value="in-sede">In sede</option>
                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                         </select>
-                    </article>
-                    <article class="filter-param">
+                    </div>
+                    <div class="filter-param">
                         <label for="dish-type-filter" class="form-label">PIATTO</label>
                         <select id="dish-type-filter">
                             <option value="tutti">Tutti</option>
                             <option value="pp">Primi</option>
                             <option value="sp">Secondi</option>
                         </select>
-                    </article>
-                    <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
-                    <article class="filter-param">
+                    </div>
+                    <div class="filter-param">
                         <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA</label>
                         <input type="range" id="min-rate-filter" min="1" max="30" value="0">
                         <!-- TODO: hide to screen reader if it read the value from the input -->
                         <p>0 / 30</p>
-                    </article>
-                    <article class="filter-param">
+                    </div>
+                    <div class="filter-param">
                         <label for="max-price-filter" class="form-label">COSTO MASSIMO</label>
                         <input type="range" id="max-price-filter" min="1" max="20" value="20">
                         <!-- TODO: hide to screen reader if it read the value from the input -->
                         <p>20 €</p>
-                    </article>
+                    </div>
                 </fieldset>
 
                 <button type="submit" id="search-btn">CERCA</button>

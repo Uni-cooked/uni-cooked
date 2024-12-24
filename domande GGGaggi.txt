@@ -1,5 +1,7 @@
-tasto accedi in sign in/up e profilo?
-torna su dopo le carte?
-quando l`hamburger e` aperto legge anche il testo sotto?
-l`input value viene letto dallo sr ogni volta che viene modificato?
+tasto accedi del menu in sign in/up e profilo? per ora l'ho tolto
+torna su dopo le carte
+quando l'hamburger è aperto legge anche il testo non interattivo sotto?
+l'input value nei range di catalogo viene letto dallo sr la prima volta? il valore è scritto dopo forse sarebbe da aggiungerlo alla label per gli sr
 breadcrumb mobile va a capo (user-edit)
+keyword e description
+about us ha titolo AMMINISTRATORI troppo lungo per mobile
