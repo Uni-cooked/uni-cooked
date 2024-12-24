@@ -7,7 +7,7 @@
     $categoria="";
     $mail="";
     $psw="";
-
+    $db = new DB;
 
     $paginaHtml=file_get_contents("html/sign-up.html");
     if(isset($_POST['submit'])) {
@@ -20,13 +20,12 @@
         }
         else {
             $username=DB::pulisciInput($username);
-            $db = new DB;
             $isUserPresent=$db->checkUserPresence($username);
-            if($isUserPresent != "ExceptionThrow" && $isUserPresent != "ConnectionFailed" && $isUserPresent) {
+            if(strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
                 $errorFound=true;
                 $paginaHtml = str_replace("{{messaggio di nome}}","Questo nome utente non può essere utilizzato.",$paginaHtml);
             }
-            elseif ($isUserPresent == "ExceptionThrow" || $isUserPresent == "ConnectionFailed"){
+            elseif (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0){
                 $_POST = null;
                 header('Location: 505-err.php');
                 exit();
@@ -42,7 +41,7 @@
             $errorFound=true;
             $paginaHtml = str_replace("{{messaggio di categoria}}","Seleziona una categoria.",$paginaHtml);
         }
-        elseif($_POST['categoria']=="fuorisede" || $_POST['categoria']=="pendolare" || $_POST['categoria']=="in-sede" || $_POST['categoria']=="dad"){
+        elseif(strcmp($_POST['categoria'],"fuorisede")==0 || strcmp($_POST['categoria'],"pendolare")==0 || strcmp($_POST['categoria'],"in-sede")==0|| strcmp($_POST['categoria'],"dad")==0){
             $paginaHtml = str_replace("{{messaggio di categoria}}","",$paginaHtml);
             $categoria=$_POST['categoria'];
         }
@@ -79,7 +78,7 @@
             $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
             $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri",$paginaHtml);
         }
-        elseif($psw!=$_POST['repeat-psw'])
+        elseif(strcmp($psw,$_POST['repeat-psw'])!=0)
         {
             $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
             $errorFound=true;
@@ -92,6 +91,11 @@
         }
 
         if($errorFound==false){
+            if(strcmp($categoria,"in-sede"))
+            {
+                $categoria="in_sede"; //fix per enum db
+            }
+            $db->registerUser($username,$categoria,$email,$psw);
             $_POST = null;
             header('Location: index.php');
             exit();
