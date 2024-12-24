@@ -1,26 +1,12 @@
-DROP TABLE IF EXISTS Utente CASCADE;
-DROP TABLE IF EXISTS Admin CASCADE;
-DROP TABLE IF EXISTS Vistatore CASCADE;
-DROP TABLE IF EXISTS Ingrediente CASCADE;
-DROP TABLE IF EXISTS Ricetta CASCADE;
-DROP TABLE IF EXISTS Preferenza_Ricetta CASCADE;
-DROP TABLE IF EXISTS Utilizzo CASCADE;
-DROP TABLE IF EXISTS Preparazione CASCADE;
-DROP TABLE IF EXISTS Valutazione CASCADE;
-DROP TABLE IF EXISTS Take_away CASCADE;
-DROP TABLE IF EXISTS Preferenza_take_away CASCADE;
-
-DROP DOMAIN IF EXISTS POSITIVE_SMALLINT;
-
-DROP TYPE IF EXISTS CATEGORIA;
-DROP TYPE IF EXISTS TIPO_PIATTO;
-DROP TYPE IF EXISTS UNITA_MISURA;
-
-CREATE DOMAIN POSITIVE_SMALLINT AS SMALLINT CHECK (VALUE>=0);   -- 2 Byte
-
-CREATE TYPE CATEGORIA AS enum ('fuorisede', 'in_sede', 'pendolare', 'dad', 'take_away');
-CREATE TYPE TIPO_PIATTO AS enum ('primo', 'secondo');
-CREATE TYPE UNITA_MISURA AS enum ('g', 'ml', 'num_elementi');
+DROP TABLE IF EXISTS Utente;
+DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Vistatore;
+DROP TABLE IF EXISTS Ingrediente;
+DROP TABLE IF EXISTS Ricetta;
+DROP TABLE IF EXISTS Preferenza_Ricetta;
+DROP TABLE IF EXISTS Utilizzo;
+DROP TABLE IF EXISTS Preparazione;
+DROP TABLE IF EXISTS Valutazione;
 
 CREATE TABLE Utente(
     email VARCHAR(100) PRIMARY KEY,
@@ -38,20 +24,20 @@ CREATE TABLE Admin(
 CREATE TABLE Visitatore(
     utente VARCHAR(100) PRIMARY KEY,
     biografia VARCHAR(500) NOT NULL,
-    tipo_studente CATEGORIA NOT NULL,
+    tipo_studente enum ('fuorisede', 'in_sede', 'pendolare', 'dad', 'take_away') NOT NULL,
     immagine VARCHAR(500) NOT NULL, -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
     FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Ingrediente(
-    nome VARCHAR(20) PRIMARY KEY,
+    nome VARCHAR(20) PRIMARY KEY
 );
 
 CREATE TABLE Ricetta(
     nome VARCHAR(50) PRIMARY KEY,
-    categoria CATEGORIA NOT NULL,
-    tipo TIPO_PIATTO NOT NULL,
-    tempo POSITIVE_SMALLINT NOT NULL,
+    categoria enum ('fuorisede', 'in_sede', 'pendolare', 'dad', 'take_away') NOT NULL,
+    tipo enum ('primo', 'secondo') NOT NULL,
+    tempo INT NOT NULL CHECK (tempo>=0),
     descrizione VARCHAR(500) NOT NULL,
     admin VARCHAR(100) NOT NULL,
     data DATE NOT NULL,
@@ -71,8 +57,8 @@ CREATE TABLE Utilizzo(
     ingrediente VARCHAR(20) NOT NULL,
     ricetta VARCHAR(50) NOT NULL,
     quanto_basta BOOLEAN NOT NULL,
-    quantita POSITIVE_SMALLINT,
-    unita_misura UNITA_MISURA,
+    quantita INT CHECK(quantita>=0),
+    unita_misura enum ('g', 'ml', 'num_elementi'),
     CHECK(quanto_basta IS TRUE AND quantita IS NULL AND unita_misura IS NULL),
     CHECK(quanto_basta IS FALSE AND quantita IS NOT NULL AND unita_misura IS NOT NULL),
     descrizione VARCHAR(50),
@@ -82,7 +68,7 @@ CREATE TABLE Utilizzo(
 );
 
 CREATE TABLE Preparazione(
-    numero TINYINT,
+    numero INT,
     ricetta VARCHAR(50),
     descrizione VARCHAR(500) NOT NULL,
     PRIMARY KEY (numero, ricetta),
@@ -94,7 +80,7 @@ CREATE TABLE Valutazione(
     visitatore VARCHAR(100),
     commento VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
-    voto TINYINT NOT NULL,
+    voto INT NOT NULL,
     CHECK(voto>0 AND voto<=30),
     PRIMARY KEY (ricetta, visitatore),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
