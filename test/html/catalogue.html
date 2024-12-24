@@ -55,15 +55,16 @@
         </header>
 
         <main id="content">
-            <form action="">
+            <h2 class="content-subtitle content">CATALOGO</h2>
+            <form class="content" action="">
                 <label for="search-bar" class="hide">Barra di ricerca</label>
-                <input type="search" id="search-bar" class="input-round search-el" placeholder="Cerca una ricetta">
+                <input type="search" id="search-bar" placeholder="Cerca una ricetta">
 
-                <fieldset id="filter">
+                <fieldset id="filtri">
                     <legend class="hide">Filtra per</legend>
                     <article class="filter-param">
-                        <label for="stud-cat-filter">CATEGORIA STUDENTE</label>
-                        <select id="stud-cat-filter" class="input-round search-el filter-input">
+                        <label for="stud-cat-filter" class="form-label">CATEGORIA STUDENTE</label>
+                        <select id="stud-cat-filter">
                             <option value="tutti">Tutti</option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
@@ -72,8 +73,8 @@
                         </select>
                     </article>
                     <article class="filter-param">
-                        <label for="dish-type-filter">PIATTO</label>
-                        <select id="dish-type-filter" class="input-round search-el filter-input">
+                        <label for="dish-type-filter" class="form-label">PIATTO</label>
+                        <select id="dish-type-filter">
                             <option value="tutti">Tutti</option>
                             <option value="pp">Primi</option>
                             <option value="sp">Secondi</option>
@@ -81,16 +82,16 @@
                     </article>
                     <!-- NOTE: see https://codepen.io/alexpg96/pen/xxrBgbP -->
                     <article class="filter-param">
-                        <label for="min-rate-filter">VALUTAZIONE MINIMA</label>
-                        <input type="range" id="min-rate-filter" class="filter-input" min="1" max="30" value="0">
+                        <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA</label>
+                        <input type="range" id="min-rate-filter" min="1" max="30" value="0">
                         <!-- TODO: hide to screen reader if it read the value from the input -->
-                        <span>0 / 30</span>
+                        <p>0 / 30</p>
                     </article>
                     <article class="filter-param">
-                        <label for="max-price-filter">COSTO MASSIMO</label>
-                        <input type="range" id="max-price-filter" class="filter-input" min="1" max="20" value="20">
+                        <label for="max-price-filter" class="form-label">COSTO MASSIMO</label>
+                        <input type="range" id="max-price-filter" min="1" max="20" value="20">
                         <!-- TODO: hide to screen reader if it read the value from the input -->
-                        <span>20 €</span>
+                        <p>20 €</p>
                     </article>
                 </fieldset>
 

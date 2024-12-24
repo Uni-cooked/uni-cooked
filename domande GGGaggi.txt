@@ -1,3 +1,5 @@
 tasto accedi in sign in/up e profilo?
 torna su dopo le carte?
+quando l`hamburger e` aperto legge anche il testo sotto?
+l`input value viene letto dallo sr ogni volta che viene modificato?
 breadcrumb mobile va a capo (user-edit)
