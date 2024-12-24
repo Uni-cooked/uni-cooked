@@ -13,7 +13,7 @@
     
         private $connection;
 
-        private function pulisciInput($value)
+        public static function pulisciInput($value)
         {
             $value = trim($value);
             $value = strip_tags($value);
@@ -21,7 +21,7 @@
             return $value;
         }
        
-        private function pulisciNote($value)
+        public static function pulisciNote($value)
         {
             global $tagPermessi;
             $value = trim($value);
@@ -131,18 +131,6 @@
             }
         }
 
-    }
-    
-
-    $db=new DB;
-    $result=$db->registerUser("user","Fuorisede","user@user.com","user");
-    if($result)
-    {
-        echo "riuscito\n";
-    }
-    else
-    {
-        echo "fallito\n";
     }
 
 ?>

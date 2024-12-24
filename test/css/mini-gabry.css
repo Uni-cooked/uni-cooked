@@ -13,7 +13,8 @@ margin: 2em 1em 2em 1em;
 }
 
 button#Stella{
-    width:40%;
+    width: 50%;
+    margin-top: 1rem;
 }
 
 ul#IngredientiRicetta{
@@ -29,15 +30,24 @@ textarea#Commento-utente{
 }
 
 button.SceltaUtente{
-    width: 8em;
+    width: 6em;
     height: 3em;
 }
 
+button#Commenta{
+    margin-right: 0;
+}
+
 p#VotoUtente{
-    margin-top: 0;
+    margin-top: 2em;
     text-align: center;
 }
 
+li.CommentoUtenti{
+    margin-bottom: 1em;
+}
+
 button#Carica{
-    width:40%;
+    width:50%;
+    margin-top: 1em;
 }
