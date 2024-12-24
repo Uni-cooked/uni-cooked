@@ -8,6 +8,36 @@
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
+/* #region GENERAL*/
+
+.button-input {
+    width: 49%;
+    margin-left: 0;
+    margin-top: 1.5em;
+}
+
+.button-input-cancel {
+    float: left;
+    margin-bottom: 0;
+}
+
+.sign-box fieldset {
+    padding: 1em;
+}
+
+
+@media screen and (max-width: 480px) {
+    .button-input {
+        width: 100%;
+        float: none;
+        margin-bottom: .1em;
+        margin-left: 0;
+    }
+    
+}
+
+/* #endregion GENERAL*/
+
 /* ================================================== */
 
 /* #region HEADER */
@@ -203,7 +233,6 @@ ul#recipe-list .recipe ul.recipe-info li {
 
 /* #region SIGN UP PAGE */
 
-
 .form-label {
     margin-bottom: .5em;
 }
@@ -220,35 +249,10 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding-left: 0;
 }
 
-.sign-box #credentials .button-up {
-    width: 49%;
-    margin-left: 0;
-    margin-top: 1.5em;
-}
-
-.sign-box #credentials #cancel {
-    float: left;
-    margin-bottom: 0;
-}
-
 .sign-box fieldset {
     padding: 1em;
 }
 
-
-@media screen and (max-width: 480px) {
-    .sign-box #credentials #confirm {
-        width: 100%;
-        float: none;
-        margin-bottom: .1em;
-        margin-left: 0;
-    }
-    
-    .sign-box #credentials #cancel {
-        width: 100%;
-        float: none;
-    }
-}
 /* #endregion SIGN UP PAGE */
 
 /* ================================================== */

@@ -421,6 +421,10 @@ main{
     background-color: var(--bg-primary);
 }
 
+h2{
+    margin: 2rem 4rem 2rem 4rem;
+}
+
 img
 {
     text-indent: -999em; 
@@ -434,48 +438,32 @@ p, p#MaxVoto, li, article{
     background-color: var(--bg-secondary) 
 }
 
-.Intro
-{
-    display: inline;
-}
-
-input.Star
-{
-    margin-top: 0%;
-    margin-bottom: 2%;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    background-image: url(../img/Preferito.png);
-    background-color: var(--bg-primary);
-    border:0;
-    appearance: none;
-}
-
-input.Star:checked
-{
-    background-image: url(../img/Preferenza.png);
-}
-
 div#ImgInfoRicetta
 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-right: 1.5em;
 }
 
 ul#InfoRicetta
 {
-    margin: 2% 0% 2% 2%;
+    margin: 2rem 0 2rem 2rem;
     flex-direction: column;
     text-align: left;
     list-style-type: none;
 }
 
+
+ul#InfoRicetta
+{
+    margin-left: 8rem;
+}
+
 ul#InfoRicetta li
 {
-    padding: 5% 0;
+    padding: 0.7em 0;
 }
 
 ul#InfoRicetta li img
@@ -485,22 +473,45 @@ ul#InfoRicetta li img
 }
 
 .Sezione{
-    margin-top: 0%;
+    margin-top: 0;
 }
 
 .Sottotitolo
 {
-    margin-top: 2%;
-    margin-bottom: 0%;
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
 
 .Sezione,.Sottotitolo
 {
     padding: 1% 10% 1% 10%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 4rem;
+    margin-right: 4rem;
 }
 
+button#Stella
+{
+    content: "Aggiungi ai preferiti";
+    cursor: pointer;
+    border-radius: 1em;
+    appearance: none;
+    margin: 4rem 4rem 4rem 4rem;
+    align-content: center;
+    background-color: var(--textbgcolor);
+    background-size: 2em;
+    width: 25%;
+    height: 5vh;
+}
+
+button#Stella::after
+{
+    content: "Aggiunto ai preferiti \2713";
+}
+
+button#Stella::backdrop
+{
+    content: "Aggiungi ai preferiti";
+}
 
 ul#IngredientiRicetta
 {
@@ -516,6 +527,8 @@ ul#IngredientiRicetta li
 {
     flex: 1 1 33%;
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 ol#PreparazioneRicetta
@@ -523,6 +536,11 @@ ol#PreparazioneRicetta
     display: flex;
     flex-direction: column;
     text-align: left;
+}
+
+ol#PreparazioneRicetta li{
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h3#Commento
@@ -534,8 +552,8 @@ section#CommentoUtente
 {
     display: block;
     flex-direction: row;
-    padding: 1% 1% 1% 0%;
-    margin: 0% 10% 2% 9%;
+    padding: 1rem 0 1rem 0;
+    margin: 0 4rem 2rem 4rem;
 }  
 
 form
@@ -577,15 +595,6 @@ textarea.voto
     resize: none;
     color: white;
     border: 0;
-}
-
-button.voto
-{
-    color:#000;
-    width: 50px;
-    height: 1%;
-    background-color: var(--textbgcolor);
-    font-size: 1em;
 }
 
 section#CommentoUtente label
@@ -636,12 +645,12 @@ h4
 
 section#CommentiAltriUtenti
 {
-    margin: 2% 10% 1% 10%;
+    margin: 2rem 4rem 2rem 4rem;
     clear: both;
 }
 
 li.CommentoUtenti{
-    margin-bottom: 2%;
+    margin-bottom: 3rem;
     list-style-type: none;
     justify-content: start;
     text-align: start;
@@ -649,14 +658,14 @@ li.CommentoUtenti{
 }
 
 li article{
-    padding: 2%
+    padding: 1rem;
 }
 
 .InfoUtente
 {
     display: inline;
     vertical-align: baseline;
-    margin-bottom: 1%;
+    margin-bottom: 1.5rem;
 }
 
 .InfoUtente a
@@ -676,20 +685,20 @@ p#DataCommento
 
 p#VotoUtente{
     font-weight: bold;
-    margin-top: 4%;
+    margin-top: 4rem;
 }
 
 
 button#Carica
 {
     background-color: var(--textbgcolor);
-    width: 200px;
-    height: 25px;
     border-radius: 0.5em;
     cursor: pointer;
-    margin: 1% 10% 1% 10%;
+    margin: 2rem 4rem 2rem 4rem;
     justify-content: center;
     align-items: center;
+    width: 25%;
+    height: 5vh;
 }
 
 /*

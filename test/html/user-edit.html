@@ -41,9 +41,6 @@
                         <li><a href="./index.html"><span lang="en">HOME</span></a></li>
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
-                        <li id="profile-item">
-                            PROFILO
-                        </li>
                     </ul>
                 </nav>
                 
@@ -54,34 +51,51 @@
         </header>
 
         <main>
-            <form action="">
-                <fieldset>
-                    <div id="edit-div">
-                        <label for="profile-img-edit" class="hide">Foto profilo</label>
-                        <div id="profile-img-preview">
-                            <input type="file" id="profile-img-edit" accept="image/*">
+            <div id="user-edit" class="content">
+                <h2 class="content-subtitle content">MODIFICA PROFILO</h2>
+                <form action="">
+                    <fieldset>
+                        <div id="primary-info">
+                            <div id="edit-pp">
+                                <img src="../assets/img/dad-image.jpg" alt="immagine del profilo" srcset="">
+                                <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
+                                <input type="file" id="profile-img-edit" accept="image/*">
+                            </div>
+    
+                            <div id="edit-info">
+                                <div class="input-container">
+                                    <label class="form-label" for="nickname-edit">Nome utente</label>
+                                    <input type="text" id="nickname-edit" class="text-input input-margin">
+                                </div>
+                                
+                                <div class="input-container">
+                                    <label class="form-label" for="stud-cat-edit">Categoria studente</label>
+                                    <select id="stud-cat-edit" class="text-input">
+                                            <option value="fuorisede" selected>Fuorisede</option>
+                                            <option value="pendolare">Pendolare</option>
+                                            <option value="in-sede">In sede</option>
+                                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <label for="nickname-edit">Nome utente</label>
-                        <input type="text" id="nickname-edit" class="input-round edit-input">
-                        <label for="stud-cat-edit">Categoria studente</label>
-                        <select id="stud-cat-edit" class="input-round edit-input">
-                                <option value="fuorisede" selected>Fuorisede</option>
-                                <option value="pendolare">Pendolare</option>
-                                <option value="in-sede">In sede</option>
-                                <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
-                        </select>
-                    </div>
-                    <label for="bio-edit">Biografia</label>
-                    <textarea id="bio-edit"></textarea>
+                        <div id="edit-bio">
+                            <label class="form-label" for="bio-edit">Biografia</label>
+                            <textarea id="bio-edit" class="textarea-input"></textarea>
+                        </div>
+                        <button class="button-input button-input-confirm" type="submit">CONFERMA</button>
+                        <button class="button-input button-input-cancel" type="reset">ANNULLA</button>
+                    </fieldset>
+                </form>
+            </div>
 
-                    <button type="submit">CONFERMA</button>
-                    <button type="reset">ANNULLA</button>
-                </fieldset>
-            </form>
-
-            <h3 class="content-subtitle content">ZONA PERICOLOSA</h3>
-            <button class="danger-btn content">CANCELLA RICETTE PREFERITE</button>
-            <button class="danger-btn content">CANCELLA ACCOUNT</button>
+            <div>
+                <h2 class="content-subtitle content">ZONA PERICOLOSA</h2>
+                <form action="">
+                    <button class="danger-btn content">CANCELLA RICETTE PREFERITE</button>
+                    <button class="danger-btn content">CANCELLA ACCOUNT</button>
+                </form>
+            </div>
         </main>
 
         <footer>

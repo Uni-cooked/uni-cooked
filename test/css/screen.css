@@ -17,6 +17,7 @@
     --text-color:white;
     --a-color: #5F9950;
     --menu-a-color: white;
+    --danger-button-color: red;
     /* SPECIAL CASES */
     /* --a-visited-color: #C76F0A; */
     /* --header-content-text-color: black; */
@@ -91,6 +92,10 @@ p {
     color: var(--text-color);
 }
 
+button {
+    border-style: none;
+}
+
 .content {
     padding: 0 1rem 0 1rem;
 }
@@ -115,12 +120,63 @@ p {
     margin-bottom: var(--section-mb);
 }
 
+.input-container{
+    margin-bottom: 2rem;
+}
+
 .form-label {
     display: block;
     margin-bottom: .8em;
     color: var(--accent);
     font-weight: 500;
     font-size: var(--form-label);
+}
+
+
+.text-input {
+    display: block;
+    width: 100%;
+    height: 2.8rem;
+    margin-bottom: .5rem;
+    text-indent: 1em;
+    font-size: .9em;
+    background-color: rgb(48, 48, 48);
+    border-radius: var(--radius-max);
+    border: 3px solid var(--accent);
+    color: white;
+}
+
+.textarea-input {
+    resize: none;
+    padding: 1em;
+    width: 100%;
+    font-size: 1.05rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border: 3px solid var(--accent);
+    overflow: auto;
+    border-radius: var(--radius-small);
+    margin-bottom: .5em;
+}
+
+.button-input {
+    float: right;
+    width: var(--button-width);
+    height: var(--button-height);
+    margin-left: 1em;
+    font-weight: 700;
+    font-size: var(--button-text);
+    border-radius: var(--radius-small);
+}
+
+.button-input-confirm {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.button-input-cancel {
+    background-color: var(--accent-secondary);
+    color: var(--text-color);
 }
 
 .hide {
@@ -266,13 +322,13 @@ nav#menu a:visited {
 
 nav#menu li#profile-item {
     margin-left: auto;
-    background-color: var(--accent-trinary);
-    border-radius: 10px;
-    padding: .5rem 1.3rem;
 }
 
 nav#menu li#profile-item a {
     color: white;
+    background-color: var(--accent-trinary);
+    border-radius: 10px;
+    padding: .8rem 1.3rem;
 }
 /* #endregion MENU */
 
@@ -676,20 +732,6 @@ ul#recipe-list .recipe a {
     clear: both;
 }
 
-#student-name-in, #student-psw-in,
-#student-name-up, #student-cat-up, #student-mail-up, #student-psw-up,#student-repeat-psw-up {
-    display: block;
-    width: 100%;
-    height: 2.8rem;
-    margin-bottom: .5rem;;
-    text-indent: 1em;
-    font-size: .9em;
-    background-color: rgb(48, 48, 48);
-    border-radius: var(--radius-max);
-    border: 3px solid var(--accent);
-    color: white;
-}
-
 #name-up-container {
     width: 50%;
     float: left;
@@ -705,37 +747,8 @@ ul#recipe-list .recipe a {
 #mail-up-container {
     clear: both;
 }
-
-.input-container {
-    margin-bottom: 2rem;
-}
-
 .sign-box #credentials {
     margin-bottom: 3rem;
-}
-
-.sign-box button {
-    border-style: none;
-    font-weight: 700;
-    font-size: var(--button-text);
-    border-radius: var(--radius-small);
-}
-
-.sign-box #credentials button {
-    float: right;
-    width: var(--button-width);
-    height: var(--button-height);
-    margin-left: 1em;
-}
-
-.sign-box #credentials #confirm {
-    background-color: var(--accent);
-    color: var(--bg-primary);
-}
-
-.sign-box #credentials #cancel {
-    background-color: var(--accent-secondary);
-    color: var(--text-color);
 }
 
 .sign-box #redirect {
@@ -916,17 +929,96 @@ button#log-out-btn {
 /* ================================================== */
 
 /* #region USER EDIT PAGE */
+
+#user-edit{
+    margin-bottom: var(--section-mb);
+}
+
+#user-edit fieldset {
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-small);
+    padding: 2em 5em;
+}
+
+#user-edit #profile-img-edit {
+    display: none;
+}
+
+#user-edit #primary-info {
+    display: flex;
+    gap: 4rem;
+}
+
+#user-edit #edit-pp {
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 3rem;
+}
+
+#user-edit #edit-pp img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: var(--radius-max);
+    display: block;
+    margin-bottom: 2rem;
+}
+
+#user-edit #edit-pp label {
+    background-color: var(--accent);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+    padding: .5rem 1.5rem;
+    color: var(--bg-primary);
+    font-weight: 800;
+}
+
+#user-edit #edit-info {
+    flex: 1;
+    width: 100%;
+}
+
+#edit-bio {
+    clear: both;
+}
+
+#edit-bio textarea {
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
 .danger-btn {
     display: block;
     width: calc(100% - 2.5em);
-    height: 3em;
-    background-color: red;
+    height: var(--button-height);
+    background-color: var(--danger-button-color);
     color: var(--p-color);
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.1rem;
     margin:0 auto .5em;
-    border: 4px solid rgb(177, 0, 0);
-    border-radius: 5px;
+    border-radius: var(--radius-small);
 }
+@media screen and (max-width: 768px) {
+    
+    #user-edit #primary-info{
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .sign-box #credentials .button-input {
+        width: 100%;
+        float: none;
+        margin-bottom: .1em;
+        margin-left: 0;
+    }
+    
+}
+
+
 /* #endregion USER EDIT PAGE */
 
 /* ================================================== */
@@ -949,17 +1041,7 @@ button#log-out-btn {
 }
 
 #recipie-request textarea {
-    resize: none;
-    padding: 1em;
     height: 18rem;
-    width: 100%;
-    font-size: 1.05rem;
-    background-color: var(--bg-secondary);
-    color: var(--text-color);
-    border: 3px solid var(--accent);
-    overflow: auto;
-    border-radius: var(--radius-small);
-    margin-bottom: .5em;
 }
 
 #recipie-request fieldset {
