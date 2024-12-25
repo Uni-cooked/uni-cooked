@@ -6,3 +6,5 @@ l'input value nei range di catalogo viene letto dallo sr la prima volta? il valo
 breadcrumb mobile va a capo (user-edit)
 keyword e description
 about us ha titolo AMMINISTRATORI troppo lungo per mobile
+si può fare replacement {{}} negli alt?
+x in search bar
