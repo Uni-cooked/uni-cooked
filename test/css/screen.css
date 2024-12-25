@@ -1234,4 +1234,56 @@ input[type="range"]:focus::-moz-range-thumb{
     outline: 3px solid var(--accent-trinary);
     outline-offset: 0.125rem;
 }
+
+
+@supports selector(::-webkit-scrollbar) {
+    ::-webkit-scrollbar {
+        width: 12px;
+      }
+      
+    ::-webkit-scrollbar-track {
+        background: var(--accent-secondary);       
+      }
+      
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--accent);   
+        border-radius: 20px;      
+        border: 3px solid var(--accent-secondary);  
+      }
+      
+      ::-webkit-scrollbar-button:single-button {
+        background-color: var(--accent-secondary);
+        display: block;
+        border-style: solid;
+        height: 13px;
+        width: 16px;
+      }
+    
+      ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent var(--accent) transparent;
+      }
+      
+      ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+        border-color: transparent transparent var(--accent) transparent;
+      }
+    
+      ::-webkit-scrollbar-button:single-button:vertical:increment {
+        border-width: 6px 6px 0 6px;
+        border-color: var(--accent) transparent transparent transparent;
+      }
+      
+      ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+        border-color: var(--accent) transparent transparent transparent;
+      }
+    
+}
+
+@supports not selector(::-webkit-scrollbar){
+    * {
+        scrollbar-color: var(--accent) var(--accent-secondary);
+        scrollbar-width: thin;
+      }
+}
+
 /* #endregion CUSTOM INPUTS */
