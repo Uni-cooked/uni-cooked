@@ -59,18 +59,18 @@
                             <div id="edit-pp">
                                 <img src="../assets/img/dad-image.jpg" alt="immagine del profilo" srcset="">
                                 <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
-                                <input type="file" id="profile-img-edit" accept="image/*">
+                                <input required type="file" id="profile-img-edit" accept="image/*">
                             </div>
     
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
-                                    <input type="text" id="nickname-edit" class="input-margin">
+                                    <input required type="text" id="nickname-edit" class="input-margin">
                                 </div>
                                 
                                 <div class="input-container">
                                     <label class="form-label" for="stud-cat-edit">Categoria studente</label>
-                                    <select id="stud-cat-edit">
+                                    <select required id="stud-cat-edit">
                                             <option value="fuorisede" selected>Fuorisede</option>
                                             <option value="pendolare">Pendolare</option>
                                             <option value="in-sede">In sede</option>

@@ -95,6 +95,7 @@ p {
 button {
     border-style: none;
     border-radius: var(--radius-small);
+    font-weight: 700;
 }
 
 fieldset {
@@ -110,7 +111,7 @@ fieldset {
 .content-container {
     background-color: var(--bg-secondary);
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .content-container-left {
@@ -144,7 +145,6 @@ fieldset {
     width: var(--button-width);
     height: var(--button-height);
     margin-left: 1em;
-    font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
 }
@@ -403,13 +403,6 @@ dl#roles dt {
 
     border-top: 5px solid var(--accent-secondary);
     border-bottom: 5px solid var(--accent-secondary);
-}
-
-dl#roles dt div {
-    margin: auto;
-    background-image: url("../assets/img/brush.svg");
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 dl#roles dt#fuorisede {
@@ -768,11 +761,14 @@ ul#recipe-list .recipe a {
     margin-bottom: 2rem;
 }
 
-.sign-box #redirect button{
-    width: 100%;
-    height: var(--button-height);
+.sign-box #redirect a{
     color: var(--text-color);
     background-color: var(--accent-trinary);
+    display: block;
+    padding: .8rem;
+    border-radius: var(--radius-small);
+    font-weight: 700;
+    font-size: var(--button-text);
 }
 /* #endregion SIGN IN/UP PAGE */
 
@@ -809,12 +805,14 @@ ul#recipe-list .recipe a {
     color: var(--accent);
 }
 
+#fav-recipe-list-container{
+    background-color: var(--accent-secondary);
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+
 #fav-recipe-list {
-    background-color: rgb(66, 38, 22);
     list-style-type: none;
-    padding: 0 3vw;
-    border-top: 4px solid rgb(34, 19, 9);
-    border-bottom: 4px solid rgb(34, 19, 9);
     border-radius: 5px;
     min-height: 12em;
     /* NOTE: not so buty but at least the section for the empty list is centered */

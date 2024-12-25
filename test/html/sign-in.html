@@ -52,16 +52,16 @@
 
         <main id="content">
             <div class="sign-box content">
-                <h2 class="content-subtitle content">ACCEDI</h2>
+                <h2 class="content-subtitle">ACCEDI</h2>
                 <form id="credentials" action="" method="post">
                     <fieldset>
                         <div class="input-container" >
                             <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
-                            <input type="text" placeholder="Inserisci nome" name="nome" id="student-name-in">
+                            <input required type="text" placeholder="Inserisci nome" name="nome" id="student-name-in">
                         </div>
                         <div class="input-container " >
                             <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la password</label>
-                            <input type="password" placeholder="Inserisci password" name="psw" id="student-psw-in">
+                            <input required type="password" placeholder="Inserisci password" name="psw" id="student-psw-in">
                         </div>
                         <button class="button-input button-input-confirm" type="submit">ACCEDI</button>
                         <p>{{messaggio di errore}}</p>
@@ -70,9 +70,10 @@
                 <div id="redirect">
                     <p>Non ti sei ancora registrato?</p>
                     <p>Corri subito a farlo se non vuoi essere <strong>cucinato</strong>.</p>
-                    <form action="sign-up.html" method="post">
+                    <a href="sign-up.html">REGISTRATI</a>
+                    <!-- <form action="sign-up.html" method="post">
                         <button type="submit">REGISTRATI</button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </main>
