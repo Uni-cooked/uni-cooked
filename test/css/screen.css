@@ -992,7 +992,7 @@ button#log-out-btn {
 
 .danger-btn {
     display: block;
-    width: calc(100% - 2.5em);
+    width: 100%;
     height: var(--button-height);
     background-color: var(--danger-button-color);
     color: var(--p-color);
