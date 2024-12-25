@@ -9,6 +9,14 @@ $mail="";
 $psw="";
 $db = new DB;
 
+$isLogged=$db->isUserLogged();
+if($isLogged!=false)
+{
+    $_POST = null;
+    header('Location: user.php');
+    exit();
+}
+
 $paginaHtml=file_get_contents("html/sign-up.html");
 if (isset($_POST['submit'])) {
     $errorFound=false;
