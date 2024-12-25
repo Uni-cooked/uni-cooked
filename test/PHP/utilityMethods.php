@@ -27,7 +27,7 @@ class DB {
         return $value;
     }
 
-    public function openDBConnection(): bool {
+    private function openDBConnection(): bool {
         mysqli_report(MYSQLI_REPORT_STRICT);
         try {
             $this->connection = mysqli_connect(self::HOST_DB, self::USERNAME, self::PSW, self::DBNAME);
@@ -38,8 +38,20 @@ class DB {
         return true;
     }
     
-    public function closeDBConnection(): void {
+    private function closeDBConnection(): void {
         mysqli_close($this->connection);
+    }
+
+    public function isUserLogged(): bool | string
+    {
+        /*
+        *   Return false if not logged, username if logged
+        */
+        if(isset($_SESSION) && $_SESSION!=null) {
+            return $_SESSION["logged_user"];
+        } else {
+            return false;
+        }
     }
 
     public function checkEmailPresence($email): bool | string {
@@ -129,4 +141,8 @@ class DB {
             return false;
         }
     }
+
+    
 }
+
+?>
