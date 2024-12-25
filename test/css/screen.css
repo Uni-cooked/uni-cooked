@@ -591,6 +591,7 @@ div#why img {
 /*#region CATALOGUE PAGE */
 #search-bar::-webkit-search-cancel-button {
     margin-right: 1.5em;
+    padding: 0.25em;
     filter: invert(100%);
 }
 
