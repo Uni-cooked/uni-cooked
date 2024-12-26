@@ -1094,16 +1094,10 @@ button#log-out-btn {
     min-height: 40vh;
 }
 
-.error-page-body {
-    /* display: flex; */
-    /* min-height: 100vh;
-    flex-direction: column; */
-}
-
 #content.err-page-content {
     text-align: center;
-    /* align-content: center; */
-    /* flex: 1; */
+    min-height: calc(60vh - var(--main-mt) - var(--main-mb) - 8.2rem);
+    align-content: center;
 }
 
 #err-page-h1 {
