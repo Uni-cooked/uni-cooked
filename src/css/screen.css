@@ -61,7 +61,7 @@
 @font-face {
     font-family: "Inter";
     font-size: 100%;
-    src: url("../../asset/font/Inter-VariableFont_opsz\,wght.ttf");
+    src: url("../assets/Fonts/Inter-VariableFont_opsz\,wght.ttf");
     font-weight: 300 900;
     font-stretch: 35% 100%;
     font-style: normal;
@@ -169,7 +169,7 @@ fieldset {
 
 /* #region HEADER */
 header {
-    background-image: url("../../asset/img/header.jpg");
+    background-image: url("../assets/img/1.jpg");
     background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
@@ -406,19 +406,19 @@ dl#roles dt {
 }
 
 dl#roles dt#fuorisede {
-    background-image: url("../../asset/img/fuorisede.jpg");
+    background-image: url("../assets/img/fuorisede-image.jpg");
 }
 
 dl#roles dt#pendolare {
-    background-image: url("../../asset/img/pendolare.jpg");
+    background-image: url("../assets/img/pendolare-image.jpg");
 }
 
 dl#roles dt#sede {
-    background-image: url("../../asset/img/in-sede.jpg");
+    background-image: url("../assets/img/sede-image.jpg");
 }
 
 dl#roles dt#dad {
-    background-image: url("../../asset/img/dad.jpg");
+    background-image: url("../assets/img/dad-image.jpg");
 }
 
 dl#roles dd {
@@ -710,11 +710,11 @@ ul#recipe-list .recipe a {
 }
 
 #prev-page-btn {
-    background-image: url("../../asset/icon/left-arrow.svg");
+    background-image: url("../../Assets/Icons/arrow.svg");
 }
 
 #next-page-btn {
-    background-image: url("../../asset/icon/right-arrow.svg");
+    background-image: url("../../Assets/Icons/arrow.svg");
 }
 
 #page-changer span {
@@ -1094,16 +1094,10 @@ button#log-out-btn {
     min-height: 40vh;
 }
 
-.error-page-body {
-    /* display: flex; */
-    /* min-height: 100vh;
-    flex-direction: column; */
-}
-
 #content.err-page-content {
     text-align: center;
-    /* align-content: center; */
-    /* flex: 1; */
+    min-height: calc(60vh - var(--main-mt) - var(--main-mb) - 8.2rem);
+    align-content: center;
 }
 
 #err-page-h1 {
