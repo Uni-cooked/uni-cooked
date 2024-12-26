@@ -350,7 +350,7 @@ abbr {
 
 /* ================================================== */
 
-/* #region HOME PAGE ROLES */
+/* #region HOME PAGE ROLES MENU */
 nav#quick-role {
     background-color: var(--bg-secondary);
     transition: visibility var(--animation-timing);
@@ -380,7 +380,7 @@ nav#quick-role a:link {
 nav#quick-role a:visited {
     color: var(--accent-trinary)
 }
-/*#endregion HOME PAGE ROLES */
+/*#endregion HOME PAGE ROLES MENU */
 
 /* ================================================== */
 
