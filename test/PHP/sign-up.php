@@ -10,8 +10,7 @@ $psw="";
 $db = new DB;
 
 $isLogged=$db->isUserLogged();
-if($isLogged!=false)
-{
+if ($isLogged!=false) {
     $_POST = null;
     header('Location: user.php');
     exit();
@@ -31,7 +30,7 @@ if (isset($_POST['submit'])) {
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;
             $paginaHtml = str_replace("{{messaggio di nome}}","Questo nome utente non può essere utilizzato.",$paginaHtml);
-        } elseif (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
+        } else if (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 505-err.php');
             exit();
@@ -44,7 +43,7 @@ if (isset($_POST['submit'])) {
     if (!isset($_POST['categoria'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di categoria}}","Seleziona una categoria.",$paginaHtml);
-    } elseif (strcmp($_POST['categoria'],"fuorisede")==0 || strcmp($_POST['categoria'],"pendolare")==0 || strcmp($_POST['categoria'],"in_sede")==0|| strcmp($_POST['categoria'],"dad")==0) {
+    } else if (strcmp($_POST['categoria'],"fuorisede")==0 || strcmp($_POST['categoria'],"pendolare")==0 || strcmp($_POST['categoria'],"in_sede")==0|| strcmp($_POST['categoria'],"dad")==0) {
         $paginaHtml = str_replace("{{messaggio di categoria}}","",$paginaHtml);
         $categoria=$_POST['categoria'];
     } else {
@@ -58,7 +57,7 @@ if (isset($_POST['submit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di email}}","L'<span lang=\"en\">email</span> è un campo obbligatorio.",$paginaHtml);
     }
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di email}}","L'<span lang=\"en\">email</span> non è un indirizzo valido.",$paginaHtml);
     } else {
@@ -66,7 +65,7 @@ if (isset($_POST['submit'])) {
         if (strcmp($isEmailPresent,"ExceptionThrow")!=0 && strcmp($isEmailPresent,"ConnectionFailed")!=0 && $isEmailPresent==true) {
             $errorFound=true;
             $paginaHtml = str_replace("{{messaggio di email}}","Questa <span lang=\"en\">email</span> non può essere utilizzata.",$paginaHtml);
-        } elseif (strcmp($isEmailPresent,"ExceptionThrow")==0 || strcmp($isEmailPresent,"ConnectionFailed")==0) {
+        } else if (strcmp($isEmailPresent,"ExceptionThrow")==0 || strcmp($isEmailPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 505-err.php');
             exit();
@@ -81,11 +80,11 @@ if (isset($_POST['submit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> è un campo obbligatorio.",$paginaHtml);
-    } elseif (strlen($psw)<4) {
+    } else if (strlen($psw)<4) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri",$paginaHtml);
-    } elseif (strcmp($psw,$_POST['repeat-psw'])!=0) {
+    } else if (strcmp($psw,$_POST['repeat-psw'])!=0) {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","Le <span lang=\"en\">password</span> non coincidono.",$paginaHtml);

@@ -1095,15 +1095,15 @@ button#log-out-btn {
 }
 
 .error-page-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    /* display: flex; */
+    /* min-height: 100vh;
+    flex-direction: column; */
 }
 
 #content.err-page-content {
     text-align: center;
-    align-content: center;
-    flex: 1;
+    /* align-content: center; */
+    /* flex: 1; */
 }
 
 #err-page-h1 {
