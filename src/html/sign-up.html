@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Registrati - Uni Cooked</title>
+        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
+        <meta name="keyword" content="Uni-cooked,ricette,cucina,piatti,universitari,fuorisede,pendolare,in sede,dad">
+        <meta name="author" content="Uni cooked">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+</head>
+<body>
+    <header>
+        <div id="header-content" class="content">
+            <nav id="list-help" aria-label="aiuti alla navigazione">
+                <ul>
+                    <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                    <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                </ul>
+            </nav>
+
+            <div id="header-titles">
+                <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+            </div>
+            
+            <div id="hamburger">
+                <img src="../../asset/img/uni-cooked.svg" alt="" class="logo">
+                <label id="hamburger-label">
+                    <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                    <input type="checkbox">
+                </label>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><img src="../../asset/img/uni-cooked.svg" alt="" class="logo"></li>
+                    <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                    <li><a href="./catalogue.html">RICETTE</a></li>
+                    <li><a href="./about-us.html">CONTATTI</a></li>
+                </ul>
+            </nav>
+            
+            <nav id="breadcrumb">
+                <p>Stai studiando in: REGISTRATI</p>
+            </nav>
+        </div>
+    </header>
+
+    <main id="content">
+        <div class="sign-box content end-paragraph">
+            <h2 class="content-subtitle">REGISTRATI</h2>
+            <form id="credentials" action="" method="post">
+                <fieldset>
+                    <div id="name-up-container" class="input-container">
+                        <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
+                        <input required type="text" name="nome" id="student-name-up">
+                        <p>{{messaggio di nome}}</p>
+                    </div>
+                    <div id="cat-up-container" class="input-container">
+                        <label for="student-cat-up" class="form-label">Scegli la categoria</label>
+                        <select required name ="categoria" id="student-cat-up">
+                            <option hidden selected value>Seleziona una opzione</option>
+                            <option value="fuorisede">Fuorisede</option>
+                            <option value="pendolare">Pendolare</option>
+                            <option value="in_sede">In sede</option>
+                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
+                        </select>
+                        <p>{{messaggio di categoria}}</p>
+                    </div>
+                    <div id="mail-up-container" class="input-container">
+                        <label for="student-mail-up" class="form-label">Inserisci la tua mail</label>
+                        <input required type="email" name="email" id="student-mail-up">
+                        <p>{{messaggio di email}}</p>
+                    </div>
+                    <div id="psw-up-container" class="input-container">
+                        <label for="student-psw-up" class="form-label">Inserisci la password</label>
+                        <input required type="password" name="psw" id="student-psw-up">
+                        <p>{{messaggio di psw}}</p>
+                    </div>
+                    <div id="psw-up-container" class="input-container">
+                        <label for="student-psw-up" class="form-label">Ripeti la password</label>
+                        <input required type="password" name="repeat-psw" id="student-repeat-psw-up">
+                        <p>{{messaggio di psw-ripetuta}}</p>
+                    </div>
+
+                    <button name="submit" class="button-input button-input-confirm" type="submit">REGISTRATI</button>
+                    <button class="button-input button-input-cancel" type="reset">ANNULLA</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+        <a href="#top">Torna su</a>
+    </footer>
+</body>
+</html>

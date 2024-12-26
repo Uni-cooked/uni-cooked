@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Accedi - Uni Cooked</title>
+        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
+        <meta name="keyword" content="Uni-cooked,ricette,cucina,piatti,universitari,fuorisede,pendolare,in sede,dad">
+        <meta name="author" content="Uni cooked">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+    </head>
+    <body>
+        <header>
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    </ul>
+                </nav>
+
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <img src="../../asset/img/uni-cooked.svg" alt="" class="logo">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><img src="../../asset/img/uni-cooked.svg" alt="" class="logo"></li>
+                        <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                        <li><a href="./catalogue.html">RICETTE</a></li>
+                        <li><a href="./about-us.html">CONTATTI</a></li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: <span lang="en">ACCEDI</span></p>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content">
+            <div class="sign-box content">
+                <h2 class="content-subtitle">ACCEDI</h2>
+                <form id="credentials" action="" method="post">
+                    <fieldset>
+                        <div class="input-container" >
+                            <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
+                            <input required type="text" placeholder="Inserisci nome" name="nome" id="student-name-in">
+                        </div>
+                        <div class="input-container " >
+                            <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la password</label>
+                            <input required type="password" placeholder="Inserisci password" name="psw" id="student-psw-in">
+                        </div>
+                        <button class="button-input button-input-confirm" type="submit" name="submit">ACCEDI</button>
+                        <p>{{messaggio di errore}}</p>
+                    </fieldset>
+                </form>
+                <div id="redirect">
+                    <p>Non ti sei ancora registrato?</p>
+                    <p>Corri subito a farlo se non vuoi essere <strong>cucinato</strong>.</p>
+                    <a href="sign-up.html">REGISTRATI</a>
+                    <!-- <form action="sign-up.html" method="post">
+                        <button type="submit">REGISTRATI</button>
+                    </form> -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <a href="#top">Torna su</a>
+        </footer>
+    </body>
+</html>

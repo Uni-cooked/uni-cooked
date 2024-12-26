@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Profilo utente - Uni Cooked</title>
+        <meta name="description" content="Il tuo profilo Uni Cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
+        <meta name="keyword" content="Uni Cooked,utente,profilo,ricette,preferite">
+        <meta name="author" content="Uni Cooked">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+    </head>
+    <body>
+        <header>
+            <div id="header-content" class="content">
+                <nav id="list-help" aria-label="aiuti alla navigazione">
+                    <ul>
+                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                    </ul>
+                </nav>
+
+                <div id="header-titles">
+                    <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
+                    <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
+                </div>
+                
+                <div id="hamburger">
+                    <img src="../../asset/img/uni-cooked.svg" alt="" class="logo">
+                    <label id="hamburger-label">
+                        <span class="hide">Menu ad <span lang="en">hamburger</span></span>
+                        <input type="checkbox">
+                    </label>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><img src="../../asset/img/uni-cooked.svg" alt="" class="logo"></li>
+                        <li><a href="./index.html"><span lang="en">HOME</span></a></li>
+                        <li><a href="./catalogue.html">RICETTE</a></li>
+                        <li><a href="./about-us.html">CONTATTI</a></li>
+                    </ul>
+                </nav>
+                
+                <nav id="breadcrumb">
+                    <p>Stai studiando in: PROFILO UTENTE > MODIFICA</p>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="user-edit" class="content">
+                <h2 class="content-subtitle">MODIFICA PROFILO</h2>
+                <form action="">
+                    <fieldset>
+                        <div id="primary-info">
+                            <div id="edit-pp">
+                                <img src="../assets/img/dad-image.jpg" alt="immagine del profilo" srcset="">
+                                <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
+                                <input required type="file" id="profile-img-edit" accept="image/*">
+                            </div>
+    
+                            <div id="edit-info">
+                                <div class="input-container">
+                                    <label class="form-label" for="nickname-edit">Nome utente</label>
+                                    <input required type="text" id="nickname-edit" class="input-margin">
+                                </div>
+                                
+                                <div class="input-container">
+                                    <label class="form-label" for="stud-cat-edit">Categoria studente</label>
+                                    <select required id="stud-cat-edit">
+                                            <option value="fuorisede" selected>Fuorisede</option>
+                                            <option value="pendolare">Pendolare</option>
+                                            <option value="in-sede">In sede</option>
+                                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edit-bio">
+                            <label class="form-label" for="bio-edit">Biografia</label>
+                            <textarea id="bio-edit"></textarea>
+                        </div>
+                        <button class="button-input button-input-confirm" type="submit">CONFERMA</button>
+                        <button class="button-input button-input-cancel" type="reset">ANNULLA</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="content">
+                <h2 class="content-subtitle">ZONA PERICOLOSA</h2>
+                <form action="">
+                    <button class="danger-btn">CANCELLA RICETTE PREFERITE</button>
+                    <button class="danger-btn">CANCELLA ACCOUNT</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
+            <a href="#top">Torna su</a>
+        </footer>
+    </body>
+</html>
