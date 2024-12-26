@@ -1091,39 +1091,43 @@ button#log-out-btn {
 
 /* #region ERROR PAGE */
 #header-content.err-page-header {
-    min-height: 35vh;
+    min-height: 40vh;
+}
+
+.error-page-body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 #content.err-page-content {
-    min-height: calc(65vh - var(--main-mt) - var(--main-mb));
+    text-align: center;
+    align-content: center;
+    flex: 1;
 }
 
 #err-page-h1 {
-    text-align: center;
-    font-size: 5em;
+    font-size: var(--title);
 }
 
 #err-page-h2 {
-    text-align: center;
-    font-size: 2.5em;
-    padding: 0 3em;
+    font-size: var(--subtitle);
+    margin-bottom: 3rem;
 }
 
 #err-page-p {
-    text-align: center;
-    font-size: 1.3em;
-    padding: 2em;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
 }
 
 #err-page-a {
     display: block;
     width: 14em;
-    font-size: 1.4em;
-    font-weight: bold;
+    font-size: var(--button-text);
+    font-weight: 700;
     background-color: var(--accent);
-    text-align: center;
     padding: 1em 0;
-    margin: 2em auto;
+    margin: auto;
     border-radius: var(--radius-small);
 }
 /* #endregion ABOUT US PAGE */
