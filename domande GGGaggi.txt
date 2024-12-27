@@ -6,5 +6,6 @@ l'input value nei range di catalogo viene letto dallo sr la prima volta? il valo
 breadcrumb mobile va a capo (user-edit)
 keyword e description
 about us ha titolo AMMINISTRATORI troppo lungo per mobile
-si può fare replacement {{}} negli alt e nelle keyword/description?
+si può fare replacement {{}} negli alt e nelle keyword/description? -> In teoria funziona
 x in search bar
+pagina profilo, per mettere "ciao" più piccolo del nome utente è stato messo uno <span> dentro un h2: va bene?

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>NOME UTENTE - Uni Cooked</title>
+        <title>{{username}} - Uni Cooked</title>
         <meta name="description" content="Il tuo profilo Uni Cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
         <meta name="keyword" content="Uni Cooked,utente,profilo,ricette,preferite">
         <meta name="author" content="Uni Cooked">
@@ -51,17 +51,17 @@
         </header>
 
         <main id="content">
-            <h2 id="title-nick"><span>CIAO</span> GGGaggi</h2>
-            <img src="../assets/img/def-profile.png" alt="Immagine del profilo di {Nickname}" id="profile-img">
+            <h2 id="title-nick"><span>CIAO</span> {{username}}</h2>
+            <img src="{{profile-pic}}" id="profile-img"> <!--attr alt ricorsivo: il nome utente è sopra-->
 
-            <p id="stud-cat">FUORISEDE</p>
+            <p id="stud-cat">{{categoria}}</p>
 
-            <p id="login-date"><time datetime="1933-1-30">30 / 1 / 1933</time></p>
+            <p id="login-date"><time datetime="{{data-attr}}">{{data}}</time></p>
             
             <h3 class="content-subtitle content">BIOGRAFIA</h3>
             <div class="content-container-left end-paragraph">
                 <!-- what user sees on his own account (no bio yet) -->
-                <p class="content">Scrivi qualcosa di te!</p>
+                <p class="content">{{biografia}}</p>
                 <!-- what others see on user account (no bio yet) -->
                 <!-- <p class="content-p">GGGaggi non ha ancora aggiunto la sua <abbr title="biografia">bio</abbr>.</p> -->
                 <!-- what others see on user account (bio) -->
@@ -111,7 +111,7 @@
 
             <!-- <a href="./user-edit.html" id="profile-edit-link">MODIFICA PROFILO</a> -->
             <a href="./user-edit.html" id="edit-profile-link">MODIFICA PROFILO</a>
-            <button id="log-out-btn">ESCI</button>
+            <a href="sign-out.php" id="log-out-btn">ESCI</a>
         </main>
 
         <footer>
