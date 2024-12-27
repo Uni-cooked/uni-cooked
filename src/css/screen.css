@@ -642,6 +642,11 @@ ul#recipe-list .recipe {
     border-radius: 5px;
     padding: 0.5em;
     color: var(--text-color);
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
 }
 
 ul#recipe-list .recipe .recipe-img-crop {
@@ -660,27 +665,31 @@ ul#recipe-list .recipe .recipe-img-crop img {
 
 ul#recipe-list .recipe .recipe-title {
     padding-top: 0.6em;
-    height: 20%;
+    /* height: 20%; */
+    font-size: 1.6rem;
     /* NOTE: is there a better way? */
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 
-ul#recipe-list .recipe .recipe-title h3 {
+/* ul#recipe-list .recipe .recipe-title h3 {
     font-size: 1.6em;
-}
+} */
 
 ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: 30%;
+    /* justify-content: space-evenly;
+    height: 30%; */
+    flex: 1;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
+    display: inline-block;
     width: 9em;
     padding: 0.4em 0;
+    margin: auto;
 }
 
 ul#recipe-list .recipe ul.recipe-info img {
