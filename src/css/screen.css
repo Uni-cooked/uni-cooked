@@ -189,9 +189,11 @@ header {
 }
 
 #header-titles {
+    width: 100%;
     letter-spacing: var(--letter-spacing);
     padding: .5rem;
     order: 3;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 header h1, header h2 {
@@ -1275,6 +1277,24 @@ input[type="range"]:focus::-moz-range-thumb{
     }
       
     ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+        border-color: var(--accent) transparent transparent transparent;
+    }
+    
+    ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent var(--accent) transparent;
+    }
+      
+    ::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+        border-color: transparent transparent var(--accent) transparent;
+    }
+    
+    ::-webkit-scrollbar-button:single-button:horizontal:increment {
+        border-width: 6px 6px 0 6px;
+        border-color: var(--accent) transparent transparent transparent;
+    }
+      
+    ::-webkit-scrollbar-button:horizontal:single-button:increment:hover {
         border-color: var(--accent) transparent transparent transparent;
     }
 }
