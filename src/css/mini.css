@@ -1,4 +1,8 @@
 :root {
+    --accent:#EFAE50;
+    --accent-secondary:#392A24;
+    --accent-trinary:#0C6F59;
+
     --bar-width: 3.7rem;
     --bar-height: 0.9rem;
     --hamburger-gap: .4rem;
@@ -94,6 +98,8 @@ nav#list-help {
     transition: opacity var(--animation-hamburger-timing), width var(--animation-hamburger-timing),
     rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
     background-color var(--animation-hamburger-timing);
+    background-color: var(--accent);
+    border-radius: 100rem;
 }
 
 #hamburger-label:has(input:focus-visible)::before,
