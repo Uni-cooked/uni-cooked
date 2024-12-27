@@ -61,7 +61,7 @@
 @font-face {
     font-family: "Inter";
     font-size: 100%;
-    src: url("../assets/Fonts/Inter-VariableFont_opsz\,wght.ttf");
+    src: url("../asset/font/Inter-VariableFont_opsz\,wght.ttf");
     font-weight: 300 900;
     font-stretch: 35% 100%;
     font-style: normal;
@@ -169,7 +169,7 @@ fieldset {
 
 /* #region HEADER */
 header {
-    background-image: url("../assets/img/1.jpg");
+    background-image: url("../asset/img/header.jpg");
     background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
@@ -406,19 +406,19 @@ dl#roles dt {
 }
 
 dl#roles dt#fuorisede {
-    background-image: url("../assets/img/fuorisede-image.jpg");
+    background-image: url("../asset/img/fuorisede.jpg");
 }
 
 dl#roles dt#pendolare {
-    background-image: url("../assets/img/pendolare-image.jpg");
+    background-image: url("../asset/img/pendolare.jpg");
 }
 
 dl#roles dt#sede {
-    background-image: url("../assets/img/sede-image.jpg");
+    background-image: url("../asset/img/in-sede.jpg");
 }
 
 dl#roles dt#dad {
-    background-image: url("../assets/img/dad-image.jpg");
+    background-image: url("../asset/img/dad.jpg");
 }
 
 dl#roles dd {
@@ -710,11 +710,11 @@ ul#recipe-list .recipe a {
 }
 
 #prev-page-btn {
-    background-image: url("../../Assets/Icons/arrow.svg");
+    background-image: url("../asset/icon/left-arrow.svg");
 }
 
 #next-page-btn {
-    background-image: url("../../Assets/Icons/arrow.svg");
+    background-image: url("../asset/icon/right-arrow.svg");
 }
 
 #page-changer span {
@@ -790,6 +790,7 @@ ul#recipe-list .recipe a {
 #profile-img {
     display: block;
     margin: 1.5em auto;
+    height: 8em;
     width: 8em;
     border-radius: 50%;
     border: 4px solid black;
@@ -1124,7 +1125,7 @@ button#log-out-btn {
     margin: auto;
     border-radius: var(--radius-small);
 }
-/* #endregion ABOUT US PAGE */
+/* #endregion ERROR PAGE */
 
 /* ================================================== */
 

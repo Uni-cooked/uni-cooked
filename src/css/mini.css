@@ -110,7 +110,7 @@ nav#list-help {
 }
 
 #hamburger-label::before {
-    background-image: url("../../asset/img/burger/burger-top.png");
+    background-image: url("../asset/img/burger/burger-top.png");
     background-size: 100% 100%;
 }
 
@@ -120,12 +120,12 @@ nav#list-help {
     margin: 0;
     outline: none;
     pointer-events: none;
-    background-image: url("../../asset/img/burger/burger-middle.png");
+    background-image: url("../asset/img/burger/burger-middle.png");
     background-size: 100% 100%;
 }
 
 #hamburger-label::after {
-    background-image: url("../../asset/img/burger/burger-bottom.png");
+    background-image: url("../asset/img/burger/burger-bottom.png");
     background-size: 100% 100%;
 }
 
@@ -133,7 +133,7 @@ nav#list-help {
     rotate: -45deg;
     width: var(--x-width);
     translate: 0 calc(var(--bar-height) / -2);
-    background-image: url("../../asset/img/burger/fork.png");
+    background-image: url("../asset/img/burger/fork.png");
     background-size: 100% 100%;
 }
 
@@ -141,7 +141,7 @@ nav#list-help {
     rotate: 45deg;
     width: var(--x-width);
     translate: 0 calc(var(--bar-height) / 2);
-    background-image: url("../../asset/img/burger/knife.png");
+    background-image: url("../asset/img/burger/knife.png");
     background-size: 100% 100%;
 }
   
