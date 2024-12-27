@@ -686,7 +686,6 @@ ul#recipe-list .recipe ul.recipe-info {
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
-    display: inline-block;
     width: 9em;
     padding: 0.4em 0;
     margin: auto;
