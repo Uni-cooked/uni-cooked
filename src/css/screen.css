@@ -647,10 +647,11 @@ ul#recipe-list .recipe {
 ul#recipe-list .recipe .recipe-img-crop {
     width: 100%;
     height: 40%;
-    overflow: hidden;
+    /* overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
+    object-fit: cover;
 }
 
 ul#recipe-list .recipe .recipe-img-crop img {
