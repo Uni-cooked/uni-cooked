@@ -408,19 +408,19 @@ dl#roles dt {
 }
 
 dl#roles dt#fuorisede {
-    background-image: url("../asset/img/fuorisede.jpg");
+    background-image: url("../asset/img/blur/fuorisede.jpg");
 }
 
 dl#roles dt#pendolare {
-    background-image: url("../asset/img/pendolare.jpg");
+    background-image: url("../asset/img/blur/pendolare.jpg");
 }
 
 dl#roles dt#sede {
-    background-image: url("../asset/img/in-sede.jpg");
+    background-image: url("../asset/img/blur/in-sede.jpg");
 }
 
 dl#roles dt#dad {
-    background-image: url("../asset/img/dad.jpg");
+    background-image: url("../asset/img/blur/dad.jpg");
 }
 
 dl#roles dd {
@@ -1277,24 +1277,6 @@ input[type="range"]:focus::-moz-range-thumb{
     }
       
     ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-        border-color: var(--accent) transparent transparent transparent;
-    }
-    
-    ::-webkit-scrollbar-button:single-button:horizontal:decrement {
-        border-width: 0 6px 6px 6px;
-        border-color: transparent transparent var(--accent) transparent;
-    }
-      
-    ::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
-        border-color: transparent transparent var(--accent) transparent;
-    }
-    
-    ::-webkit-scrollbar-button:single-button:horizontal:increment {
-        border-width: 6px 6px 0 6px;
-        border-color: var(--accent) transparent transparent transparent;
-    }
-      
-    ::-webkit-scrollbar-button:horizontal:single-button:increment:hover {
         border-color: var(--accent) transparent transparent transparent;
     }
 }
