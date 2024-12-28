@@ -62,7 +62,7 @@
             <h3 class="content-subtitle content">BIOGRAFIA</h3>
             <div class="content-container-left end-paragraph">
                 <!-- what user sees on his own account (no bio yet) -->
-                <p class="content">Scrivi qualcosa di te! <a href="./user-edit.html">Aggiungi la tua biografia</a></p>
+                <p class="content">{{biografia}}</p>
                 <!-- what others see on user account (no bio yet) -->
                 <!-- <p class="content-p">GGGaggi non ha ancora aggiunto la sua <abbr title="biografia">bio</abbr>.</p> -->
                 <!-- what others see on user account (bio) -->
@@ -73,44 +73,12 @@
 
             <div id="fav-recipe-list-container" class=" end-paragraph content-container">
                 <ul id="fav-recipe-list" class="content">
-                    <!-- <li>
-                        <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p>
-                    </li> -->
-                    <li class="fav-recipe content">
-                        <div class="fav-recipe-img-crop">
-                            <img src="../asset/img/dad.jpg" alt="">
-                        </div>
-                        <div class="fav-recipe-title">
-                            <h4>POLLO AL CURRY CON RISO E PISELLI</h4>
-                        </div>
-                        <ul class="fav-recipe-info">
-                            <li><img src="../asset/icon/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
-                            <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../asset/icon/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
-                        </ul>
-                        <a href="" title="NOME RICETTA">Vai alla ricetta</a>
-                    </li>
-    
-                    <li class="fav-recipe content">
-                        <div class="fav-recipe-img-crop">
-                            <img src="../asset/img/dad.jpg" alt="">
-                        </div>
-                        <div class="fav-recipe-title">
-                            <h4>PASTA ASCIUTTA</h4>
-                        </div>
-                        <ul class="fav-recipe-info">
-                            <li><img src="../asset/icon/grade.svg" alt="valutato con">18 <abbr title="su">/</abbr> 30</li>
-                            <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                            <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                            <li><img src="../asset/icon/time.svg" alt="darata">10 <abbr title="minuti">min</abbr></li>
-                        </ul>
-                        <a href="" title="NOME RICETTA">Vai alla ricetta</a>
-                    </li>
+                    {{lista-preferiti}}
                 </ul>
             </div>
 
             <!-- <a href="./user-edit.html" id="profile-edit-link">MODIFICA PROFILO</a> -->
+            <!-- SE CAMBIANO QUESTI DUE a CAMBIARE ANCHE SU USER.PHP -->
             <a href="./user-edit.html" id="edit-profile-link">MODIFICA PROFILO</a>
             <a href="../php/sign-out.php" id="log-out-btn">ESCI</a>
         </main>

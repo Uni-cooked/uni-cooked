@@ -37,7 +37,7 @@ CREATE TABLE Preferenza_Ricetta(
     utente VARCHAR(100) NOT NULL,
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Utilizzo_Ingrediente(
@@ -69,7 +69,7 @@ CREATE TABLE Valutazione(
     voto TINYINT NOT NULL CHECK(voto>0 AND voto<=30),
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Suggerimenti(
@@ -77,5 +77,5 @@ CREATE TABLE Suggerimenti(
     data DATE,
     testo VARCHAR(500) NOT NULL,
     PRIMARY KEY (utente, data),
-    FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
