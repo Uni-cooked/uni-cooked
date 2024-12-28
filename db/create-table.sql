@@ -26,6 +26,7 @@ CREATE TABLE Ricetta(
     categoria enum ('fuorisede', 'pendolare', 'in_sede', 'dad') NOT NULL,
     tipo_piatto enum ('primo', 'secondo') NOT NULL,
     tempo_sec INT NOT NULL,
+    prezzo INT NOT NULL,
     descrizione VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
     immagine VARCHAR(500) NOT NULL -- Ancora non sappiamo il tipo, per ora faccio finta sia una directory
@@ -45,8 +46,7 @@ CREATE TABLE Utilizzo_Ingrediente(
     quanto_basta BOOLEAN NOT NULL,
     quantita SMALLINT CHECK(quantita>=0),
     unita_misura enum ('g', 'ml', 'num_elementi'),
-    CHECK(quanto_basta IS TRUE AND quantita IS NULL AND unita_misura IS NULL),
-    CHECK(quanto_basta IS FALSE AND quantita IS NOT NULL AND unita_misura IS NOT NULL),
+    CHECK((quanto_basta IS TRUE AND quantita IS NULL AND unita_misura IS NULL) OR (quanto_basta IS FALSE AND quantita IS NOT NULL AND unita_misura IS NOT NULL)),
     descrizione VARCHAR(50),
     PRIMARY KEY(ingrediente, ricetta),
     FOREIGN KEY (ingrediente) REFERENCES Ingrediente(nome) ON DELETE CASCADE ON UPDATE CASCADE,
