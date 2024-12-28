@@ -5,11 +5,11 @@ namespace DB;
 session_start();
 
 class DB {
+    private $tagPermessi ='<em><strong><ul><li>';
     private const HOST_DB = "localhost";
     private const DBNAME = "dbname";
     private const USERNAME = "username";
     private const PSW = "psw";
-    private $tagPermessi ='<em><strong><ul><li>';
 
     private $connection;
 
@@ -53,6 +53,51 @@ class DB {
             return false;
         }
     }
+
+    public static function logOutUser() {
+        $db=new DB;
+        $isUserLogged=$db->isUserLogged();
+        if($isUserLogged!=false) {
+            unset($_SESSION["logged_user"]);
+        }
+        else {
+            return "userIsNotLoggedIn";
+        }
+    }
+
+    public function getUserInfo(): array | string {
+        $isUserLogged=$this->isUserLogged();
+        if($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $getUserInfo=$this->connection->prepare("SELECT * FROM Utente WHERE nome = ?");
+                $getUserInfo->bind_param("s",$isUserLogged);
+                try {
+                    $getUserInfo->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $getUserInfo->close();
+                    return "ExceptionThrow";
+                }
+                $result=$getUserInfo->get_result();
+                $this->closeDBConnection();
+                $getUserInfo->close();
+                if ($result->num_rows==1) {
+                    $row = mysqli_fetch_assoc($result);
+                    $result->free();
+                    return $row;
+                }
+                else {
+                    $result->free();
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
     
     public function logUser($username,$psw): bool | string {
         if ($this->isUserLogged()==false) {
@@ -73,9 +118,11 @@ class DB {
                 $this->closeDBConnection();
                 $checkUserExistance->close();
                 if ($result->num_rows==1) {
-                    $_SESSION["logged_user"] = $username; 
+                    $_SESSION["logged_user"] = $username;
+                    $result->free(); 
                     return true;
                 } else {
+                    $result->free();
                     return false;
                 }
             } else {
@@ -105,8 +152,10 @@ class DB {
             $checkUserStatement->close();
 
             if ($result->num_rows==1) {
+                $result->free();
                 return true;
             } else {
+                $result->free();
                 return false;
             }
         } else {
@@ -132,8 +181,10 @@ class DB {
             $checkUserStatement->close();
 
             if ($result->num_rows==1) {
+                $result->free();
                 return true;
             } else {
+                $result->free();
                 return false;
             }
         } else {
@@ -175,3 +226,5 @@ class DB {
         }
     }
 }
+
+?>

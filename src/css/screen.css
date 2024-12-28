@@ -932,13 +932,13 @@ a#edit-profile-link {
     color: var(--bg-primary);
 }
 
-button#log-out-btn {
+a#log-out-btn {
     display: block;
     margin: 2em auto;
     text-align: center;
     width: 14em;
     padding: .8em;
-    border-style: none;
+    /*border-style: none;*/
     font-weight: 700;
     font-size: 1.2em;
     border-radius: 5px;
