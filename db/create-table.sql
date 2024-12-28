@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS Preferenza_Ricetta;
 DROP TABLE IF EXISTS Valutazione;
 DROP TABLE IF EXISTS Preparazione;
 DROP TABLE IF EXISTS Utilizzo_Ingrediente;
+DROP TABLE IF EXISTS Suggerimenti;
 DROP TABLE IF EXISTS Ricetta;
 DROP TABLE IF EXISTS Utente;
 DROP TABLE IF EXISTS Ingrediente;
@@ -68,5 +69,13 @@ CREATE TABLE Valutazione(
     voto TINYINT NOT NULL CHECK(voto>0 AND voto<=30),
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Suggerimenti(
+    utente VARCHAR(100),
+    data DATE,
+    testo VARCHAR(500) NOT NULL,
+    PRIMARY KEY (utente, data),
     FOREIGN KEY (utente) REFERENCES Utente(email) ON DELETE CASCADE ON UPDATE CASCADE
 );

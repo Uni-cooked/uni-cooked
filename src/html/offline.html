@@ -10,16 +10,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/screen.css" media="screen">
-        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/big.css" media="screen and (min-width: 1200px)">
+        <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
     </head>
-    <body class="error-page-body">
+    <body>
         <header>
-            <div id="header-content" class="content err-page-header">
+            <div id="header-content" class="content single-msg-page-header">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#breadcrumb" class="nav-help">Salta a dove ti trovi</a></li>
-                        <li><a href="#content" class="nav-help">Salta al contenuto</a></li>
+                        <li><a href="#breadcrumb" class="help-el">Salta a dove ti trovi</a></li>
+                        <li><a href="#content" class="help-el">Salta al contenuto</a></li>
                     </ul>
                 </nav>
 
@@ -49,19 +49,20 @@
                 </nav>
                 
                 <nav id="breadcrumb">
-                    <p>Stai studiando in: <span lang="en">OFFLINE</span></p>
+                    <p>Stai studiando in:</p>
+                    <p><span lang="en">OFFLINE</span></p>
                 </nav>
             </div>
         </header>
 
-        <main id="content" class="err-page-content content">
-            <h1 id="err-page-h1">SEI <span lang="en">OFFLINE</span></h1>
-            <h2 id="err-page-h2">Sembra che tu non abbia ancora acceso i fornelli!</h2>
-            <p id="err-page-p">
+        <main id="content" class="single-msg-page-content content">
+            <h1 id="single-msg-page-h1">SEI <span lang="en">OFFLINE</span></h1>
+            <h2 id="single-msg-page-h2">Sembra che tu non abbia ancora acceso i fornelli!</h2>
+            <p id="single-msg-page-p">
                 Prima di cominciare a cucinare bisogna assicurarsi di avere tutto il necessario, anche una connessione ad <span lang="en">Internet</span>.
                 <!-- Su forza, alzati da quella sedia, chiudi quei libri o quaderni e comincia a cucinare qualcosa di gustoso. -->
             </p>
-            <a href="./index.html" id="err-page-a">TORNA ALLA <span lang="en">HOME</span></a>
+            <a href="./index.html" id="single-msg-page-a">TORNA ALLA <span lang="en">HOME</span></a>
         </main>
 
         <footer>

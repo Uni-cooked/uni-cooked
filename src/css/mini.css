@@ -1,375 +1,41 @@
-:root {
-    --accent:#EFAE50;
-    --accent-secondary:#392A24;
-    --accent-trinary:#0C6F59;
-
-    --bar-width: 3.7rem;
-    --bar-height: 0.9rem;
-    --hamburger-gap: .4rem;
-    --hamburger-v-margin: .8rem;
-    --hamburger-h-margin: 2.5rem;
-    --animation-hamburger-timing: 200ms ease-in-out;
-    --animation-dropdown-timing: 500ms cubic-bezier(.1,.36,.15,.98);
-    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
-}
-
-/* #region GENERAL*/
-
+/* #region GENERAL CLASSES */
 .button-input {
-    width: 49%;
+    width: 100%;
+    float: none;
+    margin-bottom: .1em;
     margin-left: 0;
-    margin-top: 1.5em;
 }
 
-.button-input-cancel {
-    float: left;
-    margin-bottom: 0;
+.content-subtitle {
+    font-size: 2.5rem;
 }
-
-.form-label {
-    margin-bottom: .5em;
-}
-
-fieldset {
-    padding: 1em;
-}
-
-@media screen and (max-width: 480px) {
-    .button-input {
-        width: 100%;
-        float: none;
-        margin-bottom: .1em;
-        margin-left: 0;
-    }
-    
-}
-
-/* #endregion GENERAL*/
-
-/* ================================================== */
-
-/* #region HEADER */
-#header-content {
-    padding: 0;
-}
-/* #endregion HEADER */
-
-/* ================================================== */
-
-/* #region NAVIGATION HELP */
-nav#list-help {
-    z-index: 2;
-}
-/* #endregion NAVIGATION HELP */
-
-/* ================================================== */
-
-/* #region MENU */
-#hamburger {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(57, 42, 36, 0.85);
-    transition: background-color var( --animation-dropdown-timing);
-    width: 100%;
-    z-index: 1;
-}
-
-#hamburger:has(input:checked) {
-     background-color: rgba(57, 42, 36, 0);
-}
-
-#hamburger-label {
-    --x-width: calc(var(--hamburger-height) * 1.41421356237);
-  
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--hamburger-gap);
-    margin: var(--hamburger-v-margin) var(--hamburger-h-margin);
-}
-
-#hamburger-label::before,
-#hamburger-label::after,
-#hamburger-label input {
-    content: "";
-    width: var(--bar-width);
-    height: var(--bar-height);
-    transform-origin: right center;
-    transition: opacity var(--animation-hamburger-timing), width var(--animation-hamburger-timing),
-    rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
-    background-color var(--animation-hamburger-timing);
-    background-color: var(--accent);
-    border-radius: 100rem;
-}
-
-#hamburger-label:has(input:focus-visible)::before,
-#hamburger-label:has(input:focus-visible)::after,
-#hamburger-label input:focus-visible {
-    border: 1px solid white;
-    box-shadow: 0 0 0 1px white;
-}
-
-#hamburger-label::before {
-    background-image: url("../asset/img/burger/burger-top.png");
-    background-size: 100% 100%;
-}
-
-#hamburger-label input {
-    appearance: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    pointer-events: none;
-    background-image: url("../asset/img/burger/burger-middle.png");
-    background-size: 100% 100%;
-}
-
-#hamburger-label::after {
-    background-image: url("../asset/img/burger/burger-bottom.png");
-    background-size: 100% 100%;
-}
-
-#hamburger-label:has(input:checked)::before {
-    rotate: -45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / -2);
-    background-image: url("../asset/img/burger/fork.png");
-    background-size: 100% 100%;
-}
-
-#hamburger-label:has(input:checked)::after {
-    rotate: 45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / 2);
-    background-image: url("../asset/img/burger/knife.png");
-    background-size: 100% 100%;
-}
-  
-#hamburger-label input:checked {
-    opacity: 0;
-    width: 0;
-}
-
-nav#menu {
-    position: fixed;
-    transition: translate var( --animation-dropdown-timing);
-    translate: 0 -100%;
-    padding: 0 1rem;
-    /* TODO: replace with correct gaps */
-    /* padding-top: calc(var(--hamburger-height) + var(--hamburger-padding) + 1rem); */
-    background-color: var(--accent-secondary);
-    /* height: 100vh; */
-
-    /*VISTO CHE ABBIAMO POCHI LINK DIREI DI RIDURLO COME HEIGHT E CHIEDERE ALLA G SE ESISTE UN MODO PER IMPEDIRE IL TAB SUL RESTO DEI LINK
-     O DI CHIUDERLO IN AUTOMATICO QUANDO SI TABBA FUORI DAL MENU*/
-    height: fit-content; 
-
-    width: 100vw;
-}
-
-#hamburger:has(input:checked) + #menu {
-    translate: 0;
-}
-
-header:has(#hamburger-label input:not(:checked)) nav#menu a {
-    visibility: hidden;
-}
-
-body:has(#hamburger-label input:checked){
-    overflow-y: hidden;
-}
-
-/* body:has(#hamburger-label input:checked) *:not(header *) { */
-body:has(#hamburger-label input:checked) main,
-body:has(#hamburger-label input:checked) footer {
-    visibility: hidden;
-}
-
-nav#menu ul {
-    /* height: 100%; */
-
-    /*VISTO CHE ABBIAMO POCHI LINK DIREI DI RIDURLO COME HEIGHT E CHIEDERE ALLA G SE ESISTE UN MODO PER IMPEDIRE IL TAB SUL RESTO DEI LINK
-     O DI CHIUDERLO IN AUTOMATICO QUANDO SI TABBA FUORI DAL MENU*/
-    height: 40vh;
-    margin-top: 3vh;
-
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-nav#menu li:not(#profile-item) {
-    width: 100%;
-    text-align: center;
-}
-
-nav#menu li:has(.logo) {
-    display: none;
-}
-
-#hamburger .logo {
-    display: inline;
-    padding: 0;
-    margin: auto var(--hamburger-h-margin);
-    border: 0;
-}
-
-nav#menu li#profile-item {
-    margin: 0;
-}
-/* #endregion MENU */
+/* #endregion GENERAL CLASSES */
 
 /* ================================================== */
 
 /* #region HOME PAGE */
-@media (max-width: 480px) {
-    dd:has(input:checked) .flip-card .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    .flip-card-back{
-        transform: rotateY(180deg);
-    }
-
+dd:has(input:checked) .flip-card .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
-div#why > div {
-    flex-direction: column;
-}
-
-div#why img {
-    width: 100%;
+.flip-card-back{
+    transform: rotateY(180deg);
 }
 /* #endregion HOME PAGE */
 
 /* ================================================== */
 
-/* #region CATALOGUE PAGE */
-
-#filtri {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    padding: 1rem;
-}
-
-ul#recipe-list {
-    display: block;
-}
-
-ul#recipe-list .recipe {
-    margin: 0 auto 4em;
-    width: 95%;
-}
-
-ul#recipe-list .recipe ul.recipe-info li {
-    width: 34%;
-    min-width: 9em;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-}
-/* #endregion CATALOGUE PAGE */
-
-/* ================================================== */
-
-/* #region SIGN UP PAGE */
-
-#name-up-container {
-    float: none;
-    width: 100%;
-    padding-right: 0;
-}
-
-#cat-up-container {
-    float: none;
-    width: 100%;
-    padding-left: 0;
-}
-
-/* #endregion SIGN UP PAGE */
-
-/* ================================================== */
-
-/* #region USER PAGE */
-
-#fav-recipe-list .fav-recipe {
-    height: 26em;
-}
-
-#fav-recipe-list .fav-recipe .fav-recipe-img-crop {
-    float: none;
-    max-width: none;
-    width: 100%;
-    height: 40%;
-}
-#fav-recipe-list .fav-recipe .fav-recipe-title {
-    height: 20%;
-    padding: 0.6em 0 0;
-}
-#fav-recipe-list .fav-recipe .fav-recipe-info {
-    height: 30%;
-    align-content: unset;
-}
-#fav-recipe-list .fav-recipe .fav-recipe-info li {
-    width: 34%;
-    min-width: 9em;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-    text-align: left;
-}
-
-#fav-recipe-list .fav-recipe a {
-    padding-top: 0.3em;
-}
-
-/* #endregion USER PAGE */
-
-/* ================================================== */
-
-/* #region USER EDIT PAGE */
-    #user-edit #primary-info{
-        flex-direction: column;
-        align-items: center;
-        gap: .5rem;
-    }
-/* #endregion USER PAGE */
-
-/* ================================================== */
-
 /* #region ABOUT US PAGE */
-#recipie-request img {
-    float: none;
-    margin-right: 0;
-    margin-bottom: 60px;
-}
-
 #recipie-request button {
-    width: 49%;
-    margin-left: 0;
-    margin-top: 1.5em;
+    width: 100%;
 }
 
 #recipie-request #cancel {
-    float: left;
+    float: none;
 }
 
-#admin-grid {
-    display: block;
-}
-
-.admin-cell {
-    margin-bottom: 5rem;
-}
-
-@media screen and (max-width: 480px) {
-    #recipie-request button {
-        width: 100%;
-    }
-
-    #recipie-request #cancel {
-        float: none;
-    }
-
-    #recipie-request #confirm {
-        float: none;
-        margin-bottom: .1em;
-    }
+#recipie-request #confirm {
+    float: none;
+    margin-bottom: .1em;
 }
 /* #endregion ABOUT US */

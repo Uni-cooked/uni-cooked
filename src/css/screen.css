@@ -106,6 +106,10 @@ fieldset {
 
 .content {
     padding: 0 1rem 0 1rem;
+    /* used as big.css (min-width: 1200px) */
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .content-container {
@@ -189,11 +193,9 @@ header {
 }
 
 #header-titles {
-    width: 100%;
     letter-spacing: var(--letter-spacing);
     padding: .5rem;
     order: 3;
-    background-color: rgba(0, 0, 0, 0.6);
 }
 
 header h1, header h2 {
@@ -233,12 +235,12 @@ nav#list-help li {
     display: inline-block;
 }
 
-nav#list-help a {
+.help-el {
     position: absolute;
     text-indent: -999rem;
 }
 
-nav#list-help a:focus {
+.help-el:focus {
     position: absolute;
     text-indent: 0rem;
     background-color: var(--bg-primary);
@@ -319,16 +321,19 @@ nav#menu li#profile-item a {
 /* #region BREADCRUMB */
 nav#breadcrumb {
     order: 4;
-}
-
-nav#breadcrumb p {
-    font-size: 1rem;
-    width: fit-content;
-    font-style: italic;
     background-color: var(--accent-secondary);
     color: var(--text-color);
     border-radius: var(--radius-mid);
-    padding: .2rem 1rem .2rem 1rem;
+    padding: .2rem .3rem;
+}
+
+nav#breadcrumb p {
+    text-align: center;
+    font-size: 1rem;
+    /* width: fit-content; */
+    font-style: italic;
+    padding: .1rem 1rem;
+    
 }
 /* #endregion BREADCRUMB */
 
@@ -794,17 +799,13 @@ ul#recipe-list .recipe a {
     font-size: 2.5em;
 }
 
-#title-nick span {
-    font-size: 65%;
-}
-
 #profile-img {
     display: block;
     margin: 1.5em auto;
-    height: 8em;
-    width: 8em;
+    height: 9em;
+    width: 9em;
+    object-fit: cover;
     border-radius: 50%;
-    border: 4px solid black;
 }
 
 #stud-cat, #login-date {
@@ -1101,32 +1102,32 @@ a#log-out-btn {
 
 /* ================================================== */
 
-/* #region ERROR PAGE */
-#header-content.err-page-header {
+/* #region SINGLE MESSAGE PAGE */
+#header-content.single-msg-page-header {
     min-height: 40vh;
 }
 
-#content.err-page-content {
+#content.single-msg-page-content {
     text-align: center;
     min-height: calc(60vh - var(--main-mt) - var(--main-mb) - 8.2rem);
     align-content: center;
 }
 
-#err-page-h1 {
+#single-msg-page-h1 {
     font-size: var(--title);
 }
 
-#err-page-h2 {
+#single-msg-page-h2 {
     font-size: var(--subtitle);
     margin-bottom: 3rem;
 }
 
-#err-page-p {
+#single-msg-page-p {
     font-size: 1.3rem;
     margin-bottom: 4rem;
 }
 
-#err-page-a {
+#single-msg-page-a {
     display: block;
     width: 14em;
     font-size: var(--button-text);
@@ -1136,7 +1137,7 @@ a#log-out-btn {
     margin: auto;
     border-radius: var(--radius-small);
 }
-/* #endregion ERROR PAGE */
+/* #endregion SINGLE MESSAGE PAGE */
 
 /* ================================================== */
 

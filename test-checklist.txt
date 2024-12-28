@@ -47,6 +47,7 @@ Accessibilità:
 - Testare PHP e JS
 - Per indicazioni di trasporto bene aggiungere info anche per trasporti pubblici (es. magari si mette Come raggiungere? in macchina -> indirizzo, con mezzi pubblici -> prendi il bus per Hogwarts e scendi alla fermata numero 9 e 3/4)
 - Mappe con descrizione nascosta (per mappa Google si può lasciar far leggere, openstreetmap omettere la lettura da parte dello screen reader)
+- Controllare vada bene senza le immagini
 
 
 
