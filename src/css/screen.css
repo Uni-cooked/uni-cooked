@@ -550,7 +550,7 @@ dd #role-info-label {
     display: inline-block;
     cursor: pointer;
     user-select: none;
-    transition: background-color var(--animation-duration) , color var(--animation-duration);
+    transition: background-color 600ms , color 600ms;
 }
 
 #role-desc a{
