@@ -24,6 +24,7 @@
     --avisitedcolor: #B06F0C;
     --bg-primary: #171717;
     --bg-secondary: #242424;
+    --accent: #EFAE50;
     /*
     *   HEADER ZONE
     */
@@ -578,7 +579,7 @@ img#ImgUtente, img.InfoUtente
 
 fieldset
 {
-    border: 0;
+    border: 2px solid var(--accent);
     min-width: 65%;
     margin-bottom: 2%;;
 }
@@ -589,24 +590,16 @@ fieldset
     float:left;
 }
 
-textarea.voto
-{
-    max-width: 1.5%;
-    resize: none;
-    color: white;
-    border: 0;
-}
-
 section#CommentoUtente label
 {
     display: block;
     padding: 1em;
     text-align: left;
     clear: both;
+    color: white;
 }
 
-textarea#Commento-utente
-{
+textarea#Commento-utente{
     resize: none;
     width: 97%;
     height: 10vh;
@@ -615,8 +608,7 @@ textarea#Commento-utente
     margin-bottom: 2%;
 }
 
-button.SceltaUtente
-{
+button.SceltaUtente{
     border-radius: 0.5em;
     cursor: pointer;
     float:right;
@@ -625,26 +617,29 @@ button.SceltaUtente
     margin: 0.5em 0.5em 1em 0;
 }
 
-button#Cancella
-{
+button#Cancella{
     background-color: var(--bg-primary); 
     color: var(--textbgcolor);
     color: white;
 }
 
-button#Commenta
-{   
+button#Commenta{   
     background-color: var(--textbgcolor);
 }
 
-h4
-{
+h4{
     clear: both;
     text-align: center;
 }
 
-section#CommentiAltriUtenti
-{
+article#TuoCommento{
+    margin:  2em 4em 2em 4em;
+    clear: both;
+    padding: 1em;
+    border: 2px solid var(--accent);;
+}
+
+section#CommentiAltriUtenti{
     margin: 2rem 4rem 2rem 4rem;
     clear: both;
 }
@@ -661,8 +656,7 @@ li article{
     padding: 1rem;
 }
 
-.InfoUtente
-{
+.InfoUtente{
     display: inline;
     vertical-align: baseline;
     margin-bottom: 1.5rem;
@@ -674,8 +668,8 @@ li article{
 }
 
 img.InfoUtente{ 
-    max-width: 5%;
     max-height: 5%;
+    max-width: 55px;
 }
 
 p#DataCommento
@@ -686,6 +680,7 @@ p#DataCommento
 p#VotoUtente{
     font-weight: bold;
     margin-top: 4rem;
+    margin-bottom: 1.5em;
 }
 
 
@@ -726,4 +721,13 @@ footer img {
 
 footer a {
     display: block;
+}
+  
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    width: 3em;
+    background-color: white;
 }
