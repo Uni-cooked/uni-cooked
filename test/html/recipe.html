@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Uni cooked</title>
+        <title>Nome Ricetta</title>
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
         <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
         <meta name="author" content="Uni cooked">
@@ -36,7 +36,7 @@
         </header>
 
         <nav id="breadcrumb">
-            <p>Sei in: <a href="./index.html" lang="en">Home</a> &#x2192 <a href="./catalogue.html"> Ricette </a> &#x2192 Nome-ricetta</p>
+            <p>Sei in: <a href="./index.html" lang="en">Home</a> > <a href="./catalogue.html"> Ricette </a> > Nome-ricetta</p>
         </nav>
 
     <main id="mainInfoRicetta">
@@ -81,15 +81,24 @@
             <form action="" method="post">
                 <fieldset>
                     <label for="Voto-utente">Aggiungi una valutazione</label>
-                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" maxlength="2" required></input>
+                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" required></input>
                     <p class="voto" id="MaxVoto">/ 30</p>
                     <label for="Commento-utente">Commenta</label>
-                    <textarea name="Commento-utente" id="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
+                    <textarea name="Commento-utente" id="Commento-utente" name="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
                 </fieldset>
                 <button type="submit" class="SceltaUtente" id="Commenta" name="Commenta">Commenta</button>
                 <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
             </form>
         </section>
+        
+        <h4>Il tuo commento:</h4>
+        <article id="TuoCommento">
+            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+            <a href="" class="InfoUtente">Nome Utente</a>
+            <p class="InfoUtente" id="DataCommento">Data</p>
+            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+            <p class="ValutazioneUtente">Commento</p>
+        </article>
 
         <h4>Cosa pensano gli altri utenti:</h4>
         <section id="CommentiAltriUtenti">
@@ -116,6 +125,7 @@
         </section>
 
         <button id="Carica">Carica altri commenti</button>
+
 
         <footer>
             <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
