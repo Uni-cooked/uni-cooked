@@ -536,6 +536,7 @@ dd:has(input:focus-visible) #role-info-label {
 dd:has(input:checked) #role-info-label {
     color: var(--bg-primary);
     background-color: var(--accent);
+    box-shadow: inset 0px 4px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 dd #role-info-label {
