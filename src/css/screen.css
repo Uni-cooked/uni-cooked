@@ -14,6 +14,7 @@
     --accent:#EFAE50;
     --accent-secondary:#392A24;
     --accent-trinary:#0C6F59;
+    --accent-quaternary:#134270;
     --text-color:white;
     --a-color: #5F9950;
     --menu-a-color: white;
@@ -453,6 +454,7 @@ dl#roles dd:not(:last-child) {
     transition: transform var(--animation-duration) cubic-bezier(.04,.43,.41,1.27);
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: var(--radius-mid);
 }
 
 dd:has(input:checked) .flip-card .flip-card-inner {
