@@ -5,13 +5,18 @@ namespace DB;
 session_start();
 
 class DB {
-    private $tagPermessi ='<em><strong><ul><li>';
     private const HOST_DB = "localhost";
     private const DBNAME = "dbname";
     private const USERNAME = "username";
     private const PSW = "psw";
 
     private $connection;
+    private $tagPermessi = '<em><strong><ul><li>';
+    private $htmlPath = "../html/";
+
+    public function getHtmlPath() {
+        return $this->$htmlPath;
+    }
 
     public static function pulisciInput($value) {
         $value = trim($value);
@@ -57,17 +62,16 @@ class DB {
     public static function logOutUser() {
         $db=new DB;
         $isUserLogged=$db->isUserLogged();
-        if($isUserLogged!=false) {
+        if ($isUserLogged!=false) {
             unset($_SESSION["logged_user"]);
-        }
-        else {
+        } else {
             return "userIsNotLoggedIn";
         }
     }
 
     public function getUserInfo(): array | string {
         $isUserLogged=$this->isUserLogged();
-        if($isUserLogged==false) {
+        if ($isUserLogged==false) {
             return "userIsNotLogged";
         } else {
             $connectionResult=$this->openDBConnection();
@@ -88,8 +92,7 @@ class DB {
                     $row = mysqli_fetch_assoc($result);
                     $result->free();
                     return $row;
-                }
-                else {
+                } else {
                     $result->free();
                     return "genericError";
                 }
@@ -131,7 +134,6 @@ class DB {
         } else {
             return "userIsAlreadyLogged";
         }
-        
     }
 
     public function checkEmailPresence($email): bool | string {
@@ -226,5 +228,3 @@ class DB {
         }
     }
 }
-
-?>

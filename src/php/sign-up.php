@@ -16,7 +16,7 @@ if ($isLogged!=false) {
     exit();
 }
 
-$paginaHtml=file_get_contents("../html/sign-up.html");
+$paginaHtml=file_get_contents($db->getHtmlPath() . "sign-up.html");
 if (isset($_POST['submit'])) {
     $errorFound=false;
     $username=$_POST["nome"];
