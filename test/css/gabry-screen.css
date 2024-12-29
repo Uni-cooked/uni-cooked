@@ -25,6 +25,7 @@
     --bg-primary: #171717;
     --bg-secondary: #242424;
     --accent: #EFAE50;
+    --danger-button-color: red;
     /*
     *   HEADER ZONE
     */
@@ -210,24 +211,6 @@ nav#menu a:visited
     color: var(--menuvisitedlinkcolor);
 }
 
-/*nav#menu li#current-page
-{
-    position: relative;
-}
-
-nav#menu li#current-page::before
-{
-    content: url("../assets/img/ph--chef-hat-fill.svg");
-    display: block;
-    position: absolute;
-    left: 0;
-    top: -55%;
-}*/
-
-/*
-* BREADCRUMB
-*/
-
 nav#breadcrumb
 {
     display: flex;
@@ -246,168 +229,6 @@ nav#breadcrumb p
     padding-left: 1%;
     padding-right: 1%;
 }
-
-/*
-*   HOME PAGE
-*/
-
-p#presentation-text
-{
-    color: var(--presentationtextcolor);
-    margin-top: 2em;
-    margin-bottom: 2em;
-    text-align: center;
-    padding: 2%;
-}
-
-dl
-{
-    margin: 5% 10%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-a.recipe-link
-{
-    display: block;
-    padding-top: 2%;
-}
-
-dt#fuorisede, dt#sede, dt#pendolare, dt#dad
-{
-    display: inline;
-    width: 30%;
-    height: 40vh;
-
-    background-color: var(--rolelisttitlebgcolor);
-    color: var(--rolelisttitlecolor);
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    font-size: 2em;
-    font-weight: bolder;
-
-    border-radius: 20px;
-    box-shadow: 0 0 25px 5px var(--shadowcolor);
-}
-
-dt#fuorisede, dt#sede
-{
-    text-align: right;
-}
-
-dd#fuorisede-text, dd#sede-text
-{
-    padding-left: 5%;
-}
-
-dd#pendolare-text, dd#dad-text
-{
-    padding-right: 5%;
-}
-
-dd#fuorisede-text, dd#sede-text, dd#pendolare-text, dd#dad-text
-{
-    /*background-color: var(--rolelisttextbgcolor);*/
-    color: var(--rolelisttextcolor);
-    width: 65%;
-    height: 40vh;
-
-    text-align: center;
-}
-
-dd#sede-text, dd#pendolare-text, dd#dad-text, dt#sede, dt#pendolare, dt#dad
-{
-    margin-top: 15%;
-}
-
-dt#fuorisede
-{
-    order: 1;
-    background-image: url("../assets/img/fuorisede-image.jpg");
-}
-
-dd#fuorisede-text
-{
-    order: 2;
-}
-
-dt#pendolare
-{
-    order: 4;
-    background-image: url("../assets/img/pendolare-image.jpg");
-    background-position: 0%;
-}
-
-dd#pendolare-text
-{
-    order: 3;
-}
-
-dt#sede
-{
-    order: 5;
-    background-image: url("../assets/img/sede-image.jpg");
-}
-
-dd#sede-text
-{
-    order: 6;
-}
-
-dt#dad
-{
-    order: 8;
-    background-image: url("../assets/img/dad-image.jpg");
-}
-
-dd#dad-text
-{
-    order: 7;
-}
-
-div#presentation-div
-{
-   /*color:white; FALSO POSITIVO*/
-   display: grid;
-   grid-template-areas: 'b h2'
-                        'b a';
-   margin: 5% 10%;
-   background-color: var(--presentationdivbgcolor);
-   padding: 1%;
-   border-radius: 5px;
-}
-
-div#presentation-div img
-{
-    grid-area: b;
-    width: 95%;
-    border-radius: 5px;
-}
-
-div#presentation-div h2, div#presentation-div p
-{
-    /*color: black; FALSO POSITIVO*/
-    text-align: center;
-}
-
-div#presentation-div h2
-{
-    grid-area: h2;
-    background-color: var(--textbgcolor);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-div#presentation-div p
-{
-    grid-area: a;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
 /*
 *  INFO RICETTA TEMPLATE
 */
@@ -490,11 +311,16 @@ ul#InfoRicetta li img
     margin-right: 4rem;
 }
 
+button,input{
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
 button#Stella
 {
     content: "Aggiungi ai preferiti";
     cursor: pointer;
-    border-radius: 1em;
+    border-radius: 0.5em;
     appearance: none;
     margin: 4rem 4rem 4rem 4rem;
     align-content: center;
@@ -507,11 +333,6 @@ button#Stella
 button#Stella::after
 {
     content: "Aggiunto ai preferiti \2713";
-}
-
-button#Stella::backdrop
-{
-    content: "Aggiungi ai preferiti";
 }
 
 ul#IngredientiRicetta
@@ -551,7 +372,7 @@ h3#Commento
 
 section#CommentoUtente 
 {
-    display: block;
+    display: flex;
     flex-direction: row;
     padding: 1rem 0 1rem 0;
     margin: 0 4rem 2rem 4rem;
@@ -581,13 +402,13 @@ fieldset
 {
     border: 2px solid var(--accent);
     min-width: 65%;
-    margin-bottom: 2%;;
+    margin-bottom: 2%;
 }
 
 .voto{
     display: inline;
     margin: 1.5%;
-    float:left;
+    float: left;
 }
 
 section#CommentoUtente label
@@ -610,9 +431,10 @@ textarea#Commento-utente{
 
 button.SceltaUtente{
     border-radius: 0.5em;
+    display: inline;
     cursor: pointer;
     float:right;
-    width: 10em;
+    width: 12em;
     height: 3em;
     margin: 0.5em 0.5em 1em 0;
 }
@@ -636,8 +458,24 @@ article#TuoCommento{
     margin:  2em 4em 2em 4em;
     clear: both;
     padding: 1em;
-    border: 2px solid var(--accent);;
+    border: 2px solid var(--accent);
+    text-align: start;
 }
+
+article#TuoCommento p#ValutazioneUtente{
+    text-align: center;
+}
+
+article#TuoCommento button{
+    width: 100%;
+    height: 3em;
+    background-color: var(--danger-button-color);
+    margin: 2em 0 1em 0;
+    border-radius: 0.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
 
 section#CommentiAltriUtenti{
     margin: 2rem 4rem 2rem 4rem;
