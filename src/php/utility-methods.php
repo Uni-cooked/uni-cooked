@@ -69,6 +69,110 @@ class DB {
         }
     }
 
+    public function getRecipeAverage(string $recipe): int | string {
+        $connectionResult=$this->openDBConnection();
+        if($connectionResult) {
+            $getRecipeAverage=$this->connection->prepare("SELECT CAST(AVG(voto) AS DECIMAL (2,0)) AS average FROM Valutazione WHERE ricetta = ?");
+            $getRecipeAverage->bind_param("s",$recipe);
+            try {
+                $getRecipeAverage->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getRecipeAverage->close();
+                return "ExceptionThrow";
+            }
+            $result=$getRecipeAverage->get_result();
+            $this->closeDBConnection();
+            $getRecipeAverage->close();
+            $row = mysqli_fetch_assoc($result);
+            $result->free();
+            if ($row["average"]) {
+                return $row["average"];
+            }
+            else {
+                return 18;
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function getUserFavourites(string $username,int $number = -1): array | string {
+        $connectionResult=$this->openDBConnection();
+        $result=array();
+        if ($connectionResult) {
+            $getUserFavourites=$this->connection->prepare("SELECT Ricetta.nome, Ricetta.categoria, Ricetta.tipo_piatto, Ricetta.prezzo, Ricetta.immagine FROM Ricetta, Preferenza_Ricetta WHERE Ricetta.nome=Preferenza_Ricetta.ricetta AND Preferenza_Ricetta.utente=?;");
+            $getUserFavourites->bind_param("s",$username);
+            try {
+                $getUserFavourites->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getUserFavourites->close();
+                return "ExceptionThrow";
+            }
+            $queryResult=$getUserFavourites->get_result();
+            $this->closeDBConnection();
+            $getUserFavourites->close();
+            if ($queryResult->num_rows>0) {
+                if($number==-1) {
+                    while($row = mysqli_fetch_assoc($queryResult)) {
+                        array_push($result,$row);
+                    }
+                }
+                else {
+                    while($row = mysqli_fetch_assoc($queryResult) && $number>0) {
+                        array_push($result,$row);
+                        $number=$number-1;
+                    }
+                }
+                $queryResult->free();
+                return $result;
+            }
+            else {
+                $queryResult->free();
+                return "noFavourites";
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function getUserPublicInfo(string $username): array | string {
+        $userExistance=$this->checkUserPresence($username);
+        if(is_string($userExistance)) {
+            return $userExistance;
+        } elseif($userExistance==true) {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $getUserInfo=$this->connection->prepare("SELECT nome, data_iscrizione, biografia, tipo_studente, immagine FROM Utente WHERE nome = ?");
+                $getUserInfo->bind_param("s",$username);
+                try {
+                    $getUserInfo->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $getUserInfo->close();
+                    return "ExceptionThrow";
+                }
+                $result=$getUserInfo->get_result();
+                $this->closeDBConnection();
+                $getUserInfo->close();
+                if ($result->num_rows==1) {
+                    $row = mysqli_fetch_assoc($result);
+                    $result->free();
+                    return $row;
+                }
+                else {
+                    $result->free();
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        } else {
+            return "noUserFound";
+        }
+    }
+
     public function getUserInfo(): array | string {
         $isUserLogged=$this->isUserLogged();
         if ($isUserLogged==false) {
@@ -76,7 +180,7 @@ class DB {
         } else {
             $connectionResult=$this->openDBConnection();
             if ($connectionResult) {
-                $getUserInfo=$this->connection->prepare("SELECT * FROM Utente WHERE nome = ?");
+                $getUserInfo=$this->connection->prepare("SELECT nome, data_iscrizione, biografia, tipo_studente, immagine FROM Utente WHERE nome = ?");
                 $getUserInfo->bind_param("s",$isUserLogged);
                 try {
                     $getUserInfo->execute();
