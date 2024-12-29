@@ -71,16 +71,24 @@
 
             <h3 class="content-subtitle content">RICETTE PREFERITE</h3>
 
-            <div id="fav-recipe-list-container" class=" end-paragraph content-container">
+            <div id="fav-recipe-list-container" class="end-paragraph content-container">
                 <ul id="fav-recipe-list" class="content">
+                    <!-- <li> -->
+                        <!-- what user sees if there are no favourite recipes -->
+                        <!-- <p id="empty-fav-recipe-list">Salva le ricette migliori, le potrai trovare qui!</p> -->
+                        <!-- what others on user account (no favourite recipes yet) -->
+                        <!-- <p id="empty-fav-recipe-list">{{username}} sta ancora cercando i piatti che fanno per lui.</p> -->
+                    <!-- </li> -->
                     {{lista-preferiti}}
+
+                    <!-- <button id="more-fav-recipe-btn">Carica le altre ricette</button> -->
+                    <!-- <a href="#fav-recipe-list-container" id="back-up">Torna su</a> -->
                 </ul>
             </div>
 
-            <!-- <a href="./user-edit.html" id="profile-edit-link">MODIFICA PROFILO</a> -->
             <!-- SE CAMBIANO QUESTI DUE a CAMBIARE ANCHE SU USER.PHP -->
             <a href="./user-edit.html" id="edit-profile-link">MODIFICA PROFILO</a>
-            <a href="../php/sign-out.php" id="log-out-btn">ESCI</a>
+            <a href="../php/sign-out.php" id="log-out">ESCI</a>
         </main>
 
         <footer>

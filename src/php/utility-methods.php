@@ -12,11 +12,6 @@ class DB {
 
     private $connection;
     private $tagPermessi = '<em><strong><ul><li>';
-    private $htmlPath = "../html/";
-
-    public function getHtmlPath() {
-        return $this->$htmlPath;
-    }
 
     public static function pulisciInput($value) {
         $value = trim($value);

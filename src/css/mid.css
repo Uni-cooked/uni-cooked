@@ -221,10 +221,14 @@ div#why img {
 /* ================================================== */
 
 /* #region CATALOGUE PAGE */
-#filtri {
+#filters {
     grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 1rem;
+}
+
+select#ord-res {
+    width: 100%;
 }
 
 ul#recipe-list {
@@ -233,7 +237,12 @@ ul#recipe-list {
 
 ul#recipe-list .recipe {
     margin: 0 auto 4em;
-    width: 95%;
+    width: 100%;
+    height: unset;
+}
+
+ul#recipe-list .recipe .recipe-img-crop {
+    height: 12em;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {

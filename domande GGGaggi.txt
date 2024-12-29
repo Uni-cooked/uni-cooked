@@ -8,3 +8,4 @@ quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab v
 * crop img user
 * refactoring css
 * thanks page
+- alt vuoti o rimossi?

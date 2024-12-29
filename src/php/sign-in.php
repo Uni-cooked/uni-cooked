@@ -3,7 +3,7 @@
 require_once "utility-methods.php";
 use DB\DB;
 
-$paginaHtml=file_get_contents($db->getHtmlPath() . "sign-in.html");
+$paginaHtml=file_get_contents("../html/sign-in.html");
 $username="";
 $psw="";
 

@@ -1,3 +1,8 @@
+DELETE FROM Preparazione;
+DELETE FROM Utilizzo_Ingrediente;
+DELETE FROM Ricetta;
+DELETE FROM Ingrediente;
+
 -- caprese
 INSERT INTO Ricetta(nome,categoria,tipo_piatto,tempo_sec,descrizione,data,immagine,prezzo) VALUES
 ("Caprese",
@@ -97,10 +102,9 @@ INSERT INTO Utilizzo_Ingrediente(ingrediente,ricetta,quanto_basta,quantita,unita
 ("petto di pollo","Pollo al curry con riso e piselli",FALSE,80,"g",NULL),
 ("latte di cocco","Pollo al curry con riso e piselli",FALSE,70,"ml",NULL),
 ("sale grosso","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL),
-("sale grosso","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL),
-("sale fino","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL);
+("sale fino","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL),
 ("curry in polvere","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL),
-("olio","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL),
+("olio","Pollo al curry con riso e piselli",TRUE,NULL,NULL,NULL);
 
 INSERT INTO Preparazione(numero,ricetta,descrizione) VALUES
 (1,"Pollo al curry con riso e piselli","Metti l'acqua a bollire per il riso in una pentola. Una volta che fa le bolle versa del sale grosso e poi il riso, abbassa il fuoco a medio-alto e cucina per il tempo indicato sulla confezione."),
