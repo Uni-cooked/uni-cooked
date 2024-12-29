@@ -71,7 +71,7 @@ class DB {
 
     public function getRecipeAverage(string $recipe): int | string {
         $connectionResult=$this->openDBConnection();
-        if($connectionResult) {
+        if ($connectionResult) {
             $getRecipeAverage=$this->connection->prepare("SELECT CAST(AVG(voto) AS DECIMAL (2,0)) AS average FROM Valutazione WHERE ricetta = ?");
             $getRecipeAverage->bind_param("s",$recipe);
             try {
@@ -88,8 +88,7 @@ class DB {
             $result->free();
             if ($row["average"]) {
                 return $row["average"];
-            }
-            else {
+            } else {
                 return 18;
             }
         } else {
