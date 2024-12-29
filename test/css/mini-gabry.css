@@ -13,7 +13,7 @@ margin: 2em 1em 2em 1em;
 }
 
 button#Stella{
-    width: 50%;
+    width: 65%;
     margin-top: 1rem;
 }
 
@@ -22,7 +22,7 @@ ul#IngredientiRicetta{
 }
 
 .voto{
-    float:none;
+    float: none;
 }
 
 textarea#Commento-utente{
@@ -30,24 +30,30 @@ textarea#Commento-utente{
 }
 
 button.SceltaUtente{
-    width: 6em;
-    height: 3em;
+    display:block;
+    width: 100%;
+    margin-right: 0;
 }
 
-button#Commenta{
-    margin-right: 0;
+img.InfoUtente{ 
+    max-height: 15%;
+    width: 50px;
+}
+
+p#DataCommento{
+    display: block;
+    float: none;
 }
 
 p#VotoUtente{
     margin-top: 2em;
-    text-align: center;
 }
 
 li.CommentoUtenti{
     margin-bottom: 1em;
 }
 
-button#Carica{
-    width:50%;
+button#Carica, button#CancellaCommento{
+    width:65%;
     margin-top: 1em;
 }
