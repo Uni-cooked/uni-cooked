@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
             $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente inserito non può essere utilizzato.",$paginaHtml);
         } else if (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         } else {
             $paginaHtml = str_replace("{{messaggio di nome}}","",$paginaHtml);
@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
             $paginaHtml = str_replace("{{messaggio di email}}","Questa <span lang=\"en\">email</span> non può essere utilizzata.",$paginaHtml);
         } else if (strcmp($isEmailPresent,"ExceptionThrow")==0 || strcmp($isEmailPresent,"ConnectionFailed")==0) {
             $_POST = null;
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         } else {
             $paginaHtml = str_replace("{{messaggio di email}}","",$paginaHtml);
@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
             exit();
         } else {
             $_POST = null;
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         }
     } else {

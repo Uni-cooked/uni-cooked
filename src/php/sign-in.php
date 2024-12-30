@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
         $_POST = null;
-        header('Location: 505-err.php');
+        header('Location: 500-err.php');
         exit();
     }
 } else {

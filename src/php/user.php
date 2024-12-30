@@ -20,7 +20,7 @@ if(!isset($_GET["username"])) {
     $paginaHtml=str_replace("{{username}}",strtoupper($isLogged),$paginaHtml);
     $userInfo=$db->getUserInfo();
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
-        header('Location: 505-err.php');
+        header('Location: 500-err.php');
         exit();
     } else if(is_string($userInfo) && strcmp($userInfo,"userIsNotLogged")==0) {
         header('Location: sign-in.php');
@@ -42,7 +42,7 @@ if(!isset($_GET["username"])) {
 
         $favouritesList=$db->getUserFavourites($isLogged);
         if(is_string($favouritesList) && (strcmp($favouritesList,"ExceptionThrow")==0 || strcmp($favouritesList,"ConnectionFailed")==0)) {
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         }
         elseif(is_string($favouritesList) && strcmp($favouritesList,"noFavourites")==0) {
@@ -56,7 +56,7 @@ if(!isset($_GET["username"])) {
                 $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
                 $average=$db->getRecipeAverage($recipe["nome"]);
                 if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
-                    header('Location: 505-err.php');
+                    header('Location: 500-err.php');
                     exit();
                 }
                 $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\">/</abbr>30</li>";
@@ -77,7 +77,7 @@ if(!isset($_GET["username"])) {
     $paginaHtml=str_replace("{{username}}",strtoupper($username),$paginaHtml);
     $userInfo=$db->getUserPublicInfo($username);
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
-        header('Location: 505-err.php');
+        header('Location: 500-err.php');
         exit();
     } elseif(is_string($userInfo) && strcmp($userInfo,"noUserFound")==0) {
         header('Location: 404-err.php');
@@ -99,7 +99,7 @@ if(!isset($_GET["username"])) {
 
         $favouritesList=$db->getUserFavourites($username);
         if(is_string($favouritesList) && (strcmp($favouritesList,"ExceptionThrow")==0 || strcmp($favouritesList,"ConnectionFailed")==0)) {
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         }
         elseif(is_string($favouritesList) && strcmp($favouritesList,"noFavourites")==0) {
@@ -109,11 +109,11 @@ if(!isset($_GET["username"])) {
             $recipeList = "";
             foreach($favouritesList as $recipe) {
                 $recipeList.="<li class=\"fav-recipe content\">";
-                $recipeList.='<div class="fav-recipe-img-crop"><img src="'.$recipe["immagine"].'"></div>';
+                $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
                 $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
                 $average=$db->getRecipeAverage($recipe["nome"]);
                 if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
-                    header('Location: 505-err.php');
+                    header('Location: 500-err.php');
                     exit();
                 }
                 $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\">/</abbr>30</li>";
@@ -125,8 +125,8 @@ if(!isset($_GET["username"])) {
             }
             $paginaHtml=str_replace("{{lista-preferiti}}",$recipeList,$paginaHtml);
         }
-        $paginaHtml=str_replace("<a href=\"./user-edit.html\" id=\"edit-profile-link\">MODIFICA PROFILO</a>","",$paginaHtml);
-        $paginaHtml=str_replace("<a href=\"../php/sign-out.php\" id=\"log-out-btn\">ESCI</a>","",$paginaHtml);
+        $paginaHtml=str_replace('<a href="./user-edit.html" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
+        $paginaHtml=str_replace('<a href="../php/sign-out.php" id="log-out" class="shadow">ESCI</a>',"",$paginaHtml);
         echo $paginaHtml;
     }
 }
