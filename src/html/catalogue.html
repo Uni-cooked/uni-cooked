@@ -42,8 +42,7 @@
                         <li id="current-page">RICETTE</li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
                         <li id="profile-item">
-                            <a href="./sign-in.html">ACCEDI</a>
-                            <!-- <a href="./user.html">PROFILO</a> -->
+                            <a href="./sign-in.html" class="shadow">ACCEDI</a>
                         </li>
                     </ul>
                 </nav>
@@ -69,7 +68,7 @@
                             <option value="tutti">Tutti</option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
-                            <option value="in-sede">In sede</option>
+                            <option value="in_sede">In sede</option>
                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                         </select>
                     </div>
@@ -93,16 +92,16 @@
                     </div>
                 </fieldset>
                 
-                <button type="submit" id="search-btn">CERCA</button>
+                <button type="submit" id="search-btn" class="shadow">CERCA</button>
             </form>
             
             <h3 class="content-subtitle content">RISULTATI</h3>
             <form action="" class="content">
                 <label for="ord-res" class="form-label">ORDINA I RISULTATI</label>
                 <select id="ord-res" onchange="">
-                    <option value="voto-desc">Dal voto più alto</option>
-                    <option value="prezzo-asc">Dal più economico</option>
-                    <option value="prezzo-desc">Dal più costoso</option>
+                    <option value="voto_desc">Dal voto più alto</option>
+                    <option value="prezzo_asc">Dal più economico</option>
+                    <option value="prezzo_desc">Dal più costoso</option>
                 </select>
             </form>
             <ul id="recipe-list" class="content">
@@ -240,11 +239,13 @@
                 </li>
             </ul>
 
-            <div id="page-changer" class="end-paragraph">
-                <button id="prev-page-btn" aria-label="via alla pagina precedente"></button>
-                <span>1</span><span>/</span><span>10</span>
-                <button id="next-page-btn" aria-label="vai alla pagina successiva"></button>
-            </div>
+            <form action="">
+                <fieldset id="page-changer" class="end-paragraph">
+                    <button id="prev-page-btn" class="shadow" aria-label="via alla pagina precedente"></button>
+                    <span>1</span><span>/</span><span>10</span>
+                    <button id="next-page-btn" class="shadow" aria-label="vai alla pagina successiva"></button>
+                </fieldset>
+            </form>
         </main>
 
         <footer>

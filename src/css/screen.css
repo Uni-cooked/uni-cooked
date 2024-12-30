@@ -97,6 +97,7 @@ button {
     border-style: none;
     border-radius: var(--radius-small);
     font-weight: 700;
+    cursor: pointer;
 }
 
 fieldset {
@@ -167,6 +168,10 @@ fieldset {
 .hide {
     position: absolute;
     text-indent: -999em;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 1px rgba(0,0,0,0.5);
 }
 /* #endregion GENERAL CLASSES */
 
@@ -527,21 +532,20 @@ dd input{
     pointer-events: none;
 }
 
-dd:has(input:focus-visible) #role-info-label {
+dd:has(input:focus-visible) .role-info-label {
     border: 2px solid white;
 }
 
-dd:has(input:checked) #role-info-label {
+dd:has(input:checked) .role-info-label {
     color: var(--bg-primary);
     background-color: var(--accent);
     box-shadow: inset 0px 4px 8px 1px rgba(0, 0, 0, 0.6);
 }
 
-dd #role-info-label {
+dd .role-info-label {
     color: var(--text-color);
     background-color: var(--accent-trinary);
     border-radius: var(--radius-max);
-    box-shadow: 0 4px 8px 1px rgba(0,0,0,0.5);
     padding: 1rem;
     font-weight: 700;
     margin-top: 2rem;
@@ -551,7 +555,7 @@ dd #role-info-label {
     transition: background-color 600ms , color 600ms;
 }
 
-#role-desc a{
+.role-desc a{
     display: block;
     width: fit-content;
     margin-top: 1rem;
