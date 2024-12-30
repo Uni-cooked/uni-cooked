@@ -46,7 +46,7 @@
                 
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
-                    <p><a href="./user.html">PROFILO UTENTE</a> > MODIFICA</p>
+                    <p><a href="user.php">PROFILO UTENTE</a> > MODIFICA</p>
                 </nav>
             </div>
         </header>
@@ -54,37 +54,40 @@
         <main>
             <div id="user-edit" class="content">
                 <h2 class="content-subtitle">MODIFICA PROFILO</h2>
-                <form action="">
+                <form action="user-edit.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <div id="primary-info">
                             <div id="edit-pp">
-                                <img src="../asset/img/dad.jpg" alt="immagine del profilo" srcset="">
+                                <img src="{{profile-pic}}" alt="Immagine profilo di {{username}}" srcset="">
                                 <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
-                                <input required type="file" id="profile-img-edit" accept="image/*">
+                                <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg">
+                                <p id="profile-pic-err-p">{{profile-pic-error}}</p>
                             </div>
     
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
-                                    <input required type="text" id="nickname-edit" class="input-margin">
+                                    <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit">
+                                    <p>{{nickname-error}}</p>
                                 </div>
                                 
                                 <div class="input-container">
                                     <label class="form-label" for="stud-cat-edit">Categoria studente</label>
-                                    <select required id="stud-cat-edit">
-                                            <option value="fuorisede" selected>Fuorisede</option>
+                                    <select required id="stud-cat-edit" name="stud-cat-edit">
+                                            <option value="fuorisede">Fuorisede</option>
                                             <option value="pendolare">Pendolare</option>
-                                            <option value="in-sede">In sede</option>
+                                            <option value="in_sede">In sede</option>
                                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                                     </select>
+                                    <p>{{stud-cat-edit-error}}</p>
                                 </div>
                             </div>
                         </div>
                         <div id="edit-bio">
                             <label class="form-label" for="bio-edit">Biografia</label>
-                            <textarea id="bio-edit"></textarea>
+                            <textarea id="bio-edit" name="bio-edit">{{biografia}}</textarea>
                         </div>
-                        <button class="button-input button-input-confirm" type="submit">CONFERMA</button>
+                        <button class="button-input button-input-confirm" type="submit" name="submit-profile-changes">CONFERMA</button>
                         <button class="button-input button-input-cancel" type="reset">ANNULLA</button>
                     </fieldset>
                 </form>
@@ -92,9 +95,10 @@
 
             <div class="content">
                 <h2 class="content-subtitle">ZONA PERICOLOSA</h2>
-                <form action="">
-                    <button class="danger-btn">CANCELLA RICETTE PREFERITE</button>
-                    <button class="danger-btn">CANCELLA ACCOUNT</button>
+                <p id="danger-zone-alert"><strong>ATTENZIONE: NON VERRÀ RICHIESTA CONFERMA</strong></p>
+                <form action="user-edit.php" method="post">
+                    <button class="danger-btn" type="submit" name="delete-recipe">CANCELLA RICETTE PREFERITE</button>
+                    <button class="danger-btn" name="delete-account">CANCELLA ACCOUNT</button>
                 </form>
             </div>
         </main>

@@ -9,3 +9,4 @@ quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab v
 * refactoring css
 * thanks page
 - alt vuoti o rimossi?
+- controlli php per immagini

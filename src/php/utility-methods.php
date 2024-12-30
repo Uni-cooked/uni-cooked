@@ -11,7 +11,7 @@ class DB {
     private const PSW = "psw";
 
     private $connection;
-    private $tagPermessi = '<em><strong><ul><li>';
+    private $tagPermessi = '<em><strong>';
 
     public static function pulisciInput($value) {
         $value = trim($value);
@@ -84,7 +84,7 @@ class DB {
             if ($row["average"]) {
                 return $row["average"];
             } else {
-                return 18;
+                return "-";
             }
         } else {
             return "ConnectionFailed";
@@ -325,4 +325,95 @@ class DB {
             return false;
         }
     }
+
+    public function deleteUser(): bool | string { //[FIX] PULIRE CARTELLE USER_DATA
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $getUserInfo=$this->connection->prepare("DELETE FROM Utente WHERE nome = ?");
+                $getUserInfo->bind_param("s",$isUserLogged);
+                try {
+                    $getUserInfo->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $getUserInfo->close();
+                    return "ExceptionThrow";
+                }
+                $result=$getUserInfo->affected_rows;
+                $this->closeDBConnection();
+                $getUserInfo->close();
+                if ($result==1) {
+                    $logOutResult=DB::logOutUser();
+                    if(is_string($logOutResult) && strcmp($logOutResult,"userIsNotLoggedIn")==0)
+                    {
+                        return "genericError";
+                    }
+                    return true;
+                } else {
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+    public function deleteUserPreferredRecipe(): bool | string {
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $getUserInfo=$this->connection->prepare("DELETE FROM Preferenza_Ricetta WHERE utente = ?");
+                $getUserInfo->bind_param("s",$isUserLogged);
+                try {
+                    $getUserInfo->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $getUserInfo->close();
+                    return "ExceptionThrow";
+                }
+                $this->closeDBConnection();
+                $getUserInfo->close();
+                return true;
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+
+    public function changeUserData($username,$categoria,$biografia,$image=null): bool | string {
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $changeUserData=$this->connection->prepare("UPDATE Utente SET nome=?, tipo_studente=?, biografia=?, immagine=? WHERE nome=?");
+                $changeUserData->bind_param("sssss",$username,$categoria,$biografia,$image,$isUserLogged);
+                try {
+                    $changeUserData->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $changeUserData->close();
+                    return "ExceptionThrow";
+                }
+                $result=$changeUserData->affected_rows;
+                $this->closeDBConnection();
+                $changeUserData->close();
+                if ($result==1) {
+                    $_SESSION["logged_user"] = $username;
+                    return true;
+                } else {
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+
 }
