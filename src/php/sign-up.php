@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{messaggio di nome}}","Questo nome utente non può essere utilizzato.",$paginaHtml);
+            $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente inserito non può essere utilizzato.",$paginaHtml);
         } else if (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 505-err.php');

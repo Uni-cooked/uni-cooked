@@ -1005,7 +1005,8 @@ a#log-out {
     object-fit: cover;
     border-radius: var(--radius-max);
     display: block;
-    margin-bottom: 2rem;
+    margin: auto;
+	margin-bottom: 2rem;
 }
 
 #user-edit #edit-pp label {
@@ -1015,6 +1016,14 @@ a#log-out {
     padding: .5rem 1.5rem;
     color: var(--bg-primary);
     font-weight: 800;
+}
+
+#profile-pic-err-p {
+    margin-top: 1rem;
+}
+
+#danger-zone-alert {
+    margin-bottom: 1rem;
 }
 
 #user-edit #edit-info {
