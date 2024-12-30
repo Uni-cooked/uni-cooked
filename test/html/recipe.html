@@ -26,7 +26,6 @@
             <h2 id="header-subtitle" lang="en">DON'T LET UNI COOK YOU</h2>
             <nav id="menu">
                 <ul>
-                    <!-- TODO: add href to the respective pages -->
                     <li><a href="index.html"><span lang="en">HOME</span></a></li>
                     <li><a href="insert-recipe.html">I PIATTI</a></li>
                     <li><a href="">CONTATTI</a></li>
@@ -39,94 +38,104 @@
             <p>Sei in: <a href="./index.html" lang="en">Home</a> > <a href="./catalogue.html"> Ricette </a> > Nome-ricetta</p>
         </nav>
 
-    <main id="mainInfoRicetta">
-        <h2 id="NomeRicetta" class="Intro">NOME_RICETTA</h2>
-        <div id="ImgInfoRicetta">
-            <img id="LocandinaRicetta" alt="Locandina ricetta" src="../img/RicettaProva.jpg"/> 
-            <ul id="InfoRicetta">          
-                <li><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/grade.svg" />18/30</li>
-                <li><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/student.svg" />Fuorisede</li>
-                <li><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/course.svg" />Primo piatto</li>
-                <li><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/time.svg" />5-10 minuti</li>
-                <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/cost.svg" />50</li>
-            </ul>  
-        </div> 
+        <main id="mainInfoRicetta">
+            <h2 id="NomeRicetta" class="Intro">NOME_RICETTA</h2>
+            <div id="ImgInfoRicetta">
+                <!-- non è croppata -->
+                <img id="LocandinaRicetta" alt="Locandina ricetta" src="../img/RicettaProva.jpg"/> 
+                <ul id="InfoRicetta">          
+                    <li><img id="ValutazioneRicetta" alt="Valutazione ricetta" src="../../Assets/Icons/grade.svg" />18/30</li>
+                    <li><img id="TipoStudente" alt="Tipo di studente a cui è indicata la ricetta" src="../../Assets/Icons/student.svg" />Fuorisede</li>
+                    <li><img id="TipoPiatto" alt="Tipo di piatto a cui appartiene la ricetta" src="../../Assets/Icons/course.svg" />Primo piatto</li>
+                    <li><img id="TempoRicetta" alt="Tempo di preparazione della ricetta" src="../../Assets/Icons/time.svg" />5-10 minuti</li> <!-- abbr -->
+                    <li><img id="CostoRicetta" alt="Costo indicativo della ricetta" src="../../Assets/Icons/cost.svg" />50</li>
+                </ul>  
+            </div> 
 
-        <form action="" method="post">
-            <button type="submit" id="Stella"></button>
-        </form>
-
-        <p class="Sezione">Descrizione</p>
-
-        <h3 class="Sottotitolo">INGREDIENTI</h3>
-        <ul class ="Sezione" id="IngredientiRicetta">
-            <li>Ingrediente1</li>
-            <li>Ingrediente2</li>
-            <li>Ingrediente3</li>
-            <li>Ingrediente4</li>
-            <li>Ingrediente5</li>
-            <li>Ingrediente6</li>
-        </ul>
-
-        <h3 class="Sottotitolo">PREPARAZIONE</h3>
-        <ol class="Sezione" id="PreparazioneRicetta">
-            <li>Passaggio1</li>
-            <li>Passaggio2</li>
-            <li>Passaggio3</li>
-        </ol>
-
-        <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
-        <section id="CommentoUtente">
-            <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
+            <!-- meglio in get così si può salvare la pagina tra i preferiti -->
             <form action="" method="post">
-                <fieldset>
-                    <label for="Voto-utente">Aggiungi una valutazione</label>
-                    <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" required></input>
-                    <p class="voto" id="MaxVoto">/ 30</p>
-                    <label for="Commento-utente">Commenta</label>
-                    <textarea name="Commento-utente" id="Commento-utente" name="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
-                </fieldset>
-                <button type="submit" class="SceltaUtente" id="Commenta" name="Commenta">Commenta</button>
-                <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
+                <button type="submit" id="Stella"></button>
             </form>
-        </section>
-        
-        <h4>Il tuo commento:</h4>
-        <article id="TuoCommento">
-            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
-            <a href="" class="InfoUtente">Nome Utente</a>
-            <p class="InfoUtente" id="DataCommento">Data</p>
-            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
-            <p class="ValutazioneUtente">Commento</p>
-            <button type="submit" id="CancellaCommento">Cancella il commento</button>
-        </article>
 
-        <h4>Cosa pensano gli altri utenti:</h4>
-        <section id="CommentiAltriUtenti">
-            <ul>
-                <li class="CommentoUtenti">
-                    <article class="Commento">
-                        <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
-                        <a href="" class="InfoUtente">Nome Utente</a>
-                        <p class="InfoUtente" id="DataCommento">Data</p>
-                        <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
-                        <p class="ValutazioneUtente">Commento</p>
-                    </article>
-                </li>
-                <li class="CommentoUtenti">
-                    <article class="Commento">
-                        <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
-                        <a href="" class="InfoUtente">Nome Utente</a>
-                        <p class="InfoUtente" id="DataCommento"><time datetime="">Data</time></p>
-                        <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
-                        <p class="ValutazioneUtente">Commento</p>
-                    </article>
-                </li>
+            <p class="Sezione">Descrizione</p>
+
+            <h3 class="Sottotitolo">INGREDIENTI</h3>
+            <ul class ="Sezione" id="IngredientiRicetta">
+                <li>Ingrediente1</li>
+                <li>Ingrediente2</li>
+                <li>Ingrediente3</li>
+                <li>Ingrediente4</li>
+                <li>Ingrediente5</li>
+                <li>Ingrediente6</li>
             </ul>
-        </section>
 
-        <button type="submit" id="Carica">Carica altri commenti</button>
+            <h3 class="Sottotitolo">PREPARAZIONE</h3>
+            <ol class="Sezione" id="PreparazioneRicetta">
+                <li>Passaggio1</li>
+                <li>Passaggio2</li>
+                <li>Passaggio3</li>
+            </ol>
 
+            <h3 class="Sottotitolo" id="Commento">COMMENTI</h3>
+            <!-- una section è un po' forzata qua, non c'è un obbligo nell'ordine di lettura -->
+            <section id="CommentoUtente">
+                <!-- alt attaccato -->
+                <img alt="ImmagineUtente" id="ImgUtente" src="../img/Utente.png" />
+                <form action="" method="post">
+                    <fieldset>
+                        <label for="Voto-utente">Aggiungi una valutazione</label>
+                        <input type="number" name="Voto-utente" class="voto" id="Voto-utente" placeholder="18" min="0" max="30" required></input>
+                        <p class="voto" id="MaxVoto">/ 30</p>
+                        <label for="Commento-utente">Commenta</label>
+                        <!-- ci sono due name -->
+                        <textarea name="Commento-utente" id="Commento-utente" name="Commento-utente" placeholder="Scrivi un commento" maxlength="1000" required></textarea>
+                    </fieldset>
+                    <button type="submit" class="SceltaUtente" id="Commenta" name="Commenta">Commenta</button>
+                    <button type="reset" class="SceltaUtente" id="Cancella" name="Cancella">Cancella</button>
+                </form>
+            </section>
+            
+            <h4>Il tuo commento:</h4>
+            <article id="TuoCommento">
+                <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                <a href="" class="InfoUtente">Nome Utente</a>
+                <p class="InfoUtente" id="DataCommento">Data</p>
+                <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+                <p class="ValutazioneUtente">Commento</p>
+                <!-- non si può avere un submit fuori da una form -->
+                <button type="submit" id="CancellaCommento">Cancella il commento</button>
+            </article>
+
+            <h4>Cosa pensano gli altri utenti:</h4>
+            <!-- stesso discorso per la section prima, inoltre non aggiunge nulla alla ul che poteva stare "da sola" -->
+            <section id="CommentiAltriUtenti">
+                <ul>
+                    <li class="CommentoUtenti">
+                        <!-- article è un div più semantico, bastava mettere tutto dentro li -->
+                        <!-- la classe è stata rimossa dal css -->
+                        <article class="Commento">
+                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                            <a href="" class="InfoUtente">Nome Utente</a>
+                            <p class="InfoUtente" id="DataCommento">Data</p>
+                            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+                            <p class="ValutazioneUtente">Commento</p>
+                        </article>
+                    </li>
+                    <li class="CommentoUtenti">
+                        <article class="Commento">
+                            <img alt="ImmagineUtente" class="InfoUtente" src="../img/Utente.png">
+                            <a href="" class="InfoUtente">Nome Utente</a>
+                            <p class="InfoUtente" id="DataCommento"><time datetime="">Data</time></p>
+                            <p class="ValutazioneUtente" id="VotoUtente">Voto</p>
+                            <p class="ValutazioneUtente">Commento</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- non si può avere un submit fuori form -->
+            <button type="submit" id="Carica">Carica altri commenti</button>
+        </main>
 
         <footer>
             <img src="../img/valid-xhtml10.png" alt="HTML valido" class="valid">
@@ -134,6 +143,5 @@
             <img src="../img/vcss-blue.gif" alt="CSS valido" class="valid">
             <a href="#top">Torna su</a>
         </footer>
-
     </body>
 </html>

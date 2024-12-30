@@ -1,3 +1,4 @@
+/* #region HEADER */
 /*
 *   GLOBALI
 */
@@ -229,9 +230,8 @@ nav#breadcrumb p
     padding-left: 1%;
     padding-right: 1%;
 }
-/*
-*  INFO RICETTA TEMPLATE
-*/
+/* #endregion HEADER */
+
 main{
     text-align: center;
     color: var(--textbgcolor);
@@ -247,11 +247,13 @@ h2{
     margin: 2rem 4rem 2rem 4rem;
 }
 
+/* ??? */
 img
 {
     text-indent: -999em; 
 }
 
+/* perché a tutti questi? piuttosto è il main ad avere il color di default  */
 p, p#MaxVoto, li, article{
     color: white;
 }
@@ -266,18 +268,18 @@ div#ImgInfoRicetta
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-right: 1.5em;
+    /* padding-right: 1.5em; ?? */
 }
 
 ul#InfoRicetta
 {
     margin: 2rem 0 2rem 2rem;
-    flex-direction: column;
+    /* flex-direction: column; non ha flex*/
     text-align: left;
     list-style-type: none;
 }
 
-
+/* sovrascrive 9 righe sopra */
 ul#InfoRicetta
 {
     margin-left: 8rem;
@@ -290,7 +292,8 @@ ul#InfoRicetta li
 
 ul#InfoRicetta li img
 {
-    vertical-align: text-bottom;
+    /* vertical-align: text-bottom; */
+    vertical-align: middle;
     padding-right: 1.5em;
 }
 
@@ -316,8 +319,11 @@ button,input{
     font-size: 1.1rem;
 }
 
+/* metà roba penso sia roba vecchia della stella (bg size???) */
 button#Stella
 {
+    /* problematico per gli sr, visto che php ricarica la pagina conviene lui cambi la scritta */
+    /* btw non viene visualizzato, basta metter il testo nel button */
     content: "Aggiungi ai preferiti";
     cursor: pointer;
     border-radius: 0.5em;
@@ -326,18 +332,20 @@ button#Stella
     align-content: center;
     background-color: var(--textbgcolor);
     background-size: 2em;
+    /* troppo variabili con screen size */
     width: 25%;
     height: 5vh;
 }
 
 button#Stella::after
 {
+    /* stesso discorso di php, btw non andrebbe con after */
     content: "Aggiunto ai preferiti \2713";
 }
 
 ul#IngredientiRicetta
 {
-    list-style-type: disc;
+    /* list-style-type: disc; default */
     display: flex;
     flex-flow: wrap;
     flex-direction: row;
@@ -347,12 +355,14 @@ ul#IngredientiRicetta
 
 ul#IngredientiRicetta li
 {
+    /* i grandi poteri? ahah, bastava un width */
     flex: 1 1 33%;
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
+/* bastava mettere display block e text-align left */
 ol#PreparazioneRicetta
 {
     display: flex;
@@ -373,7 +383,7 @@ h3#Commento
 section#CommentoUtente 
 {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; default */
     padding: 1rem 0 1rem 0;
     margin: 0 4rem 2rem 4rem;
 }  
@@ -384,6 +394,7 @@ form
 }
 
 img#ImgUtente{
+    /* max? */
     max-width: 10%;
     max-height: 10%;
 }
@@ -391,22 +402,24 @@ img#ImgUtente{
 img#ImgUtente, img.InfoUtente
 {
     border-radius: 50%;
+    /* vengono bloccate in ambo i casi */
     width: 15%;
     height: 15%;
     float: left;
     margin-right: 2%;
-    background-color: var(--bg-primary);
+    /* background-color: var(--bg-primary); ?? */
 }
 
 fieldset
 {
     border: 2px solid var(--accent);
-    min-width: 65%;
+    /* min-width: 65%; ?? */
     margin-bottom: 2%;
 }
 
 .voto{
     display: inline;
+    /* meglio em */
     margin: 1.5%;
     float: left;
 }
@@ -450,18 +463,19 @@ button#Commenta{
 }
 
 h4{
-    clear: both;
+    /* clear: both; ??? */
     text-align: center;
 }
 
 article#TuoCommento{
     margin:  2em 4em 2em 4em;
-    clear: both;
+    /* clear: both; ??? */
     padding: 1em;
     border: 2px solid var(--accent);
     text-align: start;
 }
 
+/* #ValutazioneUtente ??? */
 article#TuoCommento p#ValutazioneUtente{
     text-align: center;
 }
@@ -479,14 +493,15 @@ article#TuoCommento button{
 
 section#CommentiAltriUtenti{
     margin: 2rem 4rem 2rem 4rem;
-    clear: both;
+    /* clear: both; ??? */
 }
 
 li.CommentoUtenti{
     margin-bottom: 3rem;
     list-style-type: none;
-    justify-content: start;
+    /* justify-content: start; ??? */
     text-align: start;
+    /* dovrebbe essere nella root */
     line-height: 1.5em;
 }
 
@@ -496,7 +511,7 @@ li article{
 
 .InfoUtente{
     display: inline;
-    vertical-align: baseline;
+    /* vertical-align: baseline; ??? */
     margin-bottom: 1.5rem;
 }
 
@@ -528,12 +543,15 @@ button#Carica
     border-radius: 0.5em;
     cursor: pointer;
     margin: 2rem 4rem 2rem 4rem;
-    justify-content: center;
-    align-items: center;
+    /* non c'è flex */
+    /* justify-content: center;
+    align-items: center; */
+    /* troppo variabili con screen size */
     width: 25%;
     height: 5vh;
 }
 
+/* #region FOOTER */
 /*
 ==================================================
 FOOTER
@@ -569,3 +587,4 @@ input[type="number"]::-webkit-inner-spin-button{
     width: 3em;
     background-color: white;
 }
+/* #endregion FOOTER */
