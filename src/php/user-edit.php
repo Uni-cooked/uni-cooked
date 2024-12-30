@@ -132,7 +132,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
             $paginaHtml = str_replace("{{profile-pic-error}}","",$paginaHtml);            
         }
     } else {
-        $userPath="";
+        $userPath=$userInfo["immagine"];
         $paginaHtml = str_replace("{{profile-pic-error}}","",$paginaHtml);
     }
 
@@ -153,11 +153,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
         echo $paginaHtml;
     } else {
         $changeResult=false;
-        if(strlen($userPath)==0) {
-            $changeResult=$db->changeUserData($username,$categoria,$biografia);
-        } else {
-            $changeResult=$db->changeUserData($username,$categoria,$biografia,$userPath);
-        }
+        $changeResult=$db->changeUserData($username,$categoria,$biografia,$userPath);
         if(is_bool($changeResult) && $changeResult==true) {
             header('Location: user.php');
             exit();
