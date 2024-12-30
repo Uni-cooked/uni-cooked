@@ -32,7 +32,7 @@ if(!isset($_GET["username"])) {
         if ($userInfo["biografia"]) {
             $paginaHtml=str_replace("{{biografia}}",$userInfo["biografia"],$paginaHtml);
         } else {
-            $paginaHtml=str_replace("{{biografia}}","Sembra tu non abbia ancora impostato una biografia: <a href=\"user-edit.php\">modifica il tuo profilo</a>!",$paginaHtml);
+            $paginaHtml=str_replace("{{biografia}}","Sembra tu non abbia una biografia! <a href=\"user-edit.php\">Modifica il tuo profilo</a> e scrivi qualcosa di te.",$paginaHtml);
         }
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
