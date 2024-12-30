@@ -42,24 +42,32 @@
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
                         <li id="profile-item">
-                            <a href="./sign-in.html" class="shadow">ACCEDI</a>
+                            <a href="./user-in.html" class="shadow">PROFILO</a>
                         </li>
                     </ul>
                 </nav>
                 
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
-                    <p>RINGRAZIAMENTI</p>
+                    <p>CONFERMA AZIONE</p>
                 </nav>
             </div>
         </header>
 
         <main id="content" class="single-msg-page-content content">
-            <h1 id="single-msg-page-h1">GRAZIE</h1>
-            <h2 id="single-msg-page-h2">I consigli sono sempre utili!</h2>
+            <!-- CANCELLA PROFILO -->
+            <!-- CANCELLA RICETTE PREFERITE -->
+            <h1 id="single-msg-page-h1">{{titolo}}</h1>
+            <!-- Non mollare gli studi proprio ora! -->
+            <!-- A quanto pare queste ricette non fanno per te! -->
+            <h2 id="single-msg-page-h2">{{sottotitolo}}</h2>
             <p id="single-msg-page-p">
-                Abbiamo ricevuto la tua proposta, ti contatteremo nel caso in cui volessimo aggiungerla al nostro catalogo.
+                <!-- Stai cancellando il tuo profilo permanentemente, una volta confermato non potrai recuperarlo in alcun modo! -->
+                <!-- Stai eliminando tutte le tue ricette dai preferiti, sei proprio sicuro che nessuna faccia per te? -->
+                {{messaggio}}
             </p>
+
+            <a href="./index.html" class="single-msg-page-a shadow">CONFERMA</a>
             <a href="./index.html" class="single-msg-page-a shadow">TORNA ALLA <span lang="en">HOME</span></a>
         </main>
 

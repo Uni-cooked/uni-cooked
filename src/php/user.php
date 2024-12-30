@@ -120,7 +120,7 @@ if(!isset($_GET["username"])) {
                 $categoria=str_replace("_"," ",$recipe["categoria"]);
                 $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
                 $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]."€</li></ul>";
+                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
                 $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
             }
             $paginaHtml=str_replace("{{lista-preferiti}}",$recipeList,$paginaHtml);

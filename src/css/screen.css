@@ -357,6 +357,14 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
     color: var(--accent);
 }
 
+main h1 {
+    word-spacing: var(--word-spacing);
+}
+
+main h2, main h3 {
+    word-spacing: calc(var(--word-spacing) * .3);
+}
+
 abbr {
     text-decoration: none;
 }
@@ -780,6 +788,7 @@ ul#recipe-list .recipe a {
 #mail-up-container {
     clear: both;
 }
+
 .sign-box #credentials {
     margin-bottom: 3rem;
 }
@@ -1146,15 +1155,19 @@ a#log-out {
     margin-bottom: 4rem;
 }
 
-#single-msg-page-a {
+.single-msg-page-a {
     display: block;
     width: 14em;
     font-size: var(--button-text);
     font-weight: 700;
     background-color: var(--accent);
     padding: 1em 0;
-    margin: auto;
+    margin: 0 auto;
     border-radius: var(--radius-small);
+}
+
+.single-msg-page-a:nth-of-type(2) {
+    margin-top: 1.5em;
 }
 /* #endregion SINGLE MESSAGE PAGE */
 
