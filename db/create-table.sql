@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Utente;
 DROP TABLE IF EXISTS Ingrediente;
 
 CREATE TABLE Utente(
-    nome VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(15) PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(64) NOT NULL,  -- SHA256 restituisce sempre una stringa di 64 caratteri
     data_iscrizione DATE NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE Ricetta(
 
 CREATE TABLE Preferenza_Ricetta(
     ricetta VARCHAR(50) NOT NULL,
-    utente VARCHAR(100) NOT NULL,
+    utente VARCHAR(15) NOT NULL,
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
@@ -63,7 +63,7 @@ CREATE TABLE Preparazione(
 
 CREATE TABLE Valutazione(
     ricetta VARCHAR(50),
-    utente VARCHAR(100),
+    utente VARCHAR(15),
     commento VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
     voto TINYINT NOT NULL CHECK(voto>0 AND voto<=30),
@@ -73,7 +73,7 @@ CREATE TABLE Valutazione(
 );
 
 CREATE TABLE Suggerimenti(
-    utente VARCHAR(100),
+    utente VARCHAR(15),
     data DATE,
     testo VARCHAR(500) NOT NULL,
     PRIMARY KEY (utente, data),
