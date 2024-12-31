@@ -255,6 +255,24 @@ ul#recipe-list .recipe ul.recipe-info li {
 
 /* ================================================== */
 
+/* #region RECIPE PAGE */
+/* .content is used only to encrease the selector specificity and
+override the margin-left in ul#ingredient-list li:nth-child(odd) in screen.css */
+ul#ingredient-list.content li {
+    /* to avoid circles overflow to the left */
+    width: calc(49% - 1.1em);
+    margin-left: 1.1em;
+}
+
+#add-comment-pp {
+    display: block;
+    float: none;
+    margin: 0 auto 1em;
+}
+/* #endregion RECIPE PAGE */
+
+/* ================================================== */
+
 /* #region SIGN UP PAGE */
 #name-up-container {
     float: none;

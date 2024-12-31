@@ -79,7 +79,6 @@ html body {
 
 body {
     background-color: var(--bg-primary);
-    line-height: 1.5;
 }
 
 a {
@@ -173,6 +172,20 @@ fieldset {
 
 .shadow {
     box-shadow: 0 4px 8px 1px rgba(0,0,0,0.5);
+}
+
+.load-more-btn {
+    display: block;
+    padding: .8em 2em;
+    margin: 0 auto;
+    font-size: 1em;
+    background-color: var(--accent);
+}
+
+.back-up-link {
+    display: block;
+    width: fit-content;
+    margin: 1em auto 0;
 }
 /* #endregion GENERAL CLASSES */
 
@@ -351,6 +364,7 @@ main {
     margin-top: var(--main-mt);
     margin-bottom: var(--main-mb);
     transition: visibility var(--animation-timing);
+    color: white;
 }
 
 main h1, main h2, main h3, main h4, main h5, main h6 {
@@ -686,7 +700,7 @@ ul#recipe-list .recipe {
     justify-content: space-between;
 }
 
-ul#recipe-list .recipe .recipe-img-crop {
+ul#recipe-list .recipe .catalogue-recipe-img-crop {
     width: 100%;
     height: 40%;
     border-radius: calc(var(--radius-small) * .5);
@@ -761,6 +775,159 @@ ul#recipe-list .recipe a {
     float: right;
 }
 /* #endregion CATALOGUE PAGE */
+
+/* ================================================== */
+
+/* #region RECIPE PAGE */
+#recipe-name-title {
+    text-align: center;
+}
+
+#recipe-main-info {
+    display: flex;
+    justify-content: center;
+    height: 13em;
+    margin-bottom: 2em;
+}
+
+#recipe-img {
+    width: 15em;
+    height: 100%;
+    border-radius: calc(var(--radius-small) * .5);
+    object-fit: cover;
+}
+
+#recipe-main-info ul {
+    list-style-type: none;
+    text-align: left;
+    margin-left: 4em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#recipe-main-info ul li img {
+    vertical-align: middle;
+    margin-right: .8em;
+}
+
+#recipe-fav-btn {
+    display: block;
+    margin: 0 auto;
+    padding: .5em 1.3em;
+    background-color: var(--accent);
+}
+
+ul#ingredient-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+ul#ingredient-list li {
+    width: 34%;
+    text-align: left;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+ul#ingredient-list li:nth-child(odd) {
+    margin-left: 10%;
+}
+
+ol li.prep-li {
+    padding-left: .5rem;
+    /* to avoid numbers overflow to the left */
+    margin-left: 1.7rem;
+}
+
+ol li.prep-li:not(.prep-li:first-of-type) {
+    margin-top: 2em;
+}
+
+ol li.prep-li::marker {
+    font-size: 130%;
+}
+
+#add-comment {
+    background-color: var(--bg-primary);
+}
+
+#add-comment-pp {
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-left: 1rem;
+    margin-right: 2em;
+}
+
+#add-comment-eval {
+    display: inline;
+    width: 5.5em;
+    text-align: center;
+    font-size: 1em;
+}
+
+#add-comment-eval + span {
+    margin-left: 1em;
+    word-spacing: var(--word-spacing);
+}
+
+#add-comment-text {
+    height: 8em;
+    margin-bottom: 2em;
+}
+
+ul#comment-list {
+    list-style-type: none;
+}
+
+ul#comment-list li {
+    margin-top: 2em;
+}
+
+#user-comment, ul#comment-list li {
+    border-radius: var(--radius-small);
+    padding: 1em;
+    border: 2px solid var(--accent);
+}
+
+button#del-comment {
+    background-color: var(--danger-button-color);
+    width: 100%;
+    padding: .5em 0;
+    margin-top: 1em;
+}
+
+.comment-pp {
+    width: 4em;
+    height: 4em;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: 1em;
+}
+
+.comment-date {
+    float: right;
+    color: var(--accent);
+}
+
+.comment-eval {
+    margin-top: .7em;
+}
+
+.comment-text {
+    margin-top: 1.2em;
+}
+
+#more-comment-btn {
+    margin-top: 2em;
+}
+/* #endregion RECIPE PAGE */
 
 /* ================================================== */
 
@@ -935,19 +1102,6 @@ ul#recipe-list .recipe a {
     font-weight: bold;
 }
 
-button#more-fav-recipe-btn {
-    width: fit-content;
-    padding: .8em 2em;
-    margin: 0 auto;
-    font-size: 1em;
-    background-color: var(--accent);
-}
-
-a#back-up {
-    width: fit-content;
-    margin: 1em auto 0;
-}
-
 a#edit-profile-link {
     display: block;
     margin: 2em auto;
@@ -1031,11 +1185,7 @@ a#log-out {
     width: 100%;
 }
 
-#edit-bio {
-    clear: both;
-}
-
-#edit-bio textarea {
+#bio-edit {
     height: 10rem;
     margin-bottom: 2rem;
 }
@@ -1209,6 +1359,7 @@ input[type="text"],
 input[type="search"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 select {
     display: block;
     width: 100%;
@@ -1267,6 +1418,15 @@ input[type="range"]:focus::-webkit-slider-thumb {
     outline: 3px solid var(--accent-trinary);
     outline-offset: 0.125rem;
 }
+
+input[type="number"] {
+    padding-right: 1em;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
   
 /*********** Firefox styles ***********/
 /* slider track */
@@ -1288,6 +1448,10 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]:focus::-moz-range-thumb{
     outline: 3px solid var(--accent-trinary);
     outline-offset: 0.125rem;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 @supports selector(::-webkit-scrollbar) {

@@ -42,6 +42,34 @@ ul#recipe-list .recipe .recipe-img-crop {
 
 /* ================================================== */
 
+/* #region RECIPE PAGE */
+#recipe-main-info {
+    height: unset;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#recipe-main-info ul {
+    margin-top: .7em;
+}
+
+#recipe-main-info ul li {
+    margin-top: .8em;
+}
+
+ul#ingredient-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+ul#ingredient-list li {
+    width: 60%;
+}
+/* #endregion RECIPE PAGE */
+
+/* ================================================== */
+
 /* #region ABOUT US PAGE */
 #recipie-request button {
     width: 100%;
