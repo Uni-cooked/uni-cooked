@@ -326,7 +326,7 @@ class DB {
         }
     }
 
-    public function deleteUser(): bool | string { //[FIX] PULIRE CARTELLE USER_DATA
+    public function deleteUser(): bool | string {
         $isUserLogged=$this->isUserLogged();
         if ($isUserLogged==false) {
             return "userIsNotLogged";
@@ -390,6 +390,7 @@ class DB {
         if ($isUserLogged==false) {
             return "userIsNotLogged";
         } else {
+            $userPath="../user_profiles/".$_SESSION["logged_user"].'/';
             $connectionResult=$this->openDBConnection();
             if ($connectionResult) {
                 $changeUserData=$this->connection->prepare("UPDATE Utente SET nome=?, tipo_studente=?, biografia=?, immagine=? WHERE nome=?");

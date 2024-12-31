@@ -5,6 +5,7 @@ use DB\DB;
 
 $paginaHtml=file_get_contents("../html/user-edit.html");
 $username="";
+$userInfo=array();
 
 $db = new DB;
 
@@ -19,11 +20,13 @@ if (is_bool($isLogged) && $isLogged==false) {
 
 $userBasePath="../user_profiles/";
 $userPath=$isLogged."/";
+$image="";
 $userInfo=$db->getUserInfo();
+$isProfilePicChanged=false;
 
 if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) && !isset($_POST["delete-account"])) {
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
-        header('Location: 505-err.php');
+        header('Location: 500-err.php');
         exit();
     } else if(is_string($userInfo) && strcmp($userInfo,"userIsNotLogged")==0) {
         header('Location: sign-in.php');
@@ -48,28 +51,14 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
     }
 } elseif(isset($_POST["delete-recipe"])) {
     unset($_POST["delete-recipe"]);
-    $result=$db->deleteUserPreferredRecipe();
-    if(is_bool($result) && $result==true) {
-        header('Location: user.php');
-        exit();
-    } else {
-        header('Location: 505-err.php');
-        exit();
-    }
+    header('Location: confirm.php?action=delete-recipe');
 } elseif (isset($_POST["delete-account"])) {
     unset($_POST["delete-account"]);
-    $result=$db->deleteUser();
-    if(is_bool($result) && $result==true) {
-        header('Location: index.php');
-        exit();
-    } else {
-        header('Location: 505-err.php');
-        exit();
-    }
+    header('Location: confirm.php?action=delete-account');
 } else {
     $errorFound=false;
     $username=$_POST["nickname-edit"];
-    //CONTROLLO USERNAME
+    
     if (strlen($username)==0) {
         $paginaHtml = str_replace("{{nickname-error}}","Il nome utente è un campo obbligatorio.",$paginaHtml);
         $errorFound=true;
@@ -81,7 +70,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
             $paginaHtml = str_replace("{{nickname-error}}","Il nome utente inserito non può essere utilizzato.",$paginaHtml);
         } else if (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
-            header('Location: 505-err.php');
+            header('Location: 500-err.php');
             exit();
         } else {
             $paginaHtml = str_replace("{{nickname-error}}","",$paginaHtml);
@@ -127,12 +116,11 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
                 mkdir($userBasePath.$userPath);
             }
             rename($tmpFile,$userBasePath.$userPath.$isLogged.".".$extension);
-            $userPath=$userBasePath.$userPath.$isLogged.".".$extension;
             unset($_FILES["profile-img-edit"]);
+            $isProfilePicChanged=true;
             $paginaHtml = str_replace("{{profile-pic-error}}","",$paginaHtml);            
         }
     } else {
-        $userPath=$userInfo["immagine"];
         $paginaHtml = str_replace("{{profile-pic-error}}","",$paginaHtml);
     }
 
@@ -152,13 +140,28 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
         }
         echo $paginaHtml;
     } else {
-        $changeResult=false;
-        $changeResult=$db->changeUserData($username,$categoria,$biografia,$userPath);
-        if(is_bool($changeResult) && $changeResult==true) {
-            header('Location: user.php');
-            exit();
+        if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true) {
+            $changeResult=false;
+            $imagedef=scandir($userBasePath.$userPath);
+            $info = new SplFileInfo($imagedef[2]);
+            $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
+            $imagedef="../user_profiles/".$username.'/'.$username.".".$extension;
+            
+            if(is_dir($userBasePath.$userPath) && strcmp($username,$isLogged)!=0) {
+                rename($userBasePath.$userPath.$userInfo["nome"].".".$extension,$userBasePath.$userPath.$username.".".$extension); //rinomina immagine con il nuovo nome utente
+                rename($userBasePath.$userPath,"../user_profiles/".$username.'/'); //rinomina la cartella dell'utente    
+            }
+            
+            $changeResult=$db->changeUserData($username,$categoria,$biografia,$imagedef);
+            if(is_bool($changeResult) && $changeResult==true) {
+                header('Location: user.php');
+                exit();
+            } else {
+                header('Location: user.php');
+                exit();
+            }
         } else {
-            header('Location: user.php'); //[FIX] MANCA DA GESTIRE IPOTESI IN CUI VENGANO CONFERMATI I DATI ATTUALI
+            header('Location: user.php');
             exit();
         }
     }

@@ -49,7 +49,7 @@
                 
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
-                    <p>CONFERMA AZIONE</p>
+                    <p><a href="user.php">PROFILO UTENTE</a> > CONFERMA AZIONE</p>
                 </nav>
             </div>
         </header>
@@ -67,8 +67,8 @@
                 {{messaggio}}
             </p>
 
-            <a href="./index.html" class="single-msg-page-a shadow">CONFERMA</a>
-            <a href="./index.html" class="single-msg-page-a shadow">TORNA ALLA <span lang="en">HOME</span></a>
+            <a href="confirm.php?{{confirm-action}}=true" class="single-msg-page-a shadow">CONFERMA</a>
+            <a href="user.php" class="single-msg-page-a shadow">TORNA AL PROFILO</a>
         </main>
 
         <footer>
