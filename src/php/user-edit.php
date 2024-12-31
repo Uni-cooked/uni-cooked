@@ -51,37 +51,14 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
     }
 } elseif(isset($_POST["delete-recipe"])) {
     unset($_POST["delete-recipe"]);
-    $result=$db->deleteUserPreferredRecipe();
-    if(is_bool($result) && $result==true) {
-        header('Location: user.php');
-        exit();
-    } else {
-        header('Location: 500-err.php');
-        exit();
-    }
+    header('Location: confirm.php?action=delete-recipe');
 } elseif (isset($_POST["delete-account"])) {
     unset($_POST["delete-account"]);
-	$userPath="../user_profiles/".$_SESSION["logged_user"].'/';
-	if(is_dir($userPath)) {
-		$imagedef=scandir($userPath);
-		$info = new SplFileInfo($imagedef[2]);
-		$extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
-		$imagedef="../user_profiles/".$_SESSION["logged_user"].'/'.$_SESSION["logged_user"].".".$extension;
-		unlink($imagedef);
-        rmdir($userPath);
-    }
-    $result=$db->deleteUser();
-    if(is_bool($result) && $result==true) {
-        header('Location: index.php');
-        exit();
-    } else {
-        header('Location: 500-err.php');
-        exit();
-    }
+    header('Location: confirm.php?action=delete-account');
 } else {
     $errorFound=false;
     $username=$_POST["nickname-edit"];
-    //CONTROLLO USERNAME
+    
     if (strlen($username)==0) {
         $paginaHtml = str_replace("{{nickname-error}}","Il nome utente è un campo obbligatorio.",$paginaHtml);
         $errorFound=true;
