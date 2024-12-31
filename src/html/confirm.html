@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>NOME UTENTE - Uni Cooked</title>
+        <title>Nome utente - Uni Cooked</title>
+        <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
         <meta name="description" content="Il tuo profilo Uni Cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
         <meta name="keyword" content="Uni Cooked,utente,profilo,ricette,preferite">
         <meta name="author" content="Uni Cooked">
@@ -55,19 +56,13 @@
         </header>
 
         <main id="content" class="single-msg-page-content content">
-            <!-- CANCELLA PROFILO -->
-            <!-- CANCELLA RICETTE PREFERITE -->
             <h1 id="single-msg-page-h1">{{titolo}}</h1>
-            <!-- Non mollare gli studi proprio ora! -->
-            <!-- A quanto pare queste ricette non fanno per te! -->
             <h2 id="single-msg-page-h2">{{sottotitolo}}</h2>
             <p id="single-msg-page-p">
-                <!-- Stai cancellando il tuo profilo permanentemente, una volta confermato non potrai recuperarlo in alcun modo! -->
-                <!-- Stai eliminando tutte le tue ricette dai preferiti, sei proprio sicuro che nessuna faccia per te? -->
                 {{messaggio}}
             </p>
 
-            <a href="confirm.php?{{confirm-action}}=true" class="single-msg-page-a shadow">CONFERMA</a>
+            <a href="confirm.php?{{confirm-action}}=true" id="confirm-danger-op" class="single-msg-page-a shadow">CONFERMA</a>
             <a href="user.php" class="single-msg-page-a shadow">TORNA AL PROFILO</a>
         </main>
 

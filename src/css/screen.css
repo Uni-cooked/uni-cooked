@@ -881,6 +881,11 @@ ol li.prep-li::marker {
     margin-bottom: 2em;
 }
 
+#comment-subtitle {
+    font-size: 1.5em;
+    margin-top: 3em;
+}
+
 ul#comment-list {
     list-style-type: none;
 }
@@ -1324,6 +1329,11 @@ a#log-out {
 .single-msg-page-a:nth-of-type(2) {
     margin-top: 1.5em;
 }
+
+#confirm-danger-op {
+    background-color: var(--danger-button-color);
+    color: var(--bg-primary);
+}
 /* #endregion SINGLE MESSAGE PAGE */
 
 /* ================================================== */
@@ -1367,6 +1377,10 @@ select {
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
     color: white;
+}
+
+input[type="number"] {
+    padding-right: 1em;
 }
 
 textarea {
@@ -1413,10 +1427,6 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]:focus::-webkit-slider-thumb {
     outline: 3px solid var(--accent-trinary);
     outline-offset: 0.125rem;
-}
-
-input[type="number"] {
-    padding-right: 1em;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

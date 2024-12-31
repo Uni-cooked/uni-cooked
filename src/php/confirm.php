@@ -21,15 +21,15 @@ if(isset($_GET["action"])) {
     unset($_GET["action"]);
     if(strcmp($action,"delete-account")==0) {
         $paginaHtml=str_replace("{{confirm-action}}","confirm-delete-account",$paginaHtml);
-        $paginaHtml=str_replace("{{titolo}}","ELIMINA IL TUO ACCOUNT UNI <span lang=\"en\">COOKED</span>",$paginaHtml);
-        $paginaHtml=str_replace("{{sottotitolo}}","Sei sicuro di voler eliminare il tuo <span lang=\"en\">Account</span>?",$paginaHtml);
+        $paginaHtml=str_replace("{{titolo}}","ELIMINA PROFILO",$paginaHtml);
+        $paginaHtml=str_replace("{{sottotitolo}}","Sei sicuro di voler eliminare il tuo <span lang=\"en\">account</span>?",$paginaHtml);
         $paginaHtml=str_replace("{{messaggio}}","Confermando l'operazione cancellerai il tuo profilo permanentemente: i tuoi commenti, le ricette salvate e tutti i tuoi dati personali saranno eliminati immediatamente e non potranno più essere recuperati!",$paginaHtml);
         echo $paginaHtml;
     } elseif (strcmp($action,"delete-recipe")==0) {
         $paginaHtml=str_replace("{{confirm-action}}","confirm-delete-recipe",$paginaHtml);
-        $paginaHtml=str_replace("{{titolo}}","CANCELLA L'ELENCO DELLE TUE RICETTE PREFERITE",$paginaHtml);
-        $paginaHtml=str_replace("{{sottotitolo}}","Stai eliminando tutte le tue ricette dai preferiti, sei proprio sicuro che nessuna faccia per te?",$paginaHtml);
-        $paginaHtml=str_replace("{{messaggio}}","Confermando l'operazione cancellerai l'elenco delle tue ricette preferite. Potrai comunque aggiungere nuovi preferiti, ma il precedente elenco non sarà ripristinabile!",$paginaHtml);
+        $paginaHtml=str_replace("{{titolo}}","CANCELLA RICETTE PREFERITE",$paginaHtml);
+        $paginaHtml=str_replace("{{sottotitolo}}","Sei sicuro che queste ricette non facciano per te?",$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio}}","Confermando l'operazione cancellerai l'elenco delle tue ricette preferite. Potrai comunque aggiungerne di nuove ma il precedente elenco non sarà ripristinabile!",$paginaHtml);
         echo $paginaHtml;
     } else {
         header('Location: 500-err.php');
