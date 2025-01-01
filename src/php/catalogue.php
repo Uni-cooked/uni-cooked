@@ -32,5 +32,3 @@ $r = str_replace("{{RECIPES}}",$d_recipes,$paginaHtml);
 $final = str_replace("{{PAGEBUTTONS}}",$pageSystem->RenderButtons(),$r);
 
 echo $final;
-
-?>
