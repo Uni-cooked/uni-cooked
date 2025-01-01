@@ -9,7 +9,7 @@ $db = new DB;
 $pageSystem = new PageSystem($db);
 
 
-$paginaHtml=file_get_contents("html/catalogue.html");
+$paginaHtml=file_get_contents("../html/catalogue.html");
 
 if ($db->isUserLogged()!=false) {
     echo str_replace("<a href=\"sign-in.php\">ACCEDI</a>","<a href=\"user.php\">PROFILO</a>",$paginaHtml);
