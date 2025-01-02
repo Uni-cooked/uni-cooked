@@ -822,18 +822,15 @@ ul#recipe-list .recipe a {
 ul#ingredient-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding-left: 13%;
 }
 
 ul#ingredient-list li {
-    width: 34%;
+    width: 45%;
     text-align: left;
     margin-top: 1em;
     margin-bottom: 1em;
-}
-
-ul#ingredient-list li:nth-child(odd) {
-    margin-left: 10%;
 }
 
 ol li.prep-li {

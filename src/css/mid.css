@@ -256,9 +256,11 @@ ul#recipe-list .recipe ul.recipe-info li {
 /* ================================================== */
 
 /* #region RECIPE PAGE */
-/* .content is used only to encrease the selector specificity and
-override the margin-left in ul#ingredient-list li:nth-child(odd) in screen.css */
-ul#ingredient-list.content li {
+ul#ingredient-list {
+    padding-left: 1rem;
+}
+
+ul#ingredient-list li {
     /* to avoid circles overflow to the left */
     width: calc(49% - 1.1em);
     margin-left: 1.1em;
