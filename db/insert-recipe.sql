@@ -58,8 +58,8 @@ INSERT IGNORE INTO Ingrediente(nome) VALUES
 
 INSERT INTO Utilizzo_Ingrediente(ingrediente,ricetta,quanto_basta,quantita,unita_misura,descrizione) VALUES
 ("riso venere","Riso Venere con verdure",FALSE,80,"g",NULL),
-("zucchina","Riso Venere con verdure",FALSE,1,"num_elementi",'(piccola, 40 <abbr title="grammi>gr</abbr>")'),
-("carota","Riso Venere con verdure",FALSE,1,"num_elementi",'(piccola, 40 <abbr title="grammi>gr</abbr>")'),
+("zucchina","Riso Venere con verdure",FALSE,1,"num_elementi",'(piccola, 40 <abbr title="grammi">gr</abbr>)'),
+("carota","Riso Venere con verdure",FALSE,1,"num_elementi",'(piccola, 40 <abbr title="grammi">gr</abbr>)'),
 ("mais","Riso Venere con verdure",FALSE,80,"g",NULL),
 ("pomodorini","Riso Venere con verdure",FALSE,3,"num_elementi",NULL),
 ("olio di oliva","Riso Venere con verdure",TRUE,NULL,NULL,NULL),

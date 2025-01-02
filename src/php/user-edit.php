@@ -62,6 +62,9 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
     if (strlen($username)==0) {
         $paginaHtml = str_replace("{{nickname-error}}","Il nome utente è un campo obbligatorio.",$paginaHtml);
         $errorFound=true;
+    } elseif (strlen($username)>15) {
+        $paginaHtml = str_replace("{{nickname-error}}","Il nome utente non deve essere più lungo di 15 caratteri.",$paginaHtml);
+        $errorFound=true;
     } else {
         $username=DB::pulisciInput($username);
         $isUserPresent=$db->checkUserPresence($username);

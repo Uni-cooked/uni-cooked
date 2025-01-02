@@ -64,6 +64,175 @@ class DB {
         }
     }
 
+    public function getRecipeComments (string $recipe, int $number = -1): array | string {
+        $result=array();
+        $username="";
+        $isUserLogged=$this->isUserLogged();
+        if(is_bool($isUserLogged) && $isUserLogged==false) {
+            $username="aaaaaaaaaaaaaaaa"; //16 letter-long username, which is impossible to have in our db, so alll comments will be returned
+        } else {
+            $username=$isUserLogged;
+        }
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $getRecipeComments=$this->connection->prepare("SELECT utente, commento, data, voto FROM Valutazione WHERE ricetta=? AND utente<>?");
+            $getRecipeComments->bind_param("ss",$recipe,$username);
+            try {
+                $getRecipeComments->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getRecipeComments->close();
+                return "ExceptionThrow";
+            }
+            $queryResult=$getRecipeComments->get_result();
+            $this->closeDBConnection();
+            $getRecipeComments->close();
+            if ($queryResult->num_rows>0) {
+                if($number==-1) {
+                    while($row = mysqli_fetch_assoc($queryResult)) {
+                        array_push($result,$row);
+                    }
+                }
+                else {
+                    while($number>0 && $row = mysqli_fetch_assoc($queryResult)) {
+                        array_push($result,$row);
+                        $number=$number-1;
+                    }
+                }
+                $queryResult->free();
+                return $result;
+            }
+            else {
+                $queryResult->free();
+                return "noComments";
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function getUserPublicComment (string $username, string $recipe): string | array {
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $getUserPublicComment=$this->connection->prepare("SELECT commento, data, voto FROM Valutazione WHERE ricetta=? AND utente=?");
+            $getUserPublicComment->bind_param("ss",$recipe,$username);
+            try {
+                $getUserPublicComment->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getUserPublicComment->close();
+                return "ExceptionThrow";
+            }
+            $result=$getUserPublicComment->get_result();
+            $this->closeDBConnection();
+            $getUserPublicComment->close();
+            if ($result->num_rows==1) {
+                $row = mysqli_fetch_assoc($result);
+                $result->free();
+                return $row;
+            }
+            else {
+                $result->free();
+                return "userLeftNoComment";
+            }
+        } else {
+            return "ConnectionFailed";
+        } 
+    }
+
+    public function getRecipeToDoList(string $recipe): array | string {
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $getRecipeToDoList=$this->connection->prepare("SELECT * FROM Preparazione WHERE ricetta=?");
+            $getRecipeToDoList->bind_param("s",$recipe);
+            try {
+                $getRecipeToDoList->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getRecipeToDoList->close();
+                return "ExceptionThrow";
+            }
+            $result=$getRecipeToDoList->get_result();
+            $this->closeDBConnection();
+            $getRecipeToDoList->close();
+            if ($result->num_rows>0) {
+                $final=array();
+                while($row = mysqli_fetch_assoc($result)) {
+                    array_push($final,$row);
+                }
+                $result->free();
+                return $final;
+            }
+            else {
+                $result->free();
+                return "genericError";
+            }
+        } else {
+            return "ConnectionFailed";
+        }  
+    }
+
+    public function getRecipeIngredients(string $recipe): array | string {
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $getRecipeIngredients=$this->connection->prepare("SELECT * FROM Utilizzo_Ingrediente WHERE ricetta=?");
+            $getRecipeIngredients->bind_param("s",$recipe);
+            try {
+                $getRecipeIngredients->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getRecipeIngredients->close();
+                return "ExceptionThrow";
+            }
+            $result=$getRecipeIngredients->get_result();
+            $this->closeDBConnection();
+            $getRecipeIngredients->close();
+            if ($result->num_rows>0) {
+                $final=array();
+                while($row = mysqli_fetch_assoc($result)) {
+                    array_push($final,$row);
+                }
+                $result->free();
+                return $final;
+            }
+            else {
+                $result->free();
+                return "genericError";
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function getRecipeDetails(string $recipe): array | string {
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $getRecipeDetails=$this->connection->prepare("SELECT * FROM Ricetta WHERE nome=?");
+            $getRecipeDetails->bind_param("s",$recipe);
+            try {
+                $getRecipeDetails->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $getRecipeDetails->close();
+                return "ExceptionThrow";
+            }
+            $result=$getRecipeDetails->get_result();
+            $this->closeDBConnection();
+            $getRecipeDetails->close();
+            if ($result->num_rows==1) {
+                $row = mysqli_fetch_assoc($result);
+                $result->free();
+                return $row;
+            }
+            else {
+                $result->free();
+                return "genericError";
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
     public function getRecipeAverage(string $recipe): int | string {
         $connectionResult=$this->openDBConnection();
         if ($connectionResult) {
@@ -85,6 +254,187 @@ class DB {
                 return $row["average"];
             } else {
                 return "-";
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function doesRecipeExists(string $recipe): bool | string {
+        $connectionResult=$this->openDBConnection();
+        $result=array();
+        if ($connectionResult) {
+            $doesRecipeExists=$this->connection->prepare("SELECT nome FROM Ricetta WHERE nome=?");
+            $doesRecipeExists->bind_param("s", $recipe);
+            try {
+                $doesRecipeExists->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $doesRecipeExists->close();
+                return "ExceptionThrow";
+            }
+            $result=$doesRecipeExists->get_result();
+            $this->closeDBConnection();
+            $doesRecipeExists->close();
+            if ($result->num_rows==1) {
+                $result->free();
+                return true;
+            }
+            else {
+                $result->free();
+                return false;
+            }
+        } else {
+            return "ConnectionFailed";
+        }
+    }
+
+    public function removeRecipeFromUserFavourites(string $recipe): bool | string {
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $getUserInfo=$this->connection->prepare("DELETE FROM Preferenza_Ricetta WHERE ricetta = ? AND utente=?");
+                $getUserInfo->bind_param("ss",$recipe,$isUserLogged);
+                try {
+                    $getUserInfo->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $getUserInfo->close();
+                    return "ExceptionThrow";
+                }
+                $result=$getUserInfo->affected_rows;
+                $this->closeDBConnection();
+                $getUserInfo->close();
+                if ($result==1) {
+                    return true;
+                } else {
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+
+    public function removeUserComment(string $recipe): bool | string {
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $removeUserComment=$this->connection->prepare("DELETE FROM Valutazione WHERE ricetta = ? AND utente=?");
+                $removeUserComment->bind_param("ss",$recipe,$isUserLogged);
+                try {
+                    $removeUserComment->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $removeUserComment->close();
+                    return "ExceptionThrow";
+                }
+                $result=$removeUserComment->affected_rows;
+                $this->closeDBConnection();
+                $removeUserComment->close();
+                if ($result==1) {
+                    return true;
+                } else {
+                    return "genericError";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+
+    public function addUserReview(string $recipe, string $comment,int $mark): bool {
+        $isUserLogged=$this->isUserLogged();
+        $date=date("Y-m-d h:m:s");
+        if($isUserLogged==false) {
+            return "userIsNotLogged";
+        }
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $addUserReview=$this->connection->prepare("INSERT INTO Valutazione(ricetta, utente, commento, voto,data) VALUES(?,?,?,?,?)");
+            $addUserReview->bind_param("sssis",$recipe,$isUserLogged,$comment,$mark,$date);
+            try {
+                $addUserReview->execute();
+            } catch(\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $addUserReview->close();
+                return false;
+            }
+
+            if (mysqli_affected_rows($this->connection)==1) {
+                $this->closeDBConnection();
+                $addUserReview->close();
+                return true;
+            } else {
+                $addUserReview->close();
+                $this->closeDBConnection();
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function addRecipeToUserFavourites(string $recipe): bool | string {
+        $isUserLogged=$this->isUserLogged();
+        if($isUserLogged==false) {
+            return "userIsNotLogged";
+        }
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $addRecipeToUserFavourites=$this->connection->prepare("INSERT INTO Preferenza_Ricetta(ricetta, utente) VALUES(?,?)");
+            $addRecipeToUserFavourites->bind_param("ss",$recipe,$isUserLogged);
+            try {
+                $addRecipeToUserFavourites->execute();
+            } catch(\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $addRecipeToUserFavourites->close();
+                return false;
+            }
+
+            if (mysqli_affected_rows($this->connection)==1) {
+                $this->closeDBConnection();
+                $addRecipeToUserFavourites->close();
+                return true;
+            } else {
+                $addRecipeToUserFavourites->close();
+                $this->closeDBConnection();
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function isRecipeInUserFavourites(string $recipe, string $username): bool | string {
+        $connectionResult=$this->openDBConnection();
+        $result=array();
+        if ($connectionResult) {
+            $isRecipeInUserFavourites=$this->connection->prepare("SELECT ricetta FROM Preferenza_Ricetta WHERE ricetta=? AND utente=?;");
+            $isRecipeInUserFavourites->bind_param("ss", $recipe, $username);
+            try {
+                $isRecipeInUserFavourites->execute();
+            } catch (\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $isRecipeInUserFavourites->close();
+                return "ExceptionThrow";
+            }
+            $result=$isRecipeInUserFavourites->get_result();
+            $this->closeDBConnection();
+            $isRecipeInUserFavourites->close();
+            if ($result->num_rows==1) {
+                $result->free();
+                return true;
+            }
+            else {
+                $result->free();
+                return false;
             }
         } else {
             return "ConnectionFailed";
@@ -114,7 +464,7 @@ class DB {
                     }
                 }
                 else {
-                    while($row = mysqli_fetch_assoc($queryResult) && $number>0) {
+                    while($number>0 && $row = mysqli_fetch_assoc($queryResult)) {
                         array_push($result,$row);
                         $number=$number-1;
                     }
