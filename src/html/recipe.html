@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Nome ricetta - Uni Cooked</title>
+        <title>{{Recipe-title}} - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
         <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
-        <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
+        <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari,{{Recipe-title}}">
         <meta name="author" content="Uni cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Importo fogli di stile-->
@@ -57,72 +57,42 @@
             </div>
         </header>
 
-        <main id="mainInfoRicetta">
-            <h2 id="recipe-name-title" class="content-subtitle">POLLO AL CURRY CON RISO E PISELLI</h2>
+        <main id="content">
+            <h2 id="recipe-name-title" class="content-subtitle">{{Recipe-title}}</h2>
             <div id="recipe-main-info">
-                <img src="../asset/img/dad.jpg" alt="" id="recipe-img">
+                <img src="{{recipe-image-src}}" alt="" id="recipe-img">
                 <ul>
-                    <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                    <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                    <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                    <li><img src="../asset/icon/time.svg" alt="tempo">20 <abbr title="minuti">min</abbr></li>
-                    <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
+                    <li><img src="../asset/icon/grade.svg" alt="voto">{{mark}} <abbr title="su">/</abbr> 30</li>
+                    <li><img src="../asset/icon/student.svg" alt="categoria">{{category}}</li>
+                    <li><img src="../asset/icon/course.svg" alt="piatto">{{plate-type}}</li>
+                    <li><img src="../asset/icon/time.svg" alt="tempo">{{time}} <abbr title="minuti">min</abbr></li>
+                    <li><img src="../asset/icon/cost.svg" alt="costo">{{price}} €</li>
                 </ul>
             </div>
-            <form action="" class="end-paragraph">
-                <!-- se è già tra i preferiti: TOGLI DAI PREFERITI -->
-                <button id="recipe-fav-btn" class="shadow">AGGIUNGI AI PREFERITI</button>
-            </form>
+
+            {{form-add-to-favourites}}
+
 
             <div class="content-container end-paragraph">
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi nisi maiores rerum similique eligendi velit laborum voluptate doloribus. Dolorem accusantium exercitationem laboriosam ea. Alias quaerat quos quasi consequatur iste quis?</p>
+                <p class="content">{{description}}</p>
             </div>
 
             <h3 class="content-subtitle content">INGREDIENTI</h3>
             <div class="content-container end-paragraph">
                 <ul id="ingredient-list" class="content">
-                    <li>Riso Venere 80 g</li>
-                    <li>Zucchine 1 (piccola, 40 g circa)</li>
-                    <li>Carote 1 (piccola, 40 g circa)</li>
-                    <li>Mais 80 g</li>
-                    <li>Pomodorini 4</li>
-                    <li>Olio d'oliva q.b.</li>
-                    <li>Sale grosso q.b.</li>
-                    <li>Sale fino q.b.</li>
+                    {{ingredients-list}}
                 </ul>
             </div>
 
             <h3 class="content-subtitle content">PREPARAZIONE</h3>
             <div class="content-container-left end-paragraph">
                 <ol class="content">
-                    <li class="prep-li">Riempi una pentola di acqua e falla bollire, poi butta del sale grosso e il riso. Cuoci a fuoco medio-alto per il tempo indicato sulla confezione mescolando ogni tanto.</li>
-                    <li class="prep-li">Nel mentre pela la carota e tagliala e striscioline, mettile in padella con un filo d'olio, un po' di acqua e un pizzico di sale fino. Accendi il fuoco basso e copri con un coperchio, le carote ci mettono un pochino di più a cucinarsi.</li>
-                    <li class="prep-li">Senza perdere tempo che per noi studenti è prezioso lava la zucchina e tagliala a rondelle o pezzetti piccoli (fa' un po' come ti pare). Aggiungila alle carote nella padella con un pizzico di sale. Ogni tanto girale e aggiungi un po' d'acqua se vedi che è evaporata per non farle attaccare alla padella. Cucina a fuoco medio-basso per circa 8-10 minuti.</li>
-                    <li class="prep-li">Occhio al riso.</li>
-                    <li class="prep-li">Lava i pomodorini e tagliali a piccoli spicchi.</li>
-                    <li class="prep-li">Se pensi di riuscire a finire tutto questo bel piattone apri anche una scatola di mais e scolala così da avere tutto pronto sul tavolo.</li>
-                    <li class="prep-li">Quando il riso, le zucchine e le carote sono pronte versa tutto in un piatto insieme ai pomodorini e il mais. Condisci con un filo d'olio e assapora il gusto di chi può permettersi certe prelibatezze.</li>
+                    {{what-to-do-list}}
                 </ol>
             </div>
 
             <h3 class="content-subtitle content">VALUTAZIONI</h3>
-            <div id="add-comment" class="content-container-left content">
-                <img src="../asset/img/dad.jpg" alt="" id="add-comment-pp">
-                <form action="" class="content">
-                    <fieldset>
-                        <div class="input-container">
-                            <label class="form-label" for="add-comment-eval">Valuta questa ricetta</label>
-                            <input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required>
-                            <span><abbr title="su">/</abbr> 30</span>
-                        </div>
-                        <label class="form-label" for="add-comment-text">Commenta</label>
-                        <textarea id="add-comment-text" placeholder="Motiva la tua valutazione" required></textarea>
-
-                        <button class="button-input button-input-confirm" type="submit" name="submit-profile-changes">VALUTA</button>
-                        <button class="button-input button-input-cancel" type="reset">ANNULLA</button>
-                    </fieldset>
-                </form>
-            </div>
+            {{leave-comment-or-personal-published-comment}}
 
             <!-- TODO: per evitare i 2 div dovremmo mettere
                         <div id="user-comment" class="content">
@@ -133,56 +103,13 @@
                        e in big.css
                         #user-comment { max-width: calc(1200px - 2rem); }
             -->
-            <!-- <div class="content">
-                <div id="user-comment">
-                    <img src="../asset/img/dad.jpg" alt="" class="comment-pp">
-                    <a href="">Nome utente</a>
-                    <time class="comment-date" datetime="2025-12-25">25/12/2025</time>
-                    <p class="comment-eval">18 <abbr title="su">/</abbr> 30</p>
-                    <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci soluta ipsum assumenda vero pariatur odio perferendis. Debitis culpa aliquam et nobis minima mollitia autem perspiciatis maxime? Animi natus sunt atque.</p>
-                </div>
-                <form action="">
-                    <button type="submit" id="del-comment" class="load-more-btn">CANCELLA VALUTAZIONE</button>
-                </form>
-            </div> -->
+           
 
             <h4 id="comment-subtitle" class="content-subtitle content">Cosa ne pensano gli altri</h4>
-            <ul id="comment-list" class="content">
-                <li>
-                    <img src="../asset/img/dad.jpg" alt="" class="comment-pp">
-                    <a href="">Nome utente</a>
-                    <time class="comment-date" datetime="2025-12-25">25/12/2025</time>
-                    <p class="comment-eval">18 <abbr title="su">/</abbr> 30</p>
-                    <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci soluta ipsum assumenda vero pariatur odio perferendis. Debitis culpa aliquam et nobis minima mollitia autem perspiciatis maxime? Animi natus sunt atque.</p>
-                </li>
-                <li>
-                    <img src="../asset/img/dad.jpg" alt="" class="comment-pp">
-                    <a href="">Nome utente</a>
-                    <time class="comment-date" datetime="2025-12-25">25/12/2025</time>
-                    <p class="comment-eval">18 <abbr title="su">/</abbr> 30</p>
-                    <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci soluta ipsum assumenda vero pariatur odio perferendis. Debitis culpa aliquam et nobis minima mollitia autem perspiciatis maxime? Animi natus sunt atque.</p>
-                </li>
-                <li>
-                    <img src="../asset/img/dad.jpg" alt="" class="comment-pp">
-                    <a href="">Nome utente</a>
-                    <time class="comment-date" datetime="2025-12-25">25/12/2025</time>
-                    <p class="comment-eval">18 <abbr title="su">/</abbr> 30</p>
-                    <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci soluta ipsum assumenda vero pariatur odio perferendis. Debitis culpa aliquam et nobis minima mollitia autem perspiciatis maxime? Animi natus sunt atque.</p>
-                </li>
-                <li>
-                    <img src="../asset/img/dad.jpg" alt="" class="comment-pp">
-                    <a href="">Nome utente</a>
-                    <time class="comment-date" datetime="2025-12-25">25/12/2025</time>
-                    <p class="comment-eval">18 <abbr title="su">/</abbr> 30</p>
-                    <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci soluta ipsum assumenda vero pariatur odio perferendis. Debitis culpa aliquam et nobis minima mollitia autem perspiciatis maxime? Animi natus sunt atque.</p>
-                </li>
 
-            </ul>
+            {{comment-list}}
 
-            <form action="">
-                <button type="submit" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button>
-            </form>
-            <a href="#comment-list" class="back-up-link">Torna su</a>
+            {{comment-more-button}}
         </main>
 
         <footer>

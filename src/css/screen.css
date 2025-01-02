@@ -932,6 +932,10 @@ button#del-comment {
 #more-comment-btn {
     margin-top: 2em;
 }
+
+#no-login-p {
+    text-align: center;
+}
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
