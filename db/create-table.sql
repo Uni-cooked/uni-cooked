@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS Preferenza_Ricetta;
 DROP TABLE IF EXISTS Valutazione;
 DROP TABLE IF EXISTS Preparazione;
 DROP TABLE IF EXISTS Utilizzo_Ingrediente;
-DROP TABLE IF EXISTS Suggerimenti;
+DROP TABLE IF EXISTS Suggerimento;
 DROP TABLE IF EXISTS Ricetta;
 DROP TABLE IF EXISTS Utente;
 DROP TABLE IF EXISTS Ingrediente;
@@ -25,7 +25,7 @@ CREATE TABLE Ricetta(
     nome VARCHAR(50) PRIMARY KEY,
     categoria enum ('fuorisede', 'pendolare', 'in_sede', 'dad') NOT NULL,
     tipo_piatto enum ('primo', 'secondo') NOT NULL,
-    tempo_sec INT NOT NULL,
+    tempo TINYINT NOT NULL,
     prezzo TINYINT NOT NULL,
     descrizione VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
@@ -41,38 +41,38 @@ CREATE TABLE Preferenza_Ricetta(
 );
 
 CREATE TABLE Utilizzo_Ingrediente(
-    ingrediente VARCHAR(20) NOT NULL,
     ricetta VARCHAR(50) NOT NULL,
+    ingrediente VARCHAR(20) NOT NULL,
     quanto_basta BOOLEAN NOT NULL,
     quantita SMALLINT CHECK(quantita>=0),
-    unita_misura enum ('g', 'ml', 'num_elementi'),
+    unita_misura enum ('g', 'ml', 'num_el'),
     CHECK((quanto_basta IS TRUE AND quantita IS NULL AND unita_misura IS NULL) OR (quanto_basta IS FALSE AND quantita IS NOT NULL AND unita_misura IS NOT NULL)),
     descrizione VARCHAR(50),
-    PRIMARY KEY(ingrediente, ricetta),
-    FOREIGN KEY (ingrediente) REFERENCES Ingrediente(nome) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE
+    PRIMARY KEY(ricetta, ingrediente),
+    FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (ingrediente) REFERENCES Ingrediente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Preparazione(
-    numero TINYINT,
     ricetta VARCHAR(50),
+    numero TINYINT,
     descrizione VARCHAR(500) NOT NULL,
-    PRIMARY KEY (numero, ricetta),
+    PRIMARY KEY (ricetta, numero),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Valutazione(
     ricetta VARCHAR(50),
     utente VARCHAR(15),
-    commento VARCHAR(500) NOT NULL,
     data DATE NOT NULL,
     voto TINYINT NOT NULL CHECK(voto>0 AND voto<=30),
+    commento VARCHAR(500) NOT NULL,
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Suggerimenti(
+CREATE TABLE Suggerimento(
     utente VARCHAR(15),
     data DATE,
     testo VARCHAR(500) NOT NULL,
