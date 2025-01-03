@@ -4,10 +4,8 @@ namespace Utilities;
 
 require_once("html-templates.php");
 require_once ("utils/DB.php");
-require_once ("utils/Sanitizer.php");
 
 use Utilities\DB;
-use Utilities\Sanitizer;
 
 class PageSystem {
     private int $current_page;
@@ -16,68 +14,75 @@ class PageSystem {
 
     private array $filter_list;
 
-    private const ITEMS_PER_PAGE = 10;
+    private ?string $recipieName;
+    private ?string $recipieCategory;
+    private ?string $course;
+    private int $grade;
+    private int $cost;
+    private ?string $order;
 
-    public function __construct(DB $d) {
+    private const ITEMS_PER_PAGE = 9;
+
+    public function __construct(DB $d,?string $recipieName,?string $recipieCategory,?string $course, int $grade, int $cost,?string $order) {
         $this->db = $d;
         $this->filter_list = array();
+
+        $this->recipieName= $recipieName;
+        $this->recipieCategory= $recipieCategory;
+        $this->course= $course;
+        $this->grade= $grade;
+        $this->cost= $cost;
+        $this->order= $order;
     }
     
     public function GetCurrentPage(int $page): array|null    {
-        $recipieName = isset($_GET['name']) ? Sanitizer::SanitizeInput($_GET['name']) : null;
-        $recipieCategory = isset($_GET['category']) && $_GET['category'] != "tutti" ? Sanitizer::SanitizeInput($_GET['category']) : null;
-        $course = isset($_GET['course']) && $_GET['course'] != "tutti" ? Sanitizer::SanitizeInput($_GET['course']) : null;
-        $grade = isset($_GET['grade']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['grade'])) : null;
-        $cost = isset($_GET['cost']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['cost'])) : null;
-        $order= Sanitizer::SanitizeInput("ca"); // cost ascending
-
-        $query = "SELECT r.immagine,r.nome,AVG(coalesce(v.voto,1)) as voto,r.categoria,r.tipo_piatto,r.tempo_sec
+        $query = "SELECT r.immagine,r.nome,AVG(coalesce(v.voto,1)) as voto,r.categoria,r.tipo_piatto,r.prezzo
                 FROM Ricetta as r LEFT JOIN Valutazione as v ON r.nome = v.ricetta
                 WHERE 1=1 ";
         $params = [];
 
-        if($recipieName){
+        if($this->recipieName){
             $query .= " and r.nome LIKE ? ";
-            $params[] = "%".$recipieName."%";
-            $this->filter_list["name"] = $recipieName;
+            $params[] = "%".$this->recipieName."%";
+            $this->filter_list["name"] = $this->recipieName;
         }
-        if($recipieCategory){
+        if($this->recipieCategory){
             $query .= " and r.categoria = ? ";
-            $params[] = $recipieCategory;
-            $this->filter_list["category"] = $recipieCategory;
+            $params[] = $this->recipieCategory;
+            $this->filter_list["category"] = $this->recipieCategory;
         }
-        if($course){
+        if($this->course){
             $query .= " and r.tipo_piatto = ? ";
-            $params[] = $course;
-            $this->filter_list["course"] = $course;
+            $params[] = $this->course;
+            $this->filter_list["course"] = $this->course;
         }
-        if($cost){
+        if($this->cost){
             $query .= " and r.prezzo <= ? ";
-            $params[] = (int)$cost;
-            $this->filter_list["cost"] = (int)$cost;
+            $params[] = $this->cost;
+            $this->filter_list["cost"] = $this->cost;
         }
         
         $query .= "GROUP BY r.nome ";
-        if($grade){
+        if($this->grade){
             $query .= " HAVING AVG(coalesce(v.voto,1)) >= ? ";
-            $params[] = (int)$grade;
-            $this->filter_list["grade"] = (int)$grade;
+            $params[] = $this->grade;
+            $this->filter_list["grade"] = $this->grade;
         }
         $order_query = "ORDER BY ";
 
-        if($recipieName){
+        if($this->recipieName){
             $order_query .= "LOCATE(?, r.nome),";
-            $params[] = $recipieName;
+            $params[] = $this->recipieName;
         }
 
         if($this->db->isUserLogged()){
-            $user = $this->db->getUserInfo();
+            $user = $this->db->getUserInfo()[0];
             $order_query.="CASE
-                            WHEN r.categoria =".$user["tipo_studente"]."THEN 0
+                            WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
                             ELSE 1                        
                             END,";
         }
-        switch ($order) {
+        switch ($this->order) {
             case 'ca':
                 $order_query .= "r.prezzo ASC";
                 break;
@@ -102,14 +107,19 @@ class PageSystem {
         
         $query.=$order_query;
         
-        $query.= " LIMIT ". PageSystem::ITEMS_PER_PAGE . " OFFSET " . PageSystem::ITEMS_PER_PAGE*($page-1);
-        
+        // echo $query;
         $results = $this->db->SelectQuery($query,$params);
+
 
         $this->totalPages = ceil(($results ? count($results) : 1) / PageSystem::ITEMS_PER_PAGE);
         $this->current_page=clamp($this->current_page=$page,0,$this->totalPages);
 
+        if($results) {
+            return array_slice($results,PageSystem::ITEMS_PER_PAGE*($page-1),PageSystem::ITEMS_PER_PAGE);
+        }
+
         return $results;
+
     }
 
     public function RenderButtons(): string{
