@@ -421,6 +421,11 @@ nav#quick-role a:visited {
 /* ================================================== */
 
 /* #region HOME PAGE CONTENT */
+#presentation-text {
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+
 dl#roles dt {
     letter-spacing: var(--letter-spacing);
     text-align: center;

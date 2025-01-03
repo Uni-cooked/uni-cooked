@@ -14,3 +14,6 @@ quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab v
 - breadcrumb ricetta
 - controllare h1 e h2 nei main
 - div dentro ul per fare 2 colonne
+- se guardo i profili degli altri non ho il mio accedi/profilo
+- add comment, (voto da 1 a 30) in title
+- cancella in user edit? come torno indietro

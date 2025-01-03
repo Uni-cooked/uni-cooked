@@ -95,7 +95,7 @@ if(isset($_GET["recipe"])) {
     $categoria=str_replace("_"," ",$recipeDetails["categoria"]);
     $paginaHtml=str_replace("{{category}}",$categoria,$paginaHtml);
     $paginaHtml=str_replace("{{plate-type}}",$recipeDetails["tipo_piatto"],$paginaHtml);
-    $paginaHtml=str_replace("{{time}}",$recipeDetails["tempo_sec"],$paginaHtml);
+    $paginaHtml=str_replace("{{time}}",$recipeDetails["tempo"],$paginaHtml);
     $paginaHtml=str_replace("{{price}}",$recipeDetails["prezzo"],$paginaHtml);
     if($isUserLogged!=false) {
         $formFavourites="<form action=\"recipe.php?recipe=".$recipe.'"'."method=\"post\" class=\"end-paragraph\">";
@@ -136,15 +136,18 @@ if(isset($_GET["recipe"])) {
                 case 'ml':
                     $finalList.='<abbr title="millilitri">ml</abbr>';
                     break;
-                case 'num_elementi':
-                    $finalList.='unità';
+                case 'num_el':
                     break;
                 default:
                     header('Location: 500-err.php');
                     exit();
             }
         }
-        $finalList.=" ".$singleIngredient["descrizione"]."</li>";
+        if ($singleIngredient["descrizione"]) {
+            $finalList.=" (".$singleIngredient["descrizione"].")</li>";
+        } else {
+            $finalList.="</li>";
+        }
     }
 
     $paginaHtml=str_replace("{{ingredients-list}}",$finalList,$paginaHtml);
@@ -182,7 +185,7 @@ if(isset($_GET["recipe"])) {
             exit();
         } else {
             $form.='<div class="content"><div id="user-comment">';
-            $form.='<img src="'.$immagine.'" id="add-comment-pp">';
+            $form.='<img src="'.$immagine.'" class="comment-pp">';
             $form.='<a href="user.php">'.$isUserLogged."</a>";
             $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"]))."</time>";
             $form.='<p class="comment-eval">'.$userComment["voto"].' <abbr title="su">/</abbr> 30</p>';

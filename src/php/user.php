@@ -17,7 +17,7 @@ if(!isset($_GET["username"])) {
     }
 
     //se è stato passato il controllo precedente l'utente è loggato e $isLogged è il nome utente
-    $paginaHtml=str_replace("{{username}}",strtoupper($isLogged),$paginaHtml);
+    $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
     $userInfo=$db->getUserInfo();
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');
@@ -59,11 +59,11 @@ if(!isset($_GET["username"])) {
                     header('Location: 500-err.php');
                     exit();
                 }
-                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\">/</abbr>30</li>";
+                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
                 $categoria=str_replace("_"," ",$recipe["categoria"]);
                 $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
                 $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]."€</li></ul>";
+                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
                 $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
             }
             $paginaHtml=str_replace("{{lista-preferiti}}",$recipeList,$paginaHtml);
@@ -74,7 +74,7 @@ if(!isset($_GET["username"])) {
     $username = $_GET["username"];
     unset($_GET["username"]);
 
-    $paginaHtml=str_replace("{{username}}",strtoupper($username),$paginaHtml);
+    $paginaHtml=str_replace("{{username}}",$username,$paginaHtml);
     $userInfo=$db->getUserPublicInfo($username);
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');
@@ -116,7 +116,7 @@ if(!isset($_GET["username"])) {
                     header('Location: 500-err.php');
                     exit();
                 }
-                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\">/</abbr>30</li>";
+                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
                 $categoria=str_replace("_"," ",$recipe["categoria"]);
                 $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
                 $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
