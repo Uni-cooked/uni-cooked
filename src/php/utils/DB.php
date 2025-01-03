@@ -33,8 +33,8 @@ class DB {
         }
     }
 
-    public static function logOutUser() {
-        if(isUserLogged()) {
+    public function logOutUser() {
+        if($this->isUserLogged()) {
             unset($_SESSION["logged_user"]);
         }
         else {
@@ -43,37 +43,39 @@ class DB {
     }
 
     public function getUserInfo(): array | string {
-        $isUserLogged=$this->isUserLogged();
-        if($isUserLogged==false) {
-            return "userIsNotLogged";
-        } else {
-            $connectionResult=$this->openDBConnection();
-            if ($connectionResult) {
-                $getUserInfo=$this->connection->prepare("SELECT * FROM Utente WHERE nome = ?");
-                $getUserInfo->bind_param("s",$isUserLogged);
-                try {
-                    $getUserInfo->execute();
-                } catch (\mysqli_sql_exception $e) {
-                    $this->closeDBConnection();
-                    $getUserInfo->close();
-                    return "ExceptionThrow";
-                }
-                $result=$getUserInfo->get_result();
-                $this->closeDBConnection();
-                $getUserInfo->close();
-                if ($result->num_rows==1) {
-                    $row = mysqli_fetch_assoc($result);
-                    $result->free();
-                    return $row;
-                }
-                else {
-                    $result->free();
-                    return "genericError";
-                }
-            } else {
-                return "ConnectionFailed";
-            }
-        }
+        // $isUserLogged=$this->isUserLogged();
+        // if($isUserLogged==false) {
+        //     return "userIsNotLogged";
+        // } else {
+        //     $connectionResult=$this->openDBConnection();
+        //     if ($connectionResult) {
+        //         $getUserInfo=$this->connection->prepare("SELECT * FROM Utente WHERE nome = ?");
+        //         $getUserInfo->bind_param("s",$isUserLogged);
+        //         try {
+        //             $getUserInfo->execute();
+        //         } catch (\mysqli_sql_exception $e) {
+        //             $this->closeDBConnection();
+        //             $getUserInfo->close();
+        //             return "ExceptionThrow";
+        //         }
+        //         $result=$getUserInfo->get_result();
+        //         $this->closeDBConnection();
+        //         $getUserInfo->close();
+        //         if ($result->num_rows==1) {
+        //             $row = mysqli_fetch_assoc($result);
+        //             $result->free();
+        //             return $row;
+        //         }
+        //         else {
+        //             $result->free();
+        //             return "genericError";
+        //         }
+        //     } else {
+        //         return "ConnectionFailed";
+        //     }
+        // }
+        $result=$this->SelectQuery("SELECT * FROM Utente WHERE nome = ?",[$_SESSION["logged_user"]]);
+        return $result;
     }
     
     public function logUser($username,$psw): bool | string {
@@ -237,6 +239,7 @@ class DB {
                 $result->free_result();
                 return $list;
             } else {
+                $result->free_result();
                 return null;
             } 
         } catch(\mysqli_sql_exception $e) {
