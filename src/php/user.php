@@ -40,6 +40,16 @@ if(!isset($_GET["username"])) {
             $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
         }
 
+        $limit=5;
+        if(isset($_GET["prefRecipeLimit"])) {
+            $limit=$_GET["prefRecipeLimit"];
+            if(filter_input(INPUT_GET, 'prefRecipeLimit', FILTER_VALIDATE_INT) === false) {
+                header('Location: 500-err.php');
+                exit();
+            }
+            unset($_GET["prefRecipeLimit"]);
+        }
+
         $favouritesList=$db->getUserFavourites($isLogged);
         if(is_string($favouritesList) && (strcmp($favouritesList,"ExceptionThrow")==0 || strcmp($favouritesList,"ConnectionFailed")==0)) {
             header('Location: 500-err.php');
@@ -47,26 +57,45 @@ if(!isset($_GET["username"])) {
         }
         elseif(is_string($favouritesList) && strcmp($favouritesList,"noFavourites")==0) {
             $paginaHtml=str_replace("{{lista-preferiti}}","<li><p id=\"empty-fav-recipe-list\">Salva le ricette migliori, le potrai trovare qui!</p></li>",$paginaHtml);
+            $paginaHtml=str_replace("{{more-recipe-form}}","",$paginaHtml);
         }
         else {
             $recipeList = "";
+            $recipeCounter=0;
             foreach($favouritesList as $recipe) {
-                $recipeList.="<li class=\"fav-recipe content\">";
-                $recipeList.='<img src="'.$recipe["immagine"].'" alt="" class="fav-recipe-img-crop">';
-                $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
-                $average=$db->getRecipeAverage($recipe["nome"]);
-                if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
-                    header('Location: 500-err.php');
-                    exit();
+                if($recipeCounter<$limit)
+                {
+                    if($recipeCounter==$limit-6) {
+                        $recipeList.="<li class=\"fav-recipe content\" id=\"prev-last-recipe\">";
+                    } else {
+                        $recipeList.="<li class=\"fav-recipe content\">";
+                    }
+                    $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
+                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
+                    $average=$db->getRecipeAverage($recipe["nome"]);
+                    if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
+                        header('Location: 500-err.php');
+                        exit();
+                    }
+                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
+                    $categoria=str_replace("_"," ",$recipe["categoria"]);
+                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
+                    $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
+                    $recipeCounter=$recipeCounter+1;
                 }
-                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
-                $categoria=str_replace("_"," ",$recipe["categoria"]);
-                $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
-                $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
             }
             $paginaHtml=str_replace("{{lista-preferiti}}",$recipeList,$paginaHtml);
+
+            $moreRecipeForm="";
+            if($recipeCounter<count($favouritesList)) {
+                $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
+                $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
+                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
+                $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            }
+            $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         echo $paginaHtml;
     }
@@ -97,33 +126,62 @@ if(!isset($_GET["username"])) {
             $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
         }
 
-        $favouritesList=$db->getUserFavourites($username);
+        $limit=5;
+        if(isset($_GET["prefRecipeLimit"])) {
+            $limit=$_GET["prefRecipeLimit"];
+            if(filter_input(INPUT_GET, 'prefRecipeLimit', FILTER_VALIDATE_INT) === false) {
+                header('Location: 500-err.php');
+                exit();
+            }
+            unset($_GET["prefRecipeLimit"]);
+        }
+
+        $favouritesList=$db->getUserFavourites($username,$limit+1);
         if(is_string($favouritesList) && (strcmp($favouritesList,"ExceptionThrow")==0 || strcmp($favouritesList,"ConnectionFailed")==0)) {
             header('Location: 500-err.php');
             exit();
         }
         elseif(is_string($favouritesList) && strcmp($favouritesList,"noFavourites")==0) {
             $paginaHtml=str_replace("{{lista-preferiti}}","<li><p id=\"empty-fav-recipe-list\">".$username." non ha ricette salvate.</p></li>",$paginaHtml);
+            $paginaHtml=str_replace("{{more-recipe-form}}","",$paginaHtml);
         }
         else {
             $recipeList = "";
+            $recipeCounter=0;
             foreach($favouritesList as $recipe) {
-                $recipeList.="<li class=\"fav-recipe content\">";
-                $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
-                $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
-                $average=$db->getRecipeAverage($recipe["nome"]);
-                if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
-                    header('Location: 500-err.php');
-                    exit();
+                if($recipeCounter<$limit)
+                {
+                    if($recipeCounter==$limit-6) {
+                        $recipeList.="<li class=\"fav-recipe content\" id=\"prev-last-recipe\">";
+                    } else {
+                        $recipeList.="<li class=\"fav-recipe content\">";
+                    }
+                    $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
+                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
+                    $average=$db->getRecipeAverage($recipe["nome"]);
+                    if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
+                        header('Location: 500-err.php');
+                        exit();
+                    }
+                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
+                    $categoria=str_replace("_"," ",$recipe["categoria"]);
+                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
+                    $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
+                    $recipeCounter=$recipeCounter+1;
                 }
-                $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
-                $categoria=str_replace("_"," ",$recipe["categoria"]);
-                $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
-                $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
-                $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
             }
             $paginaHtml=str_replace("{{lista-preferiti}}",$recipeList,$paginaHtml);
+
+            $moreRecipeForm="";
+            if($recipeCounter<count($favouritesList)) {
+                $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
+                $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
+                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
+                $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            }
+            $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         $paginaHtml=str_replace('<a href="./user-edit.html" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
         $paginaHtml=str_replace('<a href="../php/sign-out.php" id="log-out" class="shadow">ESCI</a>',"",$paginaHtml);
