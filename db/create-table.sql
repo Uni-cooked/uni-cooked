@@ -66,7 +66,7 @@ CREATE TABLE Valutazione(
     utente VARCHAR(15),
     data DATE NOT NULL,
     voto TINYINT NOT NULL CHECK(voto>0 AND voto<=30),
-    commento VARCHAR(500) NOT NULL,
+    commento VARCHAR(200) NOT NULL,
     PRIMARY KEY (ricetta, utente),
     FOREIGN KEY (ricetta) REFERENCES Ricetta(nome) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
