@@ -9,11 +9,24 @@ quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab v
 * refactoring css
 * thanks page
 - alt vuoti o rimossi?
-- controlli php per immagini
-- breadcrumb va bene <p><a>pagina precedente</a> > Pagina attuale</p> o serve la lista?
-- breadcrumb ricetta
-- controllare h1 e h2 nei main
+* controlli php per immagini
+* breadcrumb va bene <p><a>pagina precedente</a> > Pagina attuale</p> o serve la lista?
+* breadcrumb ricetta
+* controllare h1 e h2 nei main
 - div dentro ul per fare 2 colonne
 - se guardo i profili degli altri non ho il mio accedi/profilo
 - add comment, (voto da 1 a 30) in title
 - cancella in user edit? come torno indietro
+- \n bio -> pre
+
+data sotto nel commento
+input voto centrato in mobile
+classe errori rossi
+name agli input
+btn ripetuto css
+700
+profilo in menu user edit
+h2 h3
+pre in bio
+max height bio -> white-space: pre
+keyword/desc/title

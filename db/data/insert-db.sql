@@ -10,7 +10,7 @@ DELETE FROM Ingrediente;
 -- UTENTE
 
 INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b1dda76f53349809836d50867fd94c1ea6c7d6205ecf9", "2025-01-02", "Speleologa di 49 anni, adoro i gatti e il fucsia. Mi è tornata la passione dello studio e mi sono iscritta a odontoiatria a Padova.", "pendolare", NULL);
-INSERT INTO Utente VALUES ("Joe Trump", "iamtherealpresident@sus.us", "ccd42caa9cf8726478032abc123637ff919b02eb0e5fa09f4f4344f7c0bf5f3c", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURUNDI GREAT AGAIN", "dad", NULL);
+INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "ccd42caa9cf8726478032abc123637ff919b02eb0e5fa09f4f4344f7c0bf5f3c", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURUNDI GREAT AGAIN", "dad", NULL);
 
 
 -- INGREDIENTE
@@ -126,7 +126,7 @@ INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Impiatta assieme ai pomodori e
 -- FUORISEDE
 INSERT INTO Valutazione VALUES ("Insalata pigra", "GGGaggi", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata pigra, valutate molto positivamente entrambe.");
-INSERT INTO Valutazione VALUES ("Caprese", "Joe Trump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
+INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
 
 -- PENDOLARE
 
