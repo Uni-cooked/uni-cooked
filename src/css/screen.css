@@ -187,6 +187,10 @@ fieldset {
     width: fit-content;
     margin: 1em auto 0;
 }
+
+.err-msg {
+    color: var(--danger-button-color);
+}
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -742,7 +746,7 @@ ul#recipe-list .recipe a {
     text-align: right;
     padding-top: 0.3em;
     padding-right: 1em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #page-changer {
@@ -755,7 +759,7 @@ ul#recipe-list .recipe a {
     display: inline;
     color: var(--accent);
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 700;
     word-spacing: var(--word-spacing);
     margin: 0 1.5em;
 }
@@ -868,9 +872,11 @@ ol li.prep-li::marker {
 
 #add-comment-eval {
     display: inline;
-    width: 5.5em;
+    width: 5em;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 #add-comment-eval + span {
@@ -918,17 +924,18 @@ button#del-comment {
     margin-right: 1em;
 }
 
-.comment-date {
-    float: right;
-    color: var(--accent);
-}
-
 .comment-eval {
     margin-top: .7em;
 }
 
 .comment-text {
-    margin-top: 1.2em;
+    margin: 1.2em 0 .6em;
+}
+
+.comment-date {
+    display: block;
+    text-align: right;
+    color: var(--accent);
 }
 
 #more-comment-btn {
@@ -1021,6 +1028,10 @@ button#del-comment {
     color: var(--accent);
 }
 
+#user-bio {
+    white-space: pre;
+}
+
 #fav-recipe-list-container{
     background-color: var(--accent-secondary);
     border-top: 3px solid var(--accent);
@@ -1110,7 +1121,7 @@ button#del-comment {
     display: block;
     text-align: right;
     padding-right: 1em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 a#edit-profile-link {
@@ -1197,16 +1208,19 @@ a#log-out {
     margin-bottom: 2rem;
 }
 
+#change-psw-title {
+    font-size: calc(var(--section-title) * 0.7);
+    margin-top: 2em;
+}
+
 .danger-btn {
     display: block;
     width: 100%;
     height: var(--button-height);
     background-color: var(--danger-button-color);
     color: var(--p-color);
-    font-weight: 700;
     font-size: 1.1rem;
     margin:0 auto .5em;
-    border-radius: var(--radius-small);
 }
 
 /* #endregion USER EDIT PAGE */
@@ -1377,16 +1391,13 @@ select {
     width: 100%;
     height: 2.8rem;
     margin-bottom: .5rem;
+    padding-right: 1em;
     text-indent: 1em;
     font-size: .9em;
     background-color: rgb(48, 48, 48);
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
     color: white;
-}
-
-input[type="number"] {
-    padding-right: 1em;
 }
 
 textarea {
@@ -1462,7 +1473,7 @@ input[type="range"]:focus::-moz-range-thumb{
     outline-offset: 0.125rem;
 }
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 

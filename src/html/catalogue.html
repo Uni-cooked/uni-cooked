@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Ricette - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
-        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
-        <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari">
-        <meta name="author" content="Uni cooked">
+        <meta name="description" content="Tutto il catalogo di Uni Cooked, pieno di ricette favolose adatte a tutti gli universitari e non solo.">
+        <meta name="keyword" content="Uni Cooked,ricette,catalogo,universitari">
+        <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/screen.css" media="screen">
@@ -65,7 +65,7 @@
                     <legend class="hide">Filtra per</legend>
                     <div class="filter-param">
                         <label for="stud-cat-filter" class="form-label">CATEGORIA STUDENTE</label>
-                        <select id="stud-cat-filter">
+                        <select id="stud-cat-filter" name="cat">
                             <option value="tutti">Tutti</option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="filter-param">
                         <label for="dish-type-filter" class="form-label">PIATTO</label>
-                        <select id="dish-type-filter">
+                        <select id="dish-type-filter" name="dish">
                             <option value="tutti">Tutti</option>
                             <option value="pp">Primi</option>
                             <option value="sp">Secondi</option>
@@ -83,20 +83,20 @@
                     </div>
                     <div class="filter-param">
                         <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA</label>
-                        <input type="range" id="min-rate-filter" min="1" max="30" value="1">
+                        <input type="range" id="min-rate-filter" name="min_rate" min="1" max="30" value="1">
                         <p aria-hidden="true">1 / 30</p>
                     </div>
                     <div class="filter-param">
                         <label for="max-price-filter" class="form-label">COSTO MASSIMO</label>
-                        <input type="range" id="max-price-filter" min="1" max="20" value="20">
-                        <p aria-hidden="true">20 €</p>
+                        <input type="range" id="max-price-filter" name="max_price" min="1" max="25" value="25">
+                        <p aria-hidden="true">25 €</p>
                     </div>
                 </fieldset>
                 
                 <button type="submit" id="search-btn" class="shadow">CERCA</button>
             </form>
             
-            <h3 class="content-subtitle content">RISULTATI</h3>
+            <h2 class="content-subtitle content">RISULTATI</h2>
             <form action="" class="content">
                 <label for="ord-res" class="form-label">ORDINA I RISULTATI</label>
                 <select id="ord-res" onchange="">

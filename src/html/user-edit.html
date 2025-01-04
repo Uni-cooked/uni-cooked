@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Modifica profilo - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
-        <meta name="description" content="Il tuo profilo Uni Cooked dove puoi trovare le nostre ricette che ti hanno colpito di più.">
-        <meta name="keyword" content="Uni Cooked,utente,profilo,ricette,preferite">
+        <!-- <meta name="description" content=""> -->
+        <!-- <meta name="keyword" content=""> -->
         <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
@@ -42,6 +42,9 @@
                         <li><a href="./index.html"><span lang="en">HOME</span></a></li>
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
+                        <li id="profile-item">
+                            <a href="./user.php" class="shadow">PROFILO</a>
+                        </li>
                     </ul>
                 </nav>
                 
@@ -62,14 +65,14 @@
                                 <img src="{{profile-pic}}" alt="Immagine profilo di {{username}}" srcset="">
                                 <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
                                 <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg">
-                                <p id="profile-pic-err-p">{{profile-pic-error}}</p>
+                                <p id="profile-pic-err-p" class="err-msg">{{profile-pic-error}}</p>
                             </div>
     
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
                                     <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit">
-                                    <p>{{nickname-error}}</p>
+                                    <p class="err-msg">{{nickname-error}}</p>
                                 </div>
                                 
                                 <div class="input-container">
@@ -80,15 +83,39 @@
                                             <option value="in_sede">In sede</option>
                                             <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
                                     </select>
-                                    <p>{{stud-cat-edit-error}}</p>
+                                    <p class="err-msg">{{stud-cat-edit-error}}</p>
                                 </div>
                             </div>
                         </div>
                         <label class="form-label" for="bio-edit">Biografia</label>
-                        <textarea id="bio-edit" name="bio-edit">{{biografia}}</textarea>
+                        <textarea id="bio-edit" name="bio-edit" maxlength="300">{{biografia}}</textarea>
                         
                         <button class="button-input button-input-confirm" type="submit" name="submit-profile-changes">CONFERMA</button>
                         <button class="button-input button-input-cancel" type="reset">CANCELLA</button>
+                    </fieldset>
+                </form>
+
+                <h3 id="change-psw-title" class="content-subtitle">CAMBIA <span lang="en">PASSWORD</span></h3>
+                <form id="credentials" action="" method="post">
+                    <fieldset>
+                        <div class="input-container" >
+                            <label for="old-psw" id="name-in" class="form-label">Inserisci la vecchia <span lang="en">password</span></label>
+                            <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw">
+                            <p class="err-msg">{{messaggio di old-psw}}</p>
+                        </div>
+                        <div id="psw-up-container" class="input-container">
+                            <label for="new-psw" class="form-label">Inserisci la nuova <span lang="en">password</span></label>
+                            <input required type="password" name="psw" id="new-psw">
+                            <p class="err-msg">{{messaggio di new-psw}}</p>
+                        </div>
+                        <div id="psw-up-container" class="input-container">
+                            <label for="repeat-new-psw" class="form-label">Ripeti la nuova <span lang="en">password</span></label>
+                            <input required type="password" name="repeat-psw" id="repeat-new-psw">
+                            <p class="err-msg">{{messaggio di repeat-psw}}</p>
+                        </div>
+
+                        <button name="submit" class="button-input button-input-confirm shadow" type="submit">REGISTRATI</button>
+                        <button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button>
                     </fieldset>
                 </form>
             </div>

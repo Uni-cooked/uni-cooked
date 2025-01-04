@@ -271,6 +271,10 @@ ul#ingredient-list li {
     float: none;
     margin: 0 auto 1em;
 }
+
+#add-comment-eval-container {
+    text-align: center;
+}
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */

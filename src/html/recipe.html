@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{Recipe-title}} - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
-        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
-        <meta name="keyword" content="Uni cooked,ricette,cucina,piatti,universitari,{{Recipe-title}}">
-        <meta name="author" content="Uni cooked">
+        <meta name="description" content="La versione di Uni Cooked di {{Recipe-title}} fatta su misura per te.">
+        <meta name="keyword" content="Uni Cooked,{{Recipe-title}}">
+        <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Importo fogli di stile-->
+        <!-- CSS -->
         <link rel="stylesheet" href="../css/screen.css" media="screen">
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
@@ -45,7 +45,7 @@
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li><a href="./about-us.html">CONTATTI</a></li>
                         <li id="profile-item">
-                            <a href="sign-in.php" class="shadow">ACCEDI</a>
+                            <a href="./sign-in.php" class="shadow">ACCEDI</a>
                         </li>
                     </ul>
                 </nav>
@@ -58,7 +58,7 @@
         </header>
 
         <main id="content">
-            <h2 id="recipe-name-title" class="content-subtitle">{{Recipe-title}}</h2>
+            <h1 id="recipe-name-title" class="content-subtitle">{{Recipe-title}}</h1>
             <div id="recipe-main-info">
                 <img src="{{recipe-image-src}}" alt="" id="recipe-img">
                 <ul>
@@ -71,7 +71,6 @@
             </div>
 
             {{form-add-to-favourites}}
-
 
             <div class="content-container end-paragraph">
                 <p class="content">{{description}}</p>
@@ -92,18 +91,7 @@
             </div>
 
             <h3 class="content-subtitle content">VALUTAZIONI</h3>
-            {{leave-comment-or-personal-published-comment}}
-
-            <!-- TODO: per evitare i 2 div dovremmo mettere
-                        <div id="user-comment" class="content">
-                        ...
-                        <button ... class="content load-more-btn">
-                       e mettere in screen.css
-                        #user-comment { max-width: calc(100vw - 2rem); }
-                       e in big.css
-                        #user-comment { max-width: calc(1200px - 2rem); }
-            -->
-           
+            {{leave-comment-or-personal-published-comment}}           
 
             <h4 id="comment-subtitle" class="content-subtitle content">Cosa ne pensano gli altri</h4>
 

@@ -179,7 +179,7 @@ if(isset($_GET["recipe"])) {
         if(is_string($userComment) && strcmp($userComment,"userLeftNoComment")==0) {
             $form.='<div id="add-comment" class="content-container-left content">';
             $form.='<img src="'.$immagine.'" id="add-comment-pp">';
-            $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" placeholder="Motiva la tua valutazione" required name="comment"></textarea><button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">ANNULLA</button></fieldset></form></div>';
+            $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" placeholder="Motiva la tua valutazione" required name="comment"></textarea><button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
         } elseif (is_string($userComment)) {
             header('Location: 500-err.php');
             exit();
@@ -187,9 +187,9 @@ if(isset($_GET["recipe"])) {
             $form.='<div class="content"><div id="user-comment">';
             $form.='<img src="'.$immagine.'" class="comment-pp">';
             $form.='<a href="user.php">'.$isUserLogged."</a>";
-            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"]))."</time>";
             $form.='<p class="comment-eval">'.$userComment["voto"].' <abbr title="su">/</abbr> 30</p>';
             $form.='<p class="comment-text">'.$userComment["commento"].'</p></div><form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'"><button type="submit" id="del-comment" class="load-more-btn" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
+            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"]))."</time>";
         }
         $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",$form,$paginaHtml);
     } else {
@@ -232,9 +232,9 @@ if(isset($_GET["recipe"])) {
                     $finalList.='<li><img src="'.$immagine.'" alt="" class="comment-pp">';
                 }
                 $finalList.='<a href="user.php?username='.$singleComment["utente"].'">'.$singleComment["utente"]."</a>";
-                $finalList.='<time class="comment-date" datetime="'.$singleComment["data"].'">'.date("d/m/Y",strtotime($singleComment["data"]))."</time>";
                 $finalList.='<p class="comment-eval">'.$singleComment["voto"].' <abbr title="su">/</abbr> 30</p>';
                 $finalList.='<p class="comment-text">'.$singleComment["commento"]."</p></li>";
+                $finalList.='<time class="comment-date" datetime="'.$singleComment["data"].'">'.date("d/m/Y",strtotime($singleComment["data"]))."</time>";
                 $commentNumber=$commentNumber+1;
             }
         }

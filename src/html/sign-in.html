@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Accedi - Uni Cooked</title>
+        <title>Accesso - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
-        <meta name="description" content="Uni cooked, il sito di cucina per eccellenza dedicato agli universitari, troverai ricette adatte ad ogni tipo di palato.">
-        <meta name="keyword" content="Uni-cooked,ricette,cucina,piatti,universitari,fuorisede,pendolare,in sede,dad">
-        <meta name="author" content="Uni cooked">
+        <!-- <meta name="description" content=""> -->
+        <!-- <meta name="keyword" content=""> -->
+        <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/screen.css" media="screen">
@@ -62,11 +62,11 @@
                             <input required type="text" placeholder="Inserisci nome" name="nome" id="student-name-in">
                         </div>
                         <div class="input-container " >
-                            <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la password</label>
+                            <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la <span lang="en">password</span></label>
                             <input required type="password" placeholder="Inserisci password" name="psw" id="student-psw-in">
                         </div>
                         <button class="button-input button-input-confirm shadow" type="submit" name="submit">ACCEDI</button>
-                        <p>{{messaggio di errore}}</p>
+                        <p class="err-msg">{{messaggio di errore}}</p>
                     </fieldset>
                 </form>
                 <div id="redirect">
