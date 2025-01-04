@@ -145,11 +145,13 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
     } else {
         if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true) {
             $changeResult=false;
-            $imagedef=scandir($userBasePath.$userPath);
-            $info = new SplFileInfo($imagedef[2]);
-            $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
-            $imagedef="../user_profiles/".$username.'/'.$username.".".$extension;
-            
+            $imagedef="";
+            if($userInfo["immagine"] || $isProfilePicChanged==true) {
+            	$imagedef=scandir($userBasePath.$userPath);
+		        $info = new SplFileInfo($imagedef[2]);
+		        $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
+		        $imagedef="../user_profiles/".$username.'/'.$username.".".$extension;
+            }
             if(is_dir($userBasePath.$userPath) && strcmp($username,$isLogged)!=0) {
                 rename($userBasePath.$userPath.$userInfo["nome"].".".$extension,$userBasePath.$userPath.$username.".".$extension); //rinomina immagine con il nuovo nome utente
                 rename($userBasePath.$userPath,"../user_profiles/".$username.'/'); //rinomina la cartella dell'utente    

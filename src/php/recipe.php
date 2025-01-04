@@ -200,6 +200,10 @@ if(isset($_GET["recipe"])) {
 
     if(isset($_GET["commentLimit"])) {
         $limit=$_GET["commentLimit"];
+        if(filter_input(INPUT_GET, 'commentLimit', FILTER_VALIDATE_INT) === false) {
+            header('Location: 500-err.php');
+            exit();
+        }
         unset($_GET["commentLimit"]);
     }
     
@@ -237,12 +241,13 @@ if(isset($_GET["recipe"])) {
         $finalList.="</ul>";
         $paginaHtml=str_replace("{{comment-list}}",$finalList,$paginaHtml);
         if($commentNumber<count($comments)) {
-            $moreCommentsForm='<form action="recipe.php?recipe='.$recipe."&commentLimit=".$limit+5;
-            $moreCommentsForm.='#previous-last-comment" method="post">';
-            $moreCommentsForm.='<button type="submit" name="submit-more-comment" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button></form><a href="#comment-list" class="back-up-link">Torna su</a>';
+            $moreCommentsForm='<form action="recipe.php#previous-last-comment" method="get">';
+            $moreCommentsForm.='<input type="hidden" name="commentLimit" value="'.$limit+5;
+            $moreCommentsForm.='"><input type="hidden" name="recipe" value="'.$recipe;
+            $moreCommentsForm.='"><button type="submit" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button></form><a href="#comment-list" class="back-up-link">Torna su</a>';
             $paginaHtml=str_replace("{{comment-more-button}}",$moreCommentsForm,$paginaHtml);
         } else {
-            $paginaHtml=str_replace("{{comment-more-button}}",'<a href="#comment-list" class="back-up-link">Torna su</a>',$paginaHtml);
+            $paginaHtml=str_replace("{{comment-more-button}}",'<a href="#comment-list" class="back-up-link">Torna su al primo commento</a>',$paginaHtml);
         }
     }
     

@@ -6,9 +6,9 @@ session_start();
 
 class DB {
     private const HOST_DB = "localhost";
-    private const DBNAME = "aprecoma";
-    private const USERNAME = "aprecoma";
-    private const PSW = "bahnoht9fuo2WiCh";
+    private const DBNAME = "dbname";
+    private const USERNAME = "username";
+    private const PSW = "psw";
 
     private $connection;
     private $tagPermessi = '<em><strong>';
