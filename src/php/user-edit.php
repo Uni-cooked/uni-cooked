@@ -146,7 +146,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
         if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true) {
             $changeResult=false;
             $imagedef="";
-            if($userInfo["categoria"] || $isProfilePicChanged==true) {
+            if($userInfo["immagine"] || $isProfilePicChanged==true) {
             	$imagedef=scandir($userBasePath.$userPath);
 		        $info = new SplFileInfo($imagedef[2]);
 		        $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
