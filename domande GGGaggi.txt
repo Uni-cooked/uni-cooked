@@ -6,8 +6,8 @@ desc e keyword in pagine stupide (404 ecc, profile, profile edit)
 a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
 
 - keyword in strong brutte in cicciotto (vedi breadcrumb)
-- replace _EN delle ricette in catalogo, recipe e ricette preferite
 - nel titolo della ricetta abbiamo h1 con dentro span
+- warning in catalogo con DAD
 
 * max length bio (300 char)
 * max length suggerimenti about us (500 char)
