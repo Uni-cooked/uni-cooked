@@ -1228,11 +1228,11 @@ a#log-out {
 /* ================================================== */
 
 /* #region ABOUT US PAGE */
-#pp {
+.pp {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 15px solid green;
+    border: 3px solid var(--accent);
 }
 
 #recipie-request img {
