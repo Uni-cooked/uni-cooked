@@ -85,7 +85,8 @@ if(isset($_GET["recipe"])) {
     }
 
     $paginaHtml=str_replace("{{recipe-image-src}}",$recipeDetails["immagine"],$paginaHtml);
-    $paginaHtml=str_replace("{{Recipe-title}}",$recipeDetails["nome"],$paginaHtml);
+    $paginaHtml=str_replace("{{Recipe-title}}",$db->checkLang($recipeDetails["nome"],false),$paginaHtml);
+    $paginaHtml=str_replace("{{Recipe-title-body}}",$db->checkLang($recipeDetails["nome"]),$paginaHtml);
     $mark=$db->getRecipeAverage($recipe);
     if(is_string($mark) && (strcmp($mark,"ExceptionThrow")==0 || strcmp($mark,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');
@@ -124,17 +125,17 @@ if(isset($_GET["recipe"])) {
     }
     $finalList="";
     foreach($ingredients as $singleIngredient) {
-        $finalList.="<li>".ucfirst($singleIngredient["ingrediente"])." ";
+        $finalList.="<li>".$db->checkLang(ucfirst($singleIngredient["ingrediente"]));
         if($singleIngredient["quanto_basta"]==true) {
-            $finalList.='<abbr title="quanto basta">q.b.</abbr>';
+            $finalList.=' <abbr title="quanto basta">q.b.</abbr>';
         } else {
-            $finalList.=$singleIngredient["quantita"]." ";
+            $finalList.=" ".$singleIngredient["quantita"];
             switch($singleIngredient["unita_misura"]) {
                 case 'g':
-                    $finalList.='<abbr title="grammi">g</abbr>';
+                    $finalList.=' <abbr title="grammi">g</abbr>';
                     break;
                 case 'ml':
-                    $finalList.='<abbr title="millilitri">ml</abbr>';
+                    $finalList.=' <abbr title="millilitri">ml</abbr>';
                     break;
                 case 'num_el':
                     break;
@@ -188,8 +189,8 @@ if(isset($_GET["recipe"])) {
             $form.='<img src="'.$immagine.'" class="comment-pp">';
             $form.='<a href="user.php">'.$isUserLogged."</a>";
             $form.='<p class="comment-eval">'.$userComment["voto"].' <abbr title="su">/</abbr> 30</p>';
-            $form.='<p class="comment-text">'.$userComment["commento"].'</p></div><form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'"><button type="submit" id="del-comment" class="load-more-btn" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
-            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"]))."</time>";
+            $form.='<p class="comment-text">'.$userComment["commento"].'</p>';
+            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"])).'</time></div><form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'"><button type="submit" id="del-comment" class="load-more-btn" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
         }
         $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",$form,$paginaHtml);
     } else {

@@ -71,7 +71,7 @@ if(!isset($_GET["username"])) {
                         $recipeList.="<li class=\"fav-recipe content\">";
                     }
                     $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
-                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
+                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$db->checkLang($recipe["nome"])."</h4> </div>";
                     $average=$db->getRecipeAverage($recipe["nome"]);
                     if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
                         header('Location: 500-err.php');

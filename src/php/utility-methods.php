@@ -6,9 +6,9 @@ session_start();
 
 class DB {
     private const HOST_DB = "localhost";
-    private const DBNAME = "dbname";
-    private const USERNAME = "username";
-    private const PSW = "psw";
+    private const DBNAME = "aprecoma";
+    private const USERNAME = "aprecoma";
+    private const PSW = "bahnoht9fuo2WiCh";
 
     private $connection;
     private $tagPermessi = '<em><strong>';
@@ -767,4 +767,17 @@ class DB {
         }
     }
 
+    public function checkLang($word,$addSpan=true): string {
+        if (preg_match('/^(.*?)_([A-Z]{2})$/', $word, $matches)==false) {
+            return $word;
+        } else {
+            if ($addSpan==true) {
+                $htmlStr = '<span lang="'.strtolower($matches[2]).'">';
+                $realWord = $matches[1];
+                $htmlStr .= $realWord.'</span>';
+                return $htmlStr;
+            }
+            return $matches[1];
+        }
+    }
 }
