@@ -1,20 +1,19 @@
 <?php
 
 require_once "utils/page_system.php";
-require_once "utils/Sanitizer.php";
 
-use Utilities\DB;
+use DB\DB;
 use Utilities\PageSystem;
 use Utilities\Sanitizer;
 
 $db = new DB;
 
 $recipieName = isset($_GET['name']) ? Sanitizer::SanitizeInput($_GET['name']) : null;
-$recipieCategory = isset($_GET['category']) && $_GET['category'] != "tutti" ? Sanitizer::SanitizeInput($_GET['category']) : null;
-$course = isset($_GET['course']) && $_GET['course'] != "tutti" ? Sanitizer::SanitizeInput($_GET['course']) : null;
-$grade = isset($_GET['grade']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['grade'])) : 1;
-$cost = isset($_GET['cost']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['cost'])) : 20;
-$order= Sanitizer::SanitizeInput("ca"); // cost ascending
+$recipieCategory = isset($_GET['cat']) && $_GET['cat'] != "tutti" ? Sanitizer::SanitizeInput($_GET['cat']) : null;
+$course = isset($_GET['dish']) && $_GET['dish'] != "tutti" ? Sanitizer::SanitizeInput($_GET['dish']) : null;
+$grade = isset($_GET['min_rate']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['min_rate'])) : null;
+$cost = isset($_GET['max_price']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['max_price'])) : null;
+$order= isset($_GET['ord']) ? Sanitizer::SanitizeInput($_GET['ord']) : null;
 
 
 $pageSystem = new PageSystem($db,$recipieName,$recipieCategory,$course,$grade,$cost,$order);
@@ -41,13 +40,42 @@ if ($recipes!=null) {
 
 $paginaHtml = str_replace("value=\"".$recipieCategory."\"","value=\"".$recipieCategory."\" selected",$paginaHtml);
 $paginaHtml = str_replace("value=\"".$course."\"","value=\"".$course."\" selected",$paginaHtml);
+$paginaHtml = str_replace("value=\"".$order."\"","value=\"".$order."\" selected",$paginaHtml);
 $paginaHtml = str_replace("id=\"search-bar\"","id=\"search-bar\" value=\"". $recipieName ."\"",$paginaHtml);
 $paginaHtml = str_replace("id=\"min-rate-filter\"","id=\"min-rate-filter\" value=\"".$grade."\"",$paginaHtml);
 $paginaHtml = str_replace("id=\"max-price-filter\"","id=\"max-price-filter\" value=\"".$cost."\"",$paginaHtml);
 
+$paginaHtml = str_replace("{{HIDDEN}}",CreateOrderChanger($pageSystem->GetParamList()),$paginaHtml);
 $paginaHtml = str_replace("{{RECIPES}}",$d_recipes,$paginaHtml);
 $paginaHtml = str_replace("{{PAGEBUTTONS}}",$pageSystem->RenderButtons(),$paginaHtml);
 
 echo $paginaHtml;
 
+function CreateRecipeCard(string $img,string $title,int $grade, string $category,string $course,int $cost): string {
+    $TEMPLATE ="<li class=\"recipe\">
+                    <img class=\"recipe-img-crop\" src=\"" . $img . "\" alt=\"\">
+                    <h3 class=\"recipe-title\">" . $title . "</h3>
+                    <ul class=\"recipe-info\">
+                        <li><img src=\"asset/icon/grade.svg\" alt=\"voto\">" . ($grade != 31 ? $grade : "-") ." <abbr title=\"su\">/</abbr> 30</li>
+                        <li><img src=\"asset/icon/student.svg\" alt=\"categoria\">" . $category . "</li>
+                        <li><img src=\"asset/icon/course.svg\" alt=\"piatto\">" . $course . "</li>
+                        <li><img src=\"asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
+                    </ul>    
+                    <a href=\"./recipe.php?recipie=". $title ."\" title=\"". $title ."\">Vai alla ricetta</a>
+                </li>";
+    return $TEMPLATE;
+}
+
+function CreateOrderChanger($filters_list) {
+    $HIDDEN ="";
+        while ($value = current($filters_list)) {
+            $HIDDEN .= "<input type=\"hidden\" name=". key($filters_list) ." value=". $value .">";
+            next($filters_list);
+        }
+        return $HIDDEN;
+}
+
+function Message(string $text): string {
+    return "<p>".$text."</p>";
+}
 ?>

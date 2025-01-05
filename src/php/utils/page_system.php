@@ -2,10 +2,12 @@
 
 namespace Utilities;
 
-require_once("html-templates.php");
-require_once ("utils/DB.php");
+require_once("math.php");
+require_once ("utility-methods.php");
+require_once ("sanitizer.php");
 
-use Utilities\DB;
+use DB\DB;
+use Utilities\Sanitizer;
 
 class PageSystem {
     private int $current_page;
@@ -17,13 +19,13 @@ class PageSystem {
     private ?string $recipieName;
     private ?string $recipieCategory;
     private ?string $course;
-    private int $grade;
-    private int $cost;
+    private ?int $grade;
+    private ?int $cost;
     private ?string $order;
 
     private const ITEMS_PER_PAGE = 9;
 
-    public function __construct(DB $d,?string $recipieName,?string $recipieCategory,?string $course, int $grade, int $cost,?string $order) {
+    public function __construct(DB $d,?string $recipieName,?string $recipieCategory,?string $course, ?int $grade, ?int $cost,?string $order) {
         $this->db = $d;
         $this->filter_list = array();
 
@@ -36,7 +38,7 @@ class PageSystem {
     }
     
     public function GetCurrentPage(int $page): array|null    {
-        $query = "SELECT r.immagine,r.nome,AVG(coalesce(v.voto,1)) as voto,r.categoria,r.tipo_piatto,r.prezzo
+        $query = "SELECT r.immagine,r.nome,AVG(coalesce(v.voto,31)) as voto,r.categoria,r.tipo_piatto,r.prezzo
                 FROM Ricetta as r LEFT JOIN Valutazione as v ON r.nome = v.ricetta
                 WHERE 1=1 ";
         $params = [];
@@ -49,24 +51,24 @@ class PageSystem {
         if($this->recipieCategory){
             $query .= " and r.categoria = ? ";
             $params[] = $this->recipieCategory;
-            $this->filter_list["category"] = $this->recipieCategory;
+            $this->filter_list["cat"] = $this->recipieCategory;
         }
         if($this->course){
             $query .= " and r.tipo_piatto = ? ";
             $params[] = $this->course;
-            $this->filter_list["course"] = $this->course;
+            $this->filter_list["dish"] = $this->course;
         }
         if($this->cost){
             $query .= " and r.prezzo <= ? ";
             $params[] = $this->cost;
-            $this->filter_list["cost"] = $this->cost;
+            $this->filter_list["max_price"] = $this->cost;
         }
         
         $query .= "GROUP BY r.nome ";
         if($this->grade){
-            $query .= " HAVING AVG(coalesce(v.voto,1)) >= ? ";
+            $query .= " HAVING AVG(coalesce(v.voto,31)) >= ? ";
             $params[] = $this->grade;
-            $this->filter_list["grade"] = $this->grade;
+            $this->filter_list["min_rate"] = $this->grade;
         }
         $order_query = "ORDER BY ";
 
@@ -74,28 +76,33 @@ class PageSystem {
             $order_query .= "LOCATE(?, r.nome),";
             $params[] = $this->recipieName;
         }
-
+        
         if($this->db->isUserLogged()){
-            $user = $this->db->getUserInfo()[0];
-            $order_query.="CASE
-                            WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
-                            ELSE 1                        
-                            END,";
+            $user = $this->db->getUserInfo();
+            if(!is_string($user)) {
+                $order_query.="CASE
+                WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
+                ELSE 1                        
+                END,";
+            }
         }
+        
+        $order_query.="CASE
+                        WHEN v.voto <> 31 THEN 0
+                        ELSE 1                        
+                        END,";
+
+
         switch ($this->order) {
-            case 'ca':
+            case 'prezzo_asc':
                 $order_query .= "r.prezzo ASC";
                 break;
             
-            case 'cd':
+            case 'prezzo_desc':
                 $order_query .= "r.prezzo DESC";
                 break;
             
-            case 'ga':
-                $order_query .= "v.voto ASC";
-                break;
-            
-            case 'gd':
+            case 'voto_desc':
                 $order_query .= "v.voto DESC";
                 break;
                 
@@ -107,8 +114,7 @@ class PageSystem {
         
         $query.=$order_query;
         
-        // echo $query;
-        $results = $this->db->SelectQuery($query,$params);
+        $results = $this->db->GetRecipes($query,$params);
 
 
         $this->totalPages = ceil(($results ? count($results) : 1) / PageSystem::ITEMS_PER_PAGE);
@@ -122,8 +128,24 @@ class PageSystem {
 
     }
 
+    public function GetParamList(): array {
+        return $this->filter_list;
+    }
+
     public function RenderButtons(): string{
-        return CreatePageButtons($this->current_page,$this->totalPages,$this->filter_list);
+        return $this->CreatePageButtons($this->current_page,$this->totalPages,$this->filter_list);
+    }
+
+    private function CreatePageButtons(int $currentPage,int $totalPages,$filters_list):string {
+        $TEMPLATE = "<p>". $currentPage ." <abbr title=\"su\">/</abbr> ". $totalPages ." </p>
+                    <button id=\"prev-page-btn\" class=\"shadow\" name=\"page\" value="."\"" .  clamp($currentPage-1,1,$totalPages) . "\"" . "aria-label=\"via alla pagina precedente\"></button>
+                    <button id=\"next-page-btn\" class=\"shadow\" name=\"page\" value="."\"" . clamp($currentPage+1,1,$totalPages) . "\"" . "aria-label=\"vai alla pagina successiva\"></button>";
+        $HIDDEN ="";
+        while ($value = current($filters_list)) {
+            $HIDDEN .= "<input type=\"hidden\" name=". key($filters_list) ." value=". $value .">";
+            next($filters_list);
+        }
+        return $TEMPLATE.$HIDDEN;
     }
 }
 ?>

@@ -59,7 +59,7 @@
             <h2 class="content-subtitle content">FILTRA</h2>
             <form id="search-fields" class="content" action="">
                 <label for="search-bar" class="hide">Barra di ricerca</label>
-                <input type="search" id="search-bar" placeholder="Cerca una ricetta">
+                <input name="name" type="search" id="search-bar" placeholder="Cerca una ricetta">
 
                 <fieldset id="filters">
                     <legend class="hide">Filtra per</legend>
@@ -99,152 +99,20 @@
             <h2 class="content-subtitle content">RISULTATI</h2>
             <form action="" class="content">
                 <label for="ord-res" class="form-label">ORDINA I RISULTATI</label>
-                <select id="ord-res" onchange="">
+                <select id="ord-res" name="ord" onchange="">
                     <option value="voto_desc">Dal voto più alto</option>
                     <option value="prezzo_asc">Dal più economico</option>
                     <option value="prezzo_desc">Dal più costoso</option>
                 </select>
+                {{HIDDEN}}
             </form>
             <ul id="recipe-list" class="content">
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
-                <li class="recipe">
-                    <img class="catalogue-recipe-img-crop" src="../asset/img/dad.jpg" alt="">
-                    <h3 class="recipe-title">PASTA ASCIUTTA</h3>
-                    <ul class="recipe-info">
-                        <li><img src="../asset/icon/grade.svg" alt="voto">18 <abbr title="su">/</abbr> 30</li>
-                        <li><img src="../asset/icon/student.svg" alt="categoria">FUORISEDE</li>
-                        <li><img src="../asset/icon/course.svg" alt="piatto">SECONDO</li>
-                        <li><img src="../asset/icon/cost.svg" alt="costo">10 €</li>
-                    </ul>    
-                    <a href="./recipe.html" title="NOME RICETTA">Vai alla ricetta</a>
-                </li>
+                {{RECIPES}}
             </ul>
 
             <form action="">
                 <fieldset id="page-changer" class="end-paragraph">
-                    <p>1 <abbr title="su">/</abbr> 10</p>
-                    <button id="prev-page-btn" class="shadow" aria-label="via alla pagina precedente"></button>
-                    <button id="next-page-btn" class="shadow" aria-label="vai alla pagina successiva"></button>
+                    {{PAGEBUTTONS}}
                 </fieldset>
             </form>
         </main>
