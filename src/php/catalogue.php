@@ -11,8 +11,8 @@ $db = new DB;
 $recipieName = isset($_GET['name']) ? Sanitizer::SanitizeInput($_GET['name']) : null;
 $recipieCategory = isset($_GET['cat']) && $_GET['cat'] != "tutti" ? Sanitizer::SanitizeInput($_GET['cat']) : null;
 $course = isset($_GET['dish']) && $_GET['dish'] != "tutti" ? Sanitizer::SanitizeInput($_GET['dish']) : null;
-$grade = isset($_GET['min_rate']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['min_rate'])) : null;
-$cost = isset($_GET['max_price']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['max_price'])) : null;
+$grade = isset($_GET['min_rate']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['min_rate'])) : 1;
+$cost = isset($_GET['max_price']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['max_price'])) : 25;
 $order= isset($_GET['ord']) ? Sanitizer::SanitizeInput($_GET['ord']) : null;
 
 
