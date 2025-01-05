@@ -21,8 +21,8 @@ if(isset($_GET["action"])) {
     unset($_GET["action"]);
     if(strcmp($action,"delete-account")==0) {
         $paginaHtml=str_replace("{{confirm-action}}","confirm-delete-account",$paginaHtml);
-        $paginaHtml=str_replace("{{titolo}}","ELIMINA PROFILO",$paginaHtml);
-        $paginaHtml=str_replace("{{sottotitolo}}","Sei sicuro di voler eliminare il tuo <span lang=\"en\">account</span>?",$paginaHtml);
+        $paginaHtml=str_replace("{{titolo}}","ELIMINA <span lang=\"en\">ACCOUNT</span>",$paginaHtml);
+        $paginaHtml=str_replace("{{sottotitolo}}","Sei sicuro di voler eliminare il tuo profilo?",$paginaHtml);
         $paginaHtml=str_replace("{{messaggio}}","Confermando l'operazione cancellerai il tuo profilo permanentemente: i tuoi commenti, le ricette salvate e tutti i tuoi dati personali saranno eliminati immediatamente e non potranno più essere recuperati!",$paginaHtml);
         echo $paginaHtml;
     } elseif (strcmp($action,"delete-recipe")==0) {

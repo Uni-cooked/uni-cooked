@@ -7,7 +7,7 @@ $db = new DB;
 $paginaHtml=file_get_contents("../html/recipe.html");
 $isUserLogged=$db->isUserLogged();
 if ($isUserLogged!=false) {
-    $paginaHtml=str_replace("<a href=\"sign-in.php\" class=\"shadow\">ACCEDI</a>","<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
+    $paginaHtml=str_replace('<a href="./sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
 if(isset($_GET["recipe"])) {

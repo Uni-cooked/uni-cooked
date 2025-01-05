@@ -767,6 +767,38 @@ class DB {
         }
     }
 
+    public function changeUserPsw(string $oldPsw, string $newPsw): string | bool {
+        $encOldPsw=hash('sha256',$oldPsw);
+        $encNewPsw=hash('sha256',$newPsw);
+        $isUserLogged=$this->isUserLogged();
+        if ($isUserLogged==false) {
+            return "userIsNotLogged";
+        } else {
+            $connectionResult=$this->openDBConnection();
+            if ($connectionResult) {
+                $changeUserPsw=$this->connection->prepare("UPDATE Utente SET password=? WHERE nome=? AND password=?");
+                $changeUserPsw->bind_param("sss",$encNewPsw,$isUserLogged,$encOldPsw);
+                try {
+                    $changeUserPsw->execute();
+                } catch (\mysqli_sql_exception $e) {
+                    $this->closeDBConnection();
+                    $changeUserPsw->close();
+                    return "ExceptionThrow";
+                }
+                $result=$changeUserPsw->affected_rows;
+                $this->closeDBConnection();
+                $changeUserPsw->close();
+                if ($result==1) {
+                    return true;
+                } else {
+                    return "wrongPassword";
+                }
+            } else {
+                return "ConnectionFailed";
+            }
+        }
+    }
+
     public function GetRecipes($query,$params):array|null {
         $connectionResult=$this->openDBConnection();
         if(!$connectionResult) {

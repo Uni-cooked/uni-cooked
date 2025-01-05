@@ -1353,6 +1353,7 @@ a#log-out {
 #confirm-danger-op {
     background-color: var(--danger-button-color);
     color: var(--bg-primary);
+    margin-bottom: 1.5em;
 }
 /* #endregion SINGLE MESSAGE PAGE */
 

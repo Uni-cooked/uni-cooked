@@ -114,7 +114,7 @@
                             <p class="err-msg">{{messaggio di repeat-psw}}</p>
                         </div>
 
-                        <button name="submit" class="button-input button-input-confirm shadow" type="submit">REGISTRATI</button>
+                        <button name="submit-change-psw" class="button-input button-input-confirm shadow" type="submit">CONFERMA</button>
                         <button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button>
                     </fieldset>
                 </form>
@@ -122,9 +122,9 @@
 
             <div class="content">
                 <h2 class="content-subtitle">ZONA PERICOLOSA</h2>
-                <form action="user-edit.php" method="post">
-                    <button class="danger-btn" type="submit" name="delete-recipe">CANCELLA RICETTE PREFERITE</button>
-                    <button class="danger-btn" name="delete-account">CANCELLA ACCOUNT</button>
+                <form action="confirm.php" method="get">
+                    <button class="danger-btn" type="submit" name="action" value="delete-recipe">CANCELLA RICETTE PREFERITE</button>
+                    <button class="danger-btn" type="submit" name="action" value="delete-account">CANCELLA ACCOUNT</button>
                 </form>
             </div>
         </main>
