@@ -1,5 +1,5 @@
 -- ********************************************************************
--- COMMENTARE CON 'EN' I TERMINI INGLESI CHE DOVREBBERO AVERE SPAN
+-- STARE ATTENTI ALLE PAROLE INGLESI, AGGIUNGERE LA LINGUA COME PREFISSO (TIPO "EN_Hamburger")
 -- PSW E NOME DEGLI ACCOUNT SONO UGUALI
 -- I NOMI DEGLI ACCOUNT NON HANNO SPAZI
 -- FARE ATTENZIONE AI PROCEDIMENTI DELLE RICETTE, GLI OPOSTROFI NON IN MONOSPACE E I PUNTI A FINE FRASE
@@ -37,7 +37,7 @@ INSERT INTO Ingrediente VALUES ("origano");
 INSERT INTO Ingrediente VALUES ("cotoletta impanata");
 INSERT INTO Ingrediente VALUES ("pomodorini");
 INSERT INTO Ingrediente VALUES ("pane");
-INSERT INTO Ingrediente VALUES ("hamburger");   -- EN (vedi anche in seguito)
+INSERT INTO Ingrediente VALUES ("EN_hamburger");
 
 
 -- RICETTA ====================================
@@ -49,7 +49,7 @@ INSERT INTO Ricetta VALUES ("Insalata pigra", "pendolare", "secondo", 5, 3, "Hai
 INSERT INTO Ricetta VALUES ("Tramezzini prosciutto e maionese", "pendolare", "secondo", 5, 3, "TEOOOOOO", "2025-01-01", "../asset/img/recipe/pendolare/tramezzini.jpg");
 INSERT INTO Ricetta VALUES ("Caprese", "pendolare", "secondo", 5, 5, "Piatto semplice, utile per giornate mhe.", "2025-01-01", "../asset/img/recipe/pendolare/caprese.jpg");
 INSERT INTO Ricetta VALUES ("Cotoletta", "pendolare", "secondo", 10, 5, "Secondo veloce da preparare, muoviti che poi devi studiare!", "2025-01-01", "../asset/img/recipe/pendolare/cotoletta.jpg");
-INSERT INTO Ricetta VALUES ("Hamburger", "pendolare", "secondo", 20, 7, "Vi sentite un po' premium: questa ricetta è il massimo che un pendolare possa realizzare, il treno purtroppo non si lascia aspettare.", "2025-01-01", "../asset/img/recipe/pendolare/hamburger.jpg");
+INSERT INTO Ricetta VALUES ("EN_Hamburger", "pendolare", "secondo", 20, 7, "Vi sentite un po' premium: questa ricetta è il massimo che un pendolare possa realizzare, il treno purtroppo non si lascia aspettare.", "2025-01-01", "../asset/img/recipe/pendolare/hamburger.jpg");
 INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "Ci risiamo, anche quest'anno la segreteria ha ben deciso di piazzare le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30. Non preoccuparti, nemmeno noi vogliamo andare in mensa, per questo ti diciamo come sopravvivere a pranzo.", "2025-01-01", "../asset/img/recipe/pendolare/panino.jpg");
 
 -- IN SEDE
@@ -63,8 +63,8 @@ INSERT INTO Preferenza_Ricetta VALUES ("Insalata pigra", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Tramezzini prosciutto e maionese", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Caprese", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Cotoletta", "GGGaggi");
-INSERT INTO Preferenza_Ricetta VALUES ("Hamburger", "GGGaggi");
-INSERT INTO Preferenza_Ricetta VALUES ("Hamburger", "JoeTrump");
+INSERT INTO Preferenza_Ricetta VALUES ("EN_Hamburger", "GGGaggi");
+INSERT INTO Preferenza_Ricetta VALUES ("EN_Hamburger", "JoeTrump");
 
 
 -- UTILIZZO INGREDIENTE ====================================
@@ -90,9 +90,9 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "pomodorini", FALSE, 10, "
 INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "sale fino", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger", "pane", FALSE, 1, "num_el", "meglio se da hamburger");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger", "hamburger", FALSE, 1, "num_el", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("EN_Hamburger", "pane", FALSE, 1, "num_el", "meglio se da hamburger");  -- EN
+INSERT INTO Utilizzo_Ingrediente VALUES ("EN_Hamburger", "EN_hamburger", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("EN_Hamburger", "olio", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "prosciutto cotto", FALSE, 35, "g", "o crudo se c'hai i soldi");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pomodoro da insalata", FALSE, 1, "num_el", "quello grande");
@@ -116,7 +116,7 @@ INSERT INTO Preparazione VALUES ("Insalata pigra", 5, "Prendi una terrina per in
 INSERT INTO Preparazione VALUES ("Insalata pigra", 6, "Prendi il pomodoro e puliscilo sotto l'acqua corrente. Fatto questo cerca un tagliere e un coltello, quindi poggia il pomodoro sul tagliere");
 INSERT INTO Preparazione VALUES ("Insalata pigra", 7, "Affetta tutto il pomodoro cercando di non realizzare fette eccessivamente spesse");
 INSERT INTO Preparazione VALUES ("Insalata pigra", 8, "Taglia le fette in pezzetti più piccoli, quindi versali nella terrina dove hai posto l'insalata");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 9, "Condisci con olio e sale e voilà: il pranzo è servito");
+INSERT INTO Preparazione VALUES ("Insalata pigra", 9, "Condisci con olio e sale e FR_voilà: il pranzo è servito");
 
 INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 1, "Prendi una fetta di pane e tagliala a metà in senso obliquo");
 INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 2, "Spalma un po' di maionese su entrambe le fette di pane");
@@ -141,17 +141,17 @@ INSERT INTO Preparazione VALUES ("Cotoletta", 5, "Prendi una padella sufficiente
 INSERT INTO Preparazione VALUES ("Cotoletta", 6, "Fai cuocere per cinque minuti rigirando la pietanza ambo le parti, in maniera che venga scaldata uniformemente");
 INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Impiatta assieme ai pomodori e la cena è servita");
 
-INSERT INTO Preparazione VALUES ("Hamburger", 1, "Prendi una padella e ungila d'olio. Ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d'olio.");
-INSERT INTO Preparazione VALUES ("Hamburger", 2, "Prendi dal frigo l'hamburger e togli eventuali rivestimenti che coprono la carne.");
-INSERT INTO Preparazione VALUES ("Hamburger", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio caldo (sono dolori, dico per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo si cuocia uniformemente.");
-INSERT INTO Preparazione VALUES ("Hamburger", 4, "Mentre aspetti qualche minuto per girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane se ce l'hai e usalo per scaldare il pane appena tagliato.");
-INSERT INTO Preparazione VALUES ("Hamburger", 5, "Passati i 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger e quindi chiudi con la seconda fetta: l'hamburger è pronto, buon appetito!");
+INSERT INTO Preparazione VALUES ("EN_Hamburger", 1, "Prendi una padella e ungila d'olio. Ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d'olio.");
+INSERT INTO Preparazione VALUES ("EN_Hamburger", 2, "Prendi dal frigo l'hamburger e togli eventuali rivestimenti che coprono la carne.");   -- EN
+INSERT INTO Preparazione VALUES ("EN_Hamburger", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio caldo (sono dolori, dico per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo si cuocia uniformemente.");
+INSERT INTO Preparazione VALUES ("EN_Hamburger", 4, "Mentre aspetti qualche minuto per girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane se ce l'hai e usalo per scaldare il pane appena tagliato.");
+INSERT INTO Preparazione VALUES ("EN_Hamburger", 5, "Passati i 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger e quindi chiudi con la seconda fetta: l'hamburger è pronto, buon appetito!");   -- EN
 
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Se possiedi un tostapane è ora di usarlo, prendilo e attaccalo alla corrente.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel frattempo prendi il pomodoro e lavalo sotto l’acqua corrente per togliere residui di pesticidi e/o altro materiale dannoso.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");   -- EN
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel frattempo prendi il pomodoro e lavalo sotto l'acqua corrente per togliere residui di pesticidi e/o altro materiale dannoso.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi un tagliere e poggiaci sopra il pomodoro lavato e profumato. Taglia quindi quattro fette di pomodoro e metti la parte avanzata in frigo.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l’altra fetta di pane.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l'altra fetta di pane.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto, buon appetito!");
 
 -- IN SEDE
@@ -166,7 +166,7 @@ INSERT INTO Valutazione VALUES ("Insalata pigra", "GGGaggi", "2025-01-05", 28, "
 INSERT INTO Valutazione VALUES ("Insalata pigra", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata pigra, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
-INSERT INTO Valutazione VALUES ("Hamburger", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
+INSERT INTO Valutazione VALUES ("EN_Hamburger", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
 
 -- PENDOLARE
 
