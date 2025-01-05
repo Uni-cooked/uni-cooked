@@ -38,6 +38,11 @@ INSERT INTO Ingrediente VALUES ("cotoletta impanata");
 INSERT INTO Ingrediente VALUES ("pomodorini");
 INSERT INTO Ingrediente VALUES ("pane");
 INSERT INTO Ingrediente VALUES ("hamburger_EN");
+-- INSERT INTO Ingrediente VALUES ("riso basmati");
+-- INSERT INTO Ingrediente VALUES ("petto di pollo");
+-- INSERT INTO Ingrediente VALUES ("piselli");
+-- INSERT INTO Ingrediente VALUES ("latte di cocco");
+-- INSERT INTO Ingrediente VALUES ("curry_EN in polvere");
 
 
 -- RICETTA ====================================
@@ -53,6 +58,7 @@ INSERT INTO Ricetta VALUES ("Hamburger_EN", "pendolare", "secondo", 20, 7, "Vi s
 INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "Ci risiamo, anche quest'anno la segreteria ha ben deciso di piazzare le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30. Non preoccuparti, nemmeno noi vogliamo andare in mensa, per questo ti diciamo come sopravvivere a pranzo.", "2025-01-01", "../asset/img/recipe/pendolare/panino.jpg");
 
 -- IN SEDE
+-- INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "../asset/img/recipe/in-sede/pollo-curry.jpg");   -- EN
 
 -- DAD
 

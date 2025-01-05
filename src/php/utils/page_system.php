@@ -137,9 +137,11 @@ class PageSystem {
     }
 
     private function CreatePageButtons(int $currentPage,int $totalPages,$filters_list):string {
-        $TEMPLATE = "<p>". $currentPage ." <abbr title=\"su\">/</abbr> ". $totalPages ." </p>
-                    <button id=\"prev-page-btn\" class=\"shadow\" name=\"page\" value="."\"" .  clamp($currentPage-1,1,$totalPages) . "\"" . "aria-label=\"via alla pagina precedente\"></button>
-                    <button id=\"next-page-btn\" class=\"shadow\" name=\"page\" value="."\"" . clamp($currentPage+1,1,$totalPages) . "\"" . "aria-label=\"vai alla pagina successiva\"></button>";
+        $prev_btn = ($currentPage > 1) ? '<button id="prev-page-btn" class="shadow" name="page" value="' . clamp($currentPage-1,1,$totalPages) . '" aria-label="via alla pagina precedente"></button>' : "";
+        $next_btn = ($currentPage < $totalPages) ? '<button id="next-page-btn" class="shadow" name="page" value="' . clamp($currentPage+1,1,$totalPages) . '"aria-label="vai alla pagina successiva"></button>' : "";
+        $TEMPLATE = "<p>". $currentPage . ' <abbr title="su">/</abbr> ' . $totalPages ." </p>" . $prev_btn . $next_btn;
+                    // <button id=\"prev-page-btn\" class=\"shadow\" name=\"page\" value="."\"" .  clamp($currentPage-1,1,$totalPages) . "\"" . "aria-label=\"via alla pagina precedente\"></button>
+                    // <button id=\"next-page-btn\" class=\"shadow\" name=\"page\" value="."\"" . clamp($currentPage+1,1,$totalPages) . "\"" . "aria-label=\"vai alla pagina successiva\"></button>";
         $HIDDEN ="";
         while ($value = current($filters_list)) {
             $HIDDEN .= "<input type=\"hidden\" name=". key($filters_list) ." value=". $value .">";
