@@ -27,8 +27,6 @@ class Sanitizer {
         }
         return $res;
     }
-
-
 }
 
 ?>
