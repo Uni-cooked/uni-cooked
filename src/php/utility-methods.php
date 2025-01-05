@@ -767,6 +767,37 @@ class DB {
         }
     }
 
+    public function GetRecipes($query,$params):array|null {
+        $connectionResult=$this->openDBConnection();
+        if(!$connectionResult) {
+            header('Location: 500-err.php');
+            exit();
+        }
+        try {
+            $registerUserStatement=$this->connection->prepare($query);
+            $registerUserStatement->execute($params);
+            $result = $registerUserStatement->get_result();
+            $this->closeDBConnection();
+            $registerUserStatement->close();
+            if ($result->num_rows > 0) {
+                $list = array();
+                while ($row = $result->fetch_assoc()) { // prende solo una riga
+                    $list[] = $row;
+                }
+                $result->free_result();
+                return $list;
+            } else {
+                $result->free_result();
+                return null;
+            } 
+        } catch(\mysqli_sql_exception $e) {
+            $this->closeDBConnection();
+            $registerUserStatement->close();
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
     public function checkLang($word,$addSpan=true): string {
         if (preg_match('/^(.*?)_([A-Z]{2})$/', $word, $matches)==false) {
             return $word;
