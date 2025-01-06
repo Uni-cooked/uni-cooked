@@ -43,7 +43,7 @@
                         <li><a href="./catalogue.html">RICETTE</a></li>
                         <li id="current-page">CONTATTI</li>
                         <li id="profile-item">
-                            <a href="./sign-in.html" class="shadow">ACCEDI</a>
+                            {{link-accesso-profilo}}
                         </li>
                     </ul>
                 </nav>
@@ -69,12 +69,12 @@
             <h2 class="content-subtitle content">PROPONI UNA TUA RICETTA</h2>
             <div id="recipie-request" class="content-container end-paragraph">
                 <div class="content">
-                    <img id="pp" src="../asset/img/placeholder.png" alt="la tua immagine profilo">
-                    <form action="" method="post">
+                    <img id="pp" src="{{profile-pic-src}}" alt="Immagine profilo {{username}}">
+                    <form action="about-us.php" method="post">
                     <fieldset>
-                        <label for="recipie-request-input" class="form-label">Scrivi qua la tua richiesta</label>
+                        <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
                         <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" maxlength="500"></textarea>
-                        <button id="confirm" type="submit" class="shadow">PROPONI</button>
+                        <button id="confirm" type="submit" class="shadow" name="suggestion">PROPONI</button>
                         <button id="cancel" type="reset" class="shadow" disabled>CANCELLA</button>
                     </fieldset>
                 </form>
@@ -87,22 +87,22 @@
                     <article class="admin-cell">
                         <img id="pp" class="admin-cell-margin" src="../asset/img/placeholder.png" alt="Immagine profilo del admin">
                         <strong class="admin-cell-margin">ANDREA PRECOMA</strong>
-                        <p>andrea.precoma@studenti.unipd.it</p>
+                        <a href="mailto:andrea.precoma@studenti.unipd.it">andrea.precoma@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
                         <img id="pp" class="admin-cell-margin" src="../asset/img/placeholder.png" alt="Immagine profilo del admin">
                         <strong class="admin-cell-margin">ANDREA SORANZO</strong>
-                        <p>andreajesus.soranzomendez@studenti.unipd.it</p>
+                        <a href="mailto:andreajesus.soranzomendez@studenti.unipd.it">andreajesus.soranzomendez@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
                         <img id="pp" class="admin-cell-margin" src="../asset/img/placeholder.png" alt="Immagine profilo del admin">
                         <strong class="admin-cell-margin">MATTEO SCHIEVANO</strong>
-                        <p>matteo.schievano@studenti.unipd.it</p>
+                        <a href="mailto:matteo.schievano@studenti.unipd.it">matteo.schievano@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
                         <img id="pp" class="admin-cell-margin" src="../asset/img/placeholder.png" alt="Immagine profilo del admin">
                         <strong class="admin-cell-margin">GABRIELE MAGNELLI</strong>
-                        <p>gabrieleisacco.magnelli@studenti.unipd.it</p>
+                        <a href="mailto:gabrieleisacco.magnelli@studenti.unipd.it">gabrieleisacco.magnelli@studenti.unipd.it</a>
                     </article>
                 </div>
             </div>

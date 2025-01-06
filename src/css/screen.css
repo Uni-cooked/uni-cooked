@@ -1232,12 +1232,12 @@ a#log-out {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 15px solid green;
 }
 
 #recipie-request img {
     float: left;
     margin-right: 4rem;
+    object-fit:cover;
 }
 
 #recipie-request form {

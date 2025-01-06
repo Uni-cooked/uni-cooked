@@ -74,8 +74,9 @@ CREATE TABLE Valutazione(
 
 CREATE TABLE Suggerimento(
     utente VARCHAR(15),
+    id int NOT NULL AUTO_INCREMENT,
     data DATE,
     testo VARCHAR(500) NOT NULL,
-    PRIMARY KEY (utente, data),
+    PRIMARY KEY (id),
     FOREIGN KEY (utente) REFERENCES Utente(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );

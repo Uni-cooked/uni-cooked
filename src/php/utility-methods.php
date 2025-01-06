@@ -799,6 +799,34 @@ class DB {
         }
     }
 
+    public function insertSuggestion($suggestion,$user = null): bool {
+        $date=date("Y-m-d h:m:s");
+        $connectionResult=$this->openDBConnection();
+        if ($connectionResult) {
+            $insertSuggestion=$this->connection->prepare("INSERT INTO Suggerimento(testo, utente, data) VALUES(?,?,?)");
+            $insertSuggestion->bind_param("sss",$suggestion,$user,$date);
+            try {
+                $insertSuggestion->execute();
+            } catch(\mysqli_sql_exception $e) {
+                $this->closeDBConnection();
+                $insertSuggestion->close();
+                return false;
+            }
+
+            if (mysqli_affected_rows($this->connection)==1) {
+                $this->closeDBConnection();
+                $insertSuggestion->close();
+                return true;
+            } else {
+                $insertSuggestion->close();
+                $this->closeDBConnection();
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public function GetRecipes($query,$params):array|null {
         $connectionResult=$this->openDBConnection();
         if(!$connectionResult) {
