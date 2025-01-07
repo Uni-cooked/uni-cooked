@@ -32,7 +32,7 @@ $recipes = $pageSystem->GetCurrentPage($currentPage);
 $d_recipes="";
 if ($recipes!=null) {
     foreach ($recipes as &$recipie) {
-        $d_recipes .= CreateRecipeCard($recipie["immagine"],$recipie["nome"],$recipie["voto"],$recipie["categoria"],$recipie["tipo_piatto"],$recipie["prezzo"]);
+        $d_recipes .= CreateRecipeCard($recipie["immagine"],$recipie["nome"],$recipie["voto"],ParseCategory($recipie["categoria"]),$recipie["tipo_piatto"],$recipie["prezzo"]);
     }
 } else {
     $d_recipes=Message("Non ci sono ricette che soddisfano la tua richiesta");
@@ -74,6 +74,10 @@ function CreateOrderChanger($filters_list) {
             next($filters_list);
         }
         return $HIDDEN;
+}
+
+function ParseCategory(string $category):string{
+    return strtoupper(str_replace("_"," ",$category));
 }
 
 function Message(string $text): string {

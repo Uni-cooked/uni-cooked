@@ -307,6 +307,10 @@ ul#ingredient-list li {
     height: 40%;
 }
 
+#fav-recipe-list .fav-recipe img.fav-recipe-img-crop {
+	height: 100%;
+}
+
 #fav-recipe-list .fav-recipe .fav-recipe-title {
     height: 20%;
     padding: 0.6em 0 0;

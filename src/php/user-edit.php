@@ -24,41 +24,41 @@ $image="";
 $userInfo=$db->getUserInfo();
 $isProfilePicChanged=false;
 
-if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) && !isset($_POST["delete-account"])) {
-    if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
-        header('Location: 500-err.php');
-        exit();
-    } else if(is_string($userInfo) && strcmp($userInfo,"userIsNotLogged")==0) {
-        header('Location: sign-in.php');
-        exit();
+if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
+    header('Location: 500-err.php');
+    exit();
+} elseif (is_string($userInfo) && strcmp($userInfo,"userIsNotLogged")==0) {
+    header('Location: sign-in.php');
+    exit();
+}
+
+if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"])) {
+    $paginaHtml=str_replace("{{messaggio di old-psw}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
+    $paginaHtml=str_replace("{{nickname-error}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{stud-cat-edit-error}}","",$paginaHtml);
+    if ($userInfo["immagine"]) {
+        $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
-        $paginaHtml=str_replace("{{nickname-error}}","",$paginaHtml);
-        $paginaHtml=str_replace("{{stud-cat-edit-error}}","",$paginaHtml);
-        if ($userInfo["immagine"]) {
-            $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
-        } else {
-            $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
-        }
-        $categoria=$userInfo["tipo_studente"];
-        $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
-        if ($userInfo["biografia"]) {
-            $paginaHtml=str_replace("{{biografia}}",$userInfo["biografia"],$paginaHtml);
-        } else {
-            $paginaHtml=str_replace("{{biografia}}","",$paginaHtml);
-        }
-        echo str_replace("{{profile-pic-error}}","",$paginaHtml);
+        $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
     }
-} elseif(isset($_POST["delete-recipe"])) {
-    unset($_POST["delete-recipe"]);
-    header('Location: confirm.php?action=delete-recipe');
-} elseif (isset($_POST["delete-account"])) {
-    unset($_POST["delete-account"]);
-    header('Location: confirm.php?action=delete-account');
-} else {
+    $categoria=$userInfo["tipo_studente"];
+    $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
+    if ($userInfo["biografia"]) {
+        $paginaHtml=str_replace("{{biografia}}",$userInfo["biografia"],$paginaHtml);
+    } else {
+        $paginaHtml=str_replace("{{biografia}}","",$paginaHtml);
+    }
+    echo str_replace("{{profile-pic-error}}","",$paginaHtml);
+} elseif(isset($_POST["submit-profile-changes"])) {
     $errorFound=false;
     $username=$_POST["nickname-edit"];
-    
+    $paginaHtml=str_replace("{{messaggio di old-psw}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
+
     if (strlen($username)==0) {
         $paginaHtml = str_replace("{{nickname-error}}","Il nome utente è un campo obbligatorio.",$paginaHtml);
         $errorFound=true;
@@ -169,5 +169,79 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["delete-recipe"]) &
             header('Location: user.php');
             exit();
         }
+    }
+} else {
+    $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
+    $paginaHtml=str_replace("{{nickname-error}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{stud-cat-edit-error}}","",$paginaHtml);
+    if ($userInfo["immagine"]) {
+        $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+    } else {
+        $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
+    }
+    $categoria=$userInfo["tipo_studente"];
+    $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
+    if ($userInfo["biografia"]) {
+        $paginaHtml=str_replace("{{biografia}}",$userInfo["biografia"],$paginaHtml);
+    } else {
+        $paginaHtml=str_replace("{{biografia}}","",$paginaHtml);
+    }
+    $paginaHtml=str_replace("{{profile-pic-error}}","",$paginaHtml);
+
+    $errorFound=false;
+    $oldPsw="";
+    $newPsw="";
+    $repPsw="";
+
+    if(isset($_POST["old_psw"])) {
+        $oldPsw=$_POST["old_psw"];
+        unset($_POST["old_psw"]);
+    }
+    if(isset($_POST["psw"])) {
+        $newPsw=$_POST["psw"];
+        unset($_POST["psw"]);
+    }
+    if(isset($_POST["repeat-psw"])) {
+        $repPsw=$_POST["repeat-psw"];
+        unset($_POST["repeat-psw"]);
+    }
+
+    if(strcmp($oldPsw,"")==0) {
+        $paginaHtml=str_replace("{{messaggio di old-psw}}","Inserisci la <span lang=\"en\">password</span> attuale",$paginaHtml);
+        $errorFound=true;
+    }
+    if(strcmp($newPsw,"")==0) {
+        $paginaHtml=str_replace("{{messaggio di new-psw}}","Inserisci la nuova <span lang=\"en\">password</span>",$paginaHtml);
+        $errorFound=true;
+    } elseif(strlen($newPsw)<4) {
+        $paginaHtml=str_replace("{{messaggio di new-psw}}","La nuova <span lang=\"en\">password</span> deve essere di almeno 4 caratteri",$paginaHtml);
+        $errorFound=true;
+    } else {
+        $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
+    }
+    if(strcmp($newPsw,$repPsw)!=0) {
+        $paginaHtml=str_replace("{{messaggio di repeat-psw}}","La nuova <span lang=\"en\">password</span> e la sua ripetizione non coincidono",$paginaHtml);
+        $errorFound=true;
+    } else {
+        $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
+    }
+
+    if($errorFound==true) {
+        $paginaHtml=str_replace("{{messaggio di old-psw}}","",$paginaHtml);
+        echo $paginaHtml;
+        exit();
+    }
+
+    $result=$db->changeUserPsw($oldPsw,$newPsw);
+    if(is_string($result) && strcmp($result,"wrongPassword")==0) {
+        $paginaHtml=str_replace("{{messaggio di old-psw}}","La <span lang=\"en\">password</span> attuale non è corretta",$paginaHtml);
+        echo $paginaHtml;
+        exit();
+    } elseif (is_string($result)) {
+        header('Location: 500-err.php');
+        exit();
+    } else {
+        header('Location: user.php');
+        exit();
     }
 }
