@@ -7,16 +7,14 @@ $paginaHtml=file_get_contents("../html/user.html");
 $username="";
 
 $db = new DB;
-$isLogged=$db->isUserLogged();
 
-if(!isset($_GET["username"])) {   
+if(!isset($_GET["username"])) {
+    $isLogged=$db->isUserLogged();
 
     if (is_bool($isLogged) && $isLogged==false) {
         header('Location: sign-in.php');
         exit();
     }
-
-    $paginaHtml=str_replace("{{profile-list-element}}","",$paginaHtml);
 
     //se è stato passato il controllo precedente l'utente è loggato e $isLogged è il nome utente
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
@@ -32,7 +30,7 @@ if(!isset($_GET["username"])) {
         $paginaHtml=str_replace("{{data-attr}}",$userInfo["data_iscrizione"],$paginaHtml);
         $paginaHtml=str_replace("{{categoria}}",str_replace("_"," ",strtoupper($userInfo["tipo_studente"])),$paginaHtml);
         if ($userInfo["biografia"]) {
-            $paginaHtml=str_replace("{{biografia}}",$userInfo["biografia"],$paginaHtml);
+            $paginaHtml=str_replace("{{biografia}}", ucfirst($userInfo["biografia"]),$paginaHtml);
         } else {
             $paginaHtml=str_replace("{{biografia}}","Sembra tu non abbia una biografia! <a href=\"user-edit.php\">Modifica il tuo profilo</a> e scrivi qualcosa di te.",$paginaHtml);
         }
@@ -72,8 +70,8 @@ if(!isset($_GET["username"])) {
                     } else {
                         $recipeList.="<li class=\"fav-recipe content\">";
                     }
-                    $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
-                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$db->checkLang($recipe["nome"])."</h4> </div>";
+                    $recipeList.='<img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'">';
+                    $recipeList.="<div class=\"fav-recipe-title\"><h4>".$db->checkLang(ucfirst($recipe["nome"]))."</h4></div>";
                     $average=$db->getRecipeAverage($recipe["nome"]);
                     if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
                         header('Location: 500-err.php');
@@ -81,8 +79,8 @@ if(!isset($_GET["username"])) {
                     }
                     $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria=str_replace("_"," ",$recipe["categoria"]);
-                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
-                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".strtoupper($categoria)."</li>";
+                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".strtoupper($recipe["tipo_piatto"])."</li>";
                     $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
                     $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
                     $recipeCounter=$recipeCounter+1;
@@ -104,12 +102,6 @@ if(!isset($_GET["username"])) {
 } else {
     $username = $_GET["username"];
     unset($_GET["username"]);
-
-    if (is_bool($isLogged) && $isLogged==false) {
-        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="sign-in.php" class="shadow">ACCEDI</a></li>',$paginaHtml);
-    } else {
-        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="user.php" class="shadow">PROFILO</a></li>',$paginaHtml);
-    }
 
     $paginaHtml=str_replace("{{username}}",$username,$paginaHtml);
     $userInfo=$db->getUserPublicInfo($username);
@@ -164,7 +156,7 @@ if(!isset($_GET["username"])) {
                     } else {
                         $recipeList.="<li class=\"fav-recipe content\">";
                     }
-                    $recipeList.='<div class="fav-recipe-img-crop"><img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'"></div>';
+                    $recipeList.='<img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'">';
                     $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
                     $average=$db->getRecipeAverage($recipe["nome"]);
                     if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
@@ -185,8 +177,7 @@ if(!isset($_GET["username"])) {
             $moreRecipeForm="";
             if($recipeCounter<count($favouritesList)) {
                 $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
-                $moreRecipeForm.='<input type="hidden" name="username" value="'.$username;
-                $moreRecipeForm.='"><input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
+                $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
                 $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
                 $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             }

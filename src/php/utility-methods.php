@@ -858,17 +858,15 @@ class DB {
         }
     }
 
-    public function checkLang($word,$addSpan=true): string {
-        if (preg_match('/^(.*?)_([A-Z]{2})$/', $word, $matches)==false) {
-            return $word;
-        } else {
-            if ($addSpan==true) {
-                $htmlStr = '<span lang="'.strtolower($matches[2]).'">';
-                $realWord = $matches[1];
-                $htmlStr .= $realWord.'</span>';
-                return $htmlStr;
-            }
-            return $matches[1];
+    public function checkLang($s,$addSpan=true): string {
+        preg_match_all('/\b(\w+)_([A-Z]{2})\b/u', $s, $matches);
+        
+        foreach ($matches[0] as $matchIndex => $match) {
+            $lang = $matches[2][$matchIndex];
+            $strRep = ($addSpan) ? '<span lang="' . strtolower($lang) . '">' . $matches[1][$matchIndex] . '</span>' : $matches[1][$matchIndex];
+            $s = str_replace($match, $strRep, $s);
         }
+        
+        return $s;
     }
 }

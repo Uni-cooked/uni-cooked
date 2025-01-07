@@ -7,7 +7,7 @@ $db = new DB;
 $paginaHtml=file_get_contents("../html/recipe.html");
 $isUserLogged=$db->isUserLogged();
 if ($isUserLogged!=false) {
-    $paginaHtml=str_replace('<a href="./sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
+    $paginaHtml=str_replace("<a href=\"sign-in.php\" class=\"shadow\">ACCEDI</a>","<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
 if(isset($_GET["recipe"])) {
@@ -85,17 +85,17 @@ if(isset($_GET["recipe"])) {
     }
 
     $paginaHtml=str_replace("{{recipe-image-src}}",$recipeDetails["immagine"],$paginaHtml);
-    $paginaHtml=str_replace("{{Recipe-title}}",$db->checkLang($recipeDetails["nome"],false),$paginaHtml);
-    $paginaHtml=str_replace("{{Recipe-title-body}}",$db->checkLang($recipeDetails["nome"]),$paginaHtml);
+    $paginaHtml=str_replace("{{Recipe-title}}",$db->checkLang(ucfirst($recipeDetails["nome"],false)),$paginaHtml);
+    $paginaHtml=str_replace("{{Recipe-title-body}}",$db->checkLang(ucfirst($recipeDetails["nome"])),$paginaHtml);
     $mark=$db->getRecipeAverage($recipe);
     if(is_string($mark) && (strcmp($mark,"ExceptionThrow")==0 || strcmp($mark,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');
         exit();
     }
     $paginaHtml=str_replace("{{mark}}",$mark,$paginaHtml);
-    $categoria=str_replace("_"," ",$recipeDetails["categoria"]);
+    $categoria=str_replace("_"," ",strtoupper($recipeDetails["categoria"]));
     $paginaHtml=str_replace("{{category}}",$categoria,$paginaHtml);
-    $paginaHtml=str_replace("{{plate-type}}",$recipeDetails["tipo_piatto"],$paginaHtml);
+    $paginaHtml=str_replace("{{plate-type}}",strtoupper($recipeDetails["tipo_piatto"]),$paginaHtml);
     $paginaHtml=str_replace("{{time}}",$recipeDetails["tempo"],$paginaHtml);
     $paginaHtml=str_replace("{{price}}",$recipeDetails["prezzo"],$paginaHtml);
     if($isUserLogged!=false) {
@@ -116,7 +116,7 @@ if(isset($_GET["recipe"])) {
     } else {
         $paginaHtml=str_replace("{{form-add-to-favourites}}","",$paginaHtml);
     }
-    $paginaHtml=str_replace("{{description}}",$recipeDetails["descrizione"],$paginaHtml);
+    $paginaHtml=str_replace("{{description}}",$db->checkLang(ucfirst($recipeDetails["descrizione"])),$paginaHtml);
     
     $ingredients=$db->getRecipeIngredients($recipe);
     if(is_string($ingredients)) {
@@ -145,10 +145,9 @@ if(isset($_GET["recipe"])) {
             }
         }
         if ($singleIngredient["descrizione"]) {
-            $finalList.=" (".$singleIngredient["descrizione"].")</li>";
-        } else {
-            $finalList.="</li>";
+            $finalList.=" (".$db->checkLang($singleIngredient["descrizione"]).")";
         }
+        $finalList.="</li>";
     }
 
     $paginaHtml=str_replace("{{ingredients-list}}",$finalList,$paginaHtml);
@@ -160,7 +159,7 @@ if(isset($_GET["recipe"])) {
         exit();
     }
     foreach($toDoList as $element) {
-        $finalList.='<li class="prep-li">'.$element["descrizione"]."</li>";
+        $finalList.='<li class="prep-li">'.$db->checkLang(ucfirst($element["descrizione"]))."</li>";
     }
     $paginaHtml=str_replace("{{what-to-do-list}}",$finalList,$paginaHtml);
 

@@ -55,11 +55,11 @@ function CreateRecipeCard(string $img,string $title,int $grade, string $category
     global $db;
     $TEMPLATE ="<li class=\"recipe\">
                     <img class=\"catalogue-recipe-img-crop\" src=\"" . $img . "\" alt=\"\">
-                    <h3 class=\"recipe-title\">" . $db->checkLang($title) . "</h3>
+                    <h3 class=\"recipe-title\">" . $db->checkLang(ucfirst($title)) . "</h3>
                     <ul class=\"recipe-info\">
                         <li><img src=\"../asset/icon/grade.svg\" alt=\"voto\">" . ($grade != 31 ? $grade : "-") ." <abbr title=\"su\">/</abbr> 30</li>
-                        <li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">" . $category . "</li>
-                        <li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">" . $course . "</li>
+                        <li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($category) . "</li>
+                        <li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($course) . "</li>
                         <li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
                     </ul>    
                     <a href=\"./recipe.php?recipie=". $title ."\" title=\"". $title ."\">Vai alla ricetta</a>

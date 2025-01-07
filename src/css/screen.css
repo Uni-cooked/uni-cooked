@@ -368,7 +368,7 @@ main {
     margin-top: var(--main-mt);
     margin-bottom: var(--main-mb);
     transition: visibility var(--animation-timing);
-    color: white;
+    color: var(--text-color);
 }
 
 main h1, main h2, main h3, main h4, main h5, main h6 {
@@ -705,7 +705,6 @@ ul#recipe-list .recipe {
     
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: space-between;
 }
 
@@ -1232,7 +1231,6 @@ a#log-out {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid var(--accent);
 }
 
 #recipie-request img {
