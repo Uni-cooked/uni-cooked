@@ -6,7 +6,7 @@ desc e keyword in pagine stupide (404 ecc, profile, profile edit)
 a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
 
 TODO:
-- link largo in fav recipe e catalogue
+- link largo catalogue (in fav ho messo text-aling: right a recipe)
 
 - time in p data user
 - keyword in strong brutte in cicciotto (vedi breadcrumb)
