@@ -18,6 +18,7 @@ if(!isset($_GET["username"])) {
 
     //se è stato passato il controllo precedente l'utente è loggato e $isLogged è il nome utente
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
+    $paginaHtml=str_replace("{{profile-list-element}}","",$paginaHtml);
     $userInfo=$db->getUserInfo();
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');

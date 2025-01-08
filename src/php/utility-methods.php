@@ -11,7 +11,7 @@ class DB {
     private const PSW = "bahnoht9fuo2WiCh";
 
     private $connection;
-    private $tagPermessi = '<em><strong>';
+    private static $tagPermessi = '<em><strong>';
 
     public static function pulisciInput($value) {
         $value = trim($value);
@@ -22,9 +22,8 @@ class DB {
     }
     
     public static function pulisciNote($value) {
-        global $tagPermessi;
         $value = trim($value);
-        $value = strip_tags($value, $tagPermessi);
+        $value = strip_tags($value, DB::$tagPermessi);
         return $value;
     }
 

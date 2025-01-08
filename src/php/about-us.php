@@ -19,7 +19,12 @@ if(!isset($_POST["suggestion"])) {
             header('Location: sign-in.php');
             exit();
         } else {
-            $paginaHtml=str_replace("{{profile-pic-src}}",$userInfo["immagine"],$paginaHtml);
+            if($userInfo["immagine"]) {
+                $paginaHtml=str_replace("{{profile-pic-src}}",$userInfo["immagine"],$paginaHtml);
+            } else {
+                $paginaHtml=str_replace("{{profile-pic-src}}","../asset/img/def-profile.png",$paginaHtml);
+            }
+            
         }
     } else {
         $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"shadow\">ACCEDI</a>",$paginaHtml); 
