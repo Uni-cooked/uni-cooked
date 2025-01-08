@@ -65,6 +65,9 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     } elseif (strlen($username)>15) {
         $paginaHtml = str_replace("{{nickname-error}}","Il nome utente non deve essere più lungo di 15 caratteri.",$paginaHtml);
         $errorFound=true;
+    } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
+        $errorFound=true;
+        $paginaHtml = str_replace("{{nickname-error}}","Il nome utente non deve contenere spazi o caratteri speciali",$paginaHtml);
     } else {
         $username=DB::pulisciInput($username);
         $isUserPresent=$db->checkUserPresence($username);

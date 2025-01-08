@@ -62,7 +62,7 @@ function CreateRecipeCard(string $img,string $title,int $grade, string $category
                         <li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($course) . "</li>
                         <li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
                     </ul>    
-                    <a href=\"./recipe.php?recipie=". $title ."\" title=\"". $title ."\">Vai alla ricetta</a>
+                    <a href=\"./recipe.php?recipe=". $title ."\" title=\"". $title ."\">Vai alla ricetta</a>
                 </li>";
     return $TEMPLATE;
 }

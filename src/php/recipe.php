@@ -85,7 +85,7 @@ if(isset($_GET["recipe"])) {
     }
 
     $paginaHtml=str_replace("{{recipe-image-src}}",$recipeDetails["immagine"],$paginaHtml);
-    $paginaHtml=str_replace("{{Recipe-title}}",$db->checkLang(ucfirst($recipeDetails["nome"],false)),$paginaHtml);
+    $paginaHtml=str_replace("{{Recipe-title}}",$db->checkLang(ucfirst($recipeDetails["nome"]),false),$paginaHtml);
     $paginaHtml=str_replace("{{Recipe-title-body}}",$db->checkLang(ucfirst($recipeDetails["nome"])),$paginaHtml);
     $mark=$db->getRecipeAverage($recipe);
     if(is_string($mark) && (strcmp($mark,"ExceptionThrow")==0 || strcmp($mark,"ConnectionFailed")==0)) {

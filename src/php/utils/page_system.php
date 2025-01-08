@@ -4,7 +4,7 @@ namespace Utilities;
 
 require_once("math.php");
 require_once ("utility-methods.php");
-require_once ("sanitizer.php");
+require_once ("Sanitizer.php");
 
 use DB\DB;
 use Utilities\Sanitizer;

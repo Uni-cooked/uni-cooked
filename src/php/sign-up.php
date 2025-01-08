@@ -27,13 +27,16 @@ if (isset($_POST['submit'])) {
     } elseif (strlen($username)>15) {
         $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente non deve essere più lungo di 15 caratteri.",$paginaHtml);
         $errorFound=true;
+    } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
+        $errorFound=true;
+        $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente non deve contenere spazi o caratteri speciali",$paginaHtml);
     } else {
         $username=DB::pulisciInput($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;
             $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente inserito non può essere utilizzato.",$paginaHtml);
-        } else if (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
+        } elseif (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 500-err.php');
             exit();
