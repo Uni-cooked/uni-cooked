@@ -28,8 +28,9 @@ INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5c
 
 INSERT INTO Ingrediente VALUES ("olio");
 INSERT INTO Ingrediente VALUES ("sale fino");
+INSERT INTO Ingrediente VALUES ("sale grosso");
 INSERT INTO Ingrediente VALUES ("cespo di insalata");
-INSERT INTO Ingrediente VALUES ("pomodoro da insalata");
+INSERT INTO Ingrediente VALUES ("pomodori da insalata");
 INSERT INTO Ingrediente VALUES ("pane in cassetta");
 INSERT INTO Ingrediente VALUES ("prosciutto cotto");
 INSERT INTO Ingrediente VALUES ("maionese");
@@ -40,12 +41,16 @@ INSERT INTO Ingrediente VALUES ("pomodorini");
 INSERT INTO Ingrediente VALUES ("pane");
 INSERT INTO Ingrediente VALUES ("hamburger_EN");
 INSERT INTO Ingrediente VALUES ("riso Basmati");
+INSERT INTO Ingrediente VALUES ("riso Venere");
 INSERT INTO Ingrediente VALUES ("petto di pollo");
 INSERT INTO Ingrediente VALUES ("piselli");
 INSERT INTO Ingrediente VALUES ("latte di cocco");
 INSERT INTO Ingrediente VALUES ("curry_EN in polvere");
 INSERT INTO Ingrediente VALUES ("burger_EN vegetale");
 INSERT INTO Ingrediente VALUES ("spezie aromatiche");
+INSERT INTO Ingrediente VALUES ("zucchine");
+INSERT INTO Ingrediente VALUES ("carote");
+INSERT INTO Ingrediente VALUES ("mais");
 
 
 -- RICETTA ====================================
@@ -64,6 +69,7 @@ INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "se
 INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry_EN e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "../asset/img/recipe/in-sede/pollo-curry.jpg");
 INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "secondo", 25, 5, "Non fare storie solo perché non c'è la ciccia, questo è un piatto saporito e bilanciato perfetto per chi desidera un'alternativa vegetale gustosa! Croccante fuori e tenero dentro, questo burger_EN è accompagnato da piselli al vapore leggermente conditi con un filo d'olio e un pizzico di sale per un accompagnamento delicato che esalta la freschezza del piatto.", "2025-01-01", "../asset/img/recipe/in-sede/burger-vegetale.jpg");
 INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "../asset/img/recipe/in-sede/riso-pollo.jpg");
+INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "../asset/img/recipe/in-sede/riso-venere.jpg");
 
 -- DAD
 
@@ -86,7 +92,7 @@ INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "
 
 -- PENDOLARE
 INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "cespo di insalata", FALSE, 1, "num_el", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "pomodoro da insalata", FALSE, 1, "num_el", "quello grande");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "pomodori da insalata", FALSE, 1, "num_el", "quelli grande");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "sale fino", TRUE, NULL, NULL, NULL);
 
@@ -94,7 +100,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Tramezzini prosciutto e maionese", "pa
 INSERT INTO Utilizzo_Ingrediente VALUES ("Tramezzini prosciutto e maionese", "prosciutto cotto", FALSE, 120, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Tramezzini prosciutto e maionese", "maionese", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES ("Caprese", "pomodoro da insalata", FALSE, 2, "num_el", "quelli grandi");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Caprese", "pomodori da insalata", FALSE, 2, "num_el", "quelli grandi");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Caprese", "mozzarella", FALSE, 2, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Caprese", "origano", TRUE, NULL, NULL, NULL);
 
@@ -108,7 +114,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "hamburger_EN", FALSE, 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "olio", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "prosciutto cotto", FALSE, 35, "g", "o crudo se c'hai i soldi");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pomodoro da insalata", FALSE, 1, "num_el", "quello grande");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pomodori da insalata", FALSE, 1, "num_el", "quelli grande");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pane", FALSE, 1, "num_el", "meglio se da toast_EN");
 
 -- IN SEDE
@@ -126,12 +132,21 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "pise
 INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "sale fino", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "olio", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "riso Basmati", FALSE, 100, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "petto di pollo", FALSE, 120, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "spezie aromatiche", TRUE, NULL, NULL, "a piacere");
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "sale grosso", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "sale fino", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "riso Basmati", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "petto di pollo", FALSE, 120, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "spezie aromatiche", TRUE, NULL, NULL, "a piacere");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e pollo", "olio", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "riso Venere", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "zucchine", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "carote", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "mais", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "pomodorini", FALSE, 4, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "olio", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -197,6 +212,18 @@ INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 1, "Metti i p
 INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 2, "Riempi il pentolino di acqua fino a coprire per metà i piselli a meno che tu non li voglia annacquati, cucina per circa 15 minuti a fuoco medio e chiudi con un coperchi. Consigliamo di assaggiare ogni tanto per controllare la salatura e la cottura, se invece vuoi andare a sensazione come quegli esercizi che non ti vengono fai pure.");
 INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 3, "Metti un goccio d'olio su una padella così sarà più facile lavarla e cucina il burger_EN a fuoco medio per il tempo indicato sulla confezione. Gira spesso il burger_EN per non farlo attaccare e per avere una cottura uniforme.");
 INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 4, "Una volta cotto il burger_EN e i piselli metti tutto su un piatto e assapora il gusto della finta ciccia che a noi amanti della carne fa ancora strano. Se te lo vuoi portare a lezione e non sei attrezzato come uno scout ti consigliamo di tagliarlo a pezzi a casa così sarà più facile da mangiare.");
+
+INSERT INTO Preparazione VALUES ("Riso e pollo", 1, "Metti l'acqua a bollire, dopodiché aggiungi il sale grosso e il riso. Cucina a fuoco medio-alto per il tempo indicato sulla confezione ricordandoti di mescolare ogni tanto.");
+INSERT INTO Preparazione VALUES ("Riso e pollo", 2, "Taglia i petti di pollo a straccetti, mettili in una padella con un pizzico di sale e delle spezie a piacere. Cucina a fuoco medio per 10-12 minuti girandoli ogni tanto per non farli attaccare.");
+INSERT INTO Preparazione VALUES ("Riso e pollo", 3, "Una volta cotto il riso e il pollo mischiali in un piatto con un filo d'olio per amalgamare il tutto.");
+
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 1, "Riempi una pentola di acqua e falla bollire, poi butta del sale grosso e il riso. Cuoci a fuoco medio-alto per il tempo indicato sulla confezione mescolando ogni tanto.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 2, "Nel mentre pela la carota e tagliala e striscioline, mettile in padella con un filo d'olio, un po' di acqua e un pizzico di sale fino. Accendi il fuoco basso e copri con un coperchio, le carote ci mettono un pochino di più a cucinarsi.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 3, "Senza perdere tempo che per noi studenti è prezioso lava la zucchina e tagliala a rondelle o pezzetti piccoli (fa' un po' come te pare). Aggiungila alle carote nella padella con un pizzico di sale. Ogni tanto girale e aggiungi un po' d'acqua se vedi che è evaporata per non farle attaccare alla padella. Cucina a fuoco medio-basso per circa 8-10 minuti.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 4, "Occhio al riso.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 5, "Lava i pomodorini e tagliali a piccoli spicchi.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 6, "Se pensi di riuscire a finire tutto questo bel piattone apri anche una scatola di mais e scolala così da avere tutto pronto sul tavolo.");
+INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 7, "Quando il riso, le zucchine e le carote sono pronte versa tutto in un piatto insieme ai pomodorini e il mais. Condisci con un filo d'olio e assapora il gusto di chi può permettersi certe prelibatezze.");
 
 -- DAD
 
