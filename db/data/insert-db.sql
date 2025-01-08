@@ -21,6 +21,7 @@ DELETE FROM Ingrediente;
 INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b1dda76f53349809836d50867fd94c1ea6c7d6205ecf9", "2025-01-02", "Speleologa di 49 anni, adoro i gatti e il fucsia. Mi è tornata la passione dello studio e mi sono iscritta a odontoiatria a Padova.", "pendolare", NULL);
 INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "d71ccf9f3232ed4edf193a057426b2bbc5ec161f3611e4eef54a5c74dbc3e575", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURKINA FASO GREAT AGAIN", "dad", NULL);
 INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", NULL);
+INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5ca101d08cc4d96c3e4c256349d1bbd55658ec2d8b6df6fc8bcdd7f5", "2025-01-08", "23 anni\nUniPD psicologia\nHo una sorella che si chiama Ombretta, ai nostri genitori piaceva così tanto il nome che con me lo hanno mantenuto ma al maschile.", "fuorisede", NULL);
 
 
 -- INGREDIENTE ====================================
@@ -38,11 +39,13 @@ INSERT INTO Ingrediente VALUES ("cotoletta impanata");
 INSERT INTO Ingrediente VALUES ("pomodorini");
 INSERT INTO Ingrediente VALUES ("pane");
 INSERT INTO Ingrediente VALUES ("hamburger_EN");
--- INSERT INTO Ingrediente VALUES ("riso basmati");
--- INSERT INTO Ingrediente VALUES ("petto di pollo");
--- INSERT INTO Ingrediente VALUES ("piselli");
--- INSERT INTO Ingrediente VALUES ("latte di cocco");
--- INSERT INTO Ingrediente VALUES ("curry_EN in polvere");
+INSERT INTO Ingrediente VALUES ("riso Basmati");
+INSERT INTO Ingrediente VALUES ("petto di pollo");
+INSERT INTO Ingrediente VALUES ("piselli");
+INSERT INTO Ingrediente VALUES ("latte di cocco");
+INSERT INTO Ingrediente VALUES ("curry_EN in polvere");
+INSERT INTO Ingrediente VALUES ("burger_EN vegetale");
+INSERT INTO Ingrediente VALUES ("spezie aromatiche");
 
 
 -- RICETTA ====================================
@@ -58,7 +61,9 @@ INSERT INTO Ricetta VALUES ("Hamburger_EN", "pendolare", "secondo", 20, 7, "Vi s
 INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "Ci risiamo, anche quest'anno la segreteria ha ben deciso di piazzare le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30. Non preoccuparti, nemmeno noi vogliamo andare in mensa, per questo ti diciamo come sopravvivere a pranzo.", "2025-01-01", "../asset/img/recipe/pendolare/panino.jpg");
 
 -- IN SEDE
--- INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "../asset/img/recipe/in-sede/pollo-curry.jpg");   -- EN
+INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry_EN e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "../asset/img/recipe/in-sede/pollo-curry.jpg");
+INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "secondo", 25, 5, "Non fare storie solo perché non c'è la ciccia, questo è un piatto saporito e bilanciato perfetto per chi desidera un'alternativa vegetale gustosa! Croccante fuori e tenero dentro, questo burger_EN è accompagnato da piselli al vapore leggermente conditi con un filo d'olio e un pizzico di sale per un accompagnamento delicato che esalta la freschezza del piatto.", "2025-01-01", "../asset/img/recipe/in-sede/burger-vegetale.jpg");
+INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "../asset/img/recipe/in-sede/riso-pollo.jpg");
 
 -- DAD
 
@@ -70,7 +75,9 @@ INSERT INTO Preferenza_Ricetta VALUES ("Tramezzini prosciutto e maionese", "GGGa
 INSERT INTO Preferenza_Ricetta VALUES ("Caprese", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Cotoletta", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Hamburger_EN", "GGGaggi");
+INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Hamburger_EN", "JoeTrump");
+INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump");
 
 
 -- UTILIZZO INGREDIENTE ====================================
@@ -96,15 +103,35 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "pomodorini", FALSE, 10, "
 INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Cotoletta", "sale fino", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "pane", FALSE, 1, "num_el", "meglio se da hamburger_EN");  -- EN
+INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "pane", FALSE, 1, "num_el", "meglio se da hamburger_EN")
 INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "hamburger_EN", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "olio", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "prosciutto cotto", FALSE, 35, "g", "o crudo se c'hai i soldi");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pomodoro da insalata", FALSE, 1, "num_el", "quello grande");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pane", FALSE, 1, "num_el", "meglio se da toast_EN");   -- EN
+INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pane", FALSE, 1, "num_el", "meglio se da toast_EN");
 
 -- IN SEDE
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "riso Basmati", FALSE, 70, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "petto di pollo", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "piselli", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "latte di cocco", FALSE, 70, "ml", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "curry_EN in polvere", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "olio", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "burger_EN vegetale", FALSE, 120, "g", "dipende da dove lo prendi");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "piselli", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Burger_EN vegetale con piselli", "olio", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "riso Basmati", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "petto di pollo", FALSE, 120, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "spezie aromatiche", TRUE, NULL, NULL, "a piacere");
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("riso e pollo", "olio", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -148,19 +175,28 @@ INSERT INTO Preparazione VALUES ("Cotoletta", 6, "Fai cuocere per cinque minuti 
 INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Impiatta assieme ai pomodori e la cena è servita");
 
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila d'olio. Ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d'olio.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l'hamburger_EN e togli eventuali rivestimenti che coprono la carne.");   -- EN
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l'hamburger_EN e togli eventuali rivestimenti che coprono la carne.");
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio caldo (sono dolori, dico per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo si cuocia uniformemente.");
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 4, "Mentre aspetti qualche minuto per girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane se ce l'hai e usalo per scaldare il pane appena tagliato.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati i 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger_EN e quindi chiudi con la seconda fetta: l'hamburger_EN è pronto, buon appetito!");   -- EN
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati i 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger_EN e quindi chiudi con la seconda fetta: l'hamburger_EN è pronto, buon appetito!");
 
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Se possiedi un tostapane è ora di usarlo, prendilo e attaccalo alla corrente.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast_EN e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");   -- EN
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast_EN e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel frattempo prendi il pomodoro e lavalo sotto l'acqua corrente per togliere residui di pesticidi e/o altro materiale dannoso.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi un tagliere e poggiaci sopra il pomodoro lavato e profumato. Taglia quindi quattro fette di pomodoro e metti la parte avanzata in frigo.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l'altra fetta di pane.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto, buon appetito!");
 
 -- IN SEDE
+INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 1, "Metti l'acqua a bollire per il riso in una pentola. Una volta che fa le bolle versa del sale grosso e poi il riso, abbassa il fuoco a medio-alto e cucina per il tempo indicato sulla confezione.");
+INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 2, "Nel mentre metti i piselli in un pentolino, versa un po' di acqua per cuocerli ma non annegarli, un pizzico di sale fino e un goccio d'olio. Accendi il fuoco medio-basso e cucina per 12 minuti col coperchio (assaggia e regolati in base al gusto e alla consistenza).");
+INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 3, "Taglia i petti di pollo a straccetti, mettili in una padella con un filo d'olio giusto per non farli troppo attaccare e accendi il fuoco medio-basso. Cospargili di curry_EN abbondando pure ché poi verrà diluito. Dopo circa 7 minuti, giusto un po' prima di quando sembrano cotti, aggiungi il latte di cocco e se ti sembra poco giallo aggiungi del curry_EN (non è mai troppo). Spegni il fuoco e mescola un po' così da non formare grumi con la polvere del curry_EN.");
+INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 4, "Prendi un bel piatto e componi il tutto tenendo ben separati il riso, i piselli e il pollo. Contempla questa opera culinaria e mescola tutto in modo da creare un marasma di colori così da assaporare sempre tutti i gusti ad ogni boccone. Non dimenticarti di versare tutto il latte di cocco in modo da amalgamare ancora meglio gli ingredienti.");
+
+INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 1, "Metti i piselli in un pentolino con un filo d'olio e un pizzico di sale fino.");
+INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 2, "Riempi il pentolino di acqua fino a coprire per metà i piselli a meno che tu non li voglia annacquati, cucina per circa 15 minuti a fuoco medio e chiudi con un coperchi. Consigliamo di assaggiare ogni tanto per controllare la salatura e la cottura, se invece vuoi andare a sensazione come quegli esercizi che non ti vengono fai pure.");
+INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 3, "Metti un goccio d'olio su una padella così sarà più facile lavarla e cucina il burger_EN a fuoco medio per il tempo indicato sulla confezione. Gira spesso il burger_EN per non farlo attaccare e per avere una cottura uniforme.");
+INSERT INTO Preparazione VALUES ("Burger_EN vegetale con piselli", 4, "Una volta cotto il burger_EN e i piselli metti tutto su un piatto e assapora il gusto della finta ciccia che a noi amanti della carne fa ancora strano. Se te lo vuoi portare a lezione e non sei attrezzato come uno scout ti consigliamo di tagliarlo a pezzi a casa così sarà più facile da mangiare.");
 
 -- DAD
 
@@ -175,6 +211,9 @@ INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
 
 -- PENDOLARE
+INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump", "2025-01-11", 30, "Pazzesco!!!!");
+INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "OmbrettaGatti", "2025-01-14", 24, "Mi piace che non si pensi solo alla carne, cambierei l'accostamento coi piselli però.");
+INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "2025-01-15", 25, "Concordo con Ombretta, comunque molto buono e facile da preparare.");
 
 -- IN SEDE
 
