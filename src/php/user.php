@@ -7,9 +7,9 @@ $paginaHtml=file_get_contents("../html/user.html");
 $username="";
 
 $db = new DB;
+$isLogged=$db->isUserLogged();
 
 if(!isset($_GET["username"])) {
-    $isLogged=$db->isUserLogged();
 
     if (is_bool($isLogged) && $isLogged==false) {
         header('Location: sign-in.php');
@@ -104,6 +104,12 @@ if(!isset($_GET["username"])) {
     $username = $_GET["username"];
     unset($_GET["username"]);
 
+    if (is_bool($isLogged) && $isLogged==false) {
+        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="sign-in.php" class="shadow">ACCEDI</a></li>',$paginaHtml);
+    } else {
+        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="user.php" class="shadow">PROFILO</a></li>',$paginaHtml);
+    }
+
     $paginaHtml=str_replace("{{username}}",$username,$paginaHtml);
     $userInfo=$db->getUserPublicInfo($username);
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
@@ -178,7 +184,8 @@ if(!isset($_GET["username"])) {
             $moreRecipeForm="";
             if($recipeCounter<count($favouritesList)) {
                 $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
-                $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
+                $moreRecipeForm.='<input type="hidden" name="username" value="'.$username;
+                $moreRecipeForm.='"><input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
                 $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
                 $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             }
