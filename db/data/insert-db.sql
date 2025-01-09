@@ -26,6 +26,14 @@ INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5c
 
 -- INGREDIENTE ====================================
 
+INSERT INTO Ingrediente VALUES ("pasta generica");
+INSERT INTO Ingrediente VALUES ("panna da cucina");
+INSERT INTO Ingrediente VALUES ("pancetta a cubetti");
+INSERT INTO Ingrediente VALUES ("uova");
+INSERT INTO Ingrediente VALUES ("merluzzo (surgelato)");
+INSERT INTO Ingrediente VALUES ("bresaola");
+INSERT INTO Ingrediente VALUES ("rucola");
+INSERT INTO Ingrediente VALUES ("salame");
 INSERT INTO Ingrediente VALUES ("olio");
 INSERT INTO Ingrediente VALUES ("sale fino");
 INSERT INTO Ingrediente VALUES ("sale grosso");
@@ -56,6 +64,38 @@ INSERT INTO Ingrediente VALUES ("mais");
 -- RICETTA ====================================
 
 -- FUORISEDE
+INSERT INTO Ricetta VALUES ("Pasta-asciutta", "fuorisede", "primo", 0, 2, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/pasta-asciutta.jpg");
+ 
+INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "primo", 5, 4, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/pane-triste.jpg");
+
+INSERT INTO Ricetta VALUES ("Pancetta panna e fusilli", "fuorisede", "primo", 15, 9, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/pancilli.jpg");
+
+INSERT INTO Ricetta VALUES ("Riso e uova fritte", "fuorisede", "primo", 15, 8, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/riso-uovo.jpg");
+
+INSERT INTO Ricetta VALUES ("Frittatona e rutto libero", "fuorisede", "primo", 10, 5, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/frittatona.jpg");
+
+INSERT INTO Ricetta VALUES ("Rucola e bresaola", "fuorisede", "primo", 5, 10, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/breso.jpg");
+
+INSERT INTO Ricetta VALUES ("Merluzzo in scaloppa", "fuorisede", "secondo", 15, 10, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/merluzzo.jpg");
+
+INSERT INTO Ricetta VALUES ("Pasta al pesto", "fuorisede", "primo", 10, 5, 
+"",
+ "2025-01-09", "../asset/img/recipe/pendolare/pesto.jpg");
+
 
 -- PENDOLARE
 INSERT INTO Ricetta VALUES ("Insalata pigra", "pendolare", "secondo", 5, 3, "Hai dormito 5 ore per finire di studiare e, tornando dall'università, non hai voglia di prepararti da mangiare? Suvvia, non trascurare il pranzo, fatti un'insalata.", "2025-01-01", "../asset/img/recipe/pendolare/insalata-pigra.jpg");
@@ -89,6 +129,13 @@ INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "
 -- UTILIZZO INGREDIENTE ====================================
 
 -- FUORISEDE
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta", FALSE, 120, "g", "preferibilmente corta");
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "pane", FALSE, 1, "num_el", "quello in cassetta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", "quello in cassetta");
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", "quello in cassetta");
+
 
 -- PENDOLARE
 INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "cespo di insalata", FALSE, 1, "num_el", NULL);

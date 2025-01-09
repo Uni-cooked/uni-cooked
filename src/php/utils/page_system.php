@@ -38,7 +38,7 @@ class PageSystem {
     }
     
     public function GetCurrentPage(int $page): array|null    {
-        $query = "SELECT r.immagine,r.nome,AVG(coalesce(v.voto,31)) as voto,r.categoria,r.tipo_piatto,r.prezzo
+        $query = "SELECT r.immagine,r.nome,CEILING(AVG(coalesce(v.voto,31))) as voto,r.categoria,r.tipo_piatto,r.prezzo
                 FROM Ricetta as r LEFT JOIN Valutazione as v ON r.nome = v.ricetta
                 WHERE 1=1 ";
         $params = [];
