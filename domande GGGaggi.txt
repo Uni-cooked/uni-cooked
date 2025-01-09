@@ -4,6 +4,7 @@ l'input value nei range di catalogo viene letto dallo sr la prima volta? il valo
 div dentro ul per fare 2 colonne
 desc e keyword in pagine stupide (404 ecc, profile, profile edit)
 a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
+index.php rendere accessibili i div delle categorie che cambiano
 
 TODO:
 - link largo catalogue (in fav ho messo text-aling: right a recipe)

@@ -219,6 +219,9 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     } elseif(strlen($newPsw)<4) {
         $paginaHtml=str_replace("{{messaggio di new-psw}}","La nuova <span lang=\"en\">password</span> deve essere di almeno 4 caratteri",$paginaHtml);
         $errorFound=true;
+    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).+$/",$newPsw)==0) {
+        $errorFound=true;
+        $paginaHtml = str_replace("{{messaggio di new-psw}}","La <span lang=\"en\">password</span> deve avere una lettera maiuscola, una lettera minuscola e un carattere speciale",$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
     }
