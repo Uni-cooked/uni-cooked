@@ -71,6 +71,7 @@
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
+                                    <p class="suggestion">Massimo 15 caratteri senza spazi</p>
                                     <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit">
                                     <p class="err-msg">{{nickname-error}}</p>
                                 </div>
@@ -105,6 +106,13 @@
                         </div>
                         <div id="psw-up-container" class="input-container">
                             <label for="new-psw" class="form-label">Inserisci la nuova <span lang="en">password</span></label>
+                            <ul class="suggestion">
+                                <li>Almeno una lettera maiuscola</li>
+                                <li>Almeno una lettera miuscola</li>
+                                <li>Almeno un numero</li>
+                                <li>Almeno un carattere speciale</li>
+                                <li>Minimo 4 caratteri</li>
+                            </ul>
                             <input required type="password" name="psw" id="new-psw">
                             <p class="err-msg">{{messaggio di new-psw}}</p>
                         </div>

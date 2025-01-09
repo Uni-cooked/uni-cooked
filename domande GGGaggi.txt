@@ -12,7 +12,6 @@ pre in bio come andare a capo senza n2br
 se tabbo dal nav-help il focus si sposta ma il tab rimane lì
 
 TODO:
-- suggerimenti
 - btn anim
 
 

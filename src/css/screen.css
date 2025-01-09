@@ -140,7 +140,7 @@ fieldset {
 
 .form-label {
     display: block;
-    margin-bottom: .8em;
+    margin-bottom: .8rem;
     color: var(--accent);
     font-weight: 500;
     font-size: var(--form-label);
@@ -950,11 +950,16 @@ button#del-comment {
 
 /* #region SIGN IN/UP PAGE */
 .sign-box fieldset {
-    background-color: var(--bg-secondary);
+    /* background-color: var(--bg-secondary); */
 }
 
-.sign-box fieldset > p {
-    clear: both;
+.suggestion {
+    font-size: .85rem;
+    padding: .4rem .9rem;
+    background-color: var(--bg-secondary);
+    margin-bottom: .4rem;
+    border-radius: .35rem;
+    border-left: .4rem solid var(--accent);
 }
 
 #name-up-container {
@@ -963,14 +968,24 @@ button#del-comment {
     padding-right: 1.5em;
 }
 
+label[for="student-name-up"] + p.suggestion {
+    line-height: .85rem;
+}
+
 #cat-up-container {
     width: 50%;
     float: right;
     padding-left: 1.5em;
 }
 
-#mail-up-container {
-    clear: both;
+#student-cat-up {
+    /* label margin-bottom + name suggestion line-height
+        + name suggestion padding + name suggestion margin-bottom */
+    margin-top: 2.85rem;
+}
+
+ul.suggestion {
+    list-style-position: inside;
 }
 
 .sign-box #credentials {
