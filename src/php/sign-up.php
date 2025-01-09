@@ -90,10 +90,10 @@ if (isset($_POST['submit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri",$paginaHtml);
-    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).+$/",$psw)==0) {
+    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[\W]).+$/",$psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve avere una lettera maiuscola, una lettera minuscola e un carattere speciale",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale",$paginaHtml);
     } elseif (strcmp($psw,$_POST['repeat-psw'])!=0) {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $errorFound=true;
