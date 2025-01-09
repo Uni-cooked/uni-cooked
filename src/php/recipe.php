@@ -42,12 +42,20 @@ if(isset($_GET["recipe"])) {
         unset($_POST["submit-add-review"]);
         if($isUserLogged!=false) {
             $mark=$_POST["mark"];
+            if(filter_input(INPUT_GET, 'mark', FILTER_VALIDATE_INT) === false) {
+                $mark=30;
+            }
             if($mark<1) {
                 $mark=1;
             } elseif ($mark>30) {
                 $mark=30;
             }
             $comment=DB::pulisciNote($_POST["comment"]);
+            if(strlen($comment)>200) {
+                $_SESSION["commentError"]="il numero di caratteri nel testo del commento è superiore a 200";
+                header('Location: recipe.php?recipe='.$recipe);
+                exit();
+            }
             $result=$db->addUserReview($recipe,$comment,$mark);
             if($result==false) {
                 header('Location: 500-err.php');
@@ -179,8 +187,16 @@ if(isset($_GET["recipe"])) {
         if(is_string($userComment) && strcmp($userComment,"userLeftNoComment")==0) {
             $form.='<div id="add-comment" class="content-container-left content">';
             $form.='<img src="'.$immagine.'" id="add-comment-pp">';
-            $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
+            if(isset($_SESSION["commentError"])) {
+                $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg">'.$_SESSION["commentError"].'<button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
+                unset($_SESSION["commentError"]);
+            } else {
+                $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg"><button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
+            }    
         } elseif (is_string($userComment)) {
+            if(isset($_SESSION["commentError"])) {
+                unset($_SESSION["commentError"]);
+            }
             header('Location: 500-err.php');
             exit();
         } else {
