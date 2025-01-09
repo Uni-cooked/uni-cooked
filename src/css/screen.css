@@ -1024,6 +1024,7 @@ button#del-comment {
 }
 
 #login-date {
+    display: block;
     color: var(--accent);
 }
 
@@ -1221,7 +1222,6 @@ a#log-out {
     font-size: 1.1rem;
     margin:0 auto .5em;
 }
-
 /* #endregion USER EDIT PAGE */
 
 /* ================================================== */
@@ -1288,6 +1288,10 @@ a#log-out {
 
 .admin-cell p {
     overflow-wrap: break-word;
+}
+
+.admin-cell a {
+    color: var(--text-color);
 }
 
 .admin-cell-margin {
