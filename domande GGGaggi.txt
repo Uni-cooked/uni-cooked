@@ -12,11 +12,7 @@ pre in bio come andare a capo senza n2br
 se tabbo dal nav-help il focus si sposta ma il tab rimane lì
 
 TODO:
-- link largo catalogue (in fav ho messo text-aling: right a recipe)
 - suggerimenti
-
-- white space pre in mobile rompe tutto -> n2br
-- title di fav recipe ha flex verticale, catalogue no 
 - btn anim
 
 

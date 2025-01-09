@@ -238,18 +238,19 @@ ul#recipe-list {
 ul#recipe-list .recipe {
     margin: 0 auto 4em;
     width: 100%;
+    min-width: unset;
+    height: unset;
 }
 
-ul#recipe-list .recipe .recipe-img-crop {
-    width: 100%;
-    height: 40%;
+ul#recipe-list .recipe .catalogue-recipe-img-crop {
+    height: 12em;
     border-radius: calc(var(--radius-small)* .5);
     object-fit: cover;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
     width: 34%;
-    min-width: 9em;
+    min-width: 10em;
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
@@ -307,10 +308,6 @@ ul#ingredient-list li {
     max-width: none;
     width: 100%;
     height: 40%;
-}
-
-#fav-recipe-list .fav-recipe img.fav-recipe-img-crop {
-	height: 100%;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-title {
