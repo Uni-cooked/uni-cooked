@@ -151,7 +151,7 @@ fieldset {
 
 .form-label {
     display: block;
-    margin-bottom: .8em;
+    margin-bottom: .8rem;
     color: var(--accent);
     font-weight: 500;
     font-size: var(--form-label);
@@ -726,16 +726,14 @@ ul#recipe-list {
 
 ul#recipe-list .recipe {
     width: 32%;
-    min-width: 22em;
+    min-width: 21em;
     height: 27em;
     background-color: var(--bg-secondary);
     border-radius: var(--radius-small);
     padding: 0.5em;
     color: var(--text-color);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* to align the link to the right */
+    text-align: right;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
@@ -746,22 +744,24 @@ ul#recipe-list .recipe .catalogue-recipe-img-crop {
 }
 
 ul#recipe-list .recipe .recipe-title {
-    padding-top: 0.6em;
+    margin-top: 0.3em;
     font-size: 1.6rem;
-    flex: 1;
+    height: 19%;
+    text-align: left;
 }
 
 ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    flex: 2;
+    height: 30%;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
     width: 9em;
     padding: 0.4em 0;
     margin: auto;
+    text-align: left;
 }
 
 ul#recipe-list .recipe ul.recipe-info img {
@@ -771,7 +771,7 @@ ul#recipe-list .recipe ul.recipe-info img {
 }
 
 ul#recipe-list .recipe a {
-    display: block;
+    display: inline-block;
     text-align: right;
     padding-top: 0.3em;
     padding-right: 1em;
@@ -984,11 +984,16 @@ button#del-comment {
 
 /* #region SIGN IN/UP PAGE */
 .sign-box fieldset {
-    background-color: var(--bg-secondary);
+    /* background-color: var(--bg-secondary); */
 }
 
-.sign-box fieldset>p {
-    clear: both;
+.suggestion {
+    font-size: .85rem;
+    padding: .4rem .9rem;
+    background-color: var(--bg-secondary);
+    margin-bottom: .4rem;
+    border-radius: .35rem;
+    border-left: .4rem solid var(--accent);
 }
 
 #name-up-container {
@@ -997,14 +1002,24 @@ button#del-comment {
     padding-right: 1.5em;
 }
 
+label[for="student-name-up"] + p.suggestion {
+    line-height: .85rem;
+}
+
 #cat-up-container {
     width: 50%;
     float: right;
     padding-left: 1.5em;
 }
 
-#mail-up-container {
-    clear: both;
+#student-cat-up {
+    /* label margin-bottom + name suggestion line-height
+        + name suggestion padding + name suggestion margin-bottom */
+    margin-top: 2.85rem;
+}
+
+ul.suggestion {
+    list-style-position: inside;
 }
 
 .sign-box #credentials {
@@ -1029,7 +1044,6 @@ button#del-comment {
     font-weight: 700;
     font-size: var(--button-text);
 }
-
 /* #endregion SIGN IN/UP PAGE */
 
 /* ================================================== */
@@ -1060,11 +1074,8 @@ button#del-comment {
 }
 
 #login-date {
+    display: block;
     color: var(--accent);
-}
-
-#user-bio {
-    white-space: pre;
 }
 
 #fav-recipe-list-container {
@@ -1111,6 +1122,7 @@ button#del-comment {
 #fav-recipe-list .fav-recipe .fav-recipe-title {
     display: flex;
     align-items: center;
+    text-align: left;
     height: 35%;
     padding: 0 1em;
 }
@@ -1258,7 +1270,6 @@ a#log-out {
     font-size: 1.1rem;
     margin: 0 auto .5em;
 }
-
 /* #endregion USER EDIT PAGE */
 
 /* ================================================== */
@@ -1325,6 +1336,10 @@ a#log-out {
 
 .admin-cell p {
     overflow-wrap: break-word;
+}
+
+.admin-cell a {
+    color: var(--text-color);
 }
 
 .admin-cell-margin {

@@ -59,10 +59,18 @@
                     <fieldset>
                         <div class="input-container" >
                             <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
+                            <p class="suggestion">Massimo 15 caratteri senza spazi</p>
                             <input required type="text" placeholder="Inserisci nome" name="nome" id="student-name-in">
                         </div>
                         <div class="input-container " >
                             <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la <span lang="en">password</span></label>
+                            <ul class="suggestion">
+                                <li>Almeno una lettera maiuscola</li>
+                                <li>Almeno una lettera miuscola</li>
+                                <li>Almeno un numero</li>
+                                <li>Almeno un carattere speciale</li>
+                                <li>Minimo 4 caratteri</li>
+                            </ul>
                             <input required type="password" placeholder="Inserisci password" name="psw" id="student-psw-in">
                         </div>
                         <button class="button-input button-input-confirm shadow" type="submit" name="submit">ACCEDI</button>

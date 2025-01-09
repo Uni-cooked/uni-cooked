@@ -2,21 +2,17 @@ quando l'hamburger è aperto legge anche il testo non interattivo sotto?
 quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab va fuori?
 l'input value nei range di catalogo viene letto dallo sr la prima volta? il valore è scritto dopo forse sarebbe da aggiungerlo alla label per gli sr -> nascondi label
 div dentro ul per fare 2 colonne
+accessibilità card home
 desc e keyword in pagine stupide (404 ecc, profile, profile edit)
 a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
-index.php rendere accessibili i div delle categorie che cambiano
+{1,15} nelle regex va bene?
+onload nel body c'è altro modo?
+strong senza bold perché brutto
+pre in bio come andare a capo senza n2br
+se tabbo dal nav-help il focus si sposta ma il tab rimane lì
 
 TODO:
-- link largo catalogue (in fav ho messo text-aling: right a recipe)
-
-- time in p data user
-- keyword in strong brutte in cicciotto (vedi breadcrumb)
-- nel titolo della ricetta abbiamo h1 con dentro span
-- warning in catalogo con DAD
-- white space pre in mobile rompe tutto
-- mail gialle about us?
-- title di fav recipe ha flex verticale, catalogue no
-- vedi domanda nav help recipe
+- btn anim
 
 
 * max length bio (300 char)

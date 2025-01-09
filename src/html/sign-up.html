@@ -59,32 +59,39 @@
                 <fieldset>
                     <div id="name-up-container" class="input-container">
                         <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
+                        <p class="suggestion">Massimo 15 caratteri senza spazi</p>
                         <input required type="text" name="nome" id="student-name-up">
                         <p class="err-msg">{{messaggio di nome}}</p>
                     </div>
                     <div id="cat-up-container" class="input-container">
                         <label for="student-cat-up" class="form-label">Scegli la categoria</label>
-                        <select required name ="categoria" id="student-cat-up">
-                            <!-- SE CAMBIA QUI CAMBIARE PHP-->
-                            <option hidden selected value>Seleziona una opzione</option>
+                        <select required name="categoria" id="student-cat-up">
+                            <option hidden selected>Seleziona una opzione</option>
                             <option value="fuorisede">Fuorisede</option>
                             <option value="pendolare">Pendolare</option>
                             <option value="in_sede">In sede</option>
-                            <option value="dad"><abbr title="didattica a distanza">DAD</abbr></option>
+                            <option value="dad" abbr="didattica a distanza">DAD</option>
                         </select>
                         <p class="err-msg">{{messaggio di categoria}}</p>
                     </div>
-                    <div id="mail-up-container" class="input-container">
+                    <div class="input-container">
                         <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
                         <input required type="email" name="email" id="student-mail-up">
                         <p class="err-msg">{{messaggio di email}}</p>
                     </div>
-                    <div id="psw-up-container" class="input-container">
+                    <div class="input-container">
                         <label for="student-psw-up" class="form-label">Inserisci la <span lang="en">password</span></label>
+                        <ul class="suggestion">
+                            <li>Almeno una lettera maiuscola</li>
+                            <li>Almeno una lettera miuscola</li>
+                            <li>Almeno un numero</li>
+                            <li>Almeno un carattere speciale</li>
+                            <li>Minimo 4 caratteri</li>
+                        </ul>
                         <input required type="password" name="psw" id="student-psw-up">
                         <p class="err-msg">{{messaggio di psw}}</p>
                     </div>
-                    <div id="psw-up-container" class="input-container">
+                    <div class="input-container">
                         <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
                         <input required type="password" name="repeat-psw" id="student-repeat-psw-up">
                         <p class="err-msg">{{messaggio di psw-ripetuta}}</p>
