@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
     </head>
+
     <body>
         <header>
             <div id="header-content" class="content">
@@ -29,7 +31,7 @@
                     <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
-                
+
                 <div id="hamburger">
                     <img src="../asset/icon/logo.svg" alt="" class="logo">
                     <label id="hamburger-label">
@@ -48,7 +50,7 @@
                         </li>
                     </ul>
                 </nav>
-                
+
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
                     <p><a href="./catalogue.html">RICETTE</a> > RICETTA</p>
@@ -58,7 +60,7 @@
 
         <main id="content">
             <h1 id="recipe-name-title" class="content-subtitle">{{Recipe-title-body}}</h1>
-            <div id="recipe-main-info">
+            <div id="recipe-main-info" class="content">
                 <img src="{{recipe-image-src}}" alt="" id="recipe-img">
                 <ul>
                     <li><img src="../asset/icon/grade.svg" alt="voto">{{mark}} <abbr title="su">/</abbr> 30</li>
@@ -84,13 +86,13 @@
 
             <h3 class="content-subtitle content">PREPARAZIONE</h3>
             <div class="content-container-left end-paragraph">
-                <ol class="content">
+                <ol id="prep-steps" class="content">
                     {{what-to-do-list}}
                 </ol>
             </div>
 
             <h3 id="eval-section" class="content-subtitle content">VALUTAZIONI</h3>
-            {{leave-comment-or-personal-published-comment}}           
+            {{leave-comment-or-personal-published-comment}}
 
             <h4 id="comment-subtitle" class="content-subtitle content">Cosa ne pensano gli altri</h4>
 
@@ -104,4 +106,5 @@
             <a href="#top">Torna su</a>
         </footer>
     </body>
+
 </html>

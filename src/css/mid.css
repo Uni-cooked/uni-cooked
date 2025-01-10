@@ -1,15 +1,11 @@
 :root {
-    --accent:#EFAE50;
-    --accent-secondary:#392A24;
-    --accent-trinary:#0C6F59;
-
     --bar-width: 3.7rem;
     --bar-height: 0.9rem;
     --hamburger-gap: .4rem;
     --hamburger-v-margin: .8rem;
     --hamburger-h-margin: 2.5rem;
     --animation-hamburger-timing: 200ms ease-in-out;
-    --animation-dropdown-timing: 500ms cubic-bezier(.1,.36,.15,.98);
+    --animation-dropdown-timing: 500ms cubic-bezier(.1, .36, .15, .98);
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
@@ -32,6 +28,7 @@
 fieldset {
     padding: 1em;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -40,6 +37,7 @@ fieldset {
 #header-content {
     padding: 0;
 }
+
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -48,6 +46,7 @@ fieldset {
 nav#list-help {
     z-index: 2;
 }
+
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -57,18 +56,18 @@ nav#list-help {
     display: flex;
     justify-content: space-between;
     background-color: rgba(57, 42, 36, 0.85);
-    transition: background-color var( --animation-dropdown-timing);
+    transition: background-color var(--animation-dropdown-timing);
     width: 100%;
     z-index: 1;
 }
 
 #hamburger:has(input:checked) {
-     background-color: rgba(57, 42, 36, 0);
+    background-color: rgba(57, 42, 36, 0);
 }
 
 #hamburger-label {
     --x-width: calc(var(--hamburger-height) * 1.41421356237);
-  
+
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -84,8 +83,8 @@ nav#list-help {
     height: var(--bar-height);
     transform-origin: right center;
     transition: opacity var(--animation-hamburger-timing), width var(--animation-hamburger-timing),
-    rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
-    background-color var(--animation-hamburger-timing);
+        rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
+        background-color var(--animation-hamburger-timing);
     background-color: var(--accent);
     border-radius: 100rem;
 }
@@ -132,7 +131,7 @@ nav#list-help {
     background-image: url("../asset/img/burger/knife.png");
     background-size: 100% 100%;
 }
-  
+
 #hamburger-label input:checked {
     opacity: 0;
     width: 0;
@@ -140,7 +139,7 @@ nav#list-help {
 
 nav#menu {
     position: fixed;
-    transition: translate var( --animation-dropdown-timing);
+    transition: translate var(--animation-dropdown-timing);
     translate: 0 -100%;
     padding: 0 1rem;
     /* TODO: replace with correct gaps */
@@ -150,12 +149,12 @@ nav#menu {
 
     /*VISTO CHE ABBIAMO POCHI LINK DIREI DI RIDURLO COME HEIGHT E CHIEDERE ALLA G SE ESISTE UN MODO PER IMPEDIRE IL TAB SUL RESTO DEI LINK
      O DI CHIUDERLO IN AUTOMATICO QUANDO SI TABBA FUORI DAL MENU*/
-    height: fit-content; 
+    height: fit-content;
 
     width: 100vw;
 }
 
-#hamburger:has(input:checked) + #menu {
+#hamburger:has(input:checked)+#menu {
     translate: 0;
 }
 
@@ -163,7 +162,7 @@ header:has(#hamburger-label input:not(:checked)) nav#menu a {
     visibility: hidden;
 }
 
-body:has(#hamburger-label input:checked){
+body:has(#hamburger-label input:checked) {
     overflow-y: hidden;
 }
 
@@ -204,18 +203,34 @@ nav#menu li:has(.logo) {
 nav#menu li#profile-item {
     margin: 0;
 }
+
 /* #endregion MENU */
 
 /* ================================================== */
 
 /* #region HOME PAGE */
-div#why > div {
+
+nav#quick-role li {
+    width: 50%;
+}
+
+nav#quick-role li:nth-child(2n+1) {
+    float: left;
+    margin: .5rem 0;
+}
+
+nav#quick-role li:nth-child(2n) {
+    margin: .5rem 0;
+}
+
+div#why>div {
     flex-direction: column;
 }
 
 div#why img {
     width: 100%;
 }
+
 /* #endregion HOME PAGE */
 
 /* ================================================== */
@@ -254,19 +269,39 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
+
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
 /* #region RECIPE PAGE */
-ul#ingredient-list {
-    padding-left: 1rem;
+
+#recipe-main-info {
+    height: unset;
+    display: block;
 }
 
+#recipe-img {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#recipe-main-info ul {
+    display: block;
+    margin: 2rem auto;
+    width: fit-content;
+}
+
+#recipe-main-info ul li {
+    margin-top: 1.3em;
+}
+
+
 ul#ingredient-list li {
-    /* to avoid circles overflow to the left */
+    /* to avoid circles overflow to the left
     width: calc(49% - 1.1em);
-    margin-left: 1.1em;
+    margin-left: 1.1em; */
 }
 
 #add-comment-pp {
@@ -278,6 +313,7 @@ ul#ingredient-list li {
 #add-comment-eval-container {
     text-align: center;
 }
+
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -294,6 +330,7 @@ ul#ingredient-list li {
     width: 100%;
     padding-left: 0;
 }
+
 /* #endregion SIGN UP PAGE */
 
 /* ================================================== */
@@ -331,16 +368,18 @@ ul#ingredient-list li {
 #fav-recipe-list .fav-recipe a {
     padding-top: 0.3em;
 }
+
 /* #endregion USER PAGE */
 
 /* ================================================== */
 
 /* #region USER EDIT PAGE */
-#user-edit #primary-info{
+#user-edit #primary-info {
     flex-direction: column;
     align-items: center;
     gap: .5rem;
 }
+
 /* #endregion USER PAGE */
 
 /* ================================================== */
@@ -369,4 +408,5 @@ ul#ingredient-list li {
 .admin-cell {
     margin-bottom: 5rem;
 }
+
 /* #endregion ABOUT US */

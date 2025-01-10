@@ -21,16 +21,7 @@
     --a-color: #5F9950;
     --menu-a-color: white;
     --danger-button-color: red;
-    /* SPECIAL CASES */
-    /* --a-visited-color: #C76F0A; */
-    /* --header-content-text-color: black; */
-    /* --header-content-a-bg-color: #d6cccc; */
-    /* --dt-bg-color: white; */
-    /* --menu-login-a-color: #4E0000; */
-    /* --shadowcolor: #d88913; */
-    /* --accent-a-color: #000A5F; */
-    /* --accent-a-visited-color: #4E0000; */
-    /* --safe-zone-a-bg-color: #E1BA84; */
+
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -430,7 +421,7 @@ nav#quick-role li {
     text-align: center;
     display: inline-block;
     width: 15%;
-    margin: .5rem 2rem .5rem 2rem;
+    margin: .5rem 2rem;
     font-weight: 600;
     font-size: var(--menu-text);
     font-style: italic;
@@ -826,12 +817,12 @@ ul#recipe-list .recipe a {
 #recipe-main-info {
     display: flex;
     justify-content: center;
-    height: 13em;
+    height: 25em;
     margin-bottom: 2em;
 }
 
 #recipe-img {
-    width: 15em;
+    width: 60%;
     height: 100%;
     border-radius: calc(var(--radius-small) * .5);
     object-fit: cover;
@@ -850,6 +841,7 @@ ul#recipe-list .recipe a {
 #recipe-main-info ul li img {
     vertical-align: middle;
     margin-right: .8em;
+    width: 2rem;
 }
 
 #recipe-fav-btn {
@@ -863,14 +855,19 @@ ul#ingredient-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 13%;
+    padding-left: 4rem;
 }
 
 ul#ingredient-list li {
-    width: 45%;
+    list-style-position: inside;
+    width: 50%;
     text-align: left;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+ol#prep-steps {
+    padding-left: 4rem;
 }
 
 ol li.prep-li {
@@ -1002,7 +999,7 @@ button#del-comment {
     padding-right: 1.5em;
 }
 
-label[for="student-name-up"] + p.suggestion {
+label[for="student-name-up"]+p.suggestion {
     line-height: .85rem;
 }
 
@@ -1044,6 +1041,7 @@ ul.suggestion {
     font-weight: 700;
     font-size: var(--button-text);
 }
+
 /* #endregion SIGN IN/UP PAGE */
 
 /* ================================================== */
@@ -1270,6 +1268,7 @@ a#log-out {
     font-size: 1.1rem;
     margin: 0 auto .5em;
 }
+
 /* #endregion USER EDIT PAGE */
 
 /* ================================================== */

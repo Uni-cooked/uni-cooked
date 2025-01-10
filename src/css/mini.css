@@ -1,3 +1,14 @@
+:root {
+    --title: 3rem;
+    --subtitle: 1.2rem;
+    --button-text: 1.2rem;
+    --section-title: 2.7em;
+    --desc-title: 1.2rem;
+    --quick-text-hint: 1rem;
+    --letter-spacing: .2rem;
+    --word-spacing: .6rem;
+}
+
 /* #region GENERAL CLASSES */
 .button-input {
     width: 100%;
@@ -9,6 +20,7 @@
 .content-subtitle {
     font-size: 2.5rem;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -22,9 +34,10 @@ dd:has(input:checked) .flip-card .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-.flip-card-back{
+.flip-card-back {
     transform: rotateY(180deg);
 }
+
 /* #endregion HOME PAGE */
 
 /* ================================================== */
@@ -33,34 +46,25 @@ dd:has(input:checked) .flip-card .flip-card-inner {
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     height: 11em;
 }
+
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
 /* #region RECIPE PAGE */
-#recipe-main-info {
-    height: unset;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-}
 
-#recipe-main-info ul {
-    margin-top: .7em;
-}
-
-#recipe-main-info ul li {
-    margin-top: .8em;
+ul#ingredient-list li {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 ul#ingredient-list {
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0;
 }
 
-ul#ingredient-list li {
-    width: 60%;
-}
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -78,6 +82,7 @@ ul#ingredient-list li {
     float: none;
     margin-bottom: .1em;
 }
+
 /* #endregion ABOUT US */
 
 /* ================================================== */
@@ -86,4 +91,5 @@ ul#ingredient-list li {
 .single-msg-page-a {
     width: 100%;
 }
+
 /* #region SINGLE MESSAGE PAGE */
