@@ -39,6 +39,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
     $paginaHtml=str_replace("{{nickname-error}}","",$paginaHtml);
     $paginaHtml=str_replace("{{stud-cat-edit-error}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
     } else {
@@ -83,8 +84,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         }
     }
 
-    $biografia=DB::pulisciNote($_POST["bio-edit"]); //[FIX] NON SONO CONSENTITI I TAG ANCHE SE DOVREBBERO
-
+    $biografia=DB::pulisciNote($_POST["bio-edit"]);
+    if(strlen($biografia)>300) {
+        $paginaHtml=str_replace("{{bio-error}}","La biografia deve essere più corta di 300 caratteri",$paginaHtml);
+        $errorFound=true;
+    }
+    
     if (!isset($_POST['stud-cat-edit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{stud-cat-edit-error}}","Seleziona una categoria.",$paginaHtml);
@@ -108,9 +113,9 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         } elseif($info->isExecutable()) {
             $errorFound=true;
             $paginaHtml = str_replace("{{profile-pic-error}}","Il file caricato non è supportato.",$paginaHtml);
-        } elseif($info->getSize()>3145728) {
+        } elseif($info->getSize()>1572864) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{profile-pic-error}}",'Il file caricato supera i 3 <span lang="en">megabytes</span>: carica un file di dimensione minore.',$paginaHtml);
+            $paginaHtml = str_replace("{{profile-pic-error}}",'Il file caricato supera gli 1,5 <span lang="en">megabytes</span>: carica un file di dimensione minore.',$paginaHtml);
         } elseif(strcmp(mime_content_type($tmpFile),"image/jpeg")!=0 && strcmp(mime_content_type($tmpFile),"image/png")!=0) {
             $errorFound=true;
             $paginaHtml = str_replace("{{profile-pic-error}}",'Il file caricato è un formato non supportato.',$paginaHtml);
@@ -177,6 +182,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
     $paginaHtml=str_replace("{{nickname-error}}","",$paginaHtml);
     $paginaHtml=str_replace("{{stud-cat-edit-error}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
     } else {

@@ -10,6 +10,7 @@ onload nel body c'è altro modo?
 strong senza bold perché brutto
 pre in bio come andare a capo senza n2br
 se tabbo dal nav-help il focus si sposta ma il tab rimane lì
+errori va bene lasciare il <p>?
 
 TODO:
 - btn anim

@@ -51,8 +51,13 @@ if(isset($_GET["recipe"])) {
                 $mark=30;
             }
             $comment=DB::pulisciNote($_POST["comment"]);
+            if(strlen($comment)==0) {
+                $_SESSION["commentError"]="Il testo della valutazione è necessario";
+                header('Location: recipe.php?recipe='.$recipe);
+                exit();
+            }
             if(strlen($comment)>200) {
-                $_SESSION["commentError"]="il numero di caratteri nel testo del commento è superiore a 200";
+                $_SESSION["commentError"]="il numero di caratteri nel testo della valutazione è superiore a 200";
                 header('Location: recipe.php?recipe='.$recipe);
                 exit();
             }

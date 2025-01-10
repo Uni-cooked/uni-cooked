@@ -31,14 +31,31 @@ if(!isset($_POST["suggestion"])) {
         $paginaHtml=str_replace("{{profile-pic-src}}","../asset/img/placeholder.png",$paginaHtml);
         $paginaHtml=str_replace("{{username}}","generica di un utente non registrato o autenticato",$paginaHtml);
     }
+
+    if(isset($_SESSION["suggestionError"])) {
+        $paginaHtml=str_replace("{{suggestion-error}}",$_SESSION["suggestionError"],$paginaHtml);
+        unset($_SESSION["suggestionError"]);
+    } else {
+        $paginaHtml=str_replace("{{suggestion-error}}","",$paginaHtml);
+    }
     echo $paginaHtml;
 } else {
     unset($_POST["suggerimento"]);
     $result="";
+
+    $proposta=DB::pulisciNote($_POST["proposta"])
+    unset($_POST["proposta"]);
+
+    if(str_len($proposta)<20 || str_len($proposta)>500) {
+        $_SESSION["suggestionError"]="Il suggerimento deve essere più lungo di 20 caratteri e minore di 500";
+        header('Location: about-us.php');
+        exit();
+    }
+
     if($isUserLogged!=false) {
-        $result=$db->insertSuggestion(DB::pulisciNote($_POST["proposta"]),$isUserLogged);
+        $result=$db->insertSuggestion($proposta,$isUserLogged);
     } else {
-        $result=$db->insertSuggestion(DB::pulisciNote($_POST["proposta"]));
+        $result=$db->insertSuggestion($proposta);
     }
     
     if($result==false) {
