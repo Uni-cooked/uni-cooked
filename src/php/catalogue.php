@@ -44,6 +44,8 @@ $paginaHtml = str_replace("value=\"".$order."\"","value=\"".$order."\" selected"
 $paginaHtml = str_replace("id=\"search-bar\"","id=\"search-bar\" value=\"". $recipieName ."\"",$paginaHtml);
 $paginaHtml = str_replace("id=\"min-rate-filter\"","id=\"min-rate-filter\" value=\"".$grade."\"",$paginaHtml);
 $paginaHtml = str_replace("id=\"max-price-filter\"","id=\"max-price-filter\" value=\"".$cost."\"",$paginaHtml);
+$paginaHtml = str_replace("id=\"ord-res\" name=\"ord\"","id=\"ord-res\" name=\"ord\" onchange=\"this.form.submit()\"",$paginaHtml);
+
 
 $paginaHtml = str_replace("{{HIDDEN}}",CreateOrderChanger($pageSystem->GetParamList()),$paginaHtml);
 $paginaHtml = str_replace("{{RECIPES}}",$d_recipes,$paginaHtml);
