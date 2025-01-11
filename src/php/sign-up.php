@@ -22,20 +22,20 @@ if (isset($_POST['submit'])) {
     $username=$_POST["nome"];
     //CONTROLLO USERNAME
     if (strlen($username)==0) {
-        $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente è un campo obbligatorio",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p class="err-msg">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
         $errorFound=true;
     } elseif (strlen($username)>15) {
-        $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente non deve essere più lungo di 15 caratteri",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p class="err-msg">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente non deve contenere spazi o caratteri speciali",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
         $username=DB::pulisciInput($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{messaggio di nome}}","Il nome utente inserito non può essere utilizzato",$paginaHtml);
+            $paginaHtml = str_replace("{{messaggio di nome}}",'<p class="err-msg">Il nome utente inserito non può essere utilizzato</p>',$paginaHtml);
         } elseif (strcmp($isUserPresent,"ExceptionThrow")==0 || strcmp($isUserPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 500-err.php');
@@ -48,29 +48,29 @@ if (isset($_POST['submit'])) {
     //CONTROLLO CATEGORIA
     if (!isset($_POST['categoria'])) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di categoria}}","Seleziona una categoria",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di categoria}}",'<p class="err-msg">Seleziona una categoria</p>',$paginaHtml);
     } else if (strcmp($_POST['categoria'],"fuorisede")==0 || strcmp($_POST['categoria'],"pendolare")==0 || strcmp($_POST['categoria'],"in_sede")==0|| strcmp($_POST['categoria'],"dad")==0) {
         $paginaHtml = str_replace("{{messaggio di categoria}}","",$paginaHtml);
         $categoria=$_POST['categoria'];
     } else {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di categoria}}","La categoria inserita non è valida",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di categoria}}",'<p class="err-msg">La categoria inserita non è valida</p>',$paginaHtml);
     }
 
     //CONTROLLO EMAIL
     $email=$_POST['email'];
     if (strlen($email)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di email}}","L'<span lang=\"en\">email</span> è un campo obbligatorio",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di email}}",'<p class="err-msg">L\'<span lang="en">email</span> è un campo obbligatorio</p>',$paginaHtml);
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di email}}","L'<span lang=\"en\">email</span> non è un indirizzo valido.",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di email}}",'<p class="err-msg">L\'<span lang="en">email</span> non è un indirizzo valido</p>',$paginaHtml);
     } else {
         $isEmailPresent=$db->checkEmailPresence($email);
         if (strcmp($isEmailPresent,"ExceptionThrow")!=0 && strcmp($isEmailPresent,"ConnectionFailed")!=0 && $isEmailPresent==true) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{messaggio di email}}","Questa <span lang=\"en\">email</span> non può essere utilizzata",$paginaHtml);
+            $paginaHtml = str_replace("{{messaggio di email}}",'<p class="err-msg">Questa <span lang="en">email</span> non può essere utilizzata</p>',$paginaHtml);
         } else if (strcmp($isEmailPresent,"ExceptionThrow")==0 || strcmp($isEmailPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 500-err.php');
@@ -85,19 +85,19 @@ if (isset($_POST['submit'])) {
     if (strlen($psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> è un campo obbligatorio",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p class="err-msg">La <span lang="en">password</span> è un campo obbligatorio</p>',$paginaHtml);
     } elseif (strlen($psw)<4) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p class="err-msg">La <span lang="en">password</span> deve essere lunga almeno 4 caratteri</p>',$paginaHtml);
     } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[\W]).+$/",$psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}","La <span lang=\"en\">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p class="err-msg">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
     } elseif (strcmp($psw,$_POST['repeat-psw'])!=0) {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","Le <span lang=\"en\">password</span> non coincidono.",$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}",'<p class="err-msg">Le <span lang="en">password</span> non coincidono</p>',$paginaHtml);
     } else {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);

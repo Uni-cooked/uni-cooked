@@ -61,7 +61,7 @@
                         <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
                         <p class="suggestion">Massimo 15 caratteri senza spazi</p>
                         <input required type="text" name="nome" id="student-name-up">
-                        <p class="err-msg">{{messaggio di nome}}</p>
+                        {{messaggio di nome}}
                     </div>
                     <div id="cat-up-container" class="input-container">
                         <label for="student-cat-up" class="form-label">Scegli la categoria</label>
@@ -72,12 +72,12 @@
                             <option value="in_sede">In sede</option>
                             <option value="dad" abbr="didattica a distanza">DAD</option>
                         </select>
-                        <p class="err-msg">{{messaggio di categoria}}</p>
+                        {{messaggio di categoria}}
                     </div>
                     <div class="input-container">
                         <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
                         <input required type="email" name="email" id="student-mail-up">
-                        <p class="err-msg">{{messaggio di email}}</p>
+                        {{messaggio di email}}
                     </div>
                     <div class="input-container">
                         <label for="student-psw-up" class="form-label">Inserisci la <span lang="en">password</span></label>
@@ -89,12 +89,12 @@
                             <li>Minimo 4 caratteri</li>
                         </ul>
                         <input required type="password" name="psw" id="student-psw-up">
-                        <p class="err-msg">{{messaggio di psw}}</p>
+                        {{messaggio di psw}}
                     </div>
                     <div class="input-container">
                         <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
                         <input required type="password" name="repeat-psw" id="student-repeat-psw-up">
-                        <p class="err-msg">{{messaggio di psw-ripetuta}}</p>
+                        {{messaggio di psw-ripetuta}}
                     </div>
 
                     <button name="submit" class="button-input button-input-confirm shadow" type="submit">REGISTRATI</button>
