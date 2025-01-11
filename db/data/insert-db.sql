@@ -2,7 +2,7 @@
 -- STARE ATTENTI ALLE PAROLE INGLESI, AGGIUNGERE LA LINGUA COME POSTFISSO (TIPO "hamburger_EN")
 -- PSW E NOME DEGLI ACCOUNT SONO UGUALI
 -- I NOMI DEGLI ACCOUNT NON HANNO SPAZI
--- FARE ATTENZIONE AI PROCEDIMENTI DELLE RICETTE, GLI OPOSTROFI NON IN MONOSPACE E I PUNTI A FINE FRASE
+-- FARE ATTENZIONE AI PROCEDIMENTI DELLE RICETTE, GLI APOSTROFI NON IN MONOSPACE E I PUNTI A FINE FRASE
 -- FARE ATTENZIONE QUANDO SI AGGIUNGE UN INGREDIENTE, CERCARE DI NON AGGIUNGERE DUPLICATI (TIPO "OLIO" E "OLIO D'OLIVA")
 -- ********************************************************************
 
@@ -22,7 +22,7 @@ INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b
 INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "d71ccf9f3232ed4edf193a057426b2bbc5ec161f3611e4eef54a5c74dbc3e575", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURKINA FASO GREAT AGAIN", "dad", NULL);
 INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", NULL);
 INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5ca101d08cc4d96c3e4c256349d1bbd55658ec2d8b6df6fc8bcdd7f5", "2025-01-08", "23 anni\nUniPD psicologia\nHo una sorella che si chiama Ombretta, ai nostri genitori piaceva così tanto il nome che con me lo hanno mantenuto ma al maschile.", "fuorisede", NULL);
-
+INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto...","in_sede",NULL);
 
 -- INGREDIENTE ====================================
 
@@ -59,6 +59,10 @@ INSERT INTO Ingrediente VALUES ("spezie aromatiche");
 INSERT INTO Ingrediente VALUES ("zucchine");
 INSERT INTO Ingrediente VALUES ("carote");
 INSERT INTO Ingrediente VALUES ("mais");
+INSERT INTO Ingrediente VALUES ("couscous_EN");
+INSERT INTO Ingrediente VALUES ("peperoni dolci");
+INSERT INTO Ingrediente VALUES ("olive");
+INSERT INTO Ingrediente VALUES ("albicocche secche");
 
 
 -- RICETTA ====================================
@@ -110,7 +114,7 @@ INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "
 INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "secondo", 25, 5, "Non fare storie solo perché non c'è la ciccia, questo è un piatto saporito e bilanciato perfetto per chi desidera un'alternativa vegetale gustosa! Croccante fuori e tenero dentro, questo burger_EN è accompagnato da piselli al vapore leggermente conditi con un filo d'olio e un pizzico di sale per un accompagnamento delicato che esalta la freschezza del piatto.", "2025-01-01", "../asset/img/recipe/in-sede/burger-vegetale.jpg");
 INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "../asset/img/recipe/in-sede/riso-pollo.jpg");
 INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "../asset/img/recipe/in-sede/riso-venere.jpg");
-
+INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","../asset/img/recipe/in-sede/couscous-con-verdure.jpg");
 -- DAD
 
 
@@ -124,16 +128,15 @@ INSERT INTO Preferenza_Ricetta VALUES ("Hamburger_EN", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Hamburger_EN", "JoeTrump");
 INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump");
+INSERT INTO Preferenza_Ricetta VALUES ("Couscous_EN con verdure","Tony");
 
 
 -- UTILIZZO INGREDIENTE ====================================
 
 -- FUORISEDE
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta", FALSE, 120, "g", "preferibilmente corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta generica", FALSE, 120, "g", "preferibilmente corta");
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "pane", FALSE, 1, "num_el", "quello in cassetta");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", "quello in cassetta");
-
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", "quello in cassetta");
 
 
@@ -194,6 +197,16 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "pomodorini"
 INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale fino", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "olio", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "couscous_EN", FALSE, 60, "g", "senza esagerare poiché si gonfia molto");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "zucchine", FALSE, 40, "g", "una piccola");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "carote", FALSE, 40, "g", "una piccola");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "peperoni dolci", FALSE, 30, "g", "preferire quelli piccoli");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "pomodorini", FALSE, 30, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "olive", FALSE, 15, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "albicocche secche", FALSE, 10, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -272,6 +285,15 @@ INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 5, "Lava i pomodorin
 INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 6, "Se pensi di riuscire a finire tutto questo bel piattone apri anche una scatola di mais e scolala così da avere tutto pronto sul tavolo.");
 INSERT INTO Preparazione VALUES ("Riso Venere con verdure", 7, "Quando il riso, le zucchine e le carote sono pronte versa tutto in un piatto insieme ai pomodorini e il mais. Condisci con un filo d'olio e assapora il gusto di chi può permettersi certe prelibatezze.");
 
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 1, "Pela e taglia la carota a rondelle sottili o piccoli spicchi, mettili in una padella abbastanza grande che possa contenere tutti gli ingredienti e versa un filo d'olio.");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 2, "Lava i peperoni dolci, aprili con un coltello, togli i semi e tagliali a striscioline. Aggiungili nella padella con un goccio d'acqua e un pizzico di sale, ora puoi accendere il fuoco basso e chiudere con un coperchio.");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 3, "Lava la zucchina e tagliala a piccoli spicchi (tanto per cambiare). Aggiungila alle altre verdure in cottura e girale ogni tanto così da non farle attaccare. Se l'acqua è evaporata aggiungine un goccio. Cucinale per 10 minuti ma assaggia ogni tanto mi raccomando, sempre assaggiare!");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 4, "Taglia a pezzetti le albicocche secche e mettile in mezzo bicchiere d'acqua così da reidratarle un pochino e renderle più morbide. Daranno quel tocco dolce e fresco al piatto che non hai idea.");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 5, "Lava e taglia a spicchi i pomodorini");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 6, "Taglia a metà le olive giusto per dare l'impressione di averne di più, se non hai voglia lascia stare tanto il sapore è uguale.");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 7, "Una volta pronte le verdure versa un bicchiere d'acqua nella padella, poi il couscous, i pomodorini, le albicocche e le olive (spero la padella fosse abbastanza grande). Mescola bene e spegni il fuoco così da lasciar riposare il couscous.");
+INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 8, "Ora potrai andare a lezione sfoggiando un piatto saporito e pieno di colori alla faccia dei tuoi compagni che si portano la solita pasta in bianco e dei grissini per pranzo.");
+
 -- DAD
 
 
@@ -290,6 +312,8 @@ INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "OmbrettaGatti
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "2025-01-15", 25, "Concordo con Ombretta, comunque molto buono e facile da preparare.");
 
 -- IN SEDE
+
+INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
 -- DAD
 
