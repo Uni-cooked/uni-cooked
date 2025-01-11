@@ -20,7 +20,6 @@
 .content-subtitle {
     font-size: 2.5rem;
 }
-
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -37,7 +36,6 @@ dd:has(input:checked) .flip-card .flip-card-inner {
 .flip-card-back {
     transform: rotateY(180deg);
 }
-
 /* #endregion HOME PAGE */
 
 /* ================================================== */
@@ -46,25 +44,24 @@ dd:has(input:checked) .flip-card .flip-card-inner {
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     height: 11em;
 }
-
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
 /* #region RECIPE PAGE */
+ul#ingredient-list {
+    /* display: block; */
+    /* margin: 0 auto; */
+    /* width: fit-content; */
+    /* padding: 0; */
+    padding-left: 4rem;
+}
 
 ul#ingredient-list li {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    width: 100%;
+    /* margin-top: 2em;
+    margin-bottom: 2em; */
 }
-
-ul#ingredient-list {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    padding: 0;
-}
-
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -82,7 +79,6 @@ ul#ingredient-list {
     float: none;
     margin-bottom: .1em;
 }
-
 /* #endregion ABOUT US */
 
 /* ================================================== */

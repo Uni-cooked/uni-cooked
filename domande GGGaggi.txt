@@ -14,6 +14,7 @@ errori va bene lasciare il <p>?
 
 TODO:
 - btn anim
+- accedi come link in recipe "accedi per poter commentare"
 
 
 * max length bio (300 char)

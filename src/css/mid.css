@@ -28,7 +28,6 @@
 fieldset {
     padding: 1em;
 }
-
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -37,7 +36,6 @@ fieldset {
 #header-content {
     padding: 0;
 }
-
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -46,7 +44,6 @@ fieldset {
 nav#list-help {
     z-index: 2;
 }
-
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -142,8 +139,6 @@ nav#menu {
     transition: translate var(--animation-dropdown-timing);
     translate: 0 -100%;
     padding: 0 1rem;
-    /* TODO: replace with correct gaps */
-    /* padding-top: calc(var(--hamburger-height) + var(--hamburger-padding) + 1rem); */
     background-color: var(--accent-secondary);
     /* height: 100vh; */
 
@@ -166,7 +161,6 @@ body:has(#hamburger-label input:checked) {
     overflow-y: hidden;
 }
 
-/* body:has(#hamburger-label input:checked) *:not(header *) { */
 body:has(#hamburger-label input:checked) main,
 body:has(#hamburger-label input:checked) footer {
     visibility: hidden;
@@ -203,13 +197,11 @@ nav#menu li:has(.logo) {
 nav#menu li#profile-item {
     margin: 0;
 }
-
 /* #endregion MENU */
 
 /* ================================================== */
 
 /* #region HOME PAGE */
-
 nav#quick-role li {
     width: 50%;
 }
@@ -230,7 +222,6 @@ div#why>div {
 div#why img {
     width: 100%;
 }
-
 /* #endregion HOME PAGE */
 
 /* ================================================== */
@@ -269,13 +260,11 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
-
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
 /* #region RECIPE PAGE */
-
 #recipe-main-info {
     height: unset;
     display: block;
@@ -297,6 +286,9 @@ ul#recipe-list .recipe ul.recipe-info li {
     margin-top: 1.3em;
 }
 
+ul#ingredient-list {
+    padding-left: 2rem;
+}
 
 ul#ingredient-list li {
     /* to avoid circles overflow to the left
@@ -313,7 +305,6 @@ ul#ingredient-list li {
 #add-comment-eval-container {
     text-align: center;
 }
-
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -330,7 +321,6 @@ ul#ingredient-list li {
     width: 100%;
     padding-left: 0;
 }
-
 /* #endregion SIGN UP PAGE */
 
 /* ================================================== */
@@ -368,7 +358,6 @@ ul#ingredient-list li {
 #fav-recipe-list .fav-recipe a {
     padding-top: 0.3em;
 }
-
 /* #endregion USER PAGE */
 
 /* ================================================== */
@@ -379,7 +368,6 @@ ul#ingredient-list li {
     align-items: center;
     gap: .5rem;
 }
-
 /* #endregion USER PAGE */
 
 /* ================================================== */
@@ -408,5 +396,4 @@ ul#ingredient-list li {
 .admin-cell {
     margin-bottom: 5rem;
 }
-
 /* #endregion ABOUT US */
