@@ -93,9 +93,9 @@ if(!isset($_GET["username"])) {
             if($recipeCounter<count($favouritesList)) {
                 $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
                 $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
-                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
-                $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
+            $moreRecipeForm.='<a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         echo $paginaHtml;
@@ -186,9 +186,9 @@ if(!isset($_GET["username"])) {
                 $moreRecipeForm.='<form action="user.php#prev-last-recipe" method="get">';
                 $moreRecipeForm.='<input type="hidden" name="username" value="'.$username;
                 $moreRecipeForm.='"><input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
-                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button>';
-                $moreRecipeForm.='</form><a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+                $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
+            $moreRecipeForm.='<a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         $paginaHtml=str_replace('<a href="./user-edit.html" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
