@@ -1194,8 +1194,7 @@ a#log-out {
     object-fit: cover;
     border-radius: var(--radius-max);
     display: block;
-    margin: auto;
-    margin-bottom: 2rem;
+    margin: 1rem auto 2.5rem;
 }
 
 #user-edit #edit-pp label {
