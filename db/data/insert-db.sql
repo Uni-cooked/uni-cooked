@@ -76,6 +76,7 @@ INSERT INTO Ingrediente VALUES ("couscous_EN");
 INSERT INTO Ingrediente VALUES ("peperoni dolci");
 INSERT INTO Ingrediente VALUES ("olive");
 INSERT INTO Ingrediente VALUES ("albicocche secche");
+INSERT INTO Ingrediente VALUES ("sfilacci di cavallo");
 
 
 -- RICETTA ====================================
@@ -128,6 +129,8 @@ INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "second
 INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "../asset/img/recipe/in-sede/riso-pollo.jpg");
 INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "../asset/img/recipe/in-sede/riso-venere.jpg");
 INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","../asset/img/recipe/in-sede/couscous-con-verdure.jpg");
+INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","../asset/img/recipe/in-sede/pasta-sfilacci-e-pomodorini.jpg");
+
 -- DAD
 
 
@@ -261,6 +264,11 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "olive", FAL
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "albicocche secche", FALSE, 10, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pomodorini", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "sale grosso", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -399,6 +407,9 @@ INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 6, "Taglia a metà l
 INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 7, "Una volta pronte le verdure versa un bicchiere d'acqua nella padella, poi il couscous, i pomodorini, le albicocche e le olive (spero la padella fosse abbastanza grande). Mescola bene e spegni il fuoco così da lasciar riposare il couscous.");
 INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 8, "Ora potrai andare a lezione sfoggiando un piatto saporito e pieno di colori alla faccia dei tuoi compagni che si portano la solita pasta in bianco e dei grissini per pranzo.");
 
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 1, "Metti a bollire l'acqua e nel mentre lava e taglia i pomodorini a spicchi o a fette: così ottimizzi i tempi, che noi studenti non ne abbiamo molto.");
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 2, "Quando vedi l'acqua bollire butta il sale grosso e poi la pasta, cuoci a fuoco medio-alto per il tempo indicato nella confezione della pasta.");
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 3, "Una volta pronta scolala, versa la pasta in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa. Aggiungi i pomodorini, gli sfilacci e, se ti va, anche un filo d'olio.");
 -- DAD
 
 
@@ -428,10 +439,11 @@ INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "20
 
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
+INSERT INTO Valutazione VALUES ("Pasta sfilacci e pomodorini", "Tony", "2025-01-12", 27, "Quasi ottimo!");
 -- DAD
 
 
 -- SUGGERIMENTO ====================================
 
 INSERT INTO Suggerimento(utente,data,testo) VALUES ("GGGaggi", "2025-01-10", "Non ho un piatto da consigliarvi, volevo solo dirvi che avete fatto un ottimo lavoro!");
-INSERT INTO Suggerimento(utente,data,testo) VALUES ("MasterMaurizio", "2025-02-03", "Un piatto che vorrei assolutamente vedere nel vostro ricettario e` il platano fritto. Molto veloce da fare e ottimo per lo studente fuorisede");
+INSERT INTO Suggerimento(utente,data,testo) VALUES ("MasterMaurizio", "2025-02-03", "Un piatto che vorrei assolutamente vedere nel vostro ricettario è il platano fritto. Molto veloce da fare e ottimo per lo studente fuorisede");
