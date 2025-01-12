@@ -18,7 +18,7 @@ CREATE TABLE Utente(
 );
 
 CREATE TABLE Ingrediente(
-    nome VARCHAR(20) PRIMARY KEY
+    nome VARCHAR(30) PRIMARY KEY
 );
 
 CREATE TABLE Ricetta(
@@ -42,7 +42,7 @@ CREATE TABLE Preferenza_Ricetta(
 
 CREATE TABLE Utilizzo_Ingrediente(
     ricetta VARCHAR(50) NOT NULL,
-    ingrediente VARCHAR(20) NOT NULL,
+    ingrediente VARCHAR(30) NOT NULL,
     quanto_basta BOOLEAN NOT NULL,
     quantita SMALLINT CHECK(quantita>=0),
     unita_misura enum ('g', 'ml', 'num_el'),

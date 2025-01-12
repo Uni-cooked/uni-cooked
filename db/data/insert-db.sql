@@ -22,21 +22,34 @@ INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b
 INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "d71ccf9f3232ed4edf193a057426b2bbc5ec161f3611e4eef54a5c74dbc3e575", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURKINA FASO GREAT AGAIN", "dad", NULL);
 INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", NULL);
 INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5ca101d08cc4d96c3e4c256349d1bbd55658ec2d8b6df6fc8bcdd7f5", "2025-01-08", "23 anni\nUniPD psicologia\nHo una sorella che si chiama Ombretta, ai nostri genitori piaceva così tanto il nome che con me lo hanno mantenuto ma al maschile.", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto...","in_sede",NULL);
+INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", NULL);
+INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", NULL);
+INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", NULL);
+INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", NULL);
+INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", NULL);
+INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", NULL);
+INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 
 -- INGREDIENTE ====================================
 
-INSERT INTO Ingrediente VALUES ("pasta generica");
+INSERT INTO Ingrediente VALUES ("pasta");
+INSERT INTO Ingrediente VALUES ("grana padano");
 INSERT INTO Ingrediente VALUES ("panna da cucina");
 INSERT INTO Ingrediente VALUES ("pancetta a cubetti");
 INSERT INTO Ingrediente VALUES ("uova");
-INSERT INTO Ingrediente VALUES ("merluzzo (surgelato)");
+INSERT INTO Ingrediente VALUES ("pesto");
+INSERT INTO Ingrediente VALUES ("vino bianco da cucina");
+INSERT INTO Ingrediente VALUES ("cipolla");
+INSERT INTO Ingrediente VALUES ("farina di semola");
+INSERT INTO Ingrediente VALUES ("merluzzo");
 INSERT INTO Ingrediente VALUES ("bresaola");
 INSERT INTO Ingrediente VALUES ("rucola");
 INSERT INTO Ingrediente VALUES ("salame");
+INSERT INTO Ingrediente VALUES ("olio di girasole");
 INSERT INTO Ingrediente VALUES ("olio");
 INSERT INTO Ingrediente VALUES ("sale fino");
 INSERT INTO Ingrediente VALUES ("sale grosso");
+INSERT INTO Ingrediente VALUES ("pepe");
 INSERT INTO Ingrediente VALUES ("cespo di insalata");
 INSERT INTO Ingrediente VALUES ("pomodori da insalata");
 INSERT INTO Ingrediente VALUES ("pane in cassetta");
@@ -69,35 +82,35 @@ INSERT INTO Ingrediente VALUES ("albicocche secche");
 
 -- FUORISEDE
 INSERT INTO Ricetta VALUES ("Pasta-asciutta", "fuorisede", "primo", 0, 2, 
-"",
+"Un piatto veloce e immediato proprio per lo studente che non ha né tempo né voglia di preparare un piatto completo. Essendo fuorisede e avendo magari un alloggio in affitto non si dispone del tempo e soldi per nemmeno accendere il fornello e aspettare che l'acqua inizi a bollire quindi perché non saltare tutti questi lunghi procedimenti. Questo piatto è ideale per un pranzo o cena leggera ma non troppo salutare, diciamocelo la salute arriva dopo lo studio.",
  "2025-01-09", "../asset/img/recipe/pendolare/pasta-asciutta.jpg");
  
 INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "primo", 5, 4, 
-"",
+"Un piatto che non è un vero e proprio piatto perché comunemente consumato come antipasto o per fare una merenda a metà giornata ma in questo caso devi ricordarti che sei uno studente e anche fuorisede, ci dispiace… non puoi farci nulla. È uno tra le pietanze più facili e veloci da preparare, l’unico lato negativo è il costo.",
  "2025-01-09", "../asset/img/recipe/pendolare/pane-triste.jpg");
 
-INSERT INTO Ricetta VALUES ("Pancetta panna e fusilli", "fuorisede", "primo", 15, 9, 
-"",
+INSERT INTO Ricetta VALUES ("Pasta panna e pancetta", "fuorisede", "primo", 15, 9, 
+"Un piatto di pasta completo, ben condito e molto veloce da preparare, ottimo quindi per chi vuole un pranzo o una cena alternativa più sostanziosa.",
  "2025-01-09", "../asset/img/recipe/pendolare/pancilli.jpg");
 
 INSERT INTO Ricetta VALUES ("Riso e uova fritte", "fuorisede", "primo", 15, 8, 
-"",
+"Un piatto cubano molto famoso perché è sostanzioso, economico e veloce da preparare, ideale per gli studenti con poco tempo e budget. Anche se il procedimento può sembrare lungo, la preparazione è più semplice di quanto possa sembrare.",
  "2025-01-09", "../asset/img/recipe/pendolare/riso-uovo.jpg");
 
-INSERT INTO Ricetta VALUES ("Frittatona e rutto libero", "fuorisede", "primo", 10, 5, 
-"",
+INSERT INTO Ricetta VALUES ("Frittatona", "fuorisede", "primo", 10, 5, 
+"Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle 20:25).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore frittatone di cipolle, familiare di peroni gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
  "2025-01-09", "../asset/img/recipe/pendolare/frittatona.jpg");
 
 INSERT INTO Ricetta VALUES ("Rucola e bresaola", "fuorisede", "primo", 5, 10, 
-"",
+" Piatto tipico di chi vuole spendere poco e desidera un pranzo o una cena leggera, veloce e genuina. Può essere servito anche come antipasto per stupire i tuoi amici.",
  "2025-01-09", "../asset/img/recipe/pendolare/breso.jpg");
 
 INSERT INTO Ricetta VALUES ("Merluzzo in scaloppa", "fuorisede", "secondo", 15, 10, 
-"",
+"Un gustosissimo piatto di pesce, alternativo alla solita carne che dopo un po' stufa, è ricco di Omega 3 e aiuta a studiare meglio. Anche se spesso un piatto di pesce è costoso, questa ricetta non ti farà spendere troppo.",
  "2025-01-09", "../asset/img/recipe/pendolare/merluzzo.jpg");
 
 INSERT INTO Ricetta VALUES ("Pasta al pesto", "fuorisede", "primo", 10, 5, 
-"",
+"La classica pasta dello studente fuori sede che non ha voglia di preparare un sugo fatto in casa e di deve quindi affidare ai sughi già pronti",
  "2025-01-09", "../asset/img/recipe/pendolare/pesto.jpg");
 
 
@@ -129,16 +142,57 @@ INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "
 INSERT INTO Preferenza_Ricetta VALUES ("Hamburger_EN", "JoeTrump");
 INSERT INTO Preferenza_Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump");
 INSERT INTO Preferenza_Ricetta VALUES ("Couscous_EN con verdure","Tony");
+INSERT INTO Preferenza_Ricetta VALUES ("Pane e salame","MasterMaurizio");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta al pesto","MasterMaurizio");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta-asciutta","Jay");
+INSERT INTO Preferenza_Ricetta VALUES ("Riso e uova fritte","Jay");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta al pesto","Murphy");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta al pesto","Ombretta");
+INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","UgoFantozzi");
+INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","MasterMaurizio");
+INSERT INTO Preferenza_Ricetta VALUES ("Merluzzo in scaloppa","Oca");
+INSERT INTO Preferenza_Ricetta VALUES ("Rucola e bresaola","Oca");
+
 
 
 -- UTILIZZO INGREDIENTE ====================================
 
 -- FUORISEDE
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta generica", FALSE, 120, "g", "preferibilmente corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta", FALSE, 120, "g", "preferibilmente corta");
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "pane", FALSE, 1, "num_el", "quello in cassetta");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", "quello in cassetta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "pasta", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "panna da cucina", FALSE, 40, "ml", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "pancetta a cubetti", FALSE, 60, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "sale fino", TRUE, NULL, NULL, NULL);
 
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e uova fritte", "riso Basmati", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e uova fritte", "uova", FALSE, 2, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e uova fritte", "olio di girasole", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e uova fritte", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Riso e uova fritte", "pepe", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Frittatona", "uova", FALSE, 3, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Frittatona", "olio di girasole", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Frittatona", "cipolla", FALSE, 10, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Frittatona", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Frittatona", "pepe", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "rucola", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "bresaola", FALSE, 50, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "grana padano", TRUE, NULL, NULL, "preferibilmente a scaglie");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "olio", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "merluzzo", FALSE, 100, "g", "preferibilmente surgelato (costa meno)");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "farina di semola", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "vino bianco da cucina", FALSE, 20, "ml", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "sale fino", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta al pesto", "pasta", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta al pesto", "pesto", FALSE, 60, "g", "preferibilmente gia` pronto");
 
 -- PENDOLARE
 INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "cespo di insalata", FALSE, 1, "num_el", NULL);
@@ -214,6 +268,57 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino",
 -- PREPARAZIONE ====================================
 
 -- FUORISEDE
+INSERT INTO Preparazione VALUES ("Pasta-asciutta", 1, "Prendi il pacco di pasta.");
+INSERT INTO Preparazione VALUES ("Pasta-asciutta", 2, " Aprilo, sapendo che tra 2 giorni dovrai andare di nuovo al supermercato per comprare un altro pacco e spendere altri soldi, ma non piangere (ancora).");
+INSERT INTO Preparazione VALUES ("Pasta-asciutta", 3, "Rovescia su un piatto la quantità di pasta che vorresti mangiare. Si consiglia di usare un piatto di plastica in modo da non sprecare il tempo sul lavaggio di stoviglie varie.");
+
+INSERT INTO Preparazione VALUES ("Pane e salame", 1, "Prendi il pane e comincia ad affettarlo a fette grossolane, se invece hai preso quello in cassetta puoi riposare ancora per un pò.");
+INSERT INTO Preparazione VALUES ("Pane e salame", 2, "Prendi il salame, spacchettarlo delicatamente e comincia a disporre le fette sul pane che hai davanti.");
+INSERT INTO Preparazione VALUES ("Pane e salame", 3, "Se vuoi immedesimarti in un signore d'alto borgo prendi un tagliere e disponici i pezzi di pane farciti.");
+
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 2, "Mentre aspetti tira fuori una pentola piccola e comincia ad abbrustolire 80g di pancettta.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 3, "Non appena vedi che l'acqua versa del sale e rovescia la pasta al suo interno. Se non hai pesato la pasta perché non hai una bilancia ti consigliamo di usare la tecnica del pugno, consiste di afferrare una quantità arbitraria di pasta con appunto un pugno e gettarla in acqua senza farsi troppe domande.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 4, "Spegni il fuoco del pentolino contenente la pancetta, in modo tale da non bruciarla, prendi la panna, aprila e mettine una quantità a tuo piacimento nel pentolino.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 5, "Una volta che la pasta é pronta scolala, mettila nel pentolino.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 6, "Amalgama il il tutto con un cucchiaio.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 7, "Servi su un piatto se vuoi sporcare altre stoviglie, altrimenti ti consigliamo di mangiare direttamente dal pentolino.");
+
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 1, "Prendi un pentolino per la pasta e versaci 100g grammi di riso. Se non hai una bilancia 100g equivalgono a ⅔ di un normale bicchiere");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 2, "Sciacqua il riso sotto l'acqua corrente.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 3, "Riempi d'acqua il pentolino ad un livello leggermente più alto rispetto al livello del riso.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 4, "Accendi il fornello a livello medio e metti il riso a cuocere.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 5, "Non appena l'acqua inizia a bollire metti il fornello al minimo e copri parzialmente il pentolino ricordandoti di mescolare ogni tanto per evitare che il riso si attacchi.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 6, "Prendi una pentola mettici un po' d'olio di girasole.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 7, "Quando l'olio è abbastanza caldo rompi 1 o 2 uova e buttale dentro a friggere.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 8, "Quando il tuorlo è della consistenza da te desiderata spegni il fornello.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 9, "Nel mentre il riso dovrebbe essere rimasto privo di acqua, se è questo il caso spegni anche quel fornello.");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 10, "Prendi quindi un piatto e mettici il riso e sopra stendi con molta cura le tue uova fritte.");
+
+INSERT INTO Preparazione VALUES ("Frittatona", 1, "Prendi una pentola di grandezza media aggiungi un pò olio per evitare che la frittata si attacchi alla pentola.");
+INSERT INTO Preparazione VALUES ("Frittatona", 2, "Prendi una scodella, apri e metti le 3 uova al suo interno e aggiungi del sale a pepe quanto basta.");
+INSERT INTO Preparazione VALUES ("Frittatona", 3, "Taglia la cipolla a tuo piacimento anche se noi consigliamo di tagliarla a fettine piccole e sottili.");
+INSERT INTO Preparazione VALUES ("Frittatona", 4, "Aggiungi la cipolla alla scodella e con una forchetta comincia ad amalgamare il tutto.");
+INSERT INTO Preparazione VALUES ("Frittatona", 5, "Quando l'olio inizia a sfrigolare metti in pentola il contenuto della scodella e abbassa il fuoco.");
+INSERT INTO Preparazione VALUES ("Frittatona", 6, "Dopo 3 minuti circa, cerca di capovolgerla utilizzando una forchetta o altrimenti di una spatola se ne hai una.");
+INSERT INTO Preparazione VALUES ("Frittatona", 7, "Altri dopo 3 minuti spegni il fuoco e servi su un piatto piano");
+
+INSERT INTO Preparazione VALUES ("Rucola e bresaola", 1, "Prendi un piatto piano e comincia a stendere delicatamente le fette di bresaola.\nSe non vuoi usare le mani sudice aiutati con una forchetta.");
+INSERT INTO Preparazione VALUES ("Rucola e bresaola", 2, "Apri il sacco di rucola e cospargila sopra la bresaola.");
+INSERT INTO Preparazione VALUES ("Rucola e bresaola", 3, "Aggiungi le scaglie di grana, pepe e un filo d'olio.");
+
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 1, "Prendi un piatto piano e mettici sopra della farina.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 2, "A uno ad uno impana i filetti di merluzzo nel piatto preparato precedentemente.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 3, "Prendi una padella, mettici dell'olio e aspetta che diventi caldo senza che inizi a friggere");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 4, "Prendi i tuoi filetti impanati e mettili in pentola e abbassando di conseguenza il fuoco.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 5, "Aggiungi pepe e sale quanto basta.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 6, "Ogni 3/4 minuti ricordati di girare i filetti in modo da avere una cottura perfetta da entrambi i lati.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 7, "Non appena vedi che il filetto é cotto spegni il fuoco e impiatta.");
+
+INSERT INTO Preparazione VALUES ("Pasta al pesto", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
+INSERT INTO Preparazione VALUES ("Pasta al pesto", 2, "Non appena vedi che l'acqua versa del sale e rovescia la pasta al suo interno. Se non hai pesato la pasta perché non hai una bilancia ti consigliamo di usare la tecnica del pugno, consiste di afferrare una quantità arbitraria di pasta con appunto un pugno e gettarla in acqua senza farsi troppe domande.");
+INSERT INTO Preparazione VALUES ("Pasta al pesto", 3, "Una volta che la pasta é pronta scolala e mettila in un piatto fondo.");
+INSERT INTO Preparazione VALUES ("Pasta al pesto", 4, "Apri il barattolo contenente e condisci la tua pasta prendendo 2/3 cucchiaiate di sugo al pesto.");
 
 -- PENDOLARE
 INSERT INTO Preparazione VALUES ("Insalata pigra", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo: in internet ci sono molti life hacks a riguardo ;) )");
@@ -300,18 +405,26 @@ INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 8, "Ora potrai andar
 -- VALUTAZIONE ====================================
 
 -- FUORISEDE
+INSERT INTO Valutazione VALUES ("Rucola e bresaola", "Ombretta", "2025-01-05", 28, "Wow, buonissimo devo consigliarlo alle mie sorelle");
+INSERT INTO Valutazione VALUES ("Pane e salame", "MasterMaurizio", "2025-02-02", 30, "Ragazzi complimenti, una delle ricette che piú apprezzo. Forza pane e salame");
+INSERT INTO Valutazione VALUES ("Pasta-asciutta", "Jay", "2025-01-05", 24, "Non ho tempo per descrivere questa ricetta dó e vado a studiare");
+INSERT INTO Valutazione VALUES ("Insalata pigra", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
+INSERT INTO Valutazione VALUES ("Riso e uova fritte", "Oca", "2025-01-05", 14, "Piatto povero di gusti, emozioni e non molto salutare quindi non si merita nemmeno la sufficienza");
+INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una Peroni gelata");
+
+
+-- PENDOLARE
 INSERT INTO Valutazione VALUES ("Insalata pigra", "GGGaggi", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Insalata pigra", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata pigra, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
 
--- PENDOLARE
+-- IN SEDE
 INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump", "2025-01-11", 30, "Pazzesco!!!!");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "OmbrettaGatti", "2025-01-14", 24, "Mi piace che non si pensi solo alla carne, cambierei l'accostamento coi piselli però.");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "2025-01-15", 25, "Concordo con Ombretta, comunque molto buono e facile da preparare.");
 
--- IN SEDE
 
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
@@ -321,3 +434,4 @@ INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12",
 -- SUGGERIMENTO ====================================
 
 INSERT INTO Suggerimento(utente,data,testo) VALUES ("GGGaggi", "2025-01-10", "Non ho un piatto da consigliarvi, volevo solo dirvi che avete fatto un ottimo lavoro!");
+INSERT INTO Suggerimento(utente,data,testo) VALUES ("MasterMaurizio", "2025-02-03", "Un piatto che vorrei assolutamente vedere nel vostro ricettario e` il platano fritto. Molto veloce da fare e ottimo per lo studente fuorisede");
