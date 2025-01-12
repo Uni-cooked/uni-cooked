@@ -42,9 +42,16 @@
       #set text(12pt, font: "DejaVu Serif")
       #grid(
         columns: (1fr, 1fr),
-        align(left)[UNI COOKED], align(right, "Relazione di progetto"),
+        align(left)[UNI COOKED],
+        align(right)[Relazione],
       )
       #line(length: 100%)
+    ],
+    background: [
+      //Creare logo sbiadito. Su typst di default non esiste trasparenza
+      #circle(radius: 10em, fill: rgb("#302E8E"))[
+        #image("../src/asset/img/def-profile.png", height: 100%)
+      ]
     ],
     footer: [
       #set text(12pt, font: "DejaVu Serif")
