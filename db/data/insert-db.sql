@@ -3,7 +3,7 @@
 -- PSW E NOME DEGLI ACCOUNT SONO UGUALI
 -- I NOMI DEGLI ACCOUNT NON HANNO SPAZI
 -- FARE ATTENZIONE AI PROCEDIMENTI DELLE RICETTE, GLI APOSTROFI NON IN MONOSPACE E I PUNTI A FINE FRASE
--- FARE ATTENZIONE QUANDO SI AGGIUNGE UN INGREDIENTE, CERCARE DI NON AGGIUNGERE DUPLICATI (TIPO "OLIO d'oliva" E "OLIO d'oliva D'OLIVA")
+-- FARE ATTENZIONE QUANDO SI AGGIUNGE UN INGREDIENTE, CERCARE DI NON AGGIUNGERE DUPLICATI
 -- ********************************************************************
 
 
@@ -25,8 +25,8 @@ INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5c
 INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", NULL);
 INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", NULL);
 INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", NULL);
-INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", NULL);
+INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "Eheh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", NULL);
+INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\nSono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", NULL);
 INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", NULL);
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto...","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
@@ -113,7 +113,6 @@ INSERT INTO Ricetta VALUES ("Merluzzo in scaloppa", "fuorisede", "secondo", 15, 
 INSERT INTO Ricetta VALUES ("Pasta al pesto", "fuorisede", "primo", 10, 5, 
 "La classica pasta dello studente fuori sede che non ha voglia di preparare un sugo fatto in casa e di deve quindi affidare ai sughi già pronti",
  "2025-01-09", "../asset/img/recipe/pendolare/pesto.jpg");
-
 
 -- PENDOLARE
 INSERT INTO Ricetta VALUES ("Insalata pigra", "pendolare", "secondo", 5, 3, "Hai dormito 5 ore per finire di studiare e, tornando dall'università, non hai voglia di prepararti da mangiare? Suvvia, non trascurare il pranzo, fatti un'insalata.", "2025-01-01", "../asset/img/recipe/pendolare/insalata-pigra.jpg");
@@ -270,10 +269,10 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino",
 
 -- FUORISEDE
 INSERT INTO Preparazione VALUES ("Pasta-asciutta", 1, "Prendi il pacco di pasta.");
-INSERT INTO Preparazione VALUES ("Pasta-asciutta", 2, " Aprilo, sapendo che tra 2 giorni dovrai andare di nuovo al supermercato per comprare un altro pacco e spendere altri soldi, ma non piangere (ancora).");
+INSERT INTO Preparazione VALUES ("Pasta-asciutta", 2, "Aprilo, sapendo che tra 2 giorni dovrai andare di nuovo al supermercato per comprare un altro pacco e spendere altri soldi, ma non piangere (ancora).");
 INSERT INTO Preparazione VALUES ("Pasta-asciutta", 3, "Rovescia su un piatto la quantità di pasta che vorresti mangiare. Si consiglia di usare un piatto di plastica in modo da non sprecare il tempo sul lavaggio di stoviglie varie.");
 
-INSERT INTO Preparazione VALUES ("Pane e salame", 1, "Prendi il pane e comincia ad affettarlo a fette grossolane, se invece hai preso quello in cassetta puoi riposare ancora per un pò.");
+INSERT INTO Preparazione VALUES ("Pane e salame", 1, "Prendi il pane e comincia ad affettarlo a fette grossolane, se invece hai preso quello in cassetta puoi riposare ancora per un po'.");
 INSERT INTO Preparazione VALUES ("Pane e salame", 2, "Prendi il salame, spacchettarlo delicatamente e comincia a disporre le fette sul pane che hai davanti.");
 INSERT INTO Preparazione VALUES ("Pane e salame", 3, "Se vuoi immedesimarti in un signore d'alto borgo prendi un tagliere e disponici i pezzi di pane farciti.");
 

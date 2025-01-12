@@ -1,5 +1,6 @@
 quando l'hamburger è aperto legge anche il testo non interattivo sotto?
 quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab va fuori?
+burger menu problemi con bg se non ci sono img
 l'input value nei range di catalogo viene letto dallo sr la prima volta? il valore è scritto dopo forse sarebbe da aggiungerlo alla label per gli sr -> nascondi label
 div dentro ul per fare 2 colonne
 accessibilità card home
@@ -14,11 +15,7 @@ errori va bene lasciare il <p> vuoto?
 mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
 
 TODO:
-- filtro da index
 - btn anim
-- accedi come link in recipe "accedi per poter commentare"
-- carica altre ricette sparisce il torna su
-- user edit sfalsato
 
 
 

@@ -27,7 +27,7 @@
         columns: (50%, 50%),
         inset: 8pt,
         [Andrea Precoma], [xxxxxxx],
-        [Andrea Jesus Soranzo Mendez], [xxxxxxx],
+        [Andrea Soranzo], [xxxxxxx],
         [Gabriele Magnelli], [xxxxxxx],
         [Matteo Schievano], [xxxxxxx]
       ),
@@ -35,6 +35,8 @@
   ]
 
   set text(12pt, font: "DejaVu Serif")
+
+  set par(justify: true)
 
   set page(
     numbering: "1",
@@ -47,12 +49,12 @@
       )
       #line(length: 100%)
     ],
-    background: [
-      //Creare logo sbiadito. Su typst di default non esiste trasparenza
-      #circle(radius: 10em, fill: rgb("#302E8E"))[
-        #image("../src/asset/img/def-profile.png", height: 100%)
-      ]
-    ],
+    // background: [
+    //   //Creare logo sbiadito. Su typst di default non esiste trasparenza
+    //   #circle(radius: 10em, fill: rgb("#302E8E"))[
+    //     #image("../src/asset/img/def-profile.png", height: 100%)
+    //   ]
+    // ],
     footer: [
       #set text(12pt, font: "DejaVu Serif")
       #set align(center)

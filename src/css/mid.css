@@ -287,13 +287,7 @@ ul#recipe-list .recipe ul.recipe-info li {
 }
 
 ul#ingredient-list {
-    padding-left: 2rem;
-}
-
-ul#ingredient-list li {
-    /* to avoid circles overflow to the left
-    width: calc(49% - 1.1em);
-    margin-left: 1.1em; */
+    margin-left: 2rem;
 }
 
 #add-comment-pp {

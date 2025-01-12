@@ -50,17 +50,11 @@ ul#recipe-list .recipe .catalogue-recipe-img-crop {
 
 /* #region RECIPE PAGE */
 ul#ingredient-list {
-    /* display: block; */
-    /* margin: 0 auto; */
-    /* width: fit-content; */
-    /* padding: 0; */
-    padding-left: 4rem;
+    margin-left: 4rem;
 }
 
 ul#ingredient-list li {
     width: 100%;
-    /* margin-top: 2em;
-    margin-bottom: 2em; */
 }
 /* #endregion RECIPE PAGE */
 
