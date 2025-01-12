@@ -272,19 +272,19 @@ INSERT INTO Preparazione VALUES ("Pasta-asciutta", 1, "Prendi il pacco di pasta.
 INSERT INTO Preparazione VALUES ("Pasta-asciutta", 2, " Aprilo, sapendo che tra 2 giorni dovrai andare di nuovo al supermercato per comprare un altro pacco e spendere altri soldi, ma non piangere (ancora).");
 INSERT INTO Preparazione VALUES ("Pasta-asciutta", 3, "Rovescia su un piatto la quantità di pasta che vorresti mangiare. Si consiglia di usare un piatto di plastica in modo da non sprecare il tempo sul lavaggio di stoviglie varie.");
 
-INSERT INTO Preparazione VALUES ("Pane e salame", 1, "Prendi il pane e comincia ad affettarlo a fette grossolane, se invece hai preso quello in cassetta puoi riposare ancora per un pò.");
+INSERT INTO Preparazione VALUES ("Pane e salame", 1, "Prendi il pane e comincia ad affettarlo a fette grossolane, se invece hai preso quello in cassetta puoi riposare ancora per un po'.");
 INSERT INTO Preparazione VALUES ("Pane e salame", 2, "Prendi il salame, spacchettarlo delicatamente e comincia a disporre le fette sul pane che hai davanti.");
 INSERT INTO Preparazione VALUES ("Pane e salame", 3, "Se vuoi immedesimarti in un signore d'alto borgo prendi un tagliere e disponici i pezzi di pane farciti.");
 
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
-INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 2, "Mentre aspetti tira fuori una pentola piccola e comincia ad abbrustolire 80g di pancettta.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 2, "Mentre aspetti tira fuori una pentola piccola e comincia ad abbrustolire 80 grammi di pancettta.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 3, "Non appena vedi che l'acqua versa del sale e rovescia la pasta al suo interno. Se non hai pesato la pasta perché non hai una bilancia ti consigliamo di usare la tecnica del pugno, consiste di afferrare una quantità arbitraria di pasta con appunto un pugno e gettarla in acqua senza farsi troppe domande.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 4, "Spegni il fuoco del pentolino contenente la pancetta, in modo tale da non bruciarla, prendi la panna, aprila e mettine una quantità a tuo piacimento nel pentolino.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 5, "Una volta che la pasta é pronta scolala, mettila nel pentolino.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 6, "Amalgama il il tutto con un cucchiaio.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 7, "Servi su un piatto se vuoi sporcare altre stoviglie, altrimenti ti consigliamo di mangiare direttamente dal pentolino.");
 
-INSERT INTO Preparazione VALUES ("Riso e uova fritte", 1, "Prendi un pentolino per la pasta e versaci 100g grammi di riso. Se non hai una bilancia 100g equivalgono a ⅔ di un normale bicchiere");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 1, "Prendi un pentolino per la pasta e versaci 100 grammi di riso. Se non hai una bilancia 100 grammi equivalgono a due terzi di un normale bicchiere");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 2, "Sciacqua il riso sotto l'acqua corrente.");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 3, "Riempi d'acqua il pentolino ad un livello leggermente più alto rispetto al livello del riso.");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 4, "Accendi il fornello a livello medio e metti il riso a cuocere.");
@@ -312,7 +312,7 @@ INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 2, "A uno ad uno impana
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 3, "Prendi una padella, mettici dell'olio e aspetta che diventi caldo senza che inizi a friggere");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 4, "Prendi i tuoi filetti impanati e mettili in pentola e abbassando di conseguenza il fuoco.");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 5, "Aggiungi pepe e sale quanto basta.");
-INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 6, "Ogni 3/4 minuti ricordati di girare i filetti in modo da avere una cottura perfetta da entrambi i lati.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 6, "Ogni 3 o 4 minuti ricordati di girare i filetti in modo da avere una cottura perfetta da entrambi i lati.");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 7, "Non appena vedi che il filetto é cotto spegni il fuoco e impiatta.");
 
 INSERT INTO Preparazione VALUES ("Pasta al pesto", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
