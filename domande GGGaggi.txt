@@ -10,11 +10,15 @@ onload nel body c'è altro modo?
 strong senza bold perché brutto
 pre in bio come andare a capo senza n2br
 se tabbo dal nav-help il focus si sposta ma il tab rimane lì
-errori va bene lasciare il <p>?
+errori va bene lasciare il <p> vuoto?
 
 TODO:
+- filtro da index
 - btn anim
 - accedi come link in recipe "accedi per poter commentare"
+- carica altre ricette sparisce il torna su
+- user edit sfalsato
+
 
 
 * max length bio (300 char)
