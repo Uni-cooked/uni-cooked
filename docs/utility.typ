@@ -26,10 +26,10 @@
         stroke: none,
         columns: (50%, 50%),
         inset: 8pt,
-        [Andrea Precoma], [xxxxxxx],
-        [Andrea Soranzo], [xxxxxxx],
-        [Gabriele Magnelli], [xxxxxxx],
-        [Matteo Schievano], [xxxxxxx]
+        [Andrea Precoma], [2068227],
+        [Andrea Soranzo], [2075539],
+        [Gabriele Magnelli], [2075542],
+        [Matteo Schievano], [2075537]
       ),
     )
   ]
