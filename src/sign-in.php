@@ -3,7 +3,7 @@
 require_once "utility-methods.php";
 use DB\DB;
 
-$paginaHtml=file_get_contents("../html/sign-in.html");
+$paginaHtml=file_get_contents("./html/sign-in.html");
 $username="";
 $psw="";
 
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         header("Location: index.php");
         exit();
     } else if ($result==false) {
-        echo str_replace("{{messaggio di errore}}",'<p class="err-msg">Le credenziali inserite non sono corrette</p>',$paginaHtml);
+        echo str_replace("{{messaggio di errore}}",'<p role="alert" class="err-msg">Le credenziali inserite non sono corrette</p>',$paginaHtml);
     } else if (strcmp($result,"userIsAlreadyLogged")==0) {
         $_POST = null;
         header('Location: user.php');

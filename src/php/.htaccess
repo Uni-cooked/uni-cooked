@@ -1,2 +1,0 @@
-ErrorDocument 404 /username/php/404-err.php
-ErrorDocument 500 /username/php/500-err.php

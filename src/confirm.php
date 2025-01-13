@@ -3,7 +3,7 @@
 require_once "utility-methods.php";
 use DB\DB;
 
-$paginaHtml=file_get_contents("../html/confirm.html");
+$paginaHtml=file_get_contents("./html/confirm.html");
 $username="";
 $userInfo=array();
 
@@ -43,12 +43,12 @@ if(isset($_GET["action"])) {
         exit();
     }
 
-    $userPath="../user_profiles/".$_SESSION["logged_user"].'/';
+    $userPath="./user_profiles/".$_SESSION["logged_user"].'/';
 	if(is_dir($userPath)) {
 		$imagedef=scandir($userPath);
 		$info = new SplFileInfo($imagedef[2]);
 		$extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
-		$imagedef="../user_profiles/".$_SESSION["logged_user"].'/'.$_SESSION["logged_user"].".".$extension;
+		$imagedef="./user_profiles/".$_SESSION["logged_user"].'/'.$_SESSION["logged_user"].".".$extension;
 		unlink($imagedef);
         rmdir($userPath);
     }

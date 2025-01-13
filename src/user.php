@@ -3,7 +3,7 @@
 require_once "utility-methods.php";
 use DB\DB;
 
-$paginaHtml=file_get_contents("../html/user.html");
+$paginaHtml=file_get_contents("./html/user.html");
 $username="";
 
 $db = new DB;
@@ -38,7 +38,7 @@ if(!isset($_GET["username"])) {
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
         } else {
-            $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
+            $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.png",$paginaHtml);
         }
 
         $limit=5;
@@ -78,11 +78,11 @@ if(!isset($_GET["username"])) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"./asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria=str_replace("_"," ",$recipe["categoria"]);
-                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".strtoupper($categoria)."</li>";
-                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".strtoupper($recipe["tipo_piatto"])."</li>";
-                    $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
+                    $recipeList.="<li><img src=\"./asset/icon/student.svg\" alt=\"categoria\">".strtoupper($categoria)."</li>";
+                    $recipeList.="<li><img src=\"./asset/icon/course.svg\" alt=\"piatto\">".strtoupper($recipe["tipo_piatto"])."</li>";
+                    $recipeList.="<li><img src=\"./asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
                     $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
                     $recipeCounter=$recipeCounter+1;
                 }
@@ -130,7 +130,7 @@ if(!isset($_GET["username"])) {
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
         } else {
-            $paginaHtml=str_replace("{{profile-pic}}","../asset/img/def-profile.png",$paginaHtml);
+            $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.png",$paginaHtml);
         }
 
         $limit=5;
@@ -170,11 +170,11 @@ if(!isset($_GET["username"])) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"../asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList.="<ul class=\"fav-recipe-info\"><li><img src=\"./asset/icon/grade.svg\" alt=\"valutato con\">".$average."<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria=str_replace("_"," ",$recipe["categoria"]);
-                    $recipeList.="<li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
-                    $recipeList.="<li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
-                    $recipeList.="<li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
+                    $recipeList.="<li><img src=\"./asset/icon/student.svg\" alt=\"categoria\">".$categoria."</li>";
+                    $recipeList.="<li><img src=\"./asset/icon/course.svg\" alt=\"piatto\">".$recipe["tipo_piatto"]."</li>";
+                    $recipeList.="<li><img src=\"./asset/icon/cost.svg\" alt=\"costo\">".$recipe["prezzo"]." €</li></ul>";
                     $recipeList.='<a href=recipe.php?recipe='.str_replace(" ","%20",$recipe["nome"]).' title="'.$recipe["nome"].'">Vai alla ricetta</a></li>';
                     $recipeCounter=$recipeCounter+1;
                 }
@@ -191,8 +191,8 @@ if(!isset($_GET["username"])) {
             $moreRecipeForm.='<a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
-        $paginaHtml=str_replace('<a href="./user-edit.html" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
-        $paginaHtml=str_replace('<a href="../php/sign-out.php" id="log-out" class="shadow">ESCI</a>',"",$paginaHtml);
+        $paginaHtml=str_replace('<a href="./user-edit.php" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
+        $paginaHtml=str_replace('<a href="./sign-out.php" id="log-out" class="shadow">ESCI</a>',"",$paginaHtml);
         echo $paginaHtml;
     }
 }

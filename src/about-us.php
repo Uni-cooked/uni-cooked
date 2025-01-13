@@ -4,7 +4,7 @@ require_once "utility-methods.php";
 use DB\DB;
 $db = new DB;
 
-$paginaHtml=file_get_contents("../html/about-us.html");
+$paginaHtml=file_get_contents("./html/about-us.html");
 $isUserLogged=$db->isUserLogged();
 
 if(!isset($_POST["suggestion"])) {
@@ -22,13 +22,13 @@ if(!isset($_POST["suggestion"])) {
             if($userInfo["immagine"]) {
                 $paginaHtml=str_replace("{{profile-pic-src}}",$userInfo["immagine"],$paginaHtml);
             } else {
-                $paginaHtml=str_replace("{{profile-pic-src}}","../asset/img/def-profile.png",$paginaHtml);
+                $paginaHtml=str_replace("{{profile-pic-src}}","./asset/img/def-profile.png",$paginaHtml);
             }
             
         }
     } else {
         $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"shadow\">ACCEDI</a>",$paginaHtml); 
-        $paginaHtml=str_replace("{{profile-pic-src}}","../asset/img/placeholder.png",$paginaHtml);
+        $paginaHtml=str_replace("{{profile-pic-src}}","./asset/img/placeholder.png",$paginaHtml);
         $paginaHtml=str_replace("{{username}}","generica di un utente non registrato o autenticato",$paginaHtml);
     }
 
@@ -47,7 +47,7 @@ if(!isset($_POST["suggestion"])) {
     unset($_POST["proposta"]);
 
     if(strlen($proposta)<20 || strlen($proposta)>500) {
-        $_SESSION["suggestionError"]='<p class="err-msg">Il suggerimento deve essere più lungo di 20 caratteri e minore di 500</p>';
+        $_SESSION["suggestionError"]='<p role="alert" class="err-msg">Il suggerimento deve essere più lungo di 20 caratteri e minore di 500</p>';
         header('Location: about-us.php');
         exit();
     }

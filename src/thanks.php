@@ -4,7 +4,7 @@ require_once "utility-methods.php";
 use DB\DB;
 $db = new DB;
 
-$paginaHtml=file_get_contents("../html/thanks.html");
+$paginaHtml=file_get_contents("./html/thanks.html");
 $isUserLogged=$db->isUserLogged();
 
 if($isUserLogged!=false) {

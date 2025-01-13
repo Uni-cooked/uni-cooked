@@ -388,6 +388,12 @@ main h3 {
 abbr {
     text-decoration: none;
 }
+
+#img-team {
+    width: 50%;
+}
+
+
 /* #endregion MAIN */
 
 /* ================================================== */

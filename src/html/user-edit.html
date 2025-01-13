@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Modifica profilo - Uni Cooked</title>
-        <link rel="icon" type="image/x-icon" href="../asset/icon/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.ico">
         <!-- <meta name="description" content=""> -->
         <!-- <meta name="keyword" content=""> -->
         <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/screen.css" media="screen">
-        <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
-        <script src="../js/validate-useredit.js"></script>
+        <link rel="stylesheet" href="./css/screen.css" media="screen">
+        <link rel="stylesheet" href="./css/mid.css" media="screen and (max-width: 768px)">
+        <link rel="stylesheet" href="./css/mini.css" media="screen and (max-width: 480px)">
+        <script src="./js/validate-useredit.js"></script>
     </head>
     <body>
         <header>
@@ -39,10 +39,10 @@
                 </div>
                 <nav id="menu">
                     <ul>
-                        <li><img src="../asset/icon/logo.svg" alt="" class="logo"></li>
-                        <li><a href="./index.html" lang="en">HOME</a></li>
-                        <li><a href="./catalogue.html">RICETTE</a></li>
-                        <li><a href="./about-us.html">CONTATTI</a></li>
+                        <li><img src="./asset/icon/logo.svg" alt="" class="logo"></li>
+                        <li><a href="./index.php" lang="en">HOME</a></li>
+                        <li><a href="./catalogue.php">RICETTE</a></li>
+                        <li><a href="./about-us.php">CONTATTI</a></li>
                         <li id="profile-item">
                             <a href="./user.php" class="shadow">PROFILO</a>
                         </li>
@@ -99,7 +99,7 @@
                 </form>
 
                 <h3 id="change-psw-title" class="content-subtitle">CAMBIA <span lang="en">PASSWORD</span></h3>
-                <form id="credentials" action="" method="post">
+                <form id="credentials" action="user-edit.php" method="post">
                     <fieldset>
                         <div class="input-container" >
                             <label for="old-psw" id="name-in" class="form-label">Inserisci la vecchia <span lang="en">password</span></label>

@@ -68,7 +68,7 @@ class DB {
         $username="";
         $isUserLogged=$this->isUserLogged();
         if(is_bool($isUserLogged) && $isUserLogged==false) {
-            $username="aaaaaaaaaaaaaaaa"; //16 letter-long username, which is impossible to have in our db, so alll comments will be returned
+            $username="aaaaaaaaaaaaaaaa"; //16 letter-long username, which is impossible to have in our db, so all comments will be returned
         } else {
             $username=$isUserLogged;
         }

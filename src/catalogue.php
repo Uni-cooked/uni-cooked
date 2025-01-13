@@ -19,10 +19,10 @@ $order= isset($_GET['ord']) ? Sanitizer::SanitizeInput($_GET['ord']) : null;
 $pageSystem = new PageSystem($db,$recipieName,$recipieCategory,$course,$grade,$cost,$order);
 
 
-$paginaHtml=file_get_contents("../html/catalogue.html");
+$paginaHtml=file_get_contents("./html/catalogue.html");
 
 if ($db->isUserLogged()!=false) {
-    $paginaHtml = str_replace("<a href=\"./sign-in.php\">ACCEDI</a>","<a href=\"user.php\">PROFILO</a>",$paginaHtml);
+    $paginaHtml = str_replace('<a href="sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
 $currentPage = isset($_GET['page']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['page'])) : 1;
@@ -59,10 +59,10 @@ function CreateRecipeCard(string $img,string $title,int $grade, string $category
                     <img class=\"catalogue-recipe-img-crop\" src=\"" . $img . "\" alt=\"\">
                     <h3 class=\"recipe-title\">" . $db->checkLang(ucfirst($title)) . "</h3>
                     <ul class=\"recipe-info\">
-                        <li><img src=\"../asset/icon/grade.svg\" alt=\"voto\">" . ($grade != 31 ? $grade : "-") ." <abbr title=\"su\">/</abbr> 30</li>
-                        <li><img src=\"../asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($category) . "</li>
-                        <li><img src=\"../asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($course) . "</li>
-                        <li><img src=\"../asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
+                        <li><img src=\"./asset/icon/grade.svg\" alt=\"voto\">" . ($grade != 31 ? $grade : "-") ." <abbr title=\"su\">/</abbr> 30</li>
+                        <li><img src=\"./asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($category) . "</li>
+                        <li><img src=\"./asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($course) . "</li>
+                        <li><img src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
                     </ul>    
                     <a href=\"./recipe.php?recipe=". $title ."\" title=\"". $title ."\">Vai alla ricetta</a>
                 </li>";

@@ -4,10 +4,10 @@ require_once "utility-methods.php";
 use DB\DB;
 $db = new DB;
 
-$paginaHtml=file_get_contents("../html/recipe.html");
+$paginaHtml=file_get_contents("./html/recipe.html");
 $isUserLogged=$db->isUserLogged();
 if ($isUserLogged!=false) {
-    $paginaHtml=str_replace('<a href="./sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
+    $paginaHtml=str_replace('<a href="sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
 if(isset($_GET["recipe"])) {
@@ -186,7 +186,7 @@ if(isset($_GET["recipe"])) {
         }
         $immagine=$userInfo["immagine"];
         if($immagine==null) {
-            $immagine="../asset/img/def-profile.png";
+            $immagine="./asset/img/def-profile.png";
         }
         $userComment=$db->getUserPublicComment($isUserLogged,$recipe);
         if(is_string($userComment) && strcmp($userComment,"userLeftNoComment")==0) {
@@ -214,7 +214,7 @@ if(isset($_GET["recipe"])) {
         }
         $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",$form,$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}","<p id=\"no-login-p\"><a href=\"sign-in.html\">Accedi</a> per poter commentare!</p>",$paginaHtml);
+        $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}","<p id=\"no-login-p\"><a href=\"sign-in.php\">Accedi</a> per poter commentare!</p>",$paginaHtml);
     }
     
     $limit=5;
@@ -245,7 +245,7 @@ if(isset($_GET["recipe"])) {
                 }
                 $immagine=$user["immagine"];
                 if($immagine==null) {
-                    $immagine="../asset/img/def-profile.png";
+                    $immagine="./asset/img/def-profile.png";
                 }
                 if($commentNumber==$limit-6) {
                     $finalList.='<li id="previous-last-comment"><img src="'.$immagine.'" alt="" class="comment-pp">';
