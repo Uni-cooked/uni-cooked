@@ -193,7 +193,7 @@ dl#roles {
 }
 
 dl#roles dt {
-    color: var(--accent);
+    color: var(--accent-quaternary);
     letter-spacing: var(--letter-spacing);
     text-align: center;
     font-weight: 800;
@@ -295,10 +295,10 @@ ul#recipe-list .recipe {
     width: 32%;
     min-width: 21em;
     height: 27em;
-    border: 5px var(--bg-primary) solid;
+    background-color: var(--accent-secondary);
     border-radius: var(--radius-small);
     padding: 0.5em;
-    color: var(--text-color);
+    color: white;
     /* to align the link to the right */
     text-align: right;
 }
@@ -402,6 +402,7 @@ ul#ingredient-list li {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 
 ol li.prep-li {
     padding-left: .5rem;
@@ -535,7 +536,8 @@ button#del-comment {
 }
 
 #fav-recipe-list .fav-recipe {
-    border: 5px var(--bg-primary) solid;
+    background-color: var(--accent-secondary);
+    color: white;
     height: 13em;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -569,7 +571,6 @@ button#del-comment {
 
 #fav-recipe-list .fav-recipe .fav-recipe-info {
     list-style-type: none;
-    color: var(--text-color);
     height: 52%;
     display: flex;
     flex-wrap: wrap;
