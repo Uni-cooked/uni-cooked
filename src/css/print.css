@@ -296,6 +296,7 @@ ul#recipe-list .recipe {
     min-width: 21em;
     height: 27em;
     background-color: var(--accent-secondary);
+    border: 5px var(--accent-secondary) solid;
     border-radius: var(--radius-small);
     padding: 0.5em;
     color: white;
@@ -537,6 +538,7 @@ button#del-comment {
 
 #fav-recipe-list .fav-recipe {
     background-color: var(--accent-secondary);
+    border: 5px var(--accent-secondary) solid;
     color: white;
     height: 13em;
     margin-top: 1em;
