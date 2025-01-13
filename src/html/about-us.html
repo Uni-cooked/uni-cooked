@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../css/screen.css" media="screen">
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
+        <script src="../js/validate-aboutus.js"></script>
     </head>
     <body>
         <header>
@@ -70,7 +71,7 @@
             <div id="recipie-request" class="content-container end-paragraph">
                 <div class="content">
                     <img class="pp" src="{{profile-pic-src}}" alt="Immagine profilo {{username}}">
-                    <form action="about-us.php" method="post">
+                    <form action="about-us.php" method="post" id="request">
                     <fieldset>
                         <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
                         <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required minlength="20" maxlength="500"></textarea>

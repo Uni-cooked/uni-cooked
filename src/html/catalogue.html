@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="../css/screen.css" media="screen">
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
+        <script src="../js/validate-catalogue.js"></script>
     </head>
 
     <body>
@@ -86,12 +87,12 @@
                     <div class="filter-param">
                         <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA</label>
                         <input type="range" id="min-rate-filter" name="min_rate" min="1" max="30" value="1">
-                        <p aria-hidden="true">1 / 30</p>
+                        <p aria-hidden="true" id="rate">1 / 30</p>
                     </div>
                     <div class="filter-param">
                         <label for="max-price-filter" class="form-label">COSTO MASSIMO</label>
                         <input type="range" id="max-price-filter" name="max_price" min="1" max="25" value="25">
-                        <p aria-hidden="true">25 €</p>
+                        <p aria-hidden="true" id="price">25 €</p>
                     </div>
                 </fieldset>
 

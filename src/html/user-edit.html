@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="../css/screen.css" media="screen">
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
+        <script src="../js/validate-useredit.js"></script>
     </head>
     <body>
         <header>
@@ -58,11 +59,11 @@
         <main>
             <div id="user-edit" class="content">
                 <h2 class="content-subtitle">MODIFICA PROFILO</h2>
-                <form action="user-edit.php" method="post" enctype="multipart/form-data">
+                <form action="user-edit.php" method="post" enctype="multipart/form-data" id="new-info">
                     <fieldset>
                         <div id="primary-info">
                             <div id="edit-pp">
-                                <img src="{{profile-pic}}" alt="Immagine profilo di {{username}}" srcset="">
+                                <img src="{{profile-pic}}" alt="Immagine profilo di {{username}}" srcset="" id="chosen-image">
                                 <label id="mod-pp" for="profile-img-edit">Modifica foto</label>
                                 <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg">
                                 {{profile-pic-error}}
