@@ -10,13 +10,11 @@
     /* COLORS */
     --bg-primary: #171717;
     --bg-secondary: #242424;
-    --bg-trinary: #454545;
     --accent: #EFAE50;
     --accent-secondary: #392A24;
     --accent-trinary: #0C6F59;
     --accent-quaternary: #134270;
     --text-color: white;
-    --a-color: #5F9950;
     --menu-a-color: white;
     --danger-button-color: red;
 
@@ -94,6 +92,19 @@ fieldset {
     border: 2px solid var(--accent);
     border-radius: var(--radius-small);
     padding: 2em 5em;
+}
+
+.button-animation {
+    display: inline-block;
+    transform: scale(1);
+}
+
+.button-animation:hover {
+    transform: scale(1.03);
+}
+
+.button-animation:active {
+    transform: scale(0.97);
 }
 
 .content {
@@ -842,9 +853,6 @@ ul#ingredient-list li {
     margin-bottom: 1em;
 }
 
-ol#prep-steps {
-    padding: 0 1.5rem;
-}
 
 ol li.prep-li {
     padding-left: .5rem;
@@ -1143,10 +1151,9 @@ a#edit-profile-link {
     text-align: center;
     width: 14em;
     padding: .8em;
-    border-style: none;
     font-weight: 700;
-    font-size: 1.2em;
-    border-radius: 5px;
+    font-size: var(--button-text);
+    border-radius:  var(--radius-small);
     background-color: var(--accent);
     color: var(--bg-primary);
 }
@@ -1158,8 +1165,8 @@ a#log-out {
     width: 14em;
     padding: .8em;
     font-weight: 700;
-    font-size: 1.2em;
-    border-radius: 5px;
+    font-size: var(--button-text);
+    border-radius: var(--radius-small);
     background-color: var(--accent-secondary);
     color: var(--text-color);
 }
@@ -1239,9 +1246,9 @@ a#log-out {
 
 /* #region ABOUT US PAGE */
 .pp {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    border-radius: var(--radius-max);
 }
 
 #recipie-request img {
@@ -1391,6 +1398,7 @@ footer p {
 footer a {
     color: var(--accent);
 }
+
 /* #endregion FOOTER */
 
 /* ================================================== */
@@ -1544,3 +1552,4 @@ input[type="number"] {
     }
 }
 /* #endregion CUSTOM INPUTS */
+

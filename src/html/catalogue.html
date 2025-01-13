@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/screen.css" media="screen">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         <link rel="stylesheet" href="../css/mid.css" media="screen and (max-width: 768px)">
         <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width: 480px)">
         <script src="../js/validate-catalogue.js"></script>
@@ -59,7 +60,7 @@
         </header>
 
         <main id="content">
-            <h2 class="content-subtitle content">FILTRA</h2>
+            <h2 class="content-subtitle content no-print">FILTRA</h2>
             <form id="search-fields" class="content" action="#results">
                 <label for="search-bar" class="hide">Barra di ricerca</label>
                 <input name="name" type="search" id="search-bar" placeholder="Cerca una ricetta">
@@ -100,7 +101,7 @@
             </form>
 
             <h2 id="results" class="content-subtitle content">RISULTATI</h2>
-            <form action="#results" class="content">
+            <form action="#results" class="content no-print">
                 <label for="ord-res" class="form-label">ORDINA I RISULTATI</label>
                 <select id="ord-res" name="ord">
                     <option value="voto_desc">Dal voto più alto</option>
@@ -122,7 +123,7 @@
 
         <footer>
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-            <a href="#top">Torna su</a>
+            <a href="#top" class="back-up-link">Torna su</a>
         </footer>
     </body>
 
