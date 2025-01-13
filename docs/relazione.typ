@@ -22,13 +22,90 @@ Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un 
 == Tipologie di utente
 Sono state individuate due tipologie di utente:
 - *Utente non autenticato* è l'utente che non ha eseguito l'accesso al sistema. Può navigare nel sito, usufruire delle funzionalità di ricerca delle ricette e inviare dei suggerimenti dalla pagina dei contatti.
-- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). In aggiunta all'utente non autenticato è accompagnato da una esperienza personalizzata nella ricerca; viene cioè applicato in automatico il filtro per la categoria dell'utente se questo accede al catalogo in modo da invitarlo con ricette maggiormente pertinenti. Può inoltre assegnare le valutazioni alle ricette (una per ricetta).
+- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). In aggiunta all'utente non autenticato è accompagnato da una esperienza personalizzata nella ricerca; viene cioè applicato in automatico il filtro per la categoria dell'utente se questo accede al catalogo in modo da invitarlo con ricette maggiormente pertinenti. Può inoltre assegnare le valutazioni alle ricette (una per ricetta) e salvare le ricette tra i preferiti.
 
 == Esigenze dell'utenza
 TODO: Metafora della pesca ???
 
+= Progettazione
+
+== Metodologia di sviluppo
+Nonostante la maggior parte dell'utenza derivi dal mobile, abbiamo deciso di cominciare dallo sviluppo del sito da desktop per facilitare la fase di design. Dovendo comunque completare la visualizzazione sia per desktop che per mobile ci è sembrato più utile adottare un approccio che agevolasse il lavoro pur mantenendo il medesimo obiettivo.
+
+== Separazione contenuto, presentazione e comportamento
+Abbiamo provveduto a separare il contenuto, la presentazione e il comportamento realizzati rispettivamente con `HTML5`, `CSS` e `JavaScript`/`PHP`. Abbiamo adottato quindi le seguenti misure:
+- Attribuire lo stile tramite file `CSS` importati nei documenti `HTML5` senza mai assegnare regole inline o embedded.
+- JS E PHP?????
+
+== Divisioni delle risoluzioni
+Valutando gli elementi delle pagine abbiamo ritenuto opportuno dividere gli schermi secondo le seguenti risoluzioni:
+- *inferiore a 480px* per mobile.
+- *tra 480px e 768 px* per schermi di dimensioni medie (ad esempio tablet).
+- *superiore a 768px* per schermi grandi (ad esempio monitor). Nel file `CSS` dedicato è presente una classe che limita il contenuto a 1200px in modo da gestire anche gli schermi più larghi.
+
+== Comportamento
+Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input e all'aggiornamento di due valori nei filtri della pagina di ricerca. In questo modo limitiamo al minimo i disagi provocati dalla mancanza di `JavaScript`. Sono stati quindi realizzati interamente con `CSS` il menu ad hamburger per mobile e le animazioni delle carte nella home. ALTRO????
+
+== Controlli sui dati
+TEO CONTROLLA !!!!!!! \
+Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza.
+
+= Accessibilità
+Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
+- Aggiunto la breadcrumb in ogni pagina.
+- Aggiunto gli aiuti alla navigazione in ogni pagina.
+- Contrassegnato abbreviazioni, simboli e sigle con i corretti tag `HTML5`.
+- Aggiunto l'attributo `title` ai link in modo da renderli più espressivi alla lettura con screen reader.
+- Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
+- Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
+- Assegnato gli attributi `alt`, lasciati vuoti se non necessari.
+- ALTRO ????
+
+= Controlli sul sito
+
+TODO: DIRE QUALI STRUMENTI SONO STATI UTILIZZATI
+
+== Accessibilità
+Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
+- Tutti gli elementi interattivi sono raggiungibili tramite \"tab\" o \"swipe\".
+- Tutti gli input sono preceduti delle label e seguiti dall'eventuale errore.
+- Tutte le pagine contengono le breadcrumb.
+- Utilizzo di screen reader (QUALI ???)
+- Attributo `alt` ad ogni immagine.
+- Attributo o tag `abbr` ad ogni abbreviazione o sigla.
+- Link corretti per gli aiuti alla navigazione.
+- Attributo `lang` con la lingua dei termini che seguono se sono stranieri.
+
+== Colori
+Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei colori:
+- Contrasto *AAA*:
+  - QUASI TUTTO
+- Contrasto *AA*:
+  - QUASI NULLA
+
+== Struttura
+Sono stati eseguiti i seguenti controlli per quanto riguarda la struttura:
+- Ordine decrescente continuo dei titoli (senza salti ad esempio h1 e h3).
+- Ordine dei tag che rispetta l'ordine di lettura indipendentemente dal layout.
+
+== Usabilità
+Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
+- Tutte le pagine sono raggiungibili.
+- Gli errori 40X e 50X sono gestiti.
+- Velocità di caricamento del sito
+- CHE FONT ABBIAMO ADOTTATO ???
+
+== Sicurezza
+Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
+- Controllo della validità dei dati inviati al server.
+
+== Codice
+Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
+- `HTML5` e `CSS` validi.
+- Tutte le funzionalità del sito sono valide senza `JavaScript`.
+
 = Struttura gerarchica
-La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione.
+La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 3 click.
 
 == Home
 La pagina principale presenta il sito ed espone le categorie nelle quali sono suddivisi i piatti e le ragioni delle scelte. L'utente è quindi immediatamente informato della struttura e dello scopo del sito. I link di ciascuna categoria nella home portano alla pagina delle ricette applicando automaticamente il filtro della categoria selezionata.

@@ -14,10 +14,9 @@ se tabbo dal nav-help il focus si sposta ma il tab rimane lì
 errori va bene lasciare il <p> vuoto?
 mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
 
-TODO:
-- btn anim
-
-
+- breadcrumb
+- focus errori
+- errore sign in in che posizione?
 
 * max length bio (300 char)
 * max length suggerimenti about us (500 char)

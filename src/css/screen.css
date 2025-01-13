@@ -96,14 +96,6 @@ fieldset {
     padding: 2em 5em;
 }
 
-.button-animation:hover {
-    transform: scale(1.03);
-}
-
-.button-animation:active {
-    transform: scale(0.97);
-}
-
 .content {
     padding: 0 1rem;
     /* used as big.css (min-width: 1200px) */
@@ -427,6 +419,14 @@ nav#quick-role a:visited {
 #presentation-text {
     border-top: 3px solid var(--accent);
     border-bottom: 3px solid var(--accent);
+}
+
+.button-animation:hover {
+    transform: scale(1.03);
+}
+
+.button-animation:active {
+    transform: scale(0.97);
 }
 
 dl#roles dt {
