@@ -79,6 +79,7 @@ INSERT INTO Ingrediente VALUES ("albicocche secche");
 INSERT INTO Ingrediente VALUES ("sfilacci di cavallo");
 INSERT INTO Ingrediente VALUES ("gamberetti");
 INSERT INTO Ingrediente VALUES ("basilico");
+INSERT INTO Ingrediente VALUES ("salmone");
 
 
 -- RICETTA ====================================
@@ -133,6 +134,7 @@ INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7
 INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","../asset/img/recipe/in-sede/couscous-con-verdure.jpg");
 INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","../asset/img/recipe/in-sede/pasta-sfilacci-e-pomodorini.jpg");
 INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 35, 8, "Un piatto raffinato e leggero, perfetto per chi cerca una miscela di sapori freschi e delicati. Le zucchine incontrano la dolcezza dei gamberetti, creando un equilibrio armonioso, il tutto avvolto da una spolverata di prezzemolo fresco per esaltare i sapori del mare. Questa pasta è ideale per chi vuole unire semplicità e gusto, senza però spendere un occhio della testa!", "2025-01-01", "../asset/img/recipe/in-sede/pasta-zucchine-e-gamberetti.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 7, "Un piatto gustoso e bilanciato che unisce la cremosità delle zucchine con la delicatezza del salmone. Perfetto per chi cerca un pasto nutriente e saporito, questa combinazione di ingredienti offre un tocco di freschezza e raffinatezza. Le zucchine unite al salmone creano un mix di sapori che si fondono ad ogni boccone. Ideale per un pranzo leggero o per una cena veloce ma senza risparmiare sul gusto.", "2025-01-01", "../asset/img/recipe/in-sede/pasta-zucchine-e-salmone.jpg");
 
 -- DAD
 
@@ -158,6 +160,7 @@ INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","UgoFantozzi");
 INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","MasterMaurizio");
 INSERT INTO Preferenza_Ricetta VALUES ("Merluzzo in scaloppa","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Rucola e bresaola","Oca");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta zucchine e salmone","Tony");
 
 
 
@@ -280,6 +283,13 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale gr
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "basilico", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "pasta", FALSE, 120, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "zucchine", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "salmone", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "olio", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -429,6 +439,11 @@ INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 4, "Mettile in u
 INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 5, "Metti a bollire l'acqua per la pasta: quando bolle aggiungi un po' di sale grosso e quindi la pasta. Tieni il fuoco medio-alto per il tempo indicato sulla confezione (in genere ci azzeccano ma ti consigliamo di assaggiare ogni tanto).");
 INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 6, "Una volta pronta la pasta scolala, versala in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa, aggiungi le zucchine e i gamberetti. Aggiungi un pizzico di basilico per dargli un tocco di classe e fare un figurone coi tuoi compagni fuorisede.");
 
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 1, "Metti a bollire l'acqua per la pasta in una pentola, quando senti borbottare il coperchio aggiungi il sale grosso, aggiungi la pasta e cucina a fuoco medio-alto per il tempo indicato sulla confezione.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 2, "Nel mentre lava le zucchine e tagliale alla <span lang=\"fr\">julienne</span> (se lo dici ai tuoi amici sembrerai quasi uno chef serio). Mettile in una padella con un filo d'olio, un po' d'acqua e del sale fino, chiudi con un coperchio e cucina per 10 minuti a fuoco medio-basso. Girale ogni tanto e aggiungi dell'acqua se vedi che nel frattempo è evaporata per non farle attaccare.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 3, "Taglia il salmone a pezzetti: servirà a condire per bene la pasta.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 4, "Quando la pasta e le zucchine sono pronte versa tutto su un piatto, aggiungi il salmone e condisci con un filo d'olio. Fai una foto e mandala ai tuoi amici che si devono mangiare un misero panino finita lezione giusto per fargli un po' di invidia.");
+
 -- DAD
 
 
@@ -459,6 +474,7 @@ INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "20
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
 INSERT INTO Valutazione VALUES ("Pasta sfilacci e pomodorini", "Tony", "2025-01-12", 27, "Quasi ottimo!");
+INSERT INTO Valutazione VALUES ("Pasta zucchine e salmone", "Tony", "2025-01-13", 30, "Consigliata, davvero molto buona!");
 -- DAD
 
 
