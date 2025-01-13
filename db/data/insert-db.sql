@@ -22,13 +22,13 @@ INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b
 INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "d71ccf9f3232ed4edf193a057426b2bbc5ec161f3611e4eef54a5c74dbc3e575", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURKINA FASO GREAT AGAIN", "dad", NULL);
 INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", NULL);
 INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5ca101d08cc4d96c3e4c256349d1bbd55658ec2d8b6df6fc8bcdd7f5", "2025-01-08", "23 anni\nUniPD psicologia\nHo una sorella che si chiama Ombretta, ai nostri genitori piaceva così tanto il nome che con me lo hanno mantenuto ma al maschile.", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", NULL);
-INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", NULL);
-INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "Eheh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", NULL);
-INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\nSono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", NULL);
-INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto...","in_sede",NULL);
+INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", "user_profiles/Ombretta/Ombretta.png");
+INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", "user_profiles/MasterMaurizio/MasterMaurizio.png");
+INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", "user_profiles/Jay/Jay.png");
+INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", "user_profiles/Murphy/Murphy.png");
+INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", "user_profiles/Oca/Oca.png");
+INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
+INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
 
 -- INGREDIENTE ====================================
@@ -77,6 +77,10 @@ INSERT INTO Ingrediente VALUES ("couscous_EN");
 INSERT INTO Ingrediente VALUES ("peperoni dolci");
 INSERT INTO Ingrediente VALUES ("olive");
 INSERT INTO Ingrediente VALUES ("albicocche secche");
+INSERT INTO Ingrediente VALUES ("sfilacci di cavallo");
+INSERT INTO Ingrediente VALUES ("gamberetti");
+INSERT INTO Ingrediente VALUES ("basilico");
+INSERT INTO Ingrediente VALUES ("salmone");
 
 
 -- RICETTA ====================================
@@ -128,6 +132,10 @@ INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "second
 INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "../asset/img/recipe/in-sede/riso-pollo.jpg");
 INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "../asset/img/recipe/in-sede/riso-venere.jpg");
 INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","../asset/img/recipe/in-sede/couscous-con-verdure.jpg");
+INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","../asset/img/recipe/in-sede/pasta-sfilacci-e-pomodorini.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 35, 8, "Un piatto raffinato e leggero, perfetto per chi cerca una miscela di sapori freschi e delicati. Le zucchine incontrano la dolcezza dei gamberetti, creando un equilibrio armonioso, il tutto avvolto da una spolverata di prezzemolo fresco per esaltare i sapori del mare. Questa pasta è ideale per chi vuole unire semplicità e gusto, senza però spendere un occhio della testa!", "2025-01-01", "../asset/img/recipe/in-sede/pasta-zucchine-e-gamberetti.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 7, "Un piatto gustoso e bilanciato che unisce la cremosità delle zucchine con la delicatezza del salmone. Perfetto per chi cerca un pasto nutriente e saporito, questa combinazione di ingredienti offre un tocco di freschezza e raffinatezza. Le zucchine unite al salmone creano un mix di sapori che si fondono ad ogni boccone. Ideale per un pranzo leggero o per una cena veloce ma senza risparmiare sul gusto.", "2025-01-01", "../asset/img/recipe/in-sede/pasta-zucchine-e-salmone.jpg");
+
 -- DAD
 
 
@@ -152,6 +160,7 @@ INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","UgoFantozzi");
 INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","MasterMaurizio");
 INSERT INTO Preferenza_Ricetta VALUES ("Merluzzo in scaloppa","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Rucola e bresaola","Oca");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta zucchine e salmone","Tony");
 
 
 
@@ -262,6 +271,26 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "albicocche 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino", TRUE, NULL, NULL, NULL);
 
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pomodorini", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "sale grosso", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "zucchine", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "gamberetti", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "basilico", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "pasta", FALSE, 120, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "zucchine", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "salmone", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "olio", TRUE, NULL, NULL, NULL);
+
 -- DAD
 
 
@@ -277,14 +306,14 @@ INSERT INTO Preparazione VALUES ("Pane e salame", 2, "Prendi il salame, spacchet
 INSERT INTO Preparazione VALUES ("Pane e salame", 3, "Se vuoi immedesimarti in un signore d'alto borgo prendi un tagliere e disponici i pezzi di pane farciti.");
 
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
-INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 2, "Mentre aspetti tira fuori una pentola piccola e comincia ad abbrustolire 80g di pancettta.");
+INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 2, "Mentre aspetti tira fuori una pentola piccola e comincia ad abbrustolire 80 grammi di pancettta.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 3, "Non appena vedi che l'acqua versa del sale e rovescia la pasta al suo interno. Se non hai pesato la pasta perché non hai una bilancia ti consigliamo di usare la tecnica del pugno, consiste di afferrare una quantità arbitraria di pasta con appunto un pugno e gettarla in acqua senza farsi troppe domande.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 4, "Spegni il fuoco del pentolino contenente la pancetta, in modo tale da non bruciarla, prendi la panna, aprila e mettine una quantità a tuo piacimento nel pentolino.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 5, "Una volta che la pasta é pronta scolala, mettila nel pentolino.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 6, "Amalgama il il tutto con un cucchiaio.");
 INSERT INTO Preparazione VALUES ("Pasta panna e pancetta", 7, "Servi su un piatto se vuoi sporcare altre stoviglie, altrimenti ti consigliamo di mangiare direttamente dal pentolino.");
 
-INSERT INTO Preparazione VALUES ("Riso e uova fritte", 1, "Prendi un pentolino per la pasta e versaci 100g grammi di riso. Se non hai una bilancia 100g equivalgono a ⅔ di un normale bicchiere");
+INSERT INTO Preparazione VALUES ("Riso e uova fritte", 1, "Prendi un pentolino per la pasta e versaci 100 grammi di riso. Se non hai una bilancia 100 grammi equivalgono a due terzi di un normale bicchiere");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 2, "Sciacqua il riso sotto l'acqua corrente.");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 3, "Riempi d'acqua il pentolino ad un livello leggermente più alto rispetto al livello del riso.");
 INSERT INTO Preparazione VALUES ("Riso e uova fritte", 4, "Accendi il fornello a livello medio e metti il riso a cuocere.");
@@ -312,7 +341,7 @@ INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 2, "A uno ad uno impana
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 3, "Prendi una padella, mettici dell'olio e aspetta che diventi caldo senza che inizi a friggere");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 4, "Prendi i tuoi filetti impanati e mettili in pentola e abbassando di conseguenza il fuoco.");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 5, "Aggiungi pepe e sale quanto basta.");
-INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 6, "Ogni 3/4 minuti ricordati di girare i filetti in modo da avere una cottura perfetta da entrambi i lati.");
+INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 6, "Ogni 3 o 4 minuti ricordati di girare i filetti in modo da avere una cottura perfetta da entrambi i lati.");
 INSERT INTO Preparazione VALUES ("Merluzzo in scaloppa", 7, "Non appena vedi che il filetto é cotto spegni il fuoco e impiatta.");
 
 INSERT INTO Preparazione VALUES ("Pasta al pesto", 1, "Prendi una pentola riempila d'acqua e mettila a bollire su un fornello.");
@@ -399,6 +428,22 @@ INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 6, "Taglia a metà l
 INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 7, "Una volta pronte le verdure versa un bicchiere d'acqua nella padella, poi il couscous, i pomodorini, le albicocche e le olive (spero la padella fosse abbastanza grande). Mescola bene e spegni il fuoco così da lasciar riposare il couscous.");
 INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 8, "Ora potrai andare a lezione sfoggiando un piatto saporito e pieno di colori alla faccia dei tuoi compagni che si portano la solita pasta in bianco e dei grissini per pranzo.");
 
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 1, "Metti a bollire l'acqua e nel mentre lava e taglia i pomodorini a spicchi o a fette: così ottimizzi i tempi, che noi studenti non ne abbiamo molto.");
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 2, "Quando vedi l'acqua bollire butta il sale grosso e poi la pasta, cuoci a fuoco medio-alto per il tempo indicato nella confezione della pasta.");
+INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 3, "Una volta pronta scolala, versa la pasta in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa. Aggiungi i pomodorini, gli sfilacci e, se ti va, anche un filo d'olio.");
+
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 1, "Se hai preso i gamberetti già pronti surgelati continua al punto seguente, altrimenti, se li hai presi freschi perché pensi di meritarteli, allora stacca la testa, togli il guscio ed estrai il filamento nero interno aiutandoti con uno stuzzicadenti."); 
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 2, "Metti i gamberetti in una padella con un filo d'olio e un po' d'acqua e cucinali a fuoco medio-basso per 3-4 minuti.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 3, "Lava le zucchine e tagliale a pezzetti, fette sottili o come ti pare.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 4, "Mettile in una padella sempre con un filo d'olio, un po' d'acqua e un pizzico di sale fino per risaltarne il sapore. Cucina a fuoco medio-alto per 10 minuti col coperchio e muovile ogni tanto per evitare che si attacchino e ti tocchi poi scrostare il bruciato (se si è asciugata tutta l'acqua puoi aggiungerne un po', senza annegarle ovviamente).");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 5, "Metti a bollire l'acqua per la pasta: quando bolle aggiungi un po' di sale grosso e quindi la pasta. Tieni il fuoco medio-alto per il tempo indicato sulla confezione (in genere ci azzeccano ma ti consigliamo di assaggiare ogni tanto).");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 6, "Una volta pronta la pasta scolala, versala in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa, aggiungi le zucchine e i gamberetti. Aggiungi un pizzico di basilico per dargli un tocco di classe e fare un figurone coi tuoi compagni fuorisede.");
+
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 1, "Metti a bollire l'acqua per la pasta in una pentola, quando senti borbottare il coperchio aggiungi il sale grosso, aggiungi la pasta e cucina a fuoco medio-alto per il tempo indicato sulla confezione.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 2, "Nel mentre lava le zucchine e tagliale alla <span lang=\"fr\">julienne</span> (se lo dici ai tuoi amici sembrerai quasi uno chef serio). Mettile in una padella con un filo d'olio, un po' d'acqua e del sale fino, chiudi con un coperchio e cucina per 10 minuti a fuoco medio-basso. Girale ogni tanto e aggiungi dell'acqua se vedi che nel frattempo è evaporata per non farle attaccare.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 3, "Taglia il salmone a pezzetti: servirà a condire per bene la pasta.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e salmone", 4, "Quando la pasta e le zucchine sono pronte versa tutto su un piatto, aggiungi il salmone e condisci con un filo d'olio. Fai una foto e mandala ai tuoi amici che si devono mangiare un misero panino finita lezione giusto per fargli un po' di invidia.");
+
 -- DAD
 
 
@@ -428,10 +473,12 @@ INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "20
 
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
+INSERT INTO Valutazione VALUES ("Pasta sfilacci e pomodorini", "Tony", "2025-01-12", 27, "Quasi ottimo!");
+INSERT INTO Valutazione VALUES ("Pasta zucchine e salmone", "Tony", "2025-01-13", 30, "Consigliata, davvero molto buona!");
 -- DAD
 
 
 -- SUGGERIMENTO ====================================
 
 INSERT INTO Suggerimento(utente,data,testo) VALUES ("GGGaggi", "2025-01-10", "Non ho un piatto da consigliarvi, volevo solo dirvi che avete fatto un ottimo lavoro!");
-INSERT INTO Suggerimento(utente,data,testo) VALUES ("MasterMaurizio", "2025-02-03", "Un piatto che vorrei assolutamente vedere nel vostro ricettario e` il platano fritto. Molto veloce da fare e ottimo per lo studente fuorisede");
+INSERT INTO Suggerimento(utente,data,testo) VALUES ("MasterMaurizio", "2025-02-03", "Un piatto che vorrei assolutamente vedere nel vostro ricettario è il platano fritto. Molto veloce da fare e ottimo per lo studente fuorisede");
