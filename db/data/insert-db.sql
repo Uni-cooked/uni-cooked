@@ -77,6 +77,8 @@ INSERT INTO Ingrediente VALUES ("peperoni dolci");
 INSERT INTO Ingrediente VALUES ("olive");
 INSERT INTO Ingrediente VALUES ("albicocche secche");
 INSERT INTO Ingrediente VALUES ("sfilacci di cavallo");
+INSERT INTO Ingrediente VALUES ("gamberetti");
+INSERT INTO Ingrediente VALUES ("basilico");
 
 
 -- RICETTA ====================================
@@ -130,6 +132,7 @@ INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un class
 INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "../asset/img/recipe/in-sede/riso-venere.jpg");
 INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","../asset/img/recipe/in-sede/couscous-con-verdure.jpg");
 INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","../asset/img/recipe/in-sede/pasta-sfilacci-e-pomodorini.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 35, 8, "Un piatto raffinato e leggero, perfetto per chi cerca una miscela di sapori freschi e delicati. Le zucchine incontrano la dolcezza dei gamberetti, creando un equilibrio armonioso, il tutto avvolto da una spolverata di prezzemolo fresco per esaltare i sapori del mare. Questa pasta è ideale per chi vuole unire semplicità e gusto, senza però spendere un occhio della testa!", "2025-01-01", "../asset/img/recipe/in-sede/pasta-zucchine-e-gamberetti.jpg");
 
 -- DAD
 
@@ -269,6 +272,14 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pasta",
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pomodorini", FALSE, 100, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "olio", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "sale grosso", TRUE, NULL, NULL, NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "zucchine", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "gamberetti", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale grosso", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "basilico", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -410,6 +421,14 @@ INSERT INTO Preparazione VALUES ("Couscous_EN con verdure", 8, "Ora potrai andar
 INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 1, "Metti a bollire l'acqua e nel mentre lava e taglia i pomodorini a spicchi o a fette: così ottimizzi i tempi, che noi studenti non ne abbiamo molto.");
 INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 2, "Quando vedi l'acqua bollire butta il sale grosso e poi la pasta, cuoci a fuoco medio-alto per il tempo indicato nella confezione della pasta.");
 INSERT INTO Preparazione VALUES ("Pasta sfilacci e pomodorini", 3, "Una volta pronta scolala, versa la pasta in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa. Aggiungi i pomodorini, gli sfilacci e, se ti va, anche un filo d'olio.");
+
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 1, "Se hai preso i gamberetti già pronti surgelati continua al punto seguente, altrimenti, se li hai presi freschi perché pensi di meritarteli, allora stacca la testa, togli il guscio ed estrai il filamento nero interno aiutandoti con uno stuzzicadenti."); 
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 2, "Metti i gamberetti in una padella con un filo d'olio e un po' d'acqua e cucinali a fuoco medio-basso per 3-4 minuti.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 3, "Lava le zucchine e tagliale a pezzetti, fette sottili o come ti pare.");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 4, "Mettile in una padella sempre con un filo d'olio, un po' d'acqua e un pizzico di sale fino per risaltarne il sapore. Cucina a fuoco medio-alto per 10 minuti col coperchio e muovile ogni tanto per evitare che si attacchino e ti tocchi poi scrostare il bruciato (se si è asciugata tutta l'acqua puoi aggiungerne un po', senza annegarle ovviamente).");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 5, "Metti a bollire l'acqua per la pasta: quando bolle aggiungi un po' di sale grosso e quindi la pasta. Tieni il fuoco medio-alto per il tempo indicato sulla confezione (in genere ci azzeccano ma ti consigliamo di assaggiare ogni tanto).");
+INSERT INTO Preparazione VALUES ("Pasta zucchine e gamberetti", 6, "Una volta pronta la pasta scolala, versala in un contenitore che ti porterai a lezione o in un piatto se la mangi a casa, aggiungi le zucchine e i gamberetti. Aggiungi un pizzico di basilico per dargli un tocco di classe e fare un figurone coi tuoi compagni fuorisede.");
+
 -- DAD
 
 
