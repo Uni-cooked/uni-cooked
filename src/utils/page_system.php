@@ -76,16 +76,7 @@ class PageSystem {
             $order_query .= "LOCATE(?, r.nome),";
             $params[] = $this->recipieName;
         }
-        
-        if($this->db->isUserLogged()){
-            $user = $this->db->getUserInfo();
-            if(!is_string($user)) {
-                $order_query.="CASE
-                WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
-                ELSE 1                        
-                END,";
-            }
-        }
+
         
         $order_query.="CASE
                         WHEN v.voto <> 31 THEN 0
@@ -95,20 +86,32 @@ class PageSystem {
 
         switch ($this->order) {
             case 'prezzo_asc':
-                $order_query .= "r.prezzo ASC";
+                $order_query .= "r.prezzo ASC,";
                 break;
             
             case 'prezzo_desc':
-                $order_query .= "r.prezzo DESC";
+                $order_query .= "r.prezzo DESC,";
                 break;
             
             case 'voto_desc':
-                $order_query .= "v.voto DESC";
+                $order_query .= "voto DESC,";
                 break;
                 
             default:
-                $order_query .= "v.voto DESC";
+                $order_query .= "voto DESC,";
                 break;
+        }
+
+        // $orderByUserCategory = $this->db->isUserLogged() && is_null($this->recipieName) && is_null($this->recipieCategory) && is_null($this->course) && $this->cost==25 && $this->grade == 1;
+        $orderByUserCategory = $this->db->isUserLogged();
+        if($orderByUserCategory){
+            $user = $this->db->getUserInfo();
+            if(!is_string($user)) {
+                $order_query.="CASE
+                WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
+                ELSE 1                        
+                END";
+            }
         }
 
         
