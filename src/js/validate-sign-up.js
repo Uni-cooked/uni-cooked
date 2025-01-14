@@ -5,14 +5,47 @@ function validateUserSignup() {
 	form.addEventListener("submit", function (event) {
 		if (! (validateNewUsername() && validateStudent() && validateEmail() && validatePassword() && validatePasswordConfirm()) ) {
 			event.preventDefault();
-			alert("La form non è stata compilata correttamente");
-		} else alert("Form compilata correttamente");
+			document.getElementById("btn-register").classList.add("gray-btn");
+			document.getElementById("btn-register").disabled = true;
+		}
 	});
+}
+
+function UltimateCheck(){
+	var errorUsername = document.getElementById("err-name");
+	var errorStudent = document.getElementById("err-student");
+	var errorEmail = document.getElementById("err-mail");
+	var errorPassword = document.getElementById("err-psw");
+	var errorRepeatPassword = document.getElementById("err-repeat-psw");
+	if (!(errorUsername && errorStudent && errorEmail && errorPassword && errorRepeatPassword)){
+		document.getElementById("btn-register").disabled = false;
+		document.getElementById("btn-register").classList.remove("gray-btn")
+	}
 }
 
 function validateNewUsername() {
 	var Username = document.forms['credentials']['student-name-up'].value;
 	const allowedChars = /^[A-Za-z0-9]+$/; // lettere maiuscole e minuscole, numeri
+    
+    if(Username.lenght < 1){
+		var check = document.getElementById("err-name");
+		deleteError(check);
+		var p = messageError("err-name");
+	    p.innerText = "Il nome utente è un campo obbligatorio.";
+		const parent = document.getElementById("student-name-up").parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+
+	if(Username.length > 15){
+		var check = document.getElementById("err-name");
+		deleteError(check);
+		var p = messageError("err-name");
+	    p.innerText = "Il nome utente non deve essere più lungo di 15 caratteri ";
+		const parent = document.getElementById("student-name-up").parentNode;
+		parent.appendChild(p);
+		return false;
+	}
 
 	if (Username.search(/^[a-zA-Z0-9!\-_.]{1,15}$/) != 0 || !allowedChars.test(Username)) {
 		var check = document.getElementById("err-name");
@@ -25,6 +58,7 @@ function validateNewUsername() {
 	}
 	var check = document.getElementById("err-name");
 	deleteError(check);
+	UltimateCheck();
 	return true;
 }
 
@@ -35,30 +69,42 @@ function validateStudent(){
 		var check = document.getElementById("err-student");
 		deleteError(check);
 		var p = messageError("err-student")
-        p.innerText = "Scegliere un'opzione valida";
+        p.innerText = "Seleziona una categoria";
 		const parent = document.getElementById("student-cat-up").parentNode;
 		parent.appendChild(p);
         return false;
     }
     var check = document.getElementById("err-student");
 	deleteError(check);
+	UltimateCheck();
     return true;
 }
 
 function validateEmail(){
     var Email = document.forms['credentials']["student-mail-up"].value;
     
+    if(Email.lenght < 1){
+		var check = document.getElementById("err-mail");
+	    deleteError(check);
+		var p = messageError("err-mail"); 
+		p.innerText = "L'email è un campo obbligatorio";
+		const parent = document.getElementById("student-mail-up").parentNode;
+		parent.appendChild(p);
+        return false;
+	}
+
     if(Email.length > 0 && Email.search(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) != 0){
         var check = document.getElementById("err-mail");
 	    deleteError(check);
 		var p = messageError("err-mail"); 
-		p.innerText = "Sintassi e-mail errata";
+		p.innerText = "L'email scelta non è un indirizzo valido";
 		const parent = document.getElementById("student-mail-up").parentNode;
 		parent.appendChild(p);
         return false;
     }
     var check = document.getElementById("err-mail");
 	deleteError(check);
+	UltimateCheck();
     return true;
 }
 
@@ -69,7 +115,7 @@ function validatePassword() {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");
-		p.innerText = "La lunghezza minima della password è di 4 caratteri";
+		p.innerText = "La password deve essere lunga almeno 4 caratteri";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
 		return false;
@@ -79,13 +125,14 @@ function validatePassword() {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");
-		p.innerText = "Sintassi password errata";
+		p.innerText = "La password deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
 		return false;
 	}
     var check = document.getElementById("err-psw");
 	deleteError(check);
+	UltimateCheck();
 	return true;
 }
 
@@ -107,6 +154,7 @@ function validatePasswordConfirm() {
 	}
     var check = document.getElementById("err-repeat-psw");
 	deleteError(check);
+	UltimateCheck();
 	return true;
 
 }

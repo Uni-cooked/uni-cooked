@@ -3,8 +3,9 @@ function validateFormRequest(){
     form.addEventListener("submit", (e) => {
         if(!validateRequest()){
             e.preventDefault();
-            alert("Form non compilata correttamente");
-        }else alert("Form compilata correttamente");
+            document.getElementById("confirm").classList.add("gray-btn");
+            document.getElementById("confirm").disabled = true;
+        }
     });
 }
 
@@ -22,9 +23,24 @@ function validateRequest(){
         const parent = document.getElementById("recipie-request-input").parentNode;
         parent.appendChild(p);
         return false;
-    } 
+
+    } else if (Request.length > 500){
+        var check = document.getElementById("err-request");
+        if(check) check.remove();
+        var p = document.createElement("p");
+	    p.setAttribute("role","alert");
+	    p.setAttribute("id","err-request");
+	    p.classList.add("err-msg");
+        p.innerText = "La lunghezza massima è di 500 caratteri";
+        const parent = document.getElementById("recipie-request-input").parentNode;
+        parent.appendChild(p);
+        return false;
+    }
+    
     var check = document.getElementById("err-request");
     if(check) check.remove();
+    document.getElementById("confirm").disabled = false;
+    document.getElementById("confirm").classList.remove("gray-btn");
     return true;
 }
 

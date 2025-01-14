@@ -1,20 +1,27 @@
 function UpdateRangeVoto(){
-    const rangeVoto = document.getElementById("min-rate-filter");
-
-    rangeVoto.addEventListener("input",() => {
-        document.getElementById("rate").innerText = rangeVoto.value + " / 30";
-    });
+    const rangeVoto = document.forms["search-fields"]["min-rate-filter"].value;
+    document.getElementById("rate").innerText = rangeVoto + " / 30";
 }
 
 function UpdateRangeCosto(){
-    const rangeCosto = document.getElementById("max-price-filter");
+    const rangeCosto = document.forms["search-fields"]["max-price-filter"].value;
+    document.getElementById("price").innerText = rangeCosto + " €";
+}
 
-    rangeCosto.addEventListener("input", () => {
-        document.getElementById("price").innerText = rangeCosto.value + " €";
-    });
+const filters = {
+    "min-rate-filter" : ["change", UpdateRangeVoto],
+    "max-price-filter" : ["change", UpdateRangeCosto],
+}
+
+function Update(){
+    for (var id in filters) {
+		if (!document.getElementById(id)) {
+			continue;
+		}
+		document.getElementById(id).addEventListener(filters[id][0], filters[id][1]);
+	}
 }
 
 window.addEventListener("load", () => {
-    UpdateRangeVoto();
-    UpdateRangeCosto();
+    Update();
 })

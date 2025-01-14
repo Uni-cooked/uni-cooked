@@ -4,8 +4,9 @@ function validateEditForm(){
 	form.addEventListener("submit", function (event) {
 		if (!(validateEditNewUsername())){
 			event.preventDefault();
-			alert("Prima form fallita");
-		} else alert("Prima form compilata correttamente");
+			document.getElementById("btn-confirm").classList.add("gray-btn");
+			document.getElementById("btn-confirm").disabled = true;
+		}
 	});
 }
 
@@ -15,8 +16,9 @@ function validatePswForm(){
 	form.addEventListener("submit", function (event) {
 		if (!(validateEditPassword() && validateEditPasswordConfirm())){
 			event.preventDefault();
-			alert("Seconda form fallita");
-		} else alert("Seconda form compilata correttamente");
+			document.getElementById("second-btn-confirm").classList.add("gray-btn");
+			document.getElementById("second-btn-confirm").disabled = true;
+		}
 	});
 }
 
@@ -80,7 +82,18 @@ function validateEditNewUsername() {
 	}
 	var nameError = document.getElementById("err-edit-nam");
 	deleteError(nameError);
+	document.getElementById("btn-confirm").classList.remove("gray-btn");
+	document.getElementById("btn-confirm").disabled = false;
 	return true;
+}
+
+function FinalCheck(){
+	var errorPassword = document.getElementById("err-new-psw");
+	var errorRepeatPassword = document.getElementById("err-repeat-new-psw");
+	if(!(errorPassword && errorRepeatPassword)){
+		document.getElementById("second-btn-confirm").classList.remove("gray-btn");
+		document.getElementById("second-btn-confirm").disabled = false;
+	}
 }
 
 function validateEditPassword() {
@@ -101,12 +114,13 @@ function validateEditPassword() {
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
 		var p = createError("err-new-psw");
-		p.innerText = "Sintassi password errata";
+		p.innerText = "La password deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale";
 		psw.appendChild(p);
 		return false;
 	}
     var check = document.getElementById("err-new-psw");
 	deleteError(check);
+	FinalCheck();
 	return true;
 }
 
@@ -120,12 +134,13 @@ function validateEditPasswordConfirm() {
 		deleteError(check);
         var p = createError("err-repeat-new-psw");
 		p.innerText = "Le password non coincidono";
-		const rpPsw = document.getElementById("repeat-new-psw").parentNode;
-		rpPsw.appendChild(p);
+		const repeatPsw = document.getElementById("repeat-new-psw").parentNode;
+		repeatPsw.appendChild(p);
 		return false;
 	}
     var check = document.getElementById("err-repeat-new-psw");
 	deleteError(check);
+	FinalCheck();
 	return true;
 
 }
