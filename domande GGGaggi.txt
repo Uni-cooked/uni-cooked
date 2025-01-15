@@ -1,19 +1,24 @@
+DOMANDE:
+
 quando l'hamburger è aperto legge anche il testo non interattivo sotto?
-quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab va fuori?
 burger menu problemi con bg se non ci sono img
+accessibilità card home
+a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
+Keyword ingredienti che possono sforare
+desc e keyword in pagine stupide (404 ecc, profile, profile edit)
+Quali pagine dobbiamo trattare con print.css?
+
+pre in bio come andare a capo senza n2br
+mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
+quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab va fuori?
+strong senza bold perché brutto
+
 l'input value nei range di catalogo viene letto dallo sr la prima volta? il valore è scritto dopo forse sarebbe da aggiungerlo alla label per gli sr -> nascondi label
 div dentro ul per fare 2 colonne
-accessibilità card home
-desc e keyword in pagine stupide (404 ecc, profile, profile edit)
-a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
 {1,15} nelle regex va bene?
-onload nel body c'è altro modo?
-strong senza bold perché brutto
-pre in bio come andare a capo senza n2br
-se tabbo dal nav-help il focus si sposta ma il tab rimane lì
-errori va bene lasciare il <p> vuoto?
-mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
-Quali pagine dobbiamo trattare con print.css?
+
+
+APPUNTI:
 
 - breadcrumb
 - focus errori
