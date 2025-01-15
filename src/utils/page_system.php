@@ -86,19 +86,19 @@ class PageSystem {
 
         switch ($this->order) {
             case 'prezzo_asc':
-                $order_query .= "r.prezzo ASC,";
+                $order_query .= "r.prezzo ASC";
                 break;
             
             case 'prezzo_desc':
-                $order_query .= "r.prezzo DESC,";
+                $order_query .= "r.prezzo DESC";
                 break;
             
             case 'voto_desc':
-                $order_query .= "voto DESC,";
+                $order_query .= "voto DESC";
                 break;
                 
             default:
-                $order_query .= "voto DESC,";
+                $order_query .= "voto DESC";
                 break;
         }
 
@@ -107,7 +107,7 @@ class PageSystem {
         if($orderByUserCategory){
             $user = $this->db->getUserInfo();
             if(!is_string($user)) {
-                $order_query.="CASE
+                $order_query.=",CASE
                 WHEN r.categoria = \"". $user["tipo_studente"] ."\" THEN 0
                 ELSE 1                        
                 END";
