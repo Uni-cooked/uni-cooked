@@ -1,3 +1,11 @@
+function FilterForm(){
+    let form = getElementById("search-fields");
+    form.addEventListener("submit", () => {
+        UpdateRangeCosto();
+        UpdateRangeVoto();
+    })
+}
+
 function UpdateRangeVoto(){
     const rangeVoto = document.forms["search-fields"]["min-rate-filter"].value;
     document.getElementById("rate").innerText = rangeVoto + " / 30";
@@ -11,6 +19,8 @@ function UpdateRangeCosto(){
 const filters = {
     "min-rate-filter" : ["change", UpdateRangeVoto],
     "max-price-filter" : ["change", UpdateRangeCosto],
+    "min-rate-filter" : ["input", UpdateRangeVoto],
+    "max-price-filter" : ["input", UpdateRangeCosto],
 }
 
 function Update(){
@@ -24,4 +34,5 @@ function Update(){
 
 window.addEventListener("load", () => {
     Update();
+    FilterForm();
 })
