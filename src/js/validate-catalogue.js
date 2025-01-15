@@ -1,5 +1,5 @@
 function FilterForm(){
-    let form = getElementById("search-fields");
+    let form = document.getElementById("search-fields");
     form.addEventListener("submit", () => {
         UpdateRangeCosto();
         UpdateRangeVoto();
