@@ -46,6 +46,7 @@ html body {
 
 a {
     color: var(--accent);
+    text-decoration: none;
 }
 
 a:visited {
@@ -166,7 +167,8 @@ main h1 {
     word-spacing: var(--word-spacing);
 }
 
-main h2, main h3 {
+main h2,
+main h3 {
     word-spacing: calc(var(--word-spacing) * .3);
 }
 
@@ -187,7 +189,6 @@ nav#quick-role {
 
 /* #region HOME PAGE CONTENT */
 
-
 dl#roles dt {
     color: var(--accent-quaternary);
     letter-spacing: var(--letter-spacing);
@@ -200,6 +201,7 @@ dl#roles dt {
     max-width: 800px;
     margin: auto;
 }
+
 
 .flip-card-back h3 {
     font-weight: 700;
@@ -224,6 +226,7 @@ dl#roles dd:first-of-type{
     margin-bottom: 20rem;
 }
 
+
 dl p {
     color: var(--bg-primary);
     font-weight: 500;
@@ -245,11 +248,12 @@ dd .role-info-label {
 /* ================================================== */
 
 /* #region HOME PAGE WHY */
+
 div#why {
     break-inside: avoid;
 }
 
-div#why > div {
+div#why>div {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
@@ -343,11 +347,16 @@ ul#recipe-list .recipe a {
 #page-changer {
     display: none;
 }
+
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
 /* #region RECIPE PAGE */
+#plate-desc{
+    margin-bottom: 30rem;
+}
+
 #recipe-name-title {
     text-align: center;
 }
@@ -401,6 +410,7 @@ ul#ingredient-list li {
     margin-bottom: 1em;
 }
 
+
 ol li.prep-li {
     padding-left: .5rem;
     /* to avoid numbers overflow to the left */
@@ -429,6 +439,7 @@ ul#comment-list {
 
 ul#comment-list li {
     margin-top: 2em;
+    break-inside: avoid;
 }
 
 #user-comment, ul#comment-list li {
@@ -609,7 +620,6 @@ a#log-out {
     height: 10rem;
     border-radius: var(--radius-max);
 }
-
 #recipie-request {
     display: none;
 }
@@ -665,3 +675,5 @@ footer p {
     margin: 1em 0 1em 0;
 }
 /* #endregion FOOTER */
+
+/* ================================================== */
