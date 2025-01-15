@@ -88,35 +88,35 @@ INSERT INTO Ingrediente VALUES ("salmone");
 -- FUORISEDE
 INSERT INTO Ricetta VALUES ("Pasta-asciutta", "fuorisede", "primo", 0, 2, 
 "Un piatto veloce e immediato proprio per lo studente che non ha né tempo né voglia di preparare un piatto completo. Essendo fuorisede e avendo magari un alloggio in affitto non si dispone del tempo e soldi per nemmeno accendere il fornello e aspettare che l'acqua inizi a bollire quindi perché non saltare tutti questi lunghi procedimenti. Questo piatto è ideale per un pranzo o cena leggera ma non troppo salutare, diciamocelo la salute arriva dopo lo studio.",
- "2025-01-09", "./asset/img/recipe/pendolare/pasta-asciutta.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/pasta-asciutta.jpg");
  
 INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "primo", 5, 4, 
 "Un piatto che non è un vero e proprio piatto perché comunemente consumato come antipasto o per fare una merenda a metà giornata ma in questo caso devi ricordarti che sei uno studente e anche fuorisede, ci dispiace… non puoi farci nulla. È uno tra le pietanze più facili e veloci da preparare, l’unico lato negativo è il costo.",
- "2025-01-09", "./asset/img/recipe/pendolare/pane-triste.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/pane-triste.jpg");
 
 INSERT INTO Ricetta VALUES ("Pasta panna e pancetta", "fuorisede", "primo", 15, 9, 
 "Un piatto di pasta completo, ben condito e molto veloce da preparare, ottimo quindi per chi vuole un pranzo o una cena alternativa più sostanziosa.",
- "2025-01-09", "./asset/img/recipe/pendolare/pancilli.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/pancilli.jpg");
 
 INSERT INTO Ricetta VALUES ("Riso e uova fritte", "fuorisede", "primo", 15, 8, 
 "Un piatto cubano molto famoso perché è sostanzioso, economico e veloce da preparare, ideale per gli studenti con poco tempo e budget. Anche se il procedimento può sembrare lungo, la preparazione è più semplice di quanto possa sembrare.",
- "2025-01-09", "./asset/img/recipe/pendolare/riso-uovo.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/riso-uovo.jpg");
 
 INSERT INTO Ricetta VALUES ("Frittatona", "fuorisede", "primo", 10, 5, 
 "Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle 20:25).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore frittatone di cipolle, familiare di peroni gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
- "2025-01-09", "./asset/img/recipe/pendolare/frittatona.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/frittatona.jpg");
 
 INSERT INTO Ricetta VALUES ("Rucola e bresaola", "fuorisede", "primo", 5, 10, 
 " Piatto tipico di chi vuole spendere poco e desidera un pranzo o una cena leggera, veloce e genuina. Può essere servito anche come antipasto per stupire i tuoi amici.",
- "2025-01-09", "./asset/img/recipe/pendolare/breso.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/breso.jpg");
 
 INSERT INTO Ricetta VALUES ("Merluzzo in scaloppa", "fuorisede", "secondo", 15, 10, 
 "Un gustosissimo piatto di pesce, alternativo alla solita carne che dopo un po' stufa, è ricco di Omega 3 e aiuta a studiare meglio. Anche se spesso un piatto di pesce è costoso, questa ricetta non ti farà spendere troppo.",
- "2025-01-09", "./asset/img/recipe/pendolare/merluzzo.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/merluzzo.jpg");
 
 INSERT INTO Ricetta VALUES ("Pasta al pesto", "fuorisede", "primo", 10, 5, 
 "La classica pasta dello studente fuori sede che non ha voglia di preparare un sugo fatto in casa e di deve quindi affidare ai sughi già pronti",
- "2025-01-09", "./asset/img/recipe/pendolare/pesto.jpg");
+ "2025-01-09", "./asset/img/recipe/fuorisede/pesto.jpg");
 
 -- PENDOLARE
 INSERT INTO Ricetta VALUES ("Insalata pigra", "pendolare", "secondo", 5, 3, "Hai dormito 5 ore per finire di studiare e, tornando dall'università, non hai voglia di prepararti da mangiare? Suvvia, non trascurare il pranzo, fatti un'insalata.", "2025-01-01", "./asset/img/recipe/pendolare/insalata-pigra.jpg");
@@ -131,10 +131,10 @@ INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "
 INSERT INTO Ricetta VALUES ("Burger_EN vegetale con piselli", "in_sede", "secondo", 25, 5, "Non fare storie solo perché non c'è la ciccia, questo è un piatto saporito e bilanciato perfetto per chi desidera un'alternativa vegetale gustosa! Croccante fuori e tenero dentro, questo burger_EN è accompagnato da piselli al vapore leggermente conditi con un filo d'olio d'oliva e un pizzico di sale per un accompagnamento delicato che esalta la freschezza del piatto.", "2025-01-01", "./asset/img/recipe/in-sede/burger-vegetale.jpg");
 INSERT INTO Ricetta VALUES ("Riso e pollo", "in_sede", "primo", 30, 6, "Un classico piatto adatto ai palestrati, abbastanza triste quanto ricco di proteine e carboidrati ma un must per chi non vuole allenare solo la mente. Il riso offre un letto soffice per gli straccetti di pollo teneri e dorati insaporiti da spezie aromatiche. Un piatto semplice ma che ti riempie ad ogni boccone.", "2025-01-01", "./asset/img/recipe/in-sede/riso-pollo.jpg");
 INSERT INTO Ricetta VALUES ("Riso Venere con verdure", "in_sede", "primo", 45, 7, "Un piatto leggero e colorato, che combina la ricchezza del riso Venere con la freschezza delle verdure. Il riso, dal caratteristico colore scuro e dal gusto intenso, viene cotto al dente e saltato con verdure fresche come zucchine e carote. Un piatto nutriente e bilanciato ideale per chi cerca un'opzione sana e saporita. Perfetto da gustare anche a temperatura ambiente quando si deve passare la pausa pranzo in aula.", "2025-01-01", "./asset/img/recipe/in-sede/riso-venere.jpg");
-INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","./asset/img/recipe/in-sede/couscous-con-verdure.jpg");
-INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","./asset/img/recipe/in-sede/pasta-sfilacci-e-pomodorini.jpg");
-INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 35, 8, "Un piatto raffinato e leggero, perfetto per chi cerca una miscela di sapori freschi e delicati. Le zucchine incontrano la dolcezza dei gamberetti, creando un equilibrio armonioso, il tutto avvolto da una spolverata di prezzemolo fresco per esaltare i sapori del mare. Questa pasta è ideale per chi vuole unire semplicità e gusto, senza però spendere un occhio della testa!", "2025-01-01", "./asset/img/recipe/in-sede/pasta-zucchine-e-gamberetti.jpg");
-INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 7, "Un piatto gustoso e bilanciato che unisce la cremosità delle zucchine con la delicatezza del salmone. Perfetto per chi cerca un pasto nutriente e saporito, questa combinazione di ingredienti offre un tocco di freschezza e raffinatezza. Le zucchine unite al salmone creano un mix di sapori che si fondono ad ogni boccone. Ideale per un pranzo leggero o per una cena veloce ma senza risparmiare sul gusto.", "2025-01-01", "./asset/img/recipe/in-sede/pasta-zucchine-e-salmone.jpg");
+INSERT INTO Ricetta VALUES ("Couscous_EN con verdure", "in_sede", "primo", 30, 10, "Un piatto colorato e nutriente, perfetto per chi ama i sapori mediterranei e la cucina leggera. Questo couscous alle verdure è un'esplosione di freschezza e benessere, arricchito da una varietà di verdure come zucchine, peperoni, carote e pomodorini, che aggiungono dolcezza e croccantezza ad ogni boccone. Ideale anche a temperatura ambiente per chi deve trascorrere una giornata intera tra le aule dell'Uni si adatta a qualsiasi palato potendoci aggiungere o togliere qualsiasi contorno si voglia.","2025-01-01","./asset/img/recipe/in-sede/couscous.jpg");
+INSERT INTO Ricetta VALUES ("Pasta sfilacci e pomodorini", "in_sede", "primo", 20, 8, "Un piatto dal sapore deciso, la pasta con sfilacci di cavallo e pomodorini è perfetta per chi ama gusti robusti ma equilibrati. Gli sfilacci di cavallo, teneri e saporiti, si combinano perfettamente con la dolcezza dei pomodorini freschi, creando un contrasto irresistibile. Un primo piatto ottimo per la fine del secondo semestre quando il caldo e l'ansia per gli esami si fanno sentire.","2025-01-01","./asset/img/recipe/in-sede/pasta-sfilacci-pomodorini.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 35, 8, "Un piatto raffinato e leggero, perfetto per chi cerca una miscela di sapori freschi e delicati. Le zucchine incontrano la dolcezza dei gamberetti, creando un equilibrio armonioso, il tutto avvolto da una spolverata di prezzemolo fresco per esaltare i sapori del mare. Questa pasta è ideale per chi vuole unire semplicità e gusto, senza però spendere un occhio della testa!", "2025-01-01", "./asset/img/recipe/in-sede/pasta-zucchine-gamberetti.jpg");
+INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 7, "Un piatto gustoso e bilanciato che unisce la cremosità delle zucchine con la delicatezza del salmone. Perfetto per chi cerca un pasto nutriente e saporito, questa combinazione di ingredienti offre un tocco di freschezza e raffinatezza. Le zucchine unite al salmone creano un mix di sapori che si fondono ad ogni boccone. Ideale per un pranzo leggero o per una cena veloce ma senza risparmiare sul gusto.", "2025-01-01", "./asset/img/recipe/in-sede/pasta-zucchine-salmone.jpg");
 
 -- DAD
 
@@ -191,12 +191,12 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "rucola", FALSE, 8
 INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "bresaola", FALSE, 50, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "grana padano", TRUE, NULL, NULL, "preferibilmente a scaglie");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "pepe", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Rucola e bresaola", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "merluzzo", FALSE, 100, "g", "preferibilmente surgelato (costa meno)");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "farina di semola", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "vino bianco da cucina", FALSE, 20, "ml", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "pepe", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Merluzzo in scaloppa", "sale fino", TRUE, NULL, NULL, NULL);
 
@@ -273,7 +273,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "sale fino",
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "pomodorini", FALSE, 100, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta sfilacci e pomodorini", "sale grosso", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "pasta", FALSE, 150, "g", "tipologia a scelta ma consigliata corta");
@@ -281,7 +281,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "zucchin
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "gamberetti", FALSE, 100, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e gamberetti", "basilico", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "pasta", FALSE, 120, "g", "tipologia a scelta ma consigliata corta");
@@ -289,7 +289,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "zucchine",
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "salmone", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale fino", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "olio", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
 -- DAD
 
@@ -350,7 +350,7 @@ INSERT INTO Preparazione VALUES ("Pasta al pesto", 3, "Una volta che la pasta é
 INSERT INTO Preparazione VALUES ("Pasta al pesto", 4, "Apri il barattolo contenente e condisci la tua pasta prendendo 2/3 cucchiaiate di sugo al pesto.");
 
 -- PENDOLARE
-INSERT INTO Preparazione VALUES ("Insalata pigra", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo: in internet ci sono molti life hacks a riguardo ;) )");
+INSERT INTO Preparazione VALUES ("Insalata pigra", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo: in Internet ci sono molte life_EN hacks_EN a riguardo ;) )");
 INSERT INTO Preparazione VALUES ("Insalata pigra", 2, "Dal reparto “cose che non credo di aver mai usato” prendi la centrifuga di insalata e mettila vicino al lavello, ci servirà in un attimo");
 INSERT INTO Preparazione VALUES ("Insalata pigra", 3, "Blocca il lavello con il tappo e fallo riempire un poco d'acqua. Poni quindi le foglie nell'acqua e inizia a pulirle, eventualmente aiutandoti anche con l'acqua corrente se necessario. Lavata una foglia, ponila dentro la centrifuga");
 INSERT INTO Preparazione VALUES ("Insalata pigra", 4, "Una volta lavate tutte le foglie svuota il lavello, quindi chiudi la centrifuga con il suo coperchio e, raccolte le poche forze che ti sono rimaste, aziona la centrifuga controllando periodicamente se le foglie sono asciutte ed eventualmente buttando via l'acqua in eccesso. Un buon indicatore è controllare quanta acqua si sia depositata nella centrifuga di volta in volta ;)");
@@ -387,7 +387,7 @@ INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l'hamburger_EN e togli eventuali rivestimenti che coprono la carne.");
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio d'oliva caldo (sono dolori, dico per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo si cuocia uniformemente.");
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 4, "Mentre aspetti qualche minuto per girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane se ce l'hai e usalo per scaldare il pane appena tagliato.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati i 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger_EN e quindi chiudi con la seconda fetta: l'hamburger_EN è pronto, buon appetito!");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati i 10 minuti spegni il fuoco e controlla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger_EN e quindi chiudi con la seconda fetta: l'hamburger_EN è pronto, buon appetito!");
 
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Se possiedi un tostapane è ora di usarlo, prendilo e attaccalo alla corrente.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast_EN e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");

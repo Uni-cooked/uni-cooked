@@ -1,4 +1,5 @@
 #import "./utility.typ": *
+#import "@preview/treet:0.1.1": *
 
 #show: doc => copertina(doc)
 
@@ -27,6 +28,9 @@ Sono state individuate due tipologie di utente:
 == Esigenze dell'utenza
 TODO: Metafora della pesca ???
 
+== Personalizzazione per l'utente
+TODO: COSA ABBIAMO PENSATO PER PERSONALIZZARE LA UX
+
 = Progettazione
 
 == Metodologia di sviluppo
@@ -48,7 +52,7 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input 
 
 == Controlli sui dati
 TEO CONTROLLA !!!!!!! \
-Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza.
+Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
 
 = Accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
@@ -58,7 +62,7 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunto l'attributo `title` ai link in modo da renderli più espressivi alla lettura con screen reader.
 - Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
 - Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
-- Assegnato gli attributi `alt`, lasciati vuoti se non necessari.
+- Assegnato gli attributi `alt` lasciandoli vuoti se non necessari.
 - ALTRO ????
 
 = Controlli sul sito
@@ -105,7 +109,19 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 - Tutte le funzionalità del sito sono valide senza `JavaScript`.
 
 = Struttura gerarchica
-La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 3 click.
+La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
+
+#v(5pt)
+#tree-list()[
+  - Home
+  - Ricette
+    - Ricetta
+  - Contatti
+  - Profilo utente
+    - Modifica profilo utente
+  - Accedi
+    - Registrati
+]
 
 == Home
 La pagina principale presenta il sito ed espone le categorie nelle quali sono suddivisi i piatti e le ragioni delle scelte. L'utente è quindi immediatamente informato della struttura e dello scopo del sito. I link di ciascuna categoria nella home portano alla pagina delle ricette applicando automaticamente il filtro della categoria selezionata.
@@ -135,3 +151,46 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 - *Offline* per la mancata connessione a Internet.
 - *Conferma* per chiedere conferma all'utente di alcune operazioni irreversibili quali rimozione della lista delle ricette preferite e cancellazione del profilo.
 - *Ringraziamenti* per ringraziare l'utente di aver inviato un suggerimento tramite la pagina dei contatti.
+
+= Lavoro e ruoli
+Il lavoro è stato partizionato nel seguente modo tra i diversi membri del gruppo:
+
+TODO: DA AGGIUNGERE I CONTROLLI
+
+*Andrea Precoma*
+- Creazione della struttura base degli `.html`.
+- Creazione della struttura e del relativo stile delle seguenti pagine:
+  - Ricette
+  - Ricetta
+  - Profilo utente
+  - Errore 404
+  - Errore 500
+  - Conferma azione
+  - Ringraziamenti
+- Refactoring dei `.css`.
+- Piccole correzioni e funzionalità dei `.php`.
+- Creazione della struttura del database.
+- Redazione della relazione.
+
+*Andrea Soranzo*
+- Principale ruolo nel design del sito.
+- Creazione della struttura e del relativo stile delle seguenti pagine:
+  - Home
+  - Contatti
+  - Accedi
+  - Registrazione
+  - Modifica profilo utente
+  - Offline
+- Creazione della funzionalità di ricerca delle ricette.
+
+*Matteo Schievano*
+- Creazione delle prime versioni della pagina home (successivamente cambiata di design).
+- Creazione dell'header e menu.
+- Creazione del comportamento lato server della quasi totalità delle funzionalità.
+- Creazione della struttura del database.
+
+*Gabriele Magnelli*
+- Creazione della struttura della pagina della ricetta (successivamente ristrutturata).
+- Creazione del comportamento lato client.
+
+Tutti i componenti hanno contribuito a popolare il database in modo equilibrato.

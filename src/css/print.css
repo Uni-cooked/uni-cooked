@@ -166,8 +166,7 @@ main h1 {
     word-spacing: var(--word-spacing);
 }
 
-main h2,
-main h3 {
+main h2, main h3 {
     word-spacing: calc(var(--word-spacing) * .3);
 }
 
@@ -204,7 +203,6 @@ dl#roles dt {
     max-width: 800px;
     margin: auto;
 }
-
 
 .flip-card-back h3 {
     font-weight: 700;
@@ -246,12 +244,11 @@ dd .role-info-label {
 /* ================================================== */
 
 /* #region HOME PAGE WHY */
-
 div#why {
     break-inside: avoid;
 }
 
-div#why>div {
+div#why > div {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
@@ -345,7 +342,6 @@ ul#recipe-list .recipe a {
 #page-changer {
     display: none;
 }
-
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
@@ -403,7 +399,6 @@ ul#ingredient-list li {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
 
 ol li.prep-li {
     padding-left: .5rem;
@@ -613,6 +608,7 @@ a#log-out {
     height: 10rem;
     border-radius: var(--radius-max);
 }
+
 #recipie-request {
     display: none;
 }
@@ -668,5 +664,3 @@ footer p {
     margin: 1em 0 1em 0;
 }
 /* #endregion FOOTER */
-
-/* ================================================== */
