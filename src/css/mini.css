@@ -50,7 +50,7 @@ ul#recipe-list .recipe .catalogue-recipe-img-crop {
 
 /* #region RECIPE PAGE */
 ul#ingredient-list {
-    margin-left: 4rem;
+    padding-left: 5rem;
 }
 
 ul#ingredient-list li {

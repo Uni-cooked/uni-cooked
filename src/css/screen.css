@@ -849,7 +849,7 @@ ul#ingredient-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 4rem;
+    padding-left: 5rem;
 }
 
 ul#ingredient-list li {

@@ -18,6 +18,7 @@ Quali pagine dobbiamo trattare con print.css?
 - breadcrumb
 - focus errori
 - errore sign in in che posizione?
+- js filtro non bello
 
 * max length bio (300 char)
 * max length suggerimenti about us (500 char)
