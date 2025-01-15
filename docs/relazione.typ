@@ -181,6 +181,7 @@ TODO: DA AGGIUNGERE I CONTROLLI
   - Registrazione
   - Modifica profilo utente
   - Offline
+- Creazione dello stile di stampa.
 - Creazione della funzionalità di ricerca delle ricette.
 
 *Matteo Schievano*

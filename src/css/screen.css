@@ -467,19 +467,19 @@ dl#roles dt {
 }
 
 dl#roles dt#fuorisede {
-    background-image: url("../asset/img/blur/fuorisede.jpg");
+    background-image: url("../asset/img/fuorisede.jpg");
 }
 
 dl#roles dt#pendolare {
-    background-image: url("../asset/img/blur/pendolare.jpg");
+    background-image: url("../asset/img/pendolare.jpg");
 }
 
 dl#roles dt#sede {
-    background-image: url("../asset/img/blur/in-sede.jpg");
+    background-image: url("../asset/img/in-sede.jpg");
 }
 
 dl#roles dt#dad {
-    background-image: url("../asset/img/blur/dad.jpg");
+    background-image: url("../asset/img/dad.jpg");
 }
 
 dl#roles dd {
