@@ -86,7 +86,7 @@ INSERT INTO Ingrediente VALUES ("rametto di rosmarino");
 INSERT INTO Ingrediente VALUES ("pecorino");
 INSERT INTO Ingrediente VALUES ("prezzemolo");
 INSERT INTO Ingrediente VALUES ("patate");
-INSERT INTO Ingrediente VALUES ("confezione noodles");
+INSERT INTO Ingrediente VALUES ("noodles_EN");
 INSERT INTO Ingrediente VALUES ("limone");
 INSERT INTO Ingrediente VALUES ("aglio");
 INSERT INTO Ingrediente VALUES ("tonno");
@@ -150,9 +150,9 @@ INSERT INTO Ricetta VALUES ("Pasta zucchine e gamberetti", "in_sede", "primo", 3
 INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 7, "Un piatto gustoso e bilanciato che unisce la cremosità delle zucchine con la delicatezza del salmone. Perfetto per chi cerca un pasto nutriente e saporito, questa combinazione di ingredienti offre un tocco di freschezza e raffinatezza. Le zucchine unite al salmone creano un mix di sapori che si fondono ad ogni boccone. Ideale per un pranzo leggero o per una cena veloce ma senza risparmiare sul gusto.", "2025-01-01", "./asset/img/recipe/in-sede/pasta-zucchine-salmone.jpg");
 
 -- DAD
-INSERT INTO Ricetta VALUES ("Arista di maiale", "dad", "secondo", 70, 10, "Un ottimo secondo piatto ricco di ciccia che in cottura sfrigola e regala un sapore davvero delizioso. Si può cucinare sia in forno che allo spiedo, o addirittura stracotta in casseruola", "2025-01-15", "./asset/img/recipe/dad/arista-di-maiale.jpg");
+INSERT INTO Ricetta VALUES ("Arista di maiale", "dad", "secondo", 70, 10, "Un ottimo secondo piatto ricco di ciccia che in cottura sfrigola e regala un sapore davvero delizioso. Si può cucinare sia in forno che allo spiedo, o addirittura stracotta in casseruola.", "2025-01-15", "./asset/img/recipe/dad/arista-di-maiale.jpg");
 INSERT INTO Ricetta VALUES ("Frittata di patate e cipolla", "secondo", 25, 5, "Si ha un piatto completo quando le uova incontrano le patate e le cipolle. Un piatto che si adatta a qualsiasi stagione e occasione.", "2025-01-15", "./asset/img/recipe/dad/frittata-patate-cipolla.jpg");
-INSERT INTO Ricetta VALUES ("Noodles con i gamberetti", "dad", "primo", 20, 5, "I noodles con gamberetti sono un buonissimo primo piatto in cui gli spaghetti orientali sono protagonisti insieme a pochi altri ingredienti.", "2025-01-15", "./asset/img/recipe/dad/noodles-gamberetti.jpg");
+INSERT INTO Ricetta VALUES ("Noodles_EN con i gamberetti", "dad", "primo", 20, 5, "I noodles_EN con gamberetti sono un buonissimo primo piatto in cui gli spaghetti orientali sono protagonisti insieme a pochi altri ingredienti.", "2025-01-15", "./asset/img/recipe/dad/noodles-gamberetti.jpg");
 INSERT INTO Ricetta VALUES ("Pasta caciotta e tonno in crema di peperoni", "dad", "primo", 35, 8, "La pasta con crema di peperoni, caciotta e tonno è un primo piatto davvero squisito. Colorato e semplice da preparare, piacerà a tutti.", "2025-01-15", "./asset/img/recipe/dad/pasta-caciotta-tonno-cremapeperoni.jpg");
 INSERT INTO Ricetta VALUES ("Scaloppina al limone", "dad", "secondo", 25, 9, "La scaloppina al limone è una ricetta semplice e veloce da preparare, ma allo stesso tempo raffinata e gustosa. La delicatezza della carne si sposa perfettamente con l'acidità del limone, creando un mix di sapori davvero irresistibile.", "2025-01-15", "./asset/img/recipe/dad/scaloppina-limone.jpg");
 -- PREFERENZA RICETTA ====================================
@@ -308,17 +308,17 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "sale fino"
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta zucchine e salmone", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
 -- DAD
-INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "cipolla", FALSE, 1, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "carote", FALSE, 2, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "costa di sedano", FALSE, 1, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "cipolla", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "carote", FALSE, 2, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "costa di sedano", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "vino bianco da cucina", FALSE, 40, "ml", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "acqua", FALSE, 120, "ml", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "rametto di rosmarino", FALSE, 1, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Arista di maiale", "rametto di rosmarino", FALSE, 1, "num_el", NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "cipolla", FALSE, 1, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "uova", FALSE, 3, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "cipolla", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "uova", FALSE, 3, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "pecorino", FALSE, 30, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "patate", FALSE, 200, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "sale fino", TRUE, NULL, NULL, NULL);
@@ -326,27 +326,27 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "olio d'
 INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "pepe", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Frittata di patate e cipolla", "prezzemolo", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "confezione noodles", FALSE, 1, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "gamberetti", FALSE, 100, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "olio d'oliva", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "pepe", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Noodles con i gamberetti", "limone", FALSE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "noodles_EN", FALSE, 1, "num_el", "in confezione");
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "gamberetti", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "olio d'oliva", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "limone", FALSE, 1, "num_el", NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "pasta", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "tonno", FALSE, 35, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "peperoni dolci", FALSE, 125, "g", "peperoni rossi o gialli");
-INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "caciotta", FALSE,150, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "peperoni dolci", FALSE, 125, "g", "rossi o gialli");
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "caciotta", FALSE, 150, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "sale fino", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "olio d'oliva", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "pepe", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "fesa di vitello", FALSE, 120, "g", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "farina 00", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", FALSE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
@@ -521,19 +521,19 @@ INSERT INTO Preparazione VALUES ("Frittata di patate e cipolla", 7, "Versa il co
 INSERT INTO Preparazione VALUES ("Frittata di patate e cipolla", 8, "Poggia un piatto sopra la padella e capovolgi il contenuto, rimetti la padella sul fuoco per cuocere per 2-3 minuti il lato opposto.");
 INSERT INTO Preparazione VALUES ("Frittata di patate e cipolla", 9, "Togli dal fuoco, magna e tasi.");
 
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 1, "Metti in una padella un po' d'olio, i gamberetti e falli saltare su fiamma vivace.");
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 2, "Quando mancano 5 minuti alla cottura dei gamberitti metti a bollire dell'acqua a fuoco alto.");
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 3, "Apri il coperchio dei noodles e versaci dentro l'acqua.");
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 4, "Chiudere il coperchio e attendere 3-4 minuti.");
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 5, "Regola di sale, pepe e limone i gamberetti.");
-INSERT INTO Preparazione VALUES("Noodles con i gamberetti", 6, "Solleva il coperchio dei noodles e buttali in padella con i gamberetti, poi impiatta.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 1, "Metti in una padella un po' d'olio, i gamberetti e falli saltare su fiamma vivace.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 2, "Quando mancano 5 minuti alla cottura dei gamberitti metti a bollire dell'acqua a fuoco alto.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 3, "Apri il coperchio dei noodles_EN e versaci dentro l'acqua.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 4, "Chiudere il coperchio e attendere 3-4 minuti.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 5, "Regola di sale, pepe e limone i gamberetti.");
+INSERT INTO Preparazione VALUES("Noodles_EN con i gamberetti", 6, "Solleva il coperchio dei noodles_EN e buttali in padella con i gamberetti, poi impiatta.");
 
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 1, "Mondare il peperone eliminando la calotta, i semi e i filamenti interni, infine tagliare il peperone in pezzetti.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 2, "Mettere sul fuoco una pentola con acqua salata (servirà per la cottura della pasta).");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 3, "Versare un po' d'olio in una padella, aggiungere lo spicchio d'aglio schiacciato e lasciare rosolare per circa 2 minuti.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 4, "Aggiungere i pezzi di peperone e lasciate cuocere per circa 10 minuti.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 5, "Quando l'acqua bolle buttare la pasta.");
-INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 6, "Togliere l'aglio dalla padella e trasferire i peperoni in un bicchiere aggiungendoci circa 10 g di olio EVO. Frullare il tutto fino ad ottenere una crema.");
+INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 6, "Togliere l'aglio dalla padella e trasferire i peperoni in un bicchiere aggiungendoci circa 10 grammi di olio. Frullare il tutto fino ad ottenere una crema.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 7, "Scolare la pasta, metterla in un piatto, versare la crema di peperoni e mescolare.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 8, "Sgocciolare il tonno e unirlo alla pasta.");
 INSERT INTO Preparazione VALUES ("Pasta caciotta e tonno in crema di peperoni", 9, "Grattuggiare la caciotta sulla pasta.");

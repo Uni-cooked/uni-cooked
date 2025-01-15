@@ -14,7 +14,7 @@ Il progetto consiste in un sito web che tratta un ricettario dedicato per univer
 
 Ogni ricetta è abbinata a una categoria considerando la stima del costo, la difficoltà e il tempo di preparazione. Può essere valutata dagli utenti in una modalità simile da una prova d'esame: viene assegnata un voto da 1 a 30 e un commento che motiva la valutazione.
 
-Ogni utente registrato possiede un proprio profilo con dei dati che può personalizzare. Le ricette salvate come preferite saranno visibili nella pagina profilo.
+Ogni utente registrato possiede un proprio profilo con dei dati che può personalizzare. Le ricette salvate come preferite sono visibili nella pagina profilo.
 
 Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito. Questo messaggio viene salvato nel database e in uno scenario più ampio del progetto verrebbe inviata una notifica ai proprietari del sito.
 
@@ -23,13 +23,10 @@ Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un 
 == Tipologie di utente
 Sono state individuate due tipologie di utente:
 - *Utente non autenticato* è l'utente che non ha eseguito l'accesso al sistema. Può navigare nel sito, usufruire delle funzionalità di ricerca delle ricette e inviare dei suggerimenti dalla pagina dei contatti.
-- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). In aggiunta all'utente non autenticato è accompagnato da una esperienza personalizzata nella ricerca; viene cioè applicato in automatico il filtro per la categoria dell'utente se questo accede al catalogo in modo da invitarlo con ricette maggiormente pertinenti. Può inoltre assegnare le valutazioni alle ricette (una per ricetta) e salvare le ricette tra i preferiti.
+- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). In aggiunta all'utente non autenticato è accompagnato da una esperienza personalizzata nella ricerca: a parità di valutazione viene visualizzata prima la ricetta che appartiene alla categoria dell'utente così da invogliarlo con piatti pensati per le sue esigenze. Può inoltre assegnare le valutazioni (una per ricetta) e salvare le ricette tra i preferiti.
 
 == Esigenze dell'utenza
 TODO: Metafora della pesca ???
-
-== Personalizzazione per l'utente
-TODO: COSA ABBIAMO PENSATO PER PERSONALIZZARE LA UX
 
 = Progettazione
 
