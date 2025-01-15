@@ -187,9 +187,6 @@ nav#quick-role {
 
 /* #region HOME PAGE CONTENT */
 
-dl#roles {
-    break-inside: avoid;
-}
 
 dl#roles dt {
     color: var(--accent-quaternary);
@@ -221,6 +218,10 @@ dl#roles dt {
 
 dl#roles dd:not(:last-child) {
     margin-bottom: 4rem;
+}
+
+dl#roles dd:first-of-type{
+    margin-bottom: 20rem;
 }
 
 dl p {
@@ -512,7 +513,6 @@ button#del-comment {
 }
 
 #fav-recipe-list-container {
-    break-inside: avoid;
     border-top: 3px solid var(--accent);
     border-bottom: 3px solid var(--accent);
 }
@@ -532,6 +532,7 @@ button#del-comment {
 }
 
 #fav-recipe-list .fav-recipe {
+    break-inside: avoid;
     background-color: var(--accent-secondary);
     border: 5px var(--accent-secondary) solid;
     color: white;

@@ -1,6 +1,6 @@
 <?php
 
-require_once "utility-methods.php";
+require_once "utils/utility-methods.php";
 use DB\DB;
 
 $username="";
