@@ -1,19 +1,27 @@
 function FilterForm(){
     let form = document.getElementById("search-fields");
-    form.addEventListener("submit", () => {
-        UpdateRangeCosto();
-        UpdateRangeVoto();
-    })
+    let vote = document.getElementById("min-rate-filter").value;
+    let cost =  document.getElementById("max-price-filter").value;
+    form.addEventListener("submit", () => { 
+        localStorage.setItem(vote , document.getElementById("min-rate-filter").value);
+        localStorage.setItem(cost , document.getElementById("max-price-filter").value);
+    });
+    document.getElementById("min-rate-filter").value = localStorage.getItem(vote); 
+    document.getElementById("max-price-filter").value = localStorage.getItem(cost);
+    document.getElementById("rate").innerText = localStorage.getItem(vote) + " / 30";
+    document.getElementById("price").innerText = localStorage.getItem(cost) + " €";
 }
 
 function UpdateRangeVoto(){
     const rangeVoto = document.forms["search-fields"]["min-rate-filter"].value;
     document.getElementById("rate").innerText = rangeVoto + " / 30";
+    return rangeVoto;
 }
 
 function UpdateRangeCosto(){
     const rangeCosto = document.forms["search-fields"]["max-price-filter"].value;
     document.getElementById("price").innerText = rangeCosto + " €";
+    return rangeCosto;
 }
 
 const filters = {
