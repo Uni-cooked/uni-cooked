@@ -21,10 +21,10 @@ if (isset($_POST['submit'])) {
     $errorFound=false;
     $username=$_POST["nome"];
     //CONTROLLO USERNAME
-    if (strlen($username)==0) {
+    if (mb_strlen($username)==0) {
         $paginaHtml = str_replace("{{messaggio di nome}}",'<p role="alert" class="err-msg">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
         $errorFound=true;
-    } elseif (strlen($username)>15) {
+    } elseif (mb_strlen($username)>15) {
         $paginaHtml = str_replace("{{messaggio di nome}}",'<p role="alert" class="err-msg">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 
     //CONTROLLO EMAIL
     $email=$_POST['email'];
-    if (strlen($email)==0) {
+    if (mb_strlen($email)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di email}}",'<p role="alert" class="err-msg">L\'<span lang="en">email</span> è un campo obbligatorio</p>',$paginaHtml);
     }
@@ -82,11 +82,11 @@ if (isset($_POST['submit'])) {
 
     //CONTROLLO PSW
     $psw=$_POST['psw'];
-    if (strlen($psw)==0) {
+    if (mb_strlen($psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}",'<p role="alert" class="err-msg">La <span lang="en">password</span> è un campo obbligatorio</p>',$paginaHtml);
-    } elseif (strlen($psw)<4) {
+    } elseif (mb_strlen($psw)<4) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}",'<p role="alert" class="err-msg">La <span lang="en">password</span> deve essere lunga almeno 4 caratteri</p>',$paginaHtml);

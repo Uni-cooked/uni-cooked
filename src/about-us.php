@@ -46,7 +46,7 @@ if(!isset($_POST["suggestion"])) {
     $proposta=DB::pulisciNote($_POST["proposta"]);
     unset($_POST["proposta"]);
 
-    if(strlen($proposta)<20 || strlen($proposta)>500) {
+    if(mb_strlen($proposta)<20 || mb_strlen($proposta)>500) {
         $_SESSION["suggestionError"]='<p role="alert" class="err-msg">Il suggerimento deve essere più lungo di 20 caratteri e minore di 500</p>';
         header('Location: about-us.php');
         exit();
