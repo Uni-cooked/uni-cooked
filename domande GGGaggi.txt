@@ -3,6 +3,5 @@ TOGLIERE QUANDO SONO RISOLTI
 burger -> gaggi
 abbr DAD -> gaggi
 breadcrumb ricetta dinamica da chad
-desc + keyword pagine stupide
 js slider
 mettere strong dove serve
