@@ -127,7 +127,7 @@ if(!isset($_GET["username"])) {
         $paginaHtml=str_replace("{{data-attr}}",$userInfo["data_iscrizione"],$paginaHtml);
         $paginaHtml=str_replace("{{categoria}}",str_replace("_"," ",strtoupper($userInfo["tipo_studente"])),$paginaHtml);
         if ($userInfo["biografia"]) {
-            $paginaHtml=str_replace("{{biografia}}",ucfirst($db->nl2p($userInfo["biografia"])),$paginaHtml);
+            $paginaHtml=str_replace("{{biografia}}",ucfirst($userInfo["biografia"]),$paginaHtml);
         } else {
             $paginaHtml=str_replace("{{biografia}}",$username." non ha impostato una biografia.",$paginaHtml);
         }

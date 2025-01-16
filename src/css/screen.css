@@ -465,8 +465,6 @@ dl#roles dt {
     background-position: center;
     background-attachment: fixed;
 
-    margin-bottom: 1.5rem;
-
     border-top: 5px solid var(--accent-secondary);
     border-bottom: 5px solid var(--accent-secondary);
 }
