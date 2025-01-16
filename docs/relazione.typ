@@ -210,3 +210,18 @@ Tutti i componenti hanno contribuito a popolare il database in modo equilibrato.
 #v(100pt)
 = NB nelle pagina
 
+ricette
+- algo per ricerca
+- link ricette diversi
+
+ricetta
+- breadcrumb dinamica
+- carica altro
+
+contatti
+- suggerimento manda mail
+
+user
+- carica altro
+- cambio mail non si può
+- link ricette diversi

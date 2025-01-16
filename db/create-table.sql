@@ -73,8 +73,8 @@ CREATE TABLE Valutazione(
 );
 
 CREATE TABLE Suggerimento(
-    utente VARCHAR(15),
     id int NOT NULL AUTO_INCREMENT,
+    utente VARCHAR(15),
     data DATE,
     testo VARCHAR(500) NOT NULL,
     PRIMARY KEY (id),

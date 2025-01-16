@@ -1,8 +1,12 @@
-TOGLIERE QUANDO SONO RISOLTI
+===========================================================
+= TOGLIERE QUANDO SONO RISOLTI
+===========================================================
 
 burger -> gaggi
 abbr DAD -> gaggi
 breadcrumb ricetta dinamica da chad
 js slider
+js suggerimenti off focus non onchange
 mettere strong dove serve
-titoli su img in index
+titoli su img in index (ha senso blur? header?)
+img contatti se non sono loggato
