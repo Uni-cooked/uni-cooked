@@ -51,6 +51,9 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input 
 TEO CONTROLLA !!!!!!! \
 Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
 
+== Emotional design
+Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un approccio molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine. 
+
 = Accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
 - Aggiunto la breadcrumb in ogni pagina.
@@ -63,7 +66,6 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - ALTRO ????
 
 = Controlli sul sito
-
 TODO: DIRE QUALI STRUMENTI SONO STATI UTILIZZATI
 
 == Accessibilità
@@ -105,6 +107,9 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 - `HTML5` e `CSS` validi.
 - Tutte le funzionalità del sito sono valide senza `JavaScript`.
 
+== Falsi positivi
+TODO: TANTI
+
 = Struttura gerarchica
 La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
 
@@ -116,6 +121,7 @@ La struttura gerarchica del sito presenta un albero ampio e poco profondo per ag
   - Contatti
   - Profilo utente
     - Modifica profilo utente
+    - Ricetta (preferita)
   - Accedi
     - Registrati
 ]
@@ -192,3 +198,15 @@ TODO: DA AGGIUNGERE I CONTROLLI
 - Creazione del comportamento lato client.
 
 Tutti i componenti hanno contribuito a popolare il database in modo equilibrato.
+
+
+
+
+
+
+
+
+
+#v(100pt)
+= NB nelle pagina
+
