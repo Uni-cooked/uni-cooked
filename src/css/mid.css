@@ -53,7 +53,6 @@ nav#list-help {
     display: flex;
     justify-content: space-between;
     background-color: var(--accent-secondary);
-    transition: background-color var(--animation-dropdown-timing);
     width: 100%;
     z-index: 1;
 }

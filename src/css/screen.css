@@ -859,7 +859,6 @@ ul#ingredient-list li {
     margin-bottom: 1em;
 }
 
-
 ol li.prep-li {
     padding-left: .5rem;
     /* to avoid numbers overflow to the left */
@@ -1056,6 +1055,10 @@ ul.suggestion {
 #login-date {
     display: block;
     color: var(--accent);
+}
+
+#user-bio {
+    white-space: pre-wrap;
 }
 
 #fav-recipe-list-container {
