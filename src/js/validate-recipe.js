@@ -4,7 +4,7 @@ function validateReview(){
     form.addEventListener("submit", (e) => {
         if(!validateCommento()){
             e.preventDefault();
-            document.getElementsByName("submit-add-review").classList.add("gray-btn");
+            document.getElementsByName("submit-add-review").classList.add("disabled-btn");
             document.getElementsByName("submit-add-review").disabled = true;
         }
     })
@@ -41,7 +41,7 @@ function validateCommento(){
     const check = document.getElementById("err-comment");
     eliminateError(check);
     document.getElementById("submit-add-review").disabled = false;
-    document.getElementById("submit-add-review").classList.remove("gray-btn");
+    document.getElementById("submit-add-review").classList.remove("disabled-btn");
     return true;
 }
 

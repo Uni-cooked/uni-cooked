@@ -3,7 +3,7 @@ function validateFormRequest(){
     form.addEventListener("submit", (e) => {
         if(!validateRequest()){
             e.preventDefault();
-            document.getElementById("confirm").classList.add("gray-btn");
+            document.getElementById("confirm").classList.add("disabled-btn");
             document.getElementById("confirm").disabled = true;
         }
     });
@@ -40,7 +40,7 @@ function validateRequest(){
     var check = document.getElementById("err-request");
     if(check) check.remove();
     document.getElementById("confirm").disabled = false;
-    document.getElementById("confirm").classList.remove("gray-btn");
+    document.getElementById("confirm").classList.remove("disabled-btn");
     return true;
 }
 

@@ -5,7 +5,7 @@ function validateUserSignup() {
 	form.addEventListener("submit", function (event) {
 		if (! (validateNewUsername() && validateStudent() && validateEmail() && validatePassword() && validatePasswordConfirm()) ) {
 			event.preventDefault();
-			document.getElementById("btn-register").classList.add("gray-btn");
+			document.getElementById("btn-register").classList.add("disabled-btn");
 			document.getElementById("btn-register").disabled = true;
 		}
 	});
@@ -19,7 +19,7 @@ function UltimateCheck(){
 	var errorRepeatPassword = document.getElementById("err-repeat-psw");
 	if (!(errorUsername && errorStudent && errorEmail && errorPassword && errorRepeatPassword)){
 		document.getElementById("btn-register").disabled = false;
-		document.getElementById("btn-register").classList.remove("gray-btn")
+		document.getElementById("btn-register").classList.remove("disabled-btn")
 	}
 }
 

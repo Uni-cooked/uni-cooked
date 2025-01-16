@@ -192,6 +192,11 @@ fieldset {
 .err-msg {
     color: var(--danger-button-color);
 }
+
+.disabled-btn {
+    opacity: 30%;
+}
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */

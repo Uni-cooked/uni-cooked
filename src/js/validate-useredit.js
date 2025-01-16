@@ -4,7 +4,7 @@ function validateEditForm(){
 	form.addEventListener("submit", function (event) {
 		if (!(validateEditNewUsername())){
 			event.preventDefault();
-			document.getElementById("btn-confirm").classList.add("gray-btn");
+			document.getElementById("btn-confirm").classList.add("disabled-btn");
 			document.getElementById("btn-confirm").disabled = true;
 		}
 	});
@@ -16,7 +16,7 @@ function validatePswForm(){
 	form.addEventListener("submit", function (event) {
 		if (!(validateEditPassword() && validateEditPasswordConfirm())){
 			event.preventDefault();
-			document.getElementById("second-btn-confirm").classList.add("gray-btn");
+			document.getElementById("second-btn-confirm").classList.add("disabled-btn");
 			document.getElementById("second-btn-confirm").disabled = true;
 		}
 	});
@@ -82,7 +82,7 @@ function validateEditNewUsername() {
 	}
 	var nameError = document.getElementById("err-edit-nam");
 	deleteError(nameError);
-	document.getElementById("btn-confirm").classList.remove("gray-btn");
+	document.getElementById("btn-confirm").classList.remove("disabled-btn");
 	document.getElementById("btn-confirm").disabled = false;
 	return true;
 }
@@ -91,7 +91,7 @@ function FinalCheck(){
 	var errorPassword = document.getElementById("err-new-psw");
 	var errorRepeatPassword = document.getElementById("err-repeat-new-psw");
 	if(!(errorPassword && errorRepeatPassword)){
-		document.getElementById("second-btn-confirm").classList.remove("gray-btn");
+		document.getElementById("second-btn-confirm").classList.remove("disabled-btn");
 		document.getElementById("second-btn-confirm").disabled = false;
 	}
 }
