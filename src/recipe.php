@@ -10,6 +10,13 @@ if ($isUserLogged!=false) {
     $paginaHtml=str_replace('<a href="sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
+if(isset($_SESSION["prev-page"])) {
+    $paginaHtml=str_replace("{{prev-page}}",$_SESSION["prev-page"],$paginaHtml);
+    unset($_SESSION["prev-page"]);
+} else {
+    $paginaHtml=str_replace("{{prev-page}}","<a href=\"./catalogue.php\">RICETTE</a>",$paginaHtml);
+}
+
 if(isset($_GET["recipe"])) {
     $recipe=$_GET["recipe"];
     unset($_GET["recipe"]);
