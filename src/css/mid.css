@@ -52,7 +52,7 @@ nav#list-help {
 #hamburger {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(57, 42, 36, 0.85);
+    background-color: var(--accent-secondary);
     transition: background-color var(--animation-dropdown-timing);
     width: 100%;
     z-index: 1;
@@ -83,7 +83,6 @@ nav#list-help {
         rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
         background-color var(--animation-hamburger-timing);
     background-color: var(--accent);
-    border-radius: 100rem;
 }
 
 #hamburger-label:has(input:focus-visible)::before,
@@ -140,12 +139,7 @@ nav#menu {
     translate: 0 -100%;
     padding: 0 1rem;
     background-color: var(--accent-secondary);
-    /* height: 100vh; */
-
-    /*VISTO CHE ABBIAMO POCHI LINK DIREI DI RIDURLO COME HEIGHT E CHIEDERE ALLA G SE ESISTE UN MODO PER IMPEDIRE IL TAB SUL RESTO DEI LINK
-     O DI CHIUDERLO IN AUTOMATICO QUANDO SI TABBA FUORI DAL MENU*/
     height: fit-content;
-
     width: 100vw;
 }
 
@@ -167,13 +161,8 @@ body:has(#hamburger-label input:checked) footer {
 }
 
 nav#menu ul {
-    /* height: 100%; */
-
-    /*VISTO CHE ABBIAMO POCHI LINK DIREI DI RIDURLO COME HEIGHT E CHIEDERE ALLA G SE ESISTE UN MODO PER IMPEDIRE IL TAB SUL RESTO DEI LINK
-     O DI CHIUDERLO IN AUTOMATICO QUANDO SI TABBA FUORI DAL MENU*/
     height: 40vh;
     margin-top: 3vh;
-
     flex-direction: column;
     justify-content: space-evenly;
 }

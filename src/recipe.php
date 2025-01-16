@@ -254,8 +254,8 @@ if(isset($_GET["recipe"])) {
                 }
                 $finalList.='<a href="user.php?username='.$singleComment["utente"].'">'.$singleComment["utente"]."</a>";
                 $finalList.='<p class="comment-eval">'.$singleComment["voto"].' <abbr title="su">/</abbr> 30</p>';
-                $finalList.='<p class="comment-text">'.$singleComment["commento"]."</p></li>";
-                $finalList.='<time class="comment-date" datetime="'.$singleComment["data"].'">'.date("d/m/Y",strtotime($singleComment["data"]))."</time>";
+                $finalList.='<p class="comment-text">'.$singleComment["commento"]."</p>";
+                $finalList.='<time class="comment-date" datetime="'.$singleComment["data"].'">'.date("d/m/Y",strtotime($singleComment["data"]))."</time></li>";
                 $commentNumber=$commentNumber+1;
             }
         }

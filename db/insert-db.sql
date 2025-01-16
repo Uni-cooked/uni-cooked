@@ -26,7 +26,7 @@ INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40
 INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", "user_profiles/MasterMaurizio/MasterMaurizio.png");
 INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", "user_profiles/Jay/Jay.png");
 INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", "user_profiles/Murphy/Murphy.png");
-INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare e giudicare le persone che non sono al mio livello.", "in_sede", "user_profiles/Oca/Oca.png");
+INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare!", "in_sede", "user_profiles/Oca/Oca.png");
 INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
@@ -132,12 +132,14 @@ INSERT INTO Ricetta VALUES ("Pasta al pesto", "fuorisede", "primo", 10, 5,
  "2025-01-09", "./asset/img/recipe/fuorisede/pesto.jpg");
 
 -- PENDOLARE
-INSERT INTO Ricetta VALUES ("Insalata pigra", "pendolare", "secondo", 5, 3, "Hai dormito 5 ore per finire di studiare e, tornando dall'università, non hai voglia di prepararti da mangiare? Suvvia, non trascurare il pranzo, fatti un'insalata.", "2025-01-01", "./asset/img/recipe/pendolare/insalata-pigra.jpg");
-INSERT INTO Ricetta VALUES ("Tramezzini prosciutto e maionese", "pendolare", "secondo", 5, 3, "TEOOOOOO", "2025-01-01", "./asset/img/recipe/pendolare/tramezzini.jpg");
-INSERT INTO Ricetta VALUES ("Caprese", "pendolare", "secondo", 5, 5, "Piatto semplice, utile per giornate mhe.", "2025-01-01", "./asset/img/recipe/pendolare/caprese.jpg");
-INSERT INTO Ricetta VALUES ("Cotoletta", "pendolare", "secondo", 10, 5, "Secondo veloce da preparare, muoviti che poi devi studiare!", "2025-01-01", "./asset/img/recipe/pendolare/cotoletta.jpg");
-INSERT INTO Ricetta VALUES ("Hamburger_EN", "pendolare", "secondo", 20, 7, "Vi sentite un po' premium: questa ricetta è il massimo che un pendolare possa realizzare, il treno purtroppo non si lascia aspettare.", "2025-01-01", "./asset/img/recipe/pendolare/hamburger.jpg");
-INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "Ci risiamo, anche quest'anno la segreteria ha ben deciso di piazzare le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30. Non preoccuparti, nemmeno noi vogliamo andare in mensa, per questo ti diciamo come sopravvivere a pranzo.", "2025-01-01", "./asset/img/recipe/pendolare/panino.jpg");
+INSERT INTO Ricetta VALUES ("Insalata veloce", "pendolare", "secondo", 5, 3, "Com'è dura la vita del pendolare: vai a lezione, torni a casa dopo l'ennesimo ritardo dei treni, pranzi, studi e vai a riscuotere le tue cinque ore di sonno guadagnate. Al mattino però ti ricordi che avrai lezione anche al pomeriggio e che la sera prima dovevi prepararti il pranzo: cosa puoi fare? Non preoccuparti, con la nostra \"Insalata veloce\" anche il più fiero degli studenti in sede sarà invidioso della semplicità e gustosità che l'insalata unita al succoso pomodoro sa dare!", "2025-01-01", "./asset/img/recipe/pendolare/insalata-veloce.jpg");
+INSERT INTO Ricetta VALUES ("Tramezzini prosciutto e maionese", "pendolare", "secondo", 5, 6, "Stai per arrivare a casa dall'Università in (ovviamente) ritardo causa treno? Vuoi però consolarti preparandoti un buon pranzetto? UNI <span lang=\"en\">COOKED</span> ha quello che fa per te? Prepara i nostri fantastici Tramezzini prosciutto e maionese e vedrai che sarai stupito dalla loro bontà!", "2025-01-01", "./asset/img/recipe/pendolare/tramezzini.jpg");
+INSERT INTO Ricetta VALUES ("Caprese", "pendolare", "secondo", 5, 5, "La Caprese, il tipico piatto semplice negli ingredienti ma ricco nel gusto... Rendi invidiosi i tuoi amici che abitano in sede e sono impegnati nella preparazione di complessi piatti a loro detta sopraffini con la rapidità e la gustosità che solo la Caprese può offrire. Adatta ad ogni occasione, prepara pomodori, mozzarelle e origano: è ora di mettere alla prova il cuoco che è in te!", "2025-01-01", "./asset/img/recipe/pendolare/caprese.jpg");
+INSERT INTO Ricetta VALUES ("Cotoletta", "pendolare", "secondo", 10, 5, "Ti stai preparando per la sessione e devi studiare anche la sera? Cerchi un piatto facile da preparare e che sia pronto in fretta? Non temere, la tua ricerca è terminata: ti presentiamo il miglior amico delle cene veloci, la Cotoletta! Un piatto semplice e veloce che saprà stupirti per la sua gustosità, specie se accompagnato da pomodorini di contorno... Ai fornelli!", "2025-01-01", "./asset/img/recipe/pendolare/cotoletta.jpg");
+INSERT INTO Ricetta VALUES ("Hamburger_EN", "pendolare", "secondo", 15, 7, "Sei alla ricerca di una ricetta per festeggiare l'esito di un esame appena ricevuto? Stavi cercando di prendere qualcosa a domicilio ma ti sei ricordato che tra due ore hai un treno da prendere? Non preoccuparti, ci siamo qua noi! Ti presentiamo la ricetta perfetta per i pendolari che hanno voglia di festeggiare: l'<span lang=\"en\">Hamburger</span>: vedrai che esplosione di sapore con la nostra ricetta!", "2025-01-01", "./asset/img/recipe/pendolare/hamburger.jpg");
+INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "
+Ci risiamo, anche quest'anno la segreteria ha deciso di mettere le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30...
+Non preoccuparti, non sei costretto ad andare in mensa: segui questi passaggi per realizzare un ottimo panino con prosciutto e pomodoro! Vedrai che ti saprà dare le giuste energie per arrivare alla seconda lezione con il suo gusto sopraffino!", "2025-01-01", "./asset/img/recipe/pendolare/panino.jpg");
 
 -- IN SEDE
 INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry_EN e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "./asset/img/recipe/in-sede/pollo-curry.jpg");
@@ -157,7 +159,7 @@ INSERT INTO Ricetta VALUES ("Pasta caciotta e tonno in crema di peperoni", "dad"
 INSERT INTO Ricetta VALUES ("Scaloppina al limone", "dad", "secondo", 25, 9, "La scaloppina al limone è una ricetta semplice e veloce da preparare, ma allo stesso tempo raffinata e gustosa. La delicatezza della carne si sposa perfettamente con l'acidità del limone, creando un mix di sapori davvero irresistibile.", "2025-01-15", "./asset/img/recipe/dad/scaloppina-limone.jpg");
 -- PREFERENZA RICETTA ====================================
 
-INSERT INTO Preferenza_Ricetta VALUES ("Insalata pigra", "GGGaggi");
+INSERT INTO Preferenza_Ricetta VALUES ("Insalata veloce", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Tramezzini prosciutto e maionese", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Caprese", "GGGaggi");
 INSERT INTO Preferenza_Ricetta VALUES ("Cotoletta", "GGGaggi");
@@ -220,10 +222,10 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta al pesto", "pasta", FALSE, 100, 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta al pesto", "pesto", FALSE, 60, "g", "preferibilmente gia` pronto");
 
 -- PENDOLARE
-INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "cespo di insalata", FALSE, 1, "num_el", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "pomodori da insalata", FALSE, 1, "num_el", "quelli grande");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "olio d'oliva", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata pigra", "sale fino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata veloce", "cespo di insalata", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata veloce", "pomodori da insalata", FALSE, 1, "num_el", "quelli grande");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata veloce", "olio d'oliva", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Insalata veloce", "sale fino", TRUE, NULL, NULL, NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Tramezzini prosciutto e maionese", "pane in cassetta", FALSE, 1, "num_el", "morbido da tramezzino");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Tramezzini prosciutto e maionese", "prosciutto cotto", FALSE, 120, "g", NULL);
@@ -334,6 +336,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "pepe", T
 INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "limone", FALSE, 1, "num_el", NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "pasta", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "tonno", FALSE, 35, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "peperoni dolci", FALSE, 125, "g", "rossi o gialli");
@@ -344,7 +347,10 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di pepe
 
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "fesa di vitello", FALSE, 120, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "farina 00", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "sale grosso", TRUE, NULL, NULL, NULL);
@@ -406,51 +412,53 @@ INSERT INTO Preparazione VALUES ("Pasta al pesto", 3, "Una volta che la pasta é
 INSERT INTO Preparazione VALUES ("Pasta al pesto", 4, "Apri il barattolo contenente e condisci la tua pasta prendendo 2/3 cucchiaiate di sugo al pesto.");
 
 -- PENDOLARE
-INSERT INTO Preparazione VALUES ("Insalata pigra", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo: in Internet ci sono molte life_EN hacks_EN a riguardo ;) )");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 2, "Dal reparto “cose che non credo di aver mai usato” prendi la centrifuga di insalata e mettila vicino al lavello, ci servirà in un attimo");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 3, "Blocca il lavello con il tappo e fallo riempire un poco d'acqua. Poni quindi le foglie nell'acqua e inizia a pulirle, eventualmente aiutandoti anche con l'acqua corrente se necessario. Lavata una foglia, ponila dentro la centrifuga");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 4, "Una volta lavate tutte le foglie svuota il lavello, quindi chiudi la centrifuga con il suo coperchio e, raccolte le poche forze che ti sono rimaste, aziona la centrifuga controllando periodicamente se le foglie sono asciutte ed eventualmente buttando via l'acqua in eccesso. Un buon indicatore è controllare quanta acqua si sia depositata nella centrifuga di volta in volta ;)");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 5, "Prendi una terrina per insalata e ponici le foglie lavate ed asciugate. Mettila da parte, la riprenderemo tra poco");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 6, "Prendi il pomodoro e puliscilo sotto l'acqua corrente. Fatto questo cerca un tagliere e un coltello, quindi poggia il pomodoro sul tagliere");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 7, "Affetta tutto il pomodoro cercando di non realizzare fette eccessivamente spesse");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 8, "Taglia le fette in pezzetti più piccoli, quindi versali nella terrina dove hai posto l'insalata");
-INSERT INTO Preparazione VALUES ("Insalata pigra", 9, "Condisci con olio d'oliva e sale e voilà_FR: il pranzo è servito");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo).");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 2, "Dal reparto “cose che non credo di aver mai usato”, prendi la centrifuga di insalata e mettila vicino al lavello: ci servirà tra un attimo.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 3, "Blocca il lavello con il tappo e lascialo riempire un poco di acqua. Poni quindi le foglie di insalata nell’acqua e inizia a pulirle. Lavata una foglia, ponila dentro la centrifuga.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 4, "Una volta lavate tutte le foglie svuota il lavello, quindi chiudi la centrifuga con il suo coperchio e azionala. Controlla periodicamente se le foglie sono asciutte e svuota l’acqua che si accumula.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 5, "Prendi il tuo box pranzo e ponici le foglie lavate ed asciugate. Metti il tutto da parte, lo riprenderemo tra poco!");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 6, "Prendi il pomodoro e puliscilo sotto l’acqua corrente. Fatto questo, cerca un tagliere e un coltello: poggia dunque il pomodoro sul tagliere.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 7, "Affetta tutto il pomodoro cercando di non realizzare fette eccessivamente spesse.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 8, "Taglia le fette di pomodoro in pezzetti più piccoli, quindi versali nel box pranzo assieme all'insalata.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 9, "Condisci con olio e sale: il pranzo è servito.");
 
-INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 1, "Prendi una fetta di pane e tagliala a metà in senso obliquo");
-INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 2, "Spalma un po' di maionese su entrambe le fette di pane");
-INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 3, "Prendi il prosciutto e mettilo su una fetta di pane");
+INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 1, "Prendi una fetta di pane e tagliala a metà in senso obliquo.");
+INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 2, "Spalma un po' di maionese su entrambe le fette di pane.");
+INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 3, "Prendi il prosciutto e mettilo su una fetta di pane.");
 INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 4, "Prendi di nuovo la maionese e spalmala sopra il prosciutto");
-INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 5, "Posiziona la fetta di pane senza prosciutto sopra l'altra fetta");
+INSERT INTO Preparazione VALUES ("Tramezzini prosciutto e maionese", 5, "Posiziona la fetta di pane senza prosciutto sopra l'altra fetta.");
 
-INSERT INTO Preparazione VALUES ("Caprese", 1, "Prendi i due pomodori e lavali bene sotto l'acqua corrente per togliere eventuali pesticidi presenti sulla superficie");
-INSERT INTO Preparazione VALUES ("Caprese", 2, "Dall'angolo cose da non toccare, prendi un tagliere e un coltello dalla lama non arrotondata. Prendi i due pomodori e tagliali a fette: non devono essere né troppo grandi, né troppo fine: il giusto insomma");
-INSERT INTO Preparazione VALUES ("Caprese", 3, "Prendi un piatto e poggia sopra le fette di pomodoro avendo cura di non sovrapporle");
-INSERT INTO Preparazione VALUES ("Caprese", 4, "Prendi una mozzarella e, avendo cura di porti sopra il lavello per evitare di dover poi pulire per terra, apri la confezione aiutandoti con l'utilizzo di una forbice o di un coltello, avendo cura di non tagliarti le dita (hai una laurea da prendere, ricordalo...)");
-INSERT INTO Preparazione VALUES ("Caprese", 5, "Dopo aver sgocciolato la mozzarella, ponila sopra il tagliere e tagliala a fette anche queste non troppo spesse");
-INSERT INTO Preparazione VALUES ("Caprese", 6, "Poni ciascuna fetta di mozzarella sopra ad una fetta di pomodoro");
-INSERT INTO Preparazione VALUES ("Caprese", 7, "Fai lo stesso con la seconda mozzarella");
-INSERT INTO Preparazione VALUES ("Caprese", 8, "Prendi l'origano e spargilo sopra il piatto: complimenti, la tua caprese è pronta da gustare. Stappa una bottiglia di aranciata e buon appetito!");
+INSERT INTO Preparazione VALUES ("Caprese", 1, "Prendi i due pomodori e lavali bene sotto l'acqua corrente per togliere eventuali pesticidi presenti sulla superficie.");
+INSERT INTO Preparazione VALUES ("Caprese", 2, "Dall'angolo \"cose da non toccare\", prendi un tagliere e un coltello dalla lama non arrotondata. Prendi i due pomodori e tagliali a fette: non devono essere né troppo grandi, né troppo fine, il giusto insomma.");
+INSERT INTO Preparazione VALUES ("Caprese", 3, "Prendi un piatto e poggiaci sopra le fette di pomodoro avendo cura di non sovrapporle.");
+INSERT INTO Preparazione VALUES ("Caprese", 4, "Prendi una mozzarella e, avendo cura di porti sopra il lavello (per evitare di dover poi pulire per terra), apri la confezione aiutandoti con una forbice o un coltello. Stai attento a non tagliarti le dita!");
+INSERT INTO Preparazione VALUES ("Caprese", 5, "Dopo aver sgocciolato la mozzarella, ponila sopra il tagliere e tagliala a fette anche queste non troppo spesse.");
+INSERT INTO Preparazione VALUES ("Caprese", 6, "Poni ciascuna fetta di mozzarella sopra ad una fetta di pomodoro.");
+INSERT INTO Preparazione VALUES ("Caprese", 7, "Ripeti i passi precedenti con la seconda mozzarella.");
+INSERT INTO Preparazione VALUES ("Caprese", 8, "Prendi l’origano e spargilo sopra il piatto: complimenti, la tua caprese è pronta da gustare!");
 
-INSERT INTO Preparazione VALUES ("Cotoletta", 1, "Cerca un tagliere per tagliare i pomodorini");
-INSERT INTO Preparazione VALUES ("Cotoletta", 2, "Prendi dal frigo i pomodorini, apri l'acqua del lavello e inizia a pulirli uno ad uno per togliere eventuali residui presenti sulla superficie");
-INSERT INTO Preparazione VALUES ("Cotoletta", 3, "Lavati i pomodorini poggiali sopra il tagliere. Prendi dunque un coltello (preferibilmente non dalla punta arrotondata) e inizia ad affettare i pomodorini in due o tre parti");
-INSERT INTO Preparazione VALUES ("Cotoletta", 4, "Poggia i pomodorini tagliati su un piatto e condiscili con olio d'oliva e sale");
-INSERT INTO Preparazione VALUES ("Cotoletta", 5, "Prendi una padella sufficientemente grande per ospitare la cotoletta e coprila con un filo d'olio d'oliva per evitare che la cotoletta si attacchi");
-INSERT INTO Preparazione VALUES ("Cotoletta", 6, "Fai cuocere per cinque minuti rigirando la pietanza ambo le parti, in maniera che venga scaldata uniformemente");
-INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Impiatta assieme ai pomodori e la cena è servita");
+INSERT INTO Preparazione VALUES ("Cotoletta", 1, "Cerca un tagliere per tagliare i pomodorini.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 2, "Prendi dal frigo i pomodorini, apri l’acqua del lavello e inizia a pulirli uno ad uno per togliere eventuali residui presenti sulla superficie.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 3, "Poggia i pomodorini puliti sopra il tagliere. Prendi quindi un coltello e inizia ad affettare i pomodorini in due o tre parti ciascuno.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 4, "Poggia i pomodorini tagliati su un piatto e condiscili con olio e sale.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 5, "Prendi una padella sufficientemente grande per ospitare la cotoletta e versaci un filo d’olio: questo eviterà che la cotoletta si attacchi!");
+INSERT INTO Preparazione VALUES ("Cotoletta", 6, "Prendi dal frigo la cotoletta impanata pre-confezionata e mettila un attimo da parte.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Accendi il fuoco e fai riscaldare la padella per qualche secondo, quindi metti la cotoletta sulla padella.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 8, "Fai cuocere per cinque minuti rigirando la pietanza ambo le parti, in maniera che venga scaldata uniformemente.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 9, "Impiatta assieme ai pomodori: la cena è servita!");
 
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila d'olio d'oliva. Ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d'olio d'oliva.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l'hamburger_EN e togli eventuali rivestimenti che coprono la carne.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio d'oliva caldo (sono dolori, dico per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo si cuocia uniformemente.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 4, "Mentre aspetti qualche minuto per girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane se ce l'hai e usalo per scaldare il pane appena tagliato.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati i 10 minuti spegni il fuoco e controlla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, poni in mezzo l'hamburger_EN e quindi chiudi con la seconda fetta: l'hamburger_EN è pronto, buon appetito!");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila d’olio, ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d’olio!");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l’Hamburger e togli eventuali rivestimenti che coprono la carne.");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l’olio caldo (sono dolori, parliamo per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo che la cottura risulti uniforme.");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 4, "Mentre aspetti qualche minuto per poi girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane e usalo per scaldare il pane appena tagliato.");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, metti quindi l’<span lang=\"en\">Hamburger</span> e chiudi con la seconda fetta: l’<span lang=\"en\">Hamburger</span> è pronto, buon appetito!");
 
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Se possiedi un tostapane è ora di usarlo, prendilo e attaccalo alla corrente.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast_EN e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel frattempo prendi il pomodoro e lavalo sotto l'acqua corrente per togliere residui di pesticidi e/o altro materiale dannoso.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi un tagliere e poggiaci sopra il pomodoro lavato e profumato. Taglia quindi quattro fette di pomodoro e metti la parte avanzata in frigo.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l'altra fetta di pane.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto, buon appetito!");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Prendi il tostapane e attacca la spina alla presa di corrente (sì, quella in cucina impossibile da raggiungere).");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel mentre, prendi il pomodoro e lavalo sotto l’acqua corrente per togliere i residui di pesticidi.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi un tagliere e poggiaci sopra il pomodoro appena lavato. Taglia quindi quattro fette di pomodoro e metti la parte che avanza in frigo.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l’altra fetta di pane.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto: buon appetito!");
 
 -- IN SEDE
 INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 1, "Metti l'acqua a bollire per il riso in una pentola. Una volta che fa le bolle versa del sale grosso e poi il riso, abbassa il fuoco a medio-alto e cucina per il tempo indicato sulla confezione.");
@@ -554,15 +562,15 @@ INSERT INTO Preparazione VALUES ("Scaloppina al limone", 9, "Togli la carne dal 
 INSERT INTO Valutazione VALUES ("Rucola e bresaola", "Ombretta", "2025-01-05", 28, "Wow, buonissimo devo consigliarlo alle mie sorelle");
 INSERT INTO Valutazione VALUES ("Pane e salame", "MasterMaurizio", "2025-02-02", 30, "Ragazzi complimenti, una delle ricette che piú apprezzo. Forza pane e salame");
 INSERT INTO Valutazione VALUES ("Pasta-asciutta", "Jay", "2025-01-05", 24, "Non ho tempo per descrivere questa ricetta dó e vado a studiare");
-INSERT INTO Valutazione VALUES ("Insalata pigra", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
+INSERT INTO Valutazione VALUES ("Insalata veloce", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Riso e uova fritte", "Oca", "2025-01-05", 14, "Piatto povero di gusti, emozioni e non molto salutare quindi non si merita nemmeno la sufficienza");
 INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una Peroni gelata");
 
 
 -- PENDOLARE
-INSERT INTO Valutazione VALUES ("Insalata pigra", "GGGaggi", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
-INSERT INTO Valutazione VALUES ("Insalata pigra", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
-INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata pigra, valutate molto positivamente entrambe.");
+INSERT INTO Valutazione VALUES ("Insalata veloce", "GGGaggi", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
+INSERT INTO Valutazione VALUES ("Insalata veloce", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
+INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata veloce, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
 
