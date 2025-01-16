@@ -7,6 +7,7 @@ a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
 Keyword ingredienti che possono sforare
 desc e keyword in pagine stupide (404 ecc, profile, profile edit)
 Quali pagine dobbiamo trattare con print.css?
+per il concorso quali contano come pagine?
 
 pre in bio come andare a capo senza n2br
 mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
