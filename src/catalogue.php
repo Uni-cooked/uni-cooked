@@ -17,7 +17,7 @@ $order = isset($_GET['ord']) ? Sanitizer::SanitizeInput($_GET['ord']) : null;
 
 
 $pageSystem = new PageSystem($db, $recipieName, $recipieCategory, $course, $grade, $cost, $order);
-
+$_SESSION["prev-page"]="<a href=\"./catalogue.php\">RICETTE</a>";
 
 $paginaHtml = file_get_contents("./html/catalogue.html");
 

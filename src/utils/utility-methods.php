@@ -46,7 +46,7 @@ class DB {
         /*
         *   Return false if not logged, username if logged
         */
-        if (isset($_SESSION) && $_SESSION!=null) {
+        if (isset($_SESSION["logged_user"]) && $_SESSION!=null) {
             return $_SESSION["logged_user"];
         } else {
             return false;
