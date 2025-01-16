@@ -16,6 +16,8 @@ if(!isset($_GET["username"])) {
         exit();
     }
 
+    $_SESSION["prev-page"]="<a href=\"./user.php\">PROFILO UTENTE</a>";
+
     //se è stato passato il controllo precedente l'utente è loggato e $isLogged è il nome utente
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
     $paginaHtml=str_replace("{{profile-list-element}}","",$paginaHtml);
@@ -104,6 +106,8 @@ if(!isset($_GET["username"])) {
     $username = $_GET["username"];
     unset($_GET["username"]);
 
+    $_SESSION["prev-page"]="<a href=\"./user.php?username=".$username.'">PROFILO UTENTE</a>';
+
     if (is_bool($isLogged) && $isLogged==false) {
         $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="sign-in.php" class="shadow">ACCEDI</a></li>',$paginaHtml);
     } else {
@@ -164,7 +168,7 @@ if(!isset($_GET["username"])) {
                         $recipeList.="<li class=\"fav-recipe content\">";
                     }
                     $recipeList.='<img class="fav-recipe-img-crop" src="'.$recipe["immagine"].'">';
-                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$recipe["nome"]."</h4> </div>";
+                    $recipeList.="<div class=\"fav-recipe-title\"> <h4>".$db->checkLang(ucfirst($recipe["nome"]))."</h4> </div>";
                     $average=$db->getRecipeAverage($recipe["nome"]);
                     if(is_string($average) && (strcmp($average,"ExceptionThrow")==0 || strcmp($average,"ConnectionFailed")==0)) {
                         header('Location: 500-err.php');

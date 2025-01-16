@@ -188,6 +188,8 @@ INSERT INTO Preferenza_Ricetta VALUES ("Pasta zucchine e salmone","Tony");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta-asciutta", "pasta", FALSE, 120, "g", "preferibilmente corta");
 
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "pane", FALSE, 1, "num_el", "quello in cassetta");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pane e salame", "salame", FALSE, 100, "g", NULL);
+
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "pasta", FALSE, 100, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "panna da cucina", FALSE, 40, "ml", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta panna e pancetta", "pancetta a cubetti", FALSE, 60, "g", NULL);

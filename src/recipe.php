@@ -10,6 +10,13 @@ if ($isUserLogged!=false) {
     $paginaHtml=str_replace('<a href="sign-in.php" class="shadow">ACCEDI</a>',"<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
 }
 
+if(isset($_SESSION["prev-page"])) {
+    $paginaHtml=str_replace("{{prev-page}}",$_SESSION["prev-page"],$paginaHtml);
+    unset($_SESSION["prev-page"]);
+} else {
+    $paginaHtml=str_replace("{{prev-page}}","<a href=\"./catalogue.php\">RICETTE</a>",$paginaHtml);
+}
+
 if(isset($_GET["recipe"])) {
     $recipe=$_GET["recipe"];
     unset($_GET["recipe"]);
@@ -51,12 +58,12 @@ if(isset($_GET["recipe"])) {
                 $mark=30;
             }
             $comment=DB::pulisciNote($_POST["comment"]);
-            if(strlen($comment)==0) {
+            if(mb_strlen($comment)==0) {
                 $_SESSION["commentError"]="Il testo della valutazione è necessario";
                 header('Location: recipe.php?recipe='.$recipe);
                 exit();
             }
-            if(strlen($comment)>200) {
+            if(mb_strlen($comment)>200) {
                 $_SESSION["commentError"]="il numero di caratteri nel testo della valutazione è superiore a 200";
                 header('Location: recipe.php?recipe='.$recipe);
                 exit();

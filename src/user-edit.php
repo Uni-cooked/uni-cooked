@@ -60,10 +60,10 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
     $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
 
-    if (strlen($username)==0) {
+    if (mb_strlen($username)==0) {
         $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
         $errorFound=true;
-    } elseif (strlen($username)>15) {
+    } elseif (mb_strlen($username)>15) {
         $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
@@ -85,7 +85,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     }
 
     $biografia=DB::pulisciNote($_POST["bio-edit"]);
-    if(strlen($biografia)>300) {
+    if(mb_strlen($biografia)>300) {
         $paginaHtml=str_replace("{{bio-error}}",'<p role="alert" class="err-msg">La biografia deve essere più corta di 300 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } else {
@@ -109,7 +109,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $info = new SplFileInfo($tmpFile);
         $extension = pathinfo($info->getFilename(), PATHINFO_EXTENSION);
         $extensionArray = array("jpg","jpeg","png");
-        if(strlen($extension)==0 || !in_array($extension,$extensionArray)) {
+        if(mb_strlen($extension)==0 || !in_array($extension,$extensionArray)) {
             $errorFound=true;
             $paginaHtml = str_replace("{{profile-pic-error}}",'<p role="alert" id="profile-pic-err-p" class="err-msg">L\'estensione del file caricato non è corretta</p>',$paginaHtml);
         } elseif($info->isExecutable()) {
@@ -224,7 +224,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     if(strcmp($newPsw,"")==0) {
         $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p role="alert" class="err-msg">Inserisci la nuova <span lang="en">password</span></p>',$paginaHtml);
         $errorFound=true;
-    } elseif(strlen($newPsw)<4) {
+    } elseif(mb_strlen($newPsw)<4) {
         $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p role="alert" class="err-msg">La nuova <span lang="en">password</span> deve essere di almeno 4 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[\W]).+$/",$newPsw)==0) {
