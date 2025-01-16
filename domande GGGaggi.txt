@@ -1,31 +1,8 @@
-DOMANDE:
+TOGLIERE QUANDO SONO RISOLTI
 
-quando l'hamburger è aperto legge anche il testo non interattivo sotto?
-burger menu problemi con bg se non ci sono img
-accessibilità card home
-a ricetta ci arrivo da catalogo e da profilo, cambio breadcrumb con php?
-Keyword ingredienti che possono sforare
-desc e keyword in pagine stupide (404 ecc, profile, profile edit)
-Quali pagine dobbiamo trattare con print.css?
-per il concorso quali contano come pagine?
-
-pre in bio come andare a capo senza n2br
-mettere script e risorsa al posto di onload va bene lo stesso? ovviamente si intende script con src non script con codice.
-quando l'hamburger (da 40vh) è aperto come facciamo a chiuderlo quando il dab va fuori?
-strong senza bold perché brutto
-
-l'input value nei range di catalogo viene letto dallo sr la prima volta? il valore è scritto dopo forse sarebbe da aggiungerlo alla label per gli sr -> nascondi label
-div dentro ul per fare 2 colonne
-{1,15} nelle regex va bene?
-
-
-APPUNTI:
-
-- breadcrumb
-- focus errori
-- errore sign in in che posizione?
-- js filtro non bello
-
-* max length bio (300 char)
-* max length suggerimenti about us (500 char)
-* max length commento ricetta (200)
+burger -> gaggi
+abbr DAD -> gaggi
+breadcrumb ricetta dinamica da chad
+desc + keyword pagine stupide
+js slider
+mettere strong dove serve
