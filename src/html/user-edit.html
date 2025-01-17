@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
         <!-- JS -->
         <script src="./js/validate-useredit.js"></script>
     </head>
+
     <body>
         <header>
             <div id="header-content" class="content">
@@ -30,7 +32,7 @@
                     <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
-                
+
                 <div id="hamburger">
                     <img src="../asset/icon/logo.svg" alt="" class="logo">
                     <label id="hamburger-label">
@@ -49,10 +51,10 @@
                         </li>
                     </ul>
                 </nav>
-                
+
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
-                    <p><a href="user.php">PROFILO UTENTE</a> > MODIFICA</p>
+                    <p><a href="user.php">PROFILO UTENTE</a> &gt; MODIFICA</p>
                 </nav>
             </div>
         </header>
@@ -69,7 +71,7 @@
                                 <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg">
                                 {{profile-pic-error}}
                             </div>
-    
+
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
@@ -77,14 +79,14 @@
                                     <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit">
                                     {{nickname-error}}
                                 </div>
-                                
+
                                 <div class="input-container">
                                     <label class="form-label" for="stud-cat-edit">Categoria studente</label>
                                     <select required id="stud-cat-edit" name="stud-cat-edit">
-                                            <option value="fuorisede">Fuorisede</option>
-                                            <option value="pendolare">Pendolare</option>
-                                            <option value="in_sede">In sede</option>
-                                            <option value="dad" abbr="didattica a distanza">DAD</option>
+                                        <option value="fuorisede">Fuorisede</option>
+                                        <option value="pendolare">Pendolare</option>
+                                        <option value="in_sede">In sede</option>
+                                        <option value="dad" abbr="didattica a distanza">DAD</option>
                                     </select>
                                     {{stud-cat-edit-error}}
                                 </div>
@@ -102,7 +104,7 @@
                 <h3 id="change-psw-title" class="content-subtitle">CAMBIA <span lang="en">PASSWORD</span></h3>
                 <form id="credentials" action="user-edit.php" method="post">
                     <fieldset>
-                        <div class="input-container" >
+                        <div class="input-container">
                             <label for="old-psw" id="name-in" class="form-label">Inserisci la vecchia <span lang="en">password</span></label>
                             <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw">
                             {{messaggio di old-psw}}
@@ -145,4 +147,5 @@
             <a href="#top">Torna su</a>
         </footer>
     </body>
+
 </html>

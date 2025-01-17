@@ -6,7 +6,7 @@ require_once("math.php");
 require_once("utility-methods.php");
 require_once("sanitizer.php");
 
-use DB\DB;
+use Utilities\DB;
 use Utilities\Sanitizer;
 
 class PageSystem
@@ -144,8 +144,8 @@ class PageSystem
 
     private function CreatePageButtons(int $currentPage, int $totalPages, $filters_list): string
     {
-        $prev_btn = ($currentPage > 1) ? '<label for="prev-page-btn" class="hide">vai alla pagina precedente</label> <button id="prev-page-btn" class="shadow" name="page" value="' . clamp($currentPage - 1, 1, $totalPages) . '"></button>' : "";
-        $next_btn = ($currentPage < $totalPages) ? '<label for="next-page-btn" class="hide">vai alla pagina successiva</label> <button id="next-page-btn" class="shadow" name="page" value="' . clamp($currentPage + 1, 1, $totalPages) . '"></button>' : "";
+        $prev_btn = ($currentPage > 1) ? '<button id="prev-page-btn" class="shadow" name="page" value="' . clamp($currentPage - 1, 1, $totalPages) . '">Pagina precedente</button>' : "";
+        $next_btn = ($currentPage < $totalPages) ? '<button id="next-page-btn" class="shadow" name="page" value="' . clamp($currentPage + 1, 1, $totalPages) . '">Pagina successiva</button>' : "";
         $TEMPLATE = "<p>" . $currentPage . ' <abbr title="su">/</abbr> ' . $totalPages . " </p>" . $prev_btn . $next_btn;
         $HIDDEN = "";
         while ($value = current($filters_list)) {

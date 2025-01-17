@@ -1,7 +1,9 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+require_once "utils/sanitizer.php";
+use Utilities\DB;
+use Utilities\Sanitizer;
 
 $username="";
 $categoria="";
@@ -31,7 +33,7 @@ if (isset($_POST['submit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di nome}}",'<p role="alert" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
-        $username=DB::pulisciInput($username);
+        $username=Sanitizer::SanitizeInput($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;

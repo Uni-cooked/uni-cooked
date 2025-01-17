@@ -1,7 +1,9 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+require_once "utils/sanitizer.php";
+use Utilities\DB;
+use Utilities\Sanitizer;
 $db = new DB;
 
 $paginaHtml=file_get_contents("./html/about-us.html");
@@ -43,7 +45,7 @@ if(!isset($_POST["suggestion"])) {
     unset($_POST["suggerimento"]);
     $result="";
 
-    $proposta=DB::pulisciNote($_POST["proposta"]);
+    $proposta=Sanitizer::SanitizeText($_POST["proposta"]);
     unset($_POST["proposta"]);
 
     if(mb_strlen($proposta)<20 || mb_strlen($proposta)>500) {

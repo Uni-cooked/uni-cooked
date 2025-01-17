@@ -1,7 +1,9 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+require_once "utils/sanitizer.php";
+use Utilities\DB;
+use Utilities\Sanitizer;
 
 $paginaHtml=file_get_contents("./html/sign-in.html");
 $username="";
@@ -16,7 +18,7 @@ if ($isLogged!=false) {
 }
 
 if (isset($_POST['submit'])) {
-    $username=DB::pulisciInput($_POST["nome"]);
+    $username=Sanitizer::SanitizeInput($_POST["nome"]);
     $psw=$_POST["psw"];
     $result=$db->logUser($username,$psw);
 

@@ -10,4 +10,4 @@ NETWORK:
 /*
 
 FALLBACK:
-*.html /offline.html
+*.php /offline.html

@@ -1,7 +1,7 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+use Utilities\DB;
 
 $paginaHtml=file_get_contents("./html/user.html");
 $username="";

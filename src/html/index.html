@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" manifest="test.appcache">
 
     <head>
         <meta charset="utf-8">
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="./css/mini.css" media="screen and (max-width: 480px)">
     </head>
 
-    <body id="top">
+    <body>
         <header>
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
@@ -61,7 +61,7 @@
         </header>
 
         <main id="content">
-            <nav id="quick-role">
+            <nav id="quick-role" aria-label="Link alla descrizione delle categorie">
                 <ul class="content">
                     <li><a href="#fuorisede">Fuorisede</a></li>
                     <li><a href="#pendolare">Pendolare</a></li>

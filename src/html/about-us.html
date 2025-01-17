@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Contatti - Uni Cooked</title>
         <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.ico">
         <meta name="description" content="Il posto giusto dove puoi trovare tutte le informazioni necessarie per contattare noi di Uni Cooked.">
-        <meta name="keyword" content="Uni Cooked,contatti,informazioni,proponi,ricetta">
+        <meta name="keywords" content="Uni Cooked,contatti,informazioni,proponi,ricetta">
         <meta name="author" content="Uni Cooked">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
@@ -17,6 +18,7 @@
         <!-- JS -->
         <script src="./js/validate-aboutus.js"></script>
     </head>
+
     <body>
         <header>
             <div id="header-content" class="content">
@@ -31,7 +33,7 @@
                     <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
-                
+
                 <div id="hamburger">
                     <img src="./asset/icon/logo.svg" alt="" class="logo">
                     <label id="hamburger-label">
@@ -50,7 +52,7 @@
                         </li>
                     </ul>
                 </nav>
-                
+
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
                     <p>CONTATTI</p>
@@ -74,14 +76,14 @@
                 <div class="content">
                     <img class="pp" src="{{profile-pic-src}}" alt="Immagine profilo {{username}}">
                     <form action="about-us.php" method="post" id="request">
-                    <fieldset>
-                        <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
-                        <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required minlength="20" maxlength="500"></textarea>
-                        {{suggestion-error}}
-                        <button id="confirm" type="submit" class="shadow" name="suggestion">PROPONI</button>
-                        <button id="cancel" type="reset" class="shadow" disabled>CANCELLA</button>
-                    </fieldset>
-                </form>
+                        <fieldset>
+                            <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
+                            <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required minlength="20" maxlength="500"></textarea>
+                            {{suggestion-error}}
+                            <button id="confirm" type="submit" class="shadow" name="suggestion">PROPONI</button>
+                            <button id="cancel" type="reset" class="shadow" disabled>CANCELLA</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
 
@@ -89,22 +91,22 @@
             <div id="admins" class="content-container">
                 <div id="admin-grid" class="content">
                     <article class="admin-cell">
-                        <img class="pp" class="admin-cell-margin" src="./asset/img/prek-admin.png" alt="">
+                        <img class="pp admin-cell-margin" src="./asset/img/prek-admin.png" alt="">
                         <strong class="admin-cell-margin">ANDREA PRECOMA</strong>
                         <a href="mailto:andrea.precoma@studenti.unipd.it">andrea.precoma@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
-                        <img class="pp" class="admin-cell-margin" src="./asset/img/placeholder.png" alt="">
+                        <img class="pp admin-cell-margin" src="./asset/img/placeholder.png" alt="">
                         <strong class="admin-cell-margin">ANDREA SORANZO</strong>
                         <a href="mailto:andreajesus.soranzomendez@studenti.unipd.it">andreajesus.soranzomendez@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
-                        <img class="pp" class="admin-cell-margin" src="./asset/img/placeholder.png" alt="">
+                        <img class="pp admin-cell-margin" src="./asset/img/placeholder.png" alt="">
                         <strong class="admin-cell-margin">MATTEO SCHIEVANO</strong>
                         <a href="mailto:matteo.schievano@studenti.unipd.it">matteo.schievano@studenti.unipd.it</a>
                     </article>
                     <article class="admin-cell">
-                        <img class="pp" class="admin-cell-margin" src="./asset/img/placeholder.png" alt="">
+                        <img class="pp admin-cell-margin" src="./asset/img/placeholder.png" alt="">
                         <strong class="admin-cell-margin">GABRIELE MAGNELLI</strong>
                         <a href="mailto:gabrieleisacco.magnelli@studenti.unipd.it">gabrieleisacco.magnelli@studenti.unipd.it</a>
                     </article>
@@ -117,4 +119,5 @@
             <a href="#top" class="back-up-link">Torna su</a>
         </footer>
     </body>
+
 </html>

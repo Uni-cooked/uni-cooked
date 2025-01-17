@@ -1,7 +1,9 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+require_once "utils/sanitizer.php";
+use Utilities\DB;
+use Utilities\Sanitizer;
 
 $paginaHtml=file_get_contents("./html/user-edit.html");
 $username="";
@@ -70,7 +72,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $errorFound=true;
         $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
-        $username=DB::pulisciInput($username);
+        $username=Sanitizer::SanitizeInput($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true && strcmp($username,$isLogged)!=0) {
             $errorFound=true;
@@ -84,7 +86,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         }
     }
 
-    $biografia=DB::pulisciNote($_POST["bio-edit"]);
+    $biografia=Sanitizer::SanitizeText($_POST["bio-edit"]);
     if(mb_strlen($biografia)>300) {
         $paginaHtml=str_replace("{{bio-error}}",'<p role="alert" class="err-msg">La biografia deve essere più corta di 300 caratteri</p>',$paginaHtml);
         $errorFound=true;

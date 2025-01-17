@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
         <!-- JS -->
         <script src="./js/validate-recipe.js"></script>
     </head>
+
     <body>
         <header>
             <div id="header-content" class="content">
@@ -54,7 +56,7 @@
 
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
-                    <p>{{prev-page}} > RICETTA ({{Recipe-title-body}})</p>
+                    <p>{{prev-page}} &gt; RICETTA ({{Recipe-title-body}})</p>
                 </nav>
             </div>
         </header>
@@ -78,24 +80,24 @@
                 <p class="content">{{description}}</p>
             </div>
 
-            <h3 class="content-subtitle content">INGREDIENTI</h3>
+            <h2 class="content-subtitle content">INGREDIENTI</h2>
             <div class="content-container end-paragraph">
                 <ul id="ingredient-list" class="content">
                     {{ingredients-list}}
                 </ul>
             </div>
 
-            <h3 class="content-subtitle content">PREPARAZIONE</h3>
+            <h2 class="content-subtitle content">PREPARAZIONE</h2>
             <div class="content-container-left end-paragraph">
                 <ol id="prep-steps" class="content">
                     {{what-to-do-list}}
                 </ol>
             </div>
 
-            <h3 id="eval-section" class="content-subtitle content">VALUTAZIONI</h3>
+            <h2 id="eval-section" class="content-subtitle content">VALUTAZIONI</h2>
             {{leave-comment-or-personal-published-comment}}
 
-            <h4 id="comment-subtitle" class="content-subtitle content">Cosa ne pensano gli altri</h4>
+            <h3 id="comment-subtitle" class="content-subtitle content">Cosa ne pensano gli altri</h3>
 
             {{comment-list}}
 
@@ -107,4 +109,5 @@
             <a href="#top" class="back-up-link">Torna su</a>
         </footer>
     </body>
+
 </html>

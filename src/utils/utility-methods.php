@@ -1,6 +1,6 @@
 <?php
 
-namespace DB;
+namespace Utilities;
 
 session_start();
 
@@ -12,20 +12,6 @@ class DB {
 
     private $connection;
     private static $tagPermessi = '<em><strong>';
-
-    public static function pulisciInput($value) {
-        $value = trim($value);
-        $value = strip_tags($value);
-        $value = str_replace(" ","",$value);
-        $value = htmlentities($value);
-        return $value;
-    }
-    
-    public static function pulisciNote($value) {
-        $value = trim($value);
-        $value = strip_tags($value, DB::$tagPermessi);
-        return $value;
-    }
 
     private function openDBConnection(): bool {
         mysqli_report(MYSQLI_REPORT_STRICT);

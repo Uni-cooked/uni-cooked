@@ -1,7 +1,10 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+require_once "utils/sanitizer.php";
+use Utilities\DB;
+use Utilities\Sanitizer;
+
 $db = new DB;
 
 $paginaHtml=file_get_contents("./html/recipe.html");
@@ -57,7 +60,7 @@ if(isset($_GET["recipe"])) {
             } elseif ($mark>30) {
                 $mark=30;
             }
-            $comment=DB::pulisciNote($_POST["comment"]);
+            $comment=Sanitizer::SanitizeText($_POST["comment"]);
             if(mb_strlen($comment)==0) {
                 $_SESSION["commentError"]="Il testo della valutazione è necessario";
                 header('Location: recipe.php?recipe='.$recipe);

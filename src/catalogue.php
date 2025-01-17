@@ -2,7 +2,7 @@
 
 require_once "utils/page_system.php";
 
-use DB\DB;
+use Utilities\DB;
 use Utilities\PageSystem;
 use Utilities\Sanitizer;
 

@@ -1,7 +1,8 @@
 <?php
 
 require_once "utils/utility-methods.php";
-use DB\DB;
+
+use Utilities\DB;
 
 DB::logOutUser();
 header("Location: index.php");
