@@ -18,7 +18,7 @@
     --accent-quaternary: #134270;
     --text-color: white;
     --menu-a-color: white;
-    --danger-button-color: red;
+    --danger-button-color: #b30000;
 
 
     /* MARGINS */
@@ -193,7 +193,7 @@ fieldset {
 }
 
 .err-msg {
-    color: var(--danger-button-color);
+    color: #ff0606;
 }
 
 .disabled-btn {
@@ -830,7 +830,6 @@ ul#recipe-list .recipe a {
 /* #region RECIPE PAGE */
 #recipe-name-title {
     text-align: center;
-    text-transform: uppercase;
 }
 
 #recipe-main-info {
@@ -953,6 +952,7 @@ ul#comment-list li {
 
 button#del-comment {
     background-color: var(--danger-button-color);
+    color: var(--text-color);
     width: 100%;
     padding: .5em 0;
     margin-top: 1em;
@@ -1276,7 +1276,7 @@ a#log-out {
     width: 100%;
     height: var(--button-height);
     background-color: var(--danger-button-color);
-    color: var(--p-color);
+    color: var(--text-color);
     font-size: 1.1rem;
     margin: 0 auto .5em;
 }
@@ -1415,7 +1415,7 @@ a#log-out {
 
 #confirm-danger-op {
     background-color: var(--danger-button-color);
-    color: var(--bg-primary);
+    color: var(--text-color);
     margin-bottom: 1.5em;
 }
 

@@ -12,4 +12,21 @@ titoli su img in index (ha senso blur? header?)
 img contatti se non sono loggato
 aumentare dai preferiti
 span en ricetta titolo
-animazione catalogo
+animazioni belline
+errore user edit pp senza pagging
+aggiungi ai preferiti più grande
+img default
+
+
+
+contrasti link visitati e non
+- menu/breadcrumb/ricette preferite
+- accedi del menu
+- bg-primary (torna su commento)
+- bg-secondary (cat in home, torna su footer, ricette preferite, bio vuota user)
+- card home
+- pulsanti user
+- pulsante giallo single page
+
+
+#ffdb57 / #0C6F59

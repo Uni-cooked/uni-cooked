@@ -104,7 +104,7 @@ INSERT INTO Ricetta VALUES ("Pasta-asciutta", "fuorisede", "primo", 0, 2,
  "2025-01-09", "./asset/img/recipe/fuorisede/pasta-asciutta.jpg");
  
 INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "primo", 5, 4, 
-"Un piatto che non è un vero e proprio piatto perché comunemente consumato come antipasto o per fare una merenda a metà giornata ma in questo caso devi ricordarti che sei uno studente e anche fuorisede, ci dispiace… non puoi farci nulla. È uno tra le pietanze più facili e veloci da preparare, l’unico lato negativo è il costo.",
+"Un piatto che non è un vero e proprio piatto perché comunemente consumato come antipasto o per fare una merenda a metà giornata ma in questo caso devi ricordarti che sei uno studente e anche fuorisede, ci dispiace… non puoi farci nulla. È uno tra le pietanze più facili e veloci da preparare, l'unico lato negativo è il costo.",
  "2025-01-09", "./asset/img/recipe/fuorisede/pane-triste.jpg");
 
 INSERT INTO Ricetta VALUES ("Pasta panna e pancetta", "fuorisede", "primo", 15, 9, 
@@ -416,10 +416,10 @@ INSERT INTO Preparazione VALUES ("Pasta al pesto", 4, "Apri il barattolo contene
 -- PENDOLARE
 INSERT INTO Preparazione VALUES ("Insalata veloce", 1, "Prendi il cespo di insalata e inizia a togliere le varie foglie (ti potrebbe essere utile, per fare in fretta, rimuovere dal basso il cuore del cespo).");
 INSERT INTO Preparazione VALUES ("Insalata veloce", 2, "Dal reparto “cose che non credo di aver mai usato”, prendi la centrifuga di insalata e mettila vicino al lavello: ci servirà tra un attimo.");
-INSERT INTO Preparazione VALUES ("Insalata veloce", 3, "Blocca il lavello con il tappo e lascialo riempire un poco di acqua. Poni quindi le foglie di insalata nell’acqua e inizia a pulirle. Lavata una foglia, ponila dentro la centrifuga.");
-INSERT INTO Preparazione VALUES ("Insalata veloce", 4, "Una volta lavate tutte le foglie svuota il lavello, quindi chiudi la centrifuga con il suo coperchio e azionala. Controlla periodicamente se le foglie sono asciutte e svuota l’acqua che si accumula.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 3, "Blocca il lavello con il tappo e lascialo riempire un poco di acqua. Poni quindi le foglie di insalata nell'acqua e inizia a pulirle. Lavata una foglia, ponila dentro la centrifuga.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 4, "Una volta lavate tutte le foglie svuota il lavello, quindi chiudi la centrifuga con il suo coperchio e azionala. Controlla periodicamente se le foglie sono asciutte e svuota l'acqua che si accumula.");
 INSERT INTO Preparazione VALUES ("Insalata veloce", 5, "Prendi il tuo box pranzo e ponici le foglie lavate ed asciugate. Metti il tutto da parte, lo riprenderemo tra poco!");
-INSERT INTO Preparazione VALUES ("Insalata veloce", 6, "Prendi il pomodoro e puliscilo sotto l’acqua corrente. Fatto questo, cerca un tagliere e un coltello: poggia dunque il pomodoro sul tagliere.");
+INSERT INTO Preparazione VALUES ("Insalata veloce", 6, "Prendi il pomodoro e puliscilo sotto l'acqua corrente. Fatto questo, cerca un tagliere e un coltello: poggia dunque il pomodoro sul tagliere.");
 INSERT INTO Preparazione VALUES ("Insalata veloce", 7, "Affetta tutto il pomodoro cercando di non realizzare fette eccessivamente spesse.");
 INSERT INTO Preparazione VALUES ("Insalata veloce", 8, "Taglia le fette di pomodoro in pezzetti più piccoli, quindi versali nel box pranzo assieme all'insalata.");
 INSERT INTO Preparazione VALUES ("Insalata veloce", 9, "Condisci con olio e sale: il pranzo è servito.");
@@ -437,29 +437,29 @@ INSERT INTO Preparazione VALUES ("Caprese", 4, "Prendi una mozzarella e, avendo 
 INSERT INTO Preparazione VALUES ("Caprese", 5, "Dopo aver sgocciolato la mozzarella, ponila sopra il tagliere e tagliala a fette anche queste non troppo spesse.");
 INSERT INTO Preparazione VALUES ("Caprese", 6, "Poni ciascuna fetta di mozzarella sopra ad una fetta di pomodoro.");
 INSERT INTO Preparazione VALUES ("Caprese", 7, "Ripeti i passi precedenti con la seconda mozzarella.");
-INSERT INTO Preparazione VALUES ("Caprese", 8, "Prendi l’origano e spargilo sopra il piatto: complimenti, la tua caprese è pronta da gustare!");
+INSERT INTO Preparazione VALUES ("Caprese", 8, "Prendi l'origano e spargilo sopra il piatto: complimenti, la tua caprese è pronta da gustare!");
 
 INSERT INTO Preparazione VALUES ("Cotoletta", 1, "Cerca un tagliere per tagliare i pomodorini.");
-INSERT INTO Preparazione VALUES ("Cotoletta", 2, "Prendi dal frigo i pomodorini, apri l’acqua del lavello e inizia a pulirli uno ad uno per togliere eventuali residui presenti sulla superficie.");
+INSERT INTO Preparazione VALUES ("Cotoletta", 2, "Prendi dal frigo i pomodorini, apri l'acqua del lavello e inizia a pulirli uno ad uno per togliere eventuali residui presenti sulla superficie.");
 INSERT INTO Preparazione VALUES ("Cotoletta", 3, "Poggia i pomodorini puliti sopra il tagliere. Prendi quindi un coltello e inizia ad affettare i pomodorini in due o tre parti ciascuno.");
 INSERT INTO Preparazione VALUES ("Cotoletta", 4, "Poggia i pomodorini tagliati su un piatto e condiscili con olio e sale.");
-INSERT INTO Preparazione VALUES ("Cotoletta", 5, "Prendi una padella sufficientemente grande per ospitare la cotoletta e versaci un filo d’olio: questo eviterà che la cotoletta si attacchi!");
+INSERT INTO Preparazione VALUES ("Cotoletta", 5, "Prendi una padella sufficientemente grande per ospitare la cotoletta e versaci un filo d'olio: questo eviterà che la cotoletta si attacchi!");
 INSERT INTO Preparazione VALUES ("Cotoletta", 6, "Prendi dal frigo la cotoletta impanata pre-confezionata e mettila un attimo da parte.");
 INSERT INTO Preparazione VALUES ("Cotoletta", 7, "Accendi il fuoco e fai riscaldare la padella per qualche secondo, quindi metti la cotoletta sulla padella.");
 INSERT INTO Preparazione VALUES ("Cotoletta", 8, "Fai cuocere per cinque minuti rigirando la pietanza ambo le parti, in maniera che venga scaldata uniformemente.");
 INSERT INTO Preparazione VALUES ("Cotoletta", 9, "Impiatta assieme ai pomodori: la cena è servita!");
 
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila d’olio, ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d’olio!");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l’Hamburger e togli eventuali rivestimenti che coprono la carne.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l’olio caldo (sono dolori, parliamo per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo che la cottura risulti uniforme.");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 1, "Prendi una padella e ungila d'olio, ponila sul fuoco e lasciala riscaldare. Attenzione: meglio non esagerare con la quantità d'olio!");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 2, "Prendi dal frigo l'Hamburger e togli eventuali rivestimenti che coprono la carne.");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 3, "Poni la carne sulla padella avendo cura di non schizzarti con l'olio caldo (sono dolori, parliamo per esperienza). La carne deve cuocere per un massimo 10 minuti, facendola girare ogni 2/3 per fare in modo che la cottura risulti uniforme.");
 INSERT INTO Preparazione VALUES ("Hamburger_EN", 4, "Mentre aspetti qualche minuto per poi girare la carne, prendi il pane e taglialo a metà. Cerca quindi il tostapane e usalo per scaldare il pane appena tagliato.");
-INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, metti quindi l’<span lang=\"en\">Hamburger</span> e chiudi con la seconda fetta: l’<span lang=\"en\">Hamburger</span> è pronto, buon appetito!");
+INSERT INTO Preparazione VALUES ("Hamburger_EN", 5, "Passati 10 minuti spegni il fuoco e contolla che la carne al suo interno sia ben cotta. Prendi quindi un piatto, poggiaci una fetta di pane caldo, metti quindi l'<span lang=\"en\">Hamburger</span> e chiudi con la seconda fetta: l'<span lang=\"en\">Hamburger</span> è pronto, buon appetito!");
 
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 1, "Prendi il tostapane e attacca la spina alla presa di corrente (sì, quella in cucina impossibile da raggiungere).");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 2, "Dopo aver accuratamente controllato di non esserti slogato la spalla, prendi le due fette di pane da toast e inseriscile dentro il tostapane. Accendi quindi il tostapane e lascia che il pane scaldi.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel mentre, prendi il pomodoro e lavalo sotto l’acqua corrente per togliere i residui di pesticidi.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 3, "Nel mentre, prendi il pomodoro e lavalo sotto l'acqua corrente per togliere i residui di pesticidi.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi un tagliere e poggiaci sopra il pomodoro appena lavato. Taglia quindi quattro fette di pomodoro e metti la parte che avanza in frigo.");
-INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l’altra fetta di pane.");
+INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l'altra fetta di pane.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto: buon appetito!");
 
 -- IN SEDE
