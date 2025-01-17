@@ -1197,15 +1197,15 @@ a#edit-profile-link {
     color: var(--bg-primary);
 }
 
-a#log-out {
+#log-out {
     display: block;
     margin: 2em auto;
-    text-align: center;
+    /*text-align: center;*/
     width: 14em;
     padding: .8em;
-    font-weight: 700;
+    /*font-weight: 700;*/
     font-size: var(--button-text);
-    border-radius: var(--radius-small);
+    /*border-radius: var(--radius-small);*/
     background-color: var(--accent-secondary);
     color: var(--text-color);
 }

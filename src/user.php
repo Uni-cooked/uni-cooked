@@ -21,6 +21,7 @@ if(!isset($_GET["username"])) {
     //se è stato passato il controllo precedente l'utente è loggato e $isLogged è il nome utente
     $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
     $paginaHtml=str_replace("{{profile-list-element}}","",$paginaHtml);
+    $paginaHtml=str_replace("{{sign-out-form}}",'<form action="./sign-out.php" method="post"><button id="log-out" class="shadow" type="submit" name="sign-out" value="true">ESCI</button></form>',$paginaHtml);
     $userInfo=$db->getUserInfo();
     if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
         header('Location: 500-err.php');
@@ -196,7 +197,7 @@ if(!isset($_GET["username"])) {
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         $paginaHtml=str_replace('<a href="./user-edit.php" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
-        $paginaHtml=str_replace('<a href="./sign-out.php" id="log-out" class="shadow">ESCI</a>',"",$paginaHtml);
+        $paginaHtml=str_replace('{{sign-out-form}}',"",$paginaHtml);
         echo $paginaHtml;
     }
 }
