@@ -25,8 +25,6 @@ function UpdateRangeCosto(){
 }
 
 const filters = {
-    "min-rate-filter" : ["change", UpdateRangeVoto],
-    "max-price-filter" : ["change", UpdateRangeCosto],
     "min-rate-filter" : ["input", UpdateRangeVoto],
     "max-price-filter" : ["input", UpdateRangeCosto],
 }
