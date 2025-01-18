@@ -206,7 +206,7 @@ fieldset {
 
 /* #region HEADER */
 header {
-    background-image: url("../asset/img/header.jpg");
+    background-image: url("../asset/img/header.png");
     background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
@@ -229,6 +229,10 @@ header {
     letter-spacing: var(--letter-spacing);
     padding: .5rem;
     order: 3;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    padding: 1rem 3rem;
+    border-radius: var(--radius-small);
 }
 
 header h1,
@@ -458,7 +462,9 @@ nav#quick-role a:visited {
 }
 
 .role-text {
-    background-color: var(--accent-secondary);
+    /* background-color: rgba(57, 42, 36, 0.85); */
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     padding: 1rem 3%;
     width: fit-content;
     margin: auto;
@@ -547,6 +553,10 @@ dd:has(input:checked) .flip-card .flip-card-front p {
     visibility: hidden;
 }
 
+dd:has(input:checked) .flip-card .flip-card-front p + a {
+    visibility: hidden;
+}
+
 .flip-card-back,
 .flip-card-front {
     border-radius: 20px;
@@ -554,9 +564,9 @@ dd:has(input:checked) .flip-card .flip-card-front p {
 
 .flip-card-front {
     position: relative;
-    padding: 3rem;
     background-color: var(--accent);
     color: var(--bg-primary);
+    border: 6px solid var(--accent-secondary);
 }
 
 .flip-card-back {
@@ -574,11 +584,12 @@ dd:has(input:checked) .flip-card .flip-card-front p {
     color: white;
     transition: visibility var(--animation-duration);
     transform: rotateX(180deg);
+    border: 6px solid var(--accent);
 }
 
 .flip-card-back h3 {
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .flip-card-back ul {
@@ -597,6 +608,7 @@ dl p {
     text-align: center;
     font-weight: 500;
     transition: visibility var(--animation-duration);
+    padding: 3rem 3rem 5rem 3rem;
 }
 
 dd input {
@@ -631,12 +643,17 @@ dd .role-info-label {
     transition: background-color 600ms, color 600ms, transform 600ms;
 }
 
-.role-desc a {
+.role-desc + a {
     display: block;
     width: fit-content;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: var(--accent-secondary);
+    padding: .5rem 2rem .5rem 2rem;
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
+    position: absolute;
+    bottom: 1.1rem;
+    right: 0;
+    font-weight: 550;
+    transition: visibility var(--animation-duration);
 }
 
 /* #endregion HOME PAGE CONTENT*/

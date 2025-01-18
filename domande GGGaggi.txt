@@ -12,7 +12,6 @@ titoli su img in index (ha senso blur? header?)
 img contatti se non sono loggato
 animazioni belline
 errore user edit pp senza padding
-"aggiungi ai preferiti" più grande
 
 NB relazione
 span en in titoli
