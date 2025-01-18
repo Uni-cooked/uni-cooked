@@ -11,7 +11,6 @@ function FilterForm(){
         document.getElementById("max-price-filter").value = localStorage.getItem(cost);
         document.getElementById("rate").innerText = localStorage.getItem(vote) + " / 30";
         document.getElementById("price").innerText = localStorage.getItem(cost) + " €";
-        localStorage.clear();
     }
 }
 

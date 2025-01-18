@@ -104,7 +104,7 @@ function validateEditPassword() {
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
 		var p = createError("err-new-psw");
-		p.innerText = "La lunghezza minima della password è di 4 caratteri";
+		p.innerText = "La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri";
 		psw.appendChild(p);
 		return false;
 	}
@@ -114,7 +114,7 @@ function validateEditPassword() {
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
 		var p = createError("err-new-psw");
-		p.innerText = "La password deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale";
+		p.innerText = "La <span lang=\"en\">password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
 		psw.appendChild(p);
 		return false;
 	}
@@ -133,7 +133,7 @@ function validateEditPasswordConfirm() {
 		var check = document.getElementById("err-repeat-new-psw");
 		deleteError(check);
         var p = createError("err-repeat-new-psw");
-		p.innerText = "Le password non coincidono";
+		p.innerText = "Le <span lang=\"en\">password</span> non coincidono";
 		const repeatPsw = document.getElementById("repeat-new-psw").parentNode;
 		repeatPsw.appendChild(p);
 		return false;

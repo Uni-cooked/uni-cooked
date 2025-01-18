@@ -51,14 +51,14 @@ Accessibilità:
 
 
 FALSI POSITIVI:
-- (all) salta al contenuto deve essere la prima
-- (all) label sono prima di input in hamburger e altro
-- (all) aria-label nella breadcrumb
-- (index) label scopri se fa per te non unica
-- (catalogo) order by non ha il submit
-- (catalogo) onchange non dovrebbe chiamare il submit ma ci serve
-- (catalogo) #top funziona da se https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier
-- (aboutus) leged in fieldset proposta
+(all) salta al contenuto deve essere la prima
+(all) label sono prima di input in hamburger e altro
+(all) aria-label nella breadcrumb
+(index) label scopri se fa per te non unica
+(catalogo) order by non ha il submit
+(catalogo) onchange non dovrebbe chiamare il submit ma ci serve
+(catalogo) #top funziona da se https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier
+(aboutus) legend in fieldset proposta
 
 STRUMENTI
 W3ba11y

@@ -43,6 +43,7 @@ Valutando gli elementi delle pagine abbiamo ritenuto opportuno dividere gli sche
 - *inferiore a 480px* per mobile.
 - *tra 480px e 768 px* per schermi di dimensioni medie (ad esempio tablet).
 - *superiore a 768px* per schermi grandi (ad esempio monitor). Nel file `CSS` dedicato è presente una classe che limita il contenuto a 1200px in modo da gestire anche gli schermi più larghi.
+In ogni fascia di risoluzione è sempre stato adottato uno design misto limitando l'uso di unità di misura fisse (utilizzate solo per i bordi) e il display grid (sfruttato solo nella pagina dei contatti).
 
 == Comportamento
 Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input e all'aggiornamento di due valori nei filtri della pagina di ricerca. In questo modo limitiamo al minimo i disagi provocati dalla mancanza di `JavaScript`. Sono stati quindi realizzati interamente con `CSS` il menu ad hamburger per mobile e le animazioni delle carte nella home. ALTRO????
@@ -59,10 +60,10 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunto la breadcrumb in ogni pagina.
 - Aggiunto gli aiuti alla navigazione in ogni pagina.
 - Contrassegnato abbreviazioni, simboli e sigle con i corretti tag `HTML5`.
-- Aggiunto l'attributo `title` ai link in modo da renderli più espressivi alla lettura con screen reader.
+- Aggiunto l'attributo title ai link in modo da renderli più espressivi alla lettura con screen reader.
 - Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
 - Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
-- Assegnato gli attributi `alt` lasciandoli vuoti se non necessari.
+- Assegnato gli attributi alt lasciandoli vuoti se non necessari.
 - ALTRO ????
 
 = Controlli sul sito
@@ -74,10 +75,10 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 - Tutti gli input sono preceduti delle label e seguiti dall'eventuale errore.
 - Tutte le pagine contengono le breadcrumb.
 - Utilizzo di screen reader (QUALI ???)
-- Attributo `alt` ad ogni immagine.
-- Attributo o tag `abbr` ad ogni abbreviazione o sigla.
+- Attributo alt ad ogni immagine.
+- Attributo o tag abbr ad ogni abbreviazione o sigla.
 - Link corretti per gli aiuti alla navigazione.
-- Attributo `lang` con la lingua dei termini che seguono se sono stranieri.
+- Attributo lang con la lingua dei termini che seguono se sono stranieri.
 
 == Colori
 Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei colori:
@@ -108,7 +109,15 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 - Tutte le funzionalità del sito sono valide senza `JavaScript`.
 
 == Falsi positivi
-TODO: TANTI
+Validando il sito con Total Validator vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
+- L'aiuto alla navigazione \"salta al contenuto\" è stato messo dopo \"salta a dove ti trovi\" per mantenere la coerenza di ordine strutturale. Si fa notare che è stato omesso \"salta al menu\" perché posizionato appena dopo il titolo nell'header.
+- Le label sono state posizionate prima degli input per questioni di accessibilità.
+- Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non è necessario segnare la seconda con un aria-label.
+- Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le 4 sezioni.
+- Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
+- Per la ragione citata sopra `JavaScript` deve inserire onchange=\"this.form.submit()\".
+- La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("fonte1")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("fonte2")]).
+- Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
 
 = Struttura gerarchica
 La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
@@ -210,6 +219,9 @@ Tutti i componenti hanno contribuito a popolare il database in modo equilibrato.
 #v(100pt)
 = NB nelle pagina
 
+home card
+- giallo su verde bene perché large (?)
+
 ricette
 - algo per ricerca
 - link ricette diversi
@@ -217,6 +229,8 @@ ricette
 ricetta
 - breadcrumb dinamica
 - carica altro
+- aggiungi ai preferiti sparisce se non sei loggato
+- span en
 
 contatti
 - suggerimento manda mail

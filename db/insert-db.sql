@@ -281,7 +281,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale fino",
 INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Riso Venere con verdure", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "couscous_EN", FALSE, 60, "g", "senza esagerare poiché si gonfia molto");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "couscous_EN", FALSE, 60, "g", "senza esagerare, si gonfia molto");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "zucchine", FALSE, 40, "g", "una piccola");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "carote", FALSE, 40, "g", "una piccola");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Couscous_EN con verdure", "peperoni dolci", FALSE, 30, "g", "preferire quelli piccoli");

@@ -8,14 +8,16 @@ abbr DAD -> gaggi
 js slider
 js suggerimenti off focus non onchange
 mettere strong dove serve (check keywords)
-titoli su img in index (ha senso blur? header?)
 img contatti se non sono loggato
 animazioni belline
 errore user edit pp senza padding
+link menu non cambiano colore (anche altri, come cacchio faccio?)
+card ricette preferite senza shadow
+caratteri speciali in psw
+quando cancello in una form torno su col focus
 
 NB relazione
-span en in titoli
-breadcrumb dinamica
+colori non tutti in contrasto
 
 
 contrasti link visitati e non
@@ -29,3 +31,12 @@ contrasti link visitati e non
 
 
 #ffdb57 / #0C6F59
+
+#0c6f59 -> #075545
+
+#075545 / #efae50
+#efae50 / #392a24
+#ffffff / #075545
+#ffffff / #392a24
+#ffffff / #171717
+#efae50 / #171717
