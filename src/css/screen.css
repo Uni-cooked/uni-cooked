@@ -302,7 +302,7 @@ nav#menu ul {
     align-items: center;
     background-color: var(--accent-secondary);
     border-radius: var(--radius-max);
-    padding: .6rem 2rem .6rem 2rem;
+    padding: .6rem 2rem;
 }
 
 nav#menu li {
@@ -332,7 +332,7 @@ nav#menu li#current-page {
     color: var(--accent-secondary);
 }
 
-nav#menu a:link {
+nav#menu a {
     color: var(--menu-a-color);
 }
 
@@ -990,6 +990,7 @@ button#del-comment {
 
 .comment-eval {
     margin-top: .7em;
+    word-spacing: var(--word-spacing);
 }
 
 .comment-text {

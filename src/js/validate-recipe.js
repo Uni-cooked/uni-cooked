@@ -23,7 +23,7 @@ function validateCommento(){
         const check = document.getElementById("err-comment");
         eliminateError(check);
         var p = createError("err-comment")
-        p.innerText = "Il testo della valutazione è necessario"
+        p.innerText = "Il commento della valutazione è necessario"
         const parent = document.getElementById("add-comment-text").parentNode;
         parent.appendChild(p);
         return false;
@@ -32,7 +32,7 @@ function validateCommento(){
         const check = document.getElementById("err-comment");
         eliminateError(check);
         var p = createError("err-comment")
-        p.innerText = "Il numero di caratteri nel testo della valutazione è superiore a 200";
+        p.innerText = "Il numero di caratteri nel commento della valutazione è superiore a 200";
         const parent = document.getElementById("add-comment-text").parentNode;
         parent.appendChild(p);
         return false;
