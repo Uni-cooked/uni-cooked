@@ -122,7 +122,7 @@ if(isset($_GET["recipe"])) {
     $paginaHtml=str_replace("{{time}}",$recipeDetails["tempo"],$paginaHtml);
     $paginaHtml=str_replace("{{price}}",$recipeDetails["prezzo"],$paginaHtml);
     if($isUserLogged!=false) {
-        $formFavourites="<form action=\"recipe.php?recipe=".$recipe.'"'."method=\"post\" class=\"end-paragraph\">";
+        $formFavourites="<form action=\"recipe.php?recipe=".$recipe.'"'."method=\"post\">";
         $isRecipeAUserFavourite=$db->isRecipeInUserFavourites($recipe,$isUserLogged);
         if(is_string($isRecipeAUserFavourite)) {
             header('Location: 500-err.php');
@@ -217,8 +217,8 @@ if(isset($_GET["recipe"])) {
         } else {
             $form.='<div class="content"><div id="user-comment">';
             $form.='<img src="'.$immagine.'" class="comment-pp">';
-            $form.='<a href="user.php">'.$isUserLogged."</a>";
-            $form.='<p class="comment-eval">'.$userComment["voto"].' <abbr title="su">/</abbr> 30</p>';
+            $form.='<a class="username" href="user.php">'.$isUserLogged."</a>";
+            $form.='<p class="comment-eval"><span class="grade">'.$userComment["voto"].'</span> <abbr title="su">/</abbr> 30</p>';
             $form.='<p class="comment-text">'.$userComment["commento"].'</p>';
             $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"])).'</time></div><form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'"><button type="submit" id="del-comment" class="load-more-btn" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
         }
@@ -263,7 +263,7 @@ if(isset($_GET["recipe"])) {
                     $finalList.='<li><img src="'.$immagine.'" alt="" class="comment-pp">';
                 }
                 $finalList.='<a href="user.php?username='.$singleComment["utente"].'">'.$singleComment["utente"]."</a>";
-                $finalList.='<p class="comment-eval">'.$singleComment["voto"].' <abbr title="su">/</abbr> 30</p>';
+                $finalList.='<p class="comment-eval"><span class="grade">'.$singleComment["voto"].'</span> <abbr title="su">/</abbr> 30</p>';
                 $finalList.='<p class="comment-text">'.$singleComment["commento"]."</p>";
                 $finalList.='<time class="comment-date" datetime="'.$singleComment["data"].'">'.date("d/m/Y",strtotime($singleComment["data"]))."</time></li>";
                 $commentNumber=$commentNumber+1;

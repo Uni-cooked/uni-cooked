@@ -30,7 +30,7 @@
     --animation-duration: 1.1s;
 
     /* TEXT */
-    --title: 4rem;
+    --title: 4.5rem;
     --subtitle: 1.5rem;
     --menu-text: 1.1rem;
     --form-label: 1.2rem;
@@ -457,6 +457,14 @@ nav#quick-role a:visited {
     border-bottom: 3px solid var(--accent);
 }
 
+.role-text {
+    background-color: var(--accent-secondary);
+    padding: 1rem 3%;
+    width: fit-content;
+    margin: auto;
+}
+
+
 .button-animation:hover {
     transform: scale(1.03);
 }
@@ -706,6 +714,8 @@ div#why img {
 
 .filter-param p {
     text-align: center;
+    margin-top: .5rem;
+    font-weight: 500;
 }
 
 #search-btn {
@@ -865,8 +875,10 @@ ul#recipe-list .recipe a {
 #recipe-fav-btn {
     display: block;
     margin: 0 auto;
-    padding: .5em 1.3em;
+    padding: .5rem 1.5rem;
+    font-size: 1.1rem;
     background-color: var(--accent);
+    margin-bottom: 2em;
 }
 
 ul#ingredient-list {
@@ -958,6 +970,15 @@ button#del-comment {
     margin-top: 1em;
 }
 
+.grade {
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+
+.username {
+    font-size: 1.1rem;
+}
+
 .comment-pp {
     width: 4em;
     height: 4em;
@@ -972,6 +993,7 @@ button#del-comment {
 }
 
 .comment-text {
+    padding: 0rem .5rem;
     margin: 1.2em 0 .6em;
 }
 
