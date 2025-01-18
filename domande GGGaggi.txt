@@ -7,16 +7,16 @@ abbr DAD -> gaggi
 
 js slider
 js suggerimenti off focus non onchange
-mettere strong dove serve
+mettere strong dove serve (check keywords)
 titoli su img in index (ha senso blur? header?)
 img contatti se non sono loggato
-aumentare dai preferiti
-span en ricetta titolo
 animazioni belline
-errore user edit pp senza pagging
-aggiungi ai preferiti più grande
-img default
+errore user edit pp senza padding
+"aggiungi ai preferiti" più grande
 
+NB relazione
+span en in titoli
+breadcrumb dinamica
 
 
 contrasti link visitati e non
