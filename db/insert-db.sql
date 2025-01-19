@@ -30,6 +30,7 @@ INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde
 INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
+INSERT INTO Utente VALUES ("ÈColpaDiTeo","SeNonFunzionaColpaDiTeo@ovviamente.com","2195e1a6e384ce62ebceaa47df0b6cfc608c8ae099b9c8ddb9a83b2d65d882a4","2025-01-19","Se qualcosa non funziona\nPuò essere colpa di una sola persona\nTeo è il suo nome\nFar cadere sistemi è la sua professione\n\nAccidenti, ho mancato l'ultima rima...","pendolare",NULL);
 
 -- INGREDIENTE ====================================
 
@@ -94,6 +95,8 @@ INSERT INTO Ingrediente VALUES ("caciotta");
 INSERT INTO Ingrediente VALUES ("fesa di vitello");
 INSERT INTO Ingrediente VALUES ("farina 00");
 INSERT INTO Ingrediente VALUES ("burro");
+INSERT INTO Ingrediente VALUES ("passata di pomodoro");
+INSERT INTO Ingrediente VALUES ("formaggio");
 
 
 -- RICETTA ====================================
@@ -140,6 +143,8 @@ INSERT INTO Ricetta VALUES ("Hamburger_EN", "pendolare", "secondo", 15, 7, "Sei 
 INSERT INTO Ricetta VALUES ("Panino con prosciutto e pomodoro", "pendolare", "secondo", 5, 3, "
 Ci risiamo, anche quest'anno la segreteria ha deciso di mettere le uniche due lezioni del giorno una alle 8.30 e l'altra alle 16.30...
 Non preoccuparti, non sei costretto ad andare in mensa: segui questi passaggi per realizzare un ottimo panino con prosciutto e pomodoro! Vedrai che ti saprà dare le giuste energie per arrivare alla seconda lezione con il suo gusto sopraffino!", "2025-01-01", "./asset/img/recipe/pendolare/panino.jpg");
+INSERT INTO Ricetta VALUES ("Pasta alla nord Piovego","pendolare","primo",20,4,"
+Sei appena tornato dall'università ma già hai nostalgia... Qual modo migliore per eliminare la nostalgia se non preparando uno dei più famosi piatti della più celebre mensa universitaria padovana? Sì, parliamo proprio della pasta al pomodoro, sempre disponibile in menu da tempo immemore... Preparala per pranzo, difficilmente te ne pentirai!","2025-01-01","./asset/img/recipe/pendolare/pasta-nord-piovego.jpg");
 
 -- IN SEDE
 INSERT INTO Ricetta VALUES ("Pollo al curry_EN con riso e piselli", "in_sede", "secondo", 40, 8, "Un piatto aromatico e completo che porta in tavola i sapori dell'Oriente. Il pollo, cucinato in una salsa cremosa al curry_EN e latte di cocco, si sposa perfettamente con il riso basmati che ne assorbe i profumi intensi e speziati. I piselli freschi aggiungono una nota dolce e un tocco di colore rendendo il piatto ancora più appetitoso. Perfetto per chi ama le spezie e desidera un piatto unico ricco di sapore e ben bilanciato.", "2025-01-01", "./asset/img/recipe/in-sede/pollo-curry.jpg");
@@ -153,7 +158,7 @@ INSERT INTO Ricetta VALUES ("Pasta zucchine e salmone", "in_sede", "primo", 15, 
 
 -- DAD
 INSERT INTO Ricetta VALUES ("Arista di maiale", "dad", "secondo", 70, 10, "Un ottimo secondo piatto ricco di ciccia che in cottura sfrigola e regala un sapore davvero delizioso. Si può cucinare sia in forno che allo spiedo, o addirittura stracotta in casseruola.", "2025-01-15", "./asset/img/recipe/dad/arista-di-maiale.jpg");
-INSERT INTO Ricetta VALUES ("Frittata di patate e cipolla", "secondo", 25, 5, "Si ha un piatto completo quando le uova incontrano le patate e le cipolle. Un piatto che si adatta a qualsiasi stagione e occasione.", "2025-01-15", "./asset/img/recipe/dad/frittata-patate-cipolla.jpg");
+INSERT INTO Ricetta VALUES ("Frittata di patate e cipolla", "dad", "secondo", 25, 5, "Si ha un piatto completo quando le uova incontrano le patate e le cipolle. Un piatto che si adatta a qualsiasi stagione e occasione.", "2025-01-15", "./asset/img/recipe/dad/frittata-patate-cipolla.jpg");
 INSERT INTO Ricetta VALUES ("Noodles_EN con i gamberetti", "dad", "primo", 20, 5, "I noodles_EN con gamberetti sono un buonissimo primo piatto in cui gli spaghetti orientali sono protagonisti insieme a pochi altri ingredienti.", "2025-01-15", "./asset/img/recipe/dad/noodles-gamberetti.jpg");
 INSERT INTO Ricetta VALUES ("Pasta caciotta e tonno in crema di peperoni", "dad", "primo", 35, 8, "La pasta con crema di peperoni, caciotta e tonno è un primo piatto davvero squisito. Colorato e semplice da preparare, piacerà a tutti.", "2025-01-15", "./asset/img/recipe/dad/pasta-caciotta-tonno-cremapeperoni.jpg");
 INSERT INTO Ricetta VALUES ("Scaloppina al limone", "dad", "secondo", 25, 9, "La scaloppina al limone è una ricetta semplice e veloce da preparare, ma allo stesso tempo raffinata e gustosa. La delicatezza della carne si sposa perfettamente con l'acidità del limone, creando un mix di sapori davvero irresistibile.", "2025-01-15", "./asset/img/recipe/dad/scaloppina-limone.jpg");
@@ -179,6 +184,7 @@ INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","MasterMaurizio");
 INSERT INTO Preferenza_Ricetta VALUES ("Merluzzo in scaloppa","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Rucola e bresaola","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Pasta zucchine e salmone","Tony");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta alla nord Piovego","ÈColpadiTeo");
 
 
 
@@ -249,6 +255,11 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Hamburger_EN", "olio d'oliva", TRUE, N
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "prosciutto cotto", FALSE, 35, "g", "o crudo se c'hai i soldi");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pomodori da insalata", FALSE, 1, "num_el", "quelli grande");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pane", FALSE, 1, "num_el", "meglio se da toast_EN");
+
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","pasta",FALSE, 125, "g", "fusilli");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","passata di pomodoro",FALSE,1,"num_el",NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","formaggio",TRUE,NULL,NULL,"grana grattugiato");
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","olio",TRUE,NULL,NULL,NULL);
 
 -- IN SEDE
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "riso Basmati", FALSE, 70, "g", NULL);
@@ -338,7 +349,6 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "pepe", T
 INSERT INTO Utilizzo_Ingrediente VALUES("Noodles_EN con i gamberetti", "limone", FALSE, 1, "num_el", NULL);
 
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, "num_el", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "pasta", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "tonno", FALSE, 35, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di peperoni", "peperoni dolci", FALSE, 125, "g", "rossi o gialli");
@@ -349,10 +359,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Pasta caciotta e tonno in crema di pepe
 
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "fesa di vitello", FALSE, 120, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, "num_el", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "limone", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "farina 00", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "burro", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "sale grosso", TRUE, NULL, NULL, NULL);
@@ -462,6 +469,16 @@ INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 4, "Prendi 
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 5, "Prendi una fetta di pane caldo, poggia due fette di pomodoro, il prosciutto e quindi le rimanenti due fette di pomodoro. Chiudi con l'altra fetta di pane.");
 INSERT INTO Preparazione VALUES ("Panino con prosciutto e pomodoro", 6, "Il tuo panino è pronto: buon appetito!");
 
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",1,"Prendi una pentola non troppo grande, ponila sotto il rubinetto e riempila d’acqua lasciando circa <abbr title=\"un quarto\">1/4</abbr> di spazio.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",2,"Prendi la pentola e mettila sul fornello, quindi accendi il fuoco.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",3,"Prendi la passata di pomodoro: se hai una bottiglia molto grande consigliamo di utilizzare un bicchiere come “dosatore” ed utilizzarne circa 3 bicchieri.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",4,"Prendi una padella non troppo grande, ponila sul fornello senza accendere il fuoco e coprila con un po’ d’olio, diciamo un quantitativo appena per ricoprirne la superficie.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",5,"Accendi il fuoco, attendi che l’olio si scaldi appena (meno di un minuto) e versaci sopra la passata. La passata sarà calda tra circa 20 minuti, occupiamoci nel frattempo della pasta...");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",6,"Quando l’acqua bolle, sala la stessa buttandoci circa due cucchiai di sale grosso. Prendi quindi i 125 gr di pasta e buttali in acqua (attento a non schizzare, l’acqua bollente non è propriamente gradita a contatto con la pelle).");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",7,"Attendi circa 10 minuti che la pasta sia cotta, quindi spegni il fuoco.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",8,"Quando, tra pochi minuti, anche la passata sarà calda, spegni il fuoco della padella.");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",9,"Scola la pasta e ponila su un piatto, quindi versaci sopra la passata dalla padella. Condisci con un po’ di formaggio grana e <span lang=\"fr\">voilà</span>: la tua pasta al pomodoro è pronta.");
+
 -- IN SEDE
 INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 1, "Metti l'acqua a bollire per il riso in una pentola. Una volta che fa le bolle versa del sale grosso e poi il riso, abbassa il fuoco a medio-alto e cucina per il tempo indicato sulla confezione.");
 INSERT INTO Preparazione VALUES ("Pollo al curry_EN con riso e piselli", 2, "Nel mentre metti i piselli in un pentolino, versa un po' di acqua per cuocerli ma non annegarli, un pizzico di sale fino e un goccio d'olio d'oliva. Accendi il fuoco medio-basso e cucina per 12 minuti col coperchio (assaggia e regolati in base al gusto e alla consistenza).");
@@ -567,6 +584,7 @@ INSERT INTO Valutazione VALUES ("Pasta-asciutta", "Jay", "2025-01-05", 24, "Non 
 INSERT INTO Valutazione VALUES ("Insalata veloce", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Riso e uova fritte", "Oca", "2025-01-05", 14, "Piatto povero di gusti, emozioni e non molto salutare quindi non si merita nemmeno la sufficienza");
 INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una Peroni gelata");
+INSERT INTO Valutazione VALUES ("Pasta-asciutta","ÈColpadiTeo","2025-01-19",18,"Mancava un po' troppo di sale...");
 
 
 -- PENDOLARE
@@ -575,12 +593,13 @@ INSERT INTO Valutazione VALUES ("Insalata veloce", "OmbrettaGatti", "2025-01-12"
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata veloce, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
+INSERT INTO Valutazione VALUES ("Pasta alla nord Piovego","ÈColpadiTeo","2025-01-19",30,"Mai mangiata una pasta così buona! Giusto quello che mi serviva prima di tornare a studiare!");
 
 -- IN SEDE
 INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump", "2025-01-11", 30, "Pazzesco!!!!");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "OmbrettaGatti", "2025-01-14", 24, "Mi piace che non si pensi solo alla carne, cambierei l'accostamento coi piselli però.");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "2025-01-15", 25, "Concordo con Ombretta, comunque molto buono e facile da preparare.");
-
+INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli","ÈColpadiTeo","2025-01-19",25,"Non male!");
 
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
