@@ -631,7 +631,7 @@ dd .role-info-label {
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
     position: absolute;
     bottom: 1.1rem;
-    right: 0;
+    right: -1px;
     font-weight: 550;
     transition: visibility var(--animation-duration);
 }
@@ -748,13 +748,12 @@ ul#recipe-list .recipe {
     width: 32%;
     min-width: 21em;
     height: 27em;
-    background-color: var(--accent-secondary);
+    background-color: var(--bg-secondary);
     border-radius: var(--radius-small);
     padding: 0.65em;
     color: var(--text-color);
     /* to align the link to the right */
     text-align: right;
-    box-shadow: 0 0 11px 1px black;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
