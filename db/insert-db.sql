@@ -32,6 +32,7 @@ INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
 INSERT INTO Utente VALUES ("ÈColpaDiTeo","SeNonFunzionaColpaDiTeo@ovviamente.com","2195e1a6e384ce62ebceaa47df0b6cfc608c8ae099b9c8ddb9a83b2d65d882a4","2025-01-19","Se qualcosa non funziona\nPuò essere colpa di una sola persona\nTeo è il suo nome\nFar cadere sistemi è la sua professione\n\nAccidenti, ho mancato l'ultima rima...\n\n\nSONO TRISTE!","pendolare",NULL);
+INSERT INTO Utente VALUES ("user","user@user.com","04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb","2025-01-19",NULL,"dad",NULL);
 
 -- INGREDIENTE ====================================
 
@@ -475,7 +476,7 @@ INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",2,"Prendi la pentola 
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",3,"Prendi la passata di pomodoro: se hai una bottiglia molto grande consigliamo di utilizzare un bicchiere come “dosatore” ed utilizzarne circa 3 bicchieri.");
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",4,"Prendi una padella non troppo grande, ponila sul fornello senza accendere il fuoco e coprila con un po' d'olio, diciamo un quantitativo appena per ricoprirne la superficie.");
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",5,"Accendi il fuoco, attendi che l'olio si scaldi appena (meno di un minuto) e versaci sopra la passata. La passata sarà calda tra circa 20 minuti, occupiamoci nel frattempo della pasta...");
-INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",6,"Quando l'acqua bolle, sala la stessa buttandoci circa due cucchiai di sale grosso. Prendi quindi i 125 gr di pasta e buttali in acqua (attento a non schizzare, l'acqua bollente non è propriamente gradita a contatto con la pelle).");
+INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",6,"Quando l'acqua bolle, sala la stessa buttandoci circa due cucchiai di sale grosso. Prendi quindi i 125 <abbr title=\"grammi\">gr</abbr> di pasta e buttali in acqua (attento a non schizzare, l'acqua bollente non è propriamente gradita a contatto con la pelle).");
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",7,"Attendi circa 10 minuti che la pasta sia cotta, quindi spegni il fuoco.");
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",8,"Quando, tra pochi minuti, anche la passata sarà calda, spegni il fuoco della padella.");
 INSERT INTO Preparazione VALUES ("Pasta alla nord Piovego",9,"Scola la pasta e ponila su un piatto, quindi versaci sopra la passata dalla padella. Condisci con un po' di formaggio grana e voilà_FR: la tua pasta al pomodoro è pronta.");
