@@ -15,11 +15,9 @@
     --accent: #EFAE50;
     --accent-secondary: #392A24;
     --accent-trinary: #0C6F59;
-    --accent-quaternary: #134270;
+    --hypertext-link-color: #33cc99;
     --text-color: white;
-    --menu-a-color: white;
     --danger-button-color: #b30000;
-
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -73,11 +71,11 @@ body {
 }
 
 a {
-    color: var(--accent);
+    color: var(--text-color);
 }
 
 a:visited {
-    color: var(--accent-trinary);
+    color: var(--accent);
 }
 
 p {
@@ -336,14 +334,6 @@ nav#menu li#current-page {
     color: var(--accent-secondary);
 }
 
-nav#menu a {
-    color: var(--menu-a-color);
-}
-
-nav#menu a:visited {
-    color: var(--accent);
-}
-
 nav#menu li#profile-item {
     margin-left: auto;
 }
@@ -423,7 +413,6 @@ abbr {
 /* #region HOME PAGE ROLES MENU */
 nav#quick-role {
     background-color: var(--bg-secondary);
-    transition: visibility var(--animation-timing);
 }
 
 nav#quick-role ul {
@@ -442,15 +431,6 @@ nav#quick-role li {
     font-style: italic;
     white-space: nowrap;
 }
-
-nav#quick-role a:link {
-    color: var(--accent)
-}
-
-nav#quick-role a:visited {
-    color: var(--accent-trinary)
-}
-
 /*#endregion HOME PAGE ROLES MENU */
 
 /* ================================================== */
@@ -589,7 +569,7 @@ dd:has(input:checked) .flip-card .flip-card-front p + a {
 
 .flip-card-back h3 {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .flip-card-back ul {
@@ -647,7 +627,7 @@ dd .role-info-label {
     display: block;
     width: fit-content;
     background-color: var(--accent-secondary);
-    padding: .5rem 2rem .5rem 2rem;
+    padding: .5rem 4rem .5rem 2rem;
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
     position: absolute;
     bottom: 1.1rem;
@@ -655,7 +635,6 @@ dd .role-info-label {
     font-weight: 550;
     transition: visibility var(--animation-duration);
 }
-
 /* #endregion HOME PAGE CONTENT*/
 
 /* ================================================== */
@@ -694,6 +673,13 @@ div#why img {
     border-radius: var(--radius-small);
 }
 
+div#why #why-desc a {
+    color: var(--hypertext-link-color);
+}
+
+div#why #why-desc a:visited {
+    color: var(--accent);
+}
 /* #endregion HOME PAGE WHY */
 
 /* ================================================== */
@@ -849,7 +835,6 @@ ul#recipe-list .recipe a {
     background-image: url("../asset/icon/right-arrow.svg");
     float: right;
 }
-
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
@@ -1029,6 +1014,13 @@ button#del-comment {
     text-align: center;
 }
 
+#no-login-p a {
+    color: var(--hypertext-link-color);
+}
+
+#no-login-p a:visited {
+    color: var(--accent);
+}
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -1066,7 +1058,7 @@ label[for="student-name-up"]+p.suggestion {
 }
 
 ul.suggestion {
-    list-style-position: inside;
+    padding-left: 2em;
 }
 
 .sign-box #credentials {
@@ -1129,6 +1121,14 @@ ul.suggestion {
 #user-bio {
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+#user-bio a {
+    color: var(--hypertext-link-color);
+}
+
+#user-bio a:visited {
+    color: var(--accent);
 }
 
 #fav-recipe-list-container {
@@ -1233,8 +1233,7 @@ a#edit-profile-link {
     font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
-    background-color: var(--accent);
-    color: var(--bg-primary);
+    background-color: var(--accent-secondary);
 }
 
 #log-out {
@@ -1443,7 +1442,7 @@ a#edit-profile-link {
     width: 14em;
     font-size: var(--button-text);
     font-weight: 700;
-    background-color: var(--accent);
+    background-color: var(--accent-secondary);
     padding: 1em 0;
     margin: 0 auto;
     border-radius: var(--radius-small);
@@ -1479,9 +1478,12 @@ footer p {
 }
 
 footer a {
-    color: var(--accent);
+    color: var(--hypertext-link-color);
 }
 
+footer a:visited {
+    color: var(--accent);
+}
 /* #endregion FOOTER */
 
 /* ================================================== */
@@ -1634,5 +1636,4 @@ input[type="number"] {
         scrollbar-width: thin;
     }
 }
-
 /* #endregion CUSTOM INPUTS */

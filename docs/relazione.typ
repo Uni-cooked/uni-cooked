@@ -53,7 +53,8 @@ TEO CONTROLLA !!!!!!! \
 Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
 
 == Emotional design
-Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un approccio molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine. 
+Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.
+HAMBURGER
 
 = Accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
@@ -65,6 +66,9 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
 - Assegnato gli attributi alt lasciandoli vuoti se non necessari.
 - ALTRO ????
+- torna su
+- aria-label dove server
+- classe hide dove server (bUtton)
 
 = Controlli sul sito
 TODO: DIRE QUALI STRUMENTI SONO STATI UTILIZZATI
@@ -94,18 +98,21 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda la struttura:
 
 == Usabilità
 Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
+- Non esistono link circolari.
 - Tutte le pagine sono raggiungibili.
-- Gli errori 40X e 50X sono gestiti.
-- Velocità di caricamento del sito
+- Gli errori 404 e 500 sono gestiti.
+- Velocità di caricamento del sito (COSA CON RESULTS)
 - CHE FONT ABBIAMO ADOTTATO ???
 
 == Sicurezza
 Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
 - Controllo della validità dei dati inviati al server.
+- PSW HASH
+- QUERY PREPARATE (NO INJECTION)
 
 == Codice
 Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
-- `HTML5` e `CSS` validi.
+- `HTML5` e `CSS` validi. ??????????
 - Tutte le funzionalità del sito sono valide senza `JavaScript`.
 
 == Falsi positivi

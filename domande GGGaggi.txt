@@ -5,38 +5,13 @@
 burger -> gaggi
 abbr DAD -> gaggi
 
-js slider
 js suggerimenti off focus non onchange
-mettere strong dove serve (check keywords)
-img contatti se non sono loggato
 animazioni belline
-errore user edit pp senza padding
-link menu non cambiano colore (anche altri, come cacchio faccio?)
-card ricette preferite senza shadow
-caratteri speciali in psw
-quando cancello in una form torno su col focus
+caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> pallino dentro giallo (PHP, JS, CSS)
 
 NB relazione
 colori non tutti in contrasto
-
-
-contrasti link visitati e non
-- menu/breadcrumb/ricette preferite
-- accedi del menu
-- bg-primary (torna su commento)
-- bg-secondary (cat in home, torna su footer, ricette preferite, bio vuota user)
-- card home
-- pulsanti user
-- pulsante giallo single page
-
-
-#ffdb57 / #0C6F59
-
-#0c6f59 -> #075545
-
-#075545 / #efae50
-#efae50 / #392a24
-#ffffff / #075545
-#ffffff / #392a24
-#ffffff / #171717
-#efae50 / #171717
+"adatto per te se:" ingrandito così AA
+js solo per slider (ensomma) e pp user
+403 chiedi teo
+role alert index e catalogo

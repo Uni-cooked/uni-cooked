@@ -6,7 +6,7 @@
   set enum(indent: 1em)
   set align(center)
   
-  text(25pt, weight: "bold", fill: black, font: "Liberation Sans")[RELAZIONE DI PROGETTO \ ]
+  text(25pt, weight: "bold", fill: black, font: "Liberation Sans")[TEO \ ]
 
   circle(radius: 10em, fill: rgb("#302E8E"))[
     #image("../src/asset/img/def-profile.png", height: 100%)
