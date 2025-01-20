@@ -24,8 +24,16 @@
 
 /* ================================================== */
 
+/* #region HEADER */
+#header-titles {
+    padding: 1rem;
+}
+/* #endregion HEADER */
+
+/* ================================================== */
+
 /* #region HOME PAGE */
-dl p{
+dl p {
     padding: 2rem 2rem 5rem 2rem;
 }
 
@@ -35,6 +43,10 @@ dd:has(input:checked) .flip-card .flip-card-inner {
 
 .flip-card-back {
     transform: rotateY(180deg);
+}
+
+.role-desc + a {
+    padding-right: 3rem;
 }
 /* #endregion HOME PAGE */
 

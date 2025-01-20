@@ -99,6 +99,7 @@ INSERT INTO Ingrediente VALUES ("farina 00");
 INSERT INTO Ingrediente VALUES ("burro");
 INSERT INTO Ingrediente VALUES ("passata di pomodoro");
 INSERT INTO Ingrediente VALUES ("formaggio");
+INSERT INTO Ingrediente VALUES ("acqua");
 
 
 -- RICETTA ====================================
@@ -260,7 +261,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES ("Panino con prosciutto e pomodoro", "pa
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","pasta",FALSE, 125, "g", "fusilli");
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","passata di pomodoro",FALSE,1,"num_el",NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","formaggio",TRUE,NULL,NULL,"grana grattugiato");
-INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","olio",TRUE,NULL,NULL,NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES ("Pasta alla nord Piovego","olio d'oliva",TRUE,NULL,NULL,NULL);
 
 -- IN SEDE
 INSERT INTO Utilizzo_Ingrediente VALUES ("Pollo al curry_EN con riso e piselli", "riso Basmati", FALSE, 70, "g", NULL);

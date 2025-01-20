@@ -42,7 +42,7 @@ fieldset {
 
 /* #region NAVIGATION HELP */
 nav#list-help {
-    z-index: 2;
+    z-index: 3;
 }
 /* #endregion NAVIGATION HELP */
 
@@ -54,7 +54,7 @@ nav#list-help {
     justify-content: space-between;
     background-color: var(--accent-secondary);
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 #hamburger:has(input:checked) {
