@@ -141,6 +141,7 @@ fieldset {
 }
 
 .form-label {
+    clear: both;
     display: block;
     margin-bottom: .8rem;
     color: var(--accent);
@@ -783,7 +784,7 @@ ul#recipe-list .recipe .catalogue-recipe-img-crop {
 
 ul#recipe-list .recipe .recipe-title {
     font-size: 1.6rem;
-    height: 37%;
+    height: 35%;
     text-align: left;
 }
 
