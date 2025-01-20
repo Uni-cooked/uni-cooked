@@ -161,9 +161,10 @@ body:has(#hamburger-label input:checked) footer {
 
 nav#menu ul {
     height: 40vh;
-    margin-top: 3vh;
+    margin-top: 8vh;
     flex-direction: column;
     justify-content: space-evenly;
+    font-size: 1.1rem;
 }
 
 nav#menu li:not(#profile-item) {

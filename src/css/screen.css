@@ -30,7 +30,7 @@
     /* TEXT */
     --title: 4.5rem;
     --subtitle: 1.5rem;
-    --menu-text: 1.1rem;
+    --menu-text: 1.2rem;
     --form-label: 1.2rem;
     --button-text: 1.2rem;
     --section-title: 3em;
@@ -232,6 +232,7 @@ header {
     backdrop-filter: blur(15px);
     padding: 1rem 3rem;
     border-radius: var(--radius-small);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 header h1,
@@ -320,8 +321,8 @@ nav#menu li:not(:first-child):not(#profile-item) {
 }
 
 .logo {
-    width: 3rem;
-    height: 3rem;
+    width: 3.7rem;
+    height: 3.7rem;
 }
 
 nav#menu li:has(.logo) {
@@ -405,6 +406,7 @@ abbr {
 
 #img-team {
     width: 50%;
+    height: 50%;
 }
 
 
@@ -444,10 +446,10 @@ nav#quick-role li {
 }
 
 .role-text {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.40);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    padding: 1rem 3%;
+    padding: 1rem 5%;
     width: fit-content;
     margin: auto;
     border-radius: var(--radius-small);
@@ -598,6 +600,7 @@ dd input {
     padding: 0;
     margin: 0;
     appearance: none;
+    -webkit-appearance: none;
     outline: none;
     pointer-events: none;
 }
@@ -628,7 +631,6 @@ dd .role-info-label {
 
 .role-desc + a {
     display: block;
-    width: fit-content;
     background-color: var(--accent-secondary);
     padding: .5rem 4rem .5rem 2rem;
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
@@ -1518,6 +1520,7 @@ select {
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
     color: white;
+    -webkit-appearance: none;
 }
 
 textarea {
