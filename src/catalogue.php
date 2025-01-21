@@ -21,8 +21,10 @@ $_SESSION["prev-page"]="<a href=\"./catalogue.php\">RICETTE</a>";
 
 $paginaHtml = file_get_contents("./html/catalogue.html");
 
-if ($db->isUserLogged() != false) {
-    $paginaHtml = str_replace('<a href="sign-in.php" class="shadow">ACCEDI</a>', "<a href=\"user.php\" class=\"shadow\">PROFILO</a>", $paginaHtml);
+if($db->isUserLogged()!=false) {
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary shadow\">PROFILO</a>",$paginaHtml);
+} else {
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
 }
 
 $currentPage = isset($_GET['page']) ? Sanitizer::SanitizeInput(Sanitizer::IntFilter($_GET['page'])) : 1;

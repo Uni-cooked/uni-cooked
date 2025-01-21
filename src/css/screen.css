@@ -12,9 +12,9 @@
     /* COLORS */
     --bg-primary: #171717;
     --bg-secondary: #242424;
-    --accent: #EFAE50;
+    --accent: #efae52;
     --accent-secondary: #392A24;
-    --accent-trinary: #0C6F59;
+    --accent-trinary: #0c6f59;
     --hypertext-link-color: #33cc99;
     --text-color: white;
     --danger-button-color: #b30000;
@@ -43,6 +43,7 @@
     --radius-max: 100rem;
     --radius-mid: 10rem;
     --radius-small: .5rem;
+    --border-visited-link-btn: 3px solid;
 
     /* FORMS */
     --button-width: 10rem;
@@ -72,10 +73,30 @@ body {
 
 a {
     color: var(--text-color);
+    border-bottom: 3px dashed;
 }
 
 a:visited {
     color: var(--accent);
+    border-color: var(--accent);
+}
+
+a.a-btn {
+    color: var(--accent);
+    border: var(--border-visited-link-btn) var(--accent-secondary);
+}
+
+a.a-btn:visited {
+    border: var(--border-visited-link-btn) var(--accent);
+}
+
+a.a-btn-secondary {
+    color: var(--text-color);
+    border: var(--border-visited-link-btn) var(--accent-trinary);
+}
+
+a.a-btn-secondary:visited {
+    border: var(--border-visited-link-btn) var(--text-color);
 }
 
 p {
@@ -197,7 +218,6 @@ fieldset {
 .disabled-btn {
     opacity: 30%;
 }
-
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -250,7 +270,6 @@ h2#header-subtitle {
     font-weight: 700;
     font-size: var(--subtitle);
 }
-
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -282,7 +301,6 @@ nav#list-help li {
     text-indent: 0rem;
     background-color: var(--bg-primary);
 }
-
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -314,8 +332,7 @@ nav#menu li {
 }
 
 nav#menu li:not(:first-child):not(#profile-item) {
-    border-radius: var(--radius-max);
-    margin: 0 1.5rem 0 1.5rem;
+    margin: 0 1.5rem;
 }
 
 .logo {
@@ -333,6 +350,7 @@ nav#menu li#current-page {
     padding: .2rem 1.3rem;
     background-color: var(--accent);
     color: var(--accent-secondary);
+    border-radius: var(--radius-max);
 }
 
 nav#menu li#profile-item {
@@ -340,12 +358,14 @@ nav#menu li#profile-item {
 }
 
 nav#menu li#profile-item a {
-    color: white;
     background-color: var(--accent-trinary);
-    border-radius: 10px;
-    padding: .8rem 1.3rem;
+    border-radius: var(--radius-small);
+    padding: .7rem 1.2rem;
 }
 
+nav#menu li:not(#profile-item) a:link {
+    border-color: var(--accent-secondary);
+}
 /* #endregion MENU */
 
 /* ================================================== */
@@ -362,9 +382,8 @@ nav#breadcrumb {
 nav#breadcrumb p {
     text-align: center;
     font-size: 1rem;
-    /* width: fit-content; */
     font-style: italic;
-    padding: .1rem 1rem;
+    padding: .1rem 1.3rem;
 
 }
 
@@ -431,6 +450,10 @@ nav#quick-role li {
     font-size: var(--menu-text);
     font-style: italic;
     white-space: nowrap;
+}
+
+nav#quick-role li a:link {
+    border-color: var(--bg-secondary);
 }
 /*#endregion HOME PAGE ROLES MENU */
 
@@ -677,10 +700,12 @@ div#why img {
 
 div#why #why-desc a {
     color: var(--hypertext-link-color);
+    border-color: var(--bg-secondary);
 }
 
 div#why #why-desc a:visited {
     color: var(--accent);
+    border-color: var(--accent);
 }
 /* #endregion HOME PAGE WHY */
 
@@ -809,9 +834,13 @@ ul#recipe-list .recipe ul.recipe-info img {
 
 ul#recipe-list .recipe a {
     text-align: right;
-    padding-top: 0.3em;
-    padding-right: 1em;
+    margin-top: 0.3em;
+    margin-right: 1em;
     font-weight: 700;
+}
+
+ul#recipe-list .recipe a:link {
+    border-color: var(--bg-secondary);
 }
 
 #page-changer {
@@ -959,6 +988,20 @@ ol li.prep-li::marker {
     margin-bottom: 2em;
 }
 
+#no-login-p {
+    text-align: center;
+}
+
+#no-login-p a {
+    color: var(--hypertext-link-color);
+    border-color: var(--bg-primary);
+}
+
+#no-login-p a:visited {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 #comment-subtitle {
     font-size: 1.5em;
     margin-top: 3em;
@@ -985,6 +1028,10 @@ button#del-comment {
     width: 100%;
     padding: .5em 0;
     margin-top: 1em;
+}
+
+ul#comment-list li a:link {
+    border-color: var(--bg-primary);
 }
 
 .grade {
@@ -1025,16 +1072,14 @@ button#del-comment {
     margin-top: 2em;
 }
 
-#no-login-p {
-    text-align: center;
-}
-
-#no-login-p a {
+a#back-up-first-comment {
     color: var(--hypertext-link-color);
+    border-color: var(--bg-primary);
 }
 
-#no-login-p a:visited {
+a#back-up-first-comment:visited {
     color: var(--accent);
+    border-color: var(--accent);
 }
 /* #endregion RECIPE PAGE */
 
@@ -1093,7 +1138,7 @@ ul.suggestion {
     color: var(--text-color);
     background-color: var(--accent-trinary);
     display: block;
-    padding: .8rem;
+    padding: .7rem;
     border-radius: var(--radius-small);
     font-weight: 700;
     font-size: var(--button-text);
@@ -1140,10 +1185,12 @@ ul.suggestion {
 
 #user-bio a {
     color: var(--hypertext-link-color);
+    border-color: var(--bg-secondary);
 }
 
 #user-bio a:visited {
     color: var(--accent);
+    border-color: var(--accent);
 }
 
 #fav-recipe-list-container {
@@ -1235,8 +1282,16 @@ ul.suggestion {
 }
 
 #fav-recipe-list .fav-recipe a {
-    padding-right: 1em;
+    margin-right: 1em;
     font-weight: 700;
+}
+
+#fav-recipe-list .fav-recipe a:link {
+    border-color: var(--bg-secondary);
+}
+
+a#back-up-first-fav-recipe:link {
+    border-color: var(--accent-secondary);
 }
 
 a#edit-profile-link {
@@ -1254,12 +1309,9 @@ a#edit-profile-link {
 #log-out {
     display: block;
     margin: 2em auto;
-    /*text-align: center;*/
     width: 14em;
     padding: .8em;
-    /*font-weight: 700;*/
     font-size: var(--button-text);
-    /*border-radius: var(--radius-small);*/
     background-color: var(--accent-secondary);
     color: var(--text-color);
 }
@@ -1399,8 +1451,8 @@ a#edit-profile-link {
     overflow-wrap: break-word;
 }
 
-.admin-cell a {
-    color: var(--text-color);
+.admin-cell a:link {
+    border-color: var(--bg-secondary);
 }
 
 .admin-cell-margin {
@@ -1454,7 +1506,7 @@ a#edit-profile-link {
     font-size: var(--button-text);
     font-weight: 700;
     background-color: var(--accent-secondary);
-    padding: 1em 0;
+    padding: .8em 0;
     margin: 0 auto;
     border-radius: var(--radius-small);
 }
@@ -1490,10 +1542,12 @@ footer p {
 
 footer a {
     color: var(--hypertext-link-color);
+    border-color: var(--bg-secondary);
 }
 
 footer a:visited {
     color: var(--accent);
+    border-color: var(--accent);
 }
 /* #endregion FOOTER */
 

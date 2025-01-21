@@ -6,8 +6,9 @@ use Utilities\DB;
 $db = new DB;
 
 $paginaHtml=file_get_contents("./html/index.html");
-if ($db->isUserLogged()!=false) {
-    echo str_replace("<a href=\"sign-in.php\" class=\"shadow\">ACCEDI</a>","<a href=\"user.php\" class=\"shadow\">PROFILO</a>",$paginaHtml);
+if($db->isUserLogged()!=false) {
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary shadow\">PROFILO</a>",$paginaHtml);
 } else {
-    echo $paginaHtml;
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
 }
+echo $paginaHtml;

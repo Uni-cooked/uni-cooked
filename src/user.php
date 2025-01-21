@@ -98,7 +98,7 @@ if(!isset($_GET["username"])) {
                 $moreRecipeForm.='<input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
                 $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
-            $moreRecipeForm.='<a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            $moreRecipeForm.='<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
         echo $paginaHtml;
@@ -110,9 +110,9 @@ if(!isset($_GET["username"])) {
     $_SESSION["prev-page"]="<a href=\"./user.php?username=".$username.'">PROFILO UTENTE</a>';
 
     if (is_bool($isLogged) && $isLogged==false) {
-        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="sign-in.php" class="shadow">ACCEDI</a></li>',$paginaHtml);
+        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="sign-in.php" class="a-btn-secondary shadow">ACCEDI</a></li>',$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="user.php" class="shadow">PROFILO</a></li>',$paginaHtml);
+        $paginaHtml=str_replace("{{profile-list-element}}",'<li id="profile-item"> <a href="user.php" class="a-btn-secondary shadow">PROFILO</a></li>',$paginaHtml);
     }
 
     $paginaHtml=str_replace("{{username}}",$username,$paginaHtml);
@@ -193,10 +193,10 @@ if(!isset($_GET["username"])) {
                 $moreRecipeForm.='"><input type="hidden" name="prefRecipeLimit" value="'.$limit+5;
                 $moreRecipeForm.='"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
-            $moreRecipeForm.='<a href="#fav-recipe-list" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            $moreRecipeForm.='<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             $paginaHtml=str_replace("{{more-recipe-form}}",$moreRecipeForm,$paginaHtml);
         }
-        $paginaHtml=str_replace('<a href="./user-edit.php" id="edit-profile-link" class="shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
+        $paginaHtml=str_replace('<a href="./user-edit.php" id="edit-profile-link" class="a-btn shadow">MODIFICA PROFILO</a>',"",$paginaHtml);
         $paginaHtml=str_replace('{{sign-out-form}}',"",$paginaHtml);
         echo $paginaHtml;
     }
