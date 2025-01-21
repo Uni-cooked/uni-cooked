@@ -499,11 +499,11 @@ dl#roles dt#dad {
 }
 
 dl#roles dd {
-    overflow: hidden;
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 2rem;
     overflow: hidden;
+    position: relative;
 }
 
 dl#roles dd:not(:last-child) {
@@ -603,6 +603,9 @@ dd input {
     -webkit-appearance: none;
     outline: none;
     pointer-events: none;
+    display: block;
+    position: absolute;
+    bottom: 50%;
 }
 
 dd:has(input:focus-visible) .role-info-label {
@@ -795,6 +798,7 @@ ul#recipe-list .recipe ul.recipe-info {
     display: flex;
     flex-wrap: wrap;
     height: 50%;
+    margin-bottom: .5rem;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
