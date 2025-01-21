@@ -30,7 +30,7 @@
     /* TEXT */
     --title: 4.5rem;
     --subtitle: 1.5rem;
-    --menu-text: 1.1rem;
+    --menu-text: 1.2rem;
     --form-label: 1.2rem;
     --button-text: 1.2rem;
     --section-title: 3em;
@@ -162,6 +162,7 @@ fieldset {
 }
 
 .form-label {
+    clear: both;
     display: block;
     margin-bottom: .8rem;
     color: var(--accent);
@@ -251,6 +252,7 @@ header {
     backdrop-filter: blur(15px);
     padding: 1rem 3rem;
     border-radius: var(--radius-small);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 header h1,
@@ -336,8 +338,8 @@ nav#menu li:not(:first-child):not(#profile-item) {
 }
 
 .logo {
-    width: 3rem;
-    height: 3rem;
+    width: 3.7rem;
+    height: 3.7rem;
 }
 
 nav#menu li:has(.logo) {
@@ -423,9 +425,8 @@ abbr {
 
 #img-team {
     width: 50%;
+    height: 50%;
 }
-
-
 /* #endregion MAIN */
 
 /* ================================================== */
@@ -466,15 +467,14 @@ nav#quick-role li a:link {
 }
 
 .role-text {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.40);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    padding: 1rem 3%;
+    padding: 1rem 5%;
     width: fit-content;
     margin: auto;
     border-radius: var(--radius-small);
 }
-
 
 .button-animation:hover {
     transform: scale(1.03);
@@ -519,11 +519,11 @@ dl#roles dt#dad {
 }
 
 dl#roles dd {
-    overflow: hidden;
     text-align: center;
     background-color: var(--bg-secondary);
     padding: 2rem;
     overflow: hidden;
+    position: relative;
 }
 
 dl#roles dd:not(:last-child) {
@@ -620,8 +620,12 @@ dd input {
     padding: 0;
     margin: 0;
     appearance: none;
+    -webkit-appearance: none;
     outline: none;
     pointer-events: none;
+    display: block;
+    position: absolute;
+    bottom: 50%;
 }
 
 dd:has(input:focus-visible) .role-info-label {
@@ -650,7 +654,6 @@ dd .role-info-label {
 
 .role-desc + a {
     display: block;
-    width: fit-content;
     background-color: var(--accent-secondary);
     padding: .5rem 4rem .5rem 2rem;
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
@@ -808,7 +811,7 @@ ul#recipe-list .recipe .catalogue-recipe-img-crop {
 
 ul#recipe-list .recipe .recipe-title {
     font-size: 1.6rem;
-    height: 37%;
+    height: 35%;
     text-align: left;
 }
 
@@ -817,6 +820,7 @@ ul#recipe-list .recipe ul.recipe-info {
     display: flex;
     flex-wrap: wrap;
     height: 50%;
+    margin-bottom: .5rem;
 }
 
 ul#recipe-list .recipe ul.recipe-info li {
@@ -1571,6 +1575,7 @@ select {
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
     color: white;
+    -webkit-appearance: none;
 }
 
 textarea {
