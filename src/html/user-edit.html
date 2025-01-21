@@ -59,11 +59,12 @@
             </div>
         </header>
 
-        <main>
+        <main id="content">
             <div class="content">
                 <h2 class="content-subtitle">MODIFICA PROFILO</h2>
                 <form action="user-edit.php" method="post" enctype="multipart/form-data" id="new-info">
                     <fieldset>
+                        <legend class="hide">Dati del profilo</legend>
                         <div id="primary-info">
                             <div id="edit-pp">
                                 <img src="{{profile-pic}}" alt="Immagine profilo di {{username}}" srcset="" id="chosen-image">
@@ -109,7 +110,7 @@
                             <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw">
                             {{messaggio di old-psw}}
                         </div>
-                        <div id="psw-up-container" class="input-container">
+                        <div class="input-container">
                             <label for="new-psw" class="form-label">Inserisci la nuova <span lang="en">password</span></label>
                             <ul class="suggestion">
                                 <li>Almeno una lettera maiuscola</li>
@@ -121,7 +122,7 @@
                             <input required type="password" name="psw" id="new-psw">
                             {{messaggio di new-psw}}
                         </div>
-                        <div id="psw-up-container" class="input-container">
+                        <div class="input-container">
                             <label for="repeat-new-psw" class="form-label">Ripeti la nuova <span lang="en">password</span></label>
                             <input required type="password" name="repeat-psw" id="repeat-new-psw">
                             {{messaggio di repeat-psw}}
