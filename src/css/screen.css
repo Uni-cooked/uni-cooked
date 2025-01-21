@@ -219,6 +219,7 @@ fieldset {
 .disabled-btn {
     opacity: 30%;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -272,6 +273,7 @@ h2#header-subtitle {
     font-weight: 700;
     font-size: var(--subtitle);
 }
+
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -303,6 +305,7 @@ nav#list-help li {
     text-indent: 0rem;
     background-color: var(--bg-primary);
 }
+
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -361,8 +364,6 @@ nav#menu li#profile-item {
 
 nav#menu li#profile-item a {
     background-color: var(--accent-trinary);
-    border-radius: var(--radius-small);
-    padding: .7rem 1.2rem;
     border-radius: var(--radius-small);
     padding: .7rem 1.2rem;
 }
