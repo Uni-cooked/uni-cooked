@@ -60,7 +60,7 @@ if(!isset($_GET["username"])) {
             exit();
         }
         elseif(is_string($favouritesList) && strcmp($favouritesList,"noFavourites")==0) {
-            $paginaHtml=str_replace("{{lista-preferiti}}","<li><p id=\"empty-fav-recipe-list\">Salva le ricette migliori, le potrai trovare qui!</p></li>",$paginaHtml);
+            $paginaHtml=str_replace("{{lista-preferiti}}","<li><p id=\"empty-fav-recipe-list\">Salva le <a href=\"./catalogue.php\">ricette</a> migliori, le potrai trovare qui!</p></li>",$paginaHtml);
             $paginaHtml=str_replace("{{more-recipe-form}}","",$paginaHtml);
         }
         else {

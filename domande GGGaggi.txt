@@ -13,7 +13,7 @@ OFFLINE
 ricette-> pasta piovego->utente commento->back del browser->breadcrumb sbagliata
 .,?@+-_€$%&^*<>Aa1 in sign up...
 torna su al primo commento/ricetta solo se ho 2+
-link al catalogo da empty fav recipe
+!! torna su commenti azzurro, torna su fav recipe bianco
 
 NB relazione
 colori non tutti in contrasto

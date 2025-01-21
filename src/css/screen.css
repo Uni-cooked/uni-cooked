@@ -701,14 +701,9 @@ div#why img {
     border-radius: var(--radius-small);
 }
 
-div#why #why-desc a {
+div#why #why-desc a:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-secondary);
-}
-
-div#why #why-desc a:visited {
-    color: var(--accent);
-    border-color: var(--accent);
 }
 /* #endregion HOME PAGE WHY */
 
@@ -1076,14 +1071,9 @@ ul#comment-list li a:link {
     margin-top: 2em;
 }
 
-a#back-up-first-comment {
+a#back-up-first-comment:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-primary);
-}
-
-a#back-up-first-comment:visited {
-    color: var(--accent);
-    border-color: var(--accent);
 }
 /* #endregion RECIPE PAGE */
 
@@ -1187,14 +1177,9 @@ ul.suggestion {
     word-wrap: break-word;
 }
 
-#user-bio a {
+#user-bio a:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-secondary);
-}
-
-#user-bio a:visited {
-    color: var(--accent);
-    border-color: var(--accent);
 }
 
 #fav-recipe-list-container {
@@ -1215,6 +1200,11 @@ ul.suggestion {
 
 #empty-fav-recipe-list {
     text-align: center;
+}
+
+#empty-fav-recipe-list a:link {
+    color: var(--hypertext-link-color);
+    border-color: var(--accent-secondary);
 }
 
 #fav-recipe-list .fav-recipe {
@@ -1544,14 +1534,9 @@ footer p {
     margin: 1em 0 1em 0;
 }
 
-footer a {
+footer a:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-secondary);
-}
-
-footer a:visited {
-    color: var(--accent);
-    border-color: var(--accent);
 }
 /* #endregion FOOTER */
 

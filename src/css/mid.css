@@ -28,6 +28,10 @@
 fieldset {
     padding: 1em;
 }
+
+.psw-chars {
+    white-space: nowrap;
+}
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
