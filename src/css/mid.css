@@ -65,8 +65,22 @@ nav#list-help {
     z-index: 2;
 }
 
+nav#menu > a {
+    display: inline;
+}
+
 #hamburger:has(input:checked) {
     background-color: rgba(57, 42, 36, 0);
+}
+
+#hamburger:has(input:checked) #hamburger-opened,
+#hamburger:has(:not(input:checked)) #hamburger-closed {
+    visibility: visible;
+}
+
+#hamburger:has(:not(input:checked)) #hamburger-opened,
+#hamburger:has(input:checked) #hamburger-closed {
+    visibility: hidden;
 }
 
 #hamburger-label {
@@ -162,6 +176,11 @@ body:has(#hamburger-label input:checked) {
     overflow-y: hidden;
 }
 
+header:has(#hamburger-label input:checked) #list-help {
+    visibility: hidden;
+}
+
+/* NOT SO BUTY */
 body:has(#hamburger-label input:checked) main,
 body:has(#hamburger-label input:checked) footer {
     visibility: hidden;
