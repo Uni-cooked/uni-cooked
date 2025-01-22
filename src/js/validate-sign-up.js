@@ -51,7 +51,7 @@ function validateNewUsername() {
 		var check = document.getElementById("err-name");
 		deleteError(check);
 		var p = messageError("err-name");
-	    p.innerText = "Username non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
 		const parent = document.getElementById("student-name-up").parentNode;
 		parent.appendChild(p);
 		return false;
@@ -87,7 +87,7 @@ function validateEmail(){
 		var check = document.getElementById("err-mail");
 	    deleteError(check);
 		var p = messageError("err-mail"); 
-		p.innerText = "L'<span lang=\"en\">email</span> è un campo obbligatorio";
+		p.innerHTML = "L'<span lang='en'>email</span> è un campo obbligatorio";
 		const parent = document.getElementById("student-mail-up").parentNode;
 		parent.appendChild(p);
         return false;
@@ -97,7 +97,7 @@ function validateEmail(){
         var check = document.getElementById("err-mail");
 	    deleteError(check);
 		var p = messageError("err-mail"); 
-		p.innerText = "L'<span lang=\"en\">email</span> scelta non è un indirizzo valido";
+		p.innerHTML = "L'<span lang='en'>email</span> scelta non è un indirizzo valido";
 		const parent = document.getElementById("student-mail-up").parentNode;
 		parent.appendChild(p);
         return false;
@@ -115,7 +115,7 @@ function validatePassword() {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");
-		p.innerText = "La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri";
+		p.innerHTML = "La <span lang='en'>password</span> deve essere lunga almeno 4 caratteri";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
 		return false;
@@ -125,7 +125,7 @@ function validatePassword() {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");
-		p.innerText = "La <span lang=\"en\">password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
+		p.innerHTML = "La <span lang='en'>password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
 		return false;
@@ -147,7 +147,7 @@ function validatePasswordConfirm() {
 		var check = document.getElementById("err-repeat-psw");
 		deleteError(check);
 		var p = messageError("err-repeat-psw");
-		p.innerText = "Le password non coincidono";
+		p.innerHTML = "Le <span lang='en'>password</lang> non coincidono";
 		const parent = document.getElementById("student-repeat-psw-up").parentNode;
 		parent.appendChild(p);
 		return false;

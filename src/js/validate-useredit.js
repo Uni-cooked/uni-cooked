@@ -39,26 +39,26 @@ function chargeNewImage() {
 		        if(acceptedImgType.includes(file['type'])){
                     imageOutput.setAttribute("src", e.target.result);
 
-					var sizeError = document.getElementById("err-size");
-					var formatError = document.getElementById("err-format");
+					var sizeError = document.getElementById("profile-pic-error");
+					var formatError = document.getElementById("profile-pic-error");
 
 					deleteError(sizeError);
 					deleteError(formatError);
 				}
 		        else{
-					var sizeError = document.getElementById("err-size");
+					var sizeError = document.getElementById("profile-pic-error");
 					deleteError(sizeError);
 
-					p = createError("err-format");
-					p.innerText = "L'estensione del file caricato non è corretta";
+					p = createError("profile-pic-error");
+					p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
 					inputImage.parentNode.appendChild(p);		
 				}
             }else{
-				var formatError = document.getElementById("err-format");
+				var formatError = document.getElementById("profile-pic-error");
 				deleteError(formatError);
 
-				p = createError("err-size");
-				p.innerText = "Sono accettati solo file di dimensione minore a 2MB";
+				p = createError("profile-pic-error");
+				p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a <span lang='en' abbr='megabyte'>2MB</span>";
 				inputImage.parentNode.appendChild(p);
 			}
 		}
@@ -76,7 +76,7 @@ function validateEditNewUsername() {
 		deleteError(check);
 		const name = document.getElementById("nickname-edit").parentNode;
 		var p = createError("err-edit-nam");
-	    p.innerText = "Username non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
 		name.appendChild(p);
 		return false;
 	}
@@ -104,17 +104,17 @@ function validateEditPassword() {
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
 		var p = createError("err-new-psw");
-		p.innerText = "La <span lang=\"en\">password</span> deve essere lunga almeno 4 caratteri";
+		p.innerHTML = "La<span lang='en'> password</span> deve essere lunga almeno 4 caratteri";
 		psw.appendChild(p);
 		return false;
 	}
 	
-	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{4,16}$/) !=0) {
+	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,!?@+-_€$%^*<>])[A-Za-z\d@.#$!%*?&]{4,16}$/) !=0) {
 		var check = document.getElementById("err-new-psw");
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
 		var p = createError("err-new-psw");
-		p.innerText = "La <span lang=\"en\">password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
+		p.innerHTML = "La<span lang='en'> password </span>deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
 		psw.appendChild(p);
 		return false;
 	}
@@ -133,16 +133,16 @@ function validateEditPasswordConfirm() {
 		var check = document.getElementById("err-repeat-new-psw");
 		deleteError(check);
         var p = createError("err-repeat-new-psw");
-		p.innerText = "Le <span lang=\"en\">password</span> non coincidono";
+		var html = "Le <span lang='en'>password </span> non coincidono";
+		p.innerHTML = html;
 		const repeatPsw = document.getElementById("repeat-new-psw").parentNode;
-		repeatPsw.appendChild(p);
+		repeatPsw.appendChild(p)
 		return false;
 	}
     var check = document.getElementById("err-repeat-new-psw");
 	deleteError(check);
 	FinalCheck();
 	return true;
-
 }
 
 function createError(id){
