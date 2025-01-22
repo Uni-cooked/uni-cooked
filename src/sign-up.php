@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
         $paginaHtml = str_replace("{{messaggio di nome}}",'<p role="alert" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
         $username=Sanitizer::SanitizeInput($username);
-        $isUserPresent=$db->checkUserPresence($username);
+        $isUserPresent=$db->checkUserPresence($username,false);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true) {
             $errorFound=true;
             $paginaHtml = str_replace("{{messaggio di nome}}",'<p role="alert" class="err-msg">Il nome utente inserito non può essere utilizzato</p>',$paginaHtml);
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}",'<p role="alert" class="err-msg">La <span lang="en">password</span> deve essere lunga almeno 4 caratteri</p>',$paginaHtml);
-    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[.,?@+\-_€$%&^*<>]).+$/",$psw)==0) {
+    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).+$/",$psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw}}",'<p role="alert" class="err-msg">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
