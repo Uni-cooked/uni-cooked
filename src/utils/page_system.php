@@ -47,7 +47,7 @@ class PageSystem
         $params = [];
 
         if ($this->recipeName) {
-            $query .= " and r.nome LIKE ? ";
+            $query .= " and REPLACE(r.nome, \" \", \"\") LIKE REPLACE(?, \" \", \"\") ";
             $params[] = "%" . $this->recipeName . "%";
             $this->filter_list["name"] = $this->recipeName;
         }
@@ -117,6 +117,8 @@ class PageSystem
 
 
         $query .= $order_query;
+
+        echo $query;
 
         $results = $this->db->GetRecipes($query, $params);
 

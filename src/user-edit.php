@@ -72,7 +72,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $errorFound=true;
         $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
-        $username=Sanitizer::SanitizeInput($username);
+        $username=Sanitizer::SanitizeUserInput($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true && strcmp($username,$isLogged)!=0) {
             $errorFound=true;

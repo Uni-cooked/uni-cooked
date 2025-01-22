@@ -5,10 +5,16 @@ class Sanitizer {
 
     private const allowedTags ='<em><strong><ul><li>';
     
-    public static function SanitizeInput($value) {
+    public static function SanitizeUserInput($value) {
         $value = trim($value);
         $value = strip_tags($value);
         $value = str_replace(" ","",$value);
+        $value = htmlentities($value);
+        return $value;
+    }
+    public static function SanitizeGenericInput($value) {
+        $value = trim($value);
+        $value = strip_tags($value);
         $value = htmlentities($value);
         return $value;
     }

@@ -18,7 +18,7 @@ if ($isLogged!=false) {
 }
 
 if (isset($_POST['submit'])) {
-    $username=Sanitizer::SanitizeInput($_POST["nome"]);
+    $username=Sanitizer::SanitizeUserInput($_POST["nome"]);
     $psw=$_POST["psw"];
     $result=$db->logUser($username,$psw);
 
