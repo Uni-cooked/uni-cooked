@@ -219,6 +219,7 @@ fieldset {
 .disabled-btn {
     opacity: 30%;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -272,6 +273,7 @@ h2#header-subtitle {
     font-weight: 700;
     font-size: var(--subtitle);
 }
+
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -303,6 +305,7 @@ nav#list-help li {
     text-indent: 0rem;
     background-color: var(--bg-primary);
 }
+
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -337,8 +340,8 @@ nav#menu li:not(:first-child):not(#profile-item) {
 }
 
 .logo {
-    width: 3.7rem;
-    height: 3.7rem;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 nav#menu li:has(.logo) {
@@ -367,6 +370,7 @@ nav#menu li#profile-item a {
 nav#menu li:not(#profile-item) a:link {
     border-color: var(--accent-secondary);
 }
+
 /* #endregion MENU */
 
 /* ================================================== */
@@ -426,6 +430,7 @@ abbr {
     width: 50%;
     height: 50%;
 }
+
 /* #endregion MAIN */
 
 /* ================================================== */
@@ -455,6 +460,7 @@ nav#quick-role li {
 nav#quick-role li a:link {
     border-color: var(--bg-secondary);
 }
+
 /*#endregion HOME PAGE ROLES MENU */
 
 /* ================================================== */
@@ -557,7 +563,7 @@ dd:has(input:checked) .flip-card .flip-card-front p {
     visibility: hidden;
 }
 
-dd:has(input:checked) .flip-card .flip-card-front p + a {
+dd:has(input:checked) .flip-card .flip-card-front p+a {
     visibility: hidden;
 }
 
@@ -651,17 +657,21 @@ dd .role-info-label {
     transition: background-color 600ms, color 600ms, transform 600ms;
 }
 
-.role-desc + a {
-    display: block;
+.ribbon {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 50%);
     background-color: var(--accent-secondary);
-    padding: .5rem 4rem .5rem 2rem;
-    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%,5% 50%);
     position: absolute;
     bottom: 1.1rem;
     right: -1px;
     font-weight: 550;
+    padding: .5rem 4rem .5rem 2rem;
     transition: visibility var(--animation-duration);
 }
+
+.ribbon a:link {
+    border-color: var(--accent-secondary);
+}
+
 /* #endregion HOME PAGE CONTENT*/
 
 /* ================================================== */
@@ -704,6 +714,7 @@ div#why #why-desc a:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-secondary);
 }
+
 /* #endregion HOME PAGE WHY */
 
 /* ================================================== */
@@ -771,36 +782,26 @@ ul#recipe-list {
 ul#recipe-list .recipe {
     width: 32%;
     min-width: 21em;
-    height: 27em;
+    height: 33em;
     border-radius: var(--radius-small);
     color: var(--text-color);
-    /* to align the link to the right */
+    background-color: var(--bg-secondary);
     text-align: right;
     position: relative;
     overflow: hidden;
 }
 
 ul#recipe-list .recipe div {
-    padding: 0.65em;
-    z-index: 2;
-    position: absolute;
-    bottom: 0;
-    height: 55%;
+    padding: .3rem 0.65em .5rem 0.65em;
+    height: 46%;
     width: 100%;
-    background-color: #242424d4;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
 }
 
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     width: 100%;
     object-fit: cover;
-    position: absolute;
-    left: 0;
-    z-index: 0;
-    height: 60%;
-    top: -2rem;
+    height: 53%;
 }
 
 ul#recipe-list .recipe .recipe-title {
@@ -877,6 +878,7 @@ ul#recipe-list .recipe a:link {
     background-image: url("../asset/icon/right-arrow.svg");
     float: right;
 }
+
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
@@ -1038,12 +1040,13 @@ ul#comment-list li a:link {
 }
 
 .username {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 550;
 }
 
 .comment-pp {
-    width: 4em;
-    height: 4em;
+    width: 4.5em;
+    height: 4.5em;
     object-fit: cover;
     border-radius: 50%;
     float: left;
@@ -1074,6 +1077,7 @@ a#back-up-first-comment:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-primary);
 }
+
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -1144,14 +1148,14 @@ ul.suggestion {
 /* #region USER PAGE */
 #title-nick {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.6em;
 }
 
 #profile-img {
     display: block;
     margin: 1.5em auto;
-    height: 9em;
-    width: 9em;
+    height: 12em;
+    width: 12em;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -1208,36 +1212,32 @@ ul.suggestion {
 
 #fav-recipe-list .fav-recipe {
     background-color: var(--bg-secondary);
-    height: 13em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 0.65em;
-    width: 100%;
+    height: 12em;
     border-radius: var(--radius-small);
-    /* to align the link to the right */
     text-align: right;
+    overflow: hidden;
+    margin: 1rem 0;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-img-crop {
     height: 100%;
-    width: 26%;
-    min-width: 14em;
+    width: 35%;
     object-fit: cover;
     float: left;
-    border-radius: calc(var(--radius-small) * .5);
+    margin-right: 1rem;
+}
+
+#fav-recipe-list .fav-recipe div {
+    padding: 1rem 0.65em 1rem 0.65em;
+    height: 100%;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-title {
-    display: flex;
-    align-items: center;
     text-align: left;
     height: 35%;
-    padding: 0 1em;
-}
-
-#fav-recipe-list .fav-recipe .fav-recipe-title h4 {
     font-size: 1.6em;
 }
+
 
 #fav-recipe-list .fav-recipe .fav-recipe-info {
     list-style-type: none;
@@ -1285,6 +1285,7 @@ ul.suggestion {
 
 a#back-up-first-fav-recipe:link {
     border-color: var(--accent-secondary);
+    color: var(--hypertext-link-color);
 }
 
 a#edit-profile-link {
@@ -1537,6 +1538,7 @@ footer a:link {
     color: var(--hypertext-link-color);
     border-color: var(--bg-secondary);
 }
+
 /* #endregion FOOTER */
 
 /* ================================================== */
@@ -1690,4 +1692,5 @@ input[type="number"] {
         scrollbar-width: thin;
     }
 }
+
 /* #endregion CUSTOM INPUTS */

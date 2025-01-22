@@ -20,6 +20,7 @@
 .content-subtitle {
     font-size: 2.5rem;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -28,6 +29,7 @@
 #header-titles {
     padding: 1rem;
 }
+
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -45,32 +47,11 @@ dd:has(input:checked) .flip-card .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-.role-desc + a {
+.ribbon {
     padding-right: 3rem;
 }
+
 /* #endregion HOME PAGE */
-
-/* ================================================== */
-
-/* #region CATALOGUE PAGE */
-ul#recipe-list .recipe {
-    height: auto;
-}
-
-ul#recipe-list .recipe div {
-   position: static;
-   margin-top: 10rem;
-   height: fit-content;
-}
-
-ul#recipe-list .recipe .catalogue-recipe-img-crop {
-    height: 14.5em;
-}
-
-ul#recipe-list .recipe .recipe-title {
-    margin-bottom: 2rem;
-}
-/* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
 
@@ -82,6 +63,7 @@ ul#ingredient-list {
 ul#ingredient-list li {
     width: 100%;
 }
+
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -99,7 +81,18 @@ ul#ingredient-list li {
     float: none;
     margin-bottom: .1em;
 }
+
 /* #endregion ABOUT US */
+
+/* ================================================== */
+
+/* #endregion USER PAGE */
+#profile-img {
+    width: 9rem;
+    height: 9rem;
+}
+
+/* #region USER PAGE */
 
 /* ================================================== */
 

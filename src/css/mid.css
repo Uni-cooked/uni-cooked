@@ -1,7 +1,8 @@
 :root {
-    --bar-width: 3.7rem;
-    --bar-height: 0.9rem;
-    --hamburger-gap: .4rem;
+    --hamburger-size-multiplier: 0.8;
+    --bar-width: calc(3.7rem * var(--hamburger-size-multiplier));
+    --bar-height: calc(0.9rem * var(--hamburger-size-multiplier));
+    --hamburger-gap: calc(.4rem * var(--hamburger-size-multiplier));
     --hamburger-v-margin: .8rem;
     --hamburger-h-margin: 2.5rem;
     --animation-hamburger-timing: 200ms ease-in-out;
@@ -32,6 +33,7 @@ fieldset {
 .psw-chars {
     white-space: nowrap;
 }
+
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -40,6 +42,7 @@ fieldset {
 #header-content {
     padding: 0;
 }
+
 /* #endregion HEADER */
 
 /* ================================================== */
@@ -48,6 +51,7 @@ fieldset {
 nav#list-help {
     z-index: 3;
 }
+
 /* #endregion NAVIGATION HELP */
 
 /* ================================================== */
@@ -165,7 +169,7 @@ body:has(#hamburger-label input:checked) footer {
 
 nav#menu ul {
     height: 40vh;
-    margin-top: 8vh;
+    margin-top: 2vh;
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 1.1rem;
@@ -190,6 +194,7 @@ nav#menu li:has(.logo) {
 nav#menu li#profile-item {
     margin: 0;
 }
+
 /* #endregion MENU */
 
 /* ================================================== */
@@ -215,6 +220,7 @@ div#why>div {
 div#why img {
     width: 100%;
 }
+
 /* #endregion HOME PAGE */
 
 /* ================================================== */
@@ -238,11 +244,15 @@ ul#recipe-list .recipe {
     margin: 0 auto 4em;
     width: 100%;
     min-width: unset;
-    height: 25rem;
+    height: auto;
+}
+
+ul#recipe-list .recipe .recipe-title {
+    margin-bottom: 1rem;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
-    height: 17em;
+    height: 14em;
     border-radius: calc(var(--radius-small)* .5);
     object-fit: cover;
 }
@@ -253,6 +263,7 @@ ul#recipe-list .recipe ul.recipe-info li {
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
+
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
@@ -292,6 +303,7 @@ ul#ingredient-list {
 #add-comment-eval-container {
     text-align: center;
 }
+
 /* #endregion RECIPE PAGE */
 
 /* ================================================== */
@@ -308,25 +320,31 @@ ul#ingredient-list {
     width: 100%;
     padding-left: 0;
 }
+
 /* #endregion SIGN UP PAGE */
 
 /* ================================================== */
 
 /* #region USER PAGE */
 #fav-recipe-list .fav-recipe {
-    height: 26em;
+    height: auto;
+    min-width: unset;
+    margin: 0;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-img-crop {
     float: none;
     max-width: none;
     width: 100%;
-    height: 40%;
+    height: 14em;
+}
+
+#fav-recipe-list .fav-recipe div {
+    padding: .3rem 0.65em .5rem 0.65em;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-title {
-    height: 20%;
-    padding: 0.6em 0 0;
+    margin-bottom: 1rem;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-info {
@@ -345,6 +363,7 @@ ul#ingredient-list {
 #fav-recipe-list .fav-recipe a {
     padding-top: 0.3em;
 }
+
 /* #endregion USER PAGE */
 
 /* ================================================== */
@@ -355,6 +374,7 @@ ul#ingredient-list {
     align-items: center;
     gap: .5rem;
 }
+
 /* #endregion USER PAGE */
 
 /* ================================================== */
@@ -383,4 +403,5 @@ ul#ingredient-list {
 .admin-cell {
     margin-bottom: 5rem;
 }
+
 /* #endregion ABOUT US */

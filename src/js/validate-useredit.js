@@ -50,7 +50,7 @@ function chargeNewImage() {
 					deleteError(sizeError);
 
 					p = createError("err-format");
-					p.innerText = "Sono accettati solo file jpeg o png";
+					p.innerText = "L'estensione del file caricato non è corretta";
 					inputImage.parentNode.appendChild(p);		
 				}
             }else{
