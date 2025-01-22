@@ -11,7 +11,6 @@ class DB {
     private const PSW = "bahnoht9fuo2WiCh";
 
     private $connection;
-    private static $tagPermessi = '<em><strong>';
 
     private function openDBConnection(): bool {
         mysqli_report(MYSQLI_REPORT_STRICT);
@@ -553,7 +552,8 @@ class DB {
                 $result=$checkUserExistance->get_result();
                 $this->closeDBConnection();
                 $checkUserExistance->close();
-                if ($result->num_rows==1) {
+                //Il server tecweb non ha codifiche case-sensitive installate per il database, perciò devo controllare che il match trovato effettivamente corrisponda allo username inserito
+                if ($result->num_rows==1 && strcmp(mysqli_fetch_assoc($result)["nome"],$username)==0) {
                     $_SESSION["logged_user"] = $username;
                     $result->free(); 
                     return true;
@@ -598,7 +598,7 @@ class DB {
         }
     }
 
-    public function checkUserPresence($username): bool | string {
+    public function checkUserPresence($username, $checkCaseSensitive = true): bool | string {
         $connectionResult=$this->openDBConnection();
         if ($connectionResult) {
             $checkUserStatement=$this->connection->prepare("SELECT nome FROM Utente WHERE nome = ?");
@@ -616,8 +616,18 @@ class DB {
             $checkUserStatement->close();
 
             if ($result->num_rows==1) {
-                $result->free();
-                return true;
+                if($checkCaseSensitive) {
+                    if(strcmp(mysqli_fetch_assoc($result)["nome"],$username)==0) {
+                        $result->free();
+                        return true;
+                    } else {
+                        $result->free();
+                        return false;
+                    }
+                } else {
+                    $result->free();
+                    return true;
+                }
             } else {
                 $result->free();
                 return false;

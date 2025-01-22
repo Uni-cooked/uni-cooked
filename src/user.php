@@ -54,7 +54,7 @@ if (!isset($_GET["username"])) {
             unset($_GET["prefRecipeLimit"]);
         }
 
-        $favouritesList = $db->getUserFavourites($isLogged);
+        $favouritesList = $db->getUserFavourites($isLogged, $limit + 1);
         if (is_string($favouritesList) && (strcmp($favouritesList, "ExceptionThrow") == 0 || strcmp($favouritesList, "ConnectionFailed") == 0)) {
             header('Location: 500-err.php');
             exit();
@@ -95,7 +95,11 @@ if (!isset($_GET["username"])) {
                 $moreRecipeForm .= '<input type="hidden" name="prefRecipeLimit" value="' . $limit + 5;
                 $moreRecipeForm .= '"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
-            $moreRecipeForm .= '<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+
+            if(count($favouritesList)>1) {
+                $moreRecipeForm .= '<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            }
+
             $paginaHtml = str_replace("{{more-recipe-form}}", $moreRecipeForm, $paginaHtml);
         }
         echo $paginaHtml;
@@ -187,7 +191,11 @@ if (!isset($_GET["username"])) {
                 $moreRecipeForm .= '"><input type="hidden" name="prefRecipeLimit" value="' . $limit + 5;
                 $moreRecipeForm .= '"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
-            $moreRecipeForm .= '<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+
+            if(count($favouritesList)>1) {
+                $moreRecipeForm .= '<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
+            }
+
             $paginaHtml = str_replace("{{more-recipe-form}}", $moreRecipeForm, $paginaHtml);
         }
         $paginaHtml = str_replace('<a href="./user-edit.php" id="edit-profile-link" class="a-btn shadow">MODIFICA PROFILO</a>', "", $paginaHtml);

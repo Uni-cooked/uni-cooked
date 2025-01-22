@@ -273,15 +273,19 @@ if(isset($_GET["recipe"])) {
         }
         $finalList.="</ul>";
         $paginaHtml=str_replace("{{comment-list}}",$finalList,$paginaHtml);
+        $moreCommentsForm="";
         if($commentNumber<count($comments)) {
             $moreCommentsForm='<form action="recipe.php#previous-last-comment" method="get">';
             $moreCommentsForm.='<input type="hidden" name="commentLimit" value="'.$limit+5;
             $moreCommentsForm.='"><input type="hidden" name="recipe" value="'.$recipe;
             $moreCommentsForm.='"><button type="submit" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button></form>';
-            $paginaHtml=str_replace("{{comment-more-button}}",$moreCommentsForm,$paginaHtml);
-        } else {
-            $paginaHtml=str_replace("{{comment-more-button}}",'<a href="#comment-list" id="back-up-first-comment" class="back-up-link">Torna su al primo commento</a>',$paginaHtml);
         }
+
+        if(count($comments)>1) {
+            $moreCommentsForm.='<a href="#comment-list" id="back-up-first-comment" class="back-up-link">Torna su al primo commento</a>';
+        }
+
+        $paginaHtml=str_replace("{{comment-more-button}}",$moreCommentsForm,$paginaHtml);
     }
     
     echo $paginaHtml;

@@ -595,6 +595,10 @@ INSERT INTO Valutazione VALUES ("Insalata veloce", "GGGaggi", "2025-01-05", 28, 
 INSERT INTO Valutazione VALUES ("Insalata veloce", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata veloce, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
+INSERT INTO Valutazione VALUES ("Caprese", "ÈColpadiTeo", "2025-01-06", 20, "ottimo!");
+INSERT INTO Valutazione VALUES ("Caprese", "Tony", "2025-01-08", 20, "Piatto semplice ma gustoso!");
+INSERT INTO Valutazione VALUES ("Caprese", "Murphy", "2025-01-07", 15, "Pensavo qualcosa di più elaborato...");
+INSERT INTO Valutazione VALUES ("Caprese", "user", "2025-01-07", 21, "Direi un buon piatto semplice!");
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
 INSERT INTO Valutazione VALUES ("Pasta alla nord Piovego","ÈColpadiTeo","2025-01-19",30,"Mai mangiata una pasta così buona! Giusto quello che mi serviva prima di tornare a studiare!");
 
