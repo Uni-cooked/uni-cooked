@@ -73,7 +73,7 @@ body {
 
 a {
     color: var(--text-color);
-    border-bottom: 3px dashed;
+    border-bottom: 2px solid;
 }
 
 a:visited {
@@ -315,7 +315,6 @@ nav#list-help li {
 nav#menu {
     padding: 1.5rem 1rem 0;
     min-width: 100%;
-    order: 2;
     z-index: 1;
 }
 

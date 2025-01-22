@@ -7,14 +7,13 @@ abbr DAD -> gaggi
 
 js suggerimenti off focus non onchange
 animazioni belline
-caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> (JS, HTML farle andare a capo bene)
+caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> (JS)
 allungare carta front in sede e dad
 OFFLINE
 ricette-> pasta piovego->utente commento->back del browser->breadcrumb sbagliata
-.,?@+-_€$%&^*<>Aa1 in sign up...
 torna su al primo commento/ricetta solo se ho 2+
-!! torna su commenti azzurro, torna su fav recipe bianco
 fare il mostra psw
+sistemare foto home (un solo header)
 
 NB relazione
 colori non tutti in contrasto

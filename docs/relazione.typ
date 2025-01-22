@@ -28,6 +28,10 @@ Sono state individuate due tipologie di utente:
 == Esigenze dell'utenza
 TODO: Metafora della pesca ???
 
+== Possibili ricerche
+
+== SERP ranking
+
 = Progettazione
 
 == Metodologia di sviluppo
@@ -38,7 +42,7 @@ Abbiamo provveduto a separare il contenuto, la presentazione e il comportamento 
 - Attribuire lo stile tramite file `CSS` importati nei documenti `HTML5` senza mai assegnare regole inline o embedded.
 - JS E PHP?????
 
-== Divisioni delle risoluzioni
+== Risoluzioni e dispositivi
 Valutando gli elementi delle pagine abbiamo ritenuto opportuno dividere gli schermi secondo le seguenti risoluzioni:
 - *inferiore a 480px* per mobile.
 - *tra 480px e 768 px* per schermi di dimensioni medie (ad esempio tablet).
@@ -48,9 +52,9 @@ In ogni fascia di risoluzione è sempre stato adottato uno design misto limitand
 == Comportamento
 Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input e all'aggiornamento di due valori nei filtri della pagina di ricerca. In questo modo limitiamo al minimo i disagi provocati dalla mancanza di `JavaScript`. Sono stati quindi realizzati interamente con `CSS` il menu ad hamburger per mobile e le animazioni delle carte nella home. ALTRO????
 
-== Controlli sui dati
-TEO CONTROLLA !!!!!!! \
-Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
+// == Controlli sui dati
+// TEO CONTROLLA !!!!!!! \
+// Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
 
 == Emotional design
 Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.

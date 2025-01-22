@@ -34,6 +34,25 @@
     )
   ]
 
+  v(2em)
+  text(13pt, fill: black, font: "Liberation Sans")[
+    #box(
+      width: 50%,
+      table(
+        stroke: none,
+        columns: (50%, 50%),
+        inset: 8pt,
+        [user], [user],
+        [GGGaggi], [GGGaggi]
+      ),
+    )
+  ]
+
+  v(2em)
+  text(13pt, weight: "bold", fill: purple, font: "Liberation Sans")[
+    #link("http://localhost:8080/aprecoma/uni-cooked/index.php")[#underline("http://localhost:8080/aprecoma/uni-cooked/index.php")]
+  ]
+
   set text(12pt, font: "DejaVu Serif")
 
   set par(justify: true)
@@ -74,6 +93,7 @@
     v(12pt, weak: true)
     strong(it)
   }
+
   outline(title: [#v(2em) INDICE #v(3em)], indent: auto)
   pagebreak()
 
