@@ -13,6 +13,13 @@ function validateRequest(){
     var Request = document.forms["request"]["recipie-request-input"].value;
 
     if(Request.length < 20){
+        if(Request == ""){
+            document.getElementById("cancel").classList.add("disabled-btn");
+            document.getElementById("cancel").disabled = true;
+        }else{
+            document.getElementById("cancel").classList.remove("disabled-btn");
+            document.getElementById("cancel").disabled = false;
+        }
         var check = document.getElementById("err-request");
         if(check) check.remove();
         var p = document.createElement("p");
@@ -25,6 +32,8 @@ function validateRequest(){
         return false;
 
     } else if (Request.length > 500){
+        document.getElementById("cancel").classList.remove("disabled-btn");
+        document.getElementById("cancel").disabled = true;
         var check = document.getElementById("err-request");
         if(check) check.remove();
         var p = document.createElement("p");
@@ -39,6 +48,8 @@ function validateRequest(){
     
     var check = document.getElementById("err-request");
     if(check) check.remove();
+    document.getElementById("cancel").classList.remove("disabled-btn");
+    document.getElementById("cancel").disabled = false;
     document.getElementById("confirm").disabled = false;
     document.getElementById("confirm").classList.remove("disabled-btn");
     return true;
