@@ -14,6 +14,7 @@ ricette-> pasta piovego->utente commento->back del browser->breadcrumb sbagliata
 torna su al primo commento/ricetta solo se ho 2+
 fare il mostra psw
 sistemare foto home (un solo header)
+role alert js
 
 NB relazione
 colori non tutti in contrasto

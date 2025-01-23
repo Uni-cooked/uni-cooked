@@ -6,7 +6,6 @@
     font-family: "Inter", sans-serif;
     line-height: 1.5;
     box-sizing: border-box;
-    scroll-behavior: smooth
 }
 
 :root {
@@ -64,11 +63,12 @@
 /* ================================================== */
 
 /* #region GENERAL CLASSES */
-html body {
-    height: 100%;
+html {
+    scroll-behavior: smooth
 }
 
 body {
+    height: 100%;
     background-color: var(--bg-primary);
 }
 
@@ -814,6 +814,7 @@ ul#recipe-list .recipe {
     animation: l43 1s infinite linear; 
     margin: 10rem auto;
 }
+
 @keyframes l43 {
     0%     {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
     16.67% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
@@ -828,7 +829,6 @@ ul#recipe-list .recipe-animation {
     opacity: 1;
     transform: scale(1);
 }
-
 
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;

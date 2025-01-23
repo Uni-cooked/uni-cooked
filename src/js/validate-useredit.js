@@ -39,25 +39,25 @@ function chargeNewImage() {
 		        if(acceptedImgType.includes(file['type'])){
                     imageOutput.setAttribute("src", e.target.result);
 
-					var sizeError = document.getElementById("profile-pic-error");
-					var formatError = document.getElementById("profile-pic-error");
+					var sizeError = document.getElementById("profile-pic-err-p");
+					var formatError = document.getElementById("profile-pic-err-p");
 
 					deleteError(sizeError);
 					deleteError(formatError);
 				}
 		        else{
-					var sizeError = document.getElementById("profile-pic-error");
+					var sizeError = document.getElementById("profile-pic-err-p");
 					deleteError(sizeError);
 
-					p = createError("profile-pic-error");
+					p = createError("profile-pic-err-p");
 					p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
 					inputImage.parentNode.appendChild(p);		
 				}
             }else{
-				var formatError = document.getElementById("profile-pic-error");
+				var formatError = document.getElementById("profile-pic-err-p");
 				deleteError(formatError);
 
-				p = createError("profile-pic-error");
+				p = createError("profile-pic-err-p");
 				p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a <span lang='en' abbr='megabyte'>2MB</span>";
 				inputImage.parentNode.appendChild(p);
 			}
