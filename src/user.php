@@ -192,7 +192,7 @@ if (!isset($_GET["username"])) {
                 $moreRecipeForm .= '"><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
             }
 
-            if(count($favouritesList)>1) {
+            if($recipeCounter>1) {
                 $moreRecipeForm .= '<a href="#fav-recipe-list" id="back-up-first-fav-recipe" class="back-up-link">Torna su alla prima ricetta preferita</a>';
             }
 

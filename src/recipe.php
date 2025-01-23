@@ -281,7 +281,7 @@ if(isset($_GET["recipe"])) {
             $moreCommentsForm.='"><button type="submit" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button></form>';
         }
 
-        if(count($comments)>1) {
+        if($commentNumber>1) {
             $moreCommentsForm.='<a href="#comment-list" id="back-up-first-comment" class="back-up-link">Torna su al primo commento</a>';
         }
 
