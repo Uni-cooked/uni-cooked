@@ -118,8 +118,6 @@ class PageSystem
 
         $query .= $order_query;
 
-        echo $query;
-
         $results = $this->db->GetRecipes($query, $params);
 
 
