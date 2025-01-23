@@ -189,6 +189,18 @@ nav#menu > a.help-el {
 body:has(input#ham-checkbox:checked) {
     overflow-y: hidden;
 }
+
+#content-blur {
+    position: fixed;
+}
+
+nav#menu input:checked ~ #content-blur {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
 /* #endregion MENU */
 
 /* ================================================== */
