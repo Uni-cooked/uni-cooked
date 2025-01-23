@@ -348,7 +348,7 @@ nav#menu li:not(:first-child):not(#profile-item) {
     height: 3.5rem;
 }
 
-nav#menu li:has(.logo) {
+nav#menu li:first-child {
     border-right: 3px solid var(--accent);
     padding-right: 1rem;
     margin-right: 1rem;
@@ -580,8 +580,8 @@ dd input,dd .role-info-label,.flip-card-back {
     display: none;
 }
 
-
-@supports selector(:has(a)) { /* Se il browser supporta la pseudo-classe :has() (anno>~2022) allora attiva il filp della cards altrimenti tienile nascoste*/
+/* Se il browser supporta la pseudo-classe :has() (anno>~2022) allora attiva il filp della cards altrimenti tienile nascoste*/
+@supports selector(:has(a)) {
     dd:has(input:checked) .flip-card .flip-card-inner {
         transform: rotateX(180deg);
     }
@@ -668,7 +668,6 @@ dd input,dd .role-info-label,.flip-card-back {
         transition: background-color 600ms, color 600ms, transform 600ms;
     }
 }
-
 
 .ribbon {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 50%);
