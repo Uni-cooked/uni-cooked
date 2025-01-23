@@ -312,8 +312,10 @@ nav#list-help li {
 /* ================================================== */
 
 /* #region MENU */
-#hamburger,
-nav#menu > a {
+nav#menu > img.logo,
+nav#menu input,
+nav#menu label,
+nav#menu > a.help-el {
     display: none;
 }
 

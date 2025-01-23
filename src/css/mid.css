@@ -4,7 +4,7 @@
     --bar-height: calc(0.9rem * var(--hamburger-size-multiplier));
     --hamburger-gap: calc(.4rem * var(--hamburger-size-multiplier));
     --hamburger-v-margin: .8rem;
-    --hamburger-h-margin: 2.5rem;
+    --hamburger-h-margin: 2rem;
     --animation-hamburger-timing: 200ms ease-in-out;
     --animation-dropdown-timing: 500ms cubic-bezier(.1, .36, .15, .98);
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -57,163 +57,138 @@ nav#list-help {
 /* ================================================== */
 
 /* #region MENU */
-#hamburger {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--accent-secondary);
-    width: 100%;
-    z-index: 2;
-}
-
-nav#menu > a {
+nav#menu > img.logo {
     display: inline;
-}
-
-#hamburger:has(input:checked) {
-    background-color: rgba(57, 42, 36, 0);
-}
-
-#hamburger:has(input:checked) #hamburger-opened,
-#hamburger:has(:not(input:checked)) #hamburger-closed {
-    visibility: visible;
-}
-
-#hamburger:has(:not(input:checked)) #hamburger-opened,
-#hamburger:has(input:checked) #hamburger-closed {
-    visibility: hidden;
-}
-
-#hamburger-label {
-    --x-width: calc(var(--hamburger-height) * 1.41421356237);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--hamburger-gap);
     margin: var(--hamburger-v-margin) var(--hamburger-h-margin);
 }
 
-#hamburger-label::before,
-#hamburger-label::after,
-#hamburger-label input {
-    content: "";
+nav#menu input {
+    display: block;
+    appearance: none;
+    position: absolute;
+}
+
+nav#menu label::before,
+nav#menu label::after,
+nav#menu label {
+    display: inline-block;
     width: var(--bar-width);
     height: var(--bar-height);
     transform-origin: right center;
-    transition: opacity var(--animation-hamburger-timing), width var(--animation-hamburger-timing),
-        rotate var(--animation-hamburger-timing), translate var(--animation-hamburger-timing),
-        background-color var(--animation-hamburger-timing);
+    transition: width var(--animation-hamburger-timing), rotate var(--animation-hamburger-timing),
+        translate var(--animation-hamburger-timing);
     background-color: var(--accent);
 }
 
-#hamburger-label:has(input:focus-visible)::before,
-#hamburger-label:has(input:focus-visible)::after,
-#hamburger-label input:focus-visible {
-    border: 1px solid white;
-    box-shadow: 0 0 0 1px white;
-}
-
-#hamburger-label::before {
-    background-image: url("../asset/img/burger/burger-top.png");
-    background-size: 100% 100%;
-}
-
-#hamburger-label input {
-    appearance: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    pointer-events: none;
+nav#menu label {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    position: relative;
+    margin: auto var(--hamburger-h-margin);
     background-image: url("../asset/img/burger/burger-middle.png");
     background-size: 100% 100%;
 }
 
-#hamburger-label::after {
+nav#menu label::before,
+nav#menu label::after {
+    content: "";
+    position: absolute;
+}
+
+nav#menu label::before {
+    bottom: calc(var(--hamburger-gap) + var(--bar-height));
+    background-image: url("../asset/img/burger/burger-top.png");
+    background-size: 100% 100%;
+}
+
+nav#menu label::after {
+    top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.png");
     background-size: 100% 100%;
 }
 
-#hamburger-label:has(input:checked)::before {
+nav#menu input:checked + label::before {
     rotate: -45deg;
     width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / -2);
+    translate: calc(var(--bar-width) / -2) calc(var(--bar-height) / -2);
     background-image: url("../asset/img/burger/fork.png");
     background-size: 100% 100%;
 }
 
-#hamburger-label:has(input:checked)::after {
+nav#menu input:checked + label::after {
     rotate: 45deg;
     width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / 2);
+    translate: calc(var(--bar-width) / -2) calc(var(--bar-height) / 2);
     background-image: url("../asset/img/burger/knife.png");
     background-size: 100% 100%;
 }
 
-#hamburger-label input:checked {
-    opacity: 0;
-    width: 0;
+nav#menu input:checked + label {
+    background-color: transparent;
+    background-size: 0 0;
 }
 
-nav#menu {
-    position: fixed;
-    transition: translate var(--animation-dropdown-timing);
-    translate: 0 -100%;
-    padding: 0 1rem;
-    background-color: var(--accent-secondary);
-    height: fit-content;
-    width: 100vw;
+nav#menu input:focus-visible + label::before,
+nav#menu input:focus-visible + label::after,
+nav#menu input:focus-visible + label {
+    border: 1px solid white;
+    box-shadow: 0 0 0 1px white;
 }
 
-#hamburger:has(input:checked)+#menu {
+nav#menu input:checked + label #ham-opened,
+nav#menu :not(input:checked) + label #ham-closed {
+    visibility: visible;
+}
+
+nav#menu :not(input:checked) + label #ham-opened,
+nav#menu input:checked + label #ham-closed {
+    visibility: hidden;
+}
+
+nav#menu input:checked ~ ul {
     translate: 0;
 }
 
-header:has(#hamburger-label input:not(:checked)) nav#menu a {
-    visibility: hidden;
-}
-
-body:has(#hamburger-label input:checked) {
-    overflow-y: hidden;
-}
-
-header:has(#hamburger-label input:checked) #list-help {
-    visibility: hidden;
-}
-
-/* NOT SO BUTY */
-body:has(#hamburger-label input:checked) main,
-body:has(#hamburger-label input:checked) footer {
-    visibility: hidden;
+nav#menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--accent-secondary);
+    padding: 0;
 }
 
 nav#menu ul {
+    position: absolute;
+    transition: translate var(--animation-dropdown-timing);
+    translate: 0 -100%;
+    padding: 4rem 1rem 0;
+    border-radius: 0;
     height: 40vh;
-    margin-top: 2vh;
+    width: 100vw;
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 1.1rem;
+    z-index: -1;
 }
 
-nav#menu li:not(#profile-item) {
+nav#menu ul li:not(#profile-item) {
     width: 60%;
     text-align: center;
 }
 
-nav#menu li:has(.logo) {
+nav#menu ul li:first-child {
     display: none;
 }
 
-#hamburger .logo {
-    display: inline;
-    padding: 0;
-    margin: auto var(--hamburger-h-margin);
-    border: 0;
-}
-
-nav#menu li#profile-item {
+nav#menu ul li#profile-item {
     margin: 0;
 }
 
+nav#menu > a.help-el {
+    display: inline;
+}
+
+body:has(input#ham-checkbox:checked) {
+    overflow-y: hidden;
+}
 /* #endregion MENU */
 
 /* ================================================== */
