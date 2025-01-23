@@ -130,6 +130,14 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
             if(!is_dir($userBasePath.$userPath)) {
                 mkdir($userBasePath.$userPath);
             }
+
+            $files = glob($userBasePath.$userPath.'*'); //cancello tutti i file già presenti
+            foreach($files as $file){
+                if(is_file($file)) {
+                    unlink($file);
+                }
+            }
+
             rename($tmpFile,$userBasePath.$userPath.$isLogged.".".$extension);
             unset($_FILES["profile-img-edit"]);
             $isProfilePicChanged=true;

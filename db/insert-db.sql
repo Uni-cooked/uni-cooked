@@ -186,7 +186,7 @@ INSERT INTO Preferenza_Ricetta VALUES ("Frittatona","MasterMaurizio");
 INSERT INTO Preferenza_Ricetta VALUES ("Merluzzo in scaloppa","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Rucola e bresaola","Oca");
 INSERT INTO Preferenza_Ricetta VALUES ("Pasta zucchine e salmone","Tony");
-INSERT INTO Preferenza_Ricetta VALUES ("Pasta alla nord Piovego","ÈColpadiTeo");
+INSERT INTO Preferenza_Ricetta VALUES ("Pasta alla nord Piovego","ÈColpaDiTeo");
 
 
 
@@ -588,25 +588,25 @@ INSERT INTO Valutazione VALUES ("Pasta-asciutta", "Jay", "2025-01-05", 24, "Non 
 INSERT INTO Valutazione VALUES ("Insalata veloce", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Riso e uova fritte", "Oca", "2025-01-05", 14, "Piatto povero di gusti, emozioni e non molto salutare quindi non si merita nemmeno la sufficienza");
 INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una Peroni gelata");
-INSERT INTO Valutazione VALUES ("Pasta-asciutta","ÈColpadiTeo","2025-01-19",18,"Mancava un po' troppo di sale...");
+INSERT INTO Valutazione VALUES ("Pasta-asciutta","ÈColpaDiTeo","2025-01-19",18,"Mancava un po' troppo di sale...");
 
 -- PENDOLARE
 INSERT INTO Valutazione VALUES ("Insalata veloce", "GGGaggi", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Insalata veloce", "OmbrettaGatti", "2025-01-12", 26, "Concordo con GGGaggi, piatto leggero (si vede che siamo sulla stessa onda).");
 INSERT INTO Valutazione VALUES ("Caprese", "GGGaggi", "2025-01-08", 30, "Ancora meglio dell'insalata veloce, valutate molto positivamente entrambe.");
 INSERT INTO Valutazione VALUES ("Caprese", "JoeTrump", "2025-01-06", 12, "Piatto senza CARNE? unacceptable");
-INSERT INTO Valutazione VALUES ("Caprese", "ÈColpadiTeo", "2025-01-06", 20, "ottimo!");
+INSERT INTO Valutazione VALUES ("Caprese", "ÈColpaDiTeo", "2025-01-06", 20, "ottimo!");
 INSERT INTO Valutazione VALUES ("Caprese", "Tony", "2025-01-08", 20, "Piatto semplice ma gustoso!");
 INSERT INTO Valutazione VALUES ("Caprese", "Murphy", "2025-01-07", 15, "Pensavo qualcosa di più elaborato...");
 INSERT INTO Valutazione VALUES ("Caprese", "user", "2025-01-07", 21, "Direi un buon piatto semplice!");
 INSERT INTO Valutazione VALUES ("Hamburger_EN", "JoeTrump", "2025-01-12", 30, "Wonderful! finalmente un piatto come si deve della mia nazione");
-INSERT INTO Valutazione VALUES ("Pasta alla nord Piovego","ÈColpadiTeo","2025-01-19",30,"Mai mangiata una pasta così buona! Giusto quello che mi serviva prima di tornare a studiare!");
+INSERT INTO Valutazione VALUES ("Pasta alla nord Piovego","ÈColpaDiTeo","2025-01-19",30,"Mai mangiata una pasta così buona! Giusto quello che mi serviva prima di tornare a studiare!");
 
 -- IN SEDE
 INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli", "JoeTrump", "2025-01-11", 30, "Pazzesco!!!!");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "OmbrettaGatti", "2025-01-14", 24, "Mi piace che non si pensi solo alla carne, cambierei l'accostamento coi piselli però.");
 INSERT INTO Valutazione VALUES ("Burger_EN vegetale con piselli", "GGGaggi", "2025-01-15", 25, "Concordo con Ombretta, comunque molto buono e facile da preparare.");
-INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli","ÈColpadiTeo","2025-01-19",25,"Non male!");
+INSERT INTO Valutazione VALUES ("Pollo al curry_EN con riso e piselli","ÈColpaDiTeo","2025-01-19",25,"Non male!");
 
 INSERT INTO Valutazione VALUES ("Couscous_EN con verdure", "Tony", "2025-01-12", 30, "Mai assaggiato piatto migliore!");
 
