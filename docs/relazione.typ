@@ -102,7 +102,7 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - aria-label dove server
 - classe hide dove server (bUtton)
 
-= Strumenti utilizzati
+== Strumenti utilizzati
 
 Sono stati utilizzati i seguenti strumenti:
 - *Total Validator*: per assicurare la correttezza dei documenti html (completati da PHP);
