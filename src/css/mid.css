@@ -98,12 +98,18 @@ nav#menu label::before {
     bottom: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-top.png");
     background-size: 100% 100%;
+    outline-offset: -1px;
+  outline: 2px solid var(--accent-secondary);
+
 }
 
 nav#menu label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.png");
     background-size: 100% 100%;
+    outline-offset: -1px;
+  outline: 2px solid var(--accent-secondary);
+
 }
 
 nav#menu input:checked + label::before {
@@ -112,6 +118,9 @@ nav#menu input:checked + label::before {
     translate: calc(var(--bar-width) / -2) calc(var(--bar-height) / -2);
     background-image: url("../asset/img/burger/fork.png");
     background-size: 100% 100%;
+    outline-offset: -1px;
+  outline: 2px solid var(--accent-secondary);
+
 }
 
 nav#menu input:checked + label::after {
@@ -120,6 +129,9 @@ nav#menu input:checked + label::after {
     translate: calc(var(--bar-width) / -2) calc(var(--bar-height) / 2);
     background-image: url("../asset/img/burger/knife.png");
     background-size: 100% 100%;
+    outline-offset: -1px;
+  outline: 2px solid var(--accent-secondary);
+
 }
 
 nav#menu input:checked + label {
