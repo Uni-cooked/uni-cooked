@@ -123,7 +123,7 @@ fieldset {
 }
 
 .button-animation:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .button-animation:active {
@@ -489,14 +489,6 @@ nav#quick-role li a:link {
     border-radius: var(--radius-small);
 }
 
-.button-animation:hover {
-    transform: scale(1.03);
-}
-
-.button-animation:active {
-    transform: scale(0.97);
-}
-
 dl#roles dt {
     letter-spacing: var(--letter-spacing);
     text-align: center;
@@ -818,6 +810,10 @@ ul#recipe-list .recipe {
     background-size: 20% 50%;
     animation: l43 1s infinite linear; 
     margin: 10rem auto;
+    position: absolute;
+    left: 50%;
+    translateY: -50%;
+    transform: translateX(-50%);
 }
 
 @keyframes l43 {
@@ -845,7 +841,7 @@ ul#recipe-list .recipe div {
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     width: 100%;
     object-fit: cover;
-    height: 53%;
+    height: 50%;
 }
 
 ul#recipe-list .recipe .recipe-title {
@@ -909,8 +905,16 @@ ul#recipe-list .recipe a:link {
     background-color: var(--accent);
     border: 0;
     border-radius: 50%;
-    vertical-align: middle;
     text-indent: -9999rem;
+    transition: transform 200ms;
+}
+#next-page-btn:hover,
+#prev-page-btn:hover {
+    transform: scale(1.2);
+}
+#next-page-btn:active,
+#prev-page-btn:active {
+    transform: scale(0.9);
 }
 
 #prev-page-btn {
@@ -1428,6 +1432,8 @@ a#edit-profile-link {
 
 /* #region ABOUT US PAGE */
 .pp {
+    height: 10rem;
+    width: 10rem;
     border-radius: var(--radius-max);
 }
 
