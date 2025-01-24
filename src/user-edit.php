@@ -138,7 +138,21 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
                 }
             }
 
-            rename($tmpFile,$userBasePath.$userPath.$isLogged.".".$extension);
+            switch (mime_content_type($tmpFile)) {
+                case 'image/jpeg':
+                    $img = imagecreatefromjpeg($tmpFile);
+                    break;
+                
+                case 'image/png':
+                    $img = imagecreatefrompng($tmpFile);
+                    break;
+                
+                default:
+                    header("Location: 500-err.php");
+                    break;
+            }
+
+            imagewebp($img,$userBasePath.$userPath.$isLogged.".webp");
             unset($_FILES["profile-img-edit"]);
             $isProfilePicChanged=true;
             $paginaHtml = str_replace("{{profile-pic-error}}","",$paginaHtml);            
