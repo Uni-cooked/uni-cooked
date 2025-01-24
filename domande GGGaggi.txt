@@ -15,6 +15,9 @@ torna su al primo commento/ricetta solo se ho 2+
 fare il mostra psw
 sistemare foto home (un solo header)
 role alert js
+tempo min in keywords recipe
+torna su ricette
+pulsanti gialli testo nero->bianco
 
 NB relazione
 colori non tutti in contrasto

@@ -28,9 +28,12 @@ Sono state individuate due tipologie di utente:
 == Esigenze dell'utenza
 TODO: Metafora della pesca ???
 
-== Possibili ricerche
+== Possibili ricerche e ranking
+Ogni pagina possiede adeguate keywords per aumentare il livello di trustness. In particolare è sempre presente \"Uni Cooked\" in quanto viene ripresa nel tag title, nella descrizione e nella intestazione di livello 1 nell'header. In questo modo se l'utente conosce già il nome del sito (o se lo ricorda in parte) è molto probabile esca tra i primi risultati del motore di ricerca.
 
-== SERP ranking
+Da notare la pagina della ricetta che, con l'ausilio di `PHP`, contiene il nome della ricetta nel tag title, nella descrizione e nelle keywords. Nel nome sono presenti gli ingredienti principali (ad esempio \"Pasta zucchine e gamberetti\"). In questo modo si viene incontro anche all'utente che cerca delle ricette secondo ingredienti chiave.
+
+Infine abbiamo cercato di inserire una \"call to action\" in ogni descrizione in modo sia da coinvolgere maggiormente l'utente sia da migliorare il ranking del motore di ricerca.
 
 = Progettazione
 
@@ -50,7 +53,14 @@ Valutando gli elementi delle pagine abbiamo ritenuto opportuno dividere gli sche
 In ogni fascia di risoluzione è sempre stato adottato uno design misto limitando l'uso di unità di misura fisse (utilizzate solo per i bordi) e il display grid (sfruttato solo nella pagina dei contatti).
 
 == Comportamento
-Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input e all'aggiornamento di due valori nei filtri della pagina di ricerca. In questo modo limitiamo al minimo i disagi provocati dalla mancanza di `JavaScript`. Sono stati quindi realizzati interamente con `CSS` il menu ad hamburger per mobile e le animazioni delle carte nella home. ALTRO????
+Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input, all'aggiornamento di due valori nei filtri della pagina di ricerca e a funzionalità minori. In questo modo limitiamo al minimo i disagi provocati dalla mancanza di `JavaScript`. Sono stati quindi realizzati interamente con `CSS` il menu ad hamburger per mobile e le animazioni delle carte nella home. Le funzionalità dipendenti da `JavaScript` sono le seguenti:
+- Controllo lato client degli input.
+- Disabilitazione dei pulsanti submit in caso i requisiti minimi degli input non siano soddisfatti.
+- Aggiornamento dei paragrafi sotto gli slider del filtro nelle ricette con il valore dell'input.
+- Aggiornamento immediato della foto profilo nella pagina di modifica profilo utente quando viene cambiata.
+- Animazione delle ricette quando vengono caricate in seguito ad una ricerca.
+
+Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e PAGINE TEO. Ogni connessione al database è chiusa immediatamente dopo il recupero dei dati.
 
 // == Controlli sui dati
 // TEO CONTROLLA !!!!!!! \
@@ -58,42 +68,53 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input 
 
 == Emotional design
 Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.
-HAMBURGER
+
+Per rendere il sito più accattivante e originale abbiamo personalizzato il menu ad hamburger in modo che richiamasse il tema della cucina. Sono state aggiunte inoltre delle animazioni semplici per rendere l'esperienza più fluida e piacevole, facendo attenzione però a non recare disturbo a utenti con difficoltà nel mantenimento dell'attenzione.
 
 = Accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
 - Aggiunto la breadcrumb in ogni pagina.
-- Aggiunto gli aiuti alla navigazione in ogni pagina.
+- Aggiunto gli aiuti alla navigazione in ogni pagina. I \"torna su\" sono posizionati sempre nel footer ma anche in sezioni lunghe come ad esempio le categorie nella home.
 - Contrassegnato abbreviazioni, simboli e sigle con i corretti tag `HTML5`.
 - Aggiunto l'attributo title ai link in modo da renderli più espressivi alla lettura con screen reader.
 - Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
 - Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
-- Assegnato gli attributi alt lasciandoli vuoti se non necessari.
-- ALTRO ????
-- torna su
-- aria-label dove server
-- classe hide dove server (bUtton)
+- Assegnato gli attributi alt a tutte le immagini lasciandoli vuoti se non necessari.
+- Aggiunto l'attributo aria-label dove necessario.
+- Nascosto gli elementi di aiuto agli screen reader.
+- Eseguito l'image replacement dove necessario.
+- Assegnato gli attributi aria-live e aria-atomic nelle categorie della home per avvisare lo screen reader dell'animazione della carta (l'attributo role=\"alert\" non è accettato da Total Validator).
 
 = Controlli sul sito
-TODO: DIRE QUALI STRUMENTI SONO STATI UTILIZZATI
+Per eseguire i controlli sono stati adottati i seguenti software:
+- Total Validator
+- WCAG colo contrast checker (estensione Chrome)
+- Screen reader:
+  - Narrator (Windows 11)
+  - Orca (Ubuntu 22.04)
+  - NVDA
+- Lighthouse
+Molti controlli sono stati svolti manualmente.
 
 == Accessibilità
 Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 - Tutti gli elementi interattivi sono raggiungibili tramite \"tab\" o \"swipe\".
-- Tutti gli input sono preceduti delle label e seguiti dall'eventuale errore.
+- Tutti gli input sono preceduti delle label e seguiti dall'eventuale errore (ad eccezione del menu ad hamburger).
 - Tutte le pagine contengono le breadcrumb.
-- Utilizzo di screen reader (QUALI ???)
+- Utilizzo di screen reader
 - Attributo alt ad ogni immagine.
 - Attributo o tag abbr ad ogni abbreviazione o sigla.
 - Link corretti per gli aiuti alla navigazione.
 - Attributo lang con la lingua dei termini che seguono se sono stranieri.
+- Resistenza degli elementi con ingrandimento del testo fino a 24px.
 
 == Colori
 Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei colori:
-- Contrasto *AAA*:
-  - QUASI TUTTO
-- Contrasto *AA*:
-  - QUASI NULLA
+- Tutti i colori di sfondo e testo sono in contrasto AAA. Unica eccezione fatta per il testo \"Adatto per te se:\" nel lato posteriore delle carte nella home. In base a quanto riportato da WCAG color contrast checker l'intestazione è in contrasto AA in quanto considerato come testo grande. Tuttavia perde il contrasto AA quando il testo 1em raggiunge i 10px. Pensiamo quindi che tali numeri non siano adottati da un utente con difficoltà nella distinzione dei colori.
+- Mantenendo i colori in palette non è stato possibile trovare i contrasti tra link visitati e non visitati (mantenendo i contrasti tra questi e lo sfondo). Abbiamo quindi optato per due differenti soluzioni:
+  - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati.
+  - I link con uno sfondo dedicato, ad esempio i \"pulsanti\" ACCEDI nel menu o MODIFICA PROFILO nel profilo utente, sono contornati da un bordo dello stesso colore del link se visitati.
+- COLORI LINK ???
 
 == Struttura
 Sono stati eseguiti i seguenti controlli per quanto riguarda la struttura:
@@ -105,14 +126,14 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 - Non esistono link circolari.
 - Tutte le pagine sono raggiungibili.
 - Gli errori 404 e 500 sono gestiti.
-- Velocità di caricamento del sito (COSA CON RESULTS)
-- CHE FONT ABBIAMO ADOTTATO ???
+- Velocità di caricamento del sito e indice di accessibilità usando Lighthouse.
+- Font senza grazie per il sito, con grazie per la versione stampata.
 
 == Sicurezza
 Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
 - Controllo della validità dei dati inviati al server.
-- PSW HASH
-- QUERY PREPARATE (NO INJECTION)
+- Password salvate in hash e non in chiaro.
+- Query \"preparate\" in modo da evitare sql injection.
 
 == Codice
 Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:

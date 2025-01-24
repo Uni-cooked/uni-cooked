@@ -50,7 +50,7 @@
 
   v(2em)
   text(13pt, weight: "bold", fill: purple, font: "Liberation Sans")[
-    #link("http://localhost:8080/aprecoma/uni-cooked/index.php")[#underline("http://localhost:8080/aprecoma/uni-cooked/index.php")]
+    #link("http://localhost:8080/aprecoma/index.php")[#underline("http://localhost:8080/aprecoma/index.php")]
   ]
 
   set text(12pt, font: "DejaVu Serif")
