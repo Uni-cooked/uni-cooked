@@ -6,14 +6,13 @@
   set enum(indent: 1em)
   set align(center)
   
-  text(25pt, weight: "bold", fill: black, font: "Liberation Sans")[TEO \ ]
+  text(25pt, weight: "bold", fill: black, font: "Liberation Sans")[UNI COOKED \ ]
 
-  circle(radius: 10em, fill: rgb("#302E8E"))[
+  circle(radius: 7em, fill: rgb("#302E8E"))[
     #image("../src/asset/img/def-profile.png", height: 100%)
   ]
 
   v(1.5em)
-  text(20pt, weight: "bold", fill: black, font: "Liberation Sans")[UNI COOKED \ \ ]
 
 
   show grid.cell.where(x: 0): cell => align(right, cell)
@@ -26,6 +25,7 @@
         stroke: none,
         columns: (50%, 50%),
         inset: 8pt,
+        table.cell(colspan: 2, stroke: none)[*AUTORI* \ \ ],
         [Andrea Precoma], [2068227],
         [Andrea Soranzo], [2075539],
         [Gabriele Magnelli], [2075542],
@@ -34,24 +34,33 @@
     )
   ]
 
-  v(2em)
+  v(1em)
+
+  link("http://tecweb.studenti.math.unipd.it/aprecoma/index.php")[#text(fill: navy, size: 1.3em)[#underline("tecweb.studenti.math.unipd.it/aprecoma/index.php")]]
+
+  v(1em)
+
   text(13pt, fill: black, font: "Liberation Sans")[
     #box(
       width: 50%,
       table(
-        stroke: none,
-        columns: (50%, 50%),
-        inset: 8pt,
-        [user], [user],
-        [GGGaggi], [GGGaggi]
+        columns: (auto, auto, auto),
+        inset: 0.5em,
+        table.cell(colspan: 3, stroke: none)[*DATI DI ACCESSO* \ \ ],
+        [*Nome utente*], [*Password*], [*Tipo*],
+        [user], [user], [dad],
+        [GGGaggi], [GGGaggi], [pendolare],
+        [Tony], [Tony], [in sede],
+        [UgoFantozzi], [UgoFantozzi], [fuorisede],
       ),
     )
+
+    \ *Referente* \
+    Andrea Precoma \
+    #link("mailto:andrea.precoma@studenti.unipd.it")[#text(fill: navy, size: 1em)[#underline("andrea.precoma@studenti.unipd.it")]]
+
   ]
 
-  v(2em)
-  text(13pt, weight: "bold", fill: purple, font: "Liberation Sans")[
-    #link("http://localhost:8080/aprecoma/index.php")[#underline("http://localhost:8080/aprecoma/index.php")]
-  ]
 
   set text(12pt, font: "DejaVu Serif")
 

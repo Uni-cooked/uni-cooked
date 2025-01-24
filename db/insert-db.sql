@@ -28,7 +28,7 @@ INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e
 INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", "user_profiles/Jay/Jay.png");
 INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", "user_profiles/Murphy/Murphy.png");
 INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare!", "in_sede", "user_profiles/Oca/Oca.png");
-INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "b32993a4736c9b371503215352c3130c0e2946a810da08a2bf0f1b694e65d44a", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
+INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "061572d4b6bc4c7274a4af7707f957f99e41e4d645e30f8f014c095e463e99ce", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
 INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
 INSERT INTO Utente VALUES ("ÈColpaDiTeo","SeNonFunzionaColpaDiTeo@ovviamente.com","2195e1a6e384ce62ebceaa47df0b6cfc608c8ae099b9c8ddb9a83b2d65d882a4","2025-01-19","Se qualcosa non funziona\nPuò essere colpa di una sola persona\nTeo è il suo nome\nFar cadere sistemi è la sua professione\n\nAccidenti, ho mancato l'ultima rima...\n\n\nSONO TRISTE!","pendolare",NULL);
@@ -100,7 +100,17 @@ INSERT INTO Ingrediente VALUES ("burro");
 INSERT INTO Ingrediente VALUES ("passata di pomodoro");
 INSERT INTO Ingrediente VALUES ("formaggio");
 INSERT INTO Ingrediente VALUES ("acqua");
-
+INSERT INTO Ingrediente VALUES ("latte intero");
+INSERT INTO Ingrediente VALUES ("erba cipollina");
+INSERT INTO Ingrediente VALUES ("speck");
+INSERT INTO Ingrediente VALUES ("brodo di carne");
+INSERT INTO Ingrediente VALUES ("calamarata");
+INSERT INTO Ingrediente VALUES ("calamari");
+INSERT INTO Ingrediente VALUES ("peperoncino");
+INSERT INTO Ingrediente VALUES ("pomodorini ciliegino");
+INSERT INTO Ingrediente VALUES ("vongole");
+INSERT INTO Ingrediente VALUES ("cozze");
+INSERT INTO Ingrediente VALUES ("scampi");
 
 -- RICETTA ====================================
 
@@ -162,7 +172,9 @@ INSERT INTO Ricetta VALUES ("Frittata di patate e cipolla", "dad", "secondo", 25
 INSERT INTO Ricetta VALUES ("Noodles_EN con i gamberetti", "dad", "primo", 20, 5, "I noodles_EN con gamberetti sono un buonissimo primo piatto in cui gli spaghetti orientali sono protagonisti insieme a pochi altri ingredienti.", "2025-01-15", "./asset/img/recipe/dad/noodles-gamberetti.jpg");
 INSERT INTO Ricetta VALUES ("Pasta caciotta e tonno in crema di peperoni", "dad", "primo", 35, 8, "La pasta con crema di peperoni, caciotta e tonno è un primo piatto davvero squisito. Colorato e semplice da preparare, piacerà a tutti.", "2025-01-15", "./asset/img/recipe/dad/pasta-caciotta-tonno-cremapeperoni.jpg");
 INSERT INTO Ricetta VALUES ("Scaloppina al limone", "dad", "secondo", 25, 9, "La scaloppina al limone è una ricetta semplice e veloce da preparare, ma allo stesso tempo raffinata e gustosa. La delicatezza della carne si sposa perfettamente con l'acidità del limone, creando un mix di sapori davvero irresistibile.", "2025-01-15", "./asset/img/recipe/dad/scaloppina-limone.jpg");
-
+INSERT INTO Ricetta VALUES ("Canederli","dad", "primo", 60, 6, "I canederli sono una vera squisitezza da gustare in Trentino-Alto Adige! Sostanziosi gnocchi di pane","2025-01-24", "./asset/img/recipe/dad/canederli.jpg");
+INSERT INTO Ricetta VALUES ("Calamarata","dad", "primo", 70, 10, "La calamarata, nel napoletano, è conosciuta con il nome di mezzi paccheri. Oltre ad essere un formato di pasta è anche un condimento il cui protagonista è il calamaro.","2025-01-24", "./asset/img/recipe/dad/calamarata.jpg");
+INSERT INTO Ricetta VALUES ("Pasta allo scoglio","dad", "primo", 60, 9, " Un primo piatto intramontabile: gli spaghetti allo scoglio. Perché non provare a farli a casa? Un connubio di sapori del Mediterraneo.","2025-01-24", "./asset/img/recipe/dad/pasta-scoglio.jpg");
 
 -- PREFERENZA RICETTA ====================================
 
@@ -367,6 +379,39 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "aglio", FALSE, 
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Scaloppina al limone", "olio d'oliva", TRUE, NULL, NULL, NULL);
 
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "pane", FALSE, 50, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "cipolla", FALSE, 10, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "latte intero", FALSE, 50, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "burro", FALSE, 10, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "speck", FALSE, 30, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "uova", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "prezzemolo", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "erba cipollina", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "brodo di carne", FALSE, 250, "ml", NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "calamarata", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "aglio", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "prezzemolo", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "vino bianco da cucina", FALSE, 15, "ml", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "sale", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "calamari", FALSE, 125, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "peperoncino", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "pomodorini ciliegino", FALSE, 100, "g", NULL);
+
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "pasta", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "vongole", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "olio d'oliva", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "scampi", FALSE, 8, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "aglio", FALSE, 1, "num_el", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "calamari", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "prezzemolo", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "pepe", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "sale", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "pomodorini ciliegino", FALSE, 80, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "cozze", FALSE, 100, "g", NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "vino bianco da cucina", FALSE, 15, "ml", NULL);
 
 -- PREPARAZIONE ====================================
 
@@ -578,6 +623,32 @@ INSERT INTO Preparazione VALUES ("Scaloppina al limone", 7, "Aggiusta di sale e 
 INSERT INTO Preparazione VALUES ("Scaloppina al limone", 8, "Prosegui la cottura su fiamma dolce per 2-3 minuti.");
 INSERT INTO Preparazione VALUES ("Scaloppina al limone", 9, "Togli la carne dal tegame, impiatta e magna.");
 
+INSERT INTO Preparazione VALUES ("Canederli", 1, "Mondare e tritare la cipolla, tagliare a pezzi piccoli lo speck e preparare il brodo di carne.");
+INSERT INTO Preparazione VALUES ("Canederli", 2, "In una padella far sciogliere il burro a fuoco dolce,versare cipolla e speck e far rosolare per 5 minuti.");
+INSERT INTO Preparazione VALUES ("Canederli", 3, "Tritare l'erba cipollina e il prezzemolo e tagliare il poane a dadini.");
+INSERT INTO Preparazione VALUES ("Canederli", 4, "Versare il pane ina ciotola e aggiungete il latte, l'uovo, l'erba cipollina e il prezzemolo.");
+INSERT INTO Preparazione VALUES ("Canederli", 5, "Unite speck e cipolla.Se l'impasto risultasse troppo asciutto potete aggiungere del latte. Se invece dovesse risultare troppo appiccicoso potete aggiungere farina.");
+INSERT INTO Preparazione VALUES ("Canederli", 6, "Formate i canederli roteando l'impasto tra le mani.");
+INSERT INTO Preparazione VALUES ("Canederli", 7, "Una volta pronti potete cuocerli nel brodo di carne bollente.");
+INSERT INTO Preparazione VALUES ("Canederli", 8, "Dopo circa 15 minuti saranno pronti e potete impiattare.");
+
+INSERT INTO Preparazione VALUES ("Calamarata", 1, "Tritare il peperoncino, tagliate i pomodori in 4 parti e pulite i calamari poi tagliateli ad anelli.");
+INSERT INTO Preparazione VALUES ("Calamarata", 2, "Mettere a bollire l'acqua per la pasta e scaldare l'olio in una casseruola insieme all'aglio e al peperoncino. Poi scottate gli anelli di calamaro, aggiungete il vino e aspettate che l'alcol evapori");
+INSERT INTO Preparazione VALUES ("Calamarata", 3, "Rimuovere l'aglio e aggiungere i pomodorini e lasciate cuocere il tutto per circaa una decina di minuti.");
+INSERT INTO Preparazione VALUES ("Calamarata", 4, "Nel frattempo cuocete la pasta e quando è cotta prendete un mestolo d'acqua di cottura e versatelo i padella.");
+INSERT INTO Preparazione VALUES ("Calamarata", 5, "Scolate la pasta e mettetela in padella amalgamando il tutto.");
+INSERT INTO Preparazione VALUES ("Calamarata", 6, "Su un foglio di alluminio mettete un foglio di carta da forno e mettete sopra la pasta e poi chiudete il foglio di carta da forno e poi quello d'alluminio.");
+INSERT INTO Preparazione VALUES ("Calamarata", 7, "Mettete in forno a 200 gradi per circa 10 minuti e poi servite a tavola.");
+
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 1, "Pulire cozze e vongole passandole più volte sotto l'acqua corrente e farle stare in ammollo in acqua fredda.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 2, "Scaldare l'olio in un tegame e poi versare al suo interno le vongole e le cozze, chiudere il tegame con un coperchio e aspettare circa 4 minuti, giusto il tempo che le cozze e le vongole si dischiudano.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 3, "Togliere il coperchio e trasferire le cozze e le vongole in un recipiente.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 4, "Sgusciare sia le vongole sia le cozze e pulire i calamari e poi tagliateli a listarelle. Infine, pulire gli scampi.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 5, "Mettete a bollire l'acqua per la pasta, poi in un padello mettere l'aglio, l'olio e versare i calamari insieme ad un pizzico di sale e rosolate il tutto per 5 minuti e dopo aggiungete il vino.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 6, "Lasciare evaporare l'alcol ed eliminare l'aglio e aggiungete i pomodorini. Cuocere la pasta.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 7, "Aggiungere gli scampi al sugo, aggiungere il sale e il pepe e scolare nella padella la pasta.");
+INSERT INTO Preparazione VALUES ("Pasta allo scoglio", 8, "A fine cottura unite le cozze, le vongole e il prezzemolo. Per concludere mescolate il tutto e poi impiattate.");
+
 
 -- VALUTAZIONE ====================================
 
@@ -614,6 +685,10 @@ INSERT INTO Valutazione VALUES ("Pasta sfilacci e pomodorini", "Tony", "2025-01-
 INSERT INTO Valutazione VALUES ("Pasta zucchine e salmone", "Tony", "2025-01-13", 30, "Consigliata, davvero molto buona!");
 
 -- DAD
+INSERT INTO Valutazione VALUES ("Scaloppina al limone", "JoeTrump", "2025-01-22", 25, "Ottima, ma sarebbe più buona se fatta con il vino al posto del limone!");
+INSERT INTO Valutazione VALUES ("Pasta caciotta e tonno in crema di peperoni", "GGGaggi", "2025-01-23", 30, "Un piatto veramente delizioso.");
+INSERT INTO Valutazione VALUES ("Frittata di patate e cipolla", "   Murphy", "2025-01-24", 23, "Un piatto non male, ma davvero pesante");
+INSERT INTO Valutazione VALUES ("Pasta caciotta e tonno in crema di peperoni", "ÈColpaDiTeo", "2025-01-23", 26, "Un piatto molto buono, non lo avevo mai mangiato, lo consiglio.");
 
 
 -- SUGGERIMENTO ====================================

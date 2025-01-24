@@ -23,10 +23,40 @@ Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un 
 == Tipologie di utente
 Sono state individuate due tipologie di utente:
 - *Utente non autenticato* è l'utente che non ha eseguito l'accesso al sistema. Può navigare nel sito, usufruire delle funzionalità di ricerca delle ricette e inviare dei suggerimenti dalla pagina dei contatti.
-- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). In aggiunta all'utente non autenticato è accompagnato da una esperienza personalizzata nella ricerca: a parità di valutazione viene visualizzata prima la ricetta che appartiene alla categoria dell'utente così da invogliarlo con piatti pensati per le sue esigenze. Può inoltre assegnare le valutazioni (una per ricetta) e salvare le ricette tra i preferiti.
+- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). Tale utente avrà scelto in fase di registrazione la categoria che ritiene essere a lui più appropriata tra:
+
+  - *dad*: ovvero *d*\idattica *a* *d*\istanza, rappresentante uno studente che segue le lezioni da casa;
+  - *pendolare*: ovvero uno studente che quotidianamente prende i mezzi pubblici per recarsi in Università;
+  - *in sede*: ovvero uno studente che abita vicino alla sede Universitaria;
+  - *fuorisede*: ovvero uno studente molto lontano dalla sede Universitaria, e che dunque ha probabilmente un appartamento preso in affitto;
+
+L'utente autenticato è accompagnato da una esperienza personalizzata nella ricerca delle ricette: a parità di valutazione viene visualizzata prima la ricetta che appartiene alla categoria dell'utente così da invogliarlo con piatti pensati per le sue esigenze.
+Tutti gli utenti autenticati possono inoltre assegnare valutazioni (una per ricetta) e salvare le ricette tra i preferiti.
+
+Tutti gli utenti, autenticati e non, hanno poi la possibilità di rilasciare suggerimenti nella pagina "Contatti".
 
 == Esigenze dell'utenza
-TODO: Metafora della pesca ???
+
+In base alla *metafora della pesca*, il gruppo ha predisposto i seguenti strumenti per rispondere alle esigenze di ciascuno:
+
+- *Tiro Perfetto*: per rispondere alle esigenze dell'utenza con un'idea ben specifica, il gruppo ha predisposto una barra di ricerca nella sezione "Ricette", così da rendere veloce la ricerca della ricetta specifica;
+- *Trappola per Aragoste*: per rispondere alle esigenze dell'utenza con un'idea non precisa, il gruppo ha implementato dei filtri nella sezione "Ricette", adottando dunque una struttura a faccette. In seguito al filtro, l'utente può inoltre sceglie in che ordine visualizzare i risultati, questo sempre con l'intento di affinare la ricerca. Infine, i piatti sono divisi per *primi* e *secondi* e in base alla categoria (*dad*, *pendolare*, *in sede* e *fuorisede*), aiutando dunque le esigenze di ricerca;
+- *Pesca con Rete*: per aiutare l'utenza che non ha affatto un'idea, il gruppo ha predisposto nella pagina principale la descrizione approfondita di ciascuna categoria, con, in aggiunta, un link diretto per visualizzare le ricette della suddetta categoria. La pagina "Ricette", inoltre, mostra comunque sempre l'intero catalogo, così da aiutare l'utente nel suo percorso di esplorazione;
+- *Boa di Segnalazione*: l'utente, se autenticato, ha la possibilità di aggiungere una ricetta ai preferiti, con la possibilità di visualizzarla in seguito nella pagina personale del suo profilo.
+
+== funzionalità desiderabili
+
+Con lo scopo di migliorare l'esperienza utente, è stato previsto che l'utente registrato possa personalizzare il proprio profilo cambiandone immagine, nome utente, categoria, biografia e password. Per futuri scopi (esempio di notifica per nuove ricette), in fase di registrazione viene richiesta anche l'email dell'utente, la cui modifica richiederebbe però l'invio di una mail di conferma al precedente indirizzo e non è stata perciò implementata.
+
+L'utente può inoltre cambiare la propria password in qualsiasi momento sempre dal suo profilo personale, dalla quale può inoltre cancellare tutti i preferiti e il suo account, previa apposita conferma.
+
+Seppur il nome utente sia case-sensitive, non è permesso la registrazione di due nomi utente aventi gli stessi caratteri (es. Tony e tony non possono coesistere).
+
+Infine, il profilo di ogni utente è pubblico: nei commenti è presente un link al profilo che lo ha pubblicato e, di tale utente, è possibile visualizzare nome utente, foto profilo, data di registrazione, categoria, biografia e, infine, le sue ricette preferite.
+
+Come anticipato, è inoltre possibile a tutti gli utenti scrivere un suggerimento al gruppo mediante il form disponibile nella pagina "Contatti".
+
+Per migliorare l'esperienza nell'uso della breadcrum nella pagina di una ricetta specifica, questa cambia la posizione "di partenza" a seconda che si arrivi da un preferito o dal catalogo delle ricette.
 
 == Possibili ricerche e ranking
 Ogni pagina possiede adeguate keywords per aumentare il livello di trustness. In particolare è sempre presente \"Uni Cooked\" in quanto viene ripresa nel tag title, nella descrizione e nella intestazione di livello 1 nell'header. In questo modo se l'utente conosce già il nome del sito (o se lo ricorda in parte) è molto probabile esca tra i primi risultati del motore di ricerca.
@@ -87,13 +117,13 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 
 = Controlli sul sito
 Per eseguire i controlli sono stati adottati i seguenti software:
-- Total Validator
-- WCAG colo contrast checker (estensione Chrome)
+- *Total Validator* per assicurare la correttezza dei documenti html (completati da PHP).
+- *WCAG coloR contrast checker* (estensione Chrome)
 - Screen reader:
-  - Narrator (Windows 11)
-  - Orca (Ubuntu 22.04)
-  - NVDA
-- Lighthouse
+  - *Narrator* (Windows 11)
+  - *Orca* (Ubuntu 22.04)
+  - *NVDA*
+- *Lighthouse*
 Molti controlli sono stati svolti manualmente.
 
 == Accessibilità
@@ -101,8 +131,8 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 - Tutti gli elementi interattivi sono raggiungibili tramite \"tab\" o \"swipe\".
 - Tutti gli input sono preceduti delle label e seguiti dall'eventuale errore (ad eccezione del menu ad hamburger).
 - Tutte le pagine contengono le breadcrumb.
-- Utilizzo di screen reader
-- Attributo alt ad ogni immagine.
+- Utilizzo di screen reader.
+- Attributo alt ad ogni immagine (ove l'informazione non sia fornita dal contesto circostante).
 - Attributo o tag abbr ad ogni abbreviazione o sigla.
 - Link corretti per gli aiuti alla navigazione.
 - Attributo lang con la lingua dei termini che seguono se sono stranieri.
