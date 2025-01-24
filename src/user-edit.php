@@ -148,7 +148,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
                     break;
                 
                 default:
-                    header("Location: 500-err.php");
+                    header("Location : 500-err.php");
                     break;
             }
 
