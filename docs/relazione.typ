@@ -6,57 +6,34 @@
 #set text(10pt, font: "DejaVu Serif")
 
 = Abstract
-Il progetto consiste in un sito web che tratta un ricettario dedicato per universitari. Presenta una esperienza leggermente personalizzata per ogni tipologia di universitario:
-- *Fuorisede* è lo studente che si è trasferito nella sede dell'università, deve centellinare le spese e il tempo a disposizione.
-- *Pendolare* è lo studente che perde a causa dei trasporti e torna a casa a orari scomodi.
-- *In sede* è lo studente che abita relativamente vicino all'università e che ha più tempo a disposizione.
-- *DAD (Didattica A Distanza)* è lo studente che rimane a casa e si guarda il materiale delle lezioni da casa, ha quindi flessibilità ampie di tempo.
-
-Ogni ricetta è abbinata a una categoria considerando la stima del costo, la difficoltà e il tempo di preparazione. Può essere valutata dagli utenti in una modalità simile da una prova d'esame: viene assegnata un voto da 1 a 30 e un commento che motiva la valutazione.
+Il progetto consiste in un sito web che tratta un ricettario dedicato per universitari. Vi sono quattro categorie di universitario per differenziare le esigenze di ognuno. Queste vengono utilizzate anche per suddividere le ricette considerando la stima del costo, la difficoltà e il tempo di preparazione. La ricetta può essere valutata dagli utenti in una modalità simile da una prova d'esame: viene assegnata un voto da 1 a 30 e un commento che motiva la valutazione.
 
 Ogni utente registrato possiede un proprio profilo con dei dati che può personalizzare. Le ricette salvate come preferite sono visibili nella pagina profilo.
 
-Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito. Questo messaggio viene salvato nel database e in uno scenario più ampio del progetto verrebbe inviata una notifica ai proprietari del sito.
+Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito.
+// Questo messaggio viene salvato nel database e in uno scenario più ampio del progetto verrebbe inviata una notifica ai proprietari del sito.
 
 = Analisi
 
 == Tipologie di utente
 Sono state individuate due tipologie di utente:
 - *Utente non autenticato* è l'utente che non ha eseguito l'accesso al sistema. Può navigare nel sito, usufruire delle funzionalità di ricerca delle ricette e inviare dei suggerimenti dalla pagina dei contatti.
-- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). Tale utente avrà scelto in fase di registrazione la categoria che ritiene essere a lui più appropriata tra:
-
-  - *dad*: ovvero *d*\idattica *a* *d*\istanza, rappresentante uno studente che segue le lezioni da casa;
-  - *pendolare*: ovvero uno studente che quotidianamente prende i mezzi pubblici per recarsi in Università;
-  - *in sede*: ovvero uno studente che abita vicino alla sede Universitaria;
-  - *fuorisede*: ovvero uno studente molto lontano dalla sede Universitaria, e che dunque ha probabilmente un appartamento preso in affitto;
-
+- *Utente autenticato* è l'utente che ha eseguito l'accesso al sistema (in seguito quindi alla registrazione). Tale utente avrà scelto in fase di registrazione la categoria che ritiene essere a lui più appropriata:
+  - *Fuorisede* è lo studente che si è trasferito nella sede dell'università, deve centellinare le spese e il tempo a disposizione.
+  - *Pendolare* è lo studente che perde a causa dei trasporti e torna a casa a orari scomodi.
+  - *In sede* è lo studente che abita relativamente vicino all'università e che ha più tempo a disposizione.
+  - *DAD (Didattica A Distanza)* è lo studente che rimane a casa e si guarda il materiale delle lezioni da casa, ha quindi flessibilità ampie di tempo.
 L'utente autenticato è accompagnato da una esperienza personalizzata nella ricerca delle ricette: a parità di valutazione viene visualizzata prima la ricetta che appartiene alla categoria dell'utente così da invogliarlo con piatti pensati per le sue esigenze.
 Tutti gli utenti autenticati possono inoltre assegnare valutazioni (una per ricetta) e salvare le ricette tra i preferiti.
 
-Tutti gli utenti, autenticati e non, hanno poi la possibilità di rilasciare suggerimenti nella pagina "Contatti".
+Tutti gli utenti, autenticati e non, hanno inoltre la possibilità di rilasciare suggerimenti nella pagina dei contatti.
 
 == Esigenze dell'utenza
-
 In base alla *metafora della pesca*, il gruppo ha predisposto i seguenti strumenti per rispondere alle esigenze di ciascuno:
-
-- *Tiro Perfetto*: per rispondere alle esigenze dell'utenza con un'idea ben specifica, il gruppo ha predisposto una barra di ricerca nella sezione "Ricette", così da rendere veloce la ricerca della ricetta specifica;
-- *Trappola per Aragoste*: per rispondere alle esigenze dell'utenza con un'idea non precisa, il gruppo ha implementato dei filtri nella sezione "Ricette", adottando dunque una struttura a faccette. In seguito al filtro, l'utente può inoltre sceglie in che ordine visualizzare i risultati, questo sempre con l'intento di affinare la ricerca. Infine, i piatti sono divisi per *primi* e *secondi* e in base alla categoria (*dad*, *pendolare*, *in sede* e *fuorisede*), aiutando dunque le esigenze di ricerca;
-- *Pesca con Rete*: per aiutare l'utenza che non ha affatto un'idea, il gruppo ha predisposto nella pagina principale la descrizione approfondita di ciascuna categoria, con, in aggiunta, un link diretto per visualizzare le ricette della suddetta categoria. La pagina "Ricette", inoltre, mostra comunque sempre l'intero catalogo, così da aiutare l'utente nel suo percorso di esplorazione;
+- *Tiro Perfetto*: per rispondere alle esigenze dell'utenza con un'idea ben specifica, il gruppo ha predisposto una barra di ricerca nella pagina delle ricette.
+- *Trappola per aragoste*: per rispondere alle esigenze dell'utenza con un'idea non precisa, il gruppo ha implementato dei filtri nella pagina delle ricette, adottando dunque una struttura a faccette. In seguito al filtro, l'utente può inoltre scegliere in che ordine visualizzare i risultati, questo sempre con l'intento di affinare la ricerca. Infine, i piatti sono divisi per *primi* e *secondi* e in base alla categoria (*DAD*, *pendolare*, *in sede* e *fuorisede*), aiutando dunque le esigenze di ricerca.
+- *Pesca con rete*: per aiutare l'utenza che non ha un'idea di cosa cercare, il gruppo ha predisposto nella home la descrizione approfondita di ciascuna categoria. Ognuna è seguita da un link per visualizzare le ricette della categoria desiderata. L'utente viene quindi indirizzato alla pagina delle ricette con applicato il filtro della categoria selezionata.
 - *Boa di Segnalazione*: l'utente, se autenticato, ha la possibilità di aggiungere una ricetta ai preferiti, con la possibilità di visualizzarla in seguito nella pagina personale del suo profilo.
-
-== funzionalità desiderabili
-
-Con lo scopo di migliorare l'esperienza utente, è stato previsto che l'utente registrato possa personalizzare il proprio profilo cambiandone immagine, nome utente, categoria, biografia e password. Per futuri scopi (esempio di notifica per nuove ricette), in fase di registrazione viene richiesta anche l'email dell'utente, la cui modifica richiederebbe però l'invio di una mail di conferma al precedente indirizzo e non è stata perciò implementata.
-
-L'utente può inoltre cambiare la propria password in qualsiasi momento sempre dal suo profilo personale, dalla quale può inoltre cancellare tutti i preferiti e il suo account, previa apposita conferma.
-
-Seppur il nome utente sia case-sensitive, non è permesso la registrazione di due nomi utente aventi gli stessi caratteri (es. Tony e tony non possono coesistere).
-
-Infine, il profilo di ogni utente è pubblico: nei commenti è presente un link al profilo che lo ha pubblicato e, di tale utente, è possibile visualizzare nome utente, foto profilo, data di registrazione, categoria, biografia e, infine, le sue ricette preferite.
-
-Come anticipato, è inoltre possibile a tutti gli utenti scrivere un suggerimento al gruppo mediante il form disponibile nella pagina "Contatti".
-
-Per migliorare l'esperienza nell'uso della breadcrum nella pagina di una ricetta specifica, questa cambia la posizione "di partenza" a seconda che si arrivi da un preferito o dal catalogo delle ricette.
 
 == Possibili ricerche e ranking
 Ogni pagina possiede adeguate keywords per aumentare il livello di trustness. In particolare è sempre presente \"Uni Cooked\" in quanto viene ripresa nel tag title, nella descrizione e nella intestazione di livello 1 nell'header. In questo modo se l'utente conosce già il nome del sito (o se lo ricorda in parte) è molto probabile esca tra i primi risultati del motore di ricerca.
@@ -64,6 +41,13 @@ Ogni pagina possiede adeguate keywords per aumentare il livello di trustness. In
 Da notare la pagina della ricetta che, con l'ausilio di `PHP`, contiene il nome della ricetta nel tag title, nella descrizione e nelle keywords. Nel nome sono presenti gli ingredienti principali (ad esempio \"Pasta zucchine e gamberetti\"). In questo modo si viene incontro anche all'utente che cerca delle ricette secondo ingredienti chiave.
 
 Infine abbiamo cercato di inserire una \"call to action\" in ogni descrizione in modo sia da coinvolgere maggiormente l'utente sia da migliorare il ranking del motore di ricerca.
+
+== Funzionalità desiderabili
+Per futuri scopi (ad esempio di notifica per nuove ricette), in fase di registrazione verrebbe richiesta anche l'e-mail dell'utente. La modifica della stessa richiederebbe però l'invio di una e-mail di conferma, funzionalità che non abbiamo potuto implementare.
+
+Il suggerimento condiviso dagli utenti dalla pagina dei contatti è solamente salvato nel database. Per un motivo analogo al cambio password dell'utente non abbiamo potuto notificare agli amministratori la ricezione di un nuovo suggerimento.
+
+Il profilo utente è visibile a tutti. Sarebbe desiderabile rendere disponibile all'utente l'opzione di rendere le informazioni del proprio profilo, o parte di esse, private.
 
 = Progettazione
 
@@ -101,7 +85,7 @@ Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un voc
 
 Per rendere il sito più accattivante e originale abbiamo personalizzato il menu ad hamburger in modo che richiamasse il tema della cucina. Sono state aggiunte inoltre delle animazioni semplici per rendere l'esperienza più fluida e piacevole, facendo attenzione però a non recare disturbo a utenti con difficoltà nel mantenimento dell'attenzione.
 
-= Accessibilità
+= Requisiti per l'accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
 - Aggiunto la breadcrumb in ogni pagina.
 - Aggiunto gli aiuti alla navigazione in ogni pagina. I \"torna su\" sono posizionati sempre nel footer ma anche in sezioni lunghe come ad esempio le categorie nella home.
@@ -116,9 +100,10 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Assegnato gli attributi aria-live e aria-atomic nelle categorie della home per avvisare lo screen reader dell'animazione della carta (l'attributo role=\"alert\" non è accettato da Total Validator).
 
 = Controlli sul sito
-Per eseguire i controlli sono stati adottati i seguenti software:
+== Strumenti
+Per eseguire i controlli sono stati adottati i seguenti strumenti:
 - *Total Validator* per assicurare la correttezza dei documenti html (completati da PHP).
-- *WCAG coloR contrast checker* (estensione Chrome)
+- *WCAG color contrast checker* (estensione Chrome)
 - Screen reader:
   - *Narrator* (Windows 11)
   - *Orca* (Ubuntu 22.04)
@@ -161,25 +146,26 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 
 == Sicurezza
 Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
-- Controllo della validità dei dati inviati al server.
+- Controllo della validità dei dati lato client e server.
 - Password salvate in hash e non in chiaro.
 - Query \"preparate\" in modo da evitare sql injection.
 
 == Codice
 Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 - `HTML5` e `CSS` validi. ??????????
-- Tutte le funzionalità del sito sono valide senza `JavaScript`.
+- Tutte le funzionalità principali del sito sono valide senza `JavaScript`.
 
 == Falsi positivi
 Validando il sito con Total Validator vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
 - L'aiuto alla navigazione \"salta al contenuto\" è stato messo dopo \"salta a dove ti trovi\" per mantenere la coerenza di ordine strutturale. Si fa notare che è stato omesso \"salta al menu\" perché posizionato appena dopo il titolo nell'header.
 - Le label sono state posizionate prima degli input per questioni di accessibilità.
 - Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non è necessario segnare la seconda con un aria-label.
-- Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le 4 sezioni.
+- Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
-- Per la ragione citata sopra `JavaScript` deve inserire onchange=\"this.form.submit()\".
-- La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("fonte1")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("fonte2")]).
+- Per la ragione citata precedentemente `JavaScript` deve inserire onchange=\"this.form.submit()\".
+- La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
 - Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
+TODO: legend change psw
 
 = Struttura gerarchica
 La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
@@ -226,10 +212,45 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 - *Conferma* per chiedere conferma all'utente di alcune operazioni irreversibili quali rimozione della lista delle ricette preferite e cancellazione del profilo.
 - *Ringraziamenti* per ringraziare l'utente di aver inviato un suggerimento tramite la pagina dei contatti.
 
+= Menzioni onorevoli
+Di seguito sono riportate, per pagina, alcune funzionalità particolari che possono non risultare immediate da notare.
+
+== Home
+Le carte delle categorie sono animate solamente tramite `CSS` per rendere la funzionalità indipendente dalle preferenze dell'utente, il quale può disabilitare `JavaScript`. Per realizzarle è stato necessario utilizzare la pseudo-classe :has() supportata da tutti i browser dal 2023 (si veda #link("https://developer.mozilla.org/en-US/docs/Web/CSS/:has")[#underline("MDN web docs")]). Poiché può essere considerata una clausola relativamente recente abbiamo aggiunto delle regole di supporto che eliminano l'animazione e il relativo pulsante. L'utente non percepisce quindi un malfunzionamento del sito, solamente viene privato di alcune informazioni (nel retro della carta). Queste comunque non sono fondamentali per la descrizione della categoria, bensì sono pensate principalmente per suscitare divertimento ed esclusività nell'utente.
+
+I link \"vai alle ricette\" delle carte delle categorie potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della categoria in modo che, letto dopo la descrizione della carta, sembri un tutt'uno col testo.
+
+Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu e di un link posto dopo l'ultima voce che riporta alla casella di controllo per chiuderlo. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione col sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale con la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può ignorare il link posto a fine menu e navigare senza troppi problemi nel sito, tuttavia confidiamo che il livello di esperienza di questa tipologia di utenza porti a non ignorare il suggerimento del link. Inoltre un utente con difficoltà visiva quasi totale o totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine. 
+
+== Ricette
+L'algoritmo di ricerca è stato soggetto di attenta analisi e sviluppo per garantire una esperienza personalizzata ad ogni tipologia di utenza:
+- La ricerca per testo controlla delle corrispondenze nel nome delle ricette. ANDREA...
+- A parità di costo viene visualizzata prima la ricetta con ANDREA ???
+- ...
+- Se l'utente è autenticato, a parità di valutazione viene visualizzata prima la ricetta della categoria dell'utente.
+- Le ricette senza valutazioni vengono poste come ultime in qualsiasi ricerca.
+- Nelle situazioni diverse da quelle citate l'ordine è casuale.
+
+I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della ricetta.
+
+== Ricetta
+Alla pagina di una ricetta ci si può arrivare dal catalogo delle ricette oppure dall'elenco delle ricette preferite di un utente. Per migliorare l'esperienza nell'uso della breadcrum, questa cambia pagina di provenienza a seconda che si arrivi dalla pagina delle ricette o da un preferito.
+
+Per assegnare l'attributo della lingua correttamente alle parole straniere abbiamo creato una funzione apposita che racchiude i termini in un tag span. Nel database è sufficiente far seguire le parole straniere da \"\_XX\" dove XX indica il codice della lingua.
+
+La sezione delle valutazioni può potenzialmente diventare molto lunga. Abbiamo quindi provveduto a limitare il numero di valutazioni visualizzate aggiungendo un pulsante per caricarne altri. Al termine delle valutazioni è posto anche un link per tornare rapidamente all'inizio della sezione. In ogni valutazione inoltre è presente il nome dell'utente sotto forma di link. In questo modo è possibile visitare il profilo degli altri utenti.
+
+Il pulsante per aggiungere o togliere dai preferiti la ricetta è visibile solo se l'utente è autenticato.
+
+== Profilo utente
+Abbiamo scelto di rendere il nome utente univoco così da evitare disorientamento. Seppur quindi il nome utente sia case-sensitive, non è permessa la registrazione di due nomi utente aventi gli stessi caratteri (ad esempio Tony e tony non possono coesistere).
+
+Riguardo ai link \"vai alla ricetta\" delle ricette preferite abbiamo adottato la stessa soluzione del catalogo delle ricette.
+
+Riguardo la potenziale numerosità delle ricette preferite abbiamo adottato la stessa soluzione delle valutazioni.
+
 = Lavoro e ruoli
 Il lavoro è stato partizionato nel seguente modo tra i diversi membri del gruppo:
-
-TODO: DA AGGIUNGERE I CONTROLLI
 
 *Andrea Precoma*
 - Creazione della struttura base degli `.html`.
@@ -241,9 +262,11 @@ TODO: DA AGGIUNGERE I CONTROLLI
   - Errore 500
   - Conferma azione
   - Ringraziamenti
+- Creazione del menu ad hamburger.
 - Refactoring dei `.css`.
 - Piccole correzioni e funzionalità dei `.php`.
 - Creazione della struttura del database.
+- Controlli vari per il sito.
 - Redazione della relazione.
 
 *Andrea Soranzo*
@@ -257,47 +280,20 @@ TODO: DA AGGIUNGERE I CONTROLLI
   - Offline
 - Creazione dello stile di stampa.
 - Creazione della funzionalità di ricerca delle ricette.
+- Creazione delle animazioni.
+- Controlli vari per il sito.
 
 *Matteo Schievano*
 - Creazione delle prime versioni della pagina home (successivamente cambiata di design).
 - Creazione dell'header e menu.
 - Creazione del comportamento lato server della quasi totalità delle funzionalità.
 - Creazione della struttura del database.
+- Creazione del file `.htaccess`.
+- Controlli vari per il sito.
+- Redazione della relazione.
 
 *Gabriele Magnelli*
 - Creazione della struttura della pagina della ricetta (successivamente ristrutturata).
 - Creazione del comportamento lato client.
 
 Tutti i componenti hanno contribuito a popolare il database in modo equilibrato.
-
-
-
-
-
-
-
-
-
-#v(100pt)
-= NB nelle pagina
-
-home card
-- giallo su verde bene perché large (?)
-
-ricette
-- algo per ricerca
-- link ricette diversi
-
-ricetta
-- breadcrumb dinamica
-- carica altro
-- aggiungi ai preferiti sparisce se non sei loggato
-- span en
-
-contatti
-- suggerimento manda mail
-
-user
-- carica altro
-- cambio mail non si può
-- link ricette diversi

@@ -1480,18 +1480,6 @@ a#edit-profile-link {
     row-gap: 5rem;
 }
 
-.admin-cell {
-    text-align: center;
-}
-
-.admin-cell p {
-    overflow-wrap: break-word;
-}
-
-.admin-cell a:link {
-    border-color: var(--bg-secondary);
-}
-
 .admin-cell-margin {
     margin-bottom: 1em;
 }
@@ -1503,11 +1491,10 @@ a#edit-profile-link {
     font-weight: 750;
 }
 
-.admin-cell p {
-    font-style: italic;
-    font-weight: 300;
+.admin-cell a {
+    border-color: var(--bg-secondary);
+    word-break: break-all;
 }
-
 /* #endregion ABOUT US PAGE */
 
 /* ================================================== */

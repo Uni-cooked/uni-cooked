@@ -394,7 +394,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "calamarata", FALSE, 100, 
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "prezzemolo", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "vino bianco da cucina", FALSE, 15, "ml", NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "sale", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "calamari", FALSE, 125, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "peperoncino", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "pepe", TRUE, NULL, NULL, NULL);
@@ -408,7 +408,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "aglio", FALSE, 1,
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "calamari", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "prezzemolo", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "pepe", TRUE, NULL, NULL, NULL);
-INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "sale", TRUE, NULL, NULL, NULL);
+INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "sale grosso", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "pomodorini ciliegino", FALSE, 80, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "cozze", FALSE, 100, "g", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Pasta allo scoglio", "vino bianco da cucina", FALSE, 15, "ml", NULL);
@@ -687,7 +687,7 @@ INSERT INTO Valutazione VALUES ("Pasta zucchine e salmone", "Tony", "2025-01-13"
 -- DAD
 INSERT INTO Valutazione VALUES ("Scaloppina al limone", "JoeTrump", "2025-01-22", 25, "Ottima, ma sarebbe più buona se fatta con il vino al posto del limone!");
 INSERT INTO Valutazione VALUES ("Pasta caciotta e tonno in crema di peperoni", "GGGaggi", "2025-01-23", 30, "Un piatto veramente delizioso.");
-INSERT INTO Valutazione VALUES ("Frittata di patate e cipolla", "   Murphy", "2025-01-24", 23, "Un piatto non male, ma davvero pesante");
+INSERT INTO Valutazione VALUES ("Frittata di patate e cipolla", "Murphy", "2025-01-24", 23, "Un piatto non male, ma davvero pesante");
 INSERT INTO Valutazione VALUES ("Pasta caciotta e tonno in crema di peperoni", "ÈColpaDiTeo", "2025-01-23", 26, "Un piatto molto buono, non lo avevo mai mangiato, lo consiglio.");
 
 
