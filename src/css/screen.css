@@ -221,9 +221,6 @@ fieldset {
     opacity: 30%;
 }
 
-.d-none {
-    display: none;
-}
 
 /* #endregion GENERAL CLASSES */
 
@@ -787,6 +784,7 @@ ul#recipe-list {
     column-gap: 1rem;
 }
 
+
 ul#recipe-list .recipe {
     width: 32%;
     min-width: 21em;
@@ -812,7 +810,6 @@ ul#recipe-list .recipe {
     margin: 10rem auto;
     position: absolute;
     left: 50%;
-    translateY: -50%;
     transform: translateX(-50%);
 }
 
@@ -854,7 +851,7 @@ ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    height: 50%;
+    height: 57%;
     margin-bottom: .5rem;
 }
 

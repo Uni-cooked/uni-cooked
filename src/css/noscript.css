@@ -1,0 +1,8 @@
+ul#recipe-list .recipe {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#loader {
+    display: none;
+}
