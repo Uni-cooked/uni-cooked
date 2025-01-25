@@ -4,21 +4,18 @@
 
 burger -> gaggi
 abbr DAD -> gaggi
-
-js suggerimenti off focus non onchange
+.,!?@+-_€$%^*<>Aa1
 animazioni belline
-caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> (JS)
+caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> (JS) nope
 allungare carta front in sede e dad
 OFFLINE
-ricette-> pasta piovego->utente commento->back del browser->breadcrumb sbagliata
-torna su al primo commento/ricetta solo se ho 2+
 fare il mostra psw
-sistemare foto home (un solo header)
 role alert js
+non tutti i btn disabili js
 tempo min in keywords recipe
-torna su ricette
-pulsanti gialli testo nero->bianco
+torna su recipe
 calamarata ingrediente?
+card troppo grandi per mobile
 
 NB relazione
 colori non tutti in contrasto

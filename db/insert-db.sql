@@ -1,12 +1,3 @@
--- ********************************************************************
--- STARE ATTENTI ALLE PAROLE INGLESI, AGGIUNGERE LA LINGUA COME POSTFISSO (TIPO "hamburger_EN")
--- PSW E NOME DEGLI ACCOUNT SONO UGUALI
--- I NOMI DEGLI ACCOUNT NON HANNO SPAZI
--- FARE ATTENZIONE AI PROCEDIMENTI DELLE RICETTE, GLI APOSTROFI NON IN MONOSPACE E I PUNTI A FINE FRASE
--- FARE ATTENZIONE QUANDO SI AGGIUNGE UN INGREDIENTE, CERCARE DI NON AGGIUNGERE DUPLICATI
--- ********************************************************************
-
-
 DELETE FROM Preferenza_Ricetta;
 DELETE FROM Valutazione;
 DELETE FROM Preparazione;
@@ -19,18 +10,18 @@ DELETE FROM Ingrediente;
 
 -- UTENTE ====================================
 
-INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b1dda76f53349809836d50867fd94c1ea6c7d6205ecf9", "2025-01-02", "Speleologa di 49 anni, adoro i gatti e il fucsia. Mi è tornata la passione dello studio e mi sono iscritta a odontoiatria a Padova.", "pendolare", NULL);
+INSERT INTO Utente VALUES ("GGGaggi", "GGGaggi@gmail.com", "75dfa00dce8e56f1227b1dda76f53349809836d50867fd94c1ea6c7d6205ecf9", "2025-01-02", "Speleologa di 49 anni, adoro i gatti e il fucsia. Mi è tornata la passione dello studio e mi sono iscritta a odontoiatria a Padova.", "pendolare", "user_profiles/GGGaggi/GGGaggi.png");
 INSERT INTO Utente VALUES ("JoeTrump", "iamtherealpresident@sus.us", "d71ccf9f3232ed4edf193a057426b2bbc5ec161f3611e4eef54a5c74dbc3e575", "2025-01-04", "Presidente degli USA dal 2026 al 2025, sono bravo a far divertire la gente perché ormai non capisco nemmeno io quando sono serio.\n\nMAKE BURKINA FASO GREAT AGAIN", "dad", NULL);
-INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", NULL);
+INSERT INTO Utente VALUES ("OmbrettaGatti", "ombretta.loves.gatti@realistico.com", "b0285e1748112f22f9ca981d064ce20906a902662a47b6a0cc14c2d399a531b2", "2025-01-09", "Sono una gattara anche a giovane età, studio veterinaria a Palermo.", "in_sede", "user_profiles/OmbrettaGatti/OmbrettaGatti.jpg");
 INSERT INTO Utente VALUES ("Ombretto", "ombretto420@chiocciola.com", "05768cff5ca101d08cc4d96c3e4c256349d1bbd55658ec2d8b6df6fc8bcdd7f5", "2025-01-08", "23 anni\nUniPD psicologia\nHo una sorella che si chiama Ombretta, ai nostri genitori piaceva così tanto il nome che con me lo hanno mantenuto ma al maschile.", "fuorisede", NULL);
-INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", "user_profiles/Ombretta/Ombretta.png");
-INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", "user_profiles/MasterMaurizio/MasterMaurizio.png");
+INSERT INTO Utente VALUES ("Ombretta", "ombretta@trisdombra.com", "bbd4f5c57bf40819a2a7295b5f7b7ae7e686cdbfcdcaef66f24ee7e8de4a4a31", "2025-01-02", "Ciao sono Ombretta, non so come io sia finita qui ma visto che le mie sorelle mi obbligano sempre a cucinare ho deciso di iscrivermi a questo servizio.\n", "pendolare", "user_profiles/Ombretta/Ombretta.jpg");
+INSERT INTO Utente VALUES ("MasterMaurizio", "maurizio@salame.com", "464528fd22e94659a438dfe5db674580379b695db48b2cbe9c5763105fe77bac", "2025-01-31", "Insegnante di italiano delle elementari, Viva il salame.", "dad", "user_profiles/MasterMaurizio/MasterMaurizio.jpg");
 INSERT INTO Utente VALUES ("Jay", "jay@pain.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-01", "Cosa ne sai di rotolare giù nel profondo?\nQuando il tuo cervello si intorpidisce, puoi chiamarlo congelamento mentale\nQuando queste persone parlano troppo.", "fuorisede", "user_profiles/Jay/Jay.png");
 INSERT INTO Utente VALUES ("Murphy", "murphy@marchiori.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2024-03-12", "EhEh metti in salvo i tuoi bit altrimenti te li cambio.", "dad", "user_profiles/Murphy/Murphy.png");
-INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare!", "in_sede", "user_profiles/Oca/Oca.png");
+INSERT INTO Utente VALUES ("Oca", "horca@loca.com", "346067b7ba670aec3a50c8a7bde31ed6b7c4a5adfb26a0ac6e6790602aaca1d2", "2025-01-12", "HORCA LOCA salve,\n Sono oca, mi piace molto mangiare!", "in_sede", "user_profiles/Oca/Oca.jpg");
 INSERT INTO Utente VALUES ("UgoFantozzi", "ugofantozzi@fozzaitalia.com", "061572d4b6bc4c7274a4af7707f957f99e41e4d645e30f8f014c095e463e99ce", "2025-01-13", "Sveglia e caffè... barba e bidè... presto che perdo il tram... Se il cartellino... non timbrerò...", "fuorisede", "user_profiles/UgoFantozzi/UgoFantozzi.png");
 INSERT INTO Utente VALUES ("Tony","dinozzo@misteryreference.com","c5a8d95238cd3ee8c28a86b7ef8553a7c27ac016577c7717b52c69fa4f721b7f","2025-01-12", "Solo un semplice ex agente speciale...\nDi che agenzia? È un segreto... (triplo 7 su ogni cosa)","in_sede",NULL);
-INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "prrrr","dad",NULL);
+INSERT INTO Utente VALUES ("Perry","perry@agente.segretissimo","7e084d72f2939831570186b0ca6cb0c54a3e6b8b8b84964a0fadd2d7ff57351a","2025-01-09", "grrrr","dad","user_profiles/Perry/Perry.png");
 INSERT INTO Utente VALUES ("ÈColpaDiTeo","SeNonFunzionaColpaDiTeo@ovviamente.com","2195e1a6e384ce62ebceaa47df0b6cfc608c8ae099b9c8ddb9a83b2d65d882a4","2025-01-19","Se qualcosa non funziona\nPuò essere colpa di una sola persona\nTeo è il suo nome\nFar cadere sistemi è la sua professione\n\nAccidenti, ho mancato l'ultima rima...\n\n\nSONO TRISTE!","pendolare",NULL);
 INSERT INTO Utente VALUES ("user","user@user.com","04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb","2025-01-19",NULL,"dad",NULL);
 

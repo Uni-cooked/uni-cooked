@@ -784,7 +784,6 @@ ul#recipe-list {
     column-gap: 1rem;
 }
 
-
 ul#recipe-list .recipe {
     width: 32%;
     min-width: 21em;
@@ -828,12 +827,15 @@ ul#recipe-list .recipe-animation {
     transform: scale(1);
 }
 
+ul#recipe-list .recipe-animation:hover {
+    transform: scale(1.04);
+}
+
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
     height: 46%;
     width: 100%;
 }
-
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     width: 100%;

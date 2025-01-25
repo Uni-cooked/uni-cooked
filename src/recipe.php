@@ -131,10 +131,10 @@ if(isset($_GET["recipe"])) {
             exit();
         } elseif ($isRecipeAUserFavourite==true) {
             $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"remove-from-favourites\" class=\"shadow\">";
-            $formFavourites.="Rimuovi dai preferiti";
+            $formFavourites.="RIMUOVI DAI PREFERITI";
         } else {
             $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"add-to-favourites\" class=\"shadow\">";
-            $formFavourites.="Aggiungi ai preferiti";
+            $formFavourites.="AGGIUNGI AI PREFERITI";
         }
         $formFavourites.="</button></form>";
         $paginaHtml=str_replace("{{form-add-to-favourites}}",$formFavourites,$paginaHtml);
