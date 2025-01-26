@@ -11,7 +11,6 @@ Il progetto consiste in un sito web che tratta un ricettario dedicato per univer
 Ogni utente registrato possiede un proprio profilo con dei dati che può personalizzare. Le ricette salvate come preferite sono visibili nella pagina profilo.
 
 Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito.
-// Questo messaggio viene salvato nel database e in uno scenario più ampio del progetto verrebbe inviata una notifica ai proprietari del sito.
 
 = Analisi
 
@@ -165,7 +164,7 @@ Validando il sito con Total Validator vengono evidenziati i seguenti falsi posit
 - Per la ragione citata precedentemente `JavaScript` deve inserire onchange=\"this.form.submit()\".
 - La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
 - Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
-TODO: legend change psw
+- Nella pagina di modifica profilo non è necessaria una legend per la form di modifica password perché il compito è esplicito nel titolo e nelle label.
 
 = Struttura gerarchica
 La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
