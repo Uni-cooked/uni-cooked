@@ -19,6 +19,8 @@ function validateRequest(){
         }else{
             document.getElementById("cancel").classList.remove("disabled-btn");
             document.getElementById("cancel").disabled = false;
+            document.getElementById("confirm").classList.add("disabled-btn");
+            document.getElementById("confirm").disabled = true;
         }
         var check = document.getElementById("err-request");
         if(check) check.remove();
@@ -66,5 +68,9 @@ window.addEventListener("load", () => {
 		}
 		document.getElementById(id).addEventListener(inputRequest[id][0], inputRequest[id][1]);
 	}
+    document.getElementById("cancel").classList.add("disabled-btn");
+    document.getElementById("cancel").disabled = true;
+    document.getElementById("confirm").classList.add("disabled-btn");
+    document.getElementById("confirm").disabled = true;
     validateFormRequest();
 });
