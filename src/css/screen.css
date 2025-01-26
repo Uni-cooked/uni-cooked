@@ -52,7 +52,6 @@
 
 @font-face {
     font-family: "Inter";
-    font-size: 100%;
     src: url("../asset/font/Inter.ttf");
     font-weight: 300 900;
     font-stretch: 35% 100%;
@@ -115,6 +114,10 @@ fieldset {
     border: 2px solid var(--accent);
     border-radius: var(--radius-small);
     padding: 2em 5em;
+}
+
+.overflow-none {
+    overflow: hidden;
 }
 
 .button-animation {
@@ -948,6 +951,33 @@ ul#recipe-list .recipe a:link {
     height: 100%;
     border-radius: calc(var(--radius-small) * .5);
     object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+#recipe-img.expandable-img {
+    cursor: pointer;
+}
+
+#recipe-img.expandend-img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: auto;
+    z-index: 2;
+}
+
+.expanded-bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(2px);
 }
 
 #recipe-main-info ul {
