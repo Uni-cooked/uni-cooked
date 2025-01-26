@@ -53,11 +53,6 @@ Il profilo utente è visibile a tutti. Sarebbe desiderabile rendere disponibile 
 == Metodologia di sviluppo
 Nonostante la maggior parte dell'utenza derivi dal mobile, abbiamo deciso di cominciare dallo sviluppo del sito da desktop per facilitare la fase di design. Dovendo comunque completare la visualizzazione sia per desktop che per mobile ci è sembrato più utile adottare un approccio che agevolasse il lavoro pur mantenendo il medesimo obiettivo.
 
-== Separazione contenuto, presentazione e comportamento
-Abbiamo provveduto a separare il contenuto, la presentazione e il comportamento realizzati rispettivamente con `HTML5`, `CSS` e `JavaScript`/`PHP`. Abbiamo adottato quindi le seguenti misure:
-- Attribuire lo stile tramite file `CSS` importati nei documenti `HTML5` senza mai assegnare regole inline o embedded.
-- JS E PHP?????
-
 == Risoluzioni e dispositivi
 Valutando gli elementi delle pagine abbiamo ritenuto opportuno dividere gli schermi secondo le seguenti risoluzioni:
 - *inferiore a 480px* per mobile.
@@ -72,12 +67,9 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input,
 - Aggiornamento dei paragrafi sotto gli slider del filtro nelle ricette con il valore dell'input.
 - Aggiornamento immediato della foto profilo nella pagina di modifica profilo utente quando viene cambiata.
 - Animazione delle ricette quando vengono caricate in seguito ad una ricerca.
+ZOOM ANDREA
 
 Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e PAGINE TEO. Ogni connessione al database è chiusa immediatamente dopo il recupero dei dati.
-
-// == Controlli sui dati
-// TEO CONTROLLA !!!!!!! \
-// Tutti i dati di input sono controllati lato client per gli errori sintattici. Gli stessi controlli sono ripetuti lato server per garantire la sicurezza integrati da altri controlli eseguibili solo dal back-end.
 
 == Emotional design
 Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.
@@ -96,7 +88,7 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunto l'attributo aria-label dove necessario.
 - Nascosto gli elementi di aiuto agli screen reader.
 - Eseguito l'image replacement dove necessario.
-- Assegnato gli attributi aria-live e aria-atomic nelle categorie della home per avvisare lo screen reader dell'animazione della carta (l'attributo role=\"alert\" non è accettato da Total Validator).
+- Assegnato gli attributi aria-live e aria-atomic nelle categorie della home per avvisare lo screen reader dell'animazione della carta (l'attributo role=\"alert\" non è accettato da Total Validator). DEL LAB
 
 = Controlli sul sito
 == Strumenti
@@ -105,9 +97,10 @@ Per eseguire i controlli sono stati adottati i seguenti strumenti:
 - *WCAG color contrast checker* (estensione Chrome)
 - Screen reader:
   - *Narrator* (Windows 11)
-  - *Orca* (Ubuntu 22.04)
+  - *Orca* (Ubuntu 24.10)
   - *NVDA*
 - *Lighthouse*
+- ** CSS VALIDATORRRRRRRr
 Molti controlli sono stati svolti manualmente.
 
 == Accessibilità
@@ -119,7 +112,7 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 - Attributo alt ad ogni immagine (ove l'informazione non sia fornita dal contesto circostante).
 - Attributo o tag abbr ad ogni abbreviazione o sigla.
 - Link corretti per gli aiuti alla navigazione.
-- Attributo lang con la lingua dei termini che seguono se sono stranieri.
+- Attributo lang con la lingua dei termini che seguono se sono stranieri. NO UTENTI
 - Resistenza degli elementi con ingrandimento del testo fino a 24px.
 
 == Colori
@@ -147,11 +140,11 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
 - Controllo della validità dei dati lato client e server.
 - Password salvate in hash e non in chiaro.
-- Query \"preparate\" in modo da evitare sql injection.
+- Query \"preparate\" in modo da evitare sql injection. + PEFOMANS
 
 == Codice
 Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
-- `HTML5` e `CSS` validi. ??????????
+- `HTML5` e `CSS` validi. ??? CSS ????
 - Tutte le funzionalità principali del sito sono valide senza `JavaScript`.
 
 == Falsi positivi
@@ -211,7 +204,7 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 - *Conferma* per chiedere conferma all'utente di alcune operazioni irreversibili quali rimozione della lista delle ricette preferite e cancellazione del profilo.
 - *Ringraziamenti* per ringraziare l'utente di aver inviato un suggerimento tramite la pagina dei contatti.
 
-= Menzioni onorevoli
+= Menzioni onorevoli (TEO CACCA)
 Di seguito sono riportate, per pagina, alcune funzionalità particolari che possono non risultare immediate da notare.
 
 == Home
@@ -223,9 +216,7 @@ Il menu ad hamburger è reso accessibile mediante una label che cambia testo din
 
 == Ricette
 L'algoritmo di ricerca è stato soggetto di attenta analisi e sviluppo per garantire una esperienza personalizzata ad ogni tipologia di utenza:
-- La ricerca per testo controlla delle corrispondenze nel nome delle ricette. ANDREA...
-- A parità di costo viene visualizzata prima la ricetta con ANDREA ???
-- ...
+- La ricerca per testo controlla delle corrispondenze nel nome delle ricette.
 - Se l'utente è autenticato, a parità di valutazione viene visualizzata prima la ricetta della categoria dell'utente.
 - Le ricette senza valutazioni vengono poste come ultime in qualsiasi ricerca.
 - Nelle situazioni diverse da quelle citate l'ordine è casuale.

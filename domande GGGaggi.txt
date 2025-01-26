@@ -1,21 +1,11 @@
-===========================================================
-= TOGLIERE QUANDO SONO RISOLTI
-===========================================================
-
-burger -> gaggi
-abbr DAD -> gaggi
-.,!?@+-_€$%^*<>Aa1
-animazioni belline
-caratteri speciali in psw ( .,!?@+-_€$%^*<> ) -> (JS) nope
 allungare carta front in sede e dad
-OFFLINE
-fare il mostra psw
-role alert js
+OFFLINE -> rel
+role alert js -> assertive (vedi card index)
 non tutti i btn disabili js
-tempo min in keywords recipe
 torna su recipe
-calamarata ingrediente?
-card troppo grandi per mobile
+js anim zoom recipe andrea
+
+css validator
 
 NB relazione
 colori non tutti in contrasto
@@ -28,3 +18,7 @@ js solo per slider (ensomma) e pp user
 403 chiedi teo
 role alert index e catalogo
 burger tante robe
+torna su sui teo
+focus ricette
+noscript
+no sr sui p delle label
