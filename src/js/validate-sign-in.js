@@ -20,8 +20,8 @@ function Enable(button,id){
 }
 
 const controllers = {
-	"student-name-in" : ["change", Button],
-	"student-psw-in" : ["change", Button ],
+	"student-name-in" : ["input", Button],
+	"student-psw-in" : ["input", Button ],
 };
 
 function UpdateButton(){
