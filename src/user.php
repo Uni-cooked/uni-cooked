@@ -71,18 +71,18 @@ if (!isset($_GET["username"])) {
                     } else {
                         $recipeList .= "<li class=\"fav-recipe\">";
                     }
-                    $recipeList .= '<img class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt="">';
+                    $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt="">';
                     $recipeList .= "<div><h4 class=\"fav-recipe-title\">" . $db->checkLang(ucfirst($recipe["nome"])) . "</h4>";
                     $average = $db->getRecipeAverage($recipe["nome"]);
                     if (is_string($average) && (strcmp($average, "ExceptionThrow") == 0 || strcmp($average, "ConnectionFailed") == 0)) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img src=\"./asset/icon/grade.svg\" alt=\"valutato con\">" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade.svg\" alt=\"valutato con\">" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria = str_replace("_", " ", $recipe["categoria"]);
-                    $recipeList .= "<li><img src=\"./asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($categoria) . "</li>";
-                    $recipeList .= "<li><img src=\"./asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($recipe["tipo_piatto"]) . "</li>";
-                    $recipeList .= "<li><img src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " €</li></ul>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($categoria) . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($recipe["tipo_piatto"]) . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " €</li></ul>";
                     $recipeList .= '<a href=recipe.php?recipe=' . str_replace(" ", "%20", $recipe["nome"]) . ' title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
@@ -166,18 +166,18 @@ if (!isset($_GET["username"])) {
                     } else {
                         $recipeList .= "<li class=\"fav-recipe\">";
                     }
-                    $recipeList .= '<img class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt="">';
+                    $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt="">';
                     $recipeList .= "<div> <h4 class=\"fav-recipe-title\">" . $db->checkLang(ucfirst($recipe["nome"])) . "</h4>";
                     $average = $db->getRecipeAverage($recipe["nome"]);
                     if (is_string($average) && (strcmp($average, "ExceptionThrow") == 0 || strcmp($average, "ConnectionFailed") == 0)) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img src=\"./asset/icon/grade.svg\" alt=\"valutato con\">" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade.svg\" alt=\"valutato con\">" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria = str_replace("_", " ", $recipe["categoria"]);
-                    $recipeList .= "<li><img src=\"./asset/icon/student.svg\" alt=\"categoria\">" . $categoria . "</li>";
-                    $recipeList .= "<li><img src=\"./asset/icon/course.svg\" alt=\"piatto\">" . $recipe["tipo_piatto"] . "</li>";
-                    $recipeList .= "<li><img src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " €</li></ul>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\">" . $categoria . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\">" . $recipe["tipo_piatto"] . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " €</li></ul>";
                     $recipeList .= '<a href="recipe.php?recipe=' . str_replace(" ", "%20", $recipe["nome"]) . '" title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }

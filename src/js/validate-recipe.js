@@ -1,14 +1,14 @@
 function validateReview(){
     let form = document.getElementById("first-form");
-
-    form.addEventListener("submit", (e) => {
-        if(!validateCommento()){
-            e.preventDefault();
-            document.getElementsByName("submit-add-review").classList.add("disabled-btn");
-            document.getElementsByName("submit-add-review").disabled = true;
-        }
-    })
-
+    if(form){
+        form.addEventListener("submit", (e) => {
+            if(!validateCommento()){
+                e.preventDefault();
+                document.getElementsByName("submit-add-review").classList.add("disabled-btn");
+                document.getElementsByName("submit-add-review").disabled = true;
+            }
+        });
+    }
 }
 
 function validateVoto(){

@@ -203,7 +203,7 @@ if(isset($_GET["recipe"])) {
         $userComment=$db->getUserPublicComment($isUserLogged,$recipe);
         if(is_string($userComment) && strcmp($userComment,"userLeftNoComment")==0) {
             $form.='<div id="add-comment" class="content-container-left content">';
-            $form.='<img src="'.$immagine.'" id="add-comment-pp">';
+            $form.='<img loading="lazy" src="'.$immagine.'" id="add-comment-pp">';
             if(isset($_SESSION["commentError"])) {
                 $form.='<form method="post" action="recipe.php?recipe='.str_replace(" ","%20",$recipe).'" class="content" id="first-form">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg">'.$_SESSION["commentError"].'<button class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
                 unset($_SESSION["commentError"]);
@@ -218,7 +218,7 @@ if(isset($_GET["recipe"])) {
             exit();
         } else {
             $form.='<div class="content"><div id="user-comment">';
-            $form.='<img src="'.$immagine.'" class="comment-pp">';
+            $form.='<img loading="lazy" src="'.$immagine.'" class="comment-pp">';
             $form.='<a class="username" href="user.php">'.$isUserLogged."</a>";
             $form.='<p class="comment-eval"><span class="grade">'.$userComment["voto"].'</span> <abbr title="su">/</abbr> 30</p>';
             $form.='<p class="comment-text">'.$userComment["commento"].'</p>';
@@ -260,9 +260,9 @@ if(isset($_GET["recipe"])) {
                     $immagine="./asset/img/def-profile.png";
                 }
                 if($commentNumber==$limit-6) {
-                    $finalList.='<li id="previous-last-comment"><img src="'.$immagine.'" alt="" class="comment-pp">';
+                    $finalList.='<li id="previous-last-comment"><img loading="lazy" src="'.$immagine.'" alt="" class="comment-pp">';
                 } else {
-                    $finalList.='<li><img src="'.$immagine.'" alt="" class="comment-pp">';
+                    $finalList.='<li><img loading="lazy" src="'.$immagine.'" alt="" class="comment-pp">';
                 }
                 $finalList.='<a href="user.php?username='.$singleComment["utente"].'">'.$singleComment["utente"]."</a>";
                 $finalList.='<p class="comment-eval"><span class="grade">'.$singleComment["voto"].'</span> <abbr title="su">/</abbr> 30</p>';
