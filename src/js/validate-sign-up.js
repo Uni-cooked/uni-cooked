@@ -121,7 +121,7 @@ function validatePassword() {
 		return false;
 	}
 
-	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{4,16}$/) !=0) {
+	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,!?@+-_€$%&^*<>])[A-Za-z\d.,!?@+-_€$%&^*<>]{4,16}$/) !=0) {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");
