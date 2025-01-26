@@ -49,7 +49,7 @@ if(!isset($_POST["suggestion"])) {
     unset($_POST["proposta"]);
 
     if(mb_strlen($proposta)<20 || mb_strlen($proposta)>500) {
-        $_SESSION["suggestionError"]='<p role="alert" class="err-msg">Il suggerimento deve essere più lungo di 20 caratteri e minore di 500</p>';
+        $_SESSION["suggestionError"]='<p aria-live="assertive" aria-atomic="true" class="err-msg">Il suggerimento deve essere più lungo di 20 caratteri e minore di 500</p>';
         header('Location: about-us.php');
         exit();
     }

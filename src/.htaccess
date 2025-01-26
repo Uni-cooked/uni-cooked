@@ -1,6 +1,2 @@
-<If "%{REQUEST_URI} !~ m#^\/aprecoma/[^/]+\.[^/]+$#" >
-	RedirectMatch 301 ^\/aprecoma(?!\/asset|\/css|\/html|\/js|\/user_profiles|\/utils)\/(.+)$ /aprecoma/404-err.php
-</If>
-
-ErrorDocument 404 /aprecoma/404-err.php
-ErrorDocument 500 /aprecoma/500-err.php
+ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'
+ErrorDocument 500 '<meta http-equiv="refresh" content="0;url=/aprecoma/500-err.php">'

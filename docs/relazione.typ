@@ -69,7 +69,11 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input,
 - Animazione delle ricette quando vengono caricate in seguito ad una ricerca.
 ZOOM ANDREA
 
-Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e PAGINE TEO. Ogni connessione al database è chiusa immediatamente dopo il recupero dei dati.
+Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e la gestione di eventuali errori.
+
+Particolare attenzione è stata data alla gestione delle pagine non esistenti inserendo nel file `.htaccess` l'indicazione `ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'` per inserire una pagina di errore 404 personalizzata. Lo stesso è stato fatto per la pagina 500.
+
+Concludendo, ogni connessione al database aperta nei file php è chiusa immediatamente dopo il recupero dei dati a favore di una migliore gestione delle risorse.
 
 == Emotional design
 Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.
