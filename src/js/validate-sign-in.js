@@ -2,7 +2,19 @@ function Button(){
     var confirm;
     if(document.getElementById("student-name-in").value == "" || document.getElementById("student-psw-in").value == "" ){
         Disable(confirm,"submit-btn");
+        var check = document.getElementById("err-sign-in");
+		if(check) check.remove();
+        var p = document.createElement("p");
+        p.setAttribute("aria-live","assertive");
+        p.setAttribute("aria-atomic","true");
+        p.setAttribute("id","err-sign-in");
+        p.classList.add("err-msg");
+        p.innerHTML = "Le credenziali inserite non sono corrette";
+		const parent = document.getElementById("submit-btn").parentNode;
+		parent.appendChild(p);
     }else{
+        var check = document.getElementById("err-sign-in");
+		if(check) check.remove();
         Enable(confirm,"submit-btn");
     }
 }
