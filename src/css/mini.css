@@ -1,12 +1,9 @@
 :root {
     --title: 3.5rem;
     --subtitle: 1.2rem;
-    --button-text: 1.2rem;
     --section-title: 2.7em;
     --desc-title: 1.2rem;
     --quick-text-hint: 1rem;
-    --letter-spacing: .2rem;
-    --word-spacing: .6rem;
 }
 
 /* #region GENERAL CLASSES */
@@ -88,19 +85,20 @@ ul#ingredient-list li {
 
 /* ================================================== */
 
-/* #endregion USER PAGE */
+/* #region USER PAGE */
 #profile-img {
     width: 10rem;
     height: 10rem;
 }
 
-/* #region USER PAGE */
+/* #endregion USER PAGE */
 
 /* ================================================== */
 
-/* #endregion SINGLE MESSAGE PAGE */
+/* #region SINGLE MESSAGE PAGE */
+
 .single-msg-page-a {
     width: 100%;
 }
 
-/* #region SINGLE MESSAGE PAGE */
+/* #endregion SINGLE MESSAGE PAGE */

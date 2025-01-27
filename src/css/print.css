@@ -413,7 +413,6 @@ ul#ingredient-list li {
 
 ol li.prep-li {
     padding-left: .5rem;
-    /* to avoid numbers overflow to the left */
     margin-left: 1.7rem;
 }
 
@@ -532,7 +531,6 @@ button#del-comment {
     list-style-type: none;
     border-radius: 5px;
     min-height: 12em;
-    /* NOTE: not so buty but at least the section for the empty list is centered */
     display: flex;
     flex-direction: column;
     justify-content: center;

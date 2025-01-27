@@ -116,6 +116,7 @@ nav#menu input:checked + label::before {
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
+    transition-timing-function: cubic-bezier(.04,.87,.48,.89);
 }
 
 nav#menu input:checked + label::after {
@@ -125,6 +126,7 @@ nav#menu input:checked + label::after {
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
+    transition-timing-function: cubic-bezier(.36,.76,.59,1.11);
 }
 
 nav#menu input:checked + label {
@@ -297,10 +299,6 @@ ul#recipe-list .recipe ul.recipe-info li {
     width: 90%;
     margin: 0 auto;
     max-height: 20rem;
-}
-
-#recipe-img.expandend-img {
-    width: 90%;
 }
 
 #recipe-main-info ul {
