@@ -17,7 +17,10 @@ function UltimateCheck(){
 	var errorEmail = document.getElementById("err-mail");
 	var errorPassword = document.getElementById("err-psw");
 	var errorRepeatPassword = document.getElementById("err-repeat-psw");
-	if (!(errorUsername && errorStudent && errorEmail && errorPassword && errorRepeatPassword)){
+	if (errorUsername || errorStudent || errorEmail || errorPassword || errorRepeatPassword){
+		document.getElementById("btn-register").disabled = true;
+		document.getElementById("btn-register").classList.add("disabled-btn");
+	}else{
 		document.getElementById("btn-register").disabled = false;
 		document.getElementById("btn-register").classList.remove("disabled-btn")
 	}
@@ -34,6 +37,7 @@ function validateNewUsername() {
 	    p.innerText = "Il nome utente è un campo obbligatorio";
 		const parent = document.getElementById("student-name-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
 
@@ -44,6 +48,7 @@ function validateNewUsername() {
 	    p.innerText = "Il nome utente non deve essere più lungo di 15 caratteri";
 		const parent = document.getElementById("student-name-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
 
@@ -54,6 +59,7 @@ function validateNewUsername() {
 	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
 		const parent = document.getElementById("student-name-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
 	var check = document.getElementById("err-name");
@@ -72,6 +78,7 @@ function validateStudent(){
         p.innerText = "Seleziona una categoria";
 		const parent = document.getElementById("student-cat-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
         return false;
     }
     var check = document.getElementById("err-student");
@@ -90,6 +97,7 @@ function validateEmail(){
 		p.innerHTML = "L'<span lang='en'>email</span> è un campo obbligatorio";
 		const parent = document.getElementById("student-mail-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
         return false;
 	}
 
@@ -100,6 +108,7 @@ function validateEmail(){
 		p.innerHTML = "L'<span lang='en'>email</span> scelta non è un indirizzo valido";
 		const parent = document.getElementById("student-mail-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
         return false;
     }
     var check = document.getElementById("err-mail");
@@ -118,6 +127,7 @@ function validatePassword() {
 		p.innerHTML = "La <span lang='en'>password</span> deve essere lunga almeno 4 caratteri";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
 
@@ -128,10 +138,12 @@ function validatePassword() {
 		p.innerHTML = "La <span lang='en'>password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
 		const parent = document.getElementById("student-psw-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
     var check = document.getElementById("err-psw");
 	deleteError(check);
+	validatePasswordConfirm();
 	UltimateCheck();
 	return true;
 }
@@ -150,6 +162,7 @@ function validatePasswordConfirm() {
 		p.innerHTML = "Le <span lang='en'>password</lang> non coincidono";
 		const parent = document.getElementById("student-repeat-psw-up").parentNode;
 		parent.appendChild(p);
+		UltimateCheck();
 		return false;
 	}
     var check = document.getElementById("err-repeat-psw");
@@ -173,14 +186,16 @@ function deleteError(p){
 }
 
 const listeners = {
-	"student-name-up" : ["change", validateNewUsername ],
-	"student-mail-up" : ["change", validateEmail],
+	"student-name-up" : ["input", validateNewUsername ],
+	"student-mail-up" : ["input", validateEmail],
 	"student-cat-up" : ["blur", validateStudent],
-	"student-psw-up" : ["change", validatePassword ],
-	"student-repeat-psw-up" : ["change", validatePasswordConfirm ],
+	"student-psw-up" : ["input", validatePassword ],
+	"student-repeat-psw-up" : ["input", validatePasswordConfirm ],
 };
 
 window.addEventListener('load', () => {
+	document.getElementById("btn-register").disabled = true;
+	document.getElementById("btn-register").classList.add("disabled-btn")
 	checkSignUp();
 	validateUserSignup();
 });
