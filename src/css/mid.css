@@ -49,7 +49,7 @@ fieldset {
 
 /* #region NAVIGATION HELP */
 nav#list-help {
-    z-index: 3;
+    z-index: 2;
 }
 
 /* #endregion NAVIGATION HELP */
@@ -158,6 +158,7 @@ nav#menu {
     justify-content: space-between;
     background-color: var(--accent-secondary);
     padding: 0;
+    z-index: 1;
 }
 
 nav#menu ul {
@@ -185,10 +186,6 @@ nav#menu ul li:first-child {
 
 nav#menu ul li#profile-item {
     margin: 0;
-}
-
-nav#menu > a.help-el {
-    display: inline;
 }
 
 body:has(input#ham-checkbox:checked) {

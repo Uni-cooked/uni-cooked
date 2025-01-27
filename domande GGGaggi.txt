@@ -1,13 +1,9 @@
 allungare carta front in sede e dad
 OFFLINE -> rel
-role alert js -> assertive (vedi card index)
-non tutti i btn disabili js
-torna su recipe
-js anim zoom recipe andrea
-
-css validator
+js anim zoom recipe andrea (togliere)
 
 NB relazione
+css validator
 colori non tutti in contrasto
 link visitati e non:
     singoli -> dashed

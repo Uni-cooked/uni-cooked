@@ -318,8 +318,7 @@ nav#list-help li {
 /* #region MENU */
 nav#menu > img.logo,
 nav#menu input,
-nav#menu label,
-nav#menu > a.help-el {
+nav#menu label {
     display: none;
 }
 

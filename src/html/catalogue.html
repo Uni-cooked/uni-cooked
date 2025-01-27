@@ -57,7 +57,6 @@
                             {{link-accesso-profilo}}
                         </li>
                     </ul>
-                    <a href="#ham-checkbox" class="help-el">Torna all'inizio del menu per chiuderlo</a>
 
                     <div id="content-blur"></div>
                 </nav>
@@ -96,14 +95,14 @@
                         </select>
                     </div>
                     <div class="filter-param">
-                        <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA</label>
+                        <label for="min-rate-filter" class="form-label">VALUTAZIONE MINIMA <span class="hide">da 1 a 30</span></label>
                         <input type="range" id="min-rate-filter" name="min_rate" min="1" max="30">
                         <p aria-hidden="true" id="rate">1 / 30</p>
                     </div>
                     <div class="filter-param">
-                        <label for="max-price-filter" class="form-label">COSTO MASSIMO</label>
+                        <label for="max-price-filter" class="form-label">COSTO MASSIMO <span class="hide">da 1 a 25 &euro;</span></label>
                         <input type="range" id="max-price-filter" name="max_price" min="1" max="25">
-                        <p aria-hidden="true" id="price">25 €</p>
+                        <p aria-hidden="true" id="price">25 &euro;</p>
                     </div>
                 </fieldset>
 

@@ -66,7 +66,7 @@ function CreateRecipeCard(string $img, string $title, int $grade, string $catego
                             <li><img loading=\"lazy\" src=\"./asset/icon/grade.svg\" alt=\"voto\">" . ($grade != 31 ? $grade : "-") . " <abbr title=\"su\">/</abbr> 30</li>
                             <li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($category) . "</li>
                             <li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($course) . "</li>
-                            <li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $cost . " €</li>
+                            <li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $cost . " &euro;</li>
                         </ul>   
                         <a href=\"./recipe.php?recipe=" . urlencode($title) . "\" title=\"" . $title . "\">Vai alla ricetta</a>
                     </div> 

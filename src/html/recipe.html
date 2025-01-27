@@ -55,7 +55,6 @@
                             {{link-accesso-profilo}}
                         </li>
                     </ul>
-                    <a href="#ham-checkbox" class="help-el">Torna all'inizio del menu per chiuderlo</a>
 
                     <div id="content-blur"></div>
                 </nav>
@@ -76,7 +75,7 @@
                     <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria">{{category}}</li>
                     <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto">{{plate-type}}</li>
                     <li><img loading="lazy" src="./asset/icon/time.svg" alt="tempo">{{time}} <abbr title="minuti">min</abbr></li>
-                    <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo">{{price}} €</li>
+                    <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo">{{price}},00 &euro;</li>
                 </ul>
             </div>
 
@@ -93,12 +92,16 @@
                 </ul>
             </div>
 
+            <a href="#top" class="help-el back-up-link">Torna su</a>
+
             <h2 class="content-subtitle content">PREPARAZIONE</h2>
             <div class="content-container-left end-paragraph">
                 <ol id="prep-steps" class="content">
                     {{what-to-do-list}}
                 </ol>
             </div>
+
+            <a href="#top" class="help-el back-up-link">Torna su</a>
 
             <h2 id="eval-section" class="content-subtitle content">VALUTAZIONI</h2>
             {{leave-comment-or-personal-published-comment}}
