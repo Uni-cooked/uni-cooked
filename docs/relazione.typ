@@ -71,7 +71,7 @@ ZOOM ANDREA
 
 Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e la gestione di eventuali errori.
 
-Particolare attenzione è stata data alla gestione delle pagine non esistenti inserendo nel file `.htaccess` l'indicazione `ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'` per inserire una pagina di errore 404 personalizzata. Lo stesso è stato fatto per la pagina 500.
+Particolare attenzione è stata data alla gestione delle pagine non esistenti inserendo nel file `.htaccess` l'indicazione `ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'` per inserire una pagina di errore 404 personalizzata. Lo stesso è stato fatto per la pagina 500 e per la pagina 403.
 
 Concludendo, ogni connessione al database aperta nei file php è chiusa immediatamente dopo il recupero dei dati a favore di una migliore gestione delle risorse.
 
@@ -136,7 +136,7 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda la struttura:
 Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 - Non esistono link circolari.
 - Tutte le pagine sono raggiungibili.
-- Gli errori 404 e 500 sono gestiti.
+- Gli errori 403, 404 e 500 sono gestiti.
 - Velocità di caricamento del sito e indice di accessibilità usando Lighthouse.
 - Font senza grazie per il sito, con grazie per la versione stampata.
 
@@ -202,8 +202,9 @@ Se l'utente non è registrato viene indirizzato alla pagina di accesso dove, tra
 
 == Pagine di informazione
 Le pagine che informano l'utente riguardo alcune operazioni:
+- *Errore 403* per l'errore \"Accesso negato\".
 - *Errore 404* per l'errore \"Pagina non trovata\".
-- *Errore 500* per l'errore \"Errore lato server\".
+- *Errore 500* per l'errore \"Errore del server\".
 - *Offline* per la mancata connessione a Internet.
 - *Conferma* per chiedere conferma all'utente di alcune operazioni irreversibili quali rimozione della lista delle ricette preferite e cancellazione del profilo.
 - *Ringraziamenti* per ringraziare l'utente di aver inviato un suggerimento tramite la pagina dei contatti.
@@ -252,6 +253,7 @@ Il lavoro è stato partizionato nel seguente modo tra i diversi membri del grupp
   - Ricette
   - Ricetta
   - Profilo utente
+  - Errore 403
   - Errore 404
   - Errore 500
   - Conferma azione
