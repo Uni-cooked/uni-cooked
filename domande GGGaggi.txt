@@ -1,8 +1,7 @@
-allungare carta front in sede e dad
-OFFLINE -> rel
 js anim zoom recipe andrea (togliere)
 
 NB relazione
+OFFLINE
 css validator
 colori non tutti in contrasto
 link visitati e non:
@@ -18,3 +17,4 @@ torna su sui teo
 focus ricette
 noscript
 no sr sui p delle label
+,00 euro
