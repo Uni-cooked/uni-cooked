@@ -24,14 +24,14 @@ if (isset($_POST['submit'])) {
     $username=$_POST["nome"];
     //CONTROLLO USERNAME
     if (mb_strlen($username)==0) {
-        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-name">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
         $errorFound=true;
     } elseif (mb_strlen($username)>15) {
-        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-name">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di nome}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-name">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
         $username=Sanitizer::SanitizeUserInput($username);
         $isUserPresent=$db->checkUserPresence($username,false);
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     //CONTROLLO CATEGORIA
     if (!isset($_POST['categoria'])) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di categoria}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Seleziona una categoria</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di categoria}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-student">Seleziona una categoria</p>',$paginaHtml);
     } else if (strcmp($_POST['categoria'],"fuorisede")==0 || strcmp($_POST['categoria'],"pendolare")==0 || strcmp($_POST['categoria'],"in_sede")==0|| strcmp($_POST['categoria'],"dad")==0) {
         $paginaHtml = str_replace("{{messaggio di categoria}}","",$paginaHtml);
         $categoria=$_POST['categoria'];
@@ -63,16 +63,16 @@ if (isset($_POST['submit'])) {
     $email=$_POST['email'];
     if (mb_strlen($email)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">L\'<span lang="en">email</span> è un campo obbligatorio</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-mail">L\'<span lang="en">email</span> è un campo obbligatorio</p>',$paginaHtml);
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">L\'<span lang="en">email</span> non è un indirizzo valido</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-mail">L\'<span lang="en">email</span> non è un indirizzo valido</p>',$paginaHtml);
     } else {
         $isEmailPresent=$db->checkEmailPresence($email);
         if (strcmp($isEmailPresent,"ExceptionThrow")!=0 && strcmp($isEmailPresent,"ConnectionFailed")!=0 && $isEmailPresent==true) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Questa <span lang="en">email</span> non può essere utilizzata</p>',$paginaHtml);
+            $paginaHtml = str_replace("{{messaggio di email}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-mail">Questa <span lang="en">email</span> non può essere utilizzata</p>',$paginaHtml);
         } else if (strcmp($isEmailPresent,"ExceptionThrow")==0 || strcmp($isEmailPresent,"ConnectionFailed")==0) {
             $_POST = null;
             header('Location: 500-err.php');
@@ -87,19 +87,19 @@ if (isset($_POST['submit'])) {
     if (mb_strlen($psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La <span lang="en">password</span> è un campo obbligatorio</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-psw">La <span lang="en">password</span> è un campo obbligatorio</p>',$paginaHtml);
     } elseif (mb_strlen($psw)<4) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La <span lang="en">password</span> deve essere lunga almeno 4 caratteri</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-psw">La <span lang="en">password</span> deve essere lunga almeno 4 caratteri</p>',$paginaHtml);
     } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).+$/",$psw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
-        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-psw">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
     } elseif (strcmp($psw,$_POST['repeat-psw'])!=0) {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Le <span lang="en">password</span> non coincidono</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-repeat-psw">Le <span lang="en">password</span> non coincidono</p>',$paginaHtml);
     } else {
         $paginaHtml = str_replace("{{messaggio di psw}}","",$paginaHtml);
         $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
