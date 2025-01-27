@@ -71,12 +71,36 @@ function validateEditNewUsername() {
 	var Username = document.forms['new-info']['nickname-edit'].value;
 	const allowedChars = /^[A-Za-z0-9]+$/; // lettere maiuscole e minuscole, numeri
 
+	if(Username.length < 1 || Username == ""){
+		var check = document.getElementById("err-edit-nam");
+		deleteError(check);
+		const name = document.getElementById("nickname-edit").parentNode;
+		var p = createError("err-edit-nam");
+	    p.innerHTML = "Il nome utente è un campo obbligatorio";
+		name.appendChild(p);
+		document.getElementById("btn-confirm").disabled = true;
+		document.getElementById("btn-confirm").classList.add("disabled-btn");
+		return false;
+	}
+
+	if(Username.length > 15){
+		var check = document.getElementById("err-edit-nam");
+		deleteError(check);
+		const name = document.getElementById("nickname-edit").parentNode;
+		var p = createError("err-edit-nam");
+	    p.innerHTML = "Il nome utente non deve essere più lungo di 15 caratteri";
+		name.appendChild(p);
+		document.getElementById("btn-confirm").disabled = true;
+		document.getElementById("btn-confirm").classList.add("disabled-btn");
+		return false;
+	}
+
 	if (Username.search(/^[a-zA-Z0-9!\-_.]{1,15}$/) != 0 || !allowedChars.test(Username)) {
 		var check = document.getElementById("err-edit-nam");
 		deleteError(check);
 		const name = document.getElementById("nickname-edit").parentNode;
 		var p = createError("err-edit-nam");
-	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "Il nome utente non deve contenere spazi o caratteri speciali";
 		name.appendChild(p);
 		document.getElementById("btn-confirm").disabled = true;
 		document.getElementById("btn-confirm").classList.add("disabled-btn");
@@ -86,6 +110,24 @@ function validateEditNewUsername() {
 	deleteError(nameError);
 	document.getElementById("btn-confirm").classList.remove("disabled-btn");
 	document.getElementById("btn-confirm").disabled = false;
+	return true;
+}
+
+function validateOldPassword(){
+	var oldPsw = document.forms['credentials']['old-psw'].value;
+	if(oldPsw == "" || oldPsw.length < 1){
+		var check = document.getElementById("err-old-psw");
+		deleteError(check);
+		const psw = document.getElementById("old-psw").parentNode;
+		var p = createError("err-old-psw");
+		p.innerHTML = "Inserisci la <span lang='en'>password</span> attuale";
+		psw.appendChild(p);
+		ButtonValidator();
+		return false;
+	}
+	var check = document.getElementById("err-old-psw");
+	deleteError(check);
+	ButtonValidator();
 	return true;
 }
 
@@ -174,7 +216,7 @@ function deleteError(p){
 
 const listeners = {
 	"nickname-edit" : ["input", validateEditNewUsername],
-	"old-psw" : ["input",ButtonValidator],
+	"old-psw" : ["input",validateOldPassword],
 	"new-psw" : ["input", validateEditPassword ],
 	"repeat-new-psw" : ["input", validateEditPasswordConfirm ],
 };

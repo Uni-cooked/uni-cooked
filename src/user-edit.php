@@ -63,14 +63,14 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
 
     if (mb_strlen($username)==0) {
-        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-edit-nam">Il nome utente è un campo obbligatorio</p>',$paginaHtml);
         $errorFound=true;
     } elseif (mb_strlen($username)>15) {
-        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-edit-nam">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{nickname-error}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-edit-nam">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
     } else {
         $username=Sanitizer::SanitizeUserInput($username);
         $isUserPresent=$db->checkUserPresence($username);
@@ -242,23 +242,23 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     }
 
     if(strcmp($oldPsw,"")==0) {
-        $paginaHtml=str_replace("{{messaggio di old-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Inserisci la <span lang="en">password</span> attuale</p>',$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio di old-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-old-psw">Inserisci la <span lang="en">password</span> attuale</p>',$paginaHtml);
         $errorFound=true;
     }
     if(strcmp($newPsw,"")==0) {
-        $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">Inserisci la nuova <span lang="en">password</span></p>',$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-new-psw">Inserisci la nuova <span lang="en">password</span></p>',$paginaHtml);
         $errorFound=true;
     } elseif(mb_strlen($newPsw)<4) {
-        $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La nuova <span lang="en">password</span> deve essere di almeno 4 caratteri</p>',$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-new-psw">La nuova <span lang="en">password</span> deve essere di almeno 4 caratteri</p>',$paginaHtml);
         $errorFound=true;
     } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).+$/",$newPsw)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{messaggio di new-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-new-psw">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{messaggio di new-psw}}","",$paginaHtml);
     }
     if(strcmp($newPsw,$repPsw)!=0) {
-        $paginaHtml=str_replace("{{messaggio di repeat-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La nuova <span lang="en">password</span> e la sua ripetizione non coincidono</p>',$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio di repeat-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-repeat-new-psw">La nuova <span lang="en">password</span> e la sua ripetizione non coincidono</p>',$paginaHtml);
         $errorFound=true;
     } else {
         $paginaHtml=str_replace("{{messaggio di repeat-psw}}","",$paginaHtml);
@@ -272,7 +272,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
 
     $result=$db->changeUserPsw($oldPsw,$newPsw);
     if(is_string($result) && strcmp($result,"wrongPassword")==0) {
-        $paginaHtml=str_replace("{{messaggio di old-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg">La <span lang="en">password</span> attuale non è corretta</p>',$paginaHtml);
+        $paginaHtml=str_replace("{{messaggio di old-psw}}",'<p aria-live="assertive" aria-atomic="true" class="err-msg" id="err-old-psw">La <span lang="en">password</span> attuale non è corretta</p>',$paginaHtml);
         echo $paginaHtml;
         exit();
     } elseif (is_string($result)) {
