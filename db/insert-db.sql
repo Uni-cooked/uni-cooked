@@ -380,7 +380,7 @@ INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "pepe", TRUE, NULL, NULL, N
 INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "erba cipollina", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Canederli", "brodo di carne", FALSE, 250, "ml", NULL);
 
-INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "pasta", FALSE, 100, "g", "usare la calamarata che è un tipo di pasta");
+INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "pasta", FALSE, 100, "g", "consigliata la calamarata");
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "aglio", FALSE, 1, "num_el", NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "prezzemolo", TRUE, NULL, NULL, NULL);
 INSERT INTO Utilizzo_Ingrediente VALUES("Calamarata", "vino bianco da cucina", FALSE, 15, "ml", NULL);
