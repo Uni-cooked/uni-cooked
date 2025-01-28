@@ -66,14 +66,13 @@ Abbiamo provveduto a limitare l'azione di `JavaScript` ai controlli sugli input,
 - Disabilitazione dei pulsanti submit in caso i requisiti minimi degli input non siano soddisfatti.
 - Aggiornamento dei paragrafi sotto gli slider del filtro nelle ricette con il valore dell'input.
 - Aggiornamento immediato della foto profilo nella pagina di modifica profilo utente quando viene cambiata.
-- Animazione delle ricette quando vengono caricate in seguito ad una ricerca.
-ZOOM ANDREA
+- Animazione delle ricette quando vengono caricate in seguito ad una ricerca. Aggiunto il file `noscript.css` per permettere di visualizzare le ricette quando `JavaScript` è disabilitato.
 
 Lato server abbiamo provveduto ad eseguire tutti i controlli necessari riguardo i dati inseriti dall'utente e la gestione di eventuali errori.
 
-Particolare attenzione è stata data alla gestione delle pagine non esistenti inserendo nel file `.htaccess` l'indicazione `ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'` per inserire una pagina di errore 404 personalizzata. Lo stesso è stato fatto per la pagina 500 e per la pagina 403.
+Particolare attenzione è stata data alla gestione degli errori 403, 404 e 500. Al fine di personalizzare le pagine degli errori e visualizzarle in ogni circostanza è stato creato il file `.htaccess`.
 
-Concludendo, ogni connessione al database aperta nei file php è chiusa immediatamente dopo il recupero dei dati a favore di una migliore gestione delle risorse.
+Ogni connessione al database aperta da `PHP` è chiusa immediatamente dopo il recupero dei dati a favore di una migliore gestione delle risorse.
 
 == Emotional design
 Poiché l'utenza target sono giovani studenti abbiamo pensato di adottare un vocabolario molto colloquiale e familiare. L'intenzione è quella di avvicinare l'utente facendolo sentire come se stesse parlando con un compagno di corso. Per questo motivo abbiamo dirottato l'immagine comune di un ricettario in uno scenario universitario dove le ricette sono gli esami e l'utente è il professore. Per coinvolgere appieno l'utente si fa largo uso delle \"call to action\" sia nelle descrizioni che nel contenuto delle pagine.
@@ -83,7 +82,7 @@ Per rendere il sito più accattivante e originale abbiamo personalizzato il menu
 = Requisiti per l'accessibilità
 Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure:
 - Aggiunto la breadcrumb in ogni pagina.
-- Aggiunto gli aiuti alla navigazione in ogni pagina. I \"torna su\" sono posizionati sempre nel footer ma anche in sezioni lunghe come ad esempio le categorie nella home.
+- Aggiunto gli aiuti alla navigazione in ogni pagina. I \"torna su\" sono posizionati sempre nel footer ma anche in sezioni lunghe, quindi tra le categorie della home e nella pagina delle ricette.
 - Contrassegnato abbreviazioni, simboli e sigle con i corretti tag `HTML5`.
 - Aggiunto l'attributo title ai link in modo da renderli più espressivi alla lettura con screen reader.
 - Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
@@ -92,19 +91,19 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunto l'attributo aria-label dove necessario.
 - Nascosto gli elementi di aiuto agli screen reader.
 - Eseguito l'image replacement dove necessario.
-- Assegnato gli attributi aria-live e aria-atomic nelle categorie della home per avvisare lo screen reader dell'animazione della carta (l'attributo role=\"alert\" non è accettato da Total Validator). DEL LAB
+- Assegnato gli attributi aria-live e aria-atomic negli errori degli input e nelle categorie della home per avvisare lo screen reader dell'animazione della carta. L'attributo role=\"alert\" infatti non è accettato dalla versione di Total Validator del Lab036.
 
 = Controlli sul sito
 == Strumenti
 Per eseguire i controlli sono stati adottati i seguenti strumenti:
-- *Total Validator* per assicurare la correttezza dei documenti html (completati da PHP).
+- *Total Validator* per assicurare la correttezza dei documenti html (completati da `JavaScript` e `PHP`).
+- *W3C CSS Validator*
 - *WCAG color contrast checker* (estensione Chrome)
 - Screen reader:
   - *Narrator* (Windows 11)
   - *Orca* (Ubuntu 24.10)
   - *NVDA*
 - *Lighthouse*
-- ** CSS VALIDATORRRRRRRr
 Molti controlli sono stati svolti manualmente.
 
 == Accessibilità
@@ -123,9 +122,8 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei colori:
 - Tutti i colori di sfondo e testo sono in contrasto AAA. Unica eccezione fatta per il testo \"Adatto per te se:\" nel lato posteriore delle carte nella home. In base a quanto riportato da WCAG color contrast checker l'intestazione è in contrasto AA in quanto considerato come testo grande. Tuttavia perde il contrasto AA quando il testo 1em raggiunge i 10px. Pensiamo quindi che tali numeri non siano adottati da un utente con difficoltà nella distinzione dei colori.
 - Mantenendo i colori in palette non è stato possibile trovare i contrasti tra link visitati e non visitati (mantenendo i contrasti tra questi e lo sfondo). Abbiamo quindi optato per due differenti soluzioni:
-  - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati.
-  - I link con uno sfondo dedicato, ad esempio i \"pulsanti\" ACCEDI nel menu o MODIFICA PROFILO nel profilo utente, sono contornati da un bordo dello stesso colore del link se visitati.
-- COLORI LINK ???
+  - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati. Si fa notare che il colore dei link non visitati varia a seconda della locazione degli stessi. Non assumono cioè colore bianco se si trovano in prossimità di testo normale in modo da risaltare maggiormente.
+  - I link con uno sfondo dedicato, ad esempio i \"pulsanti\" ACCEDI nel menu o MODIFICA PROFILO nel profilo utente, sono contornati da un bordo dello stesso colore del link se visitati. Si fa notare che il colore dei link rimane lo stesso perché il bordo aggiunto è sufficiente per distinguere i due stati.
 
 == Struttura
 Sono stati eseguiti i seguenti controlli per quanto riguarda la struttura:
@@ -144,17 +142,17 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 Sono stati eseguiti i seguenti controlli per quanto riguarda la sicurezza:
 - Controllo della validità dei dati lato client e server.
 - Password salvate in hash e non in chiaro.
-- Query \"preparate\" in modo da evitare sql injection. + PEFOMANS
+- Query \"preparate\" in modo da evitare `SQL` injection e aumentare le performance.
 
 == Codice
 Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
-- `HTML5` e `CSS` validi. ??? CSS ????
+- `HTML5` e `CSS` validi.
 - Tutte le funzionalità principali del sito sono valide senza `JavaScript`.
 
 == Falsi positivi
-Validando il sito con Total Validator vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
+Validando il sito con la versione di Total Validator del Lab036 vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
 - L'aiuto alla navigazione \"salta al contenuto\" è stato messo dopo \"salta a dove ti trovi\" per mantenere la coerenza di ordine strutturale. Si fa notare che è stato omesso \"salta al menu\" perché posizionato appena dopo il titolo nell'header.
-- Le label sono state posizionate prima degli input per questioni di accessibilità.
+- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input del menu ad hamburger.
 - Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non è necessario segnare la seconda con un aria-label.
 - Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
@@ -162,6 +160,10 @@ Validando il sito con Total Validator vengono evidenziati i seguenti falsi posit
 - La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
 - Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
 - Nella pagina di modifica profilo non è necessaria una legend per la form di modifica password perché il compito è esplicito nel titolo e nelle label.
+
+Validando i fogli di stile con W3C CSS Validator vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
+- le regole \"webkit\" sono state aggiunte per migliorare il più possibile l'esperienza dell'utente su qualsiasi browser.
+- le clausole \"selector\" sono risultate necessarie per garantire il funzionamento del sito su qualsiasi browser.
 
 = Struttura gerarchica
 La struttura gerarchica del sito presenta un albero ampio e poco profondo per agevolare la navigazione. Tutte le pagine sono raggiungibili con al più 2 click.
@@ -209,22 +211,26 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 - *Conferma* per chiedere conferma all'utente di alcune operazioni irreversibili quali rimozione della lista delle ricette preferite e cancellazione del profilo.
 - *Ringraziamenti* per ringraziare l'utente di aver inviato un suggerimento tramite la pagina dei contatti.
 
-= Menzioni onorevoli (TEO CACCA)
+= Menzioni onorevoli
 Di seguito sono riportate, per pagina, alcune funzionalità particolari che possono non risultare immediate da notare.
 
 == Home
-Le carte delle categorie sono animate solamente tramite `CSS` per rendere la funzionalità indipendente dalle preferenze dell'utente, il quale può disabilitare `JavaScript`. Per realizzarle è stato necessario utilizzare la pseudo-classe :has() supportata da tutti i browser dal 2023 (si veda #link("https://developer.mozilla.org/en-US/docs/Web/CSS/:has")[#underline("MDN web docs")]). Poiché può essere considerata una clausola relativamente recente abbiamo aggiunto delle regole di supporto che eliminano l'animazione e il relativo pulsante. L'utente non percepisce quindi un malfunzionamento del sito, solamente viene privato di alcune informazioni (nel retro della carta). Queste comunque non sono fondamentali per la descrizione della categoria, bensì sono pensate principalmente per suscitare divertimento ed esclusività nell'utente.
+Le carte delle categorie sono animate solamente tramite `CSS` per rendere la funzionalità indipendente dalle preferenze dell'utente, il quale può disabilitare `JavaScript`. Per realizzarle è stato necessario utilizzare la pseudo-classe :has() supportata da tutti i browser dal 2023 (si veda #link("https://developer.mozilla.org/en-US/docs/Web/CSS/:has")[#underline("MDN web docs")]). Poiché può essere considerata una clausola relativamente recente abbiamo aggiunto delle regole di supporto che eliminano l'animazione e il relativo pulsante. L'utente non percepisce quindi un malfunzionamento del sito, solamente viene privato di alcune informazioni (quelle nel retro della carta). Queste comunque non sono fondamentali per la descrizione della categoria, bensì sono pensate principalmente per suscitare divertimento ed esclusività nell'utente.
 
-I link \"vai alle ricette\" delle carte delle categorie potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della categoria in modo che, letto dopo la descrizione della carta, sembri un tutt'uno col testo.
+I link \"vai alle ricette\" delle carte delle categorie potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della categoria in modo che, letto dopo la descrizione della carta, sembri un tutt'uno con il testo.
 
-Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu e di un link posto dopo l'ultima voce che riporta alla casella di controllo per chiuderlo. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione col sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale con la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può ignorare il link posto a fine menu e navigare senza troppi problemi nel sito, tuttavia confidiamo che il livello di esperienza di questa tipologia di utenza porti a non ignorare il suggerimento del link. Inoltre un utente con difficoltà visiva quasi totale o totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine. 
+Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione con il sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale sfruttando la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può navigare senza troppi problemi nel sito anche quando il menu è aperto. Inoltre un utente con difficoltà visiva totale o quasi totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine. \
+Si fa notare che nel menu ad hamburger vi è l'unico caso in cui l'input precede la label. Questo permette tuttavia di dipendere solamente da regole `CSS` ben supportate, evitando quindi la pseudo-classe :has() e `JavaScript`.
 
 == Ricette
 L'algoritmo di ricerca è stato soggetto di attenta analisi e sviluppo per garantire una esperienza personalizzata ad ogni tipologia di utenza:
 - La ricerca per testo controlla delle corrispondenze nel nome delle ricette.
 - Se l'utente è autenticato, a parità di valutazione viene visualizzata prima la ricetta della categoria dell'utente.
 - Le ricette senza valutazioni vengono poste come ultime in qualsiasi ricerca.
-- Nelle situazioni diverse da quelle citate l'ordine è casuale.
+- Nelle situazioni diverse da quelle citate l'`SQL` non contiene alcuna politica di ordinamento quindi vengono esposti i risultati in maniera casuale.
+
+I valori degli slider nei filtri sono nascosti allo screen reader perché nei test svolti questi vengono letti ogni volta che si aggiornano. Il minimo e massimo sono esplicitati nella label.
+
 
 I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della ricetta.
 
@@ -233,7 +239,7 @@ Alla pagina di una ricetta ci si può arrivare dal catalogo delle ricette oppure
 
 Per assegnare l'attributo della lingua correttamente alle parole straniere abbiamo creato una funzione apposita che racchiude i termini in un tag span. Nel database è sufficiente far seguire le parole straniere da \"\_XX\" dove XX indica il codice della lingua.
 
-La sezione delle valutazioni può potenzialmente diventare molto lunga. Abbiamo quindi provveduto a limitare il numero di valutazioni visualizzate aggiungendo un pulsante per caricarne altri. Al termine delle valutazioni è posto anche un link per tornare rapidamente all'inizio della sezione. In ogni valutazione inoltre è presente il nome dell'utente sotto forma di link. In questo modo è possibile visitare il profilo degli altri utenti.
+La sezione delle valutazioni può potenzialmente diventare molto lunga. Abbiamo quindi provveduto a limitare il numero di valutazioni visualizzate aggiungendo un pulsante per caricarne altre. Al termine delle valutazioni è posto anche un link per tornare rapidamente all'inizio della sezione. In ogni valutazione inoltre è presente il nome dell'utente sotto forma di link. In questo modo è possibile visitare il profilo degli altri utenti.
 
 Il pulsante per aggiungere o togliere dai preferiti la ricetta è visibile solo se l'utente è autenticato.
 
@@ -248,7 +254,7 @@ Riguardo la potenziale numerosità delle ricette preferite abbiamo adottato la s
 Il lavoro è stato partizionato nel seguente modo tra i diversi membri del gruppo:
 
 *Andrea Precoma*
-- Creazione della struttura base degli `.html`.
+- Creazione della struttura base dei `.html`.
 - Creazione della struttura e del relativo stile delle seguenti pagine:
   - Ricette
   - Ricetta
@@ -273,7 +279,6 @@ Il lavoro è stato partizionato nel seguente modo tra i diversi membri del grupp
   - Accedi
   - Registrazione
   - Modifica profilo utente
-  - Offline
 - Creazione dello stile di stampa.
 - Creazione della funzionalità di ricerca delle ricette.
 - Creazione delle animazioni.
