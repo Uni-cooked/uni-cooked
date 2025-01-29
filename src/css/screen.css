@@ -116,10 +116,6 @@ fieldset {
     padding: 2em 5em;
 }
 
-.overflow-none {
-    overflow: hidden;
-}
-
 .button-animation {
     display: inline-block;
     transform: scale(1);
@@ -217,7 +213,7 @@ fieldset {
 }
 
 .err-msg {
-    color: #ff0606;
+    color: var(--danger-button-color);
 }
 
 .disabled-btn {
@@ -413,9 +409,7 @@ main {
 main h1,
 main h2,
 main h3,
-main h4,
-main h5,
-main h6 {
+main h4 {
     color: var(--accent);
 }
 
@@ -432,10 +426,6 @@ abbr {
     text-decoration: none;
 }
 
-#img-team {
-    width: 50%;
-    height: 50%;
-}
 
 /* #endregion MAIN */
 
@@ -560,7 +550,6 @@ dl#roles dd:not(:last-child) {
     color: var(--bg-primary);
     border: 6px solid var(--accent-secondary);
 }
-
 
 dl p {
     color: var(--bg-primary);
@@ -714,6 +703,8 @@ div#why img {
     flex: 2;
     object-fit: cover;
     border-radius: var(--radius-small);
+    width: 50%;
+    height: auto;
 }
 
 div#why #why-desc a:link {
@@ -806,14 +797,14 @@ ul#recipe-list .recipe {
     --_g: no-repeat radial-gradient(farthest-side,#ffffff 90%,#0000);
     background:var(--_g), var(--_g), var(--_g), var(--_g);
     background-size: 20% 50%;
-    animation: l43 1s infinite linear; 
+    animation: loading 1s infinite linear; 
     margin: 10rem auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-@keyframes l43 {
+@keyframes loading {
     0%     {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
     16.67% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
     33.33% {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 0   ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
@@ -947,31 +938,6 @@ ul#recipe-list .recipe a:link {
     object-fit: cover;
     top: 0;
     left: 0;
-}
-
-#recipe-img.expandable-img {
-    cursor: pointer;
-}
-
-#recipe-img.expandend-img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 70%;
-    height: auto;
-    z-index: 2;
-}
-
-.expanded-bg {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    backdrop-filter: blur(2px);
 }
 
 #recipe-main-info ul {
@@ -1267,7 +1233,6 @@ ul.suggestion {
     list-style-type: none;
     border-radius: 5px;
     min-height: 12em;
-    /* NOTE: not so buty but at least the section for the empty list is centered */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1309,7 +1274,6 @@ ul.suggestion {
     height: 35%;
     font-size: 1.6em;
 }
-
 
 #fav-recipe-list .fav-recipe .fav-recipe-info {
     list-style-type: none;
@@ -1455,8 +1419,8 @@ a#edit-profile-link {
 
 /* #region ABOUT US PAGE */
 .pp {
-    height: 10rem;
-    width: 10rem;
+    height: 11rem;
+    width: 11rem;
     border-radius: var(--radius-max);
 }
 

@@ -1,24 +1,2 @@
-js anim zoom recipe andrea (togliere)
-
-NB relazione
-OFFLINE
-css validator
-colori non tutti in contrasto
-link visitati e non:
-    singoli -> dashed
-    button -> stesso color, border di color
-    bookmark delle card -> ???
-"adatto per te se:" ingrandito così AA
-js solo per slider (ensomma) e pp user
-403 chiedi teo
-role alert index e catalogo
-burger tante robe
-torna su sui teo
-focus ricette
-noscript
-no sr sui p delle label
-,00 euro
-
-
-PEFOMANS
-about us def img (solo) in admin
+aria live non letto
+vai alla ricette visibility hidden

@@ -71,13 +71,39 @@ function validateEditNewUsername() {
 	var Username = document.forms['new-info']['nickname-edit'].value;
 	const allowedChars = /^[A-Za-z0-9]+$/; // lettere maiuscole e minuscole, numeri
 
+	if(Username.length < 1 || Username == ""){
+		var check = document.getElementById("err-edit-nam");
+		deleteError(check);
+		const name = document.getElementById("nickname-edit").parentNode;
+		var p = createError("err-edit-nam");
+	    p.innerHTML = "Il nome utente è un campo obbligatorio";
+		name.appendChild(p);
+		document.getElementById("btn-confirm").disabled = true;
+		document.getElementById("btn-confirm").classList.add("disabled-btn");
+		return false;
+	}
+
+	if(Username.length > 15){
+		var check = document.getElementById("err-edit-nam");
+		deleteError(check);
+		const name = document.getElementById("nickname-edit").parentNode;
+		var p = createError("err-edit-nam");
+	    p.innerHTML = "Il nome utente non deve essere più lungo di 15 caratteri";
+		name.appendChild(p);
+		document.getElementById("btn-confirm").disabled = true;
+		document.getElementById("btn-confirm").classList.add("disabled-btn");
+		return false;
+	}
+
 	if (Username.search(/^[a-zA-Z0-9!\-_.]{1,15}$/) != 0 || !allowedChars.test(Username)) {
 		var check = document.getElementById("err-edit-nam");
 		deleteError(check);
 		const name = document.getElementById("nickname-edit").parentNode;
 		var p = createError("err-edit-nam");
-	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "Il nome utente non deve contenere spazi o caratteri speciali";
 		name.appendChild(p);
+		document.getElementById("btn-confirm").disabled = true;
+		document.getElementById("btn-confirm").classList.add("disabled-btn");
 		return false;
 	}
 	var nameError = document.getElementById("err-edit-nam");
@@ -87,13 +113,22 @@ function validateEditNewUsername() {
 	return true;
 }
 
-function FinalCheck(){
-	var errorPassword = document.getElementById("err-new-psw");
-	var errorRepeatPassword = document.getElementById("err-repeat-new-psw");
-	if(!(errorPassword && errorRepeatPassword)){
-		document.getElementById("second-btn-confirm").classList.remove("disabled-btn");
-		document.getElementById("second-btn-confirm").disabled = false;
+function validateOldPassword(){
+	var oldPsw = document.forms['credentials']['old-psw'].value;
+	if(oldPsw == "" || oldPsw.length < 1){
+		var check = document.getElementById("err-old-psw");
+		deleteError(check);
+		const psw = document.getElementById("old-psw").parentNode;
+		var p = createError("err-old-psw");
+		p.innerHTML = "Inserisci la <span lang='en'>password</span> attuale";
+		psw.appendChild(p);
+		ButtonValidator();
+		return false;
 	}
+	var check = document.getElementById("err-old-psw");
+	deleteError(check);
+	ButtonValidator();
+	return true;
 }
 
 function validateEditPassword() {
@@ -106,6 +141,7 @@ function validateEditPassword() {
 		var p = createError("err-new-psw");
 		p.innerHTML = "La<span lang='en'> password</span> deve essere lunga almeno 4 caratteri";
 		psw.appendChild(p);
+		ButtonValidator();
 		return false;
 	}
 	
@@ -116,11 +152,13 @@ function validateEditPassword() {
 		var p = createError("err-new-psw");
 		p.innerHTML = "La<span lang='en'> password </span>deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
 		psw.appendChild(p);
+		ButtonValidator();
 		return false;
 	}
     var check = document.getElementById("err-new-psw");
 	deleteError(check);
-	FinalCheck();
+	ButtonValidator();
+	validateEditPasswordConfirm();
 	return true;
 }
 
@@ -136,13 +174,30 @@ function validateEditPasswordConfirm() {
 		var html = "Le <span lang='en'>password </span> non coincidono";
 		p.innerHTML = html;
 		const repeatPsw = document.getElementById("repeat-new-psw").parentNode;
-		repeatPsw.appendChild(p)
+		repeatPsw.appendChild(p);
+		ButtonValidator();
 		return false;
 	}
     var check = document.getElementById("err-repeat-new-psw");
 	deleteError(check);
-	FinalCheck();
+	ButtonValidator();
 	return true;
+}
+
+function ButtonValidator(){
+	var oldPsw = document.getElementById("old-psw").value;
+	var Password  = document.forms['credentials']['new-psw'].value;
+	var repeatPassword = document.forms['credentials']['repeat-new-psw'].value;
+	var errPsw = document.getElementById("err-new-psw");
+	var errRepPsw = document.getElementById("err-repeat-new-psw");
+	if(oldPsw == "" || oldPsw.length < 1 || errPsw || errRepPsw || Password == "" || Password.length < 1 || repeatPassword == "" || repeatPassword.length < 1){
+		document.getElementById("second-btn-confirm").classList.add("disabled-btn");
+		document.getElementById("second-btn-confirm").disabled = true;
+	}else{
+		document.getElementById("second-btn-confirm").classList.remove("disabled-btn");
+		document.getElementById("second-btn-confirm").disabled = false;
+	}
+
 }
 
 function createError(id){
@@ -160,12 +215,15 @@ function deleteError(p){
 }
 
 const listeners = {
-	"nickname-edit" : ["change", validateEditNewUsername],
-	"new-psw" : ["change", validateEditPassword ],
-	"repeat-new-psw" : ["change", validateEditPasswordConfirm ],
+	"nickname-edit" : ["input", validateEditNewUsername],
+	"old-psw" : ["input",validateOldPassword],
+	"new-psw" : ["input", validateEditPassword ],
+	"repeat-new-psw" : ["input", validateEditPasswordConfirm ],
 };
 
 window.addEventListener('load', function () {
+	document.getElementById("second-btn-confirm").classList.add("disabled-btn");
+	document.getElementById("second-btn-confirm").disabled = true;
 	checkUserEdit();
 	chargeNewImage();
 	validateEditForm();
