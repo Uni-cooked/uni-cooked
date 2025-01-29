@@ -83,7 +83,7 @@ if (!isset($_GET["username"])) {
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\">" . strtoupper($categoria) . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\">" . strtoupper($recipe["tipo_piatto"]) . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " &euro;</li></ul>";
-                    $recipeList .= '<a href=recipe.php?recipe=' . str_replace(" ", "%20", $recipe["nome"]) . ' title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
+                    $recipeList .= '<a href=recipe.php?recipe=' . urlencode($recipe["nome"]) . ' title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
             }
@@ -178,7 +178,7 @@ if (!isset($_GET["username"])) {
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\">" . $categoria . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\">" . $recipe["tipo_piatto"] . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\">" . $recipe["prezzo"] . " &euro;</li></ul>";
-                    $recipeList .= '<a href="recipe.php?recipe=' . str_replace(" ", "%20", $recipe["nome"]) . '" title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
+                    $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
             }
