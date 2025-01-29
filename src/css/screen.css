@@ -542,6 +542,7 @@ dl#roles dd:not(:last-child) {
 .flip-card-back,
 .flip-card-front {
     border-radius: 20px;
+    transition: visibility var(--animation-duration);
 }
 
 .flip-card-front {
@@ -555,7 +556,6 @@ dl p {
     color: var(--bg-primary);
     text-align: center;
     font-weight: 500;
-    transition: visibility var(--animation-duration);
     padding: 3rem 3rem 5rem 3rem;
 }
 
@@ -573,11 +573,7 @@ dd input,dd .role-info-label,.flip-card-back {
         visibility: visible;
     }
     
-    dd:has(input:checked) .flip-card .flip-card-front p {
-        visibility: hidden;
-    }
-    
-    dd:has(input:checked) .flip-card .flip-card-front p+a {
+    dd:has(input:checked) .flip-card .flip-card-front {
         visibility: hidden;
     }
 
@@ -594,7 +590,6 @@ dd input,dd .role-info-label,.flip-card-back {
         backface-visibility: hidden;
         background-color: var(--accent-trinary);
         color: white;
-        transition: visibility var(--animation-duration);
         transform: rotateX(180deg);
         border: 6px solid var(--accent);
     }
@@ -660,7 +655,6 @@ dd input,dd .role-info-label,.flip-card-back {
     right: -1px;
     font-weight: 550;
     padding: .5rem 4rem .5rem 2rem;
-    transition: visibility var(--animation-duration);
 }
 
 .ribbon a:link {
