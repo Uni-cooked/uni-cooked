@@ -25,8 +25,7 @@ function validateRequest(){
         var check = document.getElementById("err-request");
         if(check) check.remove();
         var p = document.createElement("p");
-	    p.setAttribute("aria-live","assertive");
-        p.setAttribute("aria-atomic","true");
+	    p.setAttribute("role","alert");
 	    p.setAttribute("id","err-request");
 	    p.classList.add("err-msg");
         p.innerText = "La lunghezza minima è di 20 caratteri";
@@ -40,8 +39,7 @@ function validateRequest(){
         var check = document.getElementById("err-request");
         if(check) check.remove();
         var p = document.createElement("p");
-	    p.setAttribute("aria-live","assertive");
-        p.setAttribute("aria-atomic","true");
+	    p.setAttribute("role","alert");
 	    p.setAttribute("id","err-request");
 	    p.classList.add("err-msg");
         p.innerText = "La lunghezza massima è di 500 caratteri";
