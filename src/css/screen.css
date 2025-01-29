@@ -1346,7 +1346,18 @@ a#edit-profile-link {
 
 /* #region USER EDIT PAGE */
 #profile-img-edit {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+#profile-img-edit::file-selector-button {
     display: none;
+}
+
+
+#mod-pp:focus-within {
+    border: 2px solid white;
 }
 
 #primary-info {
