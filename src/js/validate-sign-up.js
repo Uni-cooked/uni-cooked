@@ -173,8 +173,7 @@ function validatePasswordConfirm() {
 }
 function messageError(id){
 	var p = document.createElement("p");
-	p.setAttribute("aria-live","assertive");
-    p.setAttribute("aria-atomic","true");
+	p.setAttribute("role","alert");
 	p.setAttribute("id",id);
 	p.classList.add("err-msg");
 

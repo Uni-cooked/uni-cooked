@@ -5,8 +5,7 @@ function Button(){
         var check = document.getElementById("err-sign-in");
 		if(check) check.remove();
         var p = document.createElement("p");
-        p.setAttribute("aria-live","assertive");
-        p.setAttribute("aria-atomic","true");
+        p.setAttribute("role","alert");
         p.setAttribute("id","err-sign-in");
         p.classList.add("err-msg");
         p.innerHTML = "Le credenziali inserite non sono corrette";
