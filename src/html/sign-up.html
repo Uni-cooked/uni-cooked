@@ -10,7 +10,7 @@
         <meta name="keywords" content="Uni Cooked,registrazione" />
         <meta name="author" content="Uni Cooked" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin />
         <link rel="preload" fetchpriority="high" as="image" href="./asset/img/header.png" />
         <!-- CSS -->
         <link rel="stylesheet" href="./css/screen.css" media="screen" />
@@ -69,12 +69,12 @@
                         <div id="name-up-container" class="input-container">
                             <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
                             <p class="suggestion">Massimo 15 caratteri senza spazi</p>
-                            <input required="required" type="text" name="nome" id="student-name-up"/>
+                            <input required type="text" name="nome" id="student-name-up"/>
                             {{messaggio di nome}}
                         </div>
                         <div id="cat-up-container" class="input-container">
                             <label for="student-cat-up" class="form-label">Scegli la categoria</label>
-                            <select required="required" name="categoria" id="student-cat-up">
+                            <select required name="categoria" id="student-cat-up">
                                 <option hidden selected>Seleziona una opzione</option>
                                 <option value="fuorisede">Fuorisede</option>
                                 <option value="pendolare">Pendolare</option>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="input-container">
                             <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
-                            <input required="required" type="email" name="email" id="student-mail-up"/>
+                            <input required type="email" name="email" id="student-mail-up"/>
                             {{messaggio di email}}
                         </div>
                         <div class="input-container">
@@ -97,12 +97,12 @@
                                 <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
                                 <li>Minimo 4 caratteri</li>
                             </ul>
-                            <input required="required" type="password" name="psw" id="student-psw-up"/>
+                            <input required type="password" name="psw" id="student-psw-up"/>
                             {{messaggio di psw}}
                         </div>
                         <div class="input-container">
                             <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
-                            <input required="required" type="password" name="repeat-psw" id="student-repeat-psw-up"/>
+                            <input required type="password" name="repeat-psw" id="student-repeat-psw-up"/>
                             {{messaggio di psw-ripetuta}}
                         </div>
 

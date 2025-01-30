@@ -5,7 +5,7 @@ function validateEditForm(){
 		if (!(validateEditNewUsername())){
 			event.preventDefault();
 			document.getElementById("btn-confirm").classList.add("disabled-btn");
-			document.getElementById("btn-confirm").setAttribute("disabled","disabled");
+			document.getElementById("btn-confirm").disabled = true;
 		}
 	});
 }
@@ -17,7 +17,7 @@ function validatePswForm(){
 		if (!(validateEditPassword() && validateEditPasswordConfirm())){
 			event.preventDefault();
 			document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-			document.getElementById("second-btn-confirm").setAttribute("disabled","disabled");
+			document.getElementById("second-btn-confirm").disabled = true;
 		}
 	});
 }
@@ -87,7 +87,7 @@ function validateEditNewUsername() {
 		var p = createError("err-edit-nam");
 	    p.innerHTML = "Il nome utente è un campo obbligatorio";
 		name.appendChild(p);
-		document.getElementById("btn-confirm").setAttribute("disabled","disabled");
+		document.getElementById("btn-confirm").disabled = true;
 		document.getElementById("btn-confirm").classList.add("disabled-btn");
 		return false;
 	}
@@ -99,7 +99,7 @@ function validateEditNewUsername() {
 		var p = createError("err-edit-nam");
 	    p.innerHTML = "Il nome utente non deve essere più lungo di 15 caratteri";
 		name.appendChild(p);
-		document.getElementById("btn-confirm").setAttribute("disabled","disabled");
+		document.getElementById("btn-confirm").disabled = true;
 		document.getElementById("btn-confirm").classList.add("disabled-btn");
 		return false;
 	}
@@ -111,7 +111,7 @@ function validateEditNewUsername() {
 		var p = createError("err-edit-nam");
 	    p.innerHTML = "Il nome utente non deve contenere spazi o caratteri speciali";
 		name.appendChild(p);
-		document.getElementById("btn-confirm").setAttribute("disabled","disabled");
+		document.getElementById("btn-confirm").disabled = true;
 		document.getElementById("btn-confirm").classList.add("disabled-btn");
 		return false;
 	}
@@ -201,7 +201,7 @@ function ButtonValidator(){
 	var errRepPsw = document.getElementById("err-repeat-new-psw");
 	if(oldPsw == "" || oldPsw.length < 1 || errPsw || errRepPsw || Password == "" || Password.length < 1 || repeatPassword == "" || repeatPassword.length < 1){
 		document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-		document.getElementById("second-btn-confirm").setAttribute("disabled","disabled");
+		document.getElementById("second-btn-confirm").disabled = true;
 	}else{
 		document.getElementById("second-btn-confirm").classList.remove("disabled-btn");
 		document.getElementById("second-btn-confirm").disabled = false;
@@ -231,7 +231,7 @@ const listeners = {
 
 window.addEventListener('load', function () {
 	document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-	document.getElementById("second-btn-confirm").setAttribute("disabled","disabled");
+	document.getElementById("second-btn-confirm").disabled = true;
 	checkUserEdit();
 	chargeNewImage();
 	validateEditForm();

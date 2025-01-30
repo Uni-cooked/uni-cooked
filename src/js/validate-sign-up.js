@@ -6,7 +6,7 @@ function validateUserSignup() {
 		if (! (validateNewUsername() && validateStudent() && validateEmail() && validatePassword() && validatePasswordConfirm()) ) {
 			event.preventDefault();
 			document.getElementById("btn-register").classList.add("disabled-btn");
-			document.getElementById("btn-register").setAttribute("disabled","disabled");
+			document.getElementById("btn-register").disabled = true;
 		}
 	});
 }
@@ -18,7 +18,7 @@ function UltimateCheck(){
 	var errorPassword = document.getElementById("err-psw");
 	var errorRepeatPassword = document.getElementById("err-repeat-psw");
 	if (errorUsername || errorStudent || errorEmail || errorPassword || errorRepeatPassword){
-		document.getElementById("btn-register").setAttribute("disabled","disabled");
+		document.getElementById("btn-register").disabled = true;
 		document.getElementById("btn-register").classList.add("disabled-btn");
 	}else{
 		document.getElementById("btn-register").disabled = false;
@@ -193,7 +193,7 @@ const listeners = {
 };
 
 window.addEventListener('load', () => {
-	document.getElementById("btn-register").setAttribute("disabled","disabled");
+	document.getElementById("btn-register").disabled = true;
 	document.getElementById("btn-register").classList.add("disabled-btn")
 	checkSignUp();
 	validateUserSignup();

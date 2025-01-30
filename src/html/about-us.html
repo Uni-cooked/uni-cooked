@@ -10,7 +10,7 @@
         <meta name="keywords" content="Uni Cooked,contatti,chi siamo,proponi,ricetta" />
         <meta name="author" content="Uni Cooked" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin />
         <link rel="preload" fetchpriority="high" as="image" href="./asset/img/header.png" />
         <!-- CSS -->
         <link rel="stylesheet" href="./css/screen.css" media="screen" />
@@ -79,7 +79,7 @@
                     <form action="about-us.php" method="post" id="request">
                         <fieldset>
                             <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
-                            <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required="required" minlength="20" maxlength="500"></textarea>
+                            <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required minlength="20" maxlength="500"></textarea>
                             {{suggestion-error}}
                             <button id="confirm" type="submit" class="shadow" name="suggestion">PROPONI</button>
                             <button id="cancel" type="reset" class="shadow" disabled>CANCELLA</button>

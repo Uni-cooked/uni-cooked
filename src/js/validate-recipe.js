@@ -5,7 +5,7 @@ function validateReview(){
             if(!validateCommento()){
                 e.preventDefault();
                 document.getElementsByName("submit-add-review").classList.add("disabled-btn");
-                document.getElementsByName("submit-add-review").setAttribute("disabled","disabled");
+                document.getElementsByName("submit-add-review").disabled = true;
             }
         });
     }
