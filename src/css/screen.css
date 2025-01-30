@@ -17,6 +17,7 @@
     --accent-trinary: #0c6f59;
     --hypertext-link-color: #33cc99;
     --text-color: white;
+    --err-color: #fe0b0b;
     --danger-button-color: #b30000;
 
     /* MARGINS */
@@ -213,7 +214,7 @@ fieldset {
 }
 
 .err-msg {
-    color: var(--danger-button-color);
+    color: var(--err-color);
 }
 
 .disabled-btn {

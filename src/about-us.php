@@ -12,7 +12,7 @@ $isUserLogged=$db->isUserLogged();
 if(!isset($_POST["suggestion"])) {
     if ($isUserLogged!=false) {
         $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary shadow\">PROFILO</a>",$paginaHtml);
-        $paginaHtml=str_replace("{{username}}","di".$isUserLogged,$paginaHtml);
+        $paginaHtml=str_replace("{{username}}","di ".$isUserLogged,$paginaHtml);
         $userInfo=$db->getUserInfo();
         if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
             header('Location: 500-err.php');

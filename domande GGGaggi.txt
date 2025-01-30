@@ -1,2 +1,8 @@
-aria live non letto
-vai alla ricette visibility hidden
+card non in dd e aria label letto alla fine
+sistemare gli alt delle img profilo
+sistemare alt chi siamo
+input/label card e burger
+reset img user edit js
+
+NB
+no aria label nelle card perché letto alla fine
