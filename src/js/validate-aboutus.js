@@ -4,7 +4,7 @@ function validateFormRequest(){
         if(!validateRequest()){
             e.preventDefault();
             document.getElementById("confirm").classList.add("disabled-btn");
-            document.getElementById("confirm").disabled = true;
+            document.getElementById("confirm").setAttribute("disabled","disabled");
         }
     });
 }
@@ -15,12 +15,12 @@ function validateRequest(){
     if(Request.length < 20){
         if(Request == ""){
             document.getElementById("cancel").classList.add("disabled-btn");
-            document.getElementById("cancel").disabled = true;
+            document.getElementById("cancel").setAttribute("disabled","disabled");
         }else{
             document.getElementById("cancel").classList.remove("disabled-btn");
             document.getElementById("cancel").disabled = false;
             document.getElementById("confirm").classList.add("disabled-btn");
-            document.getElementById("confirm").disabled = true;
+            document.getElementById("confirm").setAttribute("disabled","disabled");
         }
         var check = document.getElementById("err-request");
         if(check) check.remove();
@@ -35,7 +35,7 @@ function validateRequest(){
 
     } else if (Request.length > 500){
         document.getElementById("cancel").classList.remove("disabled-btn");
-        document.getElementById("cancel").disabled = true;
+        document.getElementById("cancel").setAttribute("disabled","disabled");
         var check = document.getElementById("err-request");
         if(check) check.remove();
         var p = document.createElement("p");
@@ -69,8 +69,8 @@ window.addEventListener("load", () => {
 		document.getElementById(id).addEventListener(inputRequest[id][0], inputRequest[id][1]);
 	}
     document.getElementById("cancel").classList.add("disabled-btn");
-    document.getElementById("cancel").disabled = true;
+    document.getElementById("cancel").setAttribute("disabled","disabled");
     document.getElementById("confirm").classList.add("disabled-btn");
-    document.getElementById("confirm").disabled = true;
+    document.getElementById("confirm").setAttribute("disabled","disabled");
     validateFormRequest();
 });

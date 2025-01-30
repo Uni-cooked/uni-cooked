@@ -10,7 +10,7 @@
         <meta name="keywords" content="Uni Cooked,accesso" />
         <meta name="author" content="Uni Cooked" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
         <link rel="preload" fetchpriority="high" as="image" href="./asset/img/header.png" />
         <!-- CSS -->
         <link rel="stylesheet" href="./css/screen.css" media="screen" />
@@ -67,11 +67,11 @@
                         <legend class="hide">Dati di accesso</legend>
                         <div class="input-container">
                             <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
-                            <input required type="text" placeholder="Inserisci nome" name="nome" id="student-name-in"/>
+                            <input required="required" type="text" placeholder="Inserisci nome" name="nome" id="student-name-in"/>
                         </div>
                         <div class="input-container ">
                             <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la <span lang="en">password</span></label>
-                            <input required type="password" placeholder="Inserisci password" name="psw" id="student-psw-in"/>
+                            <input required="required" type="password" placeholder="Inserisci password" name="psw" id="student-psw-in"/>
                         </div>
                         {{messaggio di errore}}
                         <button class="button-input button-input-confirm shadow" type="submit" name="submit" id="submit-btn">ACCEDI</button>

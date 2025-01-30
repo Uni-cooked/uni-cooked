@@ -21,7 +21,7 @@ function Button(){
 function Disable(button,id){
     button = document.getElementById(id);
     button.classList.add("disabled-btn");
-    button.disabled = true;
+    button.setAttribute("disabled","disabled");
 }
 
 function Enable(button,id){
