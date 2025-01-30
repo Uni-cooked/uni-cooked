@@ -22,10 +22,19 @@ function validatePswForm(){
 	});
 }
 
+function resetImg(img,src){
+	let form = document.getElementById("new-info");
+	form.addEventListener("reset", () => {
+        img.setAttribute("src",src);
+	});
+}
+
 function chargeNewImage() {
 	const inputImage = document.getElementById("profile-img-edit");
     const imageOutput = document.getElementById("chosen-image");
-
+    const img = document.getElementById("chosen-image");
+	var src = img.getAttribute("src");
+    resetImg(img,src);
     inputImage.addEventListener("change", async () => {
         let [file] = inputImage.files;
 
