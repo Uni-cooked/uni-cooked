@@ -10,25 +10,16 @@
     /* COLORS */
     --bg-primary: #171717;
     --accent: #EFAE50;
-    --accent-secondary: #392A24;
-    --accent-trinary: #0C6F59;
-    --accent-quaternary: #134270;
-    --text-color: black;
 
     /* MARGINS */
     --main-mt: 2rem;
     --main-mb: 5rem;
-    --section-mb: 7rem;
 
     /* TEXT */
     --title: 4rem;
     --subtitle: 1.5rem;
-    --menu-text: 1.1rem;
-    --form-label: 1.2rem;
-    --button-text: 1.2rem;
     --section-title: 2.5em;
     --desc-title: 1.3rem;
-    --quick-text-hint: 1.1rem;
     --letter-spacing: .2rem;
     --word-spacing: .6rem;
 
@@ -40,22 +31,14 @@
 /* ================================================== */
 
 /* #region GENERAL CLASSES */
-html body {
+body {
     height: 100%;
 }
 
 a {
-    color: var(--accent);
     text-decoration: none;
 }
 
-a:visited {
-    color: var(--accent-trinary);
-}
-
-p {
-    color: var(--text-color);
-}
 
 .content {
     padding: 0 1rem 0 1rem;
@@ -139,7 +122,6 @@ nav#menu {
 /* #region BREADCRUMB */
 nav#breadcrumb {
     margin-top: 1rem;
-    color: var(--text-color);
 }
 
 nav#breadcrumb p {
@@ -155,13 +137,9 @@ nav#breadcrumb p {
 main {
     margin-top: var(--main-mt);
     margin-bottom: var(--main-mb);
-    color: var(--text-color);
     text-align: justify;
 }
 
-main h1, main h2, main h3, main h4, main h5, main h6 {
-    color: var(--accent);
-}
 
 main h1 {
     word-spacing: var(--word-spacing);
@@ -190,7 +168,6 @@ nav#quick-role {
 /* #region HOME PAGE CONTENT */
 
 dl#roles dt {
-    color: var(--accent-quaternary);
     letter-spacing: var(--letter-spacing);
     text-align: center;
     font-weight: 800;
@@ -228,7 +205,6 @@ dl#roles dd:first-of-type{
 
 
 dl p {
-    color: var(--bg-primary);
     font-weight: 500;
 }
 
@@ -293,30 +269,32 @@ ul#recipe-list {
 }
 
 ul#recipe-list .recipe {
-    break-inside: avoid;
-    width: 32%;
-    min-width: 21em;
+    break-inside:avoid ;
+    width: 25%;
+    min-width: 19em;
     height: 27em;
-    background-color: var(--accent-secondary);
-    border: 5px var(--accent-secondary) solid;
     border-radius: var(--radius-small);
-    padding: 0.5em;
-    color: white;
-    /* to align the link to the right */
+    border:3px solid var(--bg-primary);
     text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+ul#recipe-list .recipe div {
+    padding: .3rem 0.65em .5rem 0.65em;
+    height: 46%;
+    width: 100%;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     width: 100%;
-    height: 40%;
-    border-radius: calc(var(--radius-small) * .5);
     object-fit: cover;
+    height: 40%;
 }
 
 ul#recipe-list .recipe .recipe-title {
-    margin-top: 0.3em;
     font-size: 1.6rem;
-    height: 19%;
+    height: 35%;
     text-align: left;
 }
 
@@ -353,9 +331,6 @@ ul#recipe-list .recipe a {
 /* ================================================== */
 
 /* #region RECIPE PAGE */
-#plate-desc{
-    margin-bottom: 30rem;
-}
 
 #recipe-name-title {
     text-align: center;
@@ -448,10 +423,7 @@ ul#comment-list li {
 }
 
 button#del-comment {
-    background-color: var(--danger-button-color);
-    width: 100%;
-    padding: .5em 0;
-    margin-top: 1em;
+    display: none;
 }
 
 .comment-pp {
@@ -474,7 +446,6 @@ button#del-comment {
 .comment-date {
     display: block;
     text-align: right;
-    color: var(--accent);
 }
 
 #more-comment-btn {
@@ -514,12 +485,11 @@ button#del-comment {
 
 #login-date {
     display: block;
-    color: var(--accent);
     margin-bottom: 4rem;
 }
 
 #login-date + h3 + div {
-    margin-bottom: 10rem;
+    margin-bottom: 14rem;
 }
 
 #fav-recipe-list-container {
@@ -541,35 +511,31 @@ button#del-comment {
 }
 
 #fav-recipe-list .fav-recipe {
-    break-inside: avoid;
-    background-color: var(--accent-secondary);
-    border: 5px var(--accent-secondary) solid;
-    color: white;
-    height: 13em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 0.5em;
-    width: 100%;
+    border:3px solid var(--bg-primary);
+    height: 12em;
     border-radius: var(--radius-small);
-    /* to align the link to the right */
     text-align: right;
+    overflow: hidden;
+    margin: 1rem 0;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-img-crop {
     height: 100%;
-    width: 26%;
-    min-width: 14em;
+    width: 35%;
     object-fit: cover;
     float: left;
-    border-radius: calc(var(--radius-small) * .5);
+    margin-right: 1rem;
+}
+
+#fav-recipe-list .fav-recipe div {
+    padding: 1rem 0.65em 1rem 0.65em;
+    height: 100%;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-title {
-    display: flex;
-    align-items: center;
     text-align: left;
     height: 35%;
-    padding: 0 1em;
+    font-size: 1.6em;
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-title h4 {
@@ -605,7 +571,7 @@ a#edit-profile-link {
     display: none;
 }
 
-a#log-out {
+#log-out {
     display: none;
 }
 /* #endregion USER PAGE */
@@ -637,9 +603,6 @@ a#log-out {
     overflow-wrap: break-word;
 }
 
-.admin-cell a {
-    color: var(--text-color);
-}
 
 .admin-cell-margin {
     margin-bottom: 1em;
@@ -648,7 +611,6 @@ a#log-out {
 .admin-cell strong {
     display: block;
     font-size: var(--desc-title);
-    color: var(--accent);
     font-weight: 750;
 }
 
