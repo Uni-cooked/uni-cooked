@@ -2,20 +2,20 @@
 <html lang="it">
 
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Modifica profilo - Uni Cooked</title>
-        <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.ico">
-        <meta name="description" content="Gestisci e modifica il tuo profilo da cuoco universitario.">
-        <meta name="keywords" content="Uni Cooked,modifica,profilo">
-        <meta name="author" content="Uni Cooked">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin>
-        <link rel="preload" fetchpriority="high" as="image" href="./asset/img/header.png">
+        <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.ico" />
+        <meta name="description" content="Gestisci e modifica il tuo profilo da cuoco universitario." />
+        <meta name="keywords" content="Uni Cooked,modifica,profilo" />
+        <meta name="author" content="Uni Cooked" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preload" href="./asset/font/Inter.ttf" as="font" type="font/ttf" crossorigin />
+        <link rel="preload" fetchpriority="high" as="image" href="./asset/img/header.png" />
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/screen.css" media="screen">
-        <link rel="stylesheet" href="./css/mid.css" media="screen and (max-width: 768px)">
-        <link rel="stylesheet" href="./css/mini.css" media="screen and (max-width: 480px)">
+        <link rel="stylesheet" href="./css/screen.css" media="screen" />
+        <link rel="stylesheet" href="./css/mid.css" media="screen and (max-width: 768px)" />
+        <link rel="stylesheet" href="./css/mini.css" media="screen and (max-width: 480px)" />
         <!-- JS -->
         <script async src="./js/validate-useredit.js"></script>
     </head>
@@ -36,7 +36,7 @@
                 </div>
 
                 <nav id="menu">
-                    <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo">
+                    <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo" />
                     <input type="checkbox" id="ham-checkbox">
                     <label for="ham-checkbox">
                         <span id="ham-opened" class="hide">Menu ad <span lang="en">hamburger</span> aperto, disattivare la casella di controllo per chiuderlo</span>
@@ -44,7 +44,7 @@
                     </label>
                     
                     <ul>
-                        <li><img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"></li>
+                        <li><img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo" /></li>
                         <li><a href="./index.php" lang="en">HOME</a></li>
                         <li><a href="./catalogue.php">RICETTE</a></li>
                         <li><a href="./about-us.php">CONTATTI</a></li>
@@ -71,9 +71,9 @@
                         <legend class="hide">Dati del profilo</legend>
                         <div id="primary-info">
                             <div id="edit-pp">
-                                <img loading="lazy" src="{{profile-pic}}" alt="immagine profilo di {{username}}" id="chosen-image">
+                                <img loading="lazy" src="{{profile-pic}}" alt="immagine profilo di {{username}}" id="chosen-image" />
                                 <label id="mod-pp">
-                                    <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg">
+                                    <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg" />
                                     Modifica foto
                                 </label>
                                 {{profile-pic-error}}
@@ -83,7 +83,7 @@
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
                                     <p class="suggestion">Massimo 15 caratteri senza spazi</p>
-                                    <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit">
+                                    <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit" />
                                     {{nickname-error}}
                                 </div>
 
@@ -113,7 +113,7 @@
                     <fieldset>
                         <div class="input-container">
                             <label for="old-psw" id="name-in" class="form-label">Inserisci la vecchia <span lang="en">password</span></label>
-                            <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw">
+                            <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw" />
                             {{messaggio di old-psw}}
                         </div>
                         <div class="input-container">
@@ -125,12 +125,12 @@
                                 <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
                                 <li>Minimo 4 caratteri</li>
                             </ul>
-                            <input required type="password" name="psw" id="new-psw">
+                            <input required type="password" name="psw" id="new-psw" />
                             {{messaggio di new-psw}}
                         </div>
                         <div class="input-container">
                             <label for="repeat-new-psw" class="form-label">Ripeti la nuova <span lang="en">password</span></label>
-                            <input required type="password" name="repeat-psw" id="repeat-new-psw">
+                            <input required type="password" name="repeat-psw" id="repeat-new-psw" />
                             {{messaggio di repeat-psw}}
                         </div>
 
