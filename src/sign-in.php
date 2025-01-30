@@ -41,3 +41,5 @@ if (isset($_POST['submit'])) {
 } else {
     echo str_replace("{{messaggio di errore}}","",$paginaHtml);
 }
+
+?>

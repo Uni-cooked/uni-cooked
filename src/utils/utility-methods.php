@@ -865,3 +865,4 @@ class DB {
         return $s;
     }
 }
+?>
