@@ -91,12 +91,12 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunto l'attributo aria-label dove necessario.
 - Nascosto gli elementi di aiuto agli screen reader.
 - Eseguito l'image replacement dove necessario.
-- Assegnato gli attributi aria-live e aria-atomic negli errori degli input e nelle categorie della home per avvisare lo screen reader dell'animazione della carta. L'attributo role=\"alert\" infatti non è accettato dalla versione di Total Validator del Lab036.
+- Assegnato gli attributi aria-live e role per avvisare lo screen reader di un cambiamento.
 
 = Controlli sul sito
 == Strumenti
 Per eseguire i controlli sono stati adottati i seguenti strumenti:
-- *Total Validator* per assicurare la correttezza dei documenti html (completati da `JavaScript` e `PHP`).
+- *Total Validator v18.2.0* per assicurare la correttezza dei documenti `.html` (completati da `JavaScript` e `PHP`).
 - *W3C CSS Validator*
 - *WCAG color contrast checker* (estensione Chrome)
 - Screen reader:
@@ -149,15 +149,15 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 - `HTML5` e `CSS` validi.
 - Tutte le funzionalità principali del sito sono valide senza `JavaScript`.
 
-== Falsi positivi
-Validando il sito con la versione di Total Validator del Lab036 vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
-- L'aiuto alla navigazione \"salta al contenuto\" è stato messo dopo \"salta a dove ti trovi\" per mantenere la coerenza di ordine strutturale. Si fa notare che è stato omesso \"salta al menu\" perché posizionato appena dopo il titolo nell'header.
-- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input del menu ad hamburger.
+== Falsi positivi e warning
+Validando il sito con la versione 18.2.0 di Total Validator vengono evidenziati i seguenti falsi positivi e warning seguiti dalle motivazioni:
+- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]).
 - Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non è necessario segnare la seconda con un aria-label.
+- Nelle carte della home abbiamo aggiunto aria-live=\"assertive\" e role=\"region\" per avvertire lo screen reader dell'animazione. Il validatore segnala due errori: il primo riguarda il fatto che gli attributi sono assegnati a un \<div\> interno ad un \<dd\>; il secondo dovuto alla mancanza dell'attributo aria-label. Sarebbe risolvibile solo il secondo problema, tuttavia lo screen reader NVDA legge il contenuto dell'attributo solo alla fine della carta. Sembrandoci ancora più fuorviante abbiamo valutato fosse meglio non metterlo.
 - Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
 - Per la ragione citata precedentemente `JavaScript` deve inserire onchange=\"this.form.submit()\".
-- La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
+// - La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
 - Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
 - Nella pagina di modifica profilo non è necessaria una legend per la form di modifica password perché il compito è esplicito nel titolo e nelle label.
 
