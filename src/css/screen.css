@@ -68,7 +68,6 @@ html{
 }
 
 body {
-    height: 100%;
     background-color: var(--bg-primary);
 }
 
@@ -228,7 +227,7 @@ fieldset {
 
 /* #region HEADER */
 header {
-    background-image: url("../asset/img/header.png");
+    background-image: url("../asset/img/header.webp");
     background-color: var(--bg-primary);
     background-size: cover;
     background-repeat: no-repeat;
@@ -498,19 +497,19 @@ dl#roles dt {
 }
 
 dl#roles dt#fuorisede {
-    background-image: url("../asset/img/fuorisede.jpg");
+    background-image: url("../asset/img/fuorisede.webp");
 }
 
 dl#roles dt#pendolare {
-    background-image: url("../asset/img/pendolare.jpg");
+    background-image: url("../asset/img/pendolare.webp");
 }
 
 dl#roles dt#sede {
-    background-image: url("../asset/img/in-sede.jpg");
+    background-image: url("../asset/img/in-sede.webp");
 }
 
 dl#roles dt#dad {
-    background-image: url("../asset/img/dad.jpg");
+    background-image: url("../asset/img/dad.webp");
 }
 
 dl#roles dd {

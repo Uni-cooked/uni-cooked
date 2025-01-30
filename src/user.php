@@ -41,7 +41,7 @@ if (!isset($_GET["username"])) {
         if ($userInfo["immagine"]) {
             $paginaHtml = str_replace("{{profile-pic}}", $userInfo["immagine"], $paginaHtml);
         } else {
-            $paginaHtml = str_replace("{{profile-pic}}", "./asset/img/def-profile.png", $paginaHtml);
+            $paginaHtml = str_replace("{{profile-pic}}", "./asset/img/def-profile.webp", $paginaHtml);
         }
 
         $limit = 5;
@@ -136,7 +136,7 @@ if (!isset($_GET["username"])) {
         if ($userInfo["immagine"]) {
             $paginaHtml = str_replace("{{profile-pic}}", $userInfo["immagine"], $paginaHtml);
         } else {
-            $paginaHtml = str_replace("{{profile-pic}}", "./asset/img/def-profile.png", $paginaHtml);
+            $paginaHtml = str_replace("{{profile-pic}}", "./asset/img/def-profile.webp", $paginaHtml);
         }
 
         $limit = 5;

@@ -3,7 +3,10 @@ setlocal enabledelayedexpansion
 
 :: Imposta i percorsi delle cartelle
 set "cartella_sorgente=img_raw"
-set "cartella_destinazione=img"
+set "cartella_destinazione=src/asset/img"
+
+@REM set "cartella_sorgente=user_profiles_raw"
+@REM set "cartella_destinazione=src/user_profiles"
 
 if exist "%cartella_destinazione%" (
     rd /s /q "%cartella_destinazione%"

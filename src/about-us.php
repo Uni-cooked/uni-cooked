@@ -24,7 +24,7 @@ if(!isset($_POST["suggestion"])) {
             if($userInfo["immagine"]) {
                 $paginaHtml=str_replace("{{profile-pic-src}}",$userInfo["immagine"],$paginaHtml);
             } else {
-                $paginaHtml=str_replace("{{profile-pic-src}}","./asset/img/def-profile.png",$paginaHtml);
+                $paginaHtml=str_replace("{{profile-pic-src}}","./asset/img/def-profile.webp",$paginaHtml);
             }
             
         }

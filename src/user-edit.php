@@ -45,7 +45,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.png",$paginaHtml);
+        $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -166,7 +166,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
         } else {
-            $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.png",$paginaHtml);
+            $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
         }
         $categoria=$userInfo["tipo_studente"];
         $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -212,7 +212,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.png",$paginaHtml);
+        $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);

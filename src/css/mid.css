@@ -83,7 +83,7 @@ nav#menu label {
     --x-width: calc(var(--hamburger-height) * 1.41421356237);
     position: relative;
     margin: auto var(--hamburger-h-margin);
-    background-image: url("../asset/img/burger/burger-middle.png");
+    background-image: url("../asset/img/burger/burger-middle.webp");
     background-size: 100% 100%;
 }
 
@@ -95,7 +95,7 @@ nav#menu label::after {
 
 nav#menu label::before {
     bottom: calc(var(--hamburger-gap) + var(--bar-height));
-    background-image: url("../asset/img/burger/burger-top.png");
+    background-image: url("../asset/img/burger/burger-top.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
@@ -103,7 +103,7 @@ nav#menu label::before {
 
 nav#menu label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
-    background-image: url("../asset/img/burger/burger-bottom.png");
+    background-image: url("../asset/img/burger/burger-bottom.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
@@ -112,7 +112,7 @@ nav#menu label::after {
 nav#menu input:checked + label::before {
     width: var(--x-width);
     transform:  rotate(-45deg) translate(calc(var(--bar-width) / -2),0);
-    background-image: url("../asset/img/burger/fork.png");
+    background-image: url("../asset/img/burger/fork.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
@@ -122,7 +122,7 @@ nav#menu input:checked + label::before {
 nav#menu input:checked + label::after {
     width: var(--x-width);
     transform:  rotate(45deg) translate(calc(var(--bar-width) / -2),0);
-    background-image: url("../asset/img/burger/knife.png");
+    background-image: url("../asset/img/burger/knife.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);

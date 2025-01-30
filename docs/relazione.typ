@@ -282,6 +282,7 @@ Il lavoro è stato partizionato nel seguente modo tra i diversi membri del grupp
   - Modifica profilo utente
 - Creazione dello stile di stampa.
 - Creazione della funzionalità di ricerca delle ricette.
+- Creazione dell' algoritmo di ricerca delle ricette.
 - Creazione delle animazioni.
 - Controlli vari per il sito.
 

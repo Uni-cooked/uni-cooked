@@ -199,7 +199,7 @@ if(isset($_GET["recipe"])) {
         }
         $immagine=$userInfo["immagine"];
         if($immagine==null) {
-            $immagine="./asset/img/def-profile.png";
+            $immagine="./asset/img/def-profile.webp";
         }
         $userComment=$db->getUserPublicComment($isUserLogged,$recipe);
         if(is_string($userComment) && strcmp($userComment,"userLeftNoComment")==0) {
@@ -258,7 +258,7 @@ if(isset($_GET["recipe"])) {
                 }
                 $immagine=$user["immagine"];
                 if($immagine==null) {
-                    $immagine="./asset/img/def-profile.png";
+                    $immagine="./asset/img/def-profile.webp";
                 }
                 if($commentNumber==$limit-6) {
                     $finalList.='<li id="previous-last-comment"><img loading="lazy" src="'.$immagine.'" alt="" class="comment-pp"/>';
