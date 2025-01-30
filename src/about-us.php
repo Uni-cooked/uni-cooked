@@ -69,3 +69,5 @@ if(!isset($_POST["suggestion"])) {
     }
 
 }
+
+?>

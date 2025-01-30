@@ -12,3 +12,4 @@ if($db->isUserLogged()!=false) {
     $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
 }
 echo $paginaHtml;
+?>

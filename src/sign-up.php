@@ -132,3 +132,5 @@ if (isset($_POST['submit'])) {
     $paginaHtml = str_replace("{{messaggio di psw-ripetuta}}","",$paginaHtml);
     echo $paginaHtml;
 }
+
+?>

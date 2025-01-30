@@ -14,3 +14,4 @@ if(isset($_POST["sign-out"])) {
     exit();
 }
 
+?>

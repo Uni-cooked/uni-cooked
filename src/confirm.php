@@ -82,3 +82,5 @@ if(isset($_GET["action"])) {
     header('Location: 500-err.php');
     exit();
 }
+
+?>

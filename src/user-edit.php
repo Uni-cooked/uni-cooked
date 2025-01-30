@@ -283,3 +283,5 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         exit();
     }
 }
+
+?>

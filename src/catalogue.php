@@ -59,14 +59,14 @@ function CreateRecipeCard(string $img, string $title, int $grade, string $catego
 {
     global $db;
     $TEMPLATE = '<li class="recipe">
-                    <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt="">
+                    <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt=""/>
                     <div>
                         <h3 class="recipe-title">' . $db->checkLang(ucfirst($title)) . '</h3>
                         <ul class="recipe-info">
-                            <li><img loading="lazy" src="./asset/icon/grade.svg" alt="voto">' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
-                            <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria">' . strtoupper($category) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto">' . strtoupper($course) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo">' . $cost . ' &euro;</li>
+                            <li><img loading="lazy" src="./asset/icon/grade.svg" alt="voto"/>' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
+                            <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria"/>' . strtoupper($category) . '</li>
+                            <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto"/>' . strtoupper($course) . '</li>
+                            <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo"/>' . $cost . ' &euro;</li>
                         </ul>   
                         <a href="./recipe.php?recipe=' . urlencode($title) . '" title="' . $title . '">Vai alla ricetta</a>
                     </div> 
@@ -78,7 +78,7 @@ function CreateOrderChanger($filters_list)
 {
     $HIDDEN = "";
     while ($value = current($filters_list)) {
-        $HIDDEN .= "<input type=\"hidden\" name=" . key($filters_list) . " value=" . $value . ">";
+        $HIDDEN .= "<input type=\"hidden\" name=" . key($filters_list) . " value=" . $value . "/>";
         next($filters_list);
     }
     return $HIDDEN;
