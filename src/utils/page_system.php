@@ -149,7 +149,7 @@ class PageSystem
         $TEMPLATE = "<p>" . $currentPage . ' <abbr title="su">/</abbr> ' . $totalPages . " </p>" . $prev_btn . $next_btn;
         $HIDDEN = "";
         while ($value = current($filters_list)) {
-            $HIDDEN .= "<input type=\"hidden\" name=" . key($filters_list) . " value=" . $value . "/>";
+            $HIDDEN .= "<input type=\"hidden\" name=" . key($filters_list) . " value=\"" . $value . "\"/>";
             next($filters_list);
         }
         return $TEMPLATE . $HIDDEN;
