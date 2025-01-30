@@ -74,52 +74,59 @@ class PageSystem
             $this->filter_list["min_rate"] = $this->grade;
         }
         $order_query = "ORDER BY ";
-
+        
         if ($this->recipeName) {
             $order_query .= "LOCATE(?, r.nome),";
             $params[] = $this->recipeName;
         }
-
-
-        $order_query .= "CASE
-                        WHEN v.voto <> 31 THEN 0
-                        ELSE 1                        
-                        END,";
-
+        
+        if ($this->db->isUserLogged()) {
+            $user = $this->db->getUserInfo();
+            if (!is_string($user)) {
+                $order_query .= "CASE
+                WHEN r.categoria = \"" . $user["tipo_studente"] . "\" THEN 0
+                ELSE 1                        
+                END,";
+            }
+        }
+        
+        if($this->order) {  
+            $this->filter_list["ord"] = $this->order;
+        }
 
         switch ($this->order) {
             case 'prezzo_asc':
                 $order_query .= "r.prezzo ASC";
+                $order_query .= ",CASE
+                        WHEN v.voto <> 31 THEN 0
+                        ELSE 1                        
+                        END";
                 break;
 
             case 'prezzo_desc':
                 $order_query .= "r.prezzo DESC";
+                $order_query .= ",CASE
+                        WHEN v.voto <> 31 THEN 0
+                        ELSE 1                        
+                        END";
                 break;
 
             case 'voto_desc':
-                $order_query .= "voto DESC";
-                break;
-
             default:
-                $order_query .= "voto DESC";
-                break;
+                $order_query .= "CASE
+                        WHEN v.voto <> 31 THEN 0
+                        ELSE 1                        
+                        END";
+                        $order_query .= ",voto DESC";
+                        break;
         }
 
-        if ($this->db->isUserLogged()) {
-            $user = $this->db->getUserInfo();
-            if (!is_string($user)) {
-                $order_query .= ",CASE
-                WHEN r.categoria = \"" . $user["tipo_studente"] . "\" THEN 0
-                ELSE 1                        
-                END";
-            }
-        }
 
+        $order_query.= ",r.nome ASC";
 
         $query .= $order_query;
-
+        
         $results = $this->db->GetRecipes($query, $params);
-
 
         $this->totalPages = ceil(($results ? count($results) : 1) / PageSystem::ITEMS_PER_PAGE);
         $this->current_page = clamp($this->current_page = $page, 0, $this->totalPages);
