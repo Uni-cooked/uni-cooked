@@ -215,8 +215,6 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 Di seguito sono riportate, per pagina, alcune funzionalità particolari che possono non risultare immediate da notare.
 
 == Elementi comuni
-Negli aiuti alla navigazione a inizio di ogni pagina è stato omesso il collegamento al menu perché è posto immediatamente dopo il titolo e il sottotitolo. 
-
 Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione con il sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale sfruttando la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può navigare senza troppi problemi nel sito anche quando il menu è aperto. Inoltre un utente con difficoltà visiva totale o quasi totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine.
 
 Seguendo le indicazioni delle #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")] gli input di tipo checkbox precedono le label, in tutti gli altri casi avviene il contrario. Unica eccezione riguarda l'input per modificare la foto profilo che deve essere posto all'interno della label per permettere una corretta funzionalità tramite regole `CSS`. Questa soluzione risulta comunque valida.
@@ -229,12 +227,11 @@ I link \"vai alle ricette\" delle carte delle categorie potrebbero risultare poc
 == Ricette
 L'algoritmo di ricerca è stato soggetto di attenta analisi e sviluppo per garantire una esperienza personalizzata ad ogni tipologia di utenza:
 - La ricerca per testo controlla delle corrispondenze nel nome delle ricette.
-- Se l'utente è autenticato, a parità di valutazione viene visualizzata prima la ricetta della categoria dell'utente.
-- Le ricette senza valutazioni vengono poste come ultime in qualsiasi ricerca.
-- Nelle situazioni diverse da quelle citate l'`SQL` non contiene alcuna politica di ordinamento quindi vengono esposti i risultati in maniera casuale.
+- Se l'utente è autenticato si dà precedenza alle ricette della sua categoria, poi vengono applicati i filtri e le politiche di ordinamento.
+- In caso l'utente voglia ordinare per voto decrescente vengono visualizzate per ultime le ricette senza valutazione.
+- A parità di ranking le ricette vengono ordinate in modo alfabetico così da mantenere una sequenza univoca. Questa operazione è fondamentale poiché viene eseguita una query ogni volta che viene caricata una nuova pagina dei risultati. Senza questa funzionalità si corre il rischio di visualizzare la stessa ricetta in due pagine successive. Un'altra soluzione sarebbe stata quella di interrogare una sola volta il database e salvare i risultati in una variabile di sessione. Memorizzare tuttavia diverse decine di ricette (in uno scenario reale) ipotiziamo possa rallentare le performance del sito.
 
 I valori degli slider nei filtri sono nascosti allo screen reader perché nei test svolti questi vengono letti ogni volta che si aggiornano. Il minimo e massimo sono esplicitati nella label.
-
 
 I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della ricetta.
 
