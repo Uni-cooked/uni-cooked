@@ -216,7 +216,7 @@ dd .role-info-label {
     display: none;
 }
 
-.role-desc + a {
+.role-desc + div {
     display: none;
 }
 /* #endregion HOME PAGE CONTENT*/
