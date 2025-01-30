@@ -214,13 +214,17 @@ Le pagine che informano l'utente riguardo alcune operazioni:
 = Menzioni onorevoli
 Di seguito sono riportate, per pagina, alcune funzionalità particolari che possono non risultare immediate da notare.
 
+== Elementi comuni
+Negli aiuti alla navigazione a inizio di ogni pagina è stato omesso il collegamento al menu perché è posto immediatamente dopo il titolo e il sottotitolo. 
+
+Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione con il sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale sfruttando la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può navigare senza troppi problemi nel sito anche quando il menu è aperto. Inoltre un utente con difficoltà visiva totale o quasi totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine.
+
+Seguendo le indicazioni delle #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")] gli input di tipo checkbox precedono le label, in tutti gli altri casi avviene il contrario. Unica eccezione riguarda l'input per modificare la foto profilo che deve essere posto all'interno della label per permettere una corretta funzionalità tramite regole `CSS`. Questa soluzione risulta comunque valida.
+
 == Home
 Le carte delle categorie sono animate solamente tramite `CSS` per rendere la funzionalità indipendente dalle preferenze dell'utente, il quale può disabilitare `JavaScript`. Per realizzarle è stato necessario utilizzare la pseudo-classe :has() supportata da tutti i browser dal 2023 (si veda #link("https://developer.mozilla.org/en-US/docs/Web/CSS/:has")[#underline("MDN web docs")]). Poiché può essere considerata una clausola relativamente recente abbiamo aggiunto delle regole di supporto che eliminano l'animazione e il relativo pulsante. L'utente non percepisce quindi un malfunzionamento del sito, solamente viene privato di alcune informazioni (quelle nel retro della carta). Queste comunque non sono fondamentali per la descrizione della categoria, bensì sono pensate principalmente per suscitare divertimento ed esclusività nell'utente.
 
 I link \"vai alle ricette\" delle carte delle categorie potrebbero risultare poco espressivi per un utente che usa lo screen reader. Per ovviare al problema abbiamo aggiunto l'attributo title con il nome della categoria in modo che, letto dopo la descrizione della carta, sembri un tutt'uno con il testo.
-
-Il menu ad hamburger è reso accessibile mediante una label che cambia testo dinamicamente a seconda dello stato del menu. Quando il menu è aperto la porzione di sito visibile al di sotto viene offuscata in modo da impedire l'interazione con il sito e concentrare l'attenzione dell'utente sul menu. Viene inoltre bloccato lo scorrimento verticale sfruttando la pseudo-classe :has(). Se nuovamente questa non è supportata l'utente può scorrere nella pagina ma questa rimane offuscata obbligandolo a chiudere il menu. L'utente che adopera lo screen reader può navigare senza troppi problemi nel sito anche quando il menu è aperto. Inoltre un utente con difficoltà visiva totale o quasi totale che utilizza lo screen reader con molta probabilità non è infastidito dal filtro che offusca le pagine. \
-Si fa notare che nel menu ad hamburger vi è l'unico caso in cui l'input precede la label. Questo permette tuttavia di dipendere solamente da regole `CSS` ben supportate, evitando quindi la pseudo-classe :has() e `JavaScript`.
 
 == Ricette
 L'algoritmo di ricerca è stato soggetto di attenta analisi e sviluppo per garantire una esperienza personalizzata ad ogni tipologia di utenza:

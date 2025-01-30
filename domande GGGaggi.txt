@@ -1,11 +1,11 @@
-card non in dd e aria label letto alla fine
+* card non in dd e aria label letto alla fine
 sistemare gli alt delle img profilo
 sistemare alt chi siamo
 input/label card e burger
 reset img user edit js
 
 NB
-no aria label nelle card perché letto alla fine
-checkbox prima di label, il resto dopo (vedi https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
-input cambia foto unico dentro la label
+* no aria label nelle card perché letto alla fine
+* checkbox prima di label, il resto dopo (vedi https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+* input cambia foto unico dentro la label (warning/falso positivo o menzioni?)
 no salta al menu
