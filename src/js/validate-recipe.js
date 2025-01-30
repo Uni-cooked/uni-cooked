@@ -68,7 +68,7 @@ function checkReview(){
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(listeners[id][0], listeners[id][1]);
+		document.getElementById(id).addEventListener(review[id][0], review[id][1]);
 	}
 }
 
