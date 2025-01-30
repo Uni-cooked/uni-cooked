@@ -6,3 +6,5 @@ reset img user edit js
 
 NB
 no aria label nelle card perché letto alla fine
+checkbox prima di label, il resto dopo (vedi https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+input cambia foto unico dentro la label
