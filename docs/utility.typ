@@ -48,10 +48,10 @@
         inset: 0.5em,
         table.cell(colspan: 3, stroke: none)[*DATI DI ACCESSO* \ \ ],
         [*Nome utente*], [*Password*], [*Tipo*],
-        [user], [user], [dad],
-        [GGGaggi], [GGGaggi], [pendolare],
-        [Tony], [Tony], [in sede],
-        [UgoFantozzi], [UgoFantozzi], [fuorisede],
+        [user], [user], [DAD],
+        [GGGaggi], [GGGaggi], [Pendolare],
+        [Tony], [Tony], [In sede],
+        [UgoFantozzi], [UgoFantozzi], [Fuorisede],
       ),
     )
 
