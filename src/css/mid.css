@@ -126,7 +126,7 @@ nav#menu input:checked + label::after {
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
-    transition-timing-function: cubic-bezier(.36,.76,.59,1.11);
+    transition-timing-function: cubic-bezier(.39,.82,.31,.95);
 }
 
 nav#menu input:checked + label {
