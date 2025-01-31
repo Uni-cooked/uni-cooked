@@ -68,11 +68,11 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     } elseif (mb_strlen($username)>15) {
         $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg" id="err-edit-nam">Il nome utente non deve essere più lungo di 15 caratteri</p>',$paginaHtml);
         $errorFound=true;
-    } elseif (preg_match("/^([\w\d])+$/",$username)==0) {
+    } elseif (preg_match("/^[a-zA-ZÀ-Ýß-ÿ0-9]+$/",$username)==0) {
         $errorFound=true;
-        $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg" id="err-edit-nam">Il nome utente non deve contenere spazi o caratteri speciali</p>',$paginaHtml);
+        $paginaHtml = str_replace("{{nickname-error}}",'<p role="alert" class="err-msg" id="err-edit-nam">Il nome utente non deve contenere spazi o caratteri speciali',$paginaHtml);
     } else {
-        $username=Sanitizer::SanitizeUserInput($username);
+        $username=Sanitizer::SanitizeUsername($username);
         $isUserPresent=$db->checkUserPresence($username);
         if (strcmp($isUserPresent,"ExceptionThrow")!=0 && strcmp($isUserPresent,"ConnectionFailed")!=0 && $isUserPresent==true && strcmp($username,$isLogged)!=0) {
             $errorFound=true;
@@ -251,7 +251,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     } elseif(mb_strlen($newPsw)<4) {
         $paginaHtml=str_replace("{{messaggio di new-psw}}",'<p role="alert" class="err-msg" id="err-new-psw">La nuova <span lang="en">password</span> deve essere di almeno 4 caratteri</p>',$paginaHtml);
         $errorFound=true;
-    } elseif (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).+$/",$newPsw)==0) {
+    } elseif (preg_match("/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).+$/",$newPsw)==0) {
         $errorFound=true;
         $paginaHtml = str_replace("{{messaggio di new-psw}}",'<p role="alert" class="err-msg" id="err-new-psw">La <span lang="en">password</span> deve avere una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale</p>',$paginaHtml);
     } else {

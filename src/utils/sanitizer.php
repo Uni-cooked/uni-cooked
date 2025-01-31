@@ -5,6 +5,12 @@ class Sanitizer {
 
     private const allowedTags ='<em><strong><ul><li>';
     
+    public static function SanitizeUsername($value) {
+        $value = trim($value);
+        $value = strip_tags($value);
+        $value = str_replace(" ","",$value);
+        return $value;
+    }
     public static function SanitizeUserInput($value) {
         $value = trim($value);
         $value = strip_tags($value);

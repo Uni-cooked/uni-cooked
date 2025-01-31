@@ -18,13 +18,12 @@ if ($isLogged!=false) {
 }
 
 if (isset($_POST['submit'])) {
-    $username=Sanitizer::SanitizeUserInput($_POST["nome"]);
+    $username=Sanitizer::SanitizeUsername($_POST["nome"]);
     $psw=$_POST["psw"];
     $result=$db->logUser($username,$psw);
 
     if ($result==true && is_bool($result)) {
         $_POST = null;
-        echo $result;
         header("Location: index.php");
         exit();
     } else if ($result==false) {

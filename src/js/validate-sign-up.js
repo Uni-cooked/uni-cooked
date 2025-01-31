@@ -28,7 +28,7 @@ function UltimateCheck(){
 
 function validateNewUsername() {
 	var Username = document.forms['credentials']['student-name-up'].value;
-	const allowedChars = /^[A-Za-z0-9]+$/; // lettere maiuscole e minuscole, numeri
+	const allowedChars = /^[a-zA-ZÀ-Ýß-ÿ0-9]+$/; // lettere maiuscole e minuscole, numeri
     
     if(Username.lenght < 1){
 		var check = document.getElementById("err-name");
@@ -52,7 +52,7 @@ function validateNewUsername() {
 		return false;
 	}
 
-	if (Username.search(/^[a-zA-Z0-9!\-_.]{1,15}$/) != 0 || !allowedChars.test(Username)) {
+	if (Username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) != 0 || !allowedChars.test(Username)) {
 		var check = document.getElementById("err-name");
 		deleteError(check);
 		var p = messageError("err-name");
@@ -131,7 +131,7 @@ function validatePassword() {
 		return false;
 	}
 
-	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,!?@+-_€$%&^*<>])[A-Za-z\d.,!?@+-_€$%&^*<>]{4,16}$/) !=0) {
+	if (Password.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) !=0) {
 		var check = document.getElementById("err-psw");
 		deleteError(check);
 		var p = messageError("err-psw");

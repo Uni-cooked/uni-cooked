@@ -78,7 +78,7 @@ function chargeNewImage() {
 
 function validateEditNewUsername() {
 	var Username = document.forms['new-info']['nickname-edit'].value;
-	const allowedChars = /^[A-Za-z0-9]+$/; // lettere maiuscole e minuscole, numeri
+	const allowedChars = /^[a-zA-ZÀ-Ýß-ÿ0-9]+$/; // lettere maiuscole e minuscole, numeri
 
 	if(Username.length < 1 || Username == ""){
 		var check = document.getElementById("err-edit-nam");
@@ -104,7 +104,7 @@ function validateEditNewUsername() {
 		return false;
 	}
 
-	if (Username.search(/^[a-zA-Z0-9!\-_.]{1,15}$/) != 0 || !allowedChars.test(Username)) {
+	if (Username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) != 0 || !allowedChars.test(Username)) {
 		var check = document.getElementById("err-edit-nam");
 		deleteError(check);
 		const name = document.getElementById("nickname-edit").parentNode;
@@ -154,7 +154,7 @@ function validateEditPassword() {
 		return false;
 	}
 	
-	if (Password.search(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.,!?@+-_€$%^*<>])[A-Za-z\d@.#$!%*?&]{4,16}$/) !=0) {
+	if (Password.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) !=0) {
 		var check = document.getElementById("err-new-psw");
 		deleteError(check);
 		const psw = document.getElementById("new-psw").parentNode;
