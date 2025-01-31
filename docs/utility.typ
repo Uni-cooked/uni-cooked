@@ -9,7 +9,7 @@
   text(25pt, weight: "bold", fill: black, font: "Liberation Sans")[UNI COOKED \ ]
 
   circle(radius: 7em, fill: rgb("#302E8E"))[
-    #image("../src/asset/img/def-profile.png", height: 100%)
+    #image("../img_raw/def-profile.png", height: 100%)
   ]
 
   v(1.5em)

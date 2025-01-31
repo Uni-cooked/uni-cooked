@@ -84,14 +84,14 @@
                             <div id="edit-info">
                                 <div class="input-container">
                                     <label class="form-label" for="nickname-edit">Nome utente</label>
-                                    <p class="suggestion">Massimo 15 caratteri (non speciali) senza spazi</p>
+                                    <p class="suggestion">Massimo 15 caratteri alfanumerici senza spazi</p>
                                     <input value="{{username}}" required type="text" id="nickname-edit" class="input-margin" name="nickname-edit"/>
                                     {{nickname-error}}
                                 </div>
 
                                 <div class="input-container">
                                     <label class="form-label" for="stud-cat-edit">Categoria studente</label>
-                                    <select required id="stud-cat-edit" name="stud-cat-edit">
+                                    <select id="stud-cat-edit" name="stud-cat-edit">
                                         <option value="fuorisede">Fuorisede</option>
                                         <option value="pendolare">Pendolare</option>
                                         <option value="in_sede">In sede</option>
