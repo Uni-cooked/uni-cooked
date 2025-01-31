@@ -151,13 +151,12 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda il codice:
 
 == Falsi positivi e warning
 Validando il sito con la versione 18.2.0 di Total Validator vengono evidenziati i seguenti falsi positivi e warning seguiti dalle motivazioni:
-- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]).
-- Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non è necessario segnare la seconda con un aria-label.
-- Nelle carte della home abbiamo aggiunto aria-live=\"assertive\" e role=\"region\" per avvertire lo screen reader dell'animazione. Il validatore segnala due errori: il primo riguarda il fatto che gli attributi sono assegnati a un \<div\> interno ad un \<dd\>; il secondo dovuto alla mancanza dell'attributo aria-label. Sarebbe risolvibile solo il secondo problema, tuttavia lo screen reader NVDA legge il contenuto dell'attributo solo alla fine della carta. Sembrandoci ancora più fuorviante abbiamo valutato fosse meglio non metterlo.
+- Gli aiuti alla navigazione dell'header seguono l'ordine della struttura, quindi breadcrumb, menu e contenuto.
+- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]). L'input usato per modificare la foto profilo dovrebbe essere posizionato dopo la label secondo le WCAG, così però richiederebbe l'uso della pseudo-classe :has(). Per renderlo funzionante con qualsiasi versione del browser abbiamo preferito mettere l'input dentro la label, soluzione comunque valida e discussa con la prof. Gaggi.
+- Sebbene il tag nav sia usato sia per il menu che per la breadcrumb non ci è sembrato necessario distinguerne una con un aria-label.
 - Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
-- Per la ragione citata precedentemente `JavaScript` deve inserire onchange=\"this.form.submit()\".
-// - La destinazione \"\#top\" per i link \"torna su\" sono funzionanti e supportati (si veda #link("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target")[#underline("MDN web docs")] e #link("https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier")[#underline("HTML Living Standard")]).
+- Per la ragione citata precedentemente `PHP` deve inserire onchange=\"this.form.submit()\".
 - Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
 - Nella pagina di modifica profilo non è necessaria una legend per la form di modifica password perché il compito è esplicito nel titolo e nelle label.
 
@@ -281,8 +280,7 @@ Il lavoro è stato partizionato nel seguente modo tra i diversi membri del grupp
   - Registrazione
   - Modifica profilo utente
 - Creazione dello stile di stampa.
-- Creazione della funzionalità di ricerca delle ricette.
-- Creazione dell' algoritmo di ricerca delle ricette.
+- Creazione dell'algoritmo di ricerca delle ricette.
 - Creazione delle animazioni.
 - Controlli vari per il sito.
 
