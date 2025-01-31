@@ -135,7 +135,7 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'usabilità:
 - Non esistono link circolari.
 - Tutte le pagine sono raggiungibili.
 - Gli errori 403, 404 e 500 sono gestiti.
-- Velocità di caricamento del sito e indice di accessibilità usando Lighthouse.
+- Velocità di caricamento del sito e indice di accessibilità usando Lighthouse (valori pari a 100 o prossimi su quasi tutte le pagine).
 - Font senza grazie per il sito, con grazie per la versione stampata.
 
 == Sicurezza
