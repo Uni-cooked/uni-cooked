@@ -316,6 +316,7 @@ ul#recipe-list .recipe ul.recipe-info img {
     height: 2em;
     vertical-align: middle;
     padding-right: 1em;
+    filter: invert(100%);
 }
 
 ul#recipe-list .recipe a {
@@ -364,6 +365,7 @@ ul#recipe-list .recipe a {
     vertical-align: middle;
     margin-right: .8em;
     width: 2rem;
+    filter: invert(100%);
 }
 
 #recipe-fav-btn {
@@ -561,6 +563,7 @@ button#del-comment {
     height: 1.5em;
     vertical-align: middle;
     padding-right: 0.5em;
+    filter: invert(100%);
 }
 
 #fav-recipe-list .fav-recipe a {
