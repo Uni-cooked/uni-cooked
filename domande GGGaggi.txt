@@ -1,0 +1,3 @@
+text index -> padding
+-webkit-appearence con appearence?
+name per i mostra psw?

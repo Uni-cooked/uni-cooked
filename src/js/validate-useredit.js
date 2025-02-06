@@ -222,11 +222,38 @@ function deleteError(p){
 	if(p) p.remove();
 }
 
+function ShowOldPsw() {
+    if (this.checked) {
+        document.getElementById("old-psw").type = "text";
+    } else {
+        document.getElementById("old-psw").type = "password";
+    }
+}
+
+function ShowNewPsw() {
+    if (this.checked) {
+        document.getElementById("new-psw").type = "text";
+    } else {
+        document.getElementById("new-psw").type = "password";
+    }
+}
+
+function ShowRepPsw() {
+    if (this.checked) {
+        document.getElementById("repeat-new-psw").type = "text";
+    } else {
+        document.getElementById("repeat-new-psw").type = "password";
+    }
+}
+
 const listeners = {
 	"nickname-edit" : ["input", validateEditNewUsername],
 	"old-psw" : ["input",validateOldPassword],
 	"new-psw" : ["input", validateEditPassword ],
 	"repeat-new-psw" : ["input", validateEditPasswordConfirm ],
+	"show-old-psw" : ["click", ShowOldPsw ],
+	"show-new-psw" : ["click", ShowNewPsw ],
+	"show-rep-psw" : ["click", ShowRepPsw ]
 };
 
 window.addEventListener('load', function () {

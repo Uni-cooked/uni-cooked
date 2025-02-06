@@ -74,7 +74,6 @@ nav#menu label {
     display: inline-block;
     width: var(--bar-width);
     height: var(--bar-height);
-    transform-origin: center center;
     transition: width var(--animation-hamburger-timing), transform var(--animation-hamburger-timing);
     background-color: var(--accent);
 }
@@ -111,7 +110,7 @@ nav#menu label::after {
 
 nav#menu input:checked + label::before {
     width: var(--x-width);
-    transform:  rotate(-45deg) translate(calc(var(--bar-width) / -2),0);
+    transform: rotate(-45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/fork.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
@@ -121,7 +120,7 @@ nav#menu input:checked + label::before {
 
 nav#menu input:checked + label::after {
     width: var(--x-width);
-    transform:  rotate(45deg) translate(calc(var(--bar-width) / -2),0);
+    transform: rotate(45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/knife.webp");
     background-size: 100% 100%;
     outline-offset: -1px;

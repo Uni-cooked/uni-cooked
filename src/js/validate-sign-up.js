@@ -184,12 +184,30 @@ function deleteError(p){
 	if(p) p.remove();
 }
 
+function ShowPsw() {
+	if (this.checked) {
+        document.getElementById("student-psw-up").type = "text";
+    } else {
+        document.getElementById("student-psw-up").type = "password";
+    }
+}
+
+function ShowPswRep() {
+	if (this.checked) {
+        document.getElementById("student-repeat-psw-up").type = "text";
+    } else {
+        document.getElementById("student-repeat-psw-up").type = "password";
+    }
+}
+
 const listeners = {
 	"student-name-up" : ["input", validateNewUsername ],
 	"student-mail-up" : ["input", validateEmail],
 	"student-cat-up" : ["blur", validateStudent],
 	"student-psw-up" : ["input", validatePassword ],
 	"student-repeat-psw-up" : ["input", validatePasswordConfirm ],
+	"show-psw" : ["click", ShowPsw ],
+	"show-psw-rep" : ["click", ShowPswRep ]
 };
 
 window.addEventListener('load', () => {

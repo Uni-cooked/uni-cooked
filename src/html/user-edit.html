@@ -115,7 +115,10 @@
                     <fieldset>
                         <div class="input-container">
                             <label for="old-psw" id="name-in" class="form-label">Inserisci la vecchia <span lang="en">password</span></label>
-                            <input required type="password" placeholder="Inserisci vecchia password" name="old_psw" id="old-psw"/>
+                            <input required type="password" placeholder="Inserisci la vecchia password" name="old_psw" id="old-psw"/>
+                            
+                            <input type="checkbox" name="show_old_psw" id="show-old-psw" class="show-psw-checkbox">
+                            <label for="show-old-psw">Mostra <span>password</span></label>
                             {{messaggio di old-psw}}
                         </div>
                         <div class="input-container">
@@ -127,12 +130,18 @@
                                 <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
                                 <li>Minimo 4 caratteri</li>
                             </ul>
-                            <input required type="password" name="psw" id="new-psw"/>
+                            <input required type="password" placeholder="Inserisci la nuova password" name="psw" id="new-psw"/>
+                            
+                            <input type="checkbox" name="show_new_psw" id="show-new-psw" class="show-psw-checkbox">
+                            <label for="show-new-psw">Mostra <span>password</span></label>
                             {{messaggio di new-psw}}
                         </div>
                         <div class="input-container">
                             <label for="repeat-new-psw" class="form-label">Ripeti la nuova <span lang="en">password</span></label>
-                            <input required type="password" name="repeat-psw" id="repeat-new-psw"/>
+                            <input required type="password" placeholder="Ripeti la nuova password" name="repeat-psw" id="repeat-new-psw"/>
+                            
+                            <input type="checkbox" name="show_rep_psw" id="show-rep-psw" class="show-psw-checkbox">
+                            <label for="show-rep-psw">Mostra <span>password</span></label>
                             {{messaggio di repeat-psw}}
                         </div>
 

@@ -1125,6 +1125,38 @@ a#back-up-first-comment:link {
     border-left: .4rem solid var(--accent);
 }
 
+.show-psw-checkbox {
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: .3em;
+    border: 2px solid var(--accent);
+
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.show-psw-checkbox::before {
+    content: "";
+    width: .7rem;
+    height: .7rem;
+    transform: scale(0);
+    background-color: var(--accent);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.show-psw-checkbox:checked::before {
+    transform: scale(1);
+}
+
+.show-psw-checkbox + label {
+    color: var(--accent);
+    margin-left: .3em;
+}
+
 #name-up-container {
     width: 50%;
     float: left;
@@ -1584,6 +1616,7 @@ select {
     height: 2.8rem;
     margin-bottom: .5rem;
     padding-right: 1em;
+    /* TODO: padding-left */
     text-indent: 1em;
     font-size: .9em;
     background-color: rgb(48, 48, 48);

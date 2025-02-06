@@ -35,7 +35,6 @@
                     <h1 id="header-title">UNI <span lang="en">COOKED</span></h1>
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
-
                 
                 <nav id="breadcrumb">
                     <p>Stai studiando in:</p>
@@ -71,7 +70,7 @@
                         <div id="name-up-container" class="input-container">
                             <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
                             <p class="suggestion">Massimo 15 caratteri alfanumerici senza spazi</p>
-                            <input required type="text" name="nome" id="student-name-up"/>
+                            <input required type="text" placeholder="Inserisci il nome" name="nome" id="student-name-up"/>
                             {{messaggio di nome}}
                         </div>
                         <div id="cat-up-container" class="input-container">
@@ -87,7 +86,7 @@
                         </div>
                         <div class="input-container">
                             <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
-                            <input required type="email" name="email" id="student-mail-up"/>
+                            <input required type="email" placeholder="Inserisci la mail" name="email" id="student-mail-up"/>
                             {{messaggio di email}}
                         </div>
                         <div class="input-container">
@@ -99,12 +98,18 @@
                                 <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
                                 <li>Minimo 4 caratteri</li>
                             </ul>
-                            <input required type="password" name="psw" id="student-psw-up"/>
+                            <input required type="password" placeholder="Inserisci la password" name="psw" id="student-psw-up"/>
+
+                            <input type="checkbox" name="show_psw" id="show-psw" class="show-psw-checkbox">
+                            <label for="show-psw">Mostra <span>password</span></label>
                             {{messaggio di psw}}
                         </div>
                         <div class="input-container">
                             <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
-                            <input required type="password" name="repeat-psw" id="student-repeat-psw-up"/>
+                            <input required type="password" placeholder="Ripeti la password" name="repeat-psw" id="student-repeat-psw-up"/>
+
+                            <input type="checkbox" name="show_psw_rep" id="show-psw-rep" class="show-psw-checkbox">
+                            <label for="show-psw-rep">Mostra <span>password</span></label>
                             {{messaggio di psw-ripetuta}}
                         </div>
 

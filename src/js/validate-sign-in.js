@@ -30,9 +30,18 @@ function Enable(button,id){
     button.disabled = false;
 }
 
+function ShowPsw() {
+    if (this.checked) {
+        document.getElementById("student-psw-in").type = "text";
+    } else {
+        document.getElementById("student-psw-in").type = "password";
+    }
+}
+
 const controllers = {
 	"student-name-in" : ["input", Button],
 	"student-psw-in" : ["input", Button ],
+    "show-psw" : ["click", ShowPsw ]
 };
 
 function UpdateButton(){
