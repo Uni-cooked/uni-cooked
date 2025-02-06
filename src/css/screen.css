@@ -1137,6 +1137,8 @@ a#back-up-first-comment:link {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+
+    margin-bottom: 1rem;
 }
 
 .show-psw-checkbox::before {
@@ -1146,15 +1148,21 @@ a#back-up-first-comment:link {
     transform: scale(0);
     background-color: var(--accent);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transition: transform 200ms  ease-out;
 }
 
 .show-psw-checkbox:checked::before {
     transform: scale(1);
+    transition: transform 200ms  cubic-bezier(.85,.36,.61,1.58);
 }
 
 .show-psw-checkbox + label {
-    color: var(--accent);
+    font-size: .9rem;
     margin-left: .3em;
+}
+
+#student-psw-in {
+    margin-bottom: 1rem;
 }
 
 #name-up-container {
@@ -1616,8 +1624,7 @@ select {
     height: 2.8rem;
     margin-bottom: .5rem;
     padding-right: 1em;
-    /* TODO: padding-left */
-    text-indent: 1em;
+    padding-left: 1rem;
     font-size: .9em;
     background-color: rgb(48, 48, 48);
     border-radius: var(--radius-max);
