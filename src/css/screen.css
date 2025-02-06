@@ -1161,7 +1161,7 @@ a#back-up-first-comment:link {
     margin-left: .3em;
 }
 
-#student-psw-in {
+#student-psw-in,#student-psw-up,#student-repeat-psw-up,#old-psw,#new-psw,#repeat-new-psw {
     margin-bottom: 1rem;
 }
 
