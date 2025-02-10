@@ -320,7 +320,7 @@ ul#ingredient-list {
 #add-comment-pp {
     display: block;
     float: none;
-    margin: 0 auto 1em;
+    margin: 0 auto 3em auto;
 }
 
 #add-comment-eval-container {

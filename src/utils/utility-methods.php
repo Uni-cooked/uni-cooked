@@ -7,8 +7,8 @@ session_start();
 class DB {
     private const HOST_DB = "localhost";
     private const DBNAME = "aprecoma";
-    private const USERNAME = "aprecoma";
-    private const PSW = "bahnoht9fuo2WiCh";
+    private const USERNAME = "root";
+    private const PSW = "";
 
     private $connection;
 
