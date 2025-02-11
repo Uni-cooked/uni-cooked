@@ -1,5 +1,7 @@
 #let copertina(
-  doc
+  doc,
+  link_website: "http://tecweb.studenti.math.unipd.it/aprecoma/index.php",
+  link_text: "tecweb.studenti.math.unipd.it/aprecoma/index.php",
 ) = {
   set text(lang: "it")
   set list(indent: 1em)
@@ -36,7 +38,7 @@
 
   v(1em)
 
-  link("http://tecweb.studenti.math.unipd.it/aprecoma/index.php")[#text(fill: navy, size: 1.3em)[#underline("tecweb.studenti.math.unipd.it/aprecoma/index.php")]]
+  link(link_website)[#text(fill: navy, size: 1.3em)[#underline(link_text)]]
 
   v(1em)
 
