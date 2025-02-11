@@ -876,6 +876,7 @@ ul#recipe-list .recipe a:link {
     font-size: 1.2em;
     font-weight: 700;
     word-spacing: var(--word-spacing);
+    vertical-align: text-top;
     margin: 0 1.5em;
 }
 
@@ -1009,11 +1010,13 @@ ol li.prep-li::marker {
     font-size: 1.2em;
     padding-top: .5em;
     padding-bottom: .5em;
+    margin-bottom: 0;
 }
 
 #add-comment-eval+span {
     margin-left: 1em;
     word-spacing: var(--word-spacing);
+    vertical-align: bottom;
 }
 
 #add-comment-text {
@@ -1126,7 +1129,7 @@ a#back-up-first-comment:link {
 }
 
 .show-psw-checkbox {
-    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
     width: 1.3rem;
     height: 1.3rem;
@@ -1616,14 +1619,12 @@ select {
     height: 2.8rem;
     margin-bottom: .5rem;
     padding-right: 1em;
-    /* TODO: padding-left */
-    text-indent: 1em;
+    padding-left: 1em;
     font-size: .9em;
     background-color: rgb(48, 48, 48);
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
     color: white;
-    -webkit-appearance: none;
 }
 
 textarea {
@@ -1641,7 +1642,6 @@ textarea {
 
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
-    -webkit-appearance: none;
     appearance: none;
     background: transparent;
     cursor: pointer;
