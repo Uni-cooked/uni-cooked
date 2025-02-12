@@ -227,7 +227,7 @@ if(isset($_GET["recipe"])) {
         }
         $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",$form,$paginaHtml);
     } else {
-        $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}","<p id=\"no-login-p\"><a href=\"sign-in.php\">Accedi</a> per poter commentare!</p>",$paginaHtml);
+        $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",'<p id="no-login-p"><a href="sign-in.php?ref='.urlencode($recipe).'">Accedi</a> per poter commentare!</p>',$paginaHtml);
     }
     
     $limit=5;
