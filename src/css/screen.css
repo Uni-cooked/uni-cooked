@@ -1419,11 +1419,6 @@ a#edit-profile-link {
     display: none;
 }
 
-
-#mod-pp:focus-within {
-    border: 2px solid white;
-}
-
 #primary-info {
     display: flex;
     gap: 4rem;
@@ -1441,16 +1436,34 @@ a#edit-profile-link {
     object-fit: cover;
     border-radius: var(--radius-max);
     display: block;
-    margin: 1rem auto 2.5rem;
+    margin: 1rem auto 2rem;
 }
 
-#edit-pp label {
-    background-color: var(--accent);
-    border-radius: var(--radius-small);
-    cursor: pointer;
-    padding: .5rem 1.5rem;
-    color: var(--bg-primary);
+#mod-pp,
+#del-pp {
+    font-size: 1em;
     font-weight: 800;
+    padding: .5rem;
+    width: 10em;
+    border-radius: var(--radius-small);
+}
+
+#mod-pp {
+    display: block;
+    cursor: pointer;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+#mod-pp:focus-within {
+    border: 2px solid white;
+}
+
+#del-pp {
+    display: block;
+    background-color: var(--danger-button-color);
+    color: var(--text-color);
+    margin: .7rem auto 0;
 }
 
 #profile-pic-err-p {
