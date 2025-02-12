@@ -59,18 +59,20 @@ echo $paginaHtml;
 function CreateRecipeCard(string $img, string $title, int $grade, string $category, string $course, int $cost): string
 {
     global $db;
-    $TEMPLATE = '<li class="recipe">
-                    <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt=""/>
-                    <div>
-                        <h3 class="recipe-title">' . $db->checkLang(ucfirst($title)) . '</h3>
-                        <ul class="recipe-info">
-                            <li><img loading="lazy" src="./asset/icon/grade.svg" alt="voto"/>' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
-                            <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria"/>' . ($category=="DAD" ? '<abbr title="didattica a distanza">'.$category.'</abbr>': $category) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto"/>' . strtoupper($course) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo"/>' . $cost . ' &euro;</li>
-                        </ul>   
-                        <a href="./recipe.php?recipe=' . urlencode($title) . '" title="' . $title . '">Vai alla ricetta</a>
-                    </div> 
+    $TEMPLATE = '<li class="recipe recipe-animation shadow">
+                    <a href="./recipe.php?recipe='. urlencode($title) . '" title="vai alla ricetta ' . $title . '" class="recipe-card>"
+                        <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt=""/>
+                        <div>
+                            <h3 class="recipe-title">' . $db->checkLang(ucfirst($title)) . '</h3>
+                            <ul class="recipe-info">
+                                <li><img loading="lazy" src="./asset/icon/grade.svg" alt="voto"/>' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
+                                <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria"/>' . ($category=="DAD" ? '<abbr title="didattica a distanza">'.$category.'</abbr>': $category) . '</li>
+                                <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto"/>' . strtoupper($course) . '</li>
+                                <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo"/>' . $cost . ' &euro;</li>
+                            </ul>
+                            <p aria-hidden="true" class="fake-link">Vai alla ricetta</p>
+                        </div>
+                    </a>
                 </li>';
     return $TEMPLATE;
 }
