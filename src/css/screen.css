@@ -1214,20 +1214,20 @@ ul.suggestion {
     padding-left: 2em;
 }
 
-.sign-box #credentials {
+#credentials {
     margin-bottom: 3rem;
 }
 
-.sign-box #redirect {
+#redirect {
     text-align: center;
     font-size: var(--quick-text-hint);
 }
 
-.sign-box #redirect p:nth-child(2) {
+#redirect p:nth-child(2) {
     margin-bottom: 2rem;
 }
 
-.sign-box #redirect a {
+#redirect a {
     color: var(--text-color);
     background-color: var(--accent-trinary);
     display: block;
