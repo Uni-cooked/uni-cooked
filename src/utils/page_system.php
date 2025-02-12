@@ -139,6 +139,13 @@ class PageSystem
 
     }
 
+    public function GetTotalResultNumber(): int {
+        $query ="SELECT Count(*) as N
+                FROM Ricetta";
+        $results = $this->db->GetRecipes($query, []);
+        return $results[0]["N"];
+    }
+
     public function GetParamList(): array
     {
         return $this->filter_list;

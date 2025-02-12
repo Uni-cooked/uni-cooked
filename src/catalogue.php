@@ -52,6 +52,7 @@ $paginaHtml = str_replace("id=\"ord-res\" name=\"ord\"", "id=\"ord-res\" name=\"
 $paginaHtml = str_replace("{{HIDDEN}}", CreateOrderChanger($pageSystem->GetParamList()), $paginaHtml);
 $paginaHtml = str_replace("{{RECIPES}}", $d_recipes, $paginaHtml);
 $paginaHtml = str_replace("{{PAGEBUTTONS}}", $pageSystem->RenderButtons(), $paginaHtml);
+$paginaHtml = str_replace("{{DISHES}}", $pageSystem->GetTotalResultNumber(), $paginaHtml);
 
 echo $paginaHtml;
 
