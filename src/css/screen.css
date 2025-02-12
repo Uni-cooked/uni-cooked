@@ -826,7 +826,7 @@ ul#recipe-list .recipe-animation {
 
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
-    height: 46%;
+    height: 50%;
     width: 100%;
 }
 
@@ -846,7 +846,7 @@ ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    height: 57%;
+    height: 48%;
     margin-bottom: .5rem;
 }
 
