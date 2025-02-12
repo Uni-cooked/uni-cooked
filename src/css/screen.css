@@ -1218,16 +1218,16 @@ ul.suggestion {
     margin-bottom: 3rem;
 }
 
-#redirect {
+#redirect-up,#redirect-in {
     text-align: center;
     font-size: var(--quick-text-hint);
 }
 
-#redirect p:nth-child(2) {
+#redirect-up p:nth-child(2) {
     margin-bottom: 2rem;
 }
 
-#redirect a {
+#redirect-up a {
     color: var(--text-color);
     background-color: var(--accent-trinary);
     display: block;
