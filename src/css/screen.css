@@ -767,6 +767,10 @@ select#ord-res {
     width: 15em;
 }
 
+#results {
+    padding-bottom: 0;
+}
+
 ul#recipe-list {
     display: flex;
     flex-wrap: wrap;
@@ -917,8 +921,8 @@ ul#recipe-list .recipe a:link {
 }
 
 #total-results{
-    text-align: center;
     font-weight: 500;
+    margin-bottom: 3rem;
 }
 
 #total-results span{
