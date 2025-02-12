@@ -1439,31 +1439,38 @@ a#edit-profile-link {
     margin: 1rem auto 2rem;
 }
 
-#mod-pp,
-#del-pp {
+#mod-pp {
     font-size: 1em;
     font-weight: 800;
     padding: .5rem;
     width: 10em;
     border-radius: var(--radius-small);
-}
-
-#mod-pp {
+    float: left;
     display: block;
     cursor: pointer;
     background-color: var(--accent);
     color: var(--bg-primary);
 }
 
-#mod-pp:focus-within {
-    border: 2px solid white;
-}
-
 #del-pp {
+    font-size: 1em;
+    font-weight: 800;
+    padding: .5rem;
+    border-radius: var(--radius-small);
+    width: 3rem;
+    margin-left: .5rem;
+    float: right;
     display: block;
     background-color: var(--danger-button-color);
     color: var(--text-color);
-    margin: .7rem auto 0;
+}
+
+#mod-pp {
+
+}
+
+#mod-pp:focus-within {
+    border: 2px solid white;
 }
 
 #profile-pic-err-p {
