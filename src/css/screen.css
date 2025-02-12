@@ -835,6 +835,11 @@ ul#recipe-list a.recipe-card:visited {
     color: var(--text-color);
 }
 
+ul#recipe-list a.recipe-card:focus-visible {
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px white;
+}
+
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
     height: 46%;

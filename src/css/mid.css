@@ -259,6 +259,10 @@ ul#recipe-list .recipe {
     height: auto;
 }
 
+ul#recipe-list a.recipe-card {
+    height: unset;
+}
+
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
     height: auto;
