@@ -59,7 +59,7 @@ echo $paginaHtml;
 function CreateRecipeCard(string $img, string $title, int $grade, string $category, string $course, int $cost): string
 {
     global $db;
-    $TEMPLATE = '<li class="recipe recipe-animation shadow">
+    $TEMPLATE = '<li class="recipe shadow">
                     <a href="./recipe.php?recipe='. urlencode($title) . '" title="vai alla ricetta ' . $title . '" class="recipe-card>"
                         <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt=""/>
                         <div>
