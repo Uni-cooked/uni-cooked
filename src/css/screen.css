@@ -1499,7 +1499,7 @@ a#edit-profile-link {
     padding: 0;
 }
 
-#recipie-request button {
+/* #recipie-request button {
     width: var(--button-width);
     height: var(--button-height);
     border-style: none;
@@ -1519,7 +1519,7 @@ a#edit-profile-link {
     float: right;
     background-color: var(--accent);
     color: var(--bg-primary);
-}
+} */
 
 #admin-grid {
     display: grid;

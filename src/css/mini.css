@@ -67,23 +67,6 @@ ul#ingredient-list li {
 
 /* ================================================== */
 
-/* #region ABOUT US PAGE */
-#recipie-request button {
-    width: 100%;
-}
-
-#recipie-request #cancel {
-    float: none;
-}
-
-#recipie-request #confirm {
-    float: none;
-    margin-bottom: .1em;
-}
-
-/* #endregion ABOUT US */
-
-/* ================================================== */
 
 /* #region USER PAGE */
 #profile-img {

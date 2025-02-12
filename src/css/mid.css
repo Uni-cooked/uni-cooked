@@ -408,16 +408,6 @@ ul#ingredient-list {
     margin-bottom: 60px;
 }
 
-#recipie-request button {
-    width: 49%;
-    margin-left: 0;
-    margin-top: 1.5em;
-}
-
-#recipie-request #cancel {
-    float: left;
-}
-
 #admin-grid {
     display: block;
 }
