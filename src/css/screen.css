@@ -1142,6 +1142,7 @@ a#back-up-first-comment:link {
 
 .show-psw-checkbox {
     appearance: none;
+    -webkit-appearance: none;
     cursor: pointer;
     width: 1.3rem;
     height: 1.3rem;
