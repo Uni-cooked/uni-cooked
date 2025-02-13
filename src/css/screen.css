@@ -845,7 +845,7 @@ ul#recipe-list a.recipe-card:focus-visible {
 
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
-    height: 46%;
+    height: 50%;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
@@ -864,7 +864,7 @@ ul#recipe-list .recipe ul.recipe-info {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    height: 57%;
+    height: 48%;
     margin-bottom: .5rem;
 }
 
