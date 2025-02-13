@@ -1218,13 +1218,10 @@ ul.suggestion {
     margin-bottom: 3rem;
 }
 
-#redirect-up,#redirect-in {
+#redirect-up,
+#redirect-in {
     text-align: center;
     font-size: var(--quick-text-hint);
-}
-
-#redirect-up p:nth-child(2) {
-    margin-bottom: 2rem;
 }
 
 #redirect-up a {
@@ -1237,6 +1234,10 @@ ul.suggestion {
     font-size: var(--button-text);
 }
 
+#redirect-in a:link {
+    color: var(--hypertext-link-color);
+    border-color: var(--bg-primary);
+}
 /* #endregion SIGN IN/UP PAGE */
 
 /* ================================================== */
