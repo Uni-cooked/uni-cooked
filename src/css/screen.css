@@ -885,6 +885,9 @@ ul#recipe-list a.recipe-card:link .fake-link {
     display: inline-block;
     text-decoration: underline;
     border-bottom: 2px solid var(--bg-secondary);
+    margin-top: 0.3em;
+    margin-right: 1em;
+    font-weight: 700;
 }
 
 ul#recipe-list a.recipe-card:visited .fake-link {
