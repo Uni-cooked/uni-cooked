@@ -60,7 +60,7 @@ function CreateRecipeCard(string $img, string $title, int $grade, string $catego
 {
     global $db;
     $TEMPLATE = '<li class="recipe shadow">
-                    <a href="./recipe.php?recipe='. urlencode($title) . '" title="vai alla ricetta ' . $title . '" class="recipe-card>"
+                    <a href="./recipe.php?recipe='. urlencode($title) . '" title="vai alla ricetta ' . $title . '" class="recipe-card">
                         <img loading="lazy" class="catalogue-recipe-img-crop" src="' . $img . '" alt=""/>
                         <div>
                             <h3 class="recipe-title">' . $db->checkLang(ucfirst($title)) . '</h3>
