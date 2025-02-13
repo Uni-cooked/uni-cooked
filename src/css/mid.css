@@ -271,7 +271,6 @@ ul#recipe-list .recipe .recipe-title {
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
     height: 14em;
-    border-radius: calc(var(--radius-small)* .5);
     object-fit: cover;
 }
 
