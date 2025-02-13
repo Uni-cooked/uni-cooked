@@ -566,7 +566,8 @@ dl p {
     padding: 3rem 3rem 5rem 3rem;
 }
 
-dd input,dd .role-info-label,.flip-card-back {
+dd .role-info-label,
+.flip-card-back {
     display: none;
 }
 
@@ -618,11 +619,8 @@ dd input,dd .role-info-label,.flip-card-back {
     }
     
     dd input {
-        padding: 0;
-        margin: 0;
         appearance: none;
         -webkit-appearance: none;
-        outline: none;
         pointer-events: none;
         display: block;
         position: absolute;
