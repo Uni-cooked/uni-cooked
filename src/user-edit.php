@@ -45,8 +45,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}",'class="disabled-btn"',$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -171,8 +175,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+            $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+            $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
         } else {
             $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+            $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+            $paginaHtml=str_replace("{{disable-class}}",'class="disabled-btn"',$paginaHtml);
         }
         $categoria=$userInfo["tipo_studente"];
         $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -226,8 +234,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}",'class="disabled-btn"',$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
