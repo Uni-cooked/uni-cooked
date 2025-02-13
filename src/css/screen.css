@@ -203,7 +203,7 @@ fieldset {
 .load-more-btn {
     display: block;
     padding: .8em 2em;
-    margin: 0 auto;
+    margin: 3rem auto 0;
     font-size: 1em;
     background-color: var(--accent);
 }
@@ -218,8 +218,12 @@ fieldset {
     color: var(--err-color);
 }
 
-.disabled-btn {
+.disabled-btn,.disabled-label {
     opacity: 30%;
+}
+
+.cursor-label {
+    cursor: pointer;
 }
 
 
@@ -624,6 +628,7 @@ dd .role-info-label,
         -webkit-appearance: none;
         pointer-events: none;
         display: block;
+        outline: none;
         position: absolute;
         bottom: 50%;
     }
@@ -647,7 +652,6 @@ dd .role-info-label,
         font-weight: 700;
         margin-top: 2rem;
         display: inline-block;
-        cursor: pointer;
         user-select: none;
         transition: background-color 600ms, color 600ms, transform 600ms;
     }
@@ -1439,7 +1443,6 @@ a#edit-profile-link {
 #edit-pp label {
     background-color: var(--accent);
     border-radius: var(--radius-small);
-    cursor: pointer;
     padding: .5rem 1.5rem;
     color: var(--bg-primary);
     font-weight: 800;
