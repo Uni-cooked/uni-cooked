@@ -566,7 +566,9 @@ dl p {
     padding: 3rem 3rem 5rem 3rem;
 }
 
-dd input,dd .role-info-label,.flip-card-back {
+dd input,
+dd .role-info-label,
+.flip-card-back {
     display: none;
 }
 
@@ -618,15 +620,9 @@ dd input,dd .role-info-label,.flip-card-back {
     }
     
     dd input {
-        padding: 0;
-        margin: 0;
+        position: absolute;
         appearance: none;
         -webkit-appearance: none;
-        outline: none;
-        pointer-events: none;
-        display: block;
-        position: absolute;
-        bottom: 50%;
     }
     
     dd:has(input:focus-visible) .role-info-label {
@@ -1439,37 +1435,46 @@ a#edit-profile-link {
     margin: 1rem auto 2rem;
 }
 
-#mod-pp {
-    font-size: 1em;
-    font-weight: 800;
-    padding: .5rem;
-    width: 10em;
-    border-radius: var(--radius-small);
-    float: left;
-    display: block;
-    cursor: pointer;
-    background-color: var(--accent);
-    color: var(--bg-primary);
-}
-
+#mod-pp,
 #del-pp {
     font-size: 1em;
     font-weight: 800;
     padding: .5rem;
     border-radius: var(--radius-small);
-    width: 3rem;
-    margin-left: .5rem;
-    float: right;
     display: block;
-    background-color: var(--danger-button-color);
-    color: var(--text-color);
+    cursor: pointer;
 }
 
 #mod-pp {
-
+    width: 10em;
+    float: left;
+    background-color: var(--accent);
+    color: var(--bg-primary);
 }
 
 #mod-pp:focus-within {
+    border: 2px solid white;
+}
+
+#del-pp-radio {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#del-pp {
+    width: 3rem;
+    height: 2.5rem;
+    margin-left: .5rem;
+    float: right;
+    background-color: var(--danger-button-color);
+    background-image: url("../asset/icon/bin.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--text-color);
+}
+
+#del-pp-radio:focus-visible + #del-pp {
     border: 2px solid white;
 }
 
