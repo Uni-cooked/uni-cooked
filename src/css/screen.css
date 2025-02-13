@@ -218,8 +218,16 @@ fieldset {
     color: var(--err-color);
 }
 
-.disabled-btn {
+.disabled-btn,.disabled-label {
     opacity: 30%;
+}
+
+.cursor-label {
+    cursor: pointer;
+}
+
+.disabled-label {
+    cursor: default;
 }
 
 
@@ -623,6 +631,11 @@ dd .role-info-label,
         position: absolute;
         appearance: none;
         -webkit-appearance: none;
+        outline: none;
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        bottom: 50%;
     }
     
     dd:has(input:focus-visible) .role-info-label {
@@ -644,7 +657,6 @@ dd .role-info-label,
         font-weight: 700;
         margin-top: 2rem;
         display: inline-block;
-        cursor: pointer;
         user-select: none;
         transition: background-color 600ms, color 600ms, transform 600ms;
     }
@@ -1442,7 +1454,6 @@ a#edit-profile-link {
     padding: .5rem;
     border-radius: var(--radius-small);
     display: block;
-    cursor: pointer;
 }
 
 #mod-pp {
@@ -1458,8 +1469,10 @@ a#edit-profile-link {
 
 #del-pp-radio {
     position: absolute;
-    appearance: none;
     -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    pointer-events: none;
 }
 
 #del-pp {
