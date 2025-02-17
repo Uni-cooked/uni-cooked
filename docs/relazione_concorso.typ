@@ -18,7 +18,7 @@ Le ricette salvate come preferite sono visibili nella pagina profilo.
 Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito.
 
 == Metodologia di sviluppo
-Nonostante la maggior parte dell'utenza derivi dal mobile, abbiamo deciso di cominciare dallo sviluppo del sito desktop per facilitare la fase di design. Dovendo comunque completare la visualizzazione sia per desktop che per mobile, ci è sembrato più utile adottare un approccio che agevolasse il lavoro pur mantenendo il medesimo obiettivo.
+Nonostante la maggior parte dell'utenza derivi dal mobile, abbiamo deciso di cominciare dallo sviluppo del sito desktop per facilitare la fase di design. Dovendo comunque completare la visualizzazione sia per desktop che per mobile, ci è sembrato più utile adottare un approccio che agevolasse il lavoro pur mantenendo il medesimo risultato.
 
 = Accessibilità
 
@@ -29,8 +29,8 @@ Per soddisfare i requisiti di accessibilità abbiamo adottato le seguenti misure
 - Aggiunti gli aiuti alla navigazione in ogni pagina. I \"torna su\" sono posizionati sempre nel footer ma anche in sezioni lunghe, quindi tra le categorie della home e nella pagina delle ricette.
 - Contrassegnato abbreviazioni, simboli e sigle con i corretti tag `HTML5`.
 - Aggiunto l'attributo title ai link in modo da renderli più espressivi alla lettura con screen reader.
-- Posizionato gli input dopo la relativa label e prima dell'eventuale messaggio di errore.
-- Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA.
+- Posizionato gli input e le relative label seguendo le indicazioni delle #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")], comunque sempre prima dell'eventuale messaggio di errore.
+- Scelto i colori per sfondo, testo, link visitati e non visitati in almeno contrasto AA. Per distinguere i link visitati da quelli non visitati, non potendoci basare sui colori, abbiamo provveduto a cambiare lo stile di sottolineatura.
 - Assegnato gli attributi alt a tutte le immagini lasciandoli vuoti se non necessari.
 - Aggiunto l'attributo aria-label dove necessario.
 - Nascosto gli elementi di aiuto agli screen reader.
@@ -75,6 +75,7 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei col
 - Mantenendo i colori in palette non è stato possibile trovare i contrasti tra link visitati e non visitati (mantenendo i contrasti tra questi e lo sfondo). Abbiamo quindi optato per due differenti soluzioni:
   - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati. Si fa notare che il colore dei link non visitati varia a seconda della locazione degli stessi: non assumono cioè colore bianco se si trovano in prossimità di testo normale in modo da risaltare maggiormente.
   - I link con uno sfondo dedicato, ad esempio i \"pulsanti\" ACCEDI nel menu o MODIFICA PROFILO nel profilo utente, sono contornati da un bordo dello stesso colore del link se visitati. Si fa notare che il colore dei link rimane lo stesso perché il bordo aggiunto è sufficiente per distinguere i due stati.
+- È stato assegnato un colore di sufficiente contrasto allo sfondo di ciascun testo. In questo modo si assicura una corretta lettura anche nel caso remoto in cui il browser non riesca a caricare le immagini.
 
 == Strumenti utilizzati
 Per eseguire i controlli sono stati adottati i seguenti strumenti:
@@ -82,17 +83,15 @@ Per eseguire i controlli sono stati adottati i seguenti strumenti:
 - *W3C CSS Validator*
 - *WCAG color contrast checker* (estensione Chrome)
 - Screen reader:
+  - *NVDA*
   - *Narrator* (Windows 11)
   - *Orca* (Ubuntu 24.10)
-  - *NVDA*
 - *Lighthouse*
 Molti controlli sono stati svolti manualmente.
 
 == Falsi positivi e warning
 Validando il sito con la versione 18.2.0 di Total Validator vengono evidenziati i seguenti falsi positivi e warning seguiti dalle motivazioni:
-- Gli aiuti alla navigazione dell'header seguono l'ordine della struttura, quindi breadcrumb, menu e contenuto.
-- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]). L'input usato per modificare la foto profilo dovrebbe essere posizionato dopo la label secondo le WCAG, così però richiederebbe l'uso della pseudo-classe :has(). Per renderlo funzionante con qualsiasi versione del browser abbiamo preferito mettere l'input dentro la label, soluzione comunque valida e discussa con la professoressa Gaggi.
-- Sebbene il tag `nav` sia usato sia per il menu che per la breadcrumb non ci è sembrato necessario distinguerne una dall'altra con una `aria-label`.
+- Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox e radio (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]). L'input usato per modificare la foto profilo dovrebbe essere posizionato dopo la label secondo le WCAG, così però richiederebbe l'uso della pseudo-classe :has(). Per renderlo funzionante con qualsiasi versione del browser abbiamo preferito mettere l'input dentro la label, soluzione comunque valida e discussa con la professoressa Gaggi.
 - Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
 - Per la ragione citata precedentemente, `PHP` deve inserire onchange=\"this.form.submit()\".

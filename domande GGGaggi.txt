@@ -1,13 +1,10 @@
-Menu deve avere aria-label, in tutti (es. Menu principale menu nav)
-
-Icona voto cambiarla perché sembra la roba energetica
-
 Portare a ricette preferite dopo login
 
-Salta al menu non ha senso nei link di aiuto
+Mettere bene label (non due elimina e basta ma elimina e cosa elimina) ??
 
-Salta al contenuto va per primo
 
-Anche salta a dove ti trovi non ha molto senso perché c'è il title della pagina
 
-Mettere bene label (non due elimina e basta ma elimina e cosa elimina)
+js radio multiplo cancella
+se premo cancella voglio modificare l'imamgine
+cancella li vede entrambi
+error js same name
