@@ -1,3 +1,5 @@
 name per i mostra psw?
 card cliccabili come bonavigo
 accedi da recipe mi riporta a recipe, non a home
+ritorna ad accedi doppio su registrati
+immagine pulsante reset foto profilo
