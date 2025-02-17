@@ -882,6 +882,10 @@ ul#recipe-list .recipe ul.recipe-info li {
     text-align: left;
 }
 
+ul#recipe-list .recipe ul.recipe-info :first-child img {
+    height: 2.3em;
+}
+
 ul#recipe-list .recipe ul.recipe-info img {
     height: 2em;
     vertical-align: middle;
