@@ -25,6 +25,7 @@ $userPath=$isLogged."/";
 $image="";
 $userInfo=$db->getUserInfo();
 $isProfilePicChanged=false;
+$hasProfilePicBeenDeleted=false;
 
 if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
     header('Location: 500-err.php');
@@ -44,8 +45,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}","disabled-label",$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -104,8 +109,13 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $errorFound=true;
         $paginaHtml = str_replace("{{stud-cat-edit-error}}",'<p role="alert" class="err-msg">La categoria inserita non è valida</p>',$paginaHtml);
     }
+    
+    if(isset($_POST["del_pp"])) {
+        $hasProfilePicBeenDeleted=true;
+        unset($_POST["del_pp"]);
+    }
 
-    if(isset($_FILES["profile-img-edit"]) && $_FILES["profile-img-edit"]["error"]==0) {
+    if($hasProfilePicBeenDeleted==false && isset($_FILES["profile-img-edit"]) && $_FILES["profile-img-edit"]["error"]==0) {
         $tmpFile='/tmp//'.$_FILES["profile-img-edit"]["name"];
         rename($_FILES["profile-img-edit"]["tmp_name"],'/tmp//'.$_FILES["profile-img-edit"]["name"]);
         $info = new SplFileInfo($tmpFile);
@@ -165,8 +175,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         $paginaHtml=str_replace("{{username}}",$isLogged,$paginaHtml);
         if ($userInfo["immagine"]) {
             $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+            $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+            $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
         } else {
             $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+            $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+            $paginaHtml=str_replace("{{disable-class}}","disabled-label",$paginaHtml);
         }
         $categoria=$userInfo["tipo_studente"];
         $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
@@ -177,7 +191,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         }
         echo $paginaHtml;
     } else {
-        if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true) {
+        if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true || $hasProfilePicBeenDeleted==true) {
             $changeResult=false;
             $imagedef="";
             if($userInfo["immagine"] || $isProfilePicChanged==true) {
@@ -190,7 +204,16 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
                 rename($userBasePath.$userPath.$userInfo["nome"].".".$extension,$userBasePath.$userPath.$username.".".$extension); //rinomina immagine con il nuovo nome utente
                 rename($userBasePath.$userPath,"./user_profiles/".$username.'/'); //rinomina la cartella dell'utente    
             }
-            
+            if($userInfo["immagine"] && $hasProfilePicBeenDeleted==true) {
+                $files = glob($userBasePath.$userPath.'*'); //cancello tutti i file già presenti
+                foreach($files as $file){ //rimuovo tutti i file presenti
+                    if(is_file($file)) {
+                        unlink($file);
+                    }
+                }
+                $imagedef=NULL;
+            }
+
             $changeResult=$db->changeUserData($username,$categoria,$biografia,$imagedef);
             if(is_bool($changeResult) && $changeResult==true) {
                 header('Location: user.php');
@@ -211,8 +234,12 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
     $paginaHtml=str_replace("{{bio-error}}","",$paginaHtml);
     if ($userInfo["immagine"]) {
         $paginaHtml=str_replace("{{profile-pic}}",$userInfo["immagine"],$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}","",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}","",$paginaHtml);
     } else {
         $paginaHtml=str_replace("{{profile-pic}}","./asset/img/def-profile.webp",$paginaHtml);
+        $paginaHtml=str_replace("{{disable-radio}}",'disabled',$paginaHtml);
+        $paginaHtml=str_replace("{{disable-class}}", "disabled-label",$paginaHtml);
     }
     $categoria=$userInfo["tipo_studente"];
     $paginaHtml=str_replace('value="'.$userInfo["tipo_studente"].'"','value="'.$userInfo["tipo_studente"].'"'.' selected',$paginaHtml);
