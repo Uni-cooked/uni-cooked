@@ -1,3 +1,15 @@
-name per i mostra psw?
-card cliccabili come bonavigo
-accedi da recipe mi riporta a recipe, non a home
+Menu deve avere aria-label, in tutti (es. Menu principale menu nav)
+
+Icona voto cambiarla perché sembra la roba energetica
+
+Portare a ricette preferite dopo login
+
+Salta al menu non ha senso nei link di aiuto
+
+Salta al contenuto va per primo
+
+Anche salta a dove ti trovi non ha molto senso perché c'è il title della pagina
+
+Va bene doppio link che riporta alla pagina precedente, basta siano lontani
+
+Mettere bene label (non due elimina e basta ma elimina e cosa elimina)
