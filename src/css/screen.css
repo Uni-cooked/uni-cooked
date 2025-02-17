@@ -63,7 +63,7 @@
 /* ================================================== */
 
 /* #region GENERAL CLASSES */
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -314,7 +314,7 @@ nav#list-help li {
 /* ================================================== */
 
 /* #region MENU */
-nav#menu > img.logo,
+nav#menu>img.logo,
 nav#menu input,
 nav#menu label {
     display: none;
@@ -566,7 +566,9 @@ dl p {
     padding: 3rem 3rem 5rem 3rem;
 }
 
-dd input,dd .role-info-label,.flip-card-back {
+dd input,
+dd .role-info-label,
+.flip-card-back {
     display: none;
 }
 
@@ -575,11 +577,11 @@ dd input,dd .role-info-label,.flip-card-back {
     dd:has(input:checked) .flip-card .flip-card-inner {
         transform: rotateX(180deg);
     }
-    
+
     dd:has(input:checked) .flip-card .flip-card-back {
         visibility: visible;
     }
-    
+
     dd:has(input:checked) .flip-card .flip-card-front {
         visibility: hidden;
     }
@@ -600,23 +602,23 @@ dd input,dd .role-info-label,.flip-card-back {
         transform: rotateX(180deg);
         border: 6px solid var(--accent);
     }
-    
+
     .flip-card-back h3 {
         font-weight: 700;
         font-size: 1.8rem;
     }
-    
+
     .flip-card-back ul {
         margin: auto;
         width: 100%;
         list-style-type: none;
     }
-    
+
     .flip-card-back li {
         margin: 1rem;
         font-style: italic;
     }
-    
+
     dd input {
         padding: 0;
         margin: 0;
@@ -628,18 +630,18 @@ dd input,dd .role-info-label,.flip-card-back {
         position: absolute;
         bottom: 50%;
     }
-    
+
     dd:has(input:focus-visible) .role-info-label {
         border: 2px solid white;
     }
-    
+
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
         box-shadow: inset 0px 4px 8px 1px rgba(0, 0, 0, 0.6);
         transform: scale(0.97);
     }
-    
+
     dd .role-info-label {
         color: var(--text-color);
         background-color: var(--accent-trinary);
@@ -799,10 +801,10 @@ ul#recipe-list .recipe {
 #loader {
     height: 30px;
     aspect-ratio: 2.5;
-    --_g: no-repeat radial-gradient(farthest-side,#ffffff 90%,#0000);
-    background:var(--_g), var(--_g), var(--_g), var(--_g);
+    --_g: no-repeat radial-gradient(farthest-side, #ffffff 90%, #0000);
+    background: var(--_g), var(--_g), var(--_g), var(--_g);
     background-size: 20% 50%;
-    animation: loading 1s infinite linear; 
+    animation: loading 1s infinite linear;
     margin: 10rem auto;
     position: absolute;
     left: 50%;
@@ -810,15 +812,35 @@ ul#recipe-list .recipe {
 }
 
 @keyframes loading {
-    0%     {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
-    16.67% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
-    33.33% {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 0   ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
-    50%    {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 100%,calc(2*100%/3) 0   ,calc(3*100%/3) 50% }
-    66.67% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 100%,calc(3*100%/3) 0   }
-    83.33% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 100%}
-    100%   {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+    0% {
+        background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+    }
+
+    16.67% {
+        background-position: calc(0*100%/3) 0, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+    }
+
+    33.33% {
+        background-position: calc(0*100%/3) 100%, calc(1*100%/3) 0, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+    }
+
+    50% {
+        background-position: calc(0*100%/3) 50%, calc(1*100%/3) 100%, calc(2*100%/3) 0, calc(3*100%/3) 50%
+    }
+
+    66.67% {
+        background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 100%, calc(3*100%/3) 0
+    }
+
+    83.33% {
+        background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 100%
+    }
+
+    100% {
+        background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+    }
 }
-  
+
 ul#recipe-list .recipe-animation {
     opacity: 1;
     transform: scale(1);
@@ -901,10 +923,12 @@ ul#recipe-list .recipe a:link {
     text-indent: -9999rem;
     transition: transform 200ms;
 }
+
 #next-page-btn:hover,
 #prev-page-btn:hover {
     transform: scale(1.2);
 }
+
 #next-page-btn:active,
 #prev-page-btn:active {
     transform: scale(0.9);
@@ -920,12 +944,12 @@ ul#recipe-list .recipe a:link {
     float: right;
 }
 
-#total-results{
+#total-results {
     font-weight: 500;
     margin-bottom: 3rem;
 }
 
-#total-results span{
+#total-results span {
     font-size: 1.1rem;
     font-weight: 800;
 }
@@ -1085,6 +1109,7 @@ button#del-comment {
     padding: .5em 0;
     margin-top: 1em;
 }
+
 #user-comment a:link,
 ul#comment-list li a:link {
     border-color: var(--bg-primary);
@@ -1171,20 +1196,25 @@ a#back-up-first-comment:link {
     transform: scale(0);
     background-color: var(--accent);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transition: transform 200ms  ease-out;
+    transition: transform 200ms ease-out;
 }
 
 .show-psw-checkbox:checked::before {
     transform: scale(1);
-    transition: transform 200ms  cubic-bezier(.85,.36,.61,1.58);
+    transition: transform 200ms cubic-bezier(.85, .36, .61, 1.58);
 }
 
-.show-psw-checkbox + label {
+.show-psw-checkbox+label {
     font-size: .9rem;
     margin-left: .3em;
 }
 
-#student-psw-in,#student-psw-up,#student-repeat-psw-up,#old-psw,#new-psw,#repeat-new-psw {
+#student-psw-in,
+#student-psw-up,
+#student-repeat-psw-up,
+#old-psw,
+#new-psw,
+#repeat-new-psw {
     margin-bottom: 1rem;
 }
 
@@ -1224,6 +1254,11 @@ ul.suggestion {
     font-size: var(--quick-text-hint);
 }
 
+
+#redirect p:nth-child(2) {
+    margin-bottom: 2rem;
+}
+
 #redirect-up a {
     color: var(--text-color);
     background-color: var(--accent-trinary);
@@ -1238,6 +1273,7 @@ ul.suggestion {
     color: var(--hypertext-link-color);
     border-color: var(--bg-primary);
 }
+
 /* #endregion SIGN IN/UP PAGE */
 
 /* ================================================== */
@@ -1558,6 +1594,7 @@ a#edit-profile-link {
     border-color: var(--bg-secondary);
     word-break: break-all;
 }
+
 /* #endregion ABOUT US PAGE */
 
 /* ================================================== */
