@@ -1,0 +1,23 @@
+window.addEventListener('load', function () {
+    const input = document.getElementById("theme-mode-input");
+    const systemSettingLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const cookie = localStorage.getItem("theme");
+    const label = document.getElementById("theme-mode-toggle");
+    if ((cookie && cookie === "light") || systemSettingLight) {
+        document.body.classList.add("light-theme");
+        input.checked = true;
+    }
+
+    input.addEventListener("change", (e) => {
+        label.style.backgroundImage="url(sadasd)";
+        label.style.backgroundImage="";
+        if (input.checked) {
+            document.body.classList.add("light-theme");
+            localStorage.setItem("theme","light");
+        } else {
+            document.body.classList.remove("light-theme");
+            localStorage.setItem("theme","dark");
+        }
+    });
+
+});

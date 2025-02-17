@@ -51,6 +51,21 @@
     --button-height: 3rem;
 }
 
+.light-theme {
+
+    /* INSERIRE QUA TUTTI I COLORI PER IL WHITE THEME */
+
+    --bg-primary: #fffaf0;
+    --bg-secondary: #fff3da;
+    --accent: #efae52;
+    --accent-secondary: #392A24;
+    --accent-trinary: #0c6f59;
+    --hypertext-link-color: #33cc99;
+    --text-color: black;
+    --err-color: #fe0b0b;
+    --danger-button-color: #b30000;
+}
+
 @font-face {
     font-family: "Inter";
     src: url("../asset/font/Inter.ttf");
@@ -243,6 +258,7 @@ header {
     background-attachment: fixed;
     padding-bottom: 1.5rem;
     box-shadow: inset 0px -10px 30px -10px rgba(0, 0, 0, 0.8);
+    position: relative;
 }
 
 #header-content {
@@ -281,6 +297,47 @@ h2#header-subtitle {
     font-style: italic;
     font-weight: 700;
     font-size: var(--subtitle);
+}
+
+#theme-container {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+#theme-mode-input {
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+    display: block;
+    outline: none;
+}
+
+#theme-mode-input:not(:checked) + label {
+    background-image: url("../asset/icon/dark.svg");
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+#theme-mode-input:checked + label {
+    background-image: url("../asset/icon/light.svg");
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#theme-mode-toggle {
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    text-indent: -9999px;
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #efae52;
+    border-radius: 50%;
+    transform: translate(-100%, -100%);
 }
 
 /* #endregion HEADER */
