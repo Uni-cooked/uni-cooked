@@ -68,7 +68,6 @@ function validateUsername() {
 }
 
 async function ChangeImage() {
-	console.log("dd");
 	const inputImage = document.getElementById("profile-img-edit");
 	const [file] = inputImage.files;
 
