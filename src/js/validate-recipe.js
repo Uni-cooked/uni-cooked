@@ -1,80 +1,84 @@
-function validateReview(){
-    let form = document.getElementById("first-form");
-    if(form){
-        form.addEventListener("submit", (e) => {
-            if(!validateCommento()){
-                e.preventDefault();
-                document.getElementsByName("submit-add-review").classList.add("disabled-btn");
-                document.getElementsByName("submit-add-review").disabled = true;
-            }
-        });
+import { createError, eliminateError, ToggleConfirmButton } from './utils.js'
+
+function ValidateAll(e) {
+    if (!validateReview() || !validateCommento()) {
+        e.preventDefault();
+    } 
+}
+
+function ToggleConfirmBtn() {
+    const voto = document.getElementById("add-comment-eval").value;
+    const comment = document.getElementById("add-comment-text").value.trim();
+
+    if (voto == "" && comment == "" && comment.length >= 200) {
+        ToggleConfirmButton(0);
+    } else {
+        ToggleConfirmButton(1);
     }
 }
 
-function validateVoto(){
-   var Voto = document.forms["first-form"]["add-comment-eval"].value;
-   if(Voto < 1) Voto = 1;
-   if(Voto > 30) Voto = 30;
+function validateReview() {
+    let input = document.getElementById("add-comment-eval");
+    const voto = input.value;
+    if (!voto.match(/^[0-9]+$/)) {
+        input.value = Math.min(Math.max(voto, 1), 30);
+    }
 }
 
 function validateCommento(){
-    var Comment = document.forms["first-form"]["add-comment-text"].value;
-    if(Comment.lenght < 0){
-        const check = document.getElementById("err-comment");
-        eliminateError(check);
-        var p = createError("err-comment")
-        p.innerText = "Il commento della valutazione è necessario"
-        const parent = document.getElementById("add-comment-text").parentNode;
-        parent.appendChild(p);
-        return false;
+    const input = document.getElementById("add-comment-text");
+    const comment = input.value.trim();
+    
+    const errorString = document.getElementById("err-comment");
+    eliminateError(errorString);
 
-    } else if(Comment.lenght > 200){
-        const check = document.getElementById("err-comment");
-        eliminateError(check);
-        var p = createError("err-comment")
-        p.innerText = "Il numero di caratteri nel commento della valutazione è superiore a 200";
-        const parent = document.getElementById("add-comment-text").parentNode;
-        parent.appendChild(p);
+    if (comment === "") {
+        let p = createError("err-comment");
+        p.innerText = "Il testo della valutazione è necessario";
+        const parent = input.parentNode;
+        parent.insertBefore(p,input.nextSibling);
+        return false;
+    } else if (comment.length > 200) {
+        let p = createError("err-comment");
+        p.innerText = "il numero di caratteri nel testo della valutazione è superiore a 200";
+        const parent = input.parentNode;
+        parent.insertBefore(p,input.nextSibling);
         return false;
     }
-    
-    const check = document.getElementById("err-comment");
-    eliminateError(check);
-    document.getElementById("submit-add-review").disabled = false;
-    document.getElementById("submit-add-review").classList.remove("disabled-btn");
     return true;
 }
 
-function createError(id){
-    var p = document.createElement("p");
-    p.classList.add("err-msg");
-    p.setAttribute("role","alert");
-	p.setAttribute("id",id);
-
-    return p;
-}
-
-function eliminateError(p){
-    if(p) p.remove();
-}
-
 const review = {
-    "add-comment-eval" : ["change", validateVoto],
-    "add-comment-text" : ["change", validateCommento],
+    "add-comment-eval" : {
+        "input": () => {
+            validateReview();
+            ToggleConfirmBtn();
+        },
+    },
+    "add-comment-text" : {
+        "change": validateCommento,
+        "input": ToggleConfirmBtn
+    },
+    "first-form": {
+        "submit": ValidateAll,
+    }
 }
 
-function checkReview(){
-    for (var id in review) {
+function InitListeners(){
+    for (let id in review) {
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(review[id][0], review[id][1]);
+        let element = document.getElementById(id);
+        for(let e in review[id]) {
+            element.addEventListener(e, review[id][e]);
+        }
 	}
 }
 
 window.addEventListener('load', () => {
-	checkReview();
-	validateReview();
+	InitListeners();
+    ToggleConfirmButton(0);
 });
 
 

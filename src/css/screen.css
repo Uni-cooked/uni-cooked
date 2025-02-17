@@ -1249,7 +1249,7 @@ ul.suggestion {
 }
 
 
-#redirect p:nth-child(2) {
+#redirect-up p:nth-child(2) {
     margin-bottom: 2rem;
 }
 

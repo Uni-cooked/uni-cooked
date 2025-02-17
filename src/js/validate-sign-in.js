@@ -1,59 +1,63 @@
-function Button(){
-    var confirm;
-    if(document.getElementById("student-name-in").value == "" || document.getElementById("student-psw-in").value == "" ){
-        Disable(confirm,"submit-btn");
-        var check = document.getElementById("err-sign-in");
-		if(check) check.remove();
-        var p = document.createElement("p");
-        p.setAttribute("role","alert");
-        p.setAttribute("id","err-sign-in");
-        p.classList.add("err-msg");
-        p.innerHTML = "Le credenziali inserite non sono corrette";
-		const parent = document.getElementById("submit-btn").parentNode;
-		parent.appendChild(p);
-    }else{
-        var check = document.getElementById("err-sign-in");
-		if(check) check.remove();
-        Enable(confirm,"submit-btn");
-    }
+import { createError, eliminateError, ToggleConfirmButton,ShowPsw } from './utils.js'
+
+function ValidateAll(e) {
+    if (!validateUser()) {
+        e.preventDefault();
+    } 
 }
 
-function Disable(button,id){
-    button = document.getElementById(id);
-    button.classList.add("disabled-btn");
-    button.disabled = true;
-}
+function ToggleLoginBtn() {
+    const user = document.getElementById("student-name-in").value.trim();
+    const psw = document.getElementById("student-psw-in").value.trim();
 
-function Enable(button,id){
-    button = document.getElementById(id);
-    button.classList.remove("disabled-btn");
-    button.disabled = false;
-}
-
-function ShowPsw() {
-    if (this.checked) {
-        document.getElementById("student-psw-in").type = "text";
+    if (user == "" && psw == "") {
+        ToggleConfirmButton(0);
     } else {
-        document.getElementById("student-psw-in").type = "password";
+        ToggleConfirmButton(1);
     }
 }
+
+function validateUser() {
+    const user = document.getElementById("student-name-in").value.trim();
+
+    const errorString = document.getElementById("err-sign-in");
+    eliminateError(errorString);
+
+    if (user.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
+        let p = createError("err-sign-in");
+        p.innerText = "Le credenziali inserite non sono corrette";
+        const beforeElement = document.getElementById("submit-btn")
+        const parent = beforeElement.parentNode;
+        parent.insertBefore(p,beforeElement);
+        return false;
+    }
+    return true;
+}
+
 
 const controllers = {
-	"student-name-in" : ["input", Button],
-	"student-psw-in" : ["input", Button ],
-    "show-psw" : ["click", ShowPsw ]
+	"student-name-in" : {
+        "change": validateUser,
+        "input": ToggleLoginBtn
+    },
+	"student-psw-in" : {"input": ToggleLoginBtn },
+    "credentials": {"submit": ValidateAll},
+    "show-psw" : {"click": function () {ShowPsw(this,"student-psw-in");} }
 };
 
-function UpdateButton(){
-    for (var id in controllers) {
+function InitListeners(){
+    for (let id in controllers) {
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(controllers[id][0], controllers[id][1]);
+        let element = document.getElementById(id);
+        for(let e in controllers[id]) {
+            element.addEventListener(e, controllers[id][e]);
+        }
 	}
 }
 
 window.addEventListener("load", () => {
-    Button()
-    UpdateButton()
+    InitListeners();
+    ToggleConfirmButton(0);
 })

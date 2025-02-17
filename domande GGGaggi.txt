@@ -11,10 +11,3 @@ Salta al contenuto va per primo
 Anche salta a dove ti trovi non ha molto senso perché c'è il title della pagina
 
 Mettere bene label (non due elimina e basta ma elimina e cosa elimina)
-
-
-
-js radio multiplo cancella
-se premo cancella voglio modificare l'imamgine
-cancella li vede entrambi
-error js same name
