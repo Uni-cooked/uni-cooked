@@ -22,7 +22,9 @@ function validateReview() {
     const voto = input.value;
     if (!voto.match(/^[0-9]+$/)) {
         input.value = Math.min(Math.max(voto, 1), 30);
+        return false;
     }
+    return true;
 }
 
 function validateCommento(){
@@ -31,6 +33,7 @@ function validateCommento(){
     
     const errorString = document.getElementById("err-comment");
     eliminateError(errorString);
+
 
     if (comment === "") {
         let p = createError("err-comment");

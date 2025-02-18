@@ -12,20 +12,24 @@ export function eliminateError(p){
 
 export function ToggleConfirmButton(state,id="btn-confirm") { // 1 = on ; 0 = off
     const confirm = document.getElementById(id);
-    confirm.disabled = !state;
-    if (!state) {
-        confirm.classList.add("disabled-btn");
-    } else {
-        confirm.classList.remove("disabled-btn");
+    if (confirm) {
+        confirm.disabled = !state;
+        if (!state) {
+            confirm.classList.add("disabled-btn");
+        } else {
+            confirm.classList.remove("disabled-btn");
+        }
     }
 }
 export function ToggleLabel(state,id) { // 1 = on ; 0 = off
     const confirm = document.getElementById(id);
-    confirm.disabled = !state;
-    if (!state) {
-        confirm.classList.add("disabled-label");
-    } else {
-        confirm.classList.remove("disabled-label");
+    if(confirm) {
+        confirm.disabled = !state;
+        if (!state) {
+            confirm.classList.add("disabled-label");
+        } else {
+            confirm.classList.remove("disabled-label");
+        }
     }
 }
 
