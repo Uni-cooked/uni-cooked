@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS Ricetta;
 DROP TABLE IF EXISTS Utente;
 DROP TABLE IF EXISTS Ingrediente;
 
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_cs;
+-- CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_cs;
 
 CREATE TABLE Utente(
     nome VARCHAR(15) PRIMARY KEY,

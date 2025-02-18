@@ -109,7 +109,7 @@ INSERT INTO Ricetta VALUES ("Pasta-asciutta", "fuorisede", "primo", 0, 2,
 "Un piatto veloce e immediato proprio per lo studente che non ha né tempo né voglia di preparare un piatto completo. Essendo fuorisede e avendo magari un alloggio in affitto non si dispone del tempo e soldi per nemmeno accendere il fornello e aspettare che l'acqua inizi a bollire quindi perché non saltare tutti questi lunghi procedimenti. Questo piatto è ideale per un pranzo o cena leggera ma non troppo salutare, diciamocelo la salute arriva dopo lo studio.",
  "2025-01-09", "./asset/img/recipe/fuorisede/pasta-asciutta.webp");
  
-INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "primo", 5, 4, 
+INSERT INTO Ricetta VALUES ("Pane e salame", "fuorisede", "secondo", 5, 4, 
 "Un piatto che non è un vero e proprio piatto perché comunemente consumato come antipasto o per fare una merenda a metà giornata ma in questo caso devi ricordarti che sei uno studente e anche fuorisede, ci dispiace… non puoi farci nulla. È uno tra le pietanze più facili e veloci da preparare, l'unico lato negativo è il costo.",
  "2025-01-09", "./asset/img/recipe/fuorisede/pane-triste.webp");
 
