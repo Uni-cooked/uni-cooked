@@ -889,6 +889,7 @@ ul#recipe-list .recipe ul.recipe-info li {
 
 ul#recipe-list .recipe ul.recipe-info :first-child img {
     height: 2.3em;
+    padding-right: .7em;
 }
 
 ul#recipe-list .recipe ul.recipe-info img {

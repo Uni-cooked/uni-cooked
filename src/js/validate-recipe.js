@@ -12,8 +12,6 @@ function ToggleConfirmBtn() {
 
     if (voto != "" && comment != "" && comment.length <= 200) {
         ToggleConfirmButton(0);
-    } else {
-        ToggleConfirmButton(1);
     }
 }
 
