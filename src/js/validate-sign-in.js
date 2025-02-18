@@ -41,7 +41,10 @@ const controllers = {
         "input": ToggleLoginBtn
     },
 	"student-psw-in" : {"input": ToggleLoginBtn },
-    "credentials": {"submit": ValidateAll},
+    "credentials": {
+        "submit": ValidateAll,
+        "reset": ToggleLoginBtn
+    },
     "show-psw" : {"click": function () {ShowPsw(this,"student-psw-in");} }
 };
 

@@ -168,7 +168,10 @@ const listeners = {
 	"show-psw" : {"click": function () {ShowPsw(this,"student-psw-up");} },
 	"show-psw-rep" : {"click": function () {ShowPsw(this,"student-repeat-psw-up");}},
 
-	"credentials": {"submit": ValidateAll},
+	"credentials": {
+		"submit": ValidateAll,
+		"reset": ToggleSignUpBtn
+	},
 };
 
 function InitListeners(){

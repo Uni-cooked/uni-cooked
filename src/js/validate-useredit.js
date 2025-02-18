@@ -24,8 +24,8 @@ function ToggleConfirmModButton() {
 
 function ToggleConfirmPswButton() {
 	const oldPsw = document.getElementById('old-psw').value.trim();
-	const psw = document.getElementById('student-psw-up').value.trim();
-	const rpsw = document.getElementById('student-repeat-psw-up').value.trim();
+	const psw = document.getElementById('new-psw').value.trim();
+	const rpsw = document.getElementById('repeat-new-psw').value.trim();
 
     if (oldPsw == ""  || psw.length < 4 || rpsw =="") {
 		ToggleConfirmButton(0,"second-btn-confirm");
@@ -159,7 +159,6 @@ function validatePasswordConfirm() {
 
 }
 
-
 const listeners = {
 	"nickname-edit" : {
 		"change": validateUsername,
@@ -190,7 +189,10 @@ const listeners = {
 	"show-rep-psw" : {"click": function () {ShowPsw(this,"repeat-new-psw");} },
 
 	"credentials": {"submit": ValidateProfile},
-	"new-info": {"submit": ValidateNewPsw}
+	"new-info": {
+		"submit": ValidateNewPsw,
+		"reset":ToggleConfirmPswButton
+	}
 };
 
 

@@ -10,7 +10,7 @@ function ToggleConfirmBtn() {
     const voto = document.getElementById("add-comment-eval").value;
     const comment = document.getElementById("add-comment-text").value.trim();
 
-    if (voto == "" && comment == "" && comment.length >= 200) {
+    if (voto != "" && comment != "" && comment.length <= 200) {
         ToggleConfirmButton(0);
     } else {
         ToggleConfirmButton(1);
@@ -51,6 +51,7 @@ function validateCommento(){
     return true;
 }
 
+
 const review = {
     "add-comment-eval" : {
         "input": () => {
@@ -64,6 +65,7 @@ const review = {
     },
     "first-form": {
         "submit": ValidateAll,
+        "reset": ToggleConfirmBtn
     }
 }
 

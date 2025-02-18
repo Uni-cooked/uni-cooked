@@ -48,8 +48,10 @@ const inputRequest = {
 
     },
     "request": {
-        "submit": ValidateAll
-    }
+        "submit": ValidateAll,
+        "reset": TogggleRequestBtn
+    },
+    
 };
 
 function InitListeners(){
