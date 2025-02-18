@@ -116,6 +116,10 @@ fieldset {
     padding: 2em 5em;
 }
 
+label[for] {
+    cursor: pointer;
+}
+
 .button-animation {
     display: inline-block;
     transform: scale(1);
@@ -225,6 +229,7 @@ fieldset {
 .cursor-label {
     cursor: pointer;
 }
+
 .disabled-label {
     cursor: default;
 }
@@ -1490,8 +1495,16 @@ a#edit-profile-link {
     color: var(--bg-primary);
 }
 
-#mod-pp:focus-within {
-    border: 2px solid white;
+@supports selector(:has(a)) {
+    #mod-pp:has(input:focus-visible) {
+        border: 2px solid white;
+    }
+}
+
+@supports not selector(:has(a)) {
+    #mod-pp:focus-within {
+        border: 2px solid white;
+    }
 }
 
 #del-pp-radio {

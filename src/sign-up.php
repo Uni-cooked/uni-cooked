@@ -117,7 +117,7 @@ if (isset($_POST['submit'])) {
         if($result) {
             $_POST = null;
             if(isset($_GET["ref"])) {
-                $link="recipe.php?recipe=".$_GET["ref"];
+                $link="recipe.php?recipe=".$_GET["ref"]."#eval-section";
                 unset($_GET["ref"]);
                 header("Location: ".$link);
                 exit();
