@@ -19,6 +19,13 @@ if ($isLogged!=false) {
 }
 
 $paginaHtml=file_get_contents("./html/sign-up.html");
+
+if(isset($_GET["ref"])) {
+    $paginaHtml=str_replace("{{ref-value}}",'?ref='.$_GET["ref"],$paginaHtml);
+} else {
+    $paginaHtml=str_replace("{{ref-value}}","",$paginaHtml);
+}
+
 if (isset($_POST['submit'])) {
     $errorFound=false;
     $username=$_POST["nome"];
@@ -109,6 +116,12 @@ if (isset($_POST['submit'])) {
         $result=$db->registerUser($username,$categoria,$email,$psw);
         if($result) {
             $_POST = null;
+            if(isset($_GET["ref"])) {
+                $link="recipe.php?recipe=".$_GET["ref"];
+                unset($_GET["ref"]);
+                header("Location: ".$link);
+                exit();
+            }
             header('Location: index.php');
             exit();
         } else {
