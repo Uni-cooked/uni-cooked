@@ -71,6 +71,7 @@ if (!isset($_GET["username"])) {
                     } else {
                         $recipeList .= "<li class=\"fav-recipe\">";
                     }
+                    $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="vai alla ricetta ' . $recipe["nome"] . '" class="recipe-card">';
                     $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt=""/>';
                     $recipeList .= "<div><h4 class=\"fav-recipe-title\">" . $db->checkLang(ucfirst($recipe["nome"])) . "</h4>";
                     $average = $db->getRecipeAverage($recipe["nome"]);
@@ -83,7 +84,7 @@ if (!isset($_GET["username"])) {
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\"/>" . strtoupper($categoria) . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\"/>" . strtoupper($recipe["tipo_piatto"]) . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
-                    $recipeList .= '<a href=recipe.php?recipe=' . urlencode($recipe["nome"]) . ' title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
+                    $recipeList .= '<p aria-hidden="true" class="fake-link">Vai alla ricetta</p></div></a></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
             }
@@ -166,8 +167,9 @@ if (!isset($_GET["username"])) {
                     } else {
                         $recipeList .= "<li class=\"fav-recipe\">";
                     }
+                    $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="vai alla ricetta ' . $recipe["nome"] . '" class="recipe-card">';
                     $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt=""/>';
-                    $recipeList .= "<div> <h4 class=\"fav-recipe-title\">" . $db->checkLang(ucfirst($recipe["nome"])) . "</h4>";
+                    $recipeList .= "<div><h4 class=\"fav-recipe-title\">" . $db->checkLang(ucfirst($recipe["nome"])) . "</h4>";
                     $average = $db->getRecipeAverage($recipe["nome"]);
                     if (is_string($average) && (strcmp($average, "ExceptionThrow") == 0 || strcmp($average, "ConnectionFailed") == 0)) {
                         header('Location: 500-err.php');
@@ -178,7 +180,7 @@ if (!isset($_GET["username"])) {
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\"/>" . $categoria . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\"/>" . $recipe["tipo_piatto"] . "</li>";
                     $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
-                    $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="' . $recipe["nome"] . '">Vai alla ricetta</a></div></li>';
+                    $recipeList .= '<p aria-hidden="true" class="fake-link">Vai alla ricetta</p></div></a></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
             }

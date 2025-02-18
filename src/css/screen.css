@@ -222,7 +222,13 @@ fieldset {
     opacity: 30%;
 }
 
-
+a.recipe-card {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    border-bottom: none;
+    text-decoration: none;
+}
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -827,14 +833,6 @@ ul#recipe-list .recipe:hover {
     transform: scale(1.03);
 }
 
-ul#recipe-list a.recipe-card {
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    border-bottom: none;
-    text-decoration: none;
-}
-
 ul#recipe-list a.recipe-card:visited {
     color: var(--text-color);
 }
@@ -1333,6 +1331,11 @@ ul.suggestion {
     text-align: right;
     overflow: hidden;
     margin: 1rem 0;
+    transition: transform 500ms;
+}
+
+#fav-recipe-list .fav-recipe:hover {
+    transform: scale(1.03);
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-img-crop {
@@ -1383,19 +1386,28 @@ ul.suggestion {
     }
 }
 
+#fav-recipe-list .fav-recipe .fav-recipe-info li:first-child img {
+    height: 1.7em;
+    padding-right: .3em;
+}
+
 #fav-recipe-list .fav-recipe .fav-recipe-info li img {
     height: 1.5em;
     vertical-align: middle;
-    padding-right: 0.5em;
+    padding-right: .5em;
 }
 
-#fav-recipe-list .fav-recipe a {
+#fav-recipe-list a.recipe-card:link .fake-link {
+    display: inline-block;
+    text-decoration: underline;
+    border-bottom: 2px solid var(--bg-secondary);
     margin-right: 1em;
     font-weight: 700;
 }
 
-#fav-recipe-list .fav-recipe a:link {
-    border-color: var(--bg-secondary);
+#fav-recipe-list a.recipe-card:visited .fake-link {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
 }
 
 a#back-up-first-fav-recipe:link {
