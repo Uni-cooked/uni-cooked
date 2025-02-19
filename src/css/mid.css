@@ -87,6 +87,10 @@ nav#menu label {
     background-size: 100% 100%;
 }
 
+body.light-theme nav#menu label {
+    background-image: url("../asset/img/burger/burger-middle-light.webp");
+}
+
 nav#menu label::before,
 nav#menu label::after {
     content: "";
@@ -101,12 +105,20 @@ nav#menu label::before {
     outline: 2px solid var(--accent-secondary);
 }
 
+body.light-theme nav#menu label::before {
+    background-image: url("../asset/img/burger/burger-top-light.webp");
+}
+
 nav#menu label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.webp");
     background-size: 100% 100%;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
+}
+
+body.light-theme nav#menu label::after {
+    background-image: url("../asset/img/burger/burger-bottom-light.webp");
 }
 
 nav#menu input:checked + label::before {
@@ -119,6 +131,10 @@ nav#menu input:checked + label::before {
     transition-timing-function: cubic-bezier(.04,.87,.48,.89);
 }
 
+body.light-theme nav#menu input:checked + label::before {
+    background-image: url("../asset/img/burger/fork-light.webp");
+}
+
 nav#menu input:checked + label::after {
     width: var(--x-width);
     transform: rotate(45deg) translate(calc(var(--bar-width) / -2),0);
@@ -127,6 +143,10 @@ nav#menu input:checked + label::after {
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
     transition-timing-function: cubic-bezier(.39,.82,.31,.95);
+}
+
+body.light-theme nav#menu input:checked + label::after {
+    background-image: url("../asset/img/burger/knife-light.webp");
 }
 
 nav#menu input:checked + label {
