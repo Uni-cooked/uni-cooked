@@ -19,6 +19,7 @@
     --text-color: white;
     --err-color: #fe0b0b;
     --danger-button-color: #b30000;
+    --blur-color: 0, 0, 0;
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -52,18 +53,16 @@
 }
 
 .light-theme {
-
-    /* INSERIRE QUA TUTTI I COLORI PER IL WHITE THEME */
-
-    --bg-primary: #fffaf0;
-    --bg-secondary: #fff3da;
-    --accent: #efae52;
-    --accent-secondary: #392A24;
-    --accent-trinary: #0c6f59;
-    --hypertext-link-color: #33cc99;
+    --bg-primary: #e6ffd9;
+    --bg-secondary: white;
+    --accent: #137b91;
+    --accent-secondary: #ccfffe;
+    --accent-trinary: #10846b;
+    --hypertext-link-color: #008009;
     --text-color: black;
-    --err-color: #fe0b0b;
+    --err-color: #e40c0c;
     --danger-button-color: #b30000;
+    --blur-color: 255, 255, 255;
 }
 
 @font-face {
@@ -278,12 +277,12 @@ header {
     backdrop-filter: blur(15px);
     padding: 1rem 3rem;
     border-radius: var(--radius-small);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(var(--blur-color), 0.2);
 }
 
 header h1,
 header h2 {
-    color: var(--text-color);
+    color: white;
     text-align: center;
     line-height: normal;
 }
@@ -535,7 +534,7 @@ nav#quick-role li a:link {
 }
 
 .role-text {
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(var(--blur-color), .4);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     padding: 1rem 5%;
@@ -1154,7 +1153,7 @@ ul#comment-list li {
 
 button#del-comment {
     background-color: var(--danger-button-color);
-    color: var(--text-color);
+    color: white;
     width: 100%;
     padding: .5em 0;
     margin-top: 1em;
@@ -1595,7 +1594,7 @@ a#edit-profile-link {
     width: 100%;
     height: var(--button-height);
     background-color: var(--danger-button-color);
-    color: var(--text-color);
+    color: white;
     font-size: 1.1rem;
     margin: 0 auto .5em;
 }
@@ -1769,10 +1768,10 @@ select {
     padding-right: 1em;
     padding-left: 1em;
     font-size: .9em;
-    background-color: rgb(48, 48, 48);
+    background-color: var(--bg-secondary);
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
-    color: white;
+    color: var(--text-color);
 }
 
 textarea {
