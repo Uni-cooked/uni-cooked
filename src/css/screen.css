@@ -406,9 +406,11 @@ nav#breadcrumb p {
     font-size: 1rem;
     font-style: italic;
     padding: .1rem 1.3rem;
-
 }
 
+nav#breadcrumb a:link {
+    border-color: var(--accent-secondary);
+}
 /* #endregion BREADCRUMB */
 
 /* ================================================== */
@@ -440,8 +442,6 @@ main h3 {
 abbr {
     text-decoration: none;
 }
-
-
 /* #endregion MAIN */
 
 /* ================================================== */
