@@ -20,6 +20,8 @@
     --err-color: #fe0b0b;
     --danger-button-color: #b30000;
     --blur-color: 0, 0, 0;
+    /* --link-color:;
+    --link-visited-color; */
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -57,7 +59,7 @@
     --bg-secondary: #E7D4B5;
     --accent: #392A24;
     --accent-secondary: #efae52;
-    --hypertext-link-color: #534C7B;
+    --hypertext-link-color: #0c6a55;
     --text-color: black;
     --blur-color: 255, 255, 255;
 }
