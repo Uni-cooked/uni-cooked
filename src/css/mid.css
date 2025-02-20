@@ -58,7 +58,7 @@ nav#list-help {
 
 /* #region MENU */
 
-nav#menu > img.logo {
+nav#menu > span.logo {
     display: inline;
     margin: var(--hamburger-v-margin) var(--hamburger-h-margin);
 }
@@ -227,6 +227,16 @@ nav#menu input:checked ~ #content-blur {
     height: 100vh;
     z-index: -2;
 }
+
+#theme-container {
+    top: 4.5rem;
+    right: 50%;
+    transform: translateX(50%);
+}
+#theme-mode-toggle {
+    width: 4rem;
+}
+
 /* #endregion MENU */
 
 /* ================================================== */
