@@ -1,8 +1,8 @@
-function SwapImgTheme(imgs) {
+function SwapImgTheme(imgs,isLight) {
     if (imgs.length > 0) {
         imgs.forEach(element => {
             let src = element.getAttribute("src");
-            src = src.replace("dark","light");
+            src = src.replace(isLight ? "dark" : "light", isLight ? "light": "dark");
             element.setAttribute("src",src);
         });
     }
@@ -16,6 +16,7 @@ window.addEventListener('load', function () {
     if ((cookie && cookie === "light") || systemSettingLight) {
         document.body.classList.add("light-theme");
         input.checked = true;
+        SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"),1);
     }
 
     input.addEventListener("change", (e) => {
@@ -24,10 +25,11 @@ window.addEventListener('load', function () {
         if (input.checked) {
             document.body.classList.add("light-theme");
             localStorage.setItem("theme","light");
+            SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"),1);
         } else {
             document.body.classList.remove("light-theme");
             localStorage.setItem("theme","dark");
+            SwapImgTheme(document.querySelectorAll("[src*='light.svg']"),0);
         }
     });
-    SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"));
 });
