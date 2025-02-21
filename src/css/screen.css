@@ -58,7 +58,7 @@
     --accent: #19515c;
     --accent-secondary: #efae52;
     --accent-trinary: #392A24;
-    --hypertext-link-color: #1a5626;/*#413b72;*/ /*#465975;*/
+    --hypertext-link-color: #413b72; /*#1a5626;*/ /*#465975;*/
     --text-color: black;
     --err-color: #d20404;
     --blur-color: 255, 255, 255;
