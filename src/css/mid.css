@@ -156,7 +156,7 @@ nav#menu > input:focus-visible + label::before,
 nav#menu > input:focus-visible + label::after,
 nav#menu > input:focus-visible + label {
     border: 1px solid white;
-    box-shadow: 0 0 0 1px white;
+    ;
 }
 
 nav#menu > input:checked + label #ham-opened,
@@ -174,7 +174,7 @@ nav#menu > input:checked ~ div#menu-dropdown {
     transition: transform var(--animation-dropdown-timing);
 }
 nav#menu > input:checked ~ div#menu-dropdown ul {
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 nav#menu {
@@ -183,7 +183,7 @@ nav#menu {
     background-color: var(--accent-secondary);
     padding: 0;
     z-index: 1;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.8);
+
 }
 
 nav#menu div#menu-dropdown {
@@ -201,8 +201,8 @@ nav#menu div#menu-dropdown ul{
     justify-content: space-evenly;
     font-size: 1.1rem;
     z-index: -1;
-    box-shadow: none;
-    transition: box-shadow 500ms linear;
+    ;
+    transition: ;
 }
 
 nav#menu  div#menu-dropdown li:not(#profile-item) {
