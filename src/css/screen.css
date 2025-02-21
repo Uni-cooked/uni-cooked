@@ -428,7 +428,7 @@ nav#menu li:not(:first-child):not(#profile-item) {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-indent: -999px;
+    text-indent: -9999px;
     display: block;
 }
 
