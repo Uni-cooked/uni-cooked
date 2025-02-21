@@ -30,7 +30,7 @@ if(!isset($_POST["suggestion"])) {
         }
     } else {
         $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
-        $paginaHtml=str_replace("{{profile-pic-src}}","./asset/icon/student.svg",$paginaHtml);
+        $paginaHtml=str_replace("{{profile-pic-src}}","./asset/icon/student-dark.svg",$paginaHtml);
         $paginaHtml=str_replace("{{username}}","generica di un utente non registrato o autenticato",$paginaHtml);
     }
 

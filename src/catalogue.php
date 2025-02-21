@@ -64,10 +64,10 @@ function CreateRecipeCard(string $img, string $title, int $grade, string $catego
                     <div>
                         <h3 class="recipe-title">' . $db->checkLang(ucfirst($title)) . '</h3>
                         <ul class="recipe-info">
-                            <li><img loading="lazy" src="./asset/icon/grade.svg" alt="voto"/>' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
-                            <li><img loading="lazy" src="./asset/icon/student.svg" alt="categoria"/>' . ($category=="DAD" ? '<abbr title="didattica a distanza">'.$category.'</abbr>': $category) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/course.svg" alt="piatto"/>' . strtoupper($course) . '</li>
-                            <li><img loading="lazy" src="./asset/icon/cost.svg" alt="costo"/>' . $cost . ' &euro;</li>
+                            <li><img loading="lazy" src="./asset/icon/grade-dark.svg" alt="voto"/>' . ($grade != 31 ? $grade : "-") . ' <abbr title="su">/</abbr> 30</li>
+                            <li><img loading="lazy" src="./asset/icon/student-dark.svg" alt="categoria"/>' . ($category=="DAD" ? '<abbr title="didattica a distanza">'.$category.'</abbr>': $category) . '</li>
+                            <li><img loading="lazy" src="./asset/icon/course-dark.svg" alt="piatto"/>' . strtoupper($course) . '</li>
+                            <li><img loading="lazy" src="./asset/icon/cost-dark.svg" alt="costo"/>' . $cost . ' &euro;</li>
                         </ul>   
                         <a href="./recipe.php?recipe=' . urlencode($title) . '" title="' . $title . '">Vai alla ricetta</a>
                     </div> 

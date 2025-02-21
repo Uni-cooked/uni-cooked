@@ -1,3 +1,13 @@
+function SwapImgTheme(imgs) {
+    if (imgs.length > 0) {
+        imgs.forEach(element => {
+            let src = element.getAttribute("src");
+            src = src.replace("dark","light");
+            element.setAttribute("src",src);
+        });
+    }
+}
+
 window.addEventListener('load', function () {
     const input = document.getElementById("theme-mode-input");
     const systemSettingLight = window.matchMedia("(prefers-color-scheme: light)").matches;
@@ -19,5 +29,5 @@ window.addEventListener('load', function () {
             localStorage.setItem("theme","dark");
         }
     });
-
+    SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"));
 });
