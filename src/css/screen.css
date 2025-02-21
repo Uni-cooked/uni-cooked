@@ -849,6 +849,7 @@ div#why #why-desc a:link {
     font-size: var(--button-text);
     font-weight: 700;
     background-color: var(--accent);
+    color: var(--bg-primary);
 }
 
 select#ord-res {
@@ -1012,12 +1013,20 @@ ul#recipe-list .recipe a:link {
 }
 
 #prev-page-btn {
-    background-image: url("../asset/icon/left-arrow.svg");
+    background-image: url("../asset/icon/left-arrow-dark.svg");
+    float: left;
+}
+body.light-theme #prev-page-btn {
+    background-image: url("../asset/icon/left-arrow-light.svg");
     float: left;
 }
 
 #next-page-btn {
-    background-image: url("../asset/icon/right-arrow.svg");
+    background-image: url("../asset/icon/right-arrow-dark.svg");
+    float: right;
+}
+body.light-theme #next-page-btn {
+    background-image: url("../asset/icon/right-arrow-light.svg");
     float: right;
 }
 
