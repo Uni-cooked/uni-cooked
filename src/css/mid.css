@@ -87,7 +87,7 @@ nav#menu > label {
     background-size: 100% 100%;
 }
 
-body.light-theme nav#menu + label {
+body.light-theme nav#menu > label {
     background-image: url("../asset/img/burger/burger-middle-light.webp");
 }
 
@@ -173,9 +173,7 @@ nav#menu > input:checked ~ div#menu-dropdown {
     transform: translate(0);
     transition: transform var(--animation-dropdown-timing);
 }
-nav#menu > input:checked ~ div#menu-dropdown ul {
 
-}
 
 nav#menu {
     display: flex;
@@ -201,8 +199,6 @@ nav#menu div#menu-dropdown ul{
     justify-content: space-evenly;
     font-size: 1.1rem;
     z-index: -1;
-    ;
-    transition: ;
 }
 
 nav#menu  div#menu-dropdown li:not(#profile-item) {
