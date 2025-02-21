@@ -265,7 +265,8 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 60vh;
+    min-height: 30rem;
+    height: 60vh;
     position: relative;
 }
 
@@ -385,8 +386,8 @@ nav#list-help li {
 
 /* #region MENU */
 nav#menu>span.logo,
-nav#menu input,
-nav#menu label {
+nav#menu > input,
+nav#menu > label{
     display: none;
 }
 
@@ -394,6 +395,7 @@ nav#menu {
     padding: 1.5rem 1rem 0;
     min-width: 100%;
     order: 2;
+    z-index: 3;
 }
 
 nav#menu ul {
@@ -425,6 +427,7 @@ nav#menu li:not(:first-child):not(#profile-item) {
     background-repeat: no-repeat;
     background-size: cover;
     text-indent: -999px;
+    display: block;
 }
 
 .light-theme .logo {

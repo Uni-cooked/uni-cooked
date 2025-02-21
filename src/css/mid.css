@@ -63,15 +63,15 @@ nav#menu > span.logo {
     margin: var(--hamburger-v-margin) var(--hamburger-h-margin);
 }
 
-nav#menu input {
+nav#menu > input {
     display: block;
     appearance: none;
     position: absolute;
 }
 
-nav#menu label::before,
-nav#menu label::after,
-nav#menu label {
+nav#menu > label::before,
+nav#menu > label::after,
+nav#menu > label {
     display: inline-block;
     width: var(--bar-width);
     height: var(--bar-height);
@@ -79,7 +79,7 @@ nav#menu label {
     background-color: var(--accent);
 }
 
-nav#menu label {
+nav#menu > label {
     --x-width: calc(var(--hamburger-height) * 1.41421356237);
     position: relative;
     margin: auto var(--hamburger-h-margin);
@@ -87,17 +87,17 @@ nav#menu label {
     background-size: 100% 100%;
 }
 
-body.light-theme nav#menu label {
+body.light-theme nav#menu + label {
     background-image: url("../asset/img/burger/burger-middle-light.webp");
 }
 
-nav#menu label::before,
-nav#menu label::after {
+nav#menu >  label::before,
+nav#menu > label::after {
     content: "";
     position: absolute;
 }
 
-nav#menu label::before {
+nav#menu > label::before {
     bottom: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-top.webp");
     background-size: 100% 100%;
@@ -105,11 +105,11 @@ nav#menu label::before {
     outline: 2px solid var(--accent-secondary);
 }
 
-body.light-theme nav#menu label::before {
+body.light-theme nav#menu > label::before {
     background-image: url("../asset/img/burger/burger-top-light.webp");
 }
 
-nav#menu label::after {
+nav#menu > label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.webp");
     background-size: 100% 100%;
@@ -117,11 +117,11 @@ nav#menu label::after {
     outline: 2px solid var(--accent-secondary);
 }
 
-body.light-theme nav#menu label::after {
+body.light-theme nav#menu > label::after {
     background-image: url("../asset/img/burger/burger-bottom-light.webp");
 }
 
-nav#menu input:checked + label::before {
+nav#menu > input:checked + label::before {
     width: var(--x-width);
     transform: rotate(-45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/fork.webp");
@@ -131,11 +131,11 @@ nav#menu input:checked + label::before {
     transition-timing-function: cubic-bezier(.04,.87,.48,.89);
 }
 
-body.light-theme nav#menu input:checked + label::before {
+body.light-theme nav#menu > input:checked + label::before {
     background-image: url("../asset/img/burger/fork-light.webp");
 }
 
-nav#menu input:checked + label::after {
+nav#menu > input:checked + label::after {
     width: var(--x-width);
     transform: rotate(45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/knife.webp");
@@ -145,34 +145,35 @@ nav#menu input:checked + label::after {
     transition-timing-function: cubic-bezier(.39,.82,.31,.95);
 }
 
-body.light-theme nav#menu input:checked + label::after {
+body.light-theme nav#menu > input:checked + label::after {
     background-image: url("../asset/img/burger/knife-light.webp");
 }
 
-nav#menu input:checked + label {
+nav#menu > input:checked + label {
     background-color: transparent;
     background-size: 0 0;
 }
 
-nav#menu input:focus-visible + label::before,
-nav#menu input:focus-visible + label::after,
-nav#menu input:focus-visible + label {
+nav#menu > input:focus-visible + label::before,
+nav#menu > input:focus-visible + label::after,
+nav#menu > input:focus-visible + label {
     border: 1px solid white;
     box-shadow: 0 0 0 1px white;
 }
 
-nav#menu input:checked + label #ham-opened,
-nav#menu :not(input:checked) + label #ham-closed {
+nav#menu > input:checked + label #ham-opened,
+nav#menu > :not(input:checked) + label #ham-closed {
     visibility: visible;
 }
 
-nav#menu :not(input:checked) + label #ham-opened,
-nav#menu input:checked + label #ham-closed {
+nav#menu > :not(input:checked) + label #ham-opened,
+nav#menu > input:checked + label #ham-closed {
     visibility: hidden;
 }
 
-nav#menu input:checked ~ ul {
+nav#menu > input:checked ~ div#menu-dropdown {
     transform: translate(0);
+    transition: transform var(--animation-dropdown-timing);
 }
 
 nav#menu {
@@ -184,10 +185,13 @@ nav#menu {
     box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.8);
 }
 
-nav#menu ul {
+nav#menu div#menu-dropdown {
     position: absolute;
-    transition: transform var(--animation-dropdown-timing);
+    transition: transform var(--animation-dropdown-timing)  200ms;
     transform: translate(0,-100%);
+    z-index: -1;
+}
+nav#menu div#menu-dropdown ul{
     padding: 4rem 1rem 0;
     border-radius: 0;
     height: 25rem;
@@ -199,16 +203,16 @@ nav#menu ul {
     box-shadow: none;
 }
 
-nav#menu ul li:not(#profile-item) {
+nav#menu  div#menu-dropdown li:not(#profile-item) {
     width: 60%;
     text-align: center;
 }
 
-nav#menu ul li:first-child {
+nav#menu  div#menu-dropdown li:first-child {
     display: none;
 }
 
-nav#menu ul li#profile-item {
+nav#menu  div#menu-dropdown li#profile-item {
     margin: 0;
 }
 
@@ -220,7 +224,7 @@ body:has(input#ham-checkbox:checked) {
     position: fixed;
 }
 
-nav#menu input:checked ~ #content-blur {
+nav#menu > input:checked ~ #content-blur {
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     width: 100vw;
@@ -228,13 +232,29 @@ nav#menu input:checked ~ #content-blur {
     z-index: -2;
 }
 
-#theme-container {
-    top: 4.5rem;
-    right: 50%;
-    transform: translateX(50%);
+nav#menu > input:checked ~ div#menu-dropdown #theme-container {
+    bottom: -5.3rem;
+    transition: bottom 700ms ease-in-out;
 }
+
+#theme-container {
+    top: initial;
+    bottom: 0;
+    right: 3rem;
+    transform: translateX(50%);
+    transition: bottom 700ms ease-out;
+    z-index: -2;
+}
+
+#theme-mode-input:not(:checked) + label {
+    background-size: 70% 80%;
+}
+#theme-mode-input:checked + label {
+    background-size: 70% 80%;
+}
+
 #theme-mode-toggle {
-    width: 4rem;
+    height: 5rem;
 }
 
 /* #endregion MENU */
