@@ -173,6 +173,9 @@ nav#menu > input:checked ~ div#menu-dropdown {
     transform: translate(0);
     transition: transform var(--animation-dropdown-timing);
 }
+nav#menu > input:checked ~ div#menu-dropdown ul {
+    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+}
 
 nav#menu {
     display: flex;
@@ -199,6 +202,7 @@ nav#menu div#menu-dropdown ul{
     font-size: 1.1rem;
     z-index: -1;
     box-shadow: none;
+    transition: box-shadow 500ms linear;
 }
 
 nav#menu  div#menu-dropdown li:not(#profile-item) {

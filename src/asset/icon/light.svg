@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	<g fill="none" stroke="#392A24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+	<g fill="none" stroke="#19515c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
 		<path stroke-dasharray="36" stroke-dashoffset="36" d="M12 7c2.76 0 5 2.24 5 5c0 2.76 -2.24 5 -5 5c-2.76 0 -5 -2.24 -5 -5c0 -2.76 2.24 -5 5 -5">
 			<animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="36;0" />
 		</path>
