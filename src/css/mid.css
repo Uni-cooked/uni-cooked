@@ -101,7 +101,6 @@ nav#menu > label::before {
     bottom: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-top.webp");
     background-size: 100% 100%;
-    outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
 }
 
@@ -113,7 +112,6 @@ nav#menu > label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.webp");
     background-size: 100% 100%;
-    outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
 }
 

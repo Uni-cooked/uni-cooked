@@ -20,8 +20,6 @@
     --err-color: #fe0b0b;
     --danger-button-color: #b30000;
     --blur-color: 0, 0, 0;
-    /* --link-color:;
-    --link-visited-color; */
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -57,10 +55,12 @@
 .light-theme {
     --bg-primary: #F6E6CB;
     --bg-secondary: #E7D4B5;
-    --accent: #392A24;
+    --accent: #19515c;
     --accent-secondary: #efae52;
-    --hypertext-link-color: #0c6a55;
+    --accent-trinary: #392A24;
+    --hypertext-link-color: #413b72; /*#1a5626;*/ /*#465975;*/
     --text-color: black;
+    --err-color: #d20404;
     --blur-color: 255, 255, 255;
 }
 
@@ -97,6 +97,7 @@ a:visited {
 a.a-btn {
     color: var(--accent);
     border: var(--border-visited-link-btn) var(--accent-secondary);
+    background-color: var(--accent-secondary);
 }
 
 a.a-btn:visited {
@@ -218,6 +219,7 @@ fieldset {
     padding: .8em 2em;
     margin: 3rem auto 0;
     font-size: 1em;
+    color: var(--bg-primary);
     background-color: var(--accent);
 }
 
@@ -479,9 +481,12 @@ nav#breadcrumb p {
     font-size: 1rem;
     font-style: italic;
     padding: .1rem 1.3rem;
-
 }
 
+nav#breadcrumb a:link {
+    color: var(--hypertext-link-color);
+    border-color: var(--accent-secondary);
+}
 /* #endregion BREADCRUMB */
 
 /* ================================================== */
@@ -1073,6 +1078,7 @@ ul#recipe-list .recipe a:link {
     margin: 0 auto;
     padding: .5rem 1.5rem;
     font-size: 1.1rem;
+    color: var(--bg-primary);
     background-color: var(--accent);
     margin-bottom: 2em;
 }
@@ -1327,14 +1333,11 @@ ul.suggestion {
     font-size: var(--quick-text-hint);
 }
 
-
 #redirect-up p:nth-child(2) {
     margin-bottom: 2rem;
 }
 
 #redirect-up a {
-    color: var(--text-color);
-    background-color: var(--accent-trinary);
     display: block;
     padding: .7rem;
     border-radius: var(--radius-small);
@@ -1501,7 +1504,6 @@ a#edit-profile-link {
     font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
-    background-color: var(--accent-secondary);
 }
 
 #log-out {
