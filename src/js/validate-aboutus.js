@@ -27,13 +27,13 @@ function validateRequest(){
         let p = createError("err-request");
         p.innerText = "La lunghezza minima è di 20 caratteri";
         const parent = input.parentNode;
-        parent.insertBefore(p,comment.nextSibling);
+        parent.insertBefore(p,input.nextSibling);
         return false;
     } else if (comment.length > 500) {
         let p = createError("err-request");
         p.innerText = "il numero di caratteri nel testo della valutazione è superiore a 500";
         const parent = input.parentNode;
-        parent.insertBefore(p,comment.nextSibling);
+        parent.insertBefore(p,input.nextSibling);
         return false;
     }
     return true;
