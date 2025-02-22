@@ -750,7 +750,7 @@ dd .role-info-label,
         user-select: none;
         transition: background-color 600ms, color 600ms, transform 600ms;
         animation: pulse 2s infinite 2s cubic-bezier(0.25, 0, 0, 1);
-        box-shadow: 0 0 0 0 var(--text-color);
+        box-shadow: 0 0 0 0 var(--accent-trinary);
     }
 
     @keyframes pulse {
