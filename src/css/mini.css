@@ -25,6 +25,7 @@
 /* #region HEADER */
 #header-titles {
     padding: 1rem;
+    border-radius: 0;
 }
 
 /* #endregion HEADER */

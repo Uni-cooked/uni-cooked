@@ -262,16 +262,16 @@ a.recipe-card {
 
 /* #region HEADER */
 header {
-    background-image: url("../asset/img/header.webp");
+    /* background-image: url("../asset/img/header.webp"); */
+    background-image: url("../asset/img/p.webp");
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     padding-bottom: 1.5rem;
-
-    /* position: relative; */
 }
+
 
 #header-content {
     width: 100%;
@@ -280,7 +280,7 @@ header {
     align-items: center;
     justify-content: space-between;
     min-height: 30rem;
-    height: 60vh;
+    height: 65vh;
     position: relative;
 }
 
@@ -725,7 +725,7 @@ dd .role-info-label,
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
-        box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5);
+        /* box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5); */
         transform: scale(0.97);
     }
 
@@ -739,7 +739,16 @@ dd .role-info-label,
         display: inline-block;
         user-select: none;
         transition: background-color 600ms, color 600ms, transform 600ms;
+        animation: pulse 2s infinite 3s cubic-bezier(0.25, 0, 0, 1);
+        box-shadow: 0 0 0 0 var(--text-color);
     }
+
+    @keyframes pulse {
+        to {
+          box-shadow: 0 0 0 10px rgba(var(--shadow-color), 0); 
+        }
+      }
+      
 }
 
 .ribbon {
