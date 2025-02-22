@@ -127,9 +127,9 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         } elseif($info->isExecutable()) {
             $errorFound=true;
             $paginaHtml = str_replace("{{profile-pic-error}}",'<p role="alert" id="profile-pic-err-p" class="err-msg">Il <span lang="en">file</span> caricato non è supportato</p>',$paginaHtml);
-        } elseif($info->getSize()>1572864) {
+        } elseif($info->getSize()>2097152) {
             $errorFound=true;
-            $paginaHtml = str_replace("{{profile-pic-error}}",'<p role="alert" id="profile-pic-err-p" class="err-msg">Il <span lang="en">file</span> caricato supera gli 1,5 <span lang="en">megabytes</span>: carica un <span lang="en">file</span> di dimensione minore</p>',$paginaHtml);
+            $paginaHtml = str_replace("{{profile-pic-error}}",'<p role="alert" id="profile-pic-err-p" class="err-msg">Sono accettati solo <span lang="en">file</span> di dimensione minore a 2 <span lang="en" abbr="megabyte">MB</span></p>',$paginaHtml);
         } elseif(strcmp(mime_content_type($tmpFile),"image/jpeg")!=0 && strcmp(mime_content_type($tmpFile),"image/png")!=0) {
             $errorFound=true;
             $paginaHtml = str_replace("{{profile-pic-error}}",'<p role="alert" id="profile-pic-err-p" class="err-msg">Il <span lang="en">file</span> caricato è un formato non supportato</p>',$paginaHtml);
