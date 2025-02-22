@@ -20,6 +20,7 @@
     --err-color: #fe0b0b;
     --danger-button-color: #b30000;
     --blur-color: 0, 0, 0;
+    --shadow-color: 0, 0, 0;
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -62,6 +63,7 @@
     --text-color: black;
     --err-color: #d20404;
     --blur-color: 255, 255, 255;
+    --shadow-color: 128, 128, 128;
 }
 
 @font-face {
@@ -215,7 +217,7 @@ label[for] {
 }
 
 .shadow {
-
+    box-shadow: 4px 4px 10px 5px rgba(var(--shadow-color), .5);
 }
 
 .load-more-btn {
@@ -563,11 +565,6 @@ nav#quick-role li a:link {
 /* ================================================== */
 
 /* #region HOME PAGE CONTENT */
-/* #presentation-text {
-    border-top: 3px solid var(--accent);
-    border-bottom: 3px solid var(--accent);
-} */
-
 .role-text {
     background-color: rgba(var(--blur-color), .4);
     -webkit-backdrop-filter: blur(20px);
@@ -591,11 +588,6 @@ dl#roles dt {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-
-    /* border-top: 5px solid var(--accent-secondary);
-    border-bottom: 5px solid var(--accent-secondary); */
-
-
 }
 
 dl#roles dt#fuorisede {
@@ -620,7 +612,6 @@ dl#roles dd {
     padding: 2rem;
     overflow: hidden;
     position: relative;
-
 }
 
 dl#roles dd:not(:last-child) {
@@ -734,7 +725,7 @@ dd .role-info-label,
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
-    
+        box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5);
         transform: scale(0.97);
     }
 
@@ -1042,6 +1033,7 @@ ul#recipe-list a.recipe-card:visited .fake-link {
     background-image: url("../asset/icon/left-arrow-dark.svg");
     float: left;
 }
+
 body.light-theme #prev-page-btn {
     background-image: url("../asset/icon/left-arrow-light.svg");
     float: left;
@@ -1710,28 +1702,6 @@ a#edit-profile-link {
     padding: 0;
 }
 
-/* #recipie-request button {
-    width: var(--button-width);
-    height: var(--button-height);
-    border-style: none;
-    font-weight: 700;
-    font-size: var(--button-text);
-    border-radius: var(--radius-small);
-    margin-left: 1rem;
-}
-
-#recipie-request #cancel {
-    float: right;
-    background-color: var(--accent-secondary);
-    color: var(--text-color);
-}
-
-#recipie-request #confirm {
-    float: right;
-    background-color: var(--accent);
-    color: var(--bg-primary);
-} */
-
 #admin-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1754,7 +1724,6 @@ a#edit-profile-link {
     border-color: var(--bg-secondary);
     word-break: break-all;
 }
-
 /* #endregion ABOUT US PAGE */
 
 /* ================================================== */
@@ -1801,7 +1770,7 @@ a#edit-profile-link {
 
 #confirm-danger-op {
     background-color: var(--danger-button-color);
-    color: var(--text-color);
+    color: white;
     margin-bottom: 1.5em;
 }
 

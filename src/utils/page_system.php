@@ -158,8 +158,8 @@ class PageSystem
 
     private function CreatePageButtons(int $currentPage, int $totalPages, $filters_list): string
     {
-        $prev_btn = ($currentPage > 1) ? '<button id="prev-page-btn" class="shadow" name="page" value="' . clamp($currentPage - 1, 1, $totalPages) . '">Pagina precedente</button>' : "";
-        $next_btn = ($currentPage < $totalPages) ? '<button id="next-page-btn" class="shadow" name="page" value="' . clamp($currentPage + 1, 1, $totalPages) . '">Pagina successiva</button>' : "";
+        $prev_btn = ($currentPage > 1) ? '<button id="prev-page-btn" name="page" value="' . clamp($currentPage - 1, 1, $totalPages) . '">Pagina precedente</button>' : "";
+        $next_btn = ($currentPage < $totalPages) ? '<button id="next-page-btn" name="page" value="' . clamp($currentPage + 1, 1, $totalPages) . '">Pagina successiva</button>' : "";
         $TEMPLATE = "<p>" . $currentPage . ' <abbr title="su">/</abbr> ' . $totalPages . " </p>" . $prev_btn . $next_btn;
         $HIDDEN = "";
         while ($value = current($filters_list)) {
