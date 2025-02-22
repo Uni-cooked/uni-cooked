@@ -67,9 +67,9 @@ if (!isset($_GET["username"])) {
             foreach ($favouritesList as $recipe) {
                 if ($recipeCounter < $limit) {
                     if ($recipeCounter == $limit - 6) {
-                        $recipeList .= "<li class=\"fav-recipe\" id=\"prev-last-recipe\">";
+                        $recipeList .= "<li class=\"fav-recipe shadow\" id=\"prev-last-recipe\">";
                     } else {
-                        $recipeList .= "<li class=\"fav-recipe\">";
+                        $recipeList .= "<li class=\"fav-recipe shadow\">";
                     }
                     $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="vai alla ricetta ' . $recipe["nome"] . '" class="recipe-card">';
                     $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt=""/>';
@@ -163,9 +163,9 @@ if (!isset($_GET["username"])) {
             foreach ($favouritesList as $recipe) {
                 if ($recipeCounter < $limit) {
                     if ($recipeCounter == $limit - 6) {
-                        $recipeList .= "<li class=\"fav-recipe\" id=\"prev-last-recipe\">";
+                        $recipeList .= "<li class=\"fav-recipe shadow\" id=\"prev-last-recipe\">";
                     } else {
-                        $recipeList .= "<li class=\"fav-recipe\">";
+                        $recipeList .= "<li class=\"fav-recipe shadow\">";
                     }
                     $recipeList .= '<a href="recipe.php?recipe=' . urlencode($recipe["nome"]) . '" title="vai alla ricetta ' . $recipe["nome"] . '" class="recipe-card">';
                     $recipeList .= '<img loading="lazy" class="fav-recipe-img-crop" src="' . $recipe["immagine"] . '" alt=""/>';
