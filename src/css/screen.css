@@ -234,11 +234,11 @@ a.recipe-card {
     text-decoration: none;
 }
 
-.cursor-label {
+label.cursor-label {
     cursor: pointer;
 }
 
-.disabled-label {
+label.disabled-label {
     cursor: default;
 }
 /* #endregion GENERAL CLASSES */
