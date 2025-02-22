@@ -191,7 +191,7 @@ if(!isset($_POST["submit-profile-changes"]) && !isset($_POST["submit-change-psw"
         }
         echo $paginaHtml;
     } else {
-        if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["categoria"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true || $hasProfilePicBeenDeleted==true) {
+        if(strcmp($username,$isLogged)!=0 || strcmp($categoria,$userInfo["tipo_studente"])!=0 || strcmp($biografia,$userInfo["biografia"])!=0 || $isProfilePicChanged==true || $hasProfilePicBeenDeleted==true) {
             $changeResult=false;
             $imagedef="";
             if($userInfo["immagine"] || $isProfilePicChanged==true) {
