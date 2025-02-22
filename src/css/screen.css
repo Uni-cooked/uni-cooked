@@ -19,6 +19,7 @@
     --text-color: white;
     --err-color: #fe0b0b;
     --danger-button-color: #b30000;
+    --blur-color: 0, 0, 0;
 
     /* MARGINS */
     --main-mt: 2rem;
@@ -49,6 +50,18 @@
     /* FORMS */
     --button-width: 10rem;
     --button-height: 3rem;
+}
+
+.light-theme {
+    --bg-primary: #F6E6CB;
+    --bg-secondary: #E7D4B5;
+    --accent: #19515c;
+    --accent-secondary: #efae52;
+    --accent-trinary: #392A24;
+    --hypertext-link-color: #413b72; /*#1a5626;*/ /*#465975;*/
+    --text-color: black;
+    --err-color: #d20404;
+    --blur-color: 255, 255, 255;
 }
 
 @font-face {
@@ -84,6 +97,7 @@ a:visited {
 a.a-btn {
     color: var(--accent);
     border: var(--border-visited-link-btn) var(--accent-secondary);
+    background-color: var(--accent-secondary);
 }
 
 a.a-btn:visited {
@@ -91,12 +105,12 @@ a.a-btn:visited {
 }
 
 a.a-btn-secondary {
-    color: var(--text-color);
+    color: white;
     border: var(--border-visited-link-btn) var(--accent-trinary);
 }
 
 a.a-btn-secondary:visited {
-    border: var(--border-visited-link-btn) var(--text-color);
+    border: var(--border-visited-link-btn) white;
 }
 
 p {
@@ -145,13 +159,13 @@ label[for] {
     background-color: var(--bg-secondary);
     text-align: center;
     padding: 3rem 0;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 .content-container-left {
     background-color: var(--bg-secondary);
     padding: 3rem 0;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 .content-subtitle {
@@ -201,7 +215,7 @@ label[for] {
 }
 
 .shadow {
-    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+
 }
 
 .load-more-btn {
@@ -209,6 +223,7 @@ label[for] {
     padding: .8em 2em;
     margin: 3rem auto 0;
     font-size: 1em;
+    color: var(--bg-primary);
     background-color: var(--accent);
 }
 
@@ -246,13 +261,14 @@ a.recipe-card {
 /* #region HEADER */
 header {
     background-image: url("../asset/img/header.webp");
-    background-color: var(--bg-primary);
+    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     padding-bottom: 1.5rem;
-    box-shadow: inset 0px -10px 30px -10px rgba(0, 0, 0, 0.8);
+
+    /* position: relative; */
 }
 
 #header-content {
@@ -261,7 +277,9 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 60vh;
+    min-height: 30rem;
+    height: 60vh;
+    position: relative;
 }
 
 #header-titles {
@@ -272,12 +290,12 @@ header {
     backdrop-filter: blur(15px);
     padding: 1rem 3rem;
     border-radius: var(--radius-small);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(var(--blur-color), 0.2);
 }
 
 header h1,
 header h2 {
-    color: var(--text-color);
+    color: white;
     text-align: center;
     line-height: normal;
 }
@@ -291,6 +309,54 @@ h2#header-subtitle {
     font-style: italic;
     font-weight: 700;
     font-size: var(--subtitle);
+}
+
+#theme-container {
+    position: absolute;
+    top: 5.5rem;
+    right: 6rem;
+    height: 6rem;
+    width: 3.5rem;
+}
+
+#theme-mode-input {
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+    display: block;
+    outline: none;
+}
+
+#theme-mode-input:focus-visible + label {
+    border: 4px solid white;
+}
+
+#theme-mode-input:not(:checked) + label {
+    background-image: url("../asset/icon/dark.svg");
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+}
+#theme-mode-input:checked + label {
+    background-image: url("../asset/icon/light.svg");
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+}
+
+#theme-mode-toggle {
+    text-indent: -9999px;
+    position: absolute;
+    width: 3.5rem;
+    height: 6rem;
+    background-color: var(--accent-secondary);
+    clip-path: polygon(0px 0px, 100% 0%, 100% 100%, 50% 85%, 0px 100%);
+    transition: top 80ms ease-in-out;
+    top: 0;
+}
+
+#theme-mode-toggle:active {
+    top: .6rem;
 }
 
 /* #endregion HEADER */
@@ -307,7 +373,8 @@ nav#list-help {
 nav#list-help ul {
     display: block;
     list-style-type: none;
-    width: 80vw;
+    width: 100%;
+    z-index: 2;
 }
 
 nav#list-help li {
@@ -330,9 +397,9 @@ nav#list-help li {
 /* ================================================== */
 
 /* #region MENU */
-nav#menu>img.logo,
-nav#menu input,
-nav#menu label {
+nav#menu>span.logo,
+nav#menu > input,
+nav#menu > label{
     display: none;
 }
 
@@ -340,6 +407,7 @@ nav#menu {
     padding: 1.5rem 1rem 0;
     min-width: 100%;
     order: 2;
+    z-index: 3;
 }
 
 nav#menu ul {
@@ -349,7 +417,9 @@ nav#menu ul {
     background-color: var(--accent-secondary);
     border-radius: var(--radius-max);
     padding: .6rem 2rem;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.8);
+    height: 5rem;
+    position: relative;
+    z-index: 1;
 }
 
 nav#menu li {
@@ -364,6 +434,16 @@ nav#menu li:not(:first-child):not(#profile-item) {
 .logo {
     width: 3.5rem;
     height: 3.5rem;
+    background-image: url(../asset/icon/logo-dark.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999px;
+    display: block;
+}
+
+.light-theme .logo {
+    background-image: url(../asset/icon/logo-light.svg);
 }
 
 nav#menu li:first-child {
@@ -414,6 +494,7 @@ nav#breadcrumb p {
 }
 
 nav#breadcrumb a:link {
+    color: var(--hypertext-link-color);
     border-color: var(--accent-secondary);
 }
 /* #endregion BREADCRUMB */
@@ -482,13 +563,13 @@ nav#quick-role li a:link {
 /* ================================================== */
 
 /* #region HOME PAGE CONTENT */
-#presentation-text {
+/* #presentation-text {
     border-top: 3px solid var(--accent);
     border-bottom: 3px solid var(--accent);
-}
+} */
 
 .role-text {
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(var(--blur-color), .4);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     padding: 1rem 5%;
@@ -511,10 +592,10 @@ dl#roles dt {
     background-position: center;
     background-attachment: fixed;
 
-    border-top: 5px solid var(--accent-secondary);
-    border-bottom: 5px solid var(--accent-secondary);
+    /* border-top: 5px solid var(--accent-secondary);
+    border-bottom: 5px solid var(--accent-secondary); */
 
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 dl#roles dt#fuorisede {
@@ -539,7 +620,7 @@ dl#roles dd {
     padding: 2rem;
     overflow: hidden;
     position: relative;
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 dl#roles dd:not(:last-child) {
@@ -558,7 +639,7 @@ dl#roles dd:not(:last-child) {
     text-align: center;
     transition: transform var(--animation-duration) cubic-bezier(.04, .43, .41, 1.27);
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
     border-radius: var(--radius-mid);
 }
 
@@ -622,6 +703,7 @@ dd .role-info-label,
     .flip-card-back h3 {
         font-weight: 700;
         font-size: 1.8rem;
+        color: #efae52;
     }
 
     .flip-card-back ul {
@@ -652,12 +734,12 @@ dd .role-info-label,
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
-        box-shadow: inset 0px 4px 8px 1px rgba(0, 0, 0, 0.6);
+    
         transform: scale(0.97);
     }
 
     dd .role-info-label {
-        color: var(--text-color);
+        color: white;
         background-color: var(--accent-trinary);
         border-radius: var(--radius-max);
         padding: 1rem;
@@ -775,6 +857,7 @@ div#why #why-desc a:link {
     font-size: var(--button-text);
     font-weight: 700;
     background-color: var(--accent);
+    color: var(--bg-primary);
 }
 
 select#ord-res {
@@ -956,12 +1039,20 @@ ul#recipe-list a.recipe-card:visited .fake-link {
 }
 
 #prev-page-btn {
-    background-image: url("../asset/icon/left-arrow.svg");
+    background-image: url("../asset/icon/left-arrow-dark.svg");
+    float: left;
+}
+body.light-theme #prev-page-btn {
+    background-image: url("../asset/icon/left-arrow-light.svg");
     float: left;
 }
 
 #next-page-btn {
-    background-image: url("../asset/icon/right-arrow.svg");
+    background-image: url("../asset/icon/right-arrow-dark.svg");
+    float: right;
+}
+body.light-theme #next-page-btn {
+    background-image: url("../asset/icon/right-arrow-light.svg");
     float: right;
 }
 
@@ -1020,6 +1111,7 @@ ul#recipe-list a.recipe-card:visited .fake-link {
     margin: 0 auto;
     padding: .5rem 1.5rem;
     font-size: 1.1rem;
+    color: var(--bg-primary);
     background-color: var(--accent);
     margin-bottom: 2em;
 }
@@ -1123,7 +1215,7 @@ ul#comment-list li {
 
 button#del-comment {
     background-color: var(--danger-button-color);
-    color: var(--text-color);
+    color: white;
     width: 100%;
     padding: .5em 0;
     margin-top: 1em;
@@ -1274,14 +1366,11 @@ ul.suggestion {
     font-size: var(--quick-text-hint);
 }
 
-
 #redirect-up p:nth-child(2) {
     margin-bottom: 2rem;
 }
 
 #redirect-up a {
-    color: var(--text-color);
-    background-color: var(--accent-trinary);
     display: block;
     padding: .7rem;
     border-radius: var(--radius-small);
@@ -1462,7 +1551,6 @@ a#edit-profile-link {
     font-weight: 700;
     font-size: var(--button-text);
     border-radius: var(--radius-small);
-    background-color: var(--accent-secondary);
 }
 
 #log-out {
@@ -1586,7 +1674,7 @@ a#edit-profile-link {
     width: 100%;
     height: var(--button-height);
     background-color: var(--danger-button-color);
-    color: var(--text-color);
+    color: white;
     font-size: 1.1rem;
     margin: 0 auto .5em;
 }
@@ -1727,7 +1815,7 @@ footer {
     text-align: center;
     padding: 1em 0 1em 0;
     transition: visibility var(--animation-timing);
-    box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.3);
+
 }
 
 footer p {
@@ -1760,10 +1848,10 @@ select {
     padding-right: 1em;
     padding-left: 1em;
     font-size: .9em;
-    background-color: rgb(48, 48, 48);
+    background-color: var(--bg-secondary);
     border-radius: var(--radius-max);
     border: 3px solid var(--accent);
-    color: white;
+    color: var(--text-color);
 }
 
 textarea {

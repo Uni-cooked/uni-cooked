@@ -79,11 +79,11 @@ if (!isset($_GET["username"])) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade.svg\" alt=\"valutato con\"/>" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade-dark.svg\" alt=\"valutato con\"/>" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria = str_replace("_", " ", $recipe["categoria"]);
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\"/>" . strtoupper($categoria) . "</li>";
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\"/>" . strtoupper($recipe["tipo_piatto"]) . "</li>";
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student-dark.svg\" alt=\"categoria\"/>" . strtoupper($categoria) . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course-dark.svg\" alt=\"piatto\"/>" . strtoupper($recipe["tipo_piatto"]) . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost-dark.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
                     $recipeList .= '<p aria-hidden="true" class="fake-link">Vai alla ricetta</p></div></a></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }
@@ -175,11 +175,11 @@ if (!isset($_GET["username"])) {
                         header('Location: 500-err.php');
                         exit();
                     }
-                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade.svg\" alt=\"valutato con\"/>" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
+                    $recipeList .= "<ul class=\"fav-recipe-info\"><li><img loading=\"lazy\" src=\"./asset/icon/grade-dark.svg\" alt=\"valutato con\"/>" . $average . "<abbr title=\"su\"> / </abbr>30</li>";
                     $categoria = str_replace("_", " ", $recipe["categoria"]);
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student.svg\" alt=\"categoria\"/>" . $categoria . "</li>";
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course.svg\" alt=\"piatto\"/>" . $recipe["tipo_piatto"] . "</li>";
-                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/student-dark.svg\" alt=\"categoria\"/>" . $categoria . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/course-dark.svg\" alt=\"piatto\"/>" . $recipe["tipo_piatto"] . "</li>";
+                    $recipeList .= "<li><img loading=\"lazy\" src=\"./asset/icon/cost-dark.svg\" alt=\"costo\"/>" . $recipe["prezzo"] . " &euro;</li></ul>";
                     $recipeList .= '<p aria-hidden="true" class="fake-link">Vai alla ricetta</p></div></a></li>';
                     $recipeCounter = $recipeCounter + 1;
                 }

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="./css/screen.css" media="screen" />
         <link rel="stylesheet" href="./css/mid.css" media="screen and (max-width: 768px)" />
         <link rel="stylesheet" href="./css/mini.css" media="screen and (max-width: 480px)" />
+        <!-- JS -->
+        <script src="./js/theme-switcher.js"></script>
     </head>
     <body>
         <header id="top">
@@ -36,26 +38,32 @@
                 </nav>
                 
                 <nav id="menu" aria-label="menu">
-                    <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"/>
+                    <span class="logo">Logo</span>
                     <input type="checkbox" id="ham-checkbox"/>
                     <label for="ham-checkbox">
                         <span id="ham-opened" class="hide">Menu ad <span lang="en">hamburger</span> aperto, disattivare la casella di controllo per chiuderlo</span>
                         <span id="ham-closed" class="hide">Menu ad <span lang="en">hamburger</span> chiuso, attivare la casella di controllo per aprirlo</span>
                     </label>
                     
-                    <ul>
-                        <li><img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"/></li>
-                        <li><a href="./index.php" lang="en">HOME</a></li>
-                        <li><a href="./catalogue.php">RICETTE</a></li>
-                        <li><a href="./about-us.php">CONTATTI</a></li>
-                        <li id="profile-item">
-                            {{link-accesso-profilo}}
-                        </li>
-                    </ul>
+                    <div id="menu-dropdown">
+                        <ul>
+                            <li><span class="logo">Logo</span></li>
+                            <li><a href="./index.php" lang="en">HOME</a></li>
+                            <li><a href="./catalogue.php">RICETTE</a></li>
+                            <li><a href="./about-us.php">CONTATTI</a></li>
+                            <li id="profile-item">
+                                {{link-accesso-profilo}}
+                            </li>
+                        </ul>
+                        <div id="theme-container">
+                            <input id="theme-mode-input" type="checkbox" value="on">
+                            <label id="theme-mode-toggle" for="theme-mode-input" >Cambia il tema del sito</label>
+                        </div>
+                    
+                    </div>
 
                     <div id="content-blur"></div>
                 </nav>
-                
             </div>
         </header>
 
