@@ -1,76 +1,72 @@
-function validateFormRequest(){
-    let form = document.getElementById("request");
-    form.addEventListener("submit", (e) => {
-        if(!validateRequest()){
-            e.preventDefault();
-            document.getElementById("confirm").classList.add("disabled-btn");
-            document.getElementById("confirm").disabled = true;
-        }
-    });
+import { createError, eliminateError, ToggleConfirmButton } from './utils.js'
+
+function ValidateAll(e) {
+    if (!validateRequest()) {
+        e.preventDefault();
+    } 
+}
+
+function TogggleRequestBtn() {
+    const request = document.getElementById("recipie-request-input").value.trim();
+
+    if (request.length < 20 || request.length > 500) {
+        ToggleConfirmButton(0);
+    } else {
+        ToggleConfirmButton(1);
+    }
 }
 
 function validateRequest(){
-    var Request = document.forms["request"]["recipie-request-input"].value;
-
-    if(Request.length < 20){
-        if(Request == ""){
-            document.getElementById("cancel").classList.add("disabled-btn");
-            document.getElementById("cancel").disabled = true;
-        }else{
-            document.getElementById("cancel").classList.remove("disabled-btn");
-            document.getElementById("cancel").disabled = false;
-            document.getElementById("confirm").classList.add("disabled-btn");
-            document.getElementById("confirm").disabled = true;
-        }
-        var check = document.getElementById("err-request");
-        if(check) check.remove();
-        var p = document.createElement("p");
-	    p.setAttribute("role","alert");
-	    p.setAttribute("id","err-request");
-	    p.classList.add("err-msg");
+    const input = document.getElementById("recipie-request-input");
+    const comment = input.value.trim();
+    
+    const errorString = document.getElementById("err-request");
+    eliminateError(errorString);
+    
+    if (comment.length < 20) {
+        let p = createError("err-request");
         p.innerText = "La lunghezza minima è di 20 caratteri";
-        const parent = document.getElementById("recipie-request-input").parentNode;
-        parent.appendChild(p);
+        const parent = input.parentNode;
+        parent.insertBefore(p,comment.nextSibling);
         return false;
-
-    } else if (Request.length > 500){
-        document.getElementById("cancel").classList.remove("disabled-btn");
-        document.getElementById("cancel").disabled = true;
-        var check = document.getElementById("err-request");
-        if(check) check.remove();
-        var p = document.createElement("p");
-	    p.setAttribute("role","alert");
-	    p.setAttribute("id","err-request");
-	    p.classList.add("err-msg");
-        p.innerText = "La lunghezza massima è di 500 caratteri";
-        const parent = document.getElementById("recipie-request-input").parentNode;
-        parent.appendChild(p);
+    } else if (comment.length > 500) {
+        let p = createError("err-request");
+        p.innerText = "il numero di caratteri nel testo della valutazione è superiore a 500";
+        const parent = input.parentNode;
+        parent.insertBefore(p,comment.nextSibling);
         return false;
     }
-    
-    var check = document.getElementById("err-request");
-    if(check) check.remove();
-    document.getElementById("cancel").classList.remove("disabled-btn");
-    document.getElementById("cancel").disabled = false;
-    document.getElementById("confirm").disabled = false;
-    document.getElementById("confirm").classList.remove("disabled-btn");
     return true;
 }
 
+
+
 const inputRequest = {
-    "recipie-request-input" : ["change", validateRequest ],
+    "recipie-request-input" : {
+        "change": validateRequest,
+        "input": TogggleRequestBtn
+
+    },
+    "request": {
+        "submit": ValidateAll,
+        "reset": TogggleRequestBtn
+    },
+    
 };
 
-window.addEventListener("load", () => {
-    for (var id in inputRequest) {
+function InitListeners(){
+    for (let id in inputRequest) {
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(inputRequest[id][0], inputRequest[id][1]);
+        let element = document.getElementById(id);
+        for(let e in inputRequest[id]) {
+            element.addEventListener(e, inputRequest[id][e]);
+        }
 	}
-    document.getElementById("cancel").classList.add("disabled-btn");
-    document.getElementById("cancel").disabled = true;
-    document.getElementById("confirm").classList.add("disabled-btn");
-    document.getElementById("confirm").disabled = true;
-    validateFormRequest();
+}
+
+window.addEventListener("load", () => {
+    InitListeners();
+    ToggleConfirmButton(0);
 });

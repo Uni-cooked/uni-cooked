@@ -25,8 +25,6 @@
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#breadcrumb" class="help-el">Salta a dove ti trovi</a></li>
-                        <li><a href="#menu" class="help-el">Salta al menu</a></li>
                         <li><a href="#content" class="help-el">Salta al contenuto</a></li>
                     </ul>
                 </nav>
@@ -36,12 +34,12 @@
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
 
-                <nav id="breadcrumb">
+                <nav id="breadcrumb" aria-label="dove ti trovi">
                     <p>Stai studiando in:</p>
                     <p><a href="user.php">PROFILO UTENTE</a> &gt; MODIFICA</p>
                 </nav>
 
-                <nav id="menu">
+                <nav id="menu" aria-label="menu">
                     <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"/>
                     <input type="checkbox" id="ham-checkbox"/>
                     <label for="ham-checkbox">
@@ -74,10 +72,12 @@
                         <div id="primary-info">
                             <div id="edit-pp">
                                 <img loading="lazy" src="{{profile-pic}}" alt="Immagine profilo di {{username}}" id="chosen-image"/>
-                                <label id="mod-pp">
+                                <label id="mod-pp" class="cursor-label shadow">
                                     <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg"/>
                                     Modifica foto
                                 </label>
+                                <input type="radio" name="del_pp" id="del-pp-radio" {{disable-radio}}>
+                                <label class="{{disable-class}} cursor-label shadow" for="del-pp-radio" id="del-pp"><span class="hide">Elimina foto</span></label>
                                 {{profile-pic-error}}
                             </div>
 
@@ -105,8 +105,8 @@
                         <textarea id="bio-edit" name="bio-edit" maxlength="300">{{biografia}}</textarea>
                         {{bio-error}}
 
-                        <button class="button-input button-input-confirm" type="submit" name="submit-profile-changes" id="btn-confirm">CONFERMA</button>
-                        <button class="button-input button-input-cancel" type="reset">CANCELLA</button>
+                        <button class="button-input button-input-confirm shadow" type="submit" name="submit-profile-changes" id="btn-confirm">CONFERMA</button>
+                        <button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button>
                     </fieldset>
                 </form>
 
@@ -118,7 +118,7 @@
                             <input required type="password" placeholder="Inserisci la vecchia password" name="old_psw" id="old-psw"/>
                             
                             <input type="checkbox" name="show_old_psw" id="show-old-psw" class="show-psw-checkbox">
-                            <label for="show-old-psw">Mostra <span>password</span></label>
+                            <label for="show-old-psw" title="vecchia">Mostra <span>password</span></label>
                             {{messaggio di old-psw}}
                         </div>
                         <div class="input-container">
@@ -133,7 +133,7 @@
                             <input required type="password" placeholder="Inserisci la nuova password" name="psw" id="new-psw"/>
                             
                             <input type="checkbox" name="show_new_psw" id="show-new-psw" class="show-psw-checkbox">
-                            <label for="show-new-psw">Mostra <span>password</span></label>
+                            <label for="show-new-psw" title="nuova">Mostra <span>password</span></label>
                             {{messaggio di new-psw}}
                         </div>
                         <div class="input-container">
@@ -141,7 +141,7 @@
                             <input required type="password" placeholder="Ripeti la nuova password" name="repeat-psw" id="repeat-new-psw"/>
                             
                             <input type="checkbox" name="show_rep_psw" id="show-rep-psw" class="show-psw-checkbox">
-                            <label for="show-rep-psw">Mostra <span>password</span></label>
+                            <label for="show-rep-psw" title="nuova ripetuta">Mostra <span>password</span></label>
                             {{messaggio di repeat-psw}}
                         </div>
 
@@ -152,8 +152,8 @@
 
                 <h2 class="content-subtitle">ZONA PERICOLOSA</h2>
                 <form action="confirm.php" method="get">
-                    <button class="danger-btn" type="submit" name="action" value="delete-recipe">CANCELLA RICETTE PREFERITE</button>
-                    <button class="danger-btn" type="submit" name="action" value="delete-account">CANCELLA ACCOUNT</button>
+                    <button class="danger-btn shadow" type="submit" name="action" value="delete-recipe">CANCELLA RICETTE PREFERITE</button>
+                    <button class="danger-btn shadow" type="submit" name="action" value="delete-account">CANCELLA ACCOUNT</button>
                 </form>
             </div>
         </main>

@@ -1,275 +1,232 @@
-function validateEditForm(){
-	let form = document.getElementById("new-info");
+import { createError, eliminateError, ToggleConfirmButton, ShowPsw, ToggleLabel } from './utils.js'
 
-	form.addEventListener("submit", function (event) {
-		if (!(validateEditNewUsername())){
-			event.preventDefault();
-			document.getElementById("btn-confirm").classList.add("disabled-btn");
-			document.getElementById("btn-confirm").disabled = true;
-		}
-	});
+function ValidateProfile(e) {
+	if (!validateUsername()) {
+		e.preventDefault();
+	}
 }
 
-function validatePswForm(){
-	let form = document.getElementById("credentials");
-
-	form.addEventListener("submit", function (event) {
-		if (!(validateEditPassword() && validateEditPasswordConfirm())){
-			event.preventDefault();
-			document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-			document.getElementById("second-btn-confirm").disabled = true;
-		}
-	});
+function ValidateNewPsw(e) {
+	if (!validateOldPassword() || !validatePassword() || !validatePasswordConfirm()) {
+		e.preventDefault();
+	}
 }
 
-function resetImg(img,src){
-	let form = document.getElementById("new-info");
-	form.addEventListener("reset", () => {
-        img.setAttribute("src",src);
-	});
+function ToggleConfirmModButton() {
+    const username = document.getElementById("nickname-edit").value.trim();
+
+    if (username.length < 1 || username.length > 15) {
+		ToggleConfirmButton(0);
+    } else {
+		ToggleConfirmButton(1);
+    }
 }
 
-function chargeNewImage() {
+function ToggleConfirmPswButton() {
+	const oldPsw = document.getElementById('old-psw').value.trim();
+	const psw = document.getElementById('new-psw').value.trim();
+	const rpsw = document.getElementById('repeat-new-psw').value.trim();
+
+    if (oldPsw == ""  || psw.length < 4 || rpsw =="") {
+		ToggleConfirmButton(0,"second-btn-confirm");
+    } else {
+		ToggleConfirmButton(1,"second-btn-confirm");
+    }
+}
+
+function validateUsername() {
+	const input = document.getElementById("nickname-edit");
+	const username = input.value.trim();
+
+	const errorString = document.getElementById("err-edit-nam");
+	eliminateError(errorString);
+    
+    if(username.length < 1){
+		let p = createError("err-edit-nam");
+	    p.innerText = "Il nome utente è un campo obbligatorio";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+
+	if(username.length > 15){
+		let p = createError("err-edit-nam");
+	    p.innerText = "Il nome utente non deve essere più lungo di 15 caratteri";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+
+	if (username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
+		let p = createError("err-edit-nam");
+	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+	return true;
+}
+
+async function ChangeImage() {
 	const inputImage = document.getElementById("profile-img-edit");
-    const imageOutput = document.getElementById("chosen-image");
-    const img = document.getElementById("chosen-image");
-	var src = img.getAttribute("src");
-    resetImg(img,src);
-    inputImage.addEventListener("change", async () => {
-        let [file] = inputImage.files;
+	const [file] = inputImage.files;
 
-        const Reader = new FileReader();
-        Reader.onload = (e) => {
-		    const acceptedImgType = ["image/png","image/jpeg"];
-		    sizeFile = file.size;
-		    Byte = Math.round(sizeFile/1024);
+	document.getElementById("del-pp-radio").checked = false;
+	ToggleLabel(1,"del-pp-radio");
+	ToggleLabel(1,"del-pp");
 
-		    if(Byte < 2048 ){
-		        if(acceptedImgType.includes(file['type'])){
-                    imageOutput.setAttribute("src", e.target.result);
-
-					var sizeError = document.getElementById("profile-pic-err-p");
-					var formatError = document.getElementById("profile-pic-err-p");
-
-					deleteError(sizeError);
-					deleteError(formatError);
-				}
-		        else{
-					var sizeError = document.getElementById("profile-pic-err-p");
-					deleteError(sizeError);
-
-					p = createError("profile-pic-err-p");
-					p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
-					inputImage.parentNode.appendChild(p);		
-				}
-            }else{
-				var formatError = document.getElementById("profile-pic-err-p");
-				deleteError(formatError);
-
-				p = createError("profile-pic-err-p");
-				p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a <span lang='en' abbr='megabyte'>2MB</span>";
-				inputImage.parentNode.appendChild(p);
+	const imageOutput = document.getElementById("chosen-image");
+	const Reader = new FileReader();
+	Reader.onload = (e) => {
+		const acceptedImgType = ["image/png","image/jpeg"];
+		const sizeFile = file.size;
+		const Byte = Math.round(sizeFile/1024);
+		const errorString = document.getElementById("profile-pic-err-p");
+		eliminateError(errorString);
+		if(Byte < 2048 ){
+			if(acceptedImgType.includes(file['type'])){
+				imageOutput.setAttribute("src", e.target.result);
 			}
+			else{
+				p = createError("profile-pic-err-p");
+				p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
+				const parent = document.getElementById("mod-pp").parentNode;
+				parent.appendChild(p);
+				inputImage.value = null;
+				console.log(inputImage.files);		
+			}
+		}else{
+			p = createError("profile-pic-err-p");
+			p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a <span lang='en' abbr='megabyte'>2MB</span>";
+			const parent = document.getElementById("mod-pp").parentNode;
+			parent.appendChild(p);	
 		}
-
-        Reader.readAsDataURL(file);
-    });
+	}
+	Reader.readAsDataURL(file);
 }
 
-function validateEditNewUsername() {
-	var Username = document.forms['new-info']['nickname-edit'].value;
-	const allowedChars = /^[a-zA-ZÀ-Ýß-ÿ0-9]+$/; // lettere maiuscole e minuscole, numeri
-
-	if(Username.length < 1 || Username == ""){
-		var check = document.getElementById("err-edit-nam");
-		deleteError(check);
-		const name = document.getElementById("nickname-edit").parentNode;
-		var p = createError("err-edit-nam");
-	    p.innerHTML = "Il nome utente è un campo obbligatorio";
-		name.appendChild(p);
-		document.getElementById("btn-confirm").disabled = true;
-		document.getElementById("btn-confirm").classList.add("disabled-btn");
-		return false;
-	}
-
-	if(Username.length > 15){
-		var check = document.getElementById("err-edit-nam");
-		deleteError(check);
-		const name = document.getElementById("nickname-edit").parentNode;
-		var p = createError("err-edit-nam");
-	    p.innerHTML = "Il nome utente non deve essere più lungo di 15 caratteri";
-		name.appendChild(p);
-		document.getElementById("btn-confirm").disabled = true;
-		document.getElementById("btn-confirm").classList.add("disabled-btn");
-		return false;
-	}
-
-	if (Username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) != 0 || !allowedChars.test(Username)) {
-		var check = document.getElementById("err-edit-nam");
-		deleteError(check);
-		const name = document.getElementById("nickname-edit").parentNode;
-		var p = createError("err-edit-nam");
-	    p.innerHTML = "Il nome utente non deve contenere spazi o caratteri speciali";
-		name.appendChild(p);
-		document.getElementById("btn-confirm").disabled = true;
-		document.getElementById("btn-confirm").classList.add("disabled-btn");
-		return false;
-	}
-	var nameError = document.getElementById("err-edit-nam");
-	deleteError(nameError);
-	document.getElementById("btn-confirm").classList.remove("disabled-btn");
-	document.getElementById("btn-confirm").disabled = false;
-	return true;
-}
-
-function validateOldPassword(){
-	var oldPsw = document.forms['credentials']['old-psw'].value;
-	if(oldPsw == "" || oldPsw.length < 1){
-		var check = document.getElementById("err-old-psw");
-		deleteError(check);
-		const psw = document.getElementById("old-psw").parentNode;
-		var p = createError("err-old-psw");
-		p.innerHTML = "Inserisci la <span lang='en'>password</span> attuale";
-		psw.appendChild(p);
-		ButtonValidator();
-		return false;
-	}
-	var check = document.getElementById("err-old-psw");
-	deleteError(check);
-	ButtonValidator();
-	return true;
-}
-
-function validateEditPassword() {
-	var Password  = document.forms['credentials']['new-psw'].value;
-
-	if (Password.length < 4) {
-		var check = document.getElementById("err-new-psw");
-		deleteError(check);
-		const psw = document.getElementById("new-psw").parentNode;
-		var p = createError("err-new-psw");
-		p.innerHTML = "La<span lang='en'> password</span> deve essere lunga almeno 4 caratteri";
-		psw.appendChild(p);
-		ButtonValidator();
-		return false;
-	}
+function ToggleChangeImage() {
+	ToggleLabel(0,"del-pp-radio");
+	ToggleLabel(0,"del-pp");
 	
-	if (Password.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) !=0) {
-		var check = document.getElementById("err-new-psw");
-		deleteError(check);
-		const psw = document.getElementById("new-psw").parentNode;
-		var p = createError("err-new-psw");
-		p.innerHTML = "La<span lang='en'> password </span>deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
-		psw.appendChild(p);
-		ButtonValidator();
+
+	const img = document.getElementById("chosen-image");
+	img.setAttribute("src","./asset/img/def-profile.webp");
+}
+
+function validatePassword() {
+	const input = document.getElementById('new-psw');
+	const psw = input.value.trim();
+
+	const errorString = document.getElementById("err-new-psw");
+	eliminateError(errorString);
+    
+
+	if (psw.length < 4) {
+		let p = createError("err-new-psw");
+		p.innerHTML = "La <span lang='en'>password</span> deve essere lunga almeno 4 caratteri";
+		const parent = input.parentNode;
+		parent.appendChild(p);
 		return false;
 	}
-    var check = document.getElementById("err-new-psw");
-	deleteError(check);
-	ButtonValidator();
-	validateEditPasswordConfirm();
+
+	if (psw.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) == -1) {
+		let p = createError("err-new-psw");
+		p.innerHTML = "La <span lang='en'>password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
 	return true;
 }
 
+function validatePasswordConfirm() {
+	const input = document.getElementById("repeat-new-psw");
+	const psw = document.getElementById('new-psw').value.trim();
+	const rpsw = input.value.trim();
 
-function validateEditPasswordConfirm() {
-	var Password  = document.forms['credentials']['new-psw'].value;
-	var repeatPassword = document.forms['credentials']['repeat-new-psw'].value;
+	const errorString = document.getElementById("err-repeat-new-psw");
+	eliminateError(errorString);
 
-	if (Password != repeatPassword) {
-		var check = document.getElementById("err-repeat-new-psw");
-		deleteError(check);
-        var p = createError("err-repeat-new-psw");
-		var html = "Le <span lang='en'>password </span> non coincidono";
-		p.innerHTML = html;
-		const repeatPsw = document.getElementById("repeat-new-psw").parentNode;
-		repeatPsw.appendChild(p);
-		ButtonValidator();
+	if (psw != rpsw) {
+		let p = createError("err-repeat-new-psw");
+		p.innerHTML = "Le <span lang='en'>password</lang> non coincidono";
+		const parent = input.parentNode;
+		parent.appendChild(p);
 		return false;
 	}
-    var check = document.getElementById("err-repeat-new-psw");
-	deleteError(check);
-	ButtonValidator();
 	return true;
-}
 
-function ButtonValidator(){
-	var oldPsw = document.getElementById("old-psw").value;
-	var Password  = document.forms['credentials']['new-psw'].value;
-	var repeatPassword = document.forms['credentials']['repeat-new-psw'].value;
-	var errPsw = document.getElementById("err-new-psw");
-	var errRepPsw = document.getElementById("err-repeat-new-psw");
-	if(oldPsw == "" || oldPsw.length < 1 || errPsw || errRepPsw || Password == "" || Password.length < 1 || repeatPassword == "" || repeatPassword.length < 1){
-		document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-		document.getElementById("second-btn-confirm").disabled = true;
-	}else{
-		document.getElementById("second-btn-confirm").classList.remove("disabled-btn");
-		document.getElementById("second-btn-confirm").disabled = false;
-	}
-
-}
-
-function createError(id){
-	var p = document.createElement("p");
-	p.setAttribute("role","alert");
-	p.setAttribute("id",id);
-	p.classList.add("err-msg");
-
-	return p;
-}
-
-function deleteError(p){
-	if(p) p.remove();
-}
-
-function ShowOldPsw() {
-    if (this.checked) {
-        document.getElementById("old-psw").type = "text";
-    } else {
-        document.getElementById("old-psw").type = "password";
-    }
-}
-
-function ShowNewPsw() {
-    if (this.checked) {
-        document.getElementById("new-psw").type = "text";
-    } else {
-        document.getElementById("new-psw").type = "password";
-    }
-}
-
-function ShowRepPsw() {
-    if (this.checked) {
-        document.getElementById("repeat-new-psw").type = "text";
-    } else {
-        document.getElementById("repeat-new-psw").type = "password";
-    }
 }
 
 const listeners = {
-	"nickname-edit" : ["input", validateEditNewUsername],
-	"old-psw" : ["input",validateOldPassword],
-	"new-psw" : ["input", validateEditPassword ],
-	"repeat-new-psw" : ["input", validateEditPasswordConfirm ],
-	"show-old-psw" : ["click", ShowOldPsw ],
-	"show-new-psw" : ["click", ShowNewPsw ],
-	"show-rep-psw" : ["click", ShowRepPsw ]
+	"nickname-edit" : {
+		"change": validateUsername,
+		"input": ToggleConfirmModButton
+	},
+	"profile-img-edit": {
+		"change":ChangeImage,
+		"input": ToggleConfirmModButton
+	},
+	"del-pp-radio" : {
+		"change": ToggleChangeImage
+	},
+	"old-psw" : {
+		"input":ToggleConfirmPswButton
+	},
+	"new-psw" : {
+		"change": validatePassword,
+		"input": ToggleConfirmPswButton
+	},
+	"repeat-new-psw" : {
+		"change": validatePasswordConfirm,
+		"input": ToggleConfirmPswButton
+		
+	},
+
+	"show-old-psw" : {"click": function () {ShowPsw(this,"old-psw");} },
+	"show-new-psw" : {"click": function () {ShowPsw(this,"new-psw");} },
+	"show-rep-psw" : {"click": function () {ShowPsw(this,"repeat-new-psw");} },
+
+	"credentials": {"submit": ValidateProfile},
+	"new-info": {
+		"submit": ValidateNewPsw,
+		"reset":ToggleConfirmPswButton
+	}
 };
 
-window.addEventListener('load', function () {
-	document.getElementById("second-btn-confirm").classList.add("disabled-btn");
-	document.getElementById("second-btn-confirm").disabled = true;
-	checkUserEdit();
-	chargeNewImage();
-	validateEditForm();
-	validatePswForm();
-});
 
-function checkUserEdit() {
-	for (var id in listeners) {
+function InitListeners(){
+    for (let id in listeners) {
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(listeners[id][0], listeners[id][1]);
+        let element = document.getElementById(id);
+        for(let e in listeners[id]) {
+            element.addEventListener(e, listeners[id][e]);
+        }
 	}
+	const form = document.getElementById("new-info");
+	const img = document.getElementById("chosen-image");
+	const original = img.getAttribute("src");
+	const initState = document.getElementById("del-pp-radio").disabled;
+	form.addEventListener("reset", () => {
+		if(!initState) {
+			ToggleLabel(1,"del-pp-radio");
+			ToggleLabel(1,"del-pp");
+		} else {
+			ToggleLabel(0,"del-pp-radio");
+			ToggleLabel(0,"del-pp");
+		}
+		
+		ToggleLabel(1,"profile-img-edit");
+		ToggleLabel(1,"mod-pp");
+
+		img.setAttribute("src",original);
+	});
 }
+
+window.addEventListener('load', function () {
+	InitListeners();
+	ToggleConfirmButton(0,"second-btn-confirm");
+});

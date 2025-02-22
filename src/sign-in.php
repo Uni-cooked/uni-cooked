@@ -17,6 +17,12 @@ if ($isLogged!=false) {
     exit();
 }
 
+if(isset($_GET["ref"])) {
+    $paginaHtml=str_replace("{{ref-value}}",'?ref='.$_GET["ref"],$paginaHtml);
+} else {
+    $paginaHtml=str_replace("{{ref-value}}","",$paginaHtml);
+}
+
 if (isset($_POST['submit'])) {
     $username=Sanitizer::SanitizeUsername($_POST["nome"]);
     $psw=$_POST["psw"];
@@ -24,7 +30,13 @@ if (isset($_POST['submit'])) {
 
     if ($result==true && is_bool($result)) {
         $_POST = null;
-        header("Location: index.php");
+        if(isset($_GET["ref"])) {
+            $link="recipe.php?recipe=".$_GET["ref"]."#eval-section";
+            unset($_GET["ref"]);
+            header("Location: ".$link);
+            exit();
+        }
+        header("Location: user.php");
         exit();
     } else if ($result==false) {
         echo str_replace("{{messaggio di errore}}",'<p role="alert" class="err-msg" id="err-sign-in">Le credenziali inserite non sono corrette</p>',$paginaHtml);

@@ -16,6 +16,7 @@ class PageSystem
     private DB $db;
 
     private array $filter_list;
+    private int $totalResultsN;
 
     private ?string $recipeName;
     private ?string $recipeCategory;
@@ -128,22 +129,21 @@ class PageSystem
         
         $results = $this->db->GetRecipes($query, $params);
 
+        
         $this->totalPages = ceil(($results ? count($results) : 1) / PageSystem::ITEMS_PER_PAGE);
         $this->current_page = clamp($this->current_page = $page, 0, $this->totalPages);
-
+        
         if ($results) {
+            $this->totalResultsN = count($results);
             return array_slice($results, PageSystem::ITEMS_PER_PAGE * ($page - 1), PageSystem::ITEMS_PER_PAGE);
         }
-
+        $this->totalResultsN = 0;
         return $results;
 
     }
 
     public function GetTotalResultNumber(): int {
-        $query ="SELECT Count(*) as N
-                FROM Ricetta";
-        $results = $this->db->GetRecipes($query, []);
-        return $results[0]["N"];
+        return $this->totalResultsN;
     }
 
     public function GetParamList(): array

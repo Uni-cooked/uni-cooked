@@ -25,8 +25,6 @@
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#breadcrumb" class="help-el">Salta a dove ti trovi</a></li>
-                        <li><a href="#menu" class="help-el">Salta al menu</a></li>
                         <li><a href="#content" class="help-el">Salta al contenuto</a></li>
                     </ul>
                 </nav>
@@ -36,12 +34,12 @@
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
 
-                <nav id="breadcrumb">
+                <nav id="breadcrumb" aria-label="dove ti trovi">
                     <p>Stai studiando in:</p>
                     <p>ACCEDI</p>
                 </nav>
 
-                <nav id="menu">
+                <nav id="menu" aria-label="menu">
                     <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"/>
                     <input type="checkbox" id="ham-checkbox"/>
                     <label for="ham-checkbox">
@@ -61,31 +59,29 @@
             </div>
         </header>
         <main id="content">
-            <div class="sign-box content">
-                <h2 class="content-subtitle">ACCEDI</h2>
-                <form id="credentials" action="sign-in.php" method="post">
-                    <fieldset>
-                        <legend class="hide">Dati di accesso</legend>
-                        <div class="input-container">
-                            <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
-                            <input required type="text" placeholder="Inserisci il nome" name="nome" id="student-name-in" maxlength="15"/>
-                        </div>
-                        <div class="input-container ">
-                            <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la <span lang="en">password</span></label>
-                            <input required type="password" placeholder="Inserisci la password" name="psw" id="student-psw-in"/>
+            <h2 class="content-subtitle content">ACCEDI</h2>
+            <form id="credentials" class="content" action="sign-in.php{{ref-value}}" method="post">
+                <fieldset>
+                    <legend class="hide">Dati di accesso</legend>
+                    <div class="input-container">
+                        <label for="student-name-in" id="name-in" class="form-label">Inserisci il nome utente</label>
+                        <input required type="text" placeholder="Inserisci il nome" name="nome" id="student-name-in" maxlength="15"/>
+                    </div>
+                    <div class="input-container ">
+                        <label for="student-psw-in" id="psw-in" class="form-label">Inserisci la <span lang="en">password</span></label>
+                        <input required type="password" placeholder="Inserisci la password" name="psw" id="student-psw-in"/>
 
-                            <input type="checkbox" name="show_psw" id="show-psw" class="show-psw-checkbox">
-                            <label for="show-psw">Mostra <span>password</span></label>
-                        </div>
-                        {{messaggio di errore}}
-                        <button class="button-input button-input-confirm shadow" type="submit" name="submit" id="btn-confirm">ACCEDI</button>
-                    </fieldset>
-                </form>
-                <div id="redirect">
-                    <p>Non ti sei ancora registrato?</p>
-                    <p>Corri subito a farlo se non vuoi essere <strong>cucinato</strong>.</p>
-                    <a href="./sign-up.php" class="a-btn-secondary shadow">REGISTRATI</a>
-                </div>
+                        <input type="checkbox" name="show_psw" id="show-psw" class="show-psw-checkbox">
+                        <label for="show-psw">Mostra <span>password</span></label>
+                    </div>
+                    {{messaggio di errore}}
+                    <button class="button-input button-input-confirm shadow" type="submit" name="submit" id="btn-confirm">ACCEDI</button>
+                </fieldset>
+            </form>
+            <div id="redirect-up" class="content">
+                <p>Non ti sei ancora registrato?</p>
+                <p>Corri subito a farlo se non vuoi essere <strong>cucinato</strong>.</p>
+                <a href="./sign-up.php{{ref-value}}" class="a-btn-secondary shadow">REGISTRATI</a>
             </div>
         </main>
 

@@ -1,227 +1,193 @@
-function validateUserSignup() {
+import { createError, eliminateError, ToggleConfirmButton,ShowPsw } from './utils.js'
 
-	let form = document.getElementById("credentials");
-
-	form.addEventListener("submit", function (event) {
-		if (! (validateNewUsername() && validateStudent() && validateEmail() && validatePassword() && validatePasswordConfirm()) ) {
-			event.preventDefault();
-			document.getElementById("btn-register").classList.add("disabled-btn");
-			document.getElementById("btn-register").disabled = true;
-		}
-	});
+function ValidateAll(e) {
+    if (!validateUsername() || !validateStudent() || !validateEmail() || !validatePassword() || !validatePasswordConfirm()) {
+        e.preventDefault();
+    } 
 }
 
-function UltimateCheck(){
-	var errorUsername = document.getElementById("err-name");
-	var errorStudent = document.getElementById("err-student");
-	var errorEmail = document.getElementById("err-mail");
-	var errorPassword = document.getElementById("err-psw");
-	var errorRepeatPassword = document.getElementById("err-repeat-psw");
-	if (errorUsername || errorStudent || errorEmail || errorPassword || errorRepeatPassword){
-		document.getElementById("btn-register").disabled = true;
-		document.getElementById("btn-register").classList.add("disabled-btn");
-	}else{
-		document.getElementById("btn-register").disabled = false;
-		document.getElementById("btn-register").classList.remove("disabled-btn")
-	}
+function ToggleSignUpBtn() {
+    const username = document.getElementById("student-name-up").value.trim();
+	const student = document.getElementById("student-cat-up");
+	const email = document.getElementById("student-mail-up").value.trim();
+	const psw = document.getElementById('student-psw-up').value.trim();
+	const rpsw = document.getElementById('student-repeat-psw-up').value.trim();
+
+    if ((username.length < 1 || username.length > 15) || student.options[student.selectedIndex].hasAttribute("hidden") || email.length < 1 || psw.length < 4 || rpsw =="") {
+		ToggleConfirmButton(0);
+    } else {
+		ToggleConfirmButton(1);
+    }
 }
 
-function validateNewUsername() {
-	var Username = document.forms['credentials']['student-name-up'].value;
-	const allowedChars = /^[a-zA-ZÀ-Ýß-ÿ0-9]+$/; // lettere maiuscole e minuscole, numeri
-    
-    if(Username.lenght < 1){
-		var check = document.getElementById("err-name");
-		deleteError(check);
-		var p = messageError("err-name");
+
+function validateUsername() {
+	const input = document.getElementById("student-name-up");
+	const username = input.value.trim();
+
+	const errorString = document.getElementById("err-name");
+	eliminateError(errorString);
+
+    if(username.length < 1){
+		let p = createError("err-name");
 	    p.innerText = "Il nome utente è un campo obbligatorio";
-		const parent = document.getElementById("student-name-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
 
-	if(Username.length > 15){
-		var check = document.getElementById("err-name");
-		deleteError(check);
-		var p = messageError("err-name");
+	if(username.length > 15){
+		let p = createError("err-name");
 	    p.innerText = "Il nome utente non deve essere più lungo di 15 caratteri";
-		const parent = document.getElementById("student-name-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
 
-	if (Username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) != 0 || !allowedChars.test(Username)) {
-		var check = document.getElementById("err-name");
-		deleteError(check);
-		var p = messageError("err-name");
+	if (username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
+		let p = createError("err-name");
 	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
-		const parent = document.getElementById("student-name-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
-	var check = document.getElementById("err-name");
-	deleteError(check);
-	UltimateCheck();
 	return true;
 }
 
 function validateStudent(){
-    var Student = document.forms['credentials']["student-cat-up"];
+    const input = document.getElementById("student-cat-up");
+	const student = input.value.trim();
 
-    if(Student.value == "Seleziona una opzione"){
-		var check = document.getElementById("err-student");
-		deleteError(check);
-		var p = messageError("err-student")
+	const errorString = document.getElementById("err-student");
+	eliminateError(errorString);
+
+    if(student == "Seleziona una opzione"){
+		let p = createError("err-student")
         p.innerText = "Seleziona una categoria";
-		const parent = document.getElementById("student-cat-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
         return false;
     }
-    var check = document.getElementById("err-student");
-	deleteError(check);
-	UltimateCheck();
     return true;
 }
 
 function validateEmail(){
-    var Email = document.forms['credentials']["student-mail-up"].value;
+    const input = document.getElementById("student-mail-up");
+	const email = input.value.trim();
+
+	const errorString = document.getElementById("err-mail");
+	eliminateError(errorString);
     
-    if(Email.lenght < 1){
-		var check = document.getElementById("err-mail");
-	    deleteError(check);
-		var p = messageError("err-mail"); 
+    if(email.length < 1){
+		let p = createError("err-mail"); 
 		p.innerHTML = "L'<span lang='en'>email</span> è un campo obbligatorio";
-		const parent = document.getElementById("student-mail-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
         return false;
 	}
 
-    if(Email.length > 0 && Email.search(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) != 0){
-        var check = document.getElementById("err-mail");
-	    deleteError(check);
-		var p = messageError("err-mail"); 
+    if(email.search(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) == -1){
+		let p = createError("err-mail"); 
 		p.innerHTML = "L'<span lang='en'>email</span> scelta non è un indirizzo valido";
-		const parent = document.getElementById("student-mail-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
         return false;
     }
-    var check = document.getElementById("err-mail");
-	deleteError(check);
-	UltimateCheck();
     return true;
 }
 
 function validatePassword() {
-	var Password  = document.forms['credentials']['student-psw-up'].value;
+	const input  = document.getElementById('student-psw-up');
+	const psw = input.value.trim();
 
-	if (Password.length < 4) {
-		var check = document.getElementById("err-psw");
-		deleteError(check);
-		var p = messageError("err-psw");
+	const errorString = document.getElementById("err-psw");
+	eliminateError(errorString);
+    
+
+	if (psw.length < 4) {
+		let p = createError("err-psw");
 		p.innerHTML = "La <span lang='en'>password</span> deve essere lunga almeno 4 caratteri";
-		const parent = document.getElementById("student-psw-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
 
-	if (Password.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) !=0) {
-		var check = document.getElementById("err-psw");
-		deleteError(check);
-		var p = messageError("err-psw");
+	if (psw.search(/^(?=.*[a-zß-ÿ])(?=.*[A-ZÀ-Ý])(?=.*[\d])(?=.*[.,!?@+\-_€$%&^*<>]).{4,}$/) == -1) {
+		let p = createError("err-psw");
 		p.innerHTML = "La <span lang='en'>password</span> deve avere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale";
-		const parent = document.getElementById("student-psw-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
-    var check = document.getElementById("err-psw");
-	deleteError(check);
-	validatePasswordConfirm();
-	UltimateCheck();
 	return true;
 }
 
-/*
- * Verifica che la conferma della password corrisponda all'originale.
- */
 function validatePasswordConfirm() {
-	var Password  = document.forms['credentials']['student-psw-up'].value;
-	var repeatPassword = document.forms['credentials']['student-repeat-psw-up'].value;
+	const input = document.getElementById('student-repeat-psw-up');
+	const psw = document.getElementById('student-psw-up').value.trim();
+	const rpsw = document.getElementById('student-repeat-psw-up').value.trim();
 
-	if (Password != repeatPassword) {
-		var check = document.getElementById("err-repeat-psw");
-		deleteError(check);
-		var p = messageError("err-repeat-psw");
+	const errorString = document.getElementById("err-repeat-psw");
+	eliminateError(errorString);
+
+	if (psw != rpsw) {
+		let p = createError("err-repeat-psw");
 		p.innerHTML = "Le <span lang='en'>password</lang> non coincidono";
-		const parent = document.getElementById("student-repeat-psw-up").parentNode;
+		const parent = input.parentNode;
 		parent.appendChild(p);
-		UltimateCheck();
 		return false;
 	}
-    var check = document.getElementById("err-repeat-psw");
-	deleteError(check);
-	UltimateCheck();
 	return true;
 
-}
-function messageError(id){
-	var p = document.createElement("p");
-	p.setAttribute("role","alert");
-	p.setAttribute("id",id);
-	p.classList.add("err-msg");
-
-	return p;
-}
-
-function deleteError(p){
-	if(p) p.remove();
-}
-
-function ShowPsw() {
-	if (this.checked) {
-        document.getElementById("student-psw-up").type = "text";
-    } else {
-        document.getElementById("student-psw-up").type = "password";
-    }
-}
-
-function ShowPswRep() {
-	if (this.checked) {
-        document.getElementById("student-repeat-psw-up").type = "text";
-    } else {
-        document.getElementById("student-repeat-psw-up").type = "password";
-    }
 }
 
 const listeners = {
-	"student-name-up" : ["input", validateNewUsername ],
-	"student-mail-up" : ["input", validateEmail],
-	"student-cat-up" : ["blur", validateStudent],
-	"student-psw-up" : ["input", validatePassword ],
-	"student-repeat-psw-up" : ["input", validatePasswordConfirm ],
-	"show-psw" : ["click", ShowPsw ],
-	"show-psw-rep" : ["click", ShowPswRep ]
+	"student-name-up" : {
+		"change": validateUsername,
+		"input": ToggleSignUpBtn
+	},
+	"student-mail-up" : {
+		"change": validateEmail,
+		"input": ToggleSignUpBtn
+	},
+	"student-cat-up" : {
+		"change": validateStudent,
+		"input": ToggleSignUpBtn
+	},
+
+	"student-psw-up" : {
+		"change": validatePassword ,
+		"input": ToggleSignUpBtn
+	},
+	
+	"student-repeat-psw-up" : {
+		"change": validatePasswordConfirm,
+		"input": ToggleSignUpBtn
+	},
+
+	"show-psw" : {"click": function () {ShowPsw(this,"student-psw-up");} },
+	"show-psw-rep" : {"click": function () {ShowPsw(this,"student-repeat-psw-up");}},
+
+	"credentials": {
+		"submit": ValidateAll,
+		"reset": ToggleSignUpBtn
+	},
 };
 
-window.addEventListener('load', () => {
-	document.getElementById("btn-register").disabled = true;
-	document.getElementById("btn-register").classList.add("disabled-btn")
-	checkSignUp();
-	validateUserSignup();
-});
-
-function checkSignUp() {
-	for (var id in listeners) {
+function InitListeners(){
+    for (let id in listeners) {
 		if (!document.getElementById(id)) {
 			continue;
 		}
-		document.getElementById(id).addEventListener(listeners[id][0], listeners[id][1]);
+        let element = document.getElementById(id);
+        for(let e in listeners[id]) {
+            element.addEventListener(e, listeners[id][e]);
+        }
 	}
 }
+
+window.addEventListener('load', () => {
+	InitListeners();
+	ToggleConfirmButton(0);
+});
+

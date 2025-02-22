@@ -25,8 +25,6 @@
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#breadcrumb" class="help-el">Salta a dove ti trovi</a></li>
-                        <li><a href="#menu" class="help-el">Salta al menu</a></li>
                         <li><a href="#content" class="help-el">Salta al contenuto</a></li>
                     </ul>
                 </nav>
@@ -36,12 +34,12 @@
                     <h2 id="header-subtitle">NON LASCIARE SIA L'UNI A CUCINARE TE!</h2>
                 </div>
                 
-                <nav id="breadcrumb">
+                <nav id="breadcrumb" aria-label="dove ti trovi">
                     <p>Stai studiando in:</p>
                     <p><a href="./sign-in.php">ACCEDI</a> &gt; REGISTRATI</p>
                 </nav>
 
-                <nav id="menu">
+                <nav id="menu" aria-label="menu">
                     <img loading="lazy" src="./asset/icon/logo.svg" alt="" class="logo"/>
                     <input type="checkbox" id="ham-checkbox"/>
                     <label for="ham-checkbox">
@@ -62,61 +60,63 @@
         </header>
 
         <main id="content">
-            <div class="sign-box content end-paragraph">
-                <h2 class="content-subtitle">REGISTRATI</h2>
-                <form id="credentials" action="sign-up.php" method="post">
-                    <fieldset>
-                        <legend class="hide">Dati di registrazione</legend>
-                        <div id="name-up-container" class="input-container">
-                            <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
-                            <p class="suggestion">Massimo 15 caratteri alfanumerici senza spazi</p>
-                            <input required type="text" placeholder="Inserisci il nome" name="nome" id="student-name-up" maxlength="15"/>
-                            {{messaggio di nome}}
-                        </div>
-                        <div id="cat-up-container" class="input-container">
-                            <label for="student-cat-up" class="form-label">Scegli la categoria</label>
-                            <select required name="categoria" id="student-cat-up">
-                                <option hidden selected>Seleziona una opzione</option>
-                                <option value="fuorisede">Fuorisede</option>
-                                <option value="pendolare">Pendolare</option>
-                                <option value="in_sede">In sede</option>
-                                <option value="dad" title="didattica a distanza">DAD</option>
-                            </select>
-                            {{messaggio di categoria}}
-                        </div>
-                        <div class="input-container">
-                            <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
-                            <input required type="email" placeholder="Inserisci la mail" name="email" id="student-mail-up"/>
-                            {{messaggio di email}}
-                        </div>
-                        <div class="input-container">
-                            <label for="student-psw-up" class="form-label">Inserisci la <span lang="en">password</span></label>
-                            <ul class="suggestion">
-                                <li>Almeno una lettera maiuscola</li>
-                                <li>Almeno una lettera minuscola</li>
-                                <li>Almeno un numero</li>
-                                <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
-                                <li>Minimo 4 caratteri</li>
-                            </ul>
-                            <input required type="password" placeholder="Inserisci la password" name="psw" id="student-psw-up"/>
+            <h2 class="content-subtitle content">REGISTRATI</h2>
+            <form id="credentials" class="content" action="sign-up.php{{ref-value}}" method="post">
+                <fieldset>
+                    <legend class="hide">Dati di registrazione</legend>
+                    <div id="name-up-container" class="input-container">
+                        <label for="student-name-up" class="form-label">Inserisci il nome utente</label>
+                        <p class="suggestion">Massimo 15 caratteri alfanumerici senza spazi</p>
+                        <input required type="text" placeholder="Inserisci il nome" name="nome" id="student-name-up" maxlength="15"/>
+                        {{messaggio di nome}}
+                    </div>
+                    <div id="cat-up-container" class="input-container">
+                        <label for="student-cat-up" class="form-label">Scegli la categoria</label>
+                        <select required name="categoria" id="student-cat-up">
+                            <option hidden selected>Seleziona una opzione</option>
+                            <option value="fuorisede">Fuorisede</option>
+                            <option value="pendolare">Pendolare</option>
+                            <option value="in_sede">In sede</option>
+                            <option value="dad" title="didattica a distanza">DAD</option>
+                        </select>
+                        {{messaggio di categoria}}
+                    </div>
+                    <div class="input-container">
+                        <label for="student-mail-up" class="form-label">Inserisci la tua <span lang="en">mail</span></label>
+                        <input required type="email" placeholder="Inserisci la mail" name="email" id="student-mail-up"/>
+                        {{messaggio di email}}
+                    </div>
+                    <div class="input-container">
+                        <label for="student-psw-up" class="form-label">Inserisci la <span lang="en">password</span></label>
+                        <ul class="suggestion">
+                            <li>Almeno una lettera maiuscola</li>
+                            <li>Almeno una lettera minuscola</li>
+                            <li>Almeno un numero</li>
+                            <li>Almeno un carattere speciale <span class="psw-chars">(. , ! ? @ + - _ &euro; $ % &amp; ^ * &lt; &gt;)</span></li>
+                            <li>Minimo 4 caratteri</li>
+                        </ul>
+                        <input required type="password" placeholder="Inserisci la password" name="psw" id="student-psw-up"/>
 
-                            <input type="checkbox" name="show_psw" id="show-psw" class="show-psw-checkbox">
-                            <label for="show-psw">Mostra <span>password</span></label>
-                            {{messaggio di psw}}
-                        </div>
-                        <div class="input-container">
-                            <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
-                            <input required type="password" placeholder="Ripeti la password" name="repeat-psw" id="student-repeat-psw-up"/>
+                        <input type="checkbox" name="show_psw" id="show-psw" class="show-psw-checkbox">
+                        <label for="show-psw">Mostra <span>password</span></label>
+                        {{messaggio di psw}}
+                    </div>
+                    <div class="input-container">
+                        <label for="student-repeat-psw-up" class="form-label">Ripeti la <span lang="en">password</span></label>
+                        <input required type="password" placeholder="Ripeti la password" name="repeat-psw" id="student-repeat-psw-up"/>
 
-                            <input type="checkbox" name="show_psw_rep" id="show-psw-rep" class="show-psw-checkbox">
-                            <label for="show-psw-rep">Mostra <span>password</span></label>
-                            {{messaggio di psw-ripetuta}}
-                        </div>
+                        <input type="checkbox" name="show_psw_rep" id="show-psw-rep" class="show-psw-checkbox">
+                        <label for="show-psw-rep" title="ripetuta">Mostra <span>password</span></label>
+                        {{messaggio di psw-ripetuta}}
+                    </div>
 
-                        <button name="submit" class="button-input button-input-confirm shadow" type="submit" id="btn-confirm">REGISTRATI</button>
-                        <button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button>
-                    </fieldset>
-                </form>
+                    <button name="submit" class="button-input button-input-confirm shadow" type="submit" id="btn-confirm">REGISTRATI</button>
+                    <button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button>
+                </fieldset>
+            </form>
+            <div id="redirect-in" class="content">
+                <p>Sei già registrato?</p>
+                <p><a href="./sign-in.php{{ref-value}}">Accedi</a> in un attimo al tuo profilo.</p>
             </div>
         </main>
 

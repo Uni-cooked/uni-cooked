@@ -1,3 +1,3 @@
-name per i mostra psw?
-card cliccabili come bonavigo
-accedi da recipe mi riporta a recipe, non a home
+
+
+Mettere bene label (non due elimina e basta ma elimina e cosa elimina) ??
