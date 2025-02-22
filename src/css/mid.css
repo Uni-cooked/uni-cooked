@@ -186,7 +186,7 @@ nav#menu {
 
 nav#menu div#menu-dropdown {
     position: absolute;
-    transition: transform var(--animation-dropdown-timing)  200ms;
+    transition: transform var(--animation-dropdown-timing);
     transform: translate(0,-100%);
     z-index: -1;
 }
