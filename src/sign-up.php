@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
                 header("Location: ".$link);
                 exit();
             }
-            header('Location: index.php');
+            header('Location: user.php');
             exit();
         } else {
             $_POST = null;

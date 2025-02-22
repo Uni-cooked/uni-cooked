@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
             header("Location: ".$link);
             exit();
         }
-        header("Location: user.php#fav-recipe-list");
+        header("Location: user.php");
         exit();
     } else if ($result==false) {
         echo str_replace("{{messaggio di errore}}",'<p role="alert" class="err-msg" id="err-sign-in">Le credenziali inserite non sono corrette</p>',$paginaHtml);
