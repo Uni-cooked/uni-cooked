@@ -13,11 +13,21 @@ window.addEventListener('load', function () {
     const systemSettingLight = window.matchMedia("(prefers-color-scheme: light)").matches;
     const cookie = localStorage.getItem("theme");
     const label = document.getElementById("theme-mode-toggle");
-    if ((cookie && cookie === "light") || systemSettingLight) {
+    if (cookie && cookie === "light") {
         document.body.classList.add("light-theme");
         input.checked = true;
         SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"),1);
     }
+    
+    if (!cookie && systemSettingLight) {
+        document.body.classList.add("light-theme");
+        input.checked = true;
+        SwapImgTheme(document.querySelectorAll("[src*='dark.svg']"),1);
+        localStorage.setItem("theme","light");
+    } else {
+        localStorage.setItem("theme","dark");
+    }
+
 
     input.addEventListener("change", (e) => {
         label.style.backgroundImage="url(sadasd)";
