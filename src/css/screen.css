@@ -226,6 +226,14 @@ label[for] {
     opacity: 30%;
 }
 
+a.recipe-card {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    border-bottom: none;
+    text-decoration: none;
+}
+
 .cursor-label {
     cursor: pointer;
 }
@@ -233,7 +241,6 @@ label[for] {
 .disabled-label {
     cursor: default;
 }
-
 /* #endregion GENERAL CLASSES */
 
 /* ================================================== */
@@ -796,10 +803,9 @@ ul#recipe-list .recipe {
     min-width: 21em;
     height: 33em;
     border-radius: var(--radius-small);
-    color: var(--text-color);
     background-color: var(--bg-secondary);
-    text-align: right;
     position: relative;
+    text-align: right;
     overflow: hidden;
     opacity: 0;
     transform: scale(.9);
@@ -854,10 +860,21 @@ ul#recipe-list .recipe-animation {
     transform: scale(1);
 }
 
+ul#recipe-list .recipe:hover {
+    transform: scale(1.03);
+}
+
+ul#recipe-list a.recipe-card:visited {
+    color: var(--text-color);
+}
+
+ul#recipe-list a.recipe-card:focus-visible {
+    border: 3px solid white;
+}
+
 ul#recipe-list .recipe div {
     padding: .3rem 0.65em .5rem 0.65em;
     height: 50%;
-    width: 100%;
 }
 
 ul#recipe-list .recipe .catalogue-recipe-img-crop {
@@ -898,15 +915,18 @@ ul#recipe-list .recipe ul.recipe-info img {
     padding-right: 1em;
 }
 
-ul#recipe-list .recipe a {
-    text-align: right;
+ul#recipe-list a.recipe-card:link .fake-link {
+    display: inline-block;
+    text-decoration: underline;
+    border-bottom: 2px solid var(--bg-secondary);
     margin-top: 0.3em;
     margin-right: 1em;
     font-weight: 700;
 }
 
-ul#recipe-list .recipe a:link {
-    border-color: var(--bg-secondary);
+ul#recipe-list a.recipe-card:visited .fake-link {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
 }
 
 #page-changer {
@@ -956,8 +976,6 @@ ul#recipe-list .recipe a:link {
     font-size: 1.1rem;
     font-weight: 800;
 }
-
-
 /* #endregion CATALOGUE PAGE */
 
 /* ================================================== */
@@ -1353,6 +1371,11 @@ ul.suggestion {
     text-align: right;
     overflow: hidden;
     margin: 1rem 0;
+    transition: transform 500ms;
+}
+
+#fav-recipe-list .fav-recipe:hover {
+    transform: scale(1.03);
 }
 
 #fav-recipe-list .fav-recipe .fav-recipe-img-crop {
@@ -1403,19 +1426,28 @@ ul.suggestion {
     }
 }
 
+#fav-recipe-list .fav-recipe .fav-recipe-info li:first-child img {
+    height: 1.7em;
+    padding-right: .3em;
+}
+
 #fav-recipe-list .fav-recipe .fav-recipe-info li img {
     height: 1.5em;
     vertical-align: middle;
-    padding-right: 0.5em;
+    padding-right: .5em;
 }
 
-#fav-recipe-list .fav-recipe a {
+#fav-recipe-list a.recipe-card:link .fake-link {
+    display: inline-block;
+    text-decoration: underline;
+    border-bottom: 2px solid var(--bg-secondary);
     margin-right: 1em;
     font-weight: 700;
 }
 
-#fav-recipe-list .fav-recipe a:link {
-    border-color: var(--bg-secondary);
+#fav-recipe-list a.recipe-card:visited .fake-link {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
 }
 
 a#back-up-first-fav-recipe:link {
