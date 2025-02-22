@@ -94,7 +94,7 @@ if (!isset($_GET["username"])) {
             if ($recipeCounter < count($favouritesList)) {
                 $moreRecipeForm .= '<form action="user.php#prev-last-recipe" method="get">';
                 $moreRecipeForm .= '<input type="hidden" name="prefRecipeLimit" value="' . $limit + 5;
-                $moreRecipeForm .= '"/><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
+                $moreRecipeForm .= '"/><button class="load-more-btn">Carica le altre ricette</button></form>';
             }
 
             if(count($favouritesList)>1) {
@@ -112,9 +112,9 @@ if (!isset($_GET["username"])) {
     $_SESSION["prev-page"] = "<a href=\"./user.php?username=" . $username . '">PROFILO UTENTE</a>';
 
     if (is_bool($isLogged) && $isLogged == false) {
-        $paginaHtml = str_replace("{{profile-list-element}}", '<li id="profile-item"> <a href="sign-in.php" class="a-btn-secondary shadow">ACCEDI</a></li>', $paginaHtml);
+        $paginaHtml = str_replace("{{profile-list-element}}", '<li id="profile-item"> <a href="sign-in.php" class="a-btn-secondary">ACCEDI</a></li>', $paginaHtml);
     } else {
-        $paginaHtml = str_replace("{{profile-list-element}}", '<li id="profile-item"> <a href="user.php" class="a-btn-secondary shadow">PROFILO</a></li>', $paginaHtml);
+        $paginaHtml = str_replace("{{profile-list-element}}", '<li id="profile-item"> <a href="user.php" class="a-btn-secondary">PROFILO</a></li>', $paginaHtml);
     }
 
     $paginaHtml = str_replace("{{username}}", $username, $paginaHtml);
@@ -191,7 +191,7 @@ if (!isset($_GET["username"])) {
                 $moreRecipeForm .= '<form action="user.php#prev-last-recipe" method="get">';
                 $moreRecipeForm .= '<input type="hidden" name="username" value="' . $username;
                 $moreRecipeForm .= '"/><input type="hidden" name="prefRecipeLimit" value="' . $limit + 5;
-                $moreRecipeForm .= '"/><button class="load-more-btn shadow">Carica le altre ricette</button></form>';
+                $moreRecipeForm .= '"/><button class="load-more-btn">Carica le altre ricette</button></form>';
             }
 
             if($recipeCounter>1) {
@@ -200,7 +200,7 @@ if (!isset($_GET["username"])) {
 
             $paginaHtml = str_replace("{{more-recipe-form}}", $moreRecipeForm, $paginaHtml);
         }
-        $paginaHtml = str_replace('<a href="./user-edit.php" id="edit-profile-link" class="a-btn shadow">MODIFICA PROFILO</a>', "", $paginaHtml);
+        $paginaHtml = str_replace('<a href="./user-edit.php" id="edit-profile-link" class="a-btn">MODIFICA PROFILO</a>', "", $paginaHtml);
         $paginaHtml = str_replace('{{sign-out-form}}', "", $paginaHtml);
         echo $paginaHtml;
     }

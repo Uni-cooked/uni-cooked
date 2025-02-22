@@ -10,9 +10,9 @@ $db = new DB;
 $paginaHtml=file_get_contents("./html/recipe.html");
 $isUserLogged=$db->isUserLogged();
 if ($isUserLogged!=false) {
-    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary shadow\">PROFILO</a>",$paginaHtml);
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary\">PROFILO</a>",$paginaHtml);
 } else {
-    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
+    $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary\">ACCEDI</a>",$paginaHtml); 
 }
 
 if(isset($_SESSION["prev-page"])) {
@@ -131,10 +131,10 @@ if(isset($_GET["recipe"])) {
             header('Location: 500-err.php');
             exit();
         } elseif ($isRecipeAUserFavourite==true) {
-            $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"remove-from-favourites\" class=\"shadow\">";
+            $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"remove-from-favourites\">";
             $formFavourites.="RIMUOVI DAI PREFERITI";
         } else {
-            $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"add-to-favourites\" class=\"shadow\">";
+            $formFavourites.="<button id=\"recipe-fav-btn\" type=\"submit\" name=\"add-to-favourites\">";
             $formFavourites.="AGGIUNGI AI PREFERITI";
         }
         $formFavourites.="</button></form>";
@@ -206,10 +206,10 @@ if(isset($_GET["recipe"])) {
             $form.='<div id="add-comment" class="content">';
             $form.='<img loading="lazy" src="'.$immagine.'" alt="" id="add-comment-pp"/>';
             if(isset($_SESSION["commentError"])) {
-                $form.='<form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section" class="content" id="first-form">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"/><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg">'.$_SESSION["commentError"].'<button id="btn-confirm" class="button-input button-input-confirm shadow" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button></fieldset></form></div>';
+                $form.='<form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section" class="content" id="first-form">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"/><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg">'.$_SESSION["commentError"].'<button id="btn-confirm" class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
                 unset($_SESSION["commentError"]);
             } else {
-                $form.='<form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section" class="content" id="first-form">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"/><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg"><button id="btn-confirm" class="button-input button-input-confirm shadow" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel shadow" type="reset">CANCELLA</button></fieldset></form></div>';
+                $form.='<form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section" class="content" id="first-form">'.'<fieldset><div class="input-container"><label class="form-label" for="add-comment-eval">Valuta questa ricetta (voto da 1 a 30)</label><div id="add-comment-eval-container"><input type="number" id="add-comment-eval" min="1" max="30" placeholder="18" required name="mark"/><span><abbr title="su">/</abbr> 30</span></div></div><label class="form-label" for="add-comment-text">Commenta</label><textarea id="add-comment-text" maxlength="200" placeholder="Motiva la tua valutazione" required name="comment"></textarea><p class="err-msg"><button id="btn-confirm" class="button-input button-input-confirm" type="submit" name="submit-add-review">VALUTA</button><button class="button-input button-input-cancel" type="reset">CANCELLA</button></fieldset></form></div>';
             }    
         } elseif (is_string($userComment)) {
             if(isset($_SESSION["commentError"])) {
@@ -223,7 +223,7 @@ if(isset($_GET["recipe"])) {
             $form.='<a class="username" href="user.php">'.$isUserLogged."</a>";
             $form.='<p class="comment-eval"><span class="grade">'.$userComment["voto"].'</span> <abbr title="su">/</abbr> 30</p>';
             $form.='<p class="comment-text">'.$userComment["commento"].'</p>';
-            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"])).'</time></div><form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section"><button type="submit" id="del-comment" class="load-more-btn shadow" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
+            $form.='<time class="comment-date" datetime="'.$userComment["data"].'">'.date("d/m/Y",strtotime($userComment["data"])).'</time></div><form method="post" action="recipe.php?recipe='.urlencode($recipe).'#eval-section"><button type="submit" id="del-comment" class="load-more-btn" name="submit-remove-review">CANCELLA VALUTAZIONE</button></form></div>';
         }
         $paginaHtml=str_replace("{{leave-comment-or-personal-published-comment}}",$form,$paginaHtml);
     } else {
@@ -279,7 +279,7 @@ if(isset($_GET["recipe"])) {
             $moreCommentsForm='<form action="recipe.php#previous-last-comment" method="get">';
             $moreCommentsForm.='<input type="hidden" name="commentLimit" value="'.$limit+5;
             $moreCommentsForm.='"/><input type="hidden" name="recipe" value="'.$recipe;
-            $moreCommentsForm.='"/><button type="submit" id="more-comment-btn" class="load-more-btn shadow">Carica altre valutazioni</button></form>';
+            $moreCommentsForm.='"/><button type="submit" id="more-comment-btn" class="load-more-btn">Carica altre valutazioni</button></form>';
         }
 
         if($commentNumber>1) {

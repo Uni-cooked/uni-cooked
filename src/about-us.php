@@ -11,7 +11,7 @@ $isUserLogged=$db->isUserLogged();
 
 if(!isset($_POST["suggestion"])) {
     if ($isUserLogged!=false) {
-        $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary shadow\">PROFILO</a>",$paginaHtml);
+        $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"user.php\" class=\"a-btn-secondary\">PROFILO</a>",$paginaHtml);
         $paginaHtml=str_replace("{{username}}","di ".$isUserLogged,$paginaHtml);
         $userInfo=$db->getUserInfo();
         if (is_string($userInfo) && (strcmp($userInfo,"ExceptionThrow")==0 || strcmp($userInfo,"genericError")==0 || strcmp($userInfo,"ConnectionFailed")==0)) {
@@ -29,7 +29,7 @@ if(!isset($_POST["suggestion"])) {
             
         }
     } else {
-        $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary shadow\">ACCEDI</a>",$paginaHtml); 
+        $paginaHtml=str_replace("{{link-accesso-profilo}}","<a href=\"sign-in.php\" class=\"a-btn-secondary\">ACCEDI</a>",$paginaHtml); 
         $paginaHtml=str_replace("{{profile-pic-src}}","./asset/icon/student-dark.svg",$paginaHtml);
         $paginaHtml=str_replace("{{username}}","generica di un utente non registrato o autenticato",$paginaHtml);
     }
