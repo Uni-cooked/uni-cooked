@@ -222,8 +222,14 @@ label[for] {
     color: var(--err-color);
 }
 
-.disabled-btn,.disabled-label {
+label.cursor-label {
+    cursor: pointer;
+}
+
+.disabled-btn,
+label.disabled-label {
     opacity: 30%;
+    cursor: default;
 }
 
 a.recipe-card {
@@ -232,14 +238,6 @@ a.recipe-card {
     height: 100%;
     border-bottom: none;
     text-decoration: none;
-}
-
-label.cursor-label {
-    cursor: pointer;
-}
-
-label.disabled-label {
-    cursor: default;
 }
 /* #endregion GENERAL CLASSES */
 
