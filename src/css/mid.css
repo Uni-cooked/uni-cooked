@@ -156,7 +156,6 @@ nav#menu > input:focus-visible + label::before,
 nav#menu > input:focus-visible + label::after,
 nav#menu > input:focus-visible + label {
     border: 1px solid white;
-    ;
 }
 
 nav#menu > input:checked + label #ham-opened,

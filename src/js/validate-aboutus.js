@@ -6,7 +6,7 @@ function ValidateAll(e) {
     } 
 }
 
-function TogggleRequestBtn() {
+function ToggleRequestBtn() {
     const request = document.getElementById("recipie-request-input").value.trim();
 
     if (request.length < 20 || request.length > 500) {
@@ -39,19 +39,15 @@ function validateRequest(){
     return true;
 }
 
-
-
 const inputRequest = {
     "recipie-request-input" : {
         "change": validateRequest,
-        "input": TogggleRequestBtn
-
+        "input": ToggleRequestBtn
     },
     "request": {
         "submit": ValidateAll,
-        "reset": TogggleRequestBtn
+        "reset": ToggleRequestBtn
     },
-    
 };
 
 function InitListeners(){
