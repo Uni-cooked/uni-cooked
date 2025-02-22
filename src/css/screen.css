@@ -267,7 +267,7 @@ header {
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 60% center;
     background-attachment: fixed;
     padding-bottom: 1.5rem;
 }
