@@ -6,6 +6,8 @@
     font-family: "Inter", sans-serif;
     line-height: 1.5;
     box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent;
+    transition: color 500ms ease-in-out, background-color 500ms ease-in-out, border-color 500ms;
 }
 
 :root {
@@ -267,7 +269,7 @@ header {
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 60% center;
+    background-position: 55% center;
     background-attachment: fixed;
     padding-bottom: 1.5rem;
 }
@@ -351,7 +353,7 @@ h2#header-subtitle {
     height: 6rem;
     background-color: var(--accent-secondary);
     clip-path: polygon(0px 0px, 100% 0%, 100% 100%, 50% 85%, 0px 100%);
-    transition: top 80ms ease-in-out;
+    transition: top 80ms ease-in-out,color 500ms ease-in-out, background-color 500ms ease-in-out,background-image 500ms ease-in-out;
     top: 0;
 }
 
@@ -732,8 +734,9 @@ dd .role-info-label,
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
-        /* box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5); */
+        box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5);
         transform: scale(0.97);
+        animation: none;
     }
 
     dd .role-info-label {
@@ -746,13 +749,13 @@ dd .role-info-label,
         display: inline-block;
         user-select: none;
         transition: background-color 600ms, color 600ms, transform 600ms;
-        animation: pulse 2s infinite 3s cubic-bezier(0.25, 0, 0, 1);
+        animation: pulse 2s infinite 2s cubic-bezier(0.25, 0, 0, 1);
         box-shadow: 0 0 0 0 var(--text-color);
     }
 
     @keyframes pulse {
         to {
-          box-shadow: 0 0 0 10px rgba(var(--shadow-color), 0); 
+          box-shadow: 0 0 0 10px rgba(255,255,255, 0); 
         }
       }
       
