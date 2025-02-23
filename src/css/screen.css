@@ -286,8 +286,7 @@ header {
 }
 
 @supports (-webkit-touch-callout: default) {
-    header,
-    dl#roles dt {
+    header {
         background-attachment: scroll;
     }
 }
@@ -614,6 +613,12 @@ dl#roles dt {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+@supports (-webkit-touch-callout: default) {
+    dl#roles dt {
+        background-attachment: scroll;
+    }
 }
 
 dl#roles dt#fuorisede {
