@@ -1817,7 +1817,10 @@ footer p {
     font-size: .9em;
     font-style: italic;
     font-weight: 300;
-    margin: 1em 0 1em 0;
+}
+
+footer p:nth-child(2){
+    margin-top: 1rem;
 }
 
 footer a:link {
