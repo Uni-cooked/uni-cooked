@@ -96,7 +96,6 @@ body {
     background-color: var(--bg-primary);
 }
 
-
 a {
     color: var(--text-color);
     border-bottom: 2px solid;
@@ -278,8 +277,8 @@ header {
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 55% center;
     background-attachment: fixed;
+    background-position: 55% center;
     padding-bottom: 1.5rem;
 }
 
@@ -460,7 +459,7 @@ nav#menu li:not(:first-child):not(#profile-item) {
 .logo {
     width: 3.5rem;
     height: 3.5rem;
-    background-image: url(../asset/icon/logo-dark.svg);
+    background-image: url("../asset/icon/logo-dark.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -469,7 +468,7 @@ nav#menu li:not(:first-child):not(#profile-item) {
 }
 
 .light-theme .logo {
-    background-image: url(../asset/icon/logo-light.svg);
+    background-image: url("../asset/icon/logo-light.svg");
 }
 
 nav#menu li:first-child {

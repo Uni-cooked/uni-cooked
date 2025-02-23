@@ -84,7 +84,7 @@ nav#menu > label {
     position: relative;
     margin: auto var(--hamburger-h-margin);
     background-image: url("../asset/img/burger/burger-middle.webp");
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 body.light-theme nav#menu > label {
@@ -100,7 +100,7 @@ nav#menu > label::after {
 nav#menu > label::before {
     bottom: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-top.webp");
-    background-size: 100% 100%;
+    background-size: cover;
     outline: 2px solid var(--accent-secondary);
 }
 
@@ -111,7 +111,7 @@ body.light-theme nav#menu > label::before {
 nav#menu > label::after {
     top: calc(var(--hamburger-gap) + var(--bar-height));
     background-image: url("../asset/img/burger/burger-bottom.webp");
-    background-size: 100% 100%;
+    background-size: cover;
     outline: 2px solid var(--accent-secondary);
 }
 
@@ -123,7 +123,7 @@ nav#menu > input:checked + label::before {
     width: var(--x-width);
     transform: rotate(-45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/fork.webp");
-    background-size: 100% 100%;
+    background-size: cover;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
     transition-timing-function: cubic-bezier(.04,.87,.48,.89);
@@ -137,7 +137,7 @@ nav#menu > input:checked + label::after {
     width: var(--x-width);
     transform: rotate(45deg) translate(calc(var(--bar-width) / -2),0);
     background-image: url("../asset/img/burger/knife.webp");
-    background-size: 100% 100%;
+    background-size: cover;
     outline-offset: -1px;
     outline: 2px solid var(--accent-secondary);
     transition-timing-function: cubic-bezier(.39,.82,.31,.95);
