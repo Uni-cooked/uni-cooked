@@ -242,6 +242,7 @@ label[for] {
 
 .err-msg {
     color: var(--err-color);
+    clear: both;
 }
 
 label.cursor-label {
@@ -737,7 +738,7 @@ dd .role-info-label,
     dd:has(input:checked) .role-info-label {
         color: var(--bg-primary);
         background-color: var(--accent);
-        box-shadow: inset 1px 1px 8px 4px rgba(var(--shadow-color), .5);
+        box-shadow: inset 1px 1px 8px 4px rgba(0, 0, 0, .5);
         transform: scale(0.97);
         animation: none;
     }
@@ -1600,6 +1601,7 @@ a#edit-profile-link {
 #edit-pp {
     text-align: center;
     width: fit-content;
+    max-width: 14em;
 }
 
 #edit-pp img {
@@ -1616,6 +1618,7 @@ a#edit-profile-link {
     font-size: 1em;
     font-weight: 800;
     padding: .5rem;
+    margin-bottom: 1em;
     border-radius: var(--radius-small);
     display: block;
 }
@@ -1673,7 +1676,7 @@ a#edit-profile-link {
 }
 
 label[for="bio-edit"] {
-    margin-top: 2.5em;
+    margin-top: 2em;
 }
 
 #bio-edit {

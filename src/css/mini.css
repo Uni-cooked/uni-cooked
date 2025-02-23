@@ -68,20 +68,12 @@ ul#ingredient-list li {
 
 /* ================================================== */
 
-
-/* #region USER PAGE */
+/* #region USER EDIT PAGE */
 #profile-img {
     width: 10rem;
     height: 10rem;
 }
-
-#primary-info{
-    flex-direction: column;
-    align-items: center;
-    gap: .5rem;
-}
-
-/* #endregion USER PAGE */
+/* #endregion USER EDIT PAGE */
 
 /* ================================================== */
 
