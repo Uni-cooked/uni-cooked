@@ -7,7 +7,7 @@ function ValidateProfile(e) {
 }
 
 function ValidateNewPsw(e) {
-	if (!validateOldPassword() || !validatePassword() || !validatePasswordConfirm()) {
+	if (!validatePassword() || !validatePasswordConfirm()) {
 		e.preventDefault();
 	}
 }
@@ -108,7 +108,6 @@ async function ChangeImage() {
 }
 
 function ToggleChangeImage() {
-	ToggleLabel(0,"del-pp-radio");
 	ToggleLabel(0,"del-pp");
 	
 
@@ -189,9 +188,10 @@ const listeners = {
 	"show-old-psw" : {"click": function () {ShowPsw(this,"old-psw");} },
 	"show-new-psw" : {"click": function () {ShowPsw(this,"new-psw");} },
 	"show-rep-psw" : {"click": function () {ShowPsw(this,"repeat-new-psw");} },
-
-	"credentials": {"submit": ValidateProfile},
 	"new-info": {
+		"submit": ValidateProfile
+	},
+	"credentials": {
 		"submit": ValidateNewPsw,
 		"reset":ToggleConfirmPswButton
 	}
