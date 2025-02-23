@@ -7,7 +7,6 @@
     line-height: 1.5;
     box-sizing: border-box;
     -webkit-tap-highlight-color:transparent;
-    transition: color 500ms ease-in-out, background-color 500ms ease-in-out, border-color 500ms;
 }
 
 :root {
@@ -84,9 +83,11 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     background-color: var(--bg-primary);
 }
+
 
 a {
     color: var(--text-color);
@@ -353,7 +354,7 @@ h2#header-subtitle {
     height: 6rem;
     background-color: var(--accent-secondary);
     clip-path: polygon(0px 0px, 100% 0%, 100% 100%, 50% 85%, 0px 100%);
-    transition: top 80ms ease-in-out,color 500ms ease-in-out, background-color 500ms ease-in-out,background-image 500ms ease-in-out;
+    transition: top 80ms ease-in-out;
     top: 0;
 }
 
