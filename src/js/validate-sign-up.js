@@ -46,7 +46,7 @@ function validateUsername() {
 
 	if (username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
 		let p = createError("err-name");
-	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "Nome utente non valido, usa solo lettere o numeri.";
 		const parent = input.parentNode;
 		parent.appendChild(p);
 		return false;
@@ -77,6 +77,8 @@ function validateEmail(){
 
 	const errorString = document.getElementById("err-mail");
 	eliminateError(errorString);
+
+	console.log(email);
     
     if(email.length < 1){
 		let p = createError("err-mail"); 
@@ -143,25 +145,25 @@ function validatePasswordConfirm() {
 
 const listeners = {
 	"student-name-up" : {
-		"change": validateUsername,
+		"focusout": validateUsername,
 		"input": ToggleSignUpBtn
 	},
 	"student-mail-up" : {
-		"change": validateEmail,
+		"focusout": validateEmail,
 		"input": ToggleSignUpBtn
 	},
 	"student-cat-up" : {
-		"change": validateStudent,
+		"focusout": validateStudent,
 		"input": ToggleSignUpBtn
 	},
 
 	"student-psw-up" : {
-		"change": validatePassword ,
+		"focusout": validatePassword ,
 		"input": ToggleSignUpBtn
 	},
 	
 	"student-repeat-psw-up" : {
-		"change": validatePasswordConfirm,
+		"focusout": validatePasswordConfirm,
 		"input": ToggleSignUpBtn
 	},
 

@@ -10,7 +10,7 @@ function ToggleLoginBtn() {
     const user = document.getElementById("student-name-in").value.trim();
     const psw = document.getElementById("student-psw-in").value.trim();
 
-    if (user == "" && psw == "") {
+    if (user == "" || psw == "") {
         ToggleConfirmButton(0);
     } else {
         ToggleConfirmButton(1);
@@ -18,29 +18,48 @@ function ToggleLoginBtn() {
 }
 
 function validateUser() {
-    const user = document.getElementById("student-name-in").value.trim();
+    const input = document.getElementById("student-name-in");
+    const user = input.value.trim();
 
-    const errorString = document.getElementById("err-sign-in");
+    const errorString = document.getElementById("err-name");
     eliminateError(errorString);
 
-    if (user.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
-        let p = createError("err-sign-in");
-        p.innerText = "Le credenziali inserite non sono corrette";
-        const beforeElement = document.getElementById("submit-btn")
-        const parent = beforeElement.parentNode;
-        parent.insertBefore(p,beforeElement);
-        return false;
-    }
+    if(user.length < 1){
+		let p = createError("err-name");
+	    p.innerHTML = "Il nome utente è un campo obbligatorio";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
     return true;
 }
 
+function validatePsw() {
+    const input = document.getElementById("student-psw-in");
+    const psw = input.value.trim();
+
+    const errorString = document.getElementById("err-psw");
+    eliminateError(errorString);
+
+    if(psw.length < 1){
+		let p = createError("err-psw");
+	    p.innerHTML = "La <span lang='en'>password</span> è un campo obbligatorio";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+    return true;
+}
 
 const controllers = {
 	"student-name-in" : {
-        "change": validateUser,
+        "focusout": validateUser,
         "input": ToggleLoginBtn
     },
-	"student-psw-in" : {"input": ToggleLoginBtn },
+	"student-psw-in" : {
+        "focusout": validatePsw,
+        "input": ToggleLoginBtn 
+    },
     "credentials": {
         "submit": ValidateAll,
         "reset": ToggleLoginBtn

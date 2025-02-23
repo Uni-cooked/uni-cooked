@@ -7,7 +7,7 @@ function ValidateProfile(e) {
 }
 
 function ValidateNewPsw(e) {
-	if (!validatePassword() || !validatePasswordConfirm()) {
+	if (!validateOldPassword() || !validateNewPassword() || !validateNewPasswordConfirm()) {
 		e.preventDefault();
 	}
 }
@@ -59,7 +59,7 @@ function validateUsername() {
 
 	if (username.search(/^[a-zA-ZÀ-Ýß-ÿ0-9]{1,15}$/) == -1) {
 		let p = createError("err-edit-nam");
-	    p.innerHTML = "<span lang='en'>Username</span> non valido, usa solo lettere o numeri.";
+	    p.innerHTML = "Nome utente non valido, usa solo lettere o numeri.";
 		const parent = input.parentNode;
 		parent.appendChild(p);
 		return false;
@@ -115,7 +115,24 @@ function ToggleChangeImage() {
 	img.setAttribute("src","./asset/img/def-profile.webp");
 }
 
-function validatePassword() {
+function validateOldPassword() {
+    const input = document.getElementById("old-psw");
+    const psw = input.value.trim();
+
+    const errorString = document.getElementById("err-old-psw");
+    eliminateError(errorString);
+
+    if(psw.length < 1){
+		let p = createError("err-old-psw");
+	    p.innerText = "La <span lang='en'>password</span> è un campo obbligatorio";
+		const parent = input.parentNode;
+		parent.appendChild(p);
+		return false;
+	}
+    return true;
+}
+
+function validateNewPassword() {
 	const input = document.getElementById('new-psw');
 	const psw = input.value.trim();
 
@@ -141,7 +158,7 @@ function validatePassword() {
 	return true;
 }
 
-function validatePasswordConfirm() {
+function validateNewPasswordConfirm() {
 	const input = document.getElementById("repeat-new-psw");
 	const psw = document.getElementById('new-psw').value.trim();
 	const rpsw = input.value.trim();
@@ -162,7 +179,7 @@ function validatePasswordConfirm() {
 
 const listeners = {
 	"nickname-edit" : {
-		"change": validateUsername,
+		"focusout": validateUsername,
 		"input": ToggleConfirmModButton
 	},
 	"profile-img-edit": {
@@ -173,14 +190,15 @@ const listeners = {
 		"change": ToggleChangeImage
 	},
 	"old-psw" : {
+		"focusout": validateOldPassword,
 		"input":ToggleConfirmPswButton
 	},
 	"new-psw" : {
-		"change": validatePassword,
+		"focusout": validateNewPassword,
 		"input": ToggleConfirmPswButton
 	},
 	"repeat-new-psw" : {
-		"change": validatePasswordConfirm,
+		"focusout": validateNewPasswordConfirm,
 		"input": ToggleConfirmPswButton
 		
 	},
