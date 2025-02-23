@@ -278,6 +278,11 @@ header {
     padding-bottom: 1.5rem;
 }
 
+@supports (-webkit-touch-callout: default) {
+    header {
+        background-attachment: scroll;
+    }
+}
 
 #header-content {
     width: 100%;
@@ -1191,7 +1196,6 @@ ol li.prep-li::marker {
 
 #add-comment-text {
     height: 8em;
-    margin-bottom: 2em;
 }
 
 #no-login-p {

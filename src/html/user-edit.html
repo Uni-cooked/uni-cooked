@@ -26,7 +26,9 @@
             <div id="header-content" class="content">
                 <nav id="list-help" aria-label="aiuti alla navigazione">
                     <ul>
-                        <li><a href="#content" class="help-el">Salta al contenuto</a></li>
+                        <li><a href="#content" class="help-el">Salta al modifica profilo</a></li>
+                        <li><a href="#change-psw-title" class="help-el">Salta al cambio <span>password</span></a></li>
+                        <li><a href="#danger-zone" class="help-el">Salta alla zona pericolosa</a></li>
                     </ul>
                 </nav>
 
@@ -119,6 +121,8 @@
                     </fieldset>
                 </form>
 
+                <a href="#top" class="help-el back-up-link">Torna su</a>
+
                 <h3 id="change-psw-title" class="content-subtitle">CAMBIA <span lang="en">PASSWORD</span></h3>
                 <form class="end-paragraph" action="user-edit.php" method="post" id="credentials">
                     <fieldset>
@@ -159,7 +163,9 @@
                     </fieldset>
                 </form>
 
-                <h2 class="content-subtitle">ZONA PERICOLOSA</h2>
+                <a href="#top" class="help-el back-up-link">Torna su</a>
+
+                <h2 id="danger-zone" class="content-subtitle">ZONA PERICOLOSA</h2>
                 <form action="confirm.php" method="get">
                     <button class="danger-btn" type="submit" name="action" value="delete-recipe">CANCELLA RICETTE PREFERITE</button>
                     <button class="danger-btn" type="submit" name="action" value="delete-account">CANCELLA ACCOUNT</button>
@@ -168,8 +174,9 @@
         </main>
 
         <footer>
+            <a href="#top" class="back-up-link">Torna su</a>
+            <p>L'immagine di intestazione è stata fornita da <a href="https://www.vecteezy.com/free-photos/young" lang="en">Young Stock photos by Vecteezy</a></p>
             <p><span lang="en">Copyright</span>&copy; <time datetime="2025">2025</time> Uni <span lang="en">Cooked</span>. Tutti i diritti riservati.</p>
-            <a href="#top">Torna su</a>
         </footer>
     </body>
 
