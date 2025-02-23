@@ -91,17 +91,17 @@ async function ChangeImage() {
 			else{
 				let p = createError("profile-pic-err-p");
 				p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
-				const parent = document.getElementById("primary-info").parentNode;
+				const parent = document.getElementById("edit-pp");
 				console.log(document.getElementById("primary-info"));
-				parent.insertBefore(p,document.getElementById("primary-info").nextSibling);
+				parent.append(p);
 				inputImage.value = null;	
 			}
 		}else{
 			let p = createError("profile-pic-err-p");
-			p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a <span lang='en' abbr='megabyte'>2MB</span>";
-			const parent = document.getElementById("primary-info").parentNode;
+			p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a 2<span lang='en' abbr='megabyte'>MB</span>";
+			const parent = document.getElementById("edit-pp");
 			console.log(parent);
-			parent.insertBefore(p,document.getElementById("primary-info").nextSibling);
+			parent.append(p);
 		}
 	}
 	Reader.readAsDataURL(file);
