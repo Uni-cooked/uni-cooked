@@ -85,6 +85,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html,
+body {
+    height: 100lvh;
+    width: 100lvw;
+}
+
 
 body {
     background-color: var(--bg-primary);
@@ -268,8 +274,7 @@ a.recipe-card {
 
 /* #region HEADER */
 header {
-    /* background-image: url("../asset/img/header.webp"); */
-    background-image: url("../asset/img/p.webp");
+    background-image: url("../asset/img/header.webp");
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
