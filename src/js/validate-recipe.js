@@ -20,7 +20,7 @@ function ToggleConfirmBtn() {
 function validateReview() {
     let input = document.getElementById("add-comment-eval");
     const voto = input.value;
-    if (!voto.match(/^[0-9]+$/)) {
+    if (!voto.match(/^$|^([1-9]|[12][0-9]|30)$/)) {
         input.value = Math.min(Math.max(voto, 1), 30);
         return false;
     }
