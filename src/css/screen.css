@@ -220,7 +220,7 @@ label[for] {
 }
 
 .shadow {
-    box-shadow: 4px 4px 10px 5px rgba(var(--shadow-color), .5);
+    box-shadow: 4px 4px 10px 5px rgba(var(--shadow-color), .3);
 }
 
 .load-more-btn {
@@ -901,7 +901,7 @@ ul#recipe-list .recipe {
     overflow: hidden;
     opacity: 0;
     transform: scale(.9);
-    transition: opacity 500ms, transform 500ms;
+    transition: opacity 500ms, transform 300ms;
 }
 
 #loader {
@@ -1470,7 +1470,7 @@ ul.suggestion {
     text-align: right;
     overflow: hidden;
     margin: 1rem 0;
-    transition: transform 500ms;
+    transition: transform 300ms;
 }
 
 #fav-recipe-list .fav-recipe:hover {
