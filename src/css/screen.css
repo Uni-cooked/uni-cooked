@@ -85,11 +85,14 @@ html {
     scroll-behavior: smooth;
 }
 
-html,
-body {
-    height: 100lvh;
-    width: 100lvw;
+@supports(height: 100lvh) {  
+    html,
+    body {
+        height: 100lvh;
+        width: 100lvw;
+    }
 }
+
 
 
 body {
