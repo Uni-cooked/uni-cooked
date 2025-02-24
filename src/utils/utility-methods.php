@@ -8,7 +8,7 @@ class DB {
     private const HOST_DB = "localhost";
     private const DBNAME = "asoranzo";
     private const USERNAME = "asoranzo";
-    private const PSW = "bi0phoogeiyexo9E";
+    private const PSW = "thee1raichaidohT";
 
     private $connection;
 
