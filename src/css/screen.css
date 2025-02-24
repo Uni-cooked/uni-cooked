@@ -1208,6 +1208,10 @@ ol li.prep-li::marker {
     height: 8em;
 }
 
+#err-comment {
+    margin-bottom: 1em;
+}
+
 #no-login-p {
     text-align: center;
 }
