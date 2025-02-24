@@ -58,7 +58,7 @@ In ogni valutazione inoltre è presente il nome dell'utente sotto forma di link:
 
 Riguardo la potenziale numerosità delle ricette preferite abbiamo adottato la stessa soluzione utilizzata per i commenti nelle ricette.
 
-Una nota di riguardo è dovuta al caricamento delle foto: nonostante le pagine `HTML` e le componenti `JavaScript` e `PHP` siano appositamente configurate per supportare solo il caricamento di file `.jpeg`, `.jpg` e `.png`, talvolta i dispositivi `Apple` non considerano questi limiti e permettono di caricare qualsiasi foto presente nel rullino del dispositivo, che, solitamente, sono in formato `.heif` o `.heic`.
+Una nota di riguardo è dovuta al caricamento delle foto: nonostante le pagine `HTML` e le componenti `JavaScript` e `PHP` siano appositamente configurate per supportare solo il caricamento di file `.jpeg`, `.jpg` e `.png`, talvolta i dispositivi `Apple` non considerano questi limiti e permettono di caricare qualsiasi foto presente nel rullino del dispositivo che, solitamente, sono in formato `.heif` o `.heic`.
 `PHP` nativamente non supporta la conversione di tali formati in `.webp`, formato che garantisce maggiore efficienza nel caricamento delle pagine web.
 Inoltre, nessun browser, ad eccezione di `Safari`, permette la visualizzazione di tali immagini: per questi motivi, il sito web non permette il caricamento di file di tipo `.heif` o `.heic`.
 
@@ -79,7 +79,7 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei col
 - Tutti i colori di sfondo e testo sono in contrasto AAA, sia nel tema chiaro che quello scuro. Uniche eccezioni sono:
   - per il *tema chiaro*: i link nel menu e i link nel testo, entrambi comunque in contrasto AA e distinguibili per via della sottolineatura.
   - per il *tema scuro*, il testo \"Adatto per te se:\" nel lato posteriore delle carte nella home. In base a quanto riportato da WCAG color contrast checker 
-    l'intestazione è in contrasto AA in quanto considerato come testo grande. Tuttavia perde il contrasto AA quando il testo 1em raggiunge i 10px, tuttavia 
+    l'intestazione è in contrasto AA in quanto considerato come testo grande. Perde il contrasto AA quando il testo 1em raggiunge i 10px, tuttavia 
     riteniamo che tali numeri non siano adottati da un utente con difficoltà nella distinzione dei colori.
 - Mantenendo i colori in palette non è stato possibile trovare i contrasti tra link visitati e non visitati (mantenendo i contrasti tra questi e lo sfondo). Abbiamo quindi optato per due differenti soluzioni:
   - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati. Si fa notare che il colore dei link non visitati varia a seconda della locazione degli stessi: non assumono cioè colore bianco se si trovano in prossimità di testo normale in modo da risaltare maggiormente.
