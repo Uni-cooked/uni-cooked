@@ -276,7 +276,7 @@ a.recipe-card {
 /* #region HEADER */
 header {
     background-image: url("../asset/img/header.webp");
-    background-color: black;
+    background-color: var(--accent-trinary);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -1,3 +1,4 @@
+Options -Indexes
 ErrorDocument 403 '<meta http-equiv="refresh" content="0;url=/aprecoma/403-err.php">'
 ErrorDocument 404 '<meta http-equiv="refresh" content="0;url=/aprecoma/404-err.php">'
 ErrorDocument 500 '<meta http-equiv="refresh" content="0;url=/aprecoma/500-err.php">'
