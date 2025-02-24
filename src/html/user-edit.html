@@ -19,6 +19,7 @@
         <!-- JS -->
         <script async type="module" src="./js/validate-useredit.js"></script>
         <script src="./js/theme-switcher.js"></script>
+        <script async src="./js/hamburger.js"></script>
     </head>
 
     <body>
@@ -83,6 +84,7 @@
                         <div id="primary-info">
                             <div id="edit-pp">
                                 <img loading="lazy" src="{{profile-pic}}" alt="Immagine profilo di {{username}}" id="chosen-image"/>
+                                <p class="suggestion">Dimensione massima 2 <span lang='en' abbr='megabyte'>MB</span></p>
                                 <label id="mod-pp" class="cursor-label">
                                     <input name="profile-img-edit" type="file" id="profile-img-edit" accept="image/png, image/jpeg"/>
                                     Modifica foto
@@ -113,6 +115,7 @@
                             </div>
                         </div>
                         <label class="form-label" for="bio-edit">Biografia</label>
+                        <p class="suggestion">Massimo 300 caratteri</p>
                         <textarea id="bio-edit" name="bio-edit" maxlength="300">{{biografia}}</textarea>
                         {{bio-error}}
 

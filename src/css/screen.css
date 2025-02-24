@@ -89,7 +89,6 @@ html {
     html,
     body {
         height: 100lvh;
-        width: 100lvw;
     }
 }
 
@@ -1307,13 +1306,22 @@ a#back-up-first-comment:link {
 /* ================================================== */
 
 /* #region SIGN IN/UP PAGE */
-.suggestion {
+
+.suggestion,
+.suggestion-alt{
     font-size: .85rem;
     padding: .4rem .9rem;
-    background-color: var(--bg-secondary);
     margin-bottom: .4rem;
     border-radius: .35rem;
     border-left: .4rem solid var(--accent);
+}
+
+.suggestion {
+    background-color: var(--bg-secondary);
+}
+
+.suggestion-alt {
+    background-color: var(--bg-primary);
 }
 
 .show-psw-checkbox {
@@ -1688,6 +1696,9 @@ a#edit-profile-link {
 }
 
 #edit-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     flex: 1;
     width: 100%;
 }

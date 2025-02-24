@@ -20,6 +20,7 @@
         <!-- JS -->
         <script async type="module" src="./js/validate-aboutus.js"></script>
         <script src="./js/theme-switcher.js"></script>
+        <script async src="./js/hamburger.js"></script>
     </head>
 
     <body>
@@ -89,6 +90,7 @@
                     <form action="about-us.php" method="post" id="request">
                         <fieldset>
                             <label for="recipie-request-input" class="form-label">Scrivi qua la tua proposta</label>
+                            <p class="suggestion-alt">Testo tra i 20 e i 500 caratteri</p>
                             <textarea name="proposta" placeholder="Scrivi qua..." id="recipie-request-input" required minlength="20" maxlength="500"></textarea>
                             {{suggestion-error}}
                             <button id="btn-confirm" type="submit" class="button-input-confirm button-input" name="suggestion">PROPONI</button>
