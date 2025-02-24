@@ -1,7 +1,7 @@
 #import "./utility.typ": *
 #import "@preview/treet:0.1.1": *
 
-#show: doc => copertina(doc, link_website: "http://caa.studenti.math.unipd.it/aprecoma", link_text: "caa.studenti.math.unipd.it/aprecoma")
+#show: doc => copertina(doc, link_website: "http://caa.studenti.math.unipd.it/asoranzo", link_text: "caa.studenti.math.unipd.it/asoranzo")
 
 #set text(10pt, font: "DejaVu Serif")
 
@@ -48,7 +48,7 @@ Seguendo le indicazioni delle #link("https://www.w3.org/WAI/WCAG21/Techniques/ht
 I valori degli slider nei filtri della pagina che visualizza tutte le ricette sono nascosti allo screen reader: nei test svolti questi vengono letti ogni volta che si aggiornano, dunque abbiamo ritenuto superfluo l'inserimento di un eventuale tag `alert`.
 Il minimo e massimo sono esplicitati nella label.
 
-I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reade: per ovviare al problema abbiamo aggiunto l'attributo `title` con il nome della ricetta.
+I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reade: per ovviare al problema abbiamo aggiunto l'attributo `title` con il nome della ricetta. Situazione simile per alcune `label`, ad esempio \"mostra password\", alle quali è stato assegnato l'attributo `aria-label` così da assicurarsi che venga letto dallo screen reader indipendentemente dalle impostazioni personali.
 
 Alla pagina di una ricetta si può arrivare dal catalogo delle ricette oppure dall'elenco delle ricette preferite di un utente: per migliorare l'esperienza nell'uso della breadcrum, questa cambia pagina di provenienza a seconda che si arrivi dalla pagina delle ricette o da un preferito.
 
