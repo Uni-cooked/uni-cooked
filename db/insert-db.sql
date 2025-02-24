@@ -122,7 +122,7 @@ INSERT INTO Ricetta VALUES ("Riso e uova fritte", "fuorisede", "primo", 15, 8,
  "2025-01-09", "./asset/img/recipe/fuorisede/riso-uovo.webp");
 
 INSERT INTO Ricetta VALUES ("Frittatona", "fuorisede", "primo", 10, 5, 
-"Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle 20:25).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore, frittatone di cipolle, familiare di birra gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
+"Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle <time datetime=\"20:25\">20:25</time>).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore, frittatone di cipolle, familiare di birra gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
  "2025-01-09", "./asset/img/recipe/fuorisede/frittatona.webp");
 
 INSERT INTO Ricetta VALUES ("Rucola e bresaola", "fuorisede", "primo", 5, 10, 
