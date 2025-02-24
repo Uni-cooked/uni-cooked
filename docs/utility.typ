@@ -1,7 +1,7 @@
 #let copertina(
   doc,
-  link_website: "http://tecweb.studenti.math.unipd.it/aprecoma/index.php",
-  link_text: "tecweb.studenti.math.unipd.it/aprecoma/index.php",
+  link_website: "http://tecweb.studenti.math.unipd.it/asoranzo/index.php",
+  link_text: "tecweb.studenti.math.unipd.it/asoranzo/index.php",
 ) = {
   set text(lang: "it")
   set list(indent: 1em)
@@ -58,8 +58,8 @@
     )
 
     \ *Referente* \
-    Andrea Precoma \
-    #link("mailto:andrea.precoma@studenti.unipd.it")[#text(fill: navy, size: 1em)[#underline("andrea.precoma@studenti.unipd.it")]]
+    Andrea Soranzo \
+    #link("mailto:andreajesus.soranzomendez@studenti.unipd.it")[#text(fill: navy, size: 1em)[#underline("andreajesus.soranzomendez@studenti.unipd.it")]]
 
   ]
 
@@ -79,12 +79,6 @@
       )
       #line(length: 100%)
     ],
-    // background: [
-    //   //Creare logo sbiadito. Su typst di default non esiste trasparenza
-    //   #circle(radius: 10em, fill: rgb("#302E8E"))[
-    //     #image("../src/asset/img/def-profile.png", height: 100%)
-    //   ]
-    // ],
     footer: [
       #set text(12pt, font: "DejaVu Serif")
       #set align(center)

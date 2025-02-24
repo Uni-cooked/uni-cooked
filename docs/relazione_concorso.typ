@@ -1,7 +1,7 @@
 #import "./utility.typ": *
 #import "@preview/treet:0.1.1": *
 
-#show: doc => copertina(doc, link_website: "http://caa.studenti.math.unipd.it/aprecoma", link_text: "caa.studenti.math.unipd.it/aprecoma")
+#show: doc => copertina(doc, link_website: "http://caa.studenti.math.unipd.it/asoranzo", link_text: "caa.studenti.math.unipd.it/asoranzo")
 
 #set text(10pt, font: "DejaVu Serif")
 
@@ -18,6 +18,7 @@ Le ricette salvate come preferite sono visibili nella pagina profilo.
 Nella pagina dedicata ai contatti dei proprietari del sito è presente anche un campo di testo nel quale ogni utente può suggerire un piatto da aggiungere al sito.
 
 == Metodologia di sviluppo
+
 Nonostante la maggior parte dell'utenza derivi dal mobile, abbiamo deciso di cominciare dallo sviluppo del sito desktop per facilitare la fase di design. Dovendo comunque completare la visualizzazione sia per desktop che per mobile, ci è sembrato più utile adottare un approccio che agevolasse il lavoro pur mantenendo il medesimo risultato.
 
 = Accessibilità
@@ -47,7 +48,7 @@ Seguendo le indicazioni delle #link("https://www.w3.org/WAI/WCAG21/Techniques/ht
 I valori degli slider nei filtri della pagina che visualizza tutte le ricette sono nascosti allo screen reader: nei test svolti questi vengono letti ogni volta che si aggiornano, dunque abbiamo ritenuto superfluo l'inserimento di un eventuale tag `alert`.
 Il minimo e massimo sono esplicitati nella label.
 
-I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reade: per ovviare al problema abbiamo aggiunto l'attributo `title` con il nome della ricetta.
+I link \"vai alla ricetta\" degli elementi della lista potrebbero risultare poco espressivi per un utente che usa lo screen reade: per ovviare al problema abbiamo aggiunto l'attributo `title` con il nome della ricetta. Situazione simile per alcune `label`, ad esempio \"mostra password\", alle quali è stato assegnato l'attributo `aria-label` così da assicurarsi che venga letto dallo screen reader indipendentemente dalle impostazioni personali.
 
 Alla pagina di una ricetta si può arrivare dal catalogo delle ricette oppure dall'elenco delle ricette preferite di un utente: per migliorare l'esperienza nell'uso della breadcrum, questa cambia pagina di provenienza a seconda che si arrivi dalla pagina delle ricette o da un preferito.
 
@@ -56,6 +57,10 @@ Al termine delle valutazioni è posto anche un link per tornare rapidamente all'
 In ogni valutazione inoltre è presente il nome dell'utente sotto forma di link: in questo modo è possibile visitare il profilo degli altri utenti.
 
 Riguardo la potenziale numerosità delle ricette preferite abbiamo adottato la stessa soluzione utilizzata per i commenti nelle ricette.
+
+Una nota di riguardo è dovuta al caricamento delle foto: nonostante le pagine `HTML` e le componenti `JavaScript` e `PHP` siano appositamente configurate per supportare solo il caricamento di file `.jpeg`, `.jpg` e `.png`, talvolta i dispositivi `Apple` non considerano questi limiti e permettono di caricare qualsiasi foto presente nel rullino del dispositivo che, solitamente, sono in formato `.heif` o `.heic`.
+`PHP` nativamente non supporta la conversione di tali formati in `.webp`, formato che garantisce maggiore efficienza nel caricamento delle pagine web.
+Inoltre, nessun browser, ad eccezione di `Safari`, permette la visualizzazione di tali immagini: per questi motivi, il sito web non permette il caricamento di file di tipo `.heif` o `.heic`.
 
 == Controlli ulteriori
 
@@ -71,7 +76,11 @@ Sono stati eseguiti i seguenti controlli per quanto riguarda l'accessibilità:
 
 == Colori
 Sono stati eseguiti i seguenti controlli per quanto riguarda i contrasti dei colori:
-- Tutti i colori di sfondo e testo sono in contrasto AAA. Unica eccezione fatta per il testo \"Adatto per te se:\" nel lato posteriore delle carte nella home. In base a quanto riportato da WCAG color contrast checker l'intestazione è in contrasto AA in quanto considerato come testo grande. Tuttavia perde il contrasto AA quando il testo 1em raggiunge i 10px, tuttavia riteniamo che tali numeri non siano adottati da un utente con difficoltà nella distinzione dei colori.
+- Tutti i colori di sfondo e testo sono in contrasto AAA, sia nel tema chiaro che quello scuro. Uniche eccezioni sono:
+  - per il *tema chiaro*: i link nel menu e i link nel testo, entrambi comunque in contrasto AA e distinguibili per via della sottolineatura.
+  - per il *tema scuro*, il testo \"Adatto per te se:\" nel lato posteriore delle carte nella home. In base a quanto riportato da WCAG color contrast checker 
+    l'intestazione è in contrasto AA in quanto considerato come testo grande. Perde il contrasto AA quando il testo 1em raggiunge i 10px, tuttavia 
+    riteniamo che tali numeri non siano adottati da un utente con difficoltà nella distinzione dei colori.
 - Mantenendo i colori in palette non è stato possibile trovare i contrasti tra link visitati e non visitati (mantenendo i contrasti tra questi e lo sfondo). Abbiamo quindi optato per due differenti soluzioni:
   - I link inseriti nel testo o in elenchi sono sottolineati una volta se non visitati, due volte se visitati. Si fa notare che il colore dei link non visitati varia a seconda della locazione degli stessi: non assumono cioè colore bianco se si trovano in prossimità di testo normale in modo da risaltare maggiormente.
   - I link con uno sfondo dedicato, ad esempio i \"pulsanti\" ACCEDI nel menu o MODIFICA PROFILO nel profilo utente, sono contornati da un bordo dello stesso colore del link se visitati. Si fa notare che il colore dei link rimane lo stesso perché il bordo aggiunto è sufficiente per distinguere i due stati.
@@ -92,12 +101,15 @@ Molti controlli sono stati svolti manualmente.
 == Falsi positivi e warning
 Validando il sito con la versione 18.2.0 di Total Validator vengono evidenziati i seguenti falsi positivi e warning seguiti dalle motivazioni:
 - Le label sono state posizionate prima degli input per questioni di accessibilità, eccezione fatta per l'input di tipo checkbox e radio (si veda #link("https://www.w3.org/WAI/WCAG21/Techniques/html/H44")[#underline("WCAG 2.1")]). L'input usato per modificare la foto profilo dovrebbe essere posizionato dopo la label secondo le WCAG, così però richiederebbe l'uso della pseudo-classe :has(). Per renderlo funzionante con qualsiasi versione del browser abbiamo preferito mettere l'input dentro la label, soluzione comunque valida e discussa con la professoressa Gaggi.
+- Nella home, il primo link di aiuto alla navigazione non è quello per andare al contenuto, bensì quello che porta al menù contenente i link per andare velocemente alla descrizione delle varie tipologie di utente: abbiamo preferito fosse questo il primo link di aiuto per poter accedere velocemente alle varie descrizioni, ma Total Validator segnala la cosa come avvertimento (ma non errore).
 - Nella home la label \"scopri se fa per te\" è ripetuta perché l'azione è la medesima per tutte le quattro sezioni.
+- Nella pagina per effettuare la registrazione, la `label` per la `checkbox` "Mostra password" viene segnalata come ripetuta: non è stata inserita una legend differente perché il campo su cui è rivolta l'azione è necessariamente quello che è stato appena popolato dall'utente seguendo l'ordine della pagina. Stesso errore e stessa motivazione è data per i "Mostra password" nella sezione di cambio password presente nella pagina per la modifica del profilo.
+- Nella pagina di una ricetta, se l'accesso è stato eseguito e l'utente può lasciare una valutazione, il `form` ha un `fieldset` senza `legend`: Total Validator segnala con un avvertimento, tuttavia l'informazione che la `legend` dovrebbe fornire è in realtà fornita dal titolo dell'intera sezione (*Valutazioni*) e dalla prima `label` (*Valuta questa ricetta*). L'inserimento dunque di una `legend` potrebbe rendere dunque meno piacevole la consultazione del sito web.
 - Nella pagina delle ricette la form per l'ordinamento dei risultati non contiene il submit perché l'aggiornamento della vista è automatico alla modifica del valore della select.
 - Per la ragione citata precedentemente, `PHP` deve inserire onchange=\"this.form.submit()\".
-- Nella pagina dei contatti non è necessaria una legend per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria label.
-- Nella pagina di modifica profilo non è necessaria una legend per la form di modifica password perché il compito è esplicito nel titolo e nelle label.
+- Nella pagina dei contatti non è necessaria una `legend` per la form dei suggerimenti perché è composta solo da una textarea che possiede la propria `label`.
+- Nella pagina di modifica profilo non è necessaria una `legend` per la form di modifica password perché il compito è esplicito nel titolo e nelle `label`.
 
 Validando i fogli di stile con W3C CSS Validator vengono evidenziati i seguenti falsi positivi seguiti dalle motivazioni:
-- le regole \"webkit\" sono state aggiunte per migliorare il più possibile l'esperienza dell'utente su qualsiasi browser.
+- le regole \"webkit\" e \"moz\" sono state aggiunte per migliorare il più possibile l'esperienza dell'utente su qualsiasi browser.
 - le clausole \"selector\" sono risultate necessarie per garantire il funzionamento del sito su qualsiasi browser.
