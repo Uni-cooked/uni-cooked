@@ -78,7 +78,7 @@ async function ChangeImage() {
 	const imageOutput = document.getElementById("chosen-image");
 	const Reader = new FileReader();
 	Reader.onload = (e) => {
-		const acceptedImgType = ["image/png","image/jpeg"];
+		const acceptedImgType = ["image/png","image/jpeg","image/heif","image/heic"];
 		const sizeFile = file.size;
 		const Byte = Math.round(sizeFile/1024);
 		const errorString = document.getElementById("profile-pic-err-p");

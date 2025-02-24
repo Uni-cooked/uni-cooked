@@ -1779,7 +1779,7 @@ label[for="bio-edit"] {
 
 /* #region SINGLE MESSAGE PAGE */
 #header-content.single-msg-page-header {
-    min-height: 40vh;
+    height: 40vh;
 }
 
 #content.single-msg-page-content {
