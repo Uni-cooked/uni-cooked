@@ -1,10 +1,1 @@
-window.addEventListener('load', function () {
-    let loadingtext = document.getElementById("loader");
-    loadingtext.remove();
-	let recipes = document.querySelectorAll(".recipe");
-    recipes.forEach((r,i) => {
-        this.setInterval( (_) => {
-            r.classList.add("recipe-animation")
-        },i*100);
-    });
-});
+window.addEventListener("load",function(){document.getElementById("loader").remove();document.querySelectorAll(".recipe").forEach((e,t)=>{this.setInterval(t=>{e.classList.add("recipe-animation")},100*t)})});
