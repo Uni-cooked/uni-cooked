@@ -1,4 +1,4 @@
-import { createError, eliminateError, ToggleConfirmButton, ShowPsw, ToggleLabel } from './utils.js'
+import { createError, eliminateError, ToggleConfirmButton, ShowPsw, ToggleLabel,RemoveAllErrors } from './utils.js'
 
 function ValidateProfile(e) {
 	if (!validateUsername()) {
@@ -121,7 +121,7 @@ function validateOldPassword() {
 
     if(psw.length < 1){
 		let p = createError("err-old-psw");
-	    p.innerText = "La <span lang='en'>password</span> è un campo obbligatorio";
+	    p.innerHTML = "La <span lang='en'>password</span> è un campo obbligatorio";
 		const parent = input.parentNode;
 		parent.appendChild(p);
 		return false;
@@ -208,7 +208,10 @@ const listeners = {
 	},
 	"credentials": {
 		"submit": ValidateNewPsw,
-		"reset":ToggleConfirmPswButton
+		"reset": () => {
+			ToggleConfirmPswButton();
+			RemoveAllErrors("#credentials");
+		}
 	}
 };
 
@@ -240,6 +243,8 @@ function InitListeners(){
 		ToggleLabel(1,"mod-pp");
 
 		img.setAttribute("src",original);
+
+		RemoveAllErrors("#new-info");
 	});
 }
 

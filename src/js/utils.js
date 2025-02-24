@@ -6,6 +6,11 @@ export function createError(id){
     return p;
 }
 
+export function RemoveAllErrors(inside = "") {
+    const errs = document.querySelectorAll(inside + " .err-msg");
+    errs.forEach((e)=>eliminateError(e));
+}
+
 export function eliminateError(p){
     if(p) p.remove();
 }

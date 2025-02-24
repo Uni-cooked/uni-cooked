@@ -1,4 +1,4 @@
-import { createError, eliminateError, ToggleConfirmButton } from './utils.js'
+import { createError, eliminateError, ToggleConfirmButton,RemoveAllErrors } from './utils.js'
 
 function ValidateAll(e) {
     if (!validateRequest()) {
@@ -22,6 +22,10 @@ function validateRequest(){
     
     const errorString = document.getElementById("err-request");
     eliminateError(errorString);
+
+    if (input.value.length == 0) {
+        return true;
+    }
     
     if (comment.length < 20) {
         let p = createError("err-request");
@@ -46,7 +50,10 @@ const inputRequest = {
     },
     "request": {
         "submit": ValidateAll,
-        "reset": ToggleRequestBtn
+        "reset": () => {
+            ToggleRequestBtn();
+            RemoveAllErrors();
+        }   
     },
 };
 

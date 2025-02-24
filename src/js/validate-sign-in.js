@@ -1,4 +1,4 @@
-import { createError, eliminateError, ToggleConfirmButton,ShowPsw } from './utils.js'
+import { createError, eliminateError, ToggleConfirmButton,ShowPsw,RemoveAllErrors } from './utils.js'
 
 function ValidateAll(e) {
     if (!validateUser()) {
@@ -62,7 +62,10 @@ const controllers = {
     },
     "credentials": {
         "submit": ValidateAll,
-        "reset": ToggleLoginBtn
+        "reset": ()=> {
+            ToggleLoginBtn();
+            RemoveAllErrors();
+        } 
     },
     "show-psw" : {"click": function () {ShowPsw(this,"student-psw-in");} }
 };

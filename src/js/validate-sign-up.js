@@ -1,4 +1,4 @@
-import { createError, eliminateError, ToggleConfirmButton,ShowPsw } from './utils.js'
+import { createError, eliminateError, ToggleConfirmButton,ShowPsw,RemoveAllErrors } from './utils.js'
 
 function ValidateAll(e) {
     if (!validateUsername() || !validateStudent() || !validateEmail() || !validatePassword() || !validatePasswordConfirm()) {
@@ -171,7 +171,10 @@ const listeners = {
 
 	"credentials": {
 		"submit": ValidateAll,
-		"reset": ToggleSignUpBtn
+		"reset": ()=> {
+			ToggleSignUpBtn();
+			RemoveAllErrors();
+		} 
 	},
 };
 

@@ -1,4 +1,4 @@
-import { createError, eliminateError, ToggleConfirmButton } from './utils.js'
+import { createError, eliminateError, ToggleConfirmButton,RemoveAllErrors } from './utils.js'
 
 function ValidateAll(e) {
     if (!validateReview() || !validateCommento()) {
@@ -34,6 +34,9 @@ function validateCommento(){
     const errorString = document.getElementById("err-comment");
     eliminateError(errorString);
 
+    if (input.value.length == 0) {
+        return true;
+    }
 
     if (comment === "") {
         let p = createError("err-comment");
@@ -65,7 +68,10 @@ const review = {
     },
     "first-form": {
         "submit": ValidateAll,
-        "reset": ToggleConfirmBtn
+        "reset": ()=> {
+            ToggleConfirmBtn();
+            RemoveAllErrors();
+        } 
     }
 }
 
