@@ -60,7 +60,7 @@ Riguardo la potenziale numerosità delle ricette preferite abbiamo adottato la s
 
 Una nota di riguardo è dovuta al caricamento delle foto: nonostante le pagine `HTML` e le componenti `JavaScript` e `PHP` siano appositamente configurate per supportare solo il caricamento di file `.jpeg`, `.jpg` e `.png`, talvolta i dispositivi `Apple` non considerano questi limiti e permettono di caricare qualsiasi foto presente nel rullino del dispositivo che, solitamente, sono in formato `.heif` o `.heic`.
 `PHP` nativamente non supporta la conversione di tali formati in `.webp`, formato che garantisce maggiore efficienza nel caricamento delle pagine web, e necessita quindi di librerie esterne che non ci è permesso installare.
-Inoltre, nessun browser, ad eccezione di `Safari`, permette la visualizzazione di tali immagini: per questi motivi, il sito web non permette il caricamento di file di tipo `.heif` o `.heic`.
+Inoltre nessun browser, ad eccezione di `Safari`, permette la visualizzazione di tali immagini. Per questi motivi, il sito web non permette il caricamento di file di tipo `.heif` o `.heic`.
 
 == Controlli ulteriori
 
