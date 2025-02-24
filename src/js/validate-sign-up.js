@@ -78,7 +78,6 @@ function validateEmail(){
 	const errorString = document.getElementById("err-mail");
 	eliminateError(errorString);
 
-	console.log(email);
     
     if(email.length < 1){
 		let p = createError("err-mail"); 

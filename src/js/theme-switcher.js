@@ -13,7 +13,6 @@ window.addEventListener('load', function () {
     const systemSettingLight = window.matchMedia("(prefers-color-scheme: light)").matches;
     const cookie = localStorage.getItem("theme");
     const label = document.getElementById("theme-mode-toggle");
-    console.log(cookie);
     if (cookie && cookie === "light") {
         document.body.classList.add("light-theme");
         input.checked = true;

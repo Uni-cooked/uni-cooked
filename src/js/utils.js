@@ -34,7 +34,6 @@ export function ToggleLabel(state,id) { // 1 = on ; 0 = off
 }
 
 export function ShowPsw(checkbox,id) {
-    console.log(id);
     const input = document.getElementById(id);
     if (checkbox.checked) {
         input.type = "text";

@@ -72,9 +72,7 @@ async function ChangeImage() {
 	const [file] = inputImage.files;
 
 	document.getElementById("del-pp-radio").checked = false;
-	ToggleLabel(1,"del-pp-radio");
-	ToggleLabel(1,"del-pp");
-
+	
 	const imageOutput = document.getElementById("chosen-image");
 	const Reader = new FileReader();
 	Reader.onload = (e) => {
@@ -85,14 +83,14 @@ async function ChangeImage() {
 		eliminateError(errorString);
 		if(Byte < 2048 ){
 			if(acceptedImgType.includes(file['type'])){
-				console.log("ddd");
 				imageOutput.setAttribute("src", e.target.result);
+				ToggleLabel(1,"del-pp-radio");
+				ToggleLabel(1,"del-pp");
 			}
 			else{
 				let p = createError("profile-pic-err-p");
 				p.innerHTML = "L'estensione del <span lang='en'>file</span> caricato non è corretta";
 				const parent = document.getElementById("edit-pp");
-				console.log(document.getElementById("primary-info"));
 				parent.append(p);
 				inputImage.value = null;	
 			}
@@ -100,7 +98,6 @@ async function ChangeImage() {
 			let p = createError("profile-pic-err-p");
 			p.innerHTML = "Sono accettati solo <span lang='en'>file</span> di dimensione minore a 2<span lang='en' abbr='megabyte'>MB</span>";
 			const parent = document.getElementById("edit-pp");
-			console.log(parent);
 			parent.append(p);
 		}
 	}
