@@ -122,7 +122,7 @@ INSERT INTO Ricetta VALUES ("Riso e uova fritte", "fuorisede", "primo", 15, 8,
  "2025-01-09", "./asset/img/recipe/fuorisede/riso-uovo.webp");
 
 INSERT INTO Ricetta VALUES ("Frittatona", "fuorisede", "primo", 10, 5, 
-"Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle 20:25).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore frittatone di cipolle, familiare di peroni gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
+"Ottimo piatto per quando si vuole guardare la nazionale di calcio italiana giocare (specialmente sabato 18 alle 20:25).\nCome disse un grande attore, per godersi appieno la partita bisogna avere: ''calze , mutande, vestaglione di flanella, tavolinetto di fronte al televisore, frittatone di cipolle, familiare di birra gelata, tifo indiavolato e rutto libero''\nPer rivivere l'esperienza, ti consigliamo di seguire queste indicazioni.",
  "2025-01-09", "./asset/img/recipe/fuorisede/frittatona.webp");
 
 INSERT INTO Ricetta VALUES ("Rucola e bresaola", "fuorisede", "primo", 5, 10, 
@@ -162,7 +162,7 @@ INSERT INTO Ricetta VALUES ("Frittata di patate e cipolla", "dad", "secondo", 25
 INSERT INTO Ricetta VALUES ("Noodles_EN con i gamberetti", "dad", "primo", 20, 5, "I noodles_EN con gamberetti sono un buonissimo primo piatto in cui gli spaghetti orientali sono protagonisti insieme a pochi altri ingredienti.", "2025-01-15", "./asset/img/recipe/dad/noodles-gamberetti.webp");
 INSERT INTO Ricetta VALUES ("Pasta caciotta e tonno in crema di peperoni", "dad", "primo", 35, 8, "La pasta con crema di peperoni, caciotta e tonno è un primo piatto davvero squisito. Colorato e semplice da preparare, piacerà a tutti.", "2025-01-15", "./asset/img/recipe/dad/pasta-caciotta-tonno-cremapeperoni.webp");
 INSERT INTO Ricetta VALUES ("Scaloppina al limone", "dad", "secondo", 25, 9, "La scaloppina al limone è una ricetta semplice e veloce da preparare, ma allo stesso tempo raffinata e gustosa. La delicatezza della carne si sposa perfettamente con l'acidità del limone, creando un mix di sapori davvero irresistibile.", "2025-01-15", "./asset/img/recipe/dad/scaloppina-limone.webp");
-INSERT INTO Ricetta VALUES ("Canederli","dad", "primo", 60, 6, "I canederli sono una vera squisitezza da gustare in Trentino-Alto Adige! Sostanziosi gnocchi di pane","2025-01-24", "./asset/img/recipe/dad/canederli.webp");
+INSERT INTO Ricetta VALUES ("Canederli","dad", "primo", 60, 6, "I canederli sono una vera squisitezza da gustare in Trentino-Alto Adige!","2025-01-24", "./asset/img/recipe/dad/canederli.webp");
 INSERT INTO Ricetta VALUES ("Calamarata","dad", "primo", 70, 10, "La calamarata, nel napoletano, è conosciuta con il nome di mezzi paccheri. Oltre ad essere un formato di pasta è anche un condimento il cui protagonista è il calamaro.","2025-01-24", "./asset/img/recipe/dad/calamarata.webp");
 INSERT INTO Ricetta VALUES ("Pasta allo scoglio","dad", "primo", 60, 9, " Un primo piatto intramontabile: gli spaghetti allo scoglio. Perché non provare a farli a casa? Un connubio di sapori del Mediterraneo.","2025-01-24", "./asset/img/recipe/dad/pasta-scoglio.webp");
 
@@ -648,7 +648,7 @@ INSERT INTO Valutazione VALUES ("Pane e salame", "MasterMaurizio", "2025-02-02",
 INSERT INTO Valutazione VALUES ("Pasta-asciutta", "Jay", "2025-01-05", 24, "Non ho tempo per descrivere questa ricetta dó e vado a studiare");
 INSERT INTO Valutazione VALUES ("Insalata veloce", "Murphy", "2025-01-05", 28, "Abbinamento spaziale, super consigliato.");
 INSERT INTO Valutazione VALUES ("Riso e uova fritte", "Oca", "2025-01-05", 14, "Piatto povero di gusti, emozioni e non molto salutare quindi non si merita nemmeno la sufficienza");
-INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una Peroni gelata");
+INSERT INTO Valutazione VALUES ("Frittatona", "UgoFantozzi", "2025-01-05", 29, "Buonissima, soprattutto accompagnata da una birra gelata");
 INSERT INTO Valutazione VALUES ("Pasta-asciutta","ÈColpaDiTeo","2025-01-19",18,"Mancava un po' troppo di sale...");
 
 -- PENDOLARE
