@@ -3,7 +3,7 @@
 
 # UNI COOKED
 <p align="center">
-  <img alt="logo del progetto" src="/src/asset/img/def-profile.webp" width="25%">
+  <img alt="logo del progetto" src="https://github.com/Uni-cooked/uni-cooked/blob/release/src/asset/icon/student-dark.svg" width="20%">
 </p>
 <p align="center">
     NON LASCIARE SIA L'UNI A CUCINARE TE!
