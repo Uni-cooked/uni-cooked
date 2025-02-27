@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> L'uso dei file presenti in questo Repository è utilizzabile in base alla licenza adottata, eccezione fatta per le immagini, che devono essere utilizzate compatibilmente alla loro licenza originale.
+> L'uso dei file presenti in questo Repository è utilizzabile in base alla licenza adottata, eccezione fatta per le immagini e i font, che devono essere utilizzate compatibilmente alla loro licenza originale.
 
 > [!IMPORTANT]
 > Nel caso di utilizzo dei seguenti file in altri progetti, si faccia attenzione a rispettare il regolamento del progetto in questione.
