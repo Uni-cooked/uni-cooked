@@ -1,3 +1,5 @@
+[Visita il nostro sito](https://caa.studenti.math.unipd.it/aprecoma/index.php)
+
 > [!IMPORTANT]
 > L'uso dei file presenti in questo Repository è utilizzabile in base alla licenza adottata, eccezione fatta per le immagini e i font che devono essere utilizzate compatibilmente alla loro licenza originale.
 
@@ -17,12 +19,3 @@ Benvenuti su UNI COOKED, il sito di ricette pensato per gli universitari!
 
 Si tratta di un progetto didattico per l'insegnamento di Tecnologie Web dell'Università di Padova.
 Il progetto prevedeva la realizzazione di un sito web a tema libero, ma con una particolare attenzione a rendere lo stesso accessibile.
-
-## Autori
-
-|             Nome              |                   Contatto                   |
-| ----------------------------- | -------------------------------------------- |
-| Andrea                        |                                              |
-| Andrea                        |                                              |
-| Gabriele                      |                                              |
-| Matteo                        |                                              |
